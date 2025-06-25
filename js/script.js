@@ -1,272 +1,214 @@
-///////////////////////////////
-// Smart Resize
-///////////////////////////////
+// Error handling
+window.onerror = function(msg, url, line) {
+    console.error(`JavaScript Error: ${msg} at line ${line}`);
+    return false;
+};
 
-(function($,sr) {
-    var debounce = function (func, threshold, execAsap) {
-        var timeout;
-        return function debounced () {
-            var obj = this, args = arguments;
-            function delayed () {
-                if (!execAsap)
-                    func.apply(obj, args);
-                    timeout = null;
-            };
-            if (timeout)
-                clearTimeout(timeout); else if (execAsap)
-                func.apply(obj, args);
-                timeout = setTimeout(delayed, threshold || 100);
-        };
-    }
-  
-    // smartresize 
-    jQuery.fn[sr] = function(fn) {
-        return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
-    };
-})
-
-(jQuery,'smartresize');
-
-
-$(function() {
-
-// ///////////////////////////////
-// // Fix the Home Height
-// ///////////////////////////////
-
-    var setHomeBannerHeight = function(){
-        var homeHeight= $(window).height();
-        $('#overlay-1').height(homeHeight);
-    }
-
-    setHomeBannerHeight();
-
-///////////////////////////////
-// One page Smooth Scrolling
-///////////////////////////////
-
-$('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-            return false;
-        }
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        initializeWebsite();
+    } catch (error) {
+        console.error('Error initializing website:', error);
     }
 });
 
-///////////////////////////////
-// Center Home Slideshow Text
-///////////////////////////////
+function initializeWebsite() {
+    // Initialize mobile navigation
+    initMobileNavigation();
+    
+    // Initialize scroll to top
+    initScrollToTop();
 
-function centerHomeBannerText() {
-    var bannerText = jQuery('#wrapper .starting-text');
-    var bannerTextTop = (jQuery('#wrapper').actual('height')/2) - (jQuery('#wrapper .starting-text').actual('height')/2) - 20;
-    bannerText.css('padding-top', bannerTextTop+'px');
-    bannerText.show();
+    // Initialize preloader
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.display = 'flex';
+        preloader.style.opacity = '1';
+    }
+
+    // Initialize tools display
+    const toolsContainer = document.getElementById('toolsContainer');
+    if (toolsContainer) {
+            // Store all tool items initially
+        allToolItems = Array.from(document.querySelectorAll('.tool-item'));
+        // Initialize filteredTools with all tools
+        filteredTools = [...allToolItems]; // Copy all tools to filteredTools
+        // Display initial page
+        displayTools();
+        updatePaginationControls();
+    }
+
+    // Initialize search functionality
+    const searchInput = document.getElementById('toolSearch');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            filterTools(searchTerm);
+        });
+    }
+
+    // Hide preloader when everything is loaded
+    window.addEventListener('load', function() {
+        if (preloader) {
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        }
+    });
+
+    // Fallback to hide preloader
+    setTimeout(() => {
+        if (preloader && preloader.style.opacity !== '0') {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }
+    }, 5000);
 }
 
-centerHomeBannerText();
+// Filter tools based on search
+// Initialize mobile navigation
+function initMobileNavigation() {
+    const navbarToggler = document.querySelector('.navbar-toggle');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
 
-jQuery(window).smartresize(function() {
-    setHomeBannerHeight();
-    centerHomeBannerText();
-});
-    
-});
+    if (navbarToggler && navbarCollapse) {
 
-$(document).ready(function(){
-    new WOW().init();
-		$("#client-speech").owlCarousel
-		({
-			autoPlay: 3000,
-			navigation : false, // Show next and prev buttons
-			slideSpeed : 700,
-			paginationSpeed : 1000,
-			singleItem:true
-		});
-
-    var setHomeBannerHeight = function(){
-   var homeHeight= $(window).height();
-   $('#overlay-1').height(homeHeight);
     }
-    setHomeBannerHeight();  
+}
 
-       
-	});
+// Initialize scroll to top functionality
+function initScrollToTop() {
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    
+    if (scrollToTopBtn) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
 
+        // Smooth scroll to top
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
 
+// Global variables for pagination
+let currentPage = 1;
+const itemsPerPage = 6;
+let allToolItems = []; // Store all tool items initially
+let filteredTools = []; // This will be a subset of allToolItems
 
+function filterTools(searchTerm) {
+    const noResults = document.getElementById('noResults');
 
+    // Filter from allToolItems, not from the current DOM
+    filteredTools = allToolItems.filter(item => {
+        const toolData = item.dataset.tool.toLowerCase();
+        return toolData.includes(searchTerm);
+    });
 
-$(document).ready(function(){
+    if (noResults) {
+        noResults.style.display = filteredTools.length > 0 ? 'none' : 'block';
+    }
 
-  var menu = $('#navigation-scroll > .navbar');
-  var origOffsetY = $('#bottom').offset().top;
+    // Reset to first page when searching
+    currentPage = 1;
+    displayTools();
+    updatePaginationControls();
+}
 
-  function scroll() {
-     if ($(window).scrollTop() > origOffsetY) {
-        menu.addClass('navbar-white');
-     } else {
-        menu.removeClass('navbar-white');
-     }
-  }
+function displayTools() {
+    const toolItems = document.querySelectorAll('.tool-item');
+    
+    // Clear existing tools from the container
+    const toolsContainer = document.getElementById('toolsContainer');
+    if (!toolsContainer) return;
 
-  document.onscroll = scroll;
+    toolsContainer.innerHTML = ''; // Clear existing content
 
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const toolsToDisplay = filteredTools.slice(startIndex, endIndex);
 
+    let currentRow;
+    toolsToDisplay.forEach((item, index) => {
+        if (index % 3 === 0) {
+            currentRow = document.createElement('div');
+            currentRow.classList.add('row');
+            toolsContainer.appendChild(currentRow);
+        }
+        currentRow.appendChild(item); // Append the actual DOM element
+    });
+}
 
+function updatePaginationControls() {
+    const totalPages = Math.ceil(filteredTools.length / itemsPerPage);
+    const paginationControls = document.getElementById('pagination-controls');
+    
+    if (!paginationControls) return;
 
-  $('#screenshots-wrap > a').nivoLightbox({effect: 'fadeScale'});
+    // Clear existing pagination controls
+    paginationControls.innerHTML = '';
 
-  $(window).load(function(){
-    $('#preloader').fadeOut('slow',function(){$(this).remove();});
-  });
+    // Add Prev button
+    const prevButton = document.createElement('a');
+    prevButton.href = '#';
+    prevButton.classList.add('prev');
+    prevButton.innerHTML = '&lt;&lt; Prev';
+    if (currentPage === 1) prevButton.classList.add('disabled');
+    prevButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            displayTools();
+            updatePaginationControls();
+        }
+    });
+    paginationControls.appendChild(prevButton);
 
+    // Add page numbers
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.href = '#';
+        pageLink.classList.add('page');
+        if (i === currentPage) pageLink.classList.add('active');
+        pageLink.textContent = i;
+        pageLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentPage = i;
+            displayTools();
+            updatePaginationControls();
+        });
+        paginationControls.appendChild(pageLink);
+    }
 
-
-  $("#client-speech").owlCarousel({
-    autoPlay: 3000,
-      navigation : false, // Show next and prev buttons
-      slideSpeed : 700,
-      paginationSpeed : 1000,
-      singleItem: true
-  });
-
-
-  $("#screenshots-wrap").owlCarousel({
-      navigation : false,
-      pagination: true,
-      slideSpeed : 500,
-      items: 4
-  });
-
-
-});
-
-// @media (max-width: 515px){
-//     .rene
-//     {
-//         font-size: 70px;
-//     }
-// }
-// @media (max-width: 405px){
-//     .heading-text h3
-//     {
-//         font-size: 45px;
-//     }
-// }
-// @media (max-width: 350px){
-//     .rene
-//     {
-//         font-size: 50px;
-//     }
-//     .starting-text h2
-//     {
-//         font-size: 35px;
-//     }
-// }
-// /* 
-
-// .shadow-team
-// {
-//     background-color: #626262;
-//     border-radius: 50%;
-//     content: "";
-//     height: 14px;
-//     left: 14px;
-//     position: relative;
-//     top: 3px;
-//     width: 193px;
-// }
-
-
-
-//  */
-
-// .ion-ios7-arrow-down {
-//     color: #fff;
-//     font-size: 3em;
-// }
-
-
-// .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-//     color: #FFFFFF;
-// }
-
-// .btn-primary {
-//     padding-top: 14px;
-//     border-color: #39c;
-// }
-// input[type="submit"]{
-//     padding-top: 8px;
-//     border-color: #39c;
-// }
-// input[type="submit"]:hover{
-//     color: #fff;
-//     background-color: #286090;
-//     border-color: #204d74;
-// }
-// .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
-//     background-color: #3acab1;
-//     border-color: #3acab1;
-// }
-
-// .pagination {
-//     border-radius: 0;
-// }
-
-// .pagination>li:first-child>a, .pagination>li:first-child>span {
-//     border-top-left-radius: 0;
-//     border-bottom-left-radius: 0;
-// }
-
-// .pagination>li:last-child>a, .pagination>li:last-child>span {
-//     border-top-right-radius: 0;
-//     border-bottom-right-radius: 0;
-// }
-
-// .navbar-fixed-top, .navbar-fixed-bottom {
-//     position: fixed;
-//     z-index: 5;
-// }
-
-// .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
-//     color: #FFF !important;
-//     background-color: #39c;
-//     border-color: #39c;
-// }
-
-// .pagination>li>a, .pagination>li>span {
-//     color: #16a085;
-// }
-
-// #port-items .col-md-4 {
-//     padding: 0;
-// }
-
-// .input-group-addon {
-//     border-radius: 0;
-// }
-
-// @media (max-width: 712px) {
-
-// }
-
-// @media (max-width: 400px) {
-//     #port-items .col-xs-6 {
-//         width: 100%;
-//     }
-
-//     .navbar-fixed-top, 
-//     .navbar-fixed-bottom {
-//         position: static;
-//     }
-
-//     #portfolio .btn {
-//         margin-bottom: 10px;
-//     }
-// }
+    // Add Next button
+    const nextButton = document.createElement('a');
+    nextButton.href = '#';
+    nextButton.classList.add('next');
+    nextButton.innerHTML = 'Next &gt;&gt;';
+    if (currentPage === totalPages) nextButton.classList.add('disabled');
+    nextButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayTools();
+            updatePaginationControls();
+        }
+    });
+    paginationControls.appendChild(nextButton);
+}
