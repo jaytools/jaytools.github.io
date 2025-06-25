@@ -1,0 +1,38 @@
+/* TEAM */
+Developer: Jay Prajapati
+Contact: starofficial202503@gmail.com
+GitHub: https://github.com/jaytools/jaytools.github.io/
+Location: India
+
+/* SITE */
+Last update: 2025-06-25
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code
+Standards: HTML5, CSS3, JavaScript
+Frameworks/Libraries: Bootstrap, Font Awesome
+Source Control: Git & GitHub
+
+/* TECHNOLOGY USED */
+- HTML5
+- CSS3 (Flexbox, Grid, Animations)
+- JavaScript (Vanilla)
+- Responsive Design
+- Progressive Web App (PWA)
+- Local Storage
+- Chart.js for Data Visualization
+
+/* SITE FEATURES */
+- Fully Responsive Design
+- Dark Mode Support
+- Accessibility (A11y) Features
+- Mobile-First Design
+- Cross-Browser Compatibility
+- GitHub Pages Hosting
+
+/* CREDITS & THANKS */
+- Open Source Community – For tools, code & inspiration
+- Font Awesome – Icons
+- Google Fonts – Typography
+- Chart.js – Charts & Graphs
+- GitHub Pages – Hosting Support
