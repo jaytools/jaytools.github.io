@@ -8,6 +8,7 @@
 * {
     outline: none !important;
     box-shadow: none;
+    box-sizing: border-box;
 }
 body{
     font-family: 'Open Sans';
@@ -184,6 +185,22 @@ body, h1, h2, h3, h4, h5, h6 {
 
 #contact-us-page {
     padding-top: 100px; /* Adjust this value as needed to clear the fixed header */
+}
+
+/* Page Content Padding */
+.privacy-content,
+.disclaimer-content {
+  padding: 40px 30px; /* Adjusted vertical padding for mobile */
+  font-size: 16px; /* Adjusted for readability */
+  line-height: 1.7; /* Improved line spacing */
+  word-wrap: break-word; /* Ensure long words break */
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 1.5em; /* Adjust as needed for better visibility */
+        padding: 15px 0; /* Adjust padding for mobile */
+    }
 }
 
 /* Tool Cards Enhancement */
