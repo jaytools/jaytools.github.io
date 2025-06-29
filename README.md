@@ -87,7 +87,7 @@ We welcome contributions, bug reports, feature requests and general feedback!
 
 ## ⚖️ License
 
-Jay Tools is released under the **MIT License**.  
+Jay Tools is released under the **MIT License**.
 See the [LICENSE](./LICENSE) file for full details.
 
 ## 🙏 Credits & Acknowledgments
