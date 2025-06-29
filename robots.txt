@@ -1,33 +1,19 @@
-# Jay Tools Website Robots.txt
-# Updated: 2025-06-29
-
-# Allow all search engines
 User-agent: *
 Allow: /
 
-# Prevent crawling of search results and temp files
-Disallow: /*?*
-Disallow: /*.tmp$
-Disallow: /*.json$
+Sitemap: https://jaytools.github.io/sitemap.xml.txt
 
-# Sitemap
-Sitemap: https://jaytools.github.io/sitemap.xml
-
-# Google-specific bots
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
-Allow: /*.png$
-Allow: /*.jpg$
-Allow: /*.ico$
-Allow: /*.svg$
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
 
 User-agent: Mediapartners-Google
 Allow: /
 
 User-agent: Adsbot-Google
 Allow: /
-
-# Crawl delay recommendation
-Crawl-delay: 1
