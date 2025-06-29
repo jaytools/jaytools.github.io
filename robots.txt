@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jaytools.github.io/sitemap.xml.txt
+Sitemap: https://jaytools.github.io/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
