@@ -2,11 +2,11 @@
 
 ## Your Go-To Hub for Everyday Utility Tools 🛠️
 
-Jay Tools is a free and open-source website designed to provide a collection of simple, yet powerful, utility tools for everyone. Whether you're a student, a parent, or just someone looking for quick calculations and conversions, Jay Tools aims to simplify your daily tasks with its user-friendly and mobile-responsive interface. We believe in making essential tools accessible to all, without any cost or hidden fees.
+**Jay Tools** is a free and open-source website that provides a growing collection of simple, powerful and accessible tools for everyone. Whether you're a student, professional or a parent, Jay Tools helps you with quick calculations and everyday conversions - all in a clean, mobile-friendly interface.
 
 ## 🌐 Live Website
 
-Access all our tools directly at: <mcurl name="Jay Tools" url="https://jaytools.github.io/"></mcurl>
+🔗 **Visit Now**: [https://jaytools.github.io/](https://jaytools.github.io/)
 
 ## 🚀 Main Features
 
@@ -20,15 +20,12 @@ Access all our tools directly at: <mcurl name="Jay Tools" url="https://jaytools.
 
 We are continuously expanding our toolkit! Here are the tools you can use right now:
 
-*   **Pregnancy Weight Gain Calculator:** Track healthy weight gain during pregnancy.
 *   **CGPA to Percentage Calculator:** Convert your academic scores with ease.
-*   **IVF Due Date Calculator:** Estimate your due date for IVF pregnancies.
 *   **Steps to KM Converter:** Convert your daily steps into kilometers.
+*   **Pregnancy Weight Gain Calculator:** Track healthy weight gain during pregnancy.
+*   **IVF Due Date Calculator:** Estimate your due date for IVF pregnancies.
 *   **Typing Speed Test:** Improve your typing speed and accuracy.
-
-## 📸 Screenshots
-
-*(Screenshots will be added here soon!)*
+*   **More:** We are adding more tools regularly, stay tuned!
 
 ## 📂 Project Structure Sample
 
@@ -49,7 +46,6 @@ Jay-Tools/
 │   └── ... (image assets)
 ├── index.html
 ├── js/
-│   ├── app.js
 │   ├── bootstrap.min.js
 │   └── ... (other JS files)
 ├── privacy.html
@@ -60,17 +56,25 @@ Jay-Tools/
 
 ## 📧 Contact & Support
 
-For any inquiries, suggestions, or support, feel free to reach out to us at: jaytoolofficialweb@gmail.com
+📬 **Email**: [starofficial202503@gmail.com](mailto:starofficial202503@gmail.com)
+
+We welcome contributions, bug reports, feature requests and general feedback!
 
 ## ⚖️ License
 
-This project is licensed under the MIT License - see the <mcfile name="LICENSE" path="c:\Users\Shivam\OneDrive\Desktop\Jay-Tools\templete\LICENSE"></mcfile> file for details.
+Jay Tools is released under the **MIT License**.  
+See the [LICENSE](./LICENSE) file for full details.
 
-## 🙏 Acknowledgments
+## 🙏 Credits & Acknowledgments
 
-*   Inspired by and modified from the Rain theme.
-*   Special thanks to all contributors and the open-source community.
+- 🌧️ Inspired by the **Rain theme**
+- 🧑‍💻 Built with ❤️ by **Jay Prajapati**
+- 🙌 Thanks to the **Open Source Community**
+- 🎨 Icons by **Font Awesome**
+- 📊 Charts by **Chart.js**
+- 💡 Fonts by **Google Fonts**
+- 🚀 Hosting via **GitHub Pages**
 
 ---
 
-*Stay tuned for more tools and exciting updates! We plan to expand to 20+ utility tools in the near future.*
+*🔄 Stay tuned — new tools and enhancements are added regularly!*

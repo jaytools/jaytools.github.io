@@ -10,29 +10,29 @@ Language: English
 Doctype: HTML5
 IDE: Visual Studio Code
 Standards: HTML5, CSS3, JavaScript
-Frameworks/Libraries: Bootstrap, Font Awesome
-Source Control: Git & GitHub
+Libraries/Frameworks: Bootstrap, Font Awesome
+Source Control: Git, GitHub
 
-/* TECHNOLOGY USED */
+/* TECHNOLOGIES USED */
 - HTML5
 - CSS3 (Flexbox, Grid, Animations)
 - JavaScript (Vanilla)
 - Responsive Design
 - Progressive Web App (PWA)
 - Local Storage
-- Chart.js for Data Visualization
+- Chart.js (Data Visualization)
 
 /* SITE FEATURES */
 - Fully Responsive Design
 - Dark Mode Support
-- Accessibility (A11y) Features
+- Accessibility (A11y)
 - Mobile-First Design
 - Cross-Browser Compatibility
-- GitHub Pages Hosting
+- Hosted on GitHub Pages
 
 /* CREDITS & THANKS */
-- Open Source Community – For tools, code & inspiration
-- Font Awesome – Icons
-- Google Fonts – Typography
-- Chart.js – Charts & Graphs
-- GitHub Pages – Hosting Support
+- Open Source Community (for tools, inspiration)
+- Font Awesome (icons)
+- Google Fonts (typography)
+- Chart.js (charts & graphs)
+- GitHub Pages (free hosting)

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Terms and Conditions - Jay Tools | User Agreement & Service Policy</title>
@@ -27,7 +28,7 @@
 		<link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png">
 		<link rel="icon" type="image/png" sizes="192x192" href="web-app-manifest-192x192.png">
 		<link rel="manifest" href="site.webmanifest">
-		<meta name="theme-color" content="#ffffff">
+		
 		
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -36,11 +37,12 @@
 	    <link rel="stylesheet" href="css/custom.css">
 	    <link rel="stylesheet" href="css/rules.css">
 	    <link rel="stylesheet" href="css/preloader.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 	    <!-- JS -->
-	    <script src="js/script.js"></script>
-		<script src="js/wow.min.js"></script>
-		<script src="js/preloader.js"></script>
+	    <script src="js/script.js" defer></script>
+		<script src="js/wow.min.js" defer></script>
+		<script src="js/preloader.js" defer></script>
 
 	</head>
 
@@ -204,12 +206,12 @@
             <h2 id="footer-about-heading" class="footer-heading"><i class="fa fa-gear footer-icon" aria-hidden="true"></i> About Jay Tools</h2>
             <hr>
             <p class="about-paragraph">Jay Tools offers smart, free tools for learning, fitness and daily tasks empowering users with accurate, easy-to-use calculators and utilities.</p>
-            <p class="contact-info">📧 <span>Contact:</span> <a href="mailto:jaytoolofficialweb@gmail.com" title="Email Jay Tools">jaytoolofficialweb@gmail.com</a></p>
+            <p class="contact-info">📧 <span>Contact:</span> <a href="mailto:starofficial202503@gmail.com" title="Email Jay Tools">starofficial202503@gmail.com</a></p>
             <nav class="social-icons" aria-label="Social Media Links">
-              <a href="#" title="Instagram" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-              <a href="#" title="YouTube" aria-label="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-              <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-              <a href="https://github.com/jaytools" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+              <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+              <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+              <a href=" https://github.com/jaytools " target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
             </nav>
           </div>
         </section>
@@ -242,80 +244,9 @@
       </div>
     </div>
   </footer>
-
-		<!-- Scroll to Top Button -->
-		<button class="scroll-to-top" id="scrollToTop">
-			<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-		</button>
-
-		<!-- JavaScript -->
-		<script>
- 			new WOW().init();
-		</script>
-		
-		<!-- Tool Search Functionality -->
-		<script>
-			$(document).ready(function() {
-				// Tool search functionality
-				$('#toolSearch').on('keyup', function() {
-					var searchTerm = $(this).val().toLowerCase();
-					var hasResults = false;
-					
-					$('.tool-item').each(function() {
-						var toolData = $(this).data('tool').toLowerCase();
-						var toolTitle = $(this).find('h4').text().toLowerCase();
-						
-						if (toolData.includes(searchTerm) || toolTitle.includes(searchTerm)) {
-							$(this).show();
-							hasResults = true;
-						} else {
-							$(this).hide();
-						}
-					});
-					
-					// Show/hide no results message
-					if (hasResults || searchTerm === '') {
-						$('#noResults').hide();
-					} else {
-						$('#noResults').show();
-					}
-				});
-				
-				// Scroll to top functionality
-				$(window).scroll(function() {
-					if ($(this).scrollTop() > 300) {
-						$('#scrollToTop').addClass('show');
-					} else {
-						$('#scrollToTop').removeClass('show');
-					}
-				});
-				
-				$('#scrollToTop').click(function() {
-					$('html, body').animate({scrollTop: 0}, 600);
-					
-					return false;
-				});
-				
-				// Smooth scrolling for navigation links
-				$('a[href^="#"]').on('click', function(event) {
-					var target = $(this.getAttribute('href'));
-					if (target.length) {
-						event.preventDefault();
-						$('html, body').stop().animate({
-							scrollTop: target.offset().top - 70
-						}, 1000);
-					}
-				});
-			});
-		</script>
-		
-        <script src="js/smoothscroll.js"></script>
-		<script src="js/script.js"></script>
-		<script src="js/app.js"></script>
 	<!-- Scroll to Top Button -->
 	<button class="scroll-to-top" id="scrollToTop">
-		<i class="fa fa-chevron-up"></i>
+		<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 	</button>
-
-	</body>
+</body>
 </html>
