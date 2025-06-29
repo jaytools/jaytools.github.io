@@ -34,24 +34,49 @@ Jay-Tools/
 ├── LICENSE
 ├── README.md
 ├── about.html
+├── apple-touch-icon.png
 ├── contact.html
 ├── css/
-│   ├── animate.css
 │   ├── bootstrap.min.css
 │   ├── contact-styles.css
-│   └── ... (other CSS files)
+│   ├── custom.css
+│   ├── font-awesome.min.css
+│   ├── preloader.css
+│   └── rules.css
+├── disclaimer.html
+├── dmca.html
+├── favicon-96x96.png
+├── favicon.ico
+├── favicon.svg
 ├── fonts/
-│   └── ... (font files)
+│   ├── FontAwesome.otf
+│   ├── fontawesome-webfont.eot
+│   ├── fontawesome-webfont.svg
+│   ├── fontawesome-webfont.ttf
+│   ├── fontawesome-webfont.woff
+│   ├── fontawesome-webfont.woff2
+│   ├── ionicons.eot
+│   ├── ionicons.svg
+│   ├── ionicons.ttf
+│   └── ionicons.woff
+├── google305f83a131c75f3d.html
+├── human.txt
 ├── img/
-│   └── ... (image assets)
+│   └── Jay_img.jpeg
 ├── index.html
 ├── js/
 │   ├── bootstrap.min.js
-│   └── ... (other JS files)
+│   ├── preloader.js
+│   └── script.js
 ├── privacy.html
 ├── robots.txt
+├── site.webmanifest
 ├── sitemap.xml
-└── terms.html
+├── terms.html
+├── tools/
+│   └── sample.html
+├── web-app-manifest-192x192.png
+└── web-app-manifest-512x512.png
 ```
 
 ## 📧 Contact & Support
