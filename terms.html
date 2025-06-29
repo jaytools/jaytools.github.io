@@ -33,193 +33,219 @@
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 	    <!-- CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/owl.carousel.css">
-		<link rel="stylesheet" href="css/owl.theme.css">
-		<link rel="stylesheet" href="css/owl.transitions.css">
-	    <link rel="stylesheet" href="css/animate.css">
-	    <link rel="stylesheet" href="js/nivo-lightbox/nivo-lightbox.css">
-		<link rel="stylesheet" href="js/nivo-lightbox/nivo-lightbox-theme.css">
 	    <link rel="stylesheet" href="css/custom.css">
 	    <link rel="stylesheet" href="css/rules.css">
+	    <link rel="stylesheet" href="css/preloader.css">
 
 	    <!-- JS -->
-	    <script src="js/jquery.min.js"></script>
-	    <script src="js/bootstrap.min.js"></script>
-	    <script src="js/owl.carousel.min.js"></script>
+	    <script src="js/script.js"></script>
 		<script src="js/wow.min.js"></script>
-		<script src="js/jquery.actual.min.js"></script>
+		<script src="js/preloader.js"></script>
+
 	</head>
 
-	<body data-spy="scroll" data-target="#navbar-example">
-		<!-- Preloader -->
-		<div id="preloader"></div>
+	<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+    <div class="loading-text">Loading Jay Tools...</div>
+  </div>
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="Jay Tools Home">Jay Tools</a>
+    <form class="header-search" role="search" aria-label="Site Search" onsubmit="event.preventDefault();">
+        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
+        <button type="submit" aria-label="Submit search">
+          <svg width="22" height="22" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </form>
+      <button class="search-toggle" id="searchToggle" aria-label="Open search" tabindex="0" style="display:none">
+        <svg width="24" height="24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+    <nav class="nav" id="navbar" aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <button class="menu-icon" id="menuIcon" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false" tabindex="0">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </svg>
+    </button>
+    <div class="mobile-search-modal" id="mobileSearchModal" style="display:none">
+      <form class="mobile-search-form" role="search" aria-label="Mobile Site Search" onsubmit="event.preventDefault();">
+        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
+        <button type="submit" aria-label="Submit search">
+          <svg width="20" height="20" fill="none" stroke="#7f8c8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <button type="button" class="close-mobile-search" id="closeMobileSearch" aria-label="Close search">&times;</button>
+      </form>
+    </div>
+  </header>
 
-		<section id="navigation-scroll">
-			<nav class="navbar navbar-default navbar-fixed-top">
-			  <div class="container">
-			    <div class="navbar-header">
-			      <a class="navbar-brand" href="index.html"><strong>Jay Tools</strong></a>
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-example">
-			        <span class="sr-only">Toggle navigation</span>
-			        <i class="fa fa-bars open-icon"></i>
-			        <i class="fa fa-times close-icon"></i>
-			      </button>
-			    </div>
-
-			    <div class="collapse navbar-collapse" id="navbar-example">
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="index.html">Home</a></li>
-	  				<li><a href="about.html">About Us</a></li>
-	    				<li><a href="index.html#tools">Tools</a></li>
-	    				<li><a href="contact.html">Contact</a></li>
-			      </ul>
-			    </div>
-			  </div>
-			</nav>
-		</section>
-
-		<div class="container privacy-content">
-			<h1>Terms and Conditions</h1>
-			<p>Last updated: June 25, 2025</p>
-			<p>Please read these terms and conditions carefully before using Our Service.</p>
-			<h2>Interpretation and Definitions</h2>
-			<h3>Interpretation</h3>
-			<p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
-			<h3>Definitions</h3>
-			<p>For the purposes of these Terms and Conditions:</p>
-			<ul>
+  <main>
+		<section class="rules-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 content-section">
+            <h2 class="section-heading">Terms and Conditions</h2>
+			<p class="content-paragraph">Last updated: June 25, 2025</p>
+			<p class="content-paragraph">Please read these terms and conditions carefully before using Our Service.</p>
+			<h2 class="section-heading">Interpretation and Definitions</h2>
+			<h3 class="sub-heading">Interpretation</h3>
+			<p class="content-paragraph">The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+			<h3 class="sub-heading">Definitions</h3>
+			<p class="content-paragraph">For the purposes of these Terms and Conditions:</p>
+			<ul class="content-list">
 				<li>
-					<p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
+					<p class="content-paragraph"><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
 				</li>
 				<li>
-					<p><strong>Country</strong> refers to: Gujarat, India</p>
+					<p class="content-paragraph"><strong>Country</strong> refers to: Gujarat, India</p>
 				</li>
 				<li>
-					<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Jay Tools.</p>
+					<p class="content-paragraph"><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Jay Tools.</p>
 				</li>
 				<li>
-					<p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
+					<p class="content-paragraph"><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
 				</li>
 				<li>
-					<p><strong>Service</strong> refers to the Website.</p>
+					<p class="content-paragraph"><strong>Service</strong> refers to the Website.</p>
 				</li>
 				<li>
-					<p><strong>Terms and Conditions</strong> (also referred as &quot;Terms&quot;) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the <a href="https://www.termsfeed.com/terms-conditions-generator/" target="_blank">Terms and Conditions Generator</a>.</p>
+					<p class="content-paragraph"><strong>Terms and Conditions</strong> (also referred as &quot;Terms&quot;) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the <a href="https://www.termsfeed.com/terms-conditions-generator/" target="_blank">Terms and Conditions Generator</a>.</p>
 				</li>
 				<li>
-					<p><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p>
+					<p class="content-paragraph"><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p>
 				</li>
 				<li>
-					<p><strong>Website</strong> refers to Jay Tools, accessible from <a href="https://jaytools.github.io/" rel="external nofollow noopener" target="_blank">https://jaytools.github.io/</a></p>
+					<p class="content-paragraph"><strong>Website</strong> refers to Jay Tools, accessible from <a href="https://jaytools.github.io/" rel="external nofollow noopener" target="_blank">https://jaytools.github.io/</a></p>
 				</li>
 				<li>
-					<p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
+					<p class="content-paragraph"><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
 				</li>
 			</ul>
-			<h2>Acknowledgment</h2>
-			<p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
-			<p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</p>
-			<p>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>
-			<p>You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.</p>
-			<p>Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
-			<h2>Links to Other Websites</h2>
-			<p>Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.</p>
-			<p>The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
-			<p>We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.</p>
-			<h2>Termination</h2>
-			<p>We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.</p>
-			<p>Upon termination, Your right to use the Service will cease immediately.</p>
-			<h2>Limitation of Liability</h2>
-			<p>Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.</p>
-			<p>To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.</p>
-			<p>Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.</p>
-			<h2>&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</h2>
-			<p>The Service is provided to You &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.</p>
-			<p>Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.</p>
-			<p>Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.</p>
-			<h2>Governing Law</h2>
-			<p>The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
-			<h2>Disputes Resolution</h2>
-			<p>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
-			<h2>For European Union (EU) Users</h2>
-			<p>If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which You are resident.</p>
-			<h2>United States Legal Compliance</h2>
-			<p>You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a &quot;terrorist supporting&quot; country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.</p>
-			<h2>Severability and Waiver</h2>
-			<h3>Severability</h3>
-			<p>If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.</p>
-			<h3>Waiver</h3>
-			<p>Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not affect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.</p>
-			<h2>Translation Interpretation</h2>
-			<p>These Terms and Conditions may have been translated if We have made them available to You on our Service.
+			<h2 class="section-heading">Acknowledgment</h2>
+			<p class="content-paragraph">These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
+			<p class="content-paragraph">Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</p>
+			<p class="content-paragraph">By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>
+			<p class="content-paragraph">You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.</p>
+			<p class="content-paragraph">Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
+			<h2 class="section-heading">Links to Other Websites</h2>
+			<p class="content-paragraph">Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.</p>
+			<p class="content-paragraph">The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
+			<p class="content-paragraph">We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.</p>
+			<h2 class="section-heading">Termination</h2>
+			<p class="content-paragraph">We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.</p>
+			<p class="content-paragraph">Upon termination, Your right to use the Service will cease immediately.</p>
+			<h2 class="section-heading">Limitation of Liability</h2>
+			<p class="content-paragraph">Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.</p>
+			<p class="content-paragraph">To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.</p>
+			<p class="content-paragraph">Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.</p>
+			<h2 class="section-heading">&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</h2>
+			<p class="content-paragraph">The Service is provided to You &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.</p>
+			<p class="content-paragraph">Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.</p>
+			<p class="content-paragraph">Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.</p>
+			<h2 class="section-heading">Governing Law</h2>
+			<p class="content-paragraph">The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
+			<h2 class="section-heading">Disputes Resolution</h2>
+			<p class="content-paragraph">If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
+			<h2 class="section-heading">For European Union (EU) Users</h2>
+			<p class="content-paragraph">If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which You are resident.</p>
+			<h2 class="section-heading">United States Legal Compliance</h2>
+			<p class="content-paragraph">You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a &quot;terrorist supporting&quot; country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.</p>
+			<h2 class="section-heading">Severability and Waiver</h2>
+			<h3 class="sub-heading">Severability</h3>
+			<p class="content-paragraph">If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.</p>
+			<h3 class="sub-heading">Waiver</h3>
+			<p class="content-paragraph">Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not affect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.</p>
+			<h2 class="section-heading">Translation Interpretation</h2>
+			<p class="content-paragraph">These Terms and Conditions may have been translated if We have made them available to You on our Service.
 			You agree that the original English text shall prevail in the case of a dispute.</p>
-			<h2>Changes to These Terms and Conditions</h2>
-			<p>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.</p>
-			<p>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
-			<h2>Contact Us</h2>
-			<p>If you have any questions about these Terms and Conditions, You can contact us:</p>
-			<ul>
+			<h2 class="section-heading">Changes to These Terms and Conditions</h2>
+			<p class="content-paragraph">We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.</p>
+			<p class="content-paragraph">By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
+			<h2 class="section-heading">Contact Us</h2>
+			<p class="content-paragraph">If you have any questions about these Terms and Conditions, You can contact us:</p>
+			<ul class="content-list">
 				<li>
-					<p>By email: starofficial202503@gmail.com</p>
+					<p class="content-paragraph">By email: starofficial202503@gmail.com</p>
 				</li>
 				<li>
-					<p>By visiting this page on our website: <a href="https://jaytools.github.io/contact.html" rel="external nofollow noopener" target="_blank">https://jaytools.github.io/contact.html</a></p>
+					<p class="content-paragraph">By visiting this page on our website: <a href="https://jaytools.github.io/contact.html" rel="external nofollow noopener" target="_blank">https://jaytools.github.io/contact.html</a></p>
 				</li>
-			</ul>
-		
+			</ul>	
+          </div>
+        </div>
+      </div>
+    </section>
 			<!-- Footer -->
 		</div>
-		<footer class="footer-section">
-			<div class="container">
-				<div class="row footer-content">
-					<div class="col-md-4 col-sm-6 footer-col">
-						<div class="footer-about">
-							<h4 class="footer-heading"><i class="fa fa-gear footer-icon"></i> About Jay Tools</h4>
-							<p>Jay Tools is a free online platform to access smart tools for daily tasks, learning, fitness, and productivity.</p>
-							<p class="contact-info">📧 Contact: <a href="mailto:jaytoolofficialweb@gmail.com">jaytoolofficialweb@gmail.com</a></p>
-							<div class="social-icons">
-								<a href="#"><i class="fa fa-instagram"></i></a>
-								<a href="#"><i class="fa fa-youtube"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-								<a href="https://github.com/jaytools" target="_blank"><i class="fa fa-github"></i></a>
-							</div>
-						</div>
-					</div>
+	</main>
 
-					<div class="col-md-4 col-sm-6 footer-col">
-						<h4 class="footer-heading">Tools & Features</h4>
-						<ul class="footer-links">
-							<li><a href="#">CGPA to Percentage Calculator</a></li>
-							<li><a href="#">Date to Age Calculator</a></li>
-							<li><a href="#">Pregnancy Weight Gain Calculator</a></li>
-							<li><a href="#">Calories Burned Walking</a></li>
-							<li><a href="#">Typing Speed Test</a></li>
-							<li><a href="#">All Tools</a></li>
-						</ul>
-					</div>
+  <footer class="footer-section" aria-label="Site Footer">
+    <div class="container">
+      <div class="row footer-content">
+        <section class="col-md-4 col-sm-6 footer-col" aria-labelledby="footer-about-heading">
+          <div class="footer-about">
+            <h2 id="footer-about-heading" class="footer-heading"><i class="fa fa-gear footer-icon" aria-hidden="true"></i> About Jay Tools</h2>
+            <hr>
+            <p class="about-paragraph">Jay Tools offers smart, free tools for learning, fitness and daily tasks empowering users with accurate, easy-to-use calculators and utilities.</p>
+            <p class="contact-info">📧 <span>Contact:</span> <a href="mailto:jaytoolofficialweb@gmail.com" title="Email Jay Tools">jaytoolofficialweb@gmail.com</a></p>
+            <nav class="social-icons" aria-label="Social Media Links">
+              <a href="#" title="Instagram" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" title="YouTube" aria-label="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+              <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              <a href="https://github.com/jaytools" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </nav>
+          </div>
+        </section>
+        <nav class="col-md-4 col-sm-6 footer-col" aria-labelledby="footer-tools-heading">
+          <h2 id="footer-tools-heading" class="footer-heading">Tools & Features</h2>
+          <hr>
+          <ul class="footer-links" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <li><a href="#" title="CGPA to Percentage Calculator" itemprop="url"><span itemprop="name">CGPA to Percentage Calculator</span></a></li>
+            <li><a href="#" title="Date to Age Calculator" itemprop="url"><span itemprop="name">Date to Age Calculator</span></a></li>
+            <li><a href="#" title="Pregnancy Weight Gain Calculator" itemprop="url"><span itemprop="name">Pregnancy Weight Gain Calculator</span></a></li>
+            <li><a href="#" title="Calories Burned Walking" itemprop="url"><span itemprop="name">Calories Burned Walking</span></a></li>
+            <li><a href="#" title="Typing Speed Test" itemprop="url"><span itemprop="name">Typing Speed Test</span></a></li>
 
-					<div class="col-md-4 col-sm-12 footer-col">
-						<h4 class="footer-heading">Legal & Info</h4>
-						<ul class="footer-links">
-							<li><a href="terms.html">Terms of Service</a></li>
-							<li><a href="privacy.html">Privacy Policy</a></li>
-							<li><a href="dmca.html">DMCA Notice</a></li>
-							<li><a href="disclaimer.html">Disclaimer</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="footer-bottom">
-					<p>&copy; 2025 Jay Tools. All Rights Reserved.</p>
-				</div>
-			</div>
-		</footer>
+          </ul>
+        </nav>
+        <nav class="col-md-4 col-sm-12 footer-col" aria-labelledby="footer-legal-heading">
+          <h2 id="footer-legal-heading" class="footer-heading">Legal & Info</h2>
+          <hr>
+          <ul class="footer-links" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <li><a href="terms.html" title="Terms of Service" itemprop="url"><span itemprop="name">Terms of Service</span></a></li>
+            <li><a href="privacy.html" title="Privacy Policy" itemprop="url"><span itemprop="name">Privacy Policy</span></a></li>
+            <li><a href="dmca.html" title="DMCA Notice" itemprop="url"><span itemprop="name">DMCA Notice</span></a></li>
+            <li><a href="disclaimer.html" title="Disclaimer" itemprop="url"><span itemprop="name">Disclaimer</span></a></li>
+            <li><a href="contact.html" title="Contact Us" itemprop="url"><span itemprop="name">Contact Us</span></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span itemprop="copyrightYear">2025</span> <span itemprop="copyrightHolder">Jay Tools</span>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
 		<!-- Scroll to Top Button -->
 		<button class="scroll-to-top" id="scrollToTop">
-			<i class="fa fa-chevron-up"></i>
+			<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 		</button>
 
 		<!-- JavaScript -->
@@ -283,13 +309,13 @@
 			});
 		</script>
 		
-        <script src="js/jquery-ui-1.10.3.min.js"></script>
-        <script src="js/jquery.knob.js"></script>
-        <script src="js/daterangepicker.js"></script>
-        <script src="js/bootstrap3-wysihtml5.all.min.js"></script>
         <script src="js/smoothscroll.js"></script>
-        <script src="js/nivo-lightbox/nivo-lightbox.min.js"></script>
 		<script src="js/script.js"></script>
 		<script src="js/app.js"></script>
+	<!-- Scroll to Top Button -->
+	<button class="scroll-to-top" id="scrollToTop">
+		<i class="fa fa-chevron-up"></i>
+	</button>
+
 	</body>
 </html>

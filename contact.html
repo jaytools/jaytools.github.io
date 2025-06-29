@@ -15,7 +15,7 @@
 		<meta property="og:title" content="Jay Tools - Contact Us">
 		<meta property="og:description" content="Reach out to Jay Tools for any questions or feedback.">
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://jaytools.com/contact.html">
+		<meta property="og:url" content="https://jaytools.github.io/contact.html">
 		
 		<!-- Twitter Card Tags -->
 		<meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,7 @@
 		<meta name="twitter:description" content="Get in touch with Jay Tools for feedback, support, bug reports and suggestions. We're here to help with your calculator and tool needs.">
 		
 		<!-- Canonical URL -->
-		<link rel="canonical" href="https://jaytools.com/contact.html">
+		<link rel="canonical" href="https://jaytools.github.io/contact.html">
 		
 		<!-- Favicon -->
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -37,101 +37,118 @@
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-	    <!-- CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/owl.carousel.css">
-		<link rel="stylesheet" href="css/owl.theme.css">
-		<link rel="stylesheet" href="css/owl.transitions.css">
-	    <link rel="stylesheet" href="css/animate.css">
-	    <link rel="stylesheet" href="js/nivo-lightbox/nivo-lightbox.css">
-		<link rel="stylesheet" href="js/nivo-lightbox/nivo-lightbox-theme.css">
-	    <link rel="stylesheet" href="css/custom.css">
-		<link rel="stylesheet" href="css/contact-styles.css">
+		<!-- css -->
+		<link rel="stylesheet" href="css/custom.css">
+  		<link rel="stylesheet" href="css/contact-styles.css">
+  		<link rel="stylesheet" href="css/preloader.css">
 
-	    <!-- JS -->
-	    <script src="js/jquery.min.js"></script>
-	    <script src="js/bootstrap.min.js"></script>
-	    <script src="js/owl.carousel.min.js"></script>
-		<script src="js/wow.min.js"></script>
-		<script src="js/jquery.actual.min.js"></script>
-	</head>
+  		<!-- JS -->
+  		<script src="js/jquery.min.js"></script>
+  		<script src="js/bootstrap.min.js"></script>
+  		<script src="js/owl.carousel.min.js"></script>
+  		<script src="js/preloader.js"></script>
+</head>
 
-	<body data-spy="scroll" data-target="#navbar-example">
-		<!-- Preloader -->
-		<div id="preloader"></div>
-
-		<section id="navigation-scroll">
-			<nav class="navbar navbar-default navbar-fixed-top">
-			  <div class="container">
-			    <div class="navbar-header">
-			      <a class="navbar-brand" href="index.html"><strong>Jay Tools</strong></a>
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-example">
-			        <span class="sr-only">Toggle navigation</span>
-			        <i class="fa fa-bars open-icon"></i>
-			        <i class="fa fa-times close-icon"></i>
-			      </button>
-			    </div>
-
-			    <div class="collapse navbar-collapse" id="navbar-example">
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="index.html">Home</a></li>
-	  				<li><a href="about.html">About Us</a></li>
-	    			<li><a href="#tools">Tools</a></li>
-	    			<li><a href="contact.html" class="active">Contact</a></li>
-			      </ul>
-			    </div>
-					  </div>
-					</nav>
-				</section>
+<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+    <div class="loading-text">Loading Jay Tools...</div>
+  </div>
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="Jay Tools Home">Jay Tools</a>
+    <form class="header-search" role="search" aria-label="Site Search" onsubmit="event.preventDefault();">
+        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
+        <button type="submit" aria-label="Submit search">
+          <svg width="22" height="22" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </form>
+      <button class="search-toggle" id="searchToggle" aria-label="Open search" tabindex="0" style="display:none">
+        <svg width="24" height="24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+    <nav class="nav" id="navbar" aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <button class="menu-icon" id="menuIcon" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false" tabindex="0">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </svg>
+    </button>
+    <div class="mobile-search-modal" id="mobileSearchModal" style="display:none">
+      <form class="mobile-search-form" role="search" aria-label="Mobile Site Search" onsubmit="event.preventDefault();">
+        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
+        <button type="submit" aria-label="Submit search">
+          <svg width="20" height="20" fill="none" stroke="#7f8c8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <button type="button" class="close-mobile-search" id="closeMobileSearch" aria-label="Close search">&times;</button>
+      </form>
+    </div>
+  </header>
+  <main>
 
 		<!-- Contact -->
-	    <section id="contact-us-page">
-	    	<div class="container">
+	    <section id="contact-main-content">
+	    	<div class="contact-container">
 				<!-- Header Section -->
-				<div class="row text-center heading">
-					<div class="wow animated zoomInDown heading-text">
+				<div class="contact-header">
+					<div class="heading-text">
 						<h3>Get in Touch</h3>
 	                	<hr class="full">
-	                	<p class="lead">Have questions, suggestions, or need support? We’re here to help! Choose the best way to reach us.</p>
+	                	<p class="lead">Have questions, suggestions or need support? We are here to help! Choose the best way to reach us.</p>
 	                </div>
 				</div>
 
 				<!-- Contact Methods -->
-				<div class="row main_content">
+				<div class="contact-methods">
 					<div class="col-md-6 col-md-offset-3 text-center">
 						<h4>Contact Methods</h4>
-						<p><strong>Email:</strong> <a href="mailto:jaytoolofficialweb@gmail.com">jaytoolofficialweb@gmail.com</a></p>
+						<p><strong>Email:</strong> <a href="mailto:jaytoolofficialweb@gmail.com" style="color: #FF5733;">jaytoolofficialweb@gmail.com</a></p>
 						<p>We strive to reply to all inquiries within <strong>24 hours</strong>.</p>
-						<p>For common questions, please check our <a href="#faq-section">FAQ section</a> below.</p>
+						<p>For common questions, please check our <a href="#faq-section">Frequently Asked Questions</a> below.</p>
 					</div>
 				</div>
 
 				<!-- Contact Form Section -->
-				<div class="row main_content">
+				<div class="contact-form-section">
 					<div class="col-md-8 col-md-offset-2">
 						<h4 class="text-center">Send Us a Message</h4>
 						<form method="post" action="#" class="contact-form">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Your Name" required>
+								<input type="text" class="form-control" placeholder="Your Name" required autocomplete="name">
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Your Email" required>
+								<input type="email" class="form-control" placeholder="Your Email" required autocomplete="email">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Subject">
+								<input type="text" class="form-control" placeholder="Subject" autocomplete="off">
 							</div>
 							<div class="form-group">
-								<textarea class="form-control" rows="6" placeholder="Your Message" required></textarea>
+								<textarea class="form-control" rows="6" placeholder="Your Message" required autocomplete="off"></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary btn-block">Send Message</button>
+							<button type="submit" class="btn btn-primary btn-block">Submit Inquiry</button>
 							<p class="text-center help-note">We’ll get back to you as soon as possible.</p>
 						</form>
 					</div>
 				</div>
 
 				<!-- Need Help Section -->
-				<div class="row main_content">
+				<div class="need-help-section">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<h4>Need Help?</h4>
 						<p>Have questions or need assistance? Reach out through any of these channels or explore our resources.</p>
@@ -139,7 +156,7 @@
 				</div>
 
 				<!-- FAQ Section (Optional) -->
-				<div id="faq-section" class="row main_content">
+				<div id="faq-section" class="faq-section-content">
 					<div class="col-md-8 col-md-offset-2">
 						<h4 class="text-center">Frequently Asked Questions</h4>
 						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -191,59 +208,60 @@
 			</div>
 	    </section>
 			
-		<!-- Footer -->
-		<footer class="footer-section">
-			<div class="container">
-				<div class="row footer-content">
-					<div class="col-md-4 col-sm-6 footer-col">
-						<div class="footer-about">
-							<h4 class="footer-heading"><i class="fa fa-gear footer-icon"></i> About Jay Tools</h4>
-							<p>Jay Tools is a free online platform to access smart tools for daily tasks, learning, fitness, and productivity.</p>
-							<p class="contact-info">📧 Contact: <a href="mailto:jaytoolofficialweb@gmail.com">jaytoolofficialweb@gmail.com</a></p>
-							<div class="social-icons">
-								<a href="#"><i class="fa fa-instagram"></i></a>
-								<a href="#"><i class="fa fa-youtube"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-								<a href="https://github.com/jaytools" target="_blank"><i class="fa fa-github"></i></a>
-							</div>
-						</div>
-					</div>
+  <footer class="footer-section" aria-label="Site Footer">
+    <div class="container">
+      <div class="row footer-content">
+        <section class="col-md-4 col-sm-6 footer-col" aria-labelledby="footer-about-heading">
+          <div class="footer-about">
+            <h2 id="footer-about-heading" class="footer-heading"><i class="fa fa-gear footer-icon" aria-hidden="true"></i> About Jay Tools</h2>
+            <hr>
+            <p class="about-paragraph">Jay Tools offers smart, free tools for learning, fitness and daily tasks empowering users with accurate, easy-to-use calculators and utilities.</p>
+            <p class="contact-info">📧 <span>Contact:</span> <a href="mailto:jaytoolofficialweb@gmail.com" title="Email Jay Tools">jaytoolofficialweb@gmail.com</a></p>
+            <nav class="social-icons" aria-label="Social Media Links">
+              <a href="#" title="Instagram" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" title="YouTube" aria-label="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+              <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              <a href="https://github.com/jaytools" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </nav>
+          </div>
+        </section>
+        <nav class="col-md-4 col-sm-6 footer-col" aria-labelledby="footer-tools-heading">
+          <h2 id="footer-tools-heading" class="footer-heading">Tools & Features</h2>
+          <hr>
+          <ul class="footer-links" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <li><a href="#" title="CGPA to Percentage Calculator" itemprop="url"><span itemprop="name">CGPA to Percentage Calculator</span></a></li>
+            <li><a href="#" title="Date to Age Calculator" itemprop="url"><span itemprop="name">Date to Age Calculator</span></a></li>
+            <li><a href="#" title="Pregnancy Weight Gain Calculator" itemprop="url"><span itemprop="name">Pregnancy Weight Gain Calculator</span></a></li>
+            <li><a href="#" title="Calories Burned Walking" itemprop="url"><span itemprop="name">Calories Burned Walking</span></a></li>
+            <li><a href="#" title="Typing Speed Test" itemprop="url"><span itemprop="name">Typing Speed Test</span></a></li>
 
-					<div class="col-md-4 col-sm-6 footer-col">
-						<h4 class="footer-heading">Tools & Features</h4>
-						<ul class="footer-links">
-							<li><a href="#">CGPA to Percentage Calculator</a></li>
-							<li><a href="#">Date to Age Calculator</a></li>
-							<li><a href="#">Pregnancy Weight Gain Calculator</a></li>
-							<li><a href="#">Calories Burned Walking</a></li>
-							<li><a href="#">Typing Speed Test</a></li>
-							<li><a href="#">All Tools</a></li>
-						</ul>
-					</div>
+          </ul>
+        </nav>
+        <nav class="col-md-4 col-sm-12 footer-col" aria-labelledby="footer-legal-heading">
+          <h2 id="footer-legal-heading" class="footer-heading">Legal & Info</h2>
+          <hr>
+          <ul class="footer-links" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <li><a href="terms.html" title="Terms of Service" itemprop="url"><span itemprop="name">Terms of Service</span></a></li>
+            <li><a href="privacy.html" title="Privacy Policy" itemprop="url"><span itemprop="name">Privacy Policy</span></a></li>
+            <li><a href="dmca.html" title="DMCA Notice" itemprop="url"><span itemprop="name">DMCA Notice</span></a></li>
+            <li><a href="disclaimer.html" title="Disclaimer" itemprop="url"><span itemprop="name">Disclaimer</span></a></li>
+            <li><a href="contact.html" title="Contact Us" itemprop="url"><span itemprop="name">Contact Us</span></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span itemprop="copyrightYear">2025</span> <span itemprop="copyrightHolder">Jay Tools</span>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-					<div class="col-md-4 col-sm-12 footer-col">
-						<h4 class="footer-heading">Legal & Info</h4>
-						<ul class="footer-links">
-							<li><a href="terms.html">Terms of Service</a></li>
-							<li><a href="privacy.html">Privacy Policy</a></li>
-							<li><a href="dmca.html">DMCA Notice</a></li>
-							<li><a href="disclaimer.html">Disclaimer</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="footer-bottom">
-					<p>&copy; 2025 Jay Tools. All Rights Reserved.</p>
-				</div>
-			</div>
-		</footer>
+	
 
-		<!-- Scroll to Top Button -->
-		<button class="scroll-to-top" id="scrollToTop">
-			<i class="fa fa-chevron-up"></i>
-		</button>
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+    <button class="scroll-to-top" aria-label="Scroll to top">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
 
-		<!-- Main JS -->
-		<script src="js/script.js"></script>
-	</body>
+</body>
 </html>
