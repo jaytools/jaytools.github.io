@@ -6,7 +6,7 @@
 
 ## 🌐 Live Website
 
-🔗 **Visit Now**: [https://jaytools.github.io/](https://jaytools.github.io/)
+🔗 **Visit Now**: [https://jay-tools.com](https://jay-tools.com)
 
 ## 🚀 Main Features
 
