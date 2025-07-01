@@ -1,210 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>About Jay Tools - Free Online Calculators & Utility Tools</title>
-		
-		<!-- SEO Meta Tags -->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Discover the mission and story behind Jay Tools - a hub of free online calculators, converters and helpful tools designed for students, developers and everyday users.">
-		<meta name="keywords" content="Jay Tools, about Jay Tools, free calculators, online converters, utility tools, developer tools, student tools">
-		<meta name="robots" content="index, follow">
-		<meta name="author" content="Jay Prajapati">
-		
-		<!-- Open Graph Tags -->
-		<meta property="og:title" content="About Jay Tools - Free Online Calculators & Utility Tools">
-		<meta property="og:description" content="Discover the mission and story behind Jay Tools - a hub of free online calculators, converters and helpful tools designed for students, developers and everyday users.">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://jaytools.github.io/about.html">
-		<meta property="og:image" content="img/Jay_img.jpeg">
-		
-		<!-- Twitter Card Tags -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="About Jay Tools - Free Online Calculators & Utility Tools">
-		<meta name="twitter:description" content="Discover the mission and story behind Jay Tools - a hub of free online calculators, converters and helpful tools designed for students, developers and everyday users.">
-		
-		<!-- Canonical URL -->
-		<link rel="canonical" href="https://jaytools.github.io/about.html" />
-		
-		<!-- Favicon -->
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png">
-		<link rel="icon" type="image/png" sizes="192x192" href="web-app-manifest-192x192.png">
-		<link rel="manifest" href="site.webmanifest">
-		
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jay Tools | Simple and Convenient Web Tools</title>
+    <meta name="description" content="Discover the mission and story behind Jay Tools - a hub of free online calculators, converters and helpful tools designed for students, developers and everyday users.">
+    <meta name="keywords" content="Jay Tools, about Jay Tools, free calculators, online converters, utility tools, developer tools, student tools">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jay Prajapati">
 
-  <!-- css -->
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/preloader.css">
-  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css ">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="About Jay Tools - Free Online Calculators & Utility Tools">
+    <meta property="og:description" content="Discover the mission and story behind Jay Tools - a hub of free online calculators, converters and helpful tools designed for students, developers and everyday users.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jay-tools.com/about.html">
 
-  <!-- JS -->
-  
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/preloader.js"></script>
-</head>
-
-<body>
-  <div id="preloader">
-    <div class="spinner"></div>
-    <div class="loading-text">Loading Jay Tools...</div>
-  </div>
-  <header class="header">
-    <a href="index.html" class="logo" aria-label="Jay Tools Home">Jay Tools</a>
-    <form class="header-search" role="search" aria-label="Site Search" onsubmit="event.preventDefault();">
-        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
-        <button type="submit" aria-label="Submit search">
-          <svg width="22" height="22" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-      </form>
-      <button class="search-toggle" id="searchToggle" aria-label="Open search" tabindex="0" style="display:none">
-        <svg width="24" height="24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-    <nav class="nav" id="navbar" aria-label="Main Navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="index.html#tools">Tools</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Jay Tools - Free Online Calculators & Utility Tools">
+    <meta name="twitter:description" content="Discover the mission and story behind Jay Tools - a hub of free online calculators, converters and helpful tools designed for students, developers and everyday users.">
     
-    <button class="menu-icon" id="menuIcon" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false" tabindex="0">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="6" x2="20" y2="6" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="18" x2="20" y2="18" />
-      </svg>
-    </button>
-    <div class="mobile-search-modal" id="mobileSearchModal" style="display:none">
-      <form class="mobile-search-form" role="search" aria-label="Mobile Site Search" onsubmit="event.preventDefault();">
-        <input type="search" name="search" placeholder="Search tools..." aria-label="Search" />
-        <button type="submit" aria-label="Submit search">
-          <svg width="20" height="20" fill="none" stroke="#7f8c8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-        <button type="button" class="close-mobile-search" id="closeMobileSearch" aria-label="Close search">&times;</button>
-      </form>
-    </div>
-  </header>
-  <main>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jay-tools.com/about.html" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <style>
+        /* About Page Specific Styles */
+        .about-main {
+            background-color: white;
+            min-height: calc(100vh - 200px);
+        }
 
-		<section class="about-us-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>About Us</h2>
-            <hr>
-            <p class="lead">Jay Tools provides fast, free, and easy-to-use online calculators, converters and utility tools for students, developers and daily life tasks.</p>
-          </div>
-        </div>
-        <div class="row about-page-content">
-          <div class="col-md-6">
-            <div class="section-card">
-              <h3>Our Mission</h3>
-              <p>Our mission is to provide free reliable, and user-friendly calculators and tools that simplify daily tasks, boost productivity and are accessible to everyone.</p>
-              <p>We’re continually expanding our tool collection to ensure accuracy, ease of use and coverage across academic, health and daily utility categories for all users.</p>
+        .about-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .about-section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .about-hero {
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+        }
+
+        .about-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .creator-section {
+            text-align: center;
+        }
+
+        .creator-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .creator-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background-color: white;
+            color: #3498db;
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-btn.secondary:hover {
+            background-color: white;
+            color: #3498db;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 1rem;
+            }
+
+            .about-section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .about-hero {
+                padding: 2rem 1rem;
+            }
+
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="section-card">
-              <h3>Our Vision</h3>
-              <p>We aim to make essential tools freely accessible to all, promoting learning and efficiency and becoming the trusted platform for everyday calculations and utilities.</p>
-              <p>We envision providing smart, accessible tools through a seamless mobile-first experience, ensuring users can solve problems easily on any device, anytime and anywhere.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row team-section">
-          <div class="col-md-12">
-            <h3>Meet Our Team</h3>
-            <hr>
-            <p class="lead">Our dedicated team of developers and designers work tirelessly to bring you the best online tools experience. We're passionate about creating useful, accessible tools for everyone.</p>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-4 col-sm-6">
-            <div class="section-card team-card">
-              <div class="team-image">
-                <img src="img/Jay_img.jpeg" alt="Jay Prajapati">
-              </div>
-              <div class="team-info">
-                <h4>Jay Prajapati</h4>
-                <p class="role">Developer & Owner</p>
-                <p class="bio">Passionate about creating useful tools that make everyday tasks easier for everyone.</p>
-                <div class="social-links">
-                  <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                  <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
-              </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
-          </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer-section" aria-label="Site Footer">
-    <div class="container">
-      <div class="row footer-content">
-        <section class="col-md-4 col-sm-6 footer-col" aria-labelledby="footer-about-heading">
-          <div class="footer-about">
-            <h2 id="footer-about-heading" class="footer-heading"><i class="fa fa-gear footer-icon" aria-hidden="true"></i> About Jay Tools</h2>
-            <hr>
-            <p class="about-paragraph">Jay Tools offers smart, free tools for learning, fitness and daily tasks empowering users with accurate, easy-to-use calculators and utilities.</p>
-            <p class="contact-info">📧 <span>Contact:</span> <a href="mailto:starofficial202503@gmail.com" title="Email Jay Tools">starofficial202503@gmail.com</a></p>
-            <nav class="social-icons" aria-label="Social Media Links">
-              <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-              <a href="#" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-              <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-              <a href=" https://github.com/jaytools " target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            </nav>
-          </div>
-        </section>
-        <nav class="col-md-4 col-sm-6 footer-col" aria-labelledby="footer-tools-heading">
-          <h2 id="footer-tools-heading" class="footer-heading">Tools & Features</h2>
-          <hr>
-          <ul class="footer-links" itemscope itemtype="https://schema.org/SiteNavigationElement">
-            <li><a href="#" title="CGPA to Percentage Calculator" itemprop="url"><span itemprop="name">CGPA to Percentage Calculator</span></a></li>
-            <li><a href="#" title="Date to Age Calculator" itemprop="url"><span itemprop="name">Date to Age Calculator</span></a></li>
-            <li><a href="#" title="Pregnancy Weight Gain Calculator" itemprop="url"><span itemprop="name">Pregnancy Weight Gain Calculator</span></a></li>
-            <li><a href="#" title="Calories Burned Walking" itemprop="url"><span itemprop="name">Calories Burned Walking</span></a></li>
-            <li><a href="#" title="Typing Speed Test" itemprop="url"><span itemprop="name">Typing Speed Test</span></a></li>
+    </header>
 
-          </ul>
-        </nav>
-        <nav class="col-md-4 col-sm-12 footer-col" aria-labelledby="footer-legal-heading">
-          <h2 id="footer-legal-heading" class="footer-heading">Legal & Info</h2>
-          <hr>
-          <ul class="footer-links" itemscope itemtype="https://schema.org/SiteNavigationElement">
-            <li><a href="terms.html" title="Terms of Service" itemprop="url"><span itemprop="name">Terms of Service</span></a></li>
-            <li><a href="privacy.html" title="Privacy Policy" itemprop="url"><span itemprop="name">Privacy Policy</span></a></li>
-            <li><a href="dmca.html" title="DMCA Notice" itemprop="url"><span itemprop="name">DMCA Notice</span></a></li>
-            <li><a href="disclaimer.html" title="Disclaimer" itemprop="url"><span itemprop="name">Disclaimer</span></a></li>
-            <li><a href="contact.html" title="Contact Us" itemprop="url"><span itemprop="name">Contact Us</span></a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span itemprop="copyrightYear">2025</span> <span itemprop="copyrightHolder">Jay Tools</span>. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
-  <script src="js/script.js"></script>
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
 
-  <button class="scroll-to-top" aria-label="Scroll to top">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-   </button>
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="tools/seperate-tool/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Tags</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <button class="tag-btn active" data-tag="all">All Tools</button>
+                        <button class="tag-btn" data-tag="calculator">Calculator</button>
+                        <button class="tag-btn" data-tag="health">Health</button>
+                        <button class="tag-btn" data-tag="study">Study</button>
+                        <button class="tag-btn" data-tag="finance">Finance</button>
+                        <button class="tag-btn" data-tag="personal">Personal</button>
+                        <button class="tag-btn" data-tag="converter">Converter</button>
+                        <button class="tag-btn" data-tag="utility">Utility</button>
+                        <button class="tag-btn" data-tag="planner">Planner</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="about-main">
+        <div class="about-container">
+            <!-- Hero Section -->
+            <section class="about-hero">
+                <h1>Empowering People With Smart Web Tools</h1>
+                <p>Jay Tools is your go-to platform for daily-use digital utilities.</p>
+            </section>
+
+            <!-- Our Story Section -->
+            <section class="about-section">
+                <h2>Our Story</h2>
+                <p>Jay Tools started as a passion project by Jay Prajapati to solve common everyday online problems that people face. What began as a simple collection of utility tools has evolved into a comprehensive platform offering free, fast, and mobile-friendly solutions for students, developers, and everyday users.</p>
+                <p>We recognized that people often needed quick calculations, conversions, and utilities without the hassle of downloading apps or dealing with complex interfaces. That's why we created Jay Tools - to provide instant access to essential digital utilities that just work.</p>
+            </section>
+
+            <!-- What We Offer Section -->
+            <section class="about-section">
+                <h2>What We Offer</h2>
+                <p>Our platform provides a wide range of tools designed to make your daily digital tasks easier and more efficient.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-gift"></i>
+                        <h3>Free Tools for Daily Use</h3>
+                        <p>All our tools are completely free with no hidden costs or subscriptions.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Built with HTML, CSS, JS</h3>
+                        <p>Lightweight and fast-loading tools built with modern web technologies.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>100% Mobile Friendly</h3>
+                        <p>All tools work perfectly on desktop, tablet, and mobile devices.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Student & Developer Friendly</h3>
+                        <p>Designed with students and developers in mind for quick calculations.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Study, Health, Utility, Finance</h3>
+                        <p>Comprehensive tools covering various aspects of daily life.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Mission Section -->
+            <section class="about-section">
+                <h2>Our Mission</h2>
+                <p>We believe technology should simplify life, not complicate it. Our mission is to deliver simple and useful tools for students, developers, and everyday users. We strive to create intuitive interfaces that provide instant results without any learning curve.</p>
+                <p>Every tool we build focuses on three core principles: simplicity, speed, and accessibility. We want anyone, anywhere, to be able to access our tools and get the help they need in seconds, not minutes.</p>
+            </section>
+
+            <!-- Meet the Creator Section -->
+            <section class="about-section creator-section">
+                <h2>Meet the Creator</h2>
+                <div class="creator-info">
+                    <h3 class="creator-name">Jay Prajapati — Founder & Developer</h3>
+                    <p>Jay is a passionate web developer and problem-solver who believes in the power of simple, effective tools. With a background in computer science and a keen eye for user experience, Jay has dedicated countless hours to creating and refining each tool on this platform.</p>
+                    <p>When not coding, Jay enjoys exploring new technologies, contributing to open-source projects, and finding creative solutions to everyday problems that affect millions of people worldwide.</p>
+                </div>
+            </section>
+
+            <!-- Call to Action Section -->
+            <section class="cta-section">
+                <h2>Ready to Explore?</h2>
+                <p>Explore our tools or suggest a new one!</p>
+                <div class="cta-buttons">
+                    <a href="index.html" class="cta-btn">Browse Tools</a>
+                    <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Overlay -->
+    <div class="overlay" aria-hidden="true"></div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="sample-page.html">Sample Page</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
 </body>
-</html></html>
+</html>

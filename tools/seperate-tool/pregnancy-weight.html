@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Weight Gain Calculator – Track Healthy Pregnancy Progress | Jay Tools</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free pregnancy weight gain calculator based on pre-pregnancy BMI. Calculate healthy weight gain for single & twin pregnancies with weekly tracking. Get personalized advice now!">
+    <meta name="keywords" content="pregnancy weight gain calculator, twin pregnancy weight gain calculator, pregnancy weight gain calculator UK, pregnancy weight gain calculator in kgs, healthy pregnancy weight gain chart, expected pregnancy weight gain calculator, pregnancy weight gain by week chart, how much weight should I gain during pregnancy">
+    <meta name="author" content="Jay Tools">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Pregnancy Weight Gain Calculator – Track Healthy Pregnancy Progress">
+    <meta property="og:description" content="Calculate healthy pregnancy weight gain based on BMI. Free tool for expecting mothers with personalized recommendations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaytools.com/pregnancy-weight-calculator">
+    <meta property="og:image" content="https://jaytools.com/images/pregnancy-calculator-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pregnancy Weight Gain Calculator">
+    <meta name="twitter:description" content="Calculate healthy pregnancy weight gain based on BMI and pregnancy week.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pregnancy Weight Gain Calculator",
+        "description": "Calculate healthy pregnancy weight gain based on pre-pregnancy BMI and current pregnancy week",
+        "url": "https://jaytools.com/pregnancy-weight-calculator",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Jay Tools"
+        }
+    }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="pregnancy-weight.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-baby"></i>
+                <span>Jay Tools</span>
+            </div>
+            <h1 class="main-title">
+                <i class="fas fa-heart"></i>
+                Pregnancy Weight Gain Calculator
+            </h1>
+            <p class="subtitle">Track your healthy pregnancy journey with personalized weight gain recommendations</p>
+        </header>
+
+        <!-- Main Calculator -->
+        <main class="calculator-section">
+            <div class="calculator-card">
+                <form id="pregnancyForm" class="pregnancy-form">
+                    <!-- Unit Toggle -->
+                    <div class="unit-toggle-section">
+                        <div class="toggle-group">
+                            <label class="toggle-label">Weight Unit:</label>
+                            <div class="toggle-switch">
+                                <input type="radio" id="kg" name="weightUnit" value="kg" checked>
+                                <label for="kg">kg</label>
+                                <input type="radio" id="lbs" name="weightUnit" value="lbs">
+                                <label for="lbs">lbs</label>
+                            </div>
+                        </div>
+                        <div class="toggle-group">
+                            <label class="toggle-label">Height Unit:</label>
+                            <div class="toggle-switch">
+                                <input type="radio" id="cm" name="heightUnit" value="cm" checked>
+                                <label for="cm">cm</label>
+                                <input type="radio" id="ft" name="heightUnit" value="ft">
+                                <label for="ft">ft/in</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Fields -->
+                    <div class="form-grid">
+                        <!-- Pre-pregnancy Weight -->
+                        <div class="form-group">
+                            <label for="preWeight">
+                                <i class="fas fa-weight"></i>
+                                Pre-pregnancy Weight
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="number" id="preWeight" name="preWeight" required min="30" max="200" step="0.1">
+                                <span class="unit-display" id="weightUnitDisplay">kg</span>
+                            </div>
+                        </div>
+
+                        <!-- Height -->
+                        <div class="form-group height-group">
+                            <label>
+                                <i class="fas fa-ruler-vertical"></i>
+                                Height
+                            </label>
+                            <div class="height-inputs" id="heightInputs">
+                                <!-- CM Input -->
+                                <div class="input-wrapper" id="cmInput">
+                                    <input type="number" id="heightCm" name="heightCm" required min="120" max="220" step="1">
+                                    <span class="unit-display">cm</span>
+                                </div>
+                                <!-- Feet/Inches Input -->
+                                <div class="height-ft-group" id="ftInput" style="display: none;">
+                                    <div class="input-wrapper">
+                                        <input type="number" id="heightFt" name="heightFt" min="3" max="7" step="1">
+                                        <span class="unit-display">ft</span>
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="heightIn" name="heightIn" min="0" max="11" step="1">
+                                        <span class="unit-display">in</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Current Week -->
+                        <div class="form-group">
+                            <label for="currentWeek">
+                                <i class="fas fa-calendar-week"></i>
+                                Current Week of Pregnancy
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="range" id="currentWeek" name="currentWeek" min="1" max="40" value="20" class="week-slider">
+                                <div class="week-display">
+                                    <span id="weekValue">20</span> weeks
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregnancy Type -->
+                        <div class="form-group">
+                            <label for="pregnancyType">
+                                <i class="fas fa-baby"></i>
+                                Pregnancy Type
+                            </label>
+                            <select id="pregnancyType" name="pregnancyType" required>
+                                <option value="single">Single Baby</option>
+                                <option value="twin">Twin Pregnancy</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <button type="submit" class="calculate-btn">
+                        <i class="fas fa-calculator"></i>
+                        Calculate Weight Gain
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <h2 class="results-title">
+                        <i class="fas fa-chart-line"></i>
+                        Your Pregnancy Weight Gain Plan
+                    </h2>
+
+                    <!-- BMI Result -->
+                    <div class="result-item bmi-result">
+                        <div class="result-header">
+                            <i class="fas fa-user-md"></i>
+                            <h3>Your Pre-pregnancy BMI</h3>
+                        </div>
+                        <div class="bmi-display">
+                            <span class="bmi-value" id="bmiValue">0</span>
+                            <span class="bmi-category" id="bmiCategory">Normal</span>
+                        </div>
+                    </div>
+
+                    <!-- Weight Gain Recommendations -->
+                    <div class="result-item weight-recommendations">
+                        <div class="result-header">
+                            <i class="fas fa-target"></i>
+                            <h3>Recommended Total Weight Gain</h3>
+                        </div>
+                        <div class="weight-range" id="totalWeightGain">
+                            11.5 - 16 kg
+                        </div>
+                    </div>
+
+                    <!-- Current Progress -->
+                    <div class="result-item progress-section">
+                        <div class="result-header">
+                            <i class="fas fa-calendar-check"></i>
+                            <h3>Weight Gain by Week <span id="currentWeekDisplay">20</span></h3>
+                        </div>
+                        <div class="progress-info">
+                            <div class="suggested-gain">
+                                <span class="label">Suggested gain so far:</span>
+                                <span class="value" id="suggestedGain">8.5 kg</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                                <div class="progress-percentage" id="progressPercentage">50%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personalized Advice -->
+                    <div class="result-item advice-section">
+                        <div class="result-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Personalized Advice</h3>
+                        </div>
+                        <div class="advice-content" id="adviceContent">
+                            <!-- Dynamic advice will be inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn-secondary" id="printBtn">
+                            <i class="fas fa-print"></i>
+                            Print Results
+                        </button>
+                        <button class="btn-primary" id="recalculateBtn">
+                            <i class="fas fa-redo"></i>
+                            Recalculate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Educational Content -->
+        <section class="educational-content">
+            <div class="content-card">
+                <h2>How Much Weight Should You Gain During Pregnancy?</h2>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3><i class="fas fa-question-circle"></i> Why Track Weight Gain?</h3>
+                        <p>Proper weight gain during pregnancy supports your baby's development and your health. Too little or too much can lead to complications.</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3><i class="fas fa-chart-bar"></i> IOM Guidelines</h3>
+                        <p>Our calculator uses Institute of Medicine guidelines, which recommend weight gain based on your pre-pregnancy BMI category.</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3><i class="fas fa-twins"></i> Twin Pregnancies</h3>
+                        <p>Twin pregnancies require higher weight gain recommendations to support the growth of both babies.</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3><i class="fas fa-calendar-alt"></i> Weekly Tracking</h3>
+                        <p>Weight gain should be gradual and steady, with most gain occurring in the second and third trimesters.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-item">
+                        <h4>Is this calculator medically accurate?</h4>
+                        <p>Yes, our calculator uses the official Institute of Medicine (IOM) guidelines for pregnancy weight gain recommendations.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What if I'm carrying twins?</h4>
+                        <p>Select "Twin Pregnancy" in the calculator for adjusted recommendations specific to multiple pregnancies.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Should I consult my doctor?</h4>
+                        <p>Always discuss your weight gain plan with your healthcare provider, especially if you have specific health conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="related-tools">
+            <h2>Related Pregnancy Tools</h2>
+            <div class="tools-grid">
+                <a href="#" class="tool-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Calorie Calculator</h3>
+                    <p>Calculate daily calorie needs during pregnancy</p>
+                </a>
+                <a href="#" class="tool-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Protein Intake Calculator</h3>
+                    <p>Determine protein requirements for pregnancy</p>
+                </a>
+                <a href="#" class="tool-card">
+                    <i class="fas fa-calendar"></i>
+                    <h3>Due Date Calculator</h3>
+                    <p>Calculate your estimated due date</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jay Tools</h3>
+                    <p>Professional health calculators and tools for a better life.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Disclaimer</h4>
+                    <p>This calculator provides general guidance based on medical guidelines. Always consult with your healthcare provider for personalized medical advice.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="pregnancy-weight.js"></script>
+</body>
+</html>

@@ -15,11 +15,11 @@
   <meta property="og:title" content="Privacy Policy - Jay Tools">
   <meta property="og:description" content="Protect your privacy and personal data with Jay Tools. Our privacy policy explains how we collect, use, and store your information.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jaytools.github.io/privacy.html">
+  <meta property="og:url" content="https://jay-tools.com/privacy.html">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://jaytools.github.io/privacy.html">
-  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css ">
+  <link rel="canonical" href="https://jay-tools.com/privacy.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   
   <!-- Favicon -->
@@ -32,78 +32,340 @@
   
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/rules.css">
-  <link rel="stylesheet" href="css/preloader.css">
+  
+  <!-- Privacy Page Specific Styles -->
+  <style>
+    /* Brand Link Styles */
+    .brand-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .brand-link:hover {
+      opacity: 0.8;
+    }
+
+    .brand-link:focus {
+      outline: 2px solid #3498db;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Page Content Styles */
+    .page-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: white;
+      min-height: calc(100vh - 200px);
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid #e1e8ed;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .breadcrumb {
+      background: #f8f9fa;
+      padding: 1rem 2rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #3498db;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      margin: 0 0.5rem;
+      color: #999;
+    }
+
+    .page-content {
+      line-height: 1.7;
+      color: #2c3e50;
+    }
+
+    .page-content h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin: 2.5rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e1e8ed;
+    }
+
+    .page-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #34495e;
+      margin: 2rem 0 0.75rem 0;
+    }
+
+    .page-content h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #34495e;
+      margin: 1.5rem 0 0.5rem 0;
+    }
+
+    .page-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .page-content ul,
+    .page-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+    }
+
+    .page-content li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .page-content ul li {
+      list-style-type: disc;
+    }
+
+    .page-content ol li {
+      list-style-type: decimal;
+    }
+
+    .page-content a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .page-content a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+
+    .last-updated {
+      text-align: center;
+      color: #999;
+      font-size: 0.85rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    .back-to-top {
+      text-align: center;
+      margin: 3rem 0 2rem 0;
+      padding-top: 2rem;
+      border-top: 1px solid #e1e8ed;
+    }
+
+    .back-to-top a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #3498db;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top a:hover {
+      background: #3498db;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .page-container {
+        padding: 1rem;
+      }
+
+      .breadcrumb {
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .page-title {
+        font-size: 1.8rem;
+      }
+
+      .page-subtitle {
+        font-size: 1rem;
+      }
+
+      .page-content h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0 0.75rem 0;
+      }
+
+      .page-content h3 {
+        font-size: 1.25rem;
+        margin: 1.5rem 0 0.5rem 0;
+      }
+
+      .page-content ul,
+      .page-content ol {
+        padding-left: 1.5rem;
+      }
+    }
+  </style>
 
   <!-- JS -->
   <script src="js/script.js" defer></script>
-  <script src="js/preloader.js" defer></script>
 </head>
 
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="spinner"></div>
-    <div class="loading-text">Loading Jay Tools...</div>
-  </div>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
 
-  <header class="header">
-    <a href="index.html" class="logo" aria-label="Jay Tools Home">Jay Tools</a>
-    <form class="header-search" role="search" aria-label="Site Search" onsubmit="event.preventDefault();">
-        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
-        <button type="submit" aria-label="Submit search">
-          <svg width="22" height="22" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-      </form>
-      <button class="search-toggle" id="searchToggle" aria-label="Open search" tabindex="0" style="display:none">
-        <svg width="24" height="24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-    <nav class="nav" id="navbar" aria-label="Main Navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="index.html#tools">Tools</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    
-    <button class="menu-icon" id="menuIcon" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false" tabindex="0">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="6" x2="20" y2="6" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="18" x2="20" y2="18" />
-      </svg>
-    </button>
-    <div class="mobile-search-modal" id="mobileSearchModal" style="display:none">
-      <form class="mobile-search-form" role="search" aria-label="Mobile Site Search" onsubmit="event.preventDefault();">
-        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
-        <button type="submit" aria-label="Submit search">
-          <svg width="20" height="20" fill="none" stroke="#7f8c8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-        <button type="button" class="close-mobile-search" id="closeMobileSearch" aria-label="Close search">&times;</button>
-      </form>
-    </div>
-  </header>
-  <main>
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
 
-		<section class="rules-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 content-section">
-            <h2 class="section-heading">Privacy Policy</h2>
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Categories</h2>
+                <button class="sidebar-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="privacy.html" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="terms.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-separator">></span>
+            <span>Privacy Policy</span>
+        </nav>
+
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Header -->
+            <header class="page-header">
+                <h1 class="page-title">Privacy Policy</h1>
+                <p class="page-subtitle">Learn how Jay Tools collects, uses, and protects your personal information. Your privacy and data security are our top priorities.</p>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
     <p class="content-paragraph">Last updated: June 25, 2025</p>
     <p class="content-paragraph">This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
     <p class="content-paragraph">We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank" rel="noopener noreferrer">Privacy Policy Generator</a>.</p>
@@ -145,7 +407,7 @@
         <p class="content-paragraph"><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
       </li>
       <li>
-        <p class="content-paragraph"><strong>Website</strong> refers to Jay Tools, accessible from <a href="https://jaytools.github.io" rel="external nofollow noopener" target="_blank">https://jaytools.github.io</a></p>
+        <p class="content-paragraph"><strong>Website</strong> refers to Jay Tools, accessible from <a href="https://jay-tools.com" rel="external nofollow noopener" target="_blank">https://jay-tools.com</a></p>
       </li>
       <li>
         <p class="content-paragraph"><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
@@ -178,7 +440,7 @@
       <li><strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
       <li><strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
     </ul>
-    <p class="content-paragraph">Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. You can learn more about cookies on <a href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies" target="_blank">TermsFeed website</a> article.</p>
+    <p class="content-paragraph">Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. You can learn more about cookies on <a href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies" target="_blank" rel="noopener">TermsFeed website</a> article.</p>
     <p class="content-paragraph">We use both Session and Persistent Cookies for the purposes set out below:</p>
     <ul class="content-list">
       <li>
@@ -202,127 +464,146 @@
     </ul>
     <p class="content-paragraph">For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</p>
 
-    <h2>Use of Your Personal Data</h2>
-    <p>The Company may use Personal Data for the following purposes:</p>
-    <ul>
+    <h2 class="section-heading">Use of Your Personal Data</h2>
+    <p class="content-paragraph">The Company may use Personal Data for the following purposes:</p>
+    <ul class="content-list">
       <li>
-        <p><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</p>
+        <p class="content-paragraph"><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</p>
       </li>
       <li>
-        <p><strong>To manage Your Account:</strong> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</p>
+        <p class="content-paragraph"><strong>To manage Your Account:</strong> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</p>
       </li>
       <li>
-        <p><strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</p>
+        <p class="content-paragraph"><strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</p>
       </li>
       <li>
-        <p><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
+        <p class="content-paragraph"><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
       </li>
       <li>
-        <p><strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</p>
+        <p class="content-paragraph"><strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</p>
       </li>
       <li>
-        <p><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</p>
+        <p class="content-paragraph"><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</p>
       </li>
       <li>
-        <p><strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</p>
+        <p class="content-paragraph"><strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</p>
       </li>
       <li>
-        <p><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
+        <p class="content-paragraph"><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
       </li>
     </ul>
-    <p>We may share Your personal information in the following situations:</p>
+    <p class="content-paragraph">We may share Your personal information in the following situations:</p>
 
-    <h2>Disclosure of Your Personal Data</h2>
-    <h3>Transactions</h3>
-    <p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
-    <h3>Law enforcement</h3>
-    <p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
-    <h3>Other legal requirements</h3>
-    <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
-    <ul>
-      <li>Comply with a legal obligation</li>
-      <li>Protect and defend the rights or property of the Company</li>
-      <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
-      <li>Protect the personal safety of Users of the Service or the public</li>
-      <li>Protect against legal liability</li>
+    <h2 class="section-heading">Disclosure of Your Personal Data</h2>
+    <h3 class="sub-heading">Transactions</h3>
+    <p class="content-paragraph">If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
+    <h3 class="sub-heading">Law enforcement</h3>
+    <p class="content-paragraph">Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
+    <h3 class="sub-heading">Other legal requirements</h3>
+    <p class="content-paragraph">The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
+    <ul class="content-list">
+      <li class="content-paragraph">Comply with a legal obligation</li>
+      <li class="content-paragraph">Protect and defend the rights or property of the Company</li>
+      <li class="content-paragraph">Prevent or investigate possible wrongdoing in connection with the Service</li>
+      <li class="content-paragraph">Protect the personal safety of Users of the Service or the public</li>
+      <li class="content-paragraph">Protect against legal liability</li>
     </ul>
 
-    <h2>Security of Your Personal Data</h2>
-    <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+    <h2 class="section-heading">Security of Your Personal Data</h2>
+    <p class="content-paragraph">The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
 
-    <h2>Children's Privacy</h2>
-    <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
-    <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
+    <h2 class="section-heading">Children's Privacy</h2>
+    <p class="content-paragraph">Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
+    <p class="content-paragraph">If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
 
-    <h2>Links to Other Websites</h2>
-    <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
-    <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+    <h2 class="section-heading">Links to Other Websites</h2>
+    <p class="content-paragraph">Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+    <p class="content-paragraph">We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
 
-    <h2>Changes to this Privacy Policy</h2>
-    <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
-    <p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</p>
-    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+    <h2 class="section-heading">Changes to this Privacy Policy</h2>
+    <p class="content-paragraph">We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
+    <p class="content-paragraph">We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</p>
+    <p class="content-paragraph">You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-    <ul>
-      <li>By email: starofficial202503@gmail.com</li>
+    <h2 class="section-heading">Contact Us</h2>
+    <p class="content-paragraph">If you have any questions about this Privacy Policy, You can contact us:</p>
+    <ul class="content-list">
+      <li class="content-paragraph">By email: starofficial202503@gmail.com</li>
     </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-		<!-- Footer -->
-  <footer class="footer-section">
-    <div class="container">
-      <div class="row footer-content">
-        <div class="col-md-4 col-sm-6 footer-col">
-          <div class="footer-about">
-            <h4 class="footer-heading"><i class="fa fa-gear footer-icon"></i> About Jay Tools</h4>
-            <p>Jay Tools offers smart, free tools for learning, fitness and daily tasks empowering users with accurate, easy-to-use calculators and utilities.</p>
-            <p class="contact-info">📧 Contact: <a href="mailto:starofficial202503@gmail.com">starofficial202503@gmail.com</a></p>
-            <nav class="social-icons" aria-label="Social Media Links">
-              <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-              <a href="#" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-              <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-              <a href=" https://github.com/jaytools " target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            </nav>
-          </div>
+            </div>
         </div>
 
-        <div class="col-md-4 col-sm-6 footer-col">
-          <h4 class="footer-heading">Tools & Features</h4>
-          <ul class="footer-links">
-            <li><a href="#">CGPA to Percentage Calculator</a></li>
-            <li><a href="#">Date to Age Calculator</a></li>
-            <li><a href="#">Pregnancy Weight Gain Calculator</a></li>
-            <li><a href="#">Calories Burned Walking</a></li>
-            <li><a href="#">Typing Speed Test</a></li>
+    </main>
 
-          </ul>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="col-md-4 col-sm-12 footer-col">
-          <h4 class="footer-heading">Legal & Info</h4>
-          <ul class="footer-links">
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="dmca.html">DMCA Notice</a></li>
-            <li><a href="disclaimer.html">Disclaimer</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Jay Tools. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" aria-label="Scroll to top">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>

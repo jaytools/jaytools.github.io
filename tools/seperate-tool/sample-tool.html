@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Tool - Jay Tools | Free Online Calculator</title>
+    <meta name="description" content="Use our free Sample Tool calculator for quick and accurate calculations. Simple, fast, and mobile-friendly tool from Jay Tools.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/custom.css">
+    <link rel="stylesheet" href="css/sample-tool.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../../index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Categories</h2>
+                <button class="sidebar-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../../index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="../../about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="../../contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="../../privacy.html" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="../../terms.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <h1>Sample Tool Calculator</h1>
+                <p>This is a sample tool template that you can customize for any calculation or utility. Replace this content with your specific tool description.</p>
+            </div>
+
+        <!-- Tool Card -->
+        <div class="tool-card">
+            <form id="toolForm">
+                <!-- Input Section -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="input1">First Value</label>
+                        <input type="number" id="input1" name="input1" placeholder="Enter first value" step="any" required>
+                        <div class="error-message" id="input1Error">Please enter a valid number.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input2">Second Value</label>
+                        <input type="number" id="input2" name="input2" placeholder="Enter second value" step="any" required>
+                        <div class="error-message" id="input2Error">Please enter a valid number.</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="operation">Operation</label>
+                    <select id="operation" name="operation" required>
+                        <option value="">Select operation</option>
+                        <option value="add">Addition (+)</option>
+                        <option value="subtract">Subtraction (-)</option>
+                        <option value="multiply">Multiplication (×)</option>
+                        <option value="divide">Division (÷)</option>
+                    </select>
+                    <div class="error-message" id="operationError">Please select an operation.</div>
+                </div>
+
+                <!-- Calculate Button -->
+                <button type="submit" class="calculate-btn" id="calculateBtn">
+                    <i class="fas fa-calculator"></i>
+                    Calculate Result
+                </button>
+            </form>
+
+            <!-- Result Section -->
+            <div class="result-section" id="resultSection">
+                <div class="result-title">
+                    <i class="fas fa-check-circle"></i>
+                    Calculation Result
+                </div>
+                <div class="result-value" id="resultValue">0</div>
+                <div class="result-description" id="resultDescription">
+                    Your calculation result will appear here
+                </div>
+                <div class="button-group">
+                    <button class="reset-btn" onclick="resetCalculator()">
+                        <i class="fas fa-redo"></i>
+                        Calculate Again
+                    </button>
+                    <a href="../../index.html" class="home-btn">
+                        <i class="fas fa-home"></i>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>About This Tool</h2>
+            <p>This sample tool demonstrates the basic structure and functionality of Jay Tools calculators. You can customize this template to create any type of calculator or utility tool.</p>
+            
+            <h3>Features:</h3>
+            <ul>
+                <li>Simple and intuitive interface</li>
+                <li>Mobile-friendly responsive design</li>
+                <li>Real-time input validation</li>
+                <li>Clear result display</li>
+                <li>Error handling and user feedback</li>
+                <li>Standalone tool page design</li>
+            </ul>
+
+            <h3>How to Use:</h3>
+            <ul>
+                <li>Enter your first value in the input field</li>
+                <li>Enter your second value in the second input field</li>
+                <li>Select the operation you want to perform</li>
+                <li>Click "Calculate Result" to see the answer</li>
+                <li>Use "Calculate Again" to reset and try with new values</li>
+                <li>Click "Back to Home" to return to the main tools page</li>
+            </ul>
+
+            <h3>Customization Guide:</h3>
+            <ul>
+                <li>Update the title and meta description for SEO</li>
+                <li>Replace the header content with your tool's information</li>
+                <li>Modify the form fields for your specific tool inputs</li>
+                <li>Update the calculation logic in the JavaScript section</li>
+                <li>Customize the styling and colors as needed</li>
+                <li>Add your tool-specific information and instructions</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../index.html">Home</a></li>
+                            <li><a href="../../about.html">About</a></li>
+                            <li><a href="../../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="js/sample-tool.js"></script>
+</body>
+</html>

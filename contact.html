@@ -1,263 +1,738 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Contact Jay Tools - Free Online Calculators & Utility Tools</title>
-		
-		<!-- SEO Meta Tags -->
-		<meta charset="UTF-8">
-		<meta name="description" content="Get in touch with Jay Tools for feedback, support, bug reports and suggestions. We're here to help with your calculator and tool needs.">
-		<meta name="keywords" content="contact Jay Tools, feedback, support, bug report, free tools, online calculators, utility tools">
-		<meta name="robots" content="index, follow">
-		<meta name="author" content="Jay Prajapati">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		
-		<!-- Open Graph Tags -->
-		<meta property="og:title" content="Jay Tools - Contact Us">
-		<meta property="og:description" content="Reach out to Jay Tools for any questions or feedback.">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://jaytools.github.io/contact.html">
-		<meta property="og:image" content="img/Jay_img.jpeg">
-		
-		<!-- Twitter Card Tags -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Contact Jay Tools - Free Online Calculators & Utility Tools">
-		<meta name="twitter:description" content="Get in touch with Jay Tools for feedback, support, bug reports and suggestions. We're here to help with your calculator and tool needs.">
-		
-		<!-- Canonical URL -->
-		<link rel="canonical" href="https://jaytools.github.io/contact.html">
-		
-		<!-- Favicon -->
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png">
-		<link rel="icon" type="image/png" sizes="192x192" href="web-app-manifest-192x192.png">
-		<link rel="manifest" href="site.webmanifest">
-		
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Jay Tools | Get in Touch</title>
+    <meta name="description" content="Get in touch with Jay Tools for feedback, support, bug reports and suggestions. We're here to help with your calculator and tool needs.">
+    <meta name="keywords" content="contact Jay Tools, feedback, support, bug report, free tools, online calculators, utility tools">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jay Prajapati">
 
-		<!-- css -->
-		<link rel="stylesheet" href="css/custom.css">
-  		<link rel="stylesheet" href="css/contact-styles.css">
-  		<link rel="stylesheet" href="css/preloader.css">
-  		<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css ">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Jay Tools - Contact Us">
+    <meta property="og:description" content="Reach out to Jay Tools for any questions or feedback.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jay-tools.com/contact.html">
 
-  		<!-- JS -->
-  		
-  		<script src="js/bootstrap.min.js" defer></script>
-  		<script src="js/preloader.js" defer></script>
-		<script src="js/script.js" defer></script>
-</head>
-
-<body>
-  <div id="preloader">
-    <div class="spinner"></div>
-    <div class="loading-text">Loading Jay Tools...</div>
-  </div>
-  <header class="header">
-    <a href="index.html" class="logo" aria-label="Jay Tools Home">Jay Tools</a>
-    <form class="header-search" role="search" aria-label="Site Search" onsubmit="event.preventDefault();">
-        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
-        <button type="submit" aria-label="Submit search">
-          <svg width="22" height="22" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-      </form>
-      <button class="search-toggle" id="searchToggle" aria-label="Open search" tabindex="0" style="display:none">
-        <svg width="24" height="24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-    <nav class="nav" id="navbar" aria-label="Main Navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="index.html#tools">Tools</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Jay Tools - Free Online Calculators & Utility Tools">
+    <meta name="twitter:description" content="Get in touch with Jay Tools for feedback, support, bug reports and suggestions. We're here to help with your calculator and tool needs.">
     
-    <button class="menu-icon" id="menuIcon" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false" tabindex="0">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="6" x2="20" y2="6" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="18" x2="20" y2="18" />
-      </svg>
-    </button>
-    <div class="mobile-search-modal" id="mobileSearchModal" style="display:none">
-      <form class="mobile-search-form" role="search" aria-label="Mobile Site Search" onsubmit="event.preventDefault();">
-        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
-        <button type="submit" aria-label="Submit search">
-          <svg width="20" height="20" fill="none" stroke="#7f8c8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-        <button type="button" class="close-mobile-search" id="closeMobileSearch" aria-label="Close search">&times;</button>
-      </form>
-    </div>
-  </header>
-  <main>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jay-tools.com/contact.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Contact Page Specific Styles -->
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-		<!-- Contact -->
-	    <section id="contact-main-content">
-	    	<div class="contact-container">
-				<!-- Header Section -->
-				<div class="contact-header">
-					<div class="heading-text">
-						<h3>Get in Touch</h3>
-	                	<hr class="full">
-	                	<p class="lead">Have questions, suggestions or need support? We are here to help! Choose the best way to reach us.</p>
-	                </div>
-				</div>
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-				<!-- Contact Methods -->
-				<div class="contact-methods">
-					<div class="col-md-6 col-md-offset-3 text-center">
-						<h4>Contact Methods</h4>
-						<p><strong>Email:</strong> <a href="mailto:starofficial202503@gmail.com" style="color: #FF5733;">starofficial202503@gmail.com</a></p>
-						<p>We strive to reply to all inquiries within <strong>24 hours</strong>.</p>
-						<p>For common questions, please check our <a href="#faq-section">Frequently Asked Questions</a> below.</p>
-					</div>
-				</div>
+        .contact-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
 
-				<!-- Contact Form Section -->
-				<div class="contact-form-section">
-					<div class="col-md-8 col-md-offset-2">
-						<h4 class="text-center">Send Us a Message</h4>
-						<form method="post" action="#" class="contact-form">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Your Name" required autocomplete="name">
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Your Email" required autocomplete="email">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Subject" autocomplete="off">
-							</div>
-							<div class="form-group">
-								<textarea class="form-control" rows="6" placeholder="Your Message" required autocomplete="off"></textarea>
-							</div>
-							<button type="submit" class="btn btn-primary btn-block">Submit Inquiry</button>
-							<p class="text-center help-note">We’ll get back to you as soon as possible.</p>
-						</form>
-					</div>
-				</div>
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
 
-				<!-- Need Help Section -->
-				<div class="need-help-section">
-					<div class="col-md-8 col-md-offset-2 text-center">
-						<h4>Need Help?</h4>
-						<p>Have questions or need assistance? Reach out through any of these channels or explore our resources.</p>
-					</div>
-				</div>
+        .contact-form-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e1e8ed;
+        }
 
-				<!-- FAQ Section (Optional) -->
-				<div id="faq-section" class="faq-section-content">
-					<div class="col-md-8 col-md-offset-2">
-						<h4 class="text-center">Frequently Asked Questions</h4>
-						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingOne">
-									<h4 class="panel-title">
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											How do I use Jay Tools?
-										</a>
-									</h4>
-								</div>
-								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									<div class="panel-body">
-										Simply navigate to the tool you need from our homepage or tools section, input the required values and get instant results. Each tool is designed to be intuitive and user-friendly.
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingTwo">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-											Is this website free?
-										</a>
-									</h4>
-								</div>
-								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									<div class="panel-body">
-										Yes, all tools and resources on Jay Tools are completely free to use. We are committed to providing accessible and useful tools for everyone.
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingThree">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-											Can I suggest a new tool?
-										</a>
-									</h4>
-								</div>
-								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									<div class="panel-body">
-										Absolutely! We welcome your suggestions. Please use the contact form above to send us your ideas for new tools or features you'd like to see on Jay Tools.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-	    </section>
-			
-  <footer class="footer-section" aria-label="Site Footer">
-    <div class="container">
-      <div class="row footer-content">
-        <section class="col-md-4 col-sm-6 footer-col" aria-labelledby="footer-about-heading">
-          <div class="footer-about">
-            <h2 id="footer-about-heading" class="footer-heading"><i class="fa fa-gear footer-icon" aria-hidden="true"></i> About Jay Tools</h2>
-            <hr>
-            <p class="about-paragraph">Jay Tools offers smart, free tools for learning, fitness and daily tasks empowering users with accurate, easy-to-use calculators and utilities.</p>
-            <p class="contact-info">📧 <span>Contact:</span> <a href="mailto:starofficial202503@gmail.com" title="Email Jay Tools">starofficial202503@gmail.com</a></p>
-            <nav class="social-icons" aria-label="Social Media Links">
-              <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-              <a href="#" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-              <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-              <a href=" https://github.com/jaytools " target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        .contact-form h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: #fafbfc;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e1e8ed;
+        }
+
+        .contact-info h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: #3498db;
+            margin-right: 1rem;
+            width: 20px;
+        }
+
+        .contact-item-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e1e8ed;
+        }
+
+        .social-links h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .success-message,
+        .error-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 3rem 1rem;
+            }
+            
+            .contact-form-section,
+            .contact-info {
+                padding: 1.5rem;
+            }
+            
+            .contact-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Required field indicator */
+        .required {
+            color: #e74c3c;
+        }
+
+        /* Form validation styles */
+        .form-group input.invalid,
+        .form-group textarea.invalid {
+            border-color: #e74c3c;
+            background-color: #fdf2f2;
+        }
+
+        .form-group input.valid,
+        .form-group textarea.valid {
+            border-color: #27ae60;
+            background-color: #f2fdf7;
+        }
+
+        .error-text {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: white;
+            border-top: 1px solid #eee;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+            font-family: system-ui, "Segoe UI", "Roboto", sans-serif;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+
+        .footer-section .social-links {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .footer-section .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-right: 0.5rem;
+        }
+
+        .footer-section .social-links a:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            margin: 0 2rem;
+        }
+
+        .footer-bottom p {
+            color: #999;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* Footer Responsive */
+        @media (max-width: 968px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .site-footer {
+                padding: 2rem 0 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .footer-bottom {
+                padding-top: 1.5rem;
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Categories</h2>
+                <button class="sidebar-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="contact.html" class="nav-link active">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="privacy.html" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="terms.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </a>
             </nav>
-          </div>
-        </section>
-        <nav class="col-md-4 col-sm-6 footer-col" aria-labelledby="footer-tools-heading">
-          <h2 id="footer-tools-heading" class="footer-heading">Tools & Features</h2>
-          <hr>
-          <ul class="footer-links" itemscope itemtype="https://schema.org/SiteNavigationElement">
-            <li><a href="#" title="CGPA to Percentage Calculator" itemprop="url"><span itemprop="name">CGPA to Percentage Calculator</span></a></li>
-            <li><a href="#" title="Date to Age Calculator" itemprop="url"><span itemprop="name">Date to Age Calculator</span></a></li>
-            <li><a href="#" title="Pregnancy Weight Gain Calculator" itemprop="url"><span itemprop="name">Pregnancy Weight Gain Calculator</span></a></li>
-            <li><a href="#" title="Calories Burned Walking" itemprop="url"><span itemprop="name">Calories Burned Walking</span></a></li>
-            <li><a href="#" title="Typing Speed Test" itemprop="url"><span itemprop="name">Typing Speed Test</span></a></li>
+        </div>
+    </aside>
 
-          </ul>
-        </nav>
-        <nav class="col-md-4 col-sm-12 footer-col" aria-labelledby="footer-legal-heading">
-          <h2 id="footer-legal-heading" class="footer-heading">Legal & Info</h2>
-          <hr>
-          <ul class="footer-links" itemscope itemtype="https://schema.org/SiteNavigationElement">
-            <li><a href="terms.html" title="Terms of Service" itemprop="url"><span itemprop="name">Terms of Service</span></a></li>
-            <li><a href="privacy.html" title="Privacy Policy" itemprop="url"><span itemprop="name">Privacy Policy</span></a></li>
-            <li><a href="dmca.html" title="DMCA Notice" itemprop="url"><span itemprop="name">DMCA Notice</span></a></li>
-            <li><a href="disclaimer.html" title="Disclaimer" itemprop="url"><span itemprop="name">Disclaimer</span></a></li>
-            <li><a href="contact.html" title="Contact Us" itemprop="url"><span itemprop="name">Contact Us</span></a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span itemprop="copyrightYear">2025</span> <span itemprop="copyrightHolder">Jay Tools</span>. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
-  <button class="scroll-to-top" aria-label="Scroll to top">
-  	<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Whether you have suggestions, need support, or want to discuss business opportunities, feel free to reach out.</p>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2>Send Us a Message</h2>
+                
+                <!-- Success/Error Messages -->
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    Thanks! We'll get back to you shortly.
+                </div>
+                
+                <div id="errorMessage" class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="errorText">Please fill in all required fields correctly.</span>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required aria-label="Your full name">
+                        <div class="error-text" id="nameError">Please enter your name.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required aria-label="Your email address">
+                        <div class="error-text" id="emailError">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Tool suggestion, bug report, business inquiry..." aria-label="Message subject">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" required placeholder="Tell us how we can help you..." aria-label="Your message"></textarea>
+                        <div class="error-text" id="messageError">Please enter your message.</div>
+                    </div>
+
+                    <!-- Hidden field for form identification -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Jay Tools">
+                    <input type="hidden" name="_next" value="thank-you">
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-envelope"></i>
+                        <span id="btnText">Send Message</span>
+                        <div class="loading-spinner" id="loadingSpinner"></div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-item-content">
+                        <h3>Location</h3>
+                        <p>Gujarat, India</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-item-content">
+                        <h3>Business Email</h3>
+                        <p>support@jay-tools.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="contact-item-content">
+                        <h3>Response Time</h3>
+                        <p>Usually within 24-48 hours</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-tools"></i>
+                    <div class="contact-item-content">
+                        <h3>What We Help With</h3>
+                        <p>Tool suggestions, bug reports, business partnerships, technical support</p>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/jaytools" class="social-icon" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" target="_blank" rel="noopener" aria-label="Follow us on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" target="_blank" rel="noopener" aria-label="Like us on Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="sample-page.html">Sample Page</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>

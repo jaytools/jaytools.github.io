@@ -1,271 +1,428 @@
-// Global error handler
-window.onerror = function (msg, url, line) {
-  console.error(`JavaScript Error: ${msg} at line ${line}`);
-  return false;
-};
+// Constants
+const ITEMS_PER_PAGE = 6;
 
-document.addEventListener('DOMContentLoaded', function () {
-  try {
-    initializeWebsite();
-  } catch (error) {
-    console.error('Error initializing website:', error);
-  }
+// Tool Data
+const tools = [
+    { 
+        name: 'CGPA to Percentage Calculator',
+        url: 'tools/cgpa-percentage-inline.html',
+        tags: ['calculator', 'study']
+    },
+    { 
+        name: 'IVF Due Date Calculator',
+        url: 'tools/seperate-tool/ivf-calculator.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Pregnancy Weight Gain Calculator',
+        url: 'tools/seperate-tool/pregnancy-weight.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Steps to KM Converter',
+        url: 'tools/steps-to-km-inline.html',
+        tags: ['converter', 'health']
+    },
+    { 
+        name: 'Typing Speed Test Paragraph',
+        url: 'tools/seperate-tool/typing-speed.html',
+        tags: ['utility', 'study']
+    },
+    { 
+        name: 'Calories Burned Walking',
+        url: 'tools/seperate-tool/calories-walking.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Height Conversion Tool',
+        url: 'tools/height-converter-inline.html',
+        tags: ['converter', 'health']
+    },
+    { 
+        name: 'Calorie Deficit Finder',
+        url: 'tools/seperate-tool/calorie-deficit.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Body Frame Size Calculator',
+        url: 'tools/body-frame-inline.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Exam Marks Percentage Calculator',
+        url: 'tools/exam-percentage-inline.html',
+        tags: ['calculator', 'study']
+    },
+    { 
+        name: 'Debt to Income Ratio Tool',
+        url: 'tools/seperate-tool/debt-ratio.html',
+        tags: ['calculator', 'finance']
+    },
+    { 
+        name: 'Age Difference Calculator',
+        url: 'tools/date-to-age-inline.html',
+        tags: ['calculator', 'personal']
+    },
+    { 
+        name: 'DPI Checker',
+        url: 'tools/seperate-tool/dpi-checker.html',
+        tags: ['utility', 'design']
+    },
+    { 
+        name: 'Study Planner',
+        url: 'tools/seperate-tool/study-planner.html',
+        tags: ['planner', 'study']
+    },
+    { 
+        name: 'Marriage Age Calculator',
+        url: 'tools/marriage-age-inline.html',
+        tags: ['calculator', 'personal']
+    },
+    { 
+        name: 'Calories in Food Checker',
+        url: 'tools/seperate-tool/food-calories.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Pomodoro Timer',
+        url: 'tools/seperate-tool/pomodoro.html',
+        tags: ['utility', 'study']
+    },
+    { 
+        name: 'Daily Expense Tracker',
+        url: 'tools/seperate-tool/expense-tracker.html',
+        tags: ['planner', 'finance']
+    },
+    { 
+        name: 'GPA to Percentage Calculator',
+        url: 'tools/gpa-percentage-inline.html',
+        tags: ['calculator', 'study']
+    },
+    { 
+        name: 'Marriage Biodata',
+        url: 'tools/marriage-biodata-inline.html',
+        tags: ['utility', 'personal']
+    },
+    { 
+        name: 'Invite Generator',
+        url: 'tools/invite-generator-inline.html',
+        tags: ['utility', 'personal']
+    }
+];
+
+// State
+let currentPage = 1;
+let currentTag = 'all';
+let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+// DOM Elements
+const sidebar = document.querySelector('.sidebar');
+const menuToggle = document.querySelector('.menu-toggle');
+const menuClose = document.querySelector('.sidebar-close');
+const overlay = document.querySelector('.overlay');
+const toolsGrid = document.querySelector('.tools-grid');
+const searchInput = document.querySelector('.search-input');
+const favoritesList = document.querySelector('.favorites-container');
+const tagsNav = document.querySelector('.tags-nav');
+
+// Mobile search elements
+const searchToggle = document.querySelector('.search-toggle');
+const mobileSearchContainer = document.querySelector('.mobile-search-container');
+const mobileSearchInput = document.querySelector('.mobile-search-input');
+const mobileSearchClose = document.querySelector('.mobile-search-close');
+const searchResults = document.querySelector('.search-results');
+
+// Event Listeners
+menuToggle?.addEventListener('click', toggleSidebar);
+menuClose?.addEventListener('click', closeSidebar);
+overlay?.addEventListener('click', closeSidebar);
+searchInput?.addEventListener('input', handleSearch);
+
+// Mobile search event listeners
+searchToggle?.addEventListener('click', openMobileSearch);
+mobileSearchClose?.addEventListener('click', closeMobileSearch);
+mobileSearchInput?.addEventListener('input', handleMobileSearch);
+
+// Close mobile search when clicking outside
+mobileSearchContainer?.addEventListener('click', (e) => {
+    if (e.target === mobileSearchContainer) {
+        closeMobileSearch();
+    }
 });
 
-// Global variables
-let currentPage = 1;
-const itemsPerPage = 6;
-let allToolItems = [];
-let filteredTools = [];
-
-function initializeWebsite() {
-  initMobileNavigation();
-  initScrollToTop();
-
-  const preloader = document.getElementById('preloader');
-  if (preloader) {
-    preloader.style.display = 'flex';
-    preloader.style.opacity = '1';
-  }
-
-  const toolsContainer = document.getElementById('toolsContainer');
-  if (toolsContainer) {
-    allToolItems = Array.from(document.querySelectorAll('.tool-item'));
-    filteredTools = [...allToolItems];
-    displayTools();
-    updatePaginationControls();
-  }
-
-  const searchInput = document.getElementById('toolSearch');
-  if (searchInput) {
-    searchInput.addEventListener('input', function () {
-      const searchTerm = this.value.toLowerCase();
-      filterTools(searchTerm);
-    });
-  }
-
-  // Hide preloader
-  window.addEventListener('load', function () {
-    if (preloader) {
-      setTimeout(() => {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-          preloader.style.display = 'none';
-        }, 500);
-      }, 1000);
-    }
-  });
-
-  // Fallback: hide preloader after 5s
-  setTimeout(() => {
-    if (preloader && preloader.style.opacity !== '0') {
-      preloader.style.opacity = '0';
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 500);
-    }
-  }, 5000);
-
-  // Contact form
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = contactForm.name.value.trim();
-      const email = contactForm.email.value.trim();
-      const message = contactForm.message.value.trim();
-
-      if (!name || !email || !message) {
-        alert('Please fill in all fields.');
-        return;
-      }
-
-      contactForm.reset();
-      contactForm.innerHTML = '<div style="color:#4f8cff;font-size:1.2rem;padding:24px 0;">Thank you for contacting us! We will get back to you soon.</div>';
-    });
-  }
-
-  // Live search for .tool-card type (optional if you're using .tool-item)
-  const liveSearchInput = document.querySelector('.header-search input[type="search"]');
-  const toolCards = document.querySelectorAll('.tool-card');
-  if (liveSearchInput && toolCards.length) {
-    liveSearchInput.addEventListener('input', function () {
-      const val = liveSearchInput.value.toLowerCase();
-      toolCards.forEach(card => {
-        const title = card.querySelector('.tool-title').textContent.toLowerCase();
-        const desc = card.querySelector('.tool-desc').textContent.toLowerCase();
-        card.style.display = (title.includes(val) || desc.includes(val)) ? '' : 'none';
-      });
-    });
-  }
-
-  // .tools-page-btn (for .tool-card based pagination)
-  const pageBtns = document.querySelectorAll('.tools-page-btn');
-  if (pageBtns.length && toolCards.length) {
-    const totalPages = Math.ceil(toolCards.length / itemsPerPage);
-    function showToolsPage(page) {
-      toolCards.forEach((card, idx) => {
-        const show = idx >= (page - 1) * itemsPerPage && idx < page * itemsPerPage;
-        card.style.display = show ? '' : 'none';
-      });
-
-      pageBtns.forEach(btn => btn.classList.remove('active'));
-      pageBtns.forEach(btn => {
-        if (btn.dataset.page == page) btn.classList.add('active');
-      });
-    }
-
-    function handlePageBtn(e) {
-      let page = e.target.dataset.page;
-      if (page === 'prev') page = Math.max(1, currentPage - 1);
-      else if (page === 'next') page = Math.min(totalPages, currentPage + 1);
-      else page = parseInt(page);
-
-      if (page !== currentPage) {
-        currentPage = page;
-        showToolsPage(currentPage);
-      }
-    }
-
-    pageBtns.forEach(btn => btn.addEventListener('click', handlePageBtn));
-    showToolsPage(currentPage);
-  }
+// Functions
+function toggleSidebar() {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
 }
 
-function filterTools(searchTerm) {
-  const noResults = document.getElementById('noResults');
-  filteredTools = allToolItems.filter(item => {
-    const toolData = item.dataset.tool.toLowerCase();
-    return toolData.includes(searchTerm);
-  });
-
-  if (noResults) {
-    noResults.style.display = filteredTools.length > 0 ? 'none' : 'block';
-  }
-
-  currentPage = 1;
-  displayTools();
-  updatePaginationControls();
+function closeSidebar() {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
 }
 
-function displayTools() {
-  const toolsContainer = document.getElementById('toolsContainer');
-  if (!toolsContainer) return;
-
-  toolsContainer.innerHTML = '';
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const toolsToDisplay = filteredTools.slice(startIndex, endIndex);
-
-  let currentRow;
-  toolsToDisplay.forEach((item, index) => {
-    if (index % 3 === 0) {
-      currentRow = document.createElement('div');
-      currentRow.classList.add('row');
-      toolsContainer.appendChild(currentRow);
-    }
-    currentRow.appendChild(item);
-  });
+function createToolCard(tool) {
+    const template = document.querySelector('#tool-card-template');
+    const card = template.content.cloneNode(true);
+    
+    const title = card.querySelector('.tool-title');
+    const link = card.querySelector('.tool-link');
+    const favoriteBtn = card.querySelector('.favorite-btn');
+    
+    title.textContent = tool.name;
+    link.href = tool.url;
+    favoriteBtn.classList.toggle('active', favorites.includes(tool.name));
+    favoriteBtn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFavorite(tool.name);
+    };
+    
+    return card;
 }
 
-function updatePaginationControls() {
-  const totalPages = Math.ceil(filteredTools.length / itemsPerPage);
-  const paginationControls = document.getElementById('pagination-controls');
-  if (!paginationControls) return;
-
-  paginationControls.innerHTML = '';
-
-  const prevButton = document.createElement('a');
-  prevButton.href = '#';
-  prevButton.classList.add('prev');
-  prevButton.innerHTML = '&lt;&lt; Prev';
-  if (currentPage === 1) prevButton.classList.add('disabled');
-  prevButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (currentPage > 1) {
-      currentPage--;
-      displayTools();
-      updatePaginationControls();
-    }
-  });
-  paginationControls.appendChild(prevButton);
-
-  for (let i = 1; i <= totalPages; i++) {
-    const pageLink = document.createElement('a');
-    pageLink.href = '#';
-    pageLink.classList.add('page');
-    if (i === currentPage) pageLink.classList.add('active');
-    pageLink.textContent = i;
-    pageLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      currentPage = i;
-      displayTools();
-      updatePaginationControls();
+function renderTools(toolsList = tools) {
+    const start = currentTag === 'all' ? (currentPage - 1) * ITEMS_PER_PAGE : 0;
+    const end = currentTag === 'all' ? start + ITEMS_PER_PAGE : toolsList.length;
+    
+    // Sort tools: favorites first, then alphabetically
+    const sortedTools = [...toolsList].sort((a, b) => {
+        const aFav = favorites.includes(a.name);
+        const bFav = favorites.includes(b.name);
+        if (aFav !== bFav) return bFav - aFav;
+        return a.name.localeCompare(b.name);
     });
-    paginationControls.appendChild(pageLink);
-  }
 
-  const nextButton = document.createElement('a');
-  nextButton.href = '#';
-  nextButton.classList.add('next');
-  nextButton.innerHTML = 'Next &gt;&gt;';
-  if (currentPage === totalPages) nextButton.classList.add('disabled');
-  nextButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (currentPage < totalPages) {
-      currentPage++;
-      displayTools();
-      updatePaginationControls();
-    }
-  });
-  paginationControls.appendChild(nextButton);
-}
-
-// Mobile Navigation
-function initMobileNavigation() {
-  const menuIcon = document.getElementById('menuIcon');
-  const navbar = document.getElementById('navbar');
-  const searchToggle = document.getElementById('searchToggle');
-  const mobileSearchModal = document.getElementById('mobileSearchModal');
-  const closeMobileSearch = document.getElementById('closeMobileSearch');
-
-  if (menuIcon && navbar) {
-    menuIcon.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-      menuIcon.innerHTML = navbar.classList.contains('active')
-        ? '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
-        : '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>';
+    const displayedTools = sortedTools.slice(start, end);
+    
+    toolsGrid.innerHTML = '';
+    displayedTools.forEach(tool => {
+        toolsGrid.appendChild(createToolCard(tool));
     });
-  }
 
-  if (searchToggle && mobileSearchModal) {
-    searchToggle.addEventListener('click', () => {
-      mobileSearchModal.style.display = 'flex';
-    });
-  }
-
-  if (closeMobileSearch && mobileSearchModal) {
-    closeMobileSearch.addEventListener('click', () => {
-      mobileSearchModal.style.display = 'none';
-    });
-  }
-}
-
-// Scroll to Top
-function initScrollToTop() {
-  const scrollToTopBtn = document.querySelector('.scroll-to-top');
-  if (!scrollToTopBtn) return;
-
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      scrollToTopBtn.classList.add('visible');
+    if (currentTag === 'all') {
+        renderPagination(toolsList.length);
     } else {
-      scrollToTopBtn.classList.remove('visible');
+        document.querySelector('.pagination').style.display = 'none';
     }
-  });
-
-  scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 }
+
+function renderPagination(totalItems) {
+    const pagination = document.querySelector('.pagination');
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+    if (totalPages <= 1) {
+        pagination.style.display = 'none';
+        return;
+    }
+
+    pagination.style.display = 'flex';
+    let html = '';
+
+    if (currentPage > 1) {
+        html += `<button class="pagination-btn" onclick="changePage(${currentPage - 1})">Previous</button>`;
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+        html += `
+            <button class="pagination-btn ${i === currentPage ? 'active' : ''}" 
+                    onclick="changePage(${i})">${i}</button>
+        `;
+    }
+
+    if (currentPage < totalPages) {
+        html += `<button class="pagination-btn" onclick="changePage(${currentPage + 1})">Next</button>`;
+    }
+
+    pagination.innerHTML = html;
+}
+
+function changePage(page) {
+    currentPage = page;
+    renderTools(filterTools());
+    window.scrollTo({ top: toolsGrid.offsetTop - 100, behavior: 'smooth' });
+}
+
+function filterTools() {
+    if (currentTag === 'all') return tools;
+    return tools.filter(tool => tool.tags.includes(currentTag));
+}
+
+function handleTagClick(tag) {
+    currentTag = tag;
+    currentPage = 1;
+    
+    document.querySelectorAll('.tag-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tag === tag);
+    });
+    
+    renderTools(filterTools());
+}
+
+function toggleFavorite(toolName) {
+    const index = favorites.indexOf(toolName);
+    if (index === -1) {
+        favorites.push(toolName);
+    } else {
+        favorites.splice(index, 1);
+    }
+    
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    updateFavorites();
+    renderTools(filterTools());
+}
+
+function updateFavorites() {
+    if (favorites.length === 0) {
+        favoritesList.innerHTML = '<p class="no-favorites">No favorite tools yet.</p>';
+        return;
+    }
+
+    const favTools = tools.filter(tool => favorites.includes(tool.name));
+    favoritesList.innerHTML = `
+        <ul class="favorites-list">
+            ${favTools.map(tool => `
+                <li><a href="${tool.url}">${tool.name}</a></li>
+            `).join('')}
+        </ul>
+    `;
+}
+
+function handleSearch(e) {
+    const query = e.target.value.toLowerCase();
+    const matchedTools = tools.filter(tool => 
+        tool.name.toLowerCase().includes(query) ||
+        tool.tags.some(tag => tag.toLowerCase().includes(query))
+    );
+    renderTools(matchedTools);
+}
+
+// Mobile search functions
+function openMobileSearch() {
+    mobileSearchContainer?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // Focus on search input after animation
+    setTimeout(() => {
+        mobileSearchInput?.focus();
+    }, 100);
+}
+
+function closeMobileSearch() {
+    mobileSearchContainer?.classList.remove('active');
+    searchResults?.classList.remove('show');
+    document.body.style.overflow = '';
+    mobileSearchInput.value = '';
+}
+
+function handleMobileSearch(e) {
+    const query = e.target.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+        searchResults?.classList.remove('show');
+        return;
+    }
+
+    const matchedTools = tools.filter(tool => 
+        tool.name.toLowerCase().includes(query) ||
+        tool.tags.some(tag => tag.toLowerCase().includes(query))
+    );
+    
+    renderSearchResults(matchedTools, query);
+}
+
+function renderSearchResults(matchedTools, query) {
+    if (!searchResults) return;
+    
+    if (matchedTools.length === 0) {
+        searchResults.innerHTML = `
+            <div class="no-results">
+                <i class="fas fa-search"></i>
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+        `;
+    } else {
+        const resultsHTML = `
+            <div class="search-results-header">
+                <h3>Found ${matchedTools.length} tool${matchedTools.length !== 1 ? 's' : ''}</h3>
+            </div>
+            <ul class="search-results-list">
+                ${matchedTools.map(tool => `
+                    <li class="search-result-item">
+                        <a href="${tool.url}" class="search-result-link">
+                            <h4 class="search-result-title">${highlightSearchTerm(tool.name, query)}</h4>
+                            <p class="search-result-tags">
+                                ${tool.tags.map(tag => `<span class="search-result-tag">${tag}</span>`).join('')}
+                            </p>
+                        </a>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+        searchResults.innerHTML = resultsHTML;
+    }
+    
+    searchResults.classList.add('show');
+}
+
+function highlightSearchTerm(text, searchTerm) {
+    if (!searchTerm) return text;
+    
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+}
+
+// Handle escape key to close mobile search
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileSearchContainer?.classList.contains('active')) {
+        closeMobileSearch();
+    }
+});
+
+// Category scroll functionality
+const scrollLeft = document.querySelector('.scroll-left');
+const scrollRight = document.querySelector('.scroll-right');
+const tagsScroll = document.querySelector('.tags-scroll');
+
+scrollLeft?.addEventListener('click', () => {
+    tagsScroll.scrollBy({
+        left: -200,
+        behavior: 'smooth'
+    });
+});
+
+scrollRight?.addEventListener('click', () => {
+    tagsScroll.scrollBy({
+        left: 200,
+        behavior: 'smooth'
+    });
+});
+
+// Hide/show scroll buttons based on scroll position
+const updateScrollButtons = () => {
+    if (!scrollLeft || !scrollRight || !tagsScroll) return;
+    
+    const { scrollLeft: position, scrollWidth, clientWidth } = tagsScroll;
+    
+    scrollLeft.style.opacity = position > 0 ? '1' : '0';
+    scrollRight.style.opacity = position < scrollWidth - clientWidth ? '1' : '0';
+};
+
+tagsScroll?.addEventListener('scroll', updateScrollButtons);
+window.addEventListener('resize', updateScrollButtons);
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    updateFavorites();
+    renderTools();
+
+    // Add click handlers to tag buttons
+    document.querySelectorAll('.tag-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleTagClick(btn.dataset.tag));
+    });
+
+    // Initial update
+    updateScrollButtons();
+});

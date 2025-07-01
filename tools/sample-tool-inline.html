@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Tool - Jay Tools | Free Online Calculator</title>
+    <meta name="description" content="Use our free Sample Tool calculator for quick and accurate calculations. Simple, fast, and mobile-friendly tool from Jay Tools.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    
+    <!-- Tool Specific Styles -->
+    <style>
+        /* Tool Container Styles */
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tool-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e1e8ed;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: #fafbfc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .calculate-btn {
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .calculate-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .calculate-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .result-section {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
+            border: 2px solid #27ae60;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            display: none;
+            text-align: center;
+        }
+
+        .result-section.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-description {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .reset-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background: #c0392b;
+        }
+
+        .info-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .info-section ul {
+            color: #666;
+            padding-left: 2rem;
+        }
+
+        .info-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Error styles */
+        .error {
+            border-color: #e74c3c !important;
+            background-color: #fdf2f2 !important;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 0 0.5rem;
+            }
+
+            .tool-header {
+                padding: 1.5rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .tool-header h1 {
+                font-size: 2rem;
+            }
+
+            .tool-header p {
+                font-size: 1.1rem;
+            }
+
+            .tool-card {
+                padding: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .result-value {
+                font-size: 2rem;
+            }
+
+            .info-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Categories</h2>
+                <button class="sidebar-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="../about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="../contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="../privacy.html" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="../terms.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <h1>Sample Tool Calculator</h1>
+                <p>This is a sample tool template that you can customize for any calculation or utility. Replace this content with your specific tool description.</p>
+            </div>
+
+            <!-- Tool Card -->
+            <div class="tool-card">
+                <form id="toolForm">
+                    <!-- Input Section -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="input1">First Value</label>
+                            <input type="number" id="input1" name="input1" placeholder="Enter first value" step="any" required>
+                            <div class="error-message" id="input1Error">Please enter a valid number.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input2">Second Value</label>
+                            <input type="number" id="input2" name="input2" placeholder="Enter second value" step="any" required>
+                            <div class="error-message" id="input2Error">Please enter a valid number.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="operation">Operation</label>
+                        <select id="operation" name="operation" required>
+                            <option value="">Select operation</option>
+                            <option value="add">Addition (+)</option>
+                            <option value="subtract">Subtraction (-)</option>
+                            <option value="multiply">Multiplication (×)</option>
+                            <option value="divide">Division (÷)</option>
+                        </select>
+                        <div class="error-message" id="operationError">Please select an operation.</div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <button type="submit" class="calculate-btn" id="calculateBtn">
+                        <i class="fas fa-calculator"></i>
+                        Calculate Result
+                    </button>
+                </form>
+
+                <!-- Result Section -->
+                <div class="result-section" id="resultSection">
+                    <div class="result-title">
+                        <i class="fas fa-check-circle"></i>
+                        Calculation Result
+                    </div>
+                    <div class="result-value" id="resultValue">0</div>
+                    <div class="result-description" id="resultDescription">
+                        Your calculation result will appear here
+                    </div>
+                    <button class="reset-btn" onclick="resetCalculator()">
+                        <i class="fas fa-redo"></i>
+                        Calculate Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="info-section">
+                <h2>About This Tool</h2>
+                <p>This sample tool demonstrates the basic structure and functionality of Jay Tools calculators. You can customize this template to create any type of calculator or utility tool.</p>
+                
+                <h3>Features:</h3>
+                <ul>
+                    <li>Simple and intuitive interface</li>
+                    <li>Mobile-friendly responsive design</li>
+                    <li>Real-time input validation</li>
+                    <li>Clear result display</li>
+                    <li>Error handling and user feedback</li>
+                </ul>
+
+                <h3>How to Use:</h3>
+                <ul>
+                    <li>Enter your first value in the input field</li>
+                    <li>Enter your second value in the second input field</li>
+                    <li>Select the operation you want to perform</li>
+                    <li>Click "Calculate Result" to see the answer</li>
+                    <li>Use "Calculate Again" to reset and try with new values</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script>
+        // Tool Data for search
+        const tools = [
+            { name: 'CGPA to Percentage Calculator', url: 'cgpa-percentage-inline.html', tags: ['calculator', 'study'] },
+            { name: 'IVF Due Date Calculator', url: 'seperate-tool/ivf-calculator.html', tags: ['calculator', 'health'] },
+            { name: 'Pregnancy Weight Gain Calculator', url: 'seperate-tool/pregnancy-weight.html', tags: ['calculator', 'health'] },
+            { name: 'Steps to KM Converter', url: 'steps-to-km-inline.html', tags: ['converter', 'health'] },
+            { name: 'Typing Speed Test Paragraph', url: 'seperate-tool/typing-speed.html', tags: ['utility', 'study'] },
+            { name: 'Calories Burned Walking', url: 'seperate-tool/calories-walking.html', tags: ['calculator', 'health'] },
+            { name: 'Height Conversion Tool', url: 'height-converter-inline.html', tags: ['converter', 'health'] },
+            { name: 'Calorie Deficit Finder', url: 'seperate-tool/calorie-deficit.html', tags: ['calculator', 'health'] },
+            { name: 'Marriage Biodata', url: 'marriage-biodata-inline.html', tags: ['utility', 'personal'] },
+            { name: 'Invite Generator', url: 'invite-generator-inline.html', tags: ['utility', 'personal'] }
+        ];
+
+        // Mobile search elements
+        const searchToggle = document.querySelector('.search-toggle');
+        const mobileSearchContainer = document.querySelector('.mobile-search-container');
+        const mobileSearchInput = document.querySelector('.mobile-search-input');
+        const mobileSearchClose = document.querySelector('.mobile-search-close');
+        const searchResults = document.querySelector('.search-results');
+
+        // Mobile search functions
+        function openMobileSearch() {
+            mobileSearchContainer?.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => mobileSearchInput?.focus(), 100);
+        }
+
+        function closeMobileSearch() {
+            mobileSearchContainer?.classList.remove('active');
+            searchResults?.classList.remove('show');
+            document.body.style.overflow = '';
+            if (mobileSearchInput) mobileSearchInput.value = '';
+        }
+
+        function handleMobileSearch(e) {
+            const query = e.target.value.toLowerCase().trim();
+            if (query.length === 0) {
+                searchResults?.classList.remove('show');
+                return;
+            }
+            const matchedTools = tools.filter(tool => 
+                tool.name.toLowerCase().includes(query) ||
+                tool.tags.some(tag => tag.toLowerCase().includes(query))
+            );
+            renderSearchResults(matchedTools, query);
+        }
+
+        function renderSearchResults(matchedTools, query) {
+            if (!searchResults) return;
+            if (matchedTools.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <h3>No results found</h3>
+                        <p>Try searching with different keywords</p>
+                    </div>`;
+            } else {
+                const resultsHTML = `
+                    <div class="search-results-header">
+                        <h3>Found ${matchedTools.length} tool${matchedTools.length !== 1 ? 's' : ''}</h3>
+                    </div>
+                    <ul class="search-results-list">
+                        ${matchedTools.map(tool => `
+                            <li class="search-result-item">
+                                <a href="${tool.url}" class="search-result-link">
+                                    <h4 class="search-result-title">${highlightSearchTerm(tool.name, query)}</h4>
+                                    <p class="search-result-tags">
+                                        ${tool.tags.map(tag => `<span class="search-result-tag">${tag}</span>`).join('')}
+                                    </p>
+                                </a>
+                            </li>
+                        `).join('')}
+                    </ul>`;
+                searchResults.innerHTML = resultsHTML;
+            }
+            searchResults.classList.add('show');
+        }
+
+        function highlightSearchTerm(text, searchTerm) {
+            if (!searchTerm) return text;
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        // Event listeners for mobile search
+        searchToggle?.addEventListener('click', openMobileSearch);
+        mobileSearchClose?.addEventListener('click', closeMobileSearch);
+        mobileSearchInput?.addEventListener('input', handleMobileSearch);
+        mobileSearchContainer?.addEventListener('click', (e) => {
+            if (e.target === mobileSearchContainer) closeMobileSearch();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileSearchContainer?.classList.contains('active')) {
+                closeMobileSearch();
+            }
+        });
+
+        // Tool Functionality
+        const toolForm = document.getElementById('toolForm');
+        const resultSection = document.getElementById('resultSection');
+        const resultValue = document.getElementById('resultValue');
+        const resultDescription = document.getElementById('resultDescription');
+
+        // Form validation
+        function validateInput(input, errorElement, message) {
+            const value = input.value.trim();
+            if (!value || isNaN(value)) {
+                input.classList.add('error');
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                return false;
+            } else {
+                input.classList.remove('error');
+                errorElement.style.display = 'none';
+                return true;
+            }
+        }
+
+        function validateSelect(select, errorElement, message) {
+            if (!select.value) {
+                select.classList.add('error');
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                return false;
+            } else {
+                select.classList.remove('error');
+                errorElement.style.display = 'none';
+                return true;
+            }
+        }
+
+        // Calculate function
+        function calculate() {
+            const input1 = document.getElementById('input1');
+            const input2 = document.getElementById('input2');
+            const operation = document.getElementById('operation');
+
+            // Validation
+            let isValid = true;
+            isValid &= validateInput(input1, document.getElementById('input1Error'), 'Please enter a valid first number.');
+            isValid &= validateInput(input2, document.getElementById('input2Error'), 'Please enter a valid second number.');
+            isValid &= validateSelect(operation, document.getElementById('operationError'), 'Please select an operation.');
+
+            if (!isValid) return;
+
+            const num1 = parseFloat(input1.value);
+            const num2 = parseFloat(input2.value);
+            const op = operation.value;
+
+            let result;
+            let description;
+
+            switch (op) {
+                case 'add':
+                    result = num1 + num2;
+                    description = `${num1} + ${num2} = ${result}`;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    description = `${num1} - ${num2} = ${result}`;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    description = `${num1} × ${num2} = ${result}`;
+                    break;
+                case 'divide':
+                    if (num2 === 0) {
+                        alert('Cannot divide by zero!');
+                        return;
+                    }
+                    result = num1 / num2;
+                    description = `${num1} ÷ ${num2} = ${result}`;
+                    break;
+                default:
+                    return;
+            }
+
+            // Display result
+            resultValue.textContent = result.toFixed(2);
+            resultDescription.textContent = description;
+            resultSection.classList.add('show');
+
+            // Scroll to result
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Reset function
+        function resetCalculator() {
+            toolForm.reset();
+            resultSection.classList.remove('show');
+            
+            // Clear error states
+            document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+            
+            // Scroll back to top of tool
+            document.querySelector('.tool-header').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission
+        toolForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculate();
+        });
+
+        // Real-time validation
+        document.getElementById('input1').addEventListener('blur', function() {
+            validateInput(this, document.getElementById('input1Error'), 'Please enter a valid first number.');
+        });
+
+        document.getElementById('input2').addEventListener('blur', function() {
+            validateInput(this, document.getElementById('input2Error'), 'Please enter a valid second number.');
+        });
+
+        document.getElementById('operation').addEventListener('change', function() {
+            validateSelect(this, document.getElementById('operationError'), 'Please select an operation.');
+        });
+
+        // Clear error on focus
+        document.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.classList.remove('error');
+                const errorElement = document.getElementById(this.id + 'Error');
+                if (errorElement) errorElement.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

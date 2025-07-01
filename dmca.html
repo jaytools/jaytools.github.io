@@ -15,12 +15,11 @@
     <meta property="og:title" content="Jay Prajapati - DMCA Notice">
     <meta property="og:description" content="DMCA Notice for Jay Tools: Understand how we handle copyright infringement claims and how to submit a valid DMCA takedown request.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaytools.github.io/dmca.html">
+    <meta property="og:url" content="https://jay-tools.com/dmca.html">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://jaytools.github.io/dmca.html">
+    <link rel="canonical" href="https://jay-tools.com/dmca.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -29,156 +28,565 @@
     <link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png">
     <link rel="icon" type="image/png" sizes="192x192" href="web-app-manifest-192x192.png">
     <link rel="manifest" href="site.webmanifest">
-    
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/rules.css">
-    <link rel="stylesheet" href="css/preloader.css">
-
-    <!-- JS -->
-
     
-    <script src="js/bootstrap.min.js" defer></script>
-    <script src="js/preloader.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Sample Page Specific Styles -->
+    <style>
+        /* Brand Link Styles */
+        .brand-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .brand-link:hover {
+            opacity: 0.8;
+        }
+
+        .brand-link:focus {
+            outline: 2px solid #3498db;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Sample Page Content Styles */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            min-height: calc(100vh - 200px);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3498db;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+
+        .page-content {
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+
+        .page-content h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .page-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #34495e;
+            margin: 2rem 0 0.75rem 0;
+        }
+
+        .page-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #34495e;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .page-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .page-content ul,
+        .page-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .page-content li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .page-content ul li {
+            list-style-type: disc;
+        }
+
+        .page-content ol li {
+            list-style-type: decimal;
+        }
+
+        .page-content a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .page-content a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .page-content blockquote {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .page-content code {
+            background: #f1f2f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #e74c3c;
+        }
+
+        .page-content pre {
+            background: #f8f9fa;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .page-content pre code {
+            background: none;
+            padding: 0;
+            color: #2c3e50;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border: 1px solid #e1bee7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: #4a148c;
+            margin-top: 0;
+        }
+
+        .back-to-top {
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            padding-top: 2rem;
+            border-top: 1px solid #e1e8ed;
+        }
+
+        .back-to-top a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top a:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 1rem;
+            }
+
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .page-header {
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .page-content h2 {
+                font-size: 1.5rem;
+                margin: 2rem 0 0.75rem 0;
+            }
+
+            .page-content h3 {
+                font-size: 1.25rem;
+                margin: 1.5rem 0 0.5rem 0;
+            }
+
+            .page-content ul,
+            .page-content ol {
+                padding-left: 1.5rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .site-header,
+            .breadcrumb,
+            .back-to-top,
+            .site-footer {
+                display: none;
+            }
+
+            .page-container {
+                max-width: none;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .page-content {
+                color: black;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner"></div>
-        <div class="loading-text">Loading Jay Tools...</div>
-    </div>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
 
-  <header class="header">
-    <a href="index.html" class="logo" aria-label="Jay Tools Home">Jay Tools</a>
-    <form class="header-search" role="search" aria-label="Site Search" onsubmit="event.preventDefault();">
-        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
-        <button type="submit" aria-label="Submit search">
-          <svg width="22" height="22" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-      </form>
-      <button class="search-toggle" id="searchToggle" aria-label="Open search" tabindex="0" style="display:none">
-        <svg width="24" height="24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-    <nav class="nav" id="navbar" aria-label="Main Navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="index.html#tools">Tools</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    
-    <button class="menu-icon" id="menuIcon" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false" tabindex="0">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="6" x2="20" y2="6" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="18" x2="20" y2="18" />
-      </svg>
-    </button>
-    <div class="mobile-search-modal" id="mobileSearchModal" style="display:none">
-      <form class="mobile-search-form" role="search" aria-label="Mobile Site Search" onsubmit="event.preventDefault();">
-        <input type="search" name="search" placeholder="Search tools... (e.g., CGPA calculator, percentage converter)" aria-label="Search" />
-        <button type="submit" aria-label="Submit search">
-          <svg width="20" height="20" fill="none" stroke="#7f8c8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-        <button type="button" class="close-mobile-search" id="closeMobileSearch" aria-label="Close search">&times;</button>
-      </form>
-    </div>
-  </header>
-  <main>
-
-		<section id="dmca" class="rules-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 content-section">
-            <h2 class="section-heading">DMCA Policy</h2>
-              <p class="content-paragraph">This Digital Millennium Copyright Act Policy (“Policy”) applies to the <b><mcurl name="https://jaytools.github.io/" url="https://jaytools.github.io/"></mcurl></b> website (“Website” or “Service”) and any of its related products and services (collectively, “Services”) and outlines how this Website operator (“Operator”, “we”, “us” or “our”) addresses copyright infringement notifications and how "you" (or "your") may submit a copyright infringement complaint.</p>
-              <p class="content-paragraph">Protection of intellectual property is of utmost importance to us and we ask our users and their authorized agents to do the same. It is our policy to expeditiously respond to clear notifications of alleged copyright infringement that comply with the United States Digital Millennium Copyright Act (“DMCA”) of 1998, the text of which can be found on the U.S. Copyright Office <a href="https://www.copyright.gov/" target="_blank" rel="noopener noreferrer">U.S. Copyright Office</a></p>
-              <h2 class="section-heading">What to consider before submitting a copyright complaint</h2>
-              <p class="content-paragraph">Please note that if you are unsure whether the material you are reporting is in fact infringing, you may wish to contact an attorney before filing a notification with us. Our DMCA page was generated with the help of the RaptorKit's <a href="https://raptorkit.com/dmca-generator/" target="_blank" rel="noopener noreferrer">Free DMCA Generator</a>
-.</p>
-              <p class="content-paragraph">The DMCA requires you to provide your personal information in the copyright infringement notification. If you are concerned about the privacy of your personal information, you may wish to <mcurl name="use an agent" url="https://www.copyrighted.com/professional-takedowns"></mcurl> to report infringing material for you.</p>
-              <h2 class="section-heading">Notifications of infringement</h2>
-              <p class="content-paragraph">If you are a copyright owner or an agent thereof, and you believe that any material available on our Services infringes your copyrights, then you may submit a written copyright infringement notification (“Notification”) using the contact details below pursuant to the DMCA. All such Notifications must comply with the DMCA requirements.</p>
-              <p class="content-paragraph">Filing a DMCA complaint is the start of a pre-defined legal process. Your complaint will be reviewed for accuracy, validity, and completeness. If your complaint has satisfied these requirements, our response may include the removal or restriction of access to the allegedly infringing material.</p>
-              <p class="content-paragraph">If we remove or restrict access to materials or terminate any account in response to a notification of alleged infringement, we will make a good faith effort to contact the affected user with information concerning the removal or restriction of access.</p>
-              <p class="content-paragraph">Notwithstanding anything to the contrary contained in any portion of this Policy, the Operator reserves the right to take no action upon receipt of a DMCA copyright infringement notification if it fails to comply with all the requirements of the DMCA for such notifications.</p>
-              <h2 class="section-heading">Changes and amendments</h2>
-              <p class="content-paragraph">We reserve the right to modify this Policy or its terms related to the Website and Services at any time at our discretion. When we do, we will post a notification on the main page of the Website. We may also provide notice to you in other ways at our discretion, such as through the contact information you have provided.</p>
-              <p class="content-paragraph">An updated version of this Policy will be effective immediately upon the posting of the revised policy unless otherwise specified. Your continued use of the Website and Services after the effective date of the revised Policy (or such other act specified at that time) will constitute your consent to those changes.</p>
-              <h2 class="section-heading">Reporting copyright infringement</h2>
-              <p class="content-paragraph">If you would like to notify us of the infringing material or activity, we encourage you to contact us using the details below:</p>
-              <p class="content-paragraph">Visit our Contact us page or mail us on <b>starofficial202503@gmail.com</b></p>
-              <p class="content-paragraph">Please allow us 2-5 business working days for an email response.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-		<!-- Footer -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row footer-content">
-                <div class="col-md-4 col-sm-6 footer-col">
-                    <div class="footer-about">
-                        <h4 class="footer-heading"><i class="fa fa-cog footer-icon"></i> About Jay Tools</h4>
-                        <p>Jay Tools offers smart, free tools for learning, fitness and daily tasks empowering users with accurate, easy-to-use calculators and utilities.</p>
-                        <p class="contact-info">📧 Contact: <a href="mailto:starofficial202503@gmail.com">starofficial202503@gmail.com</a></p>
-                        <div class="social-icons">
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-youtube"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="https://github.com/jaytools" target="_blank"><i class="fa fa-github"></i></a>
-                        </div>
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Categories</h2>
+                <button class="sidebar-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="privacy.html" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="terms.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-separator">></span>
+            <span>DMCA Notice</span>
+        </nav>
+
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Header -->
+            <header class="page-header">
+                <h1 class="page-title">DMCA Notice</h1>
+                <p class="page-subtitle">Jay Tools respects intellectual property rights and complies with the Digital Millennium Copyright Act (DMCA). Learn about our copyright policy and how to submit takedown requests.</p>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <h2>Copyright Policy</h2>
+                <p>Jay Tools respects the intellectual property rights of others and expects our users to do the same. We have adopted and implemented a policy that provides for the removal of any infringing material from our website.</p>
+                
+                <p>We comply with the Digital Millennium Copyright Act of 1998 (the "DMCA") and other applicable laws. It is our policy to expeditiously respond to clear notices of alleged copyright infringement that comply with the DMCA.</p>
+
+                <h2>Filing a DMCA Notice</h2>
+                <p>If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement and is accessible via our service, please notify our copyright agent as set forth in the DMCA.</p>
+
+                <h3>Required Information</h3>
+                <p>For your complaint to be valid under the DMCA, you must provide the following information when filing your DMCA notice:</p>
+                
+                <ol>
+                    <li><strong>Identification of the copyrighted work</strong> that you claim has been infringed, or if multiple copyrighted works are covered by a single notification, a representative list of such works.</li>
+                    <li><strong>Identification of the infringing material</strong> and information reasonably sufficient to permit us to locate the material on our website.</li>
+                    <li><strong>Your contact information</strong>, including your address, telephone number, and email address.</li>
+                    <li><strong>A statement by you</strong> that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law.</li>
+                    <li><strong>A statement by you</strong>, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
+                    <li><strong>Your physical or electronic signature</strong>.</li>
+                </ol>
+
+                <h3>Where to Send Your DMCA Notice</h3>
+                <p>Please send your DMCA notice to our designated copyright agent:</p>
+                
+                <div class="highlight-box">
+                    <h4><i class="fas fa-envelope"></i> DMCA Agent Contact Information</h4>
+                    <p><strong>Email:</strong> <a href="mailto:dmca@jaytools.github.io">dmca@jaytools.github.io</a></p>
+                    <p><strong>Subject Line:</strong> DMCA Takedown Request</p>
+                    <p><strong>Response Time:</strong> We will respond to valid DMCA notices within 72 hours</p>
                 </div>
 
-                <div class="col-md-4 col-sm-6 footer-col">
-                    <h4 class="footer-heading">Tools & Features</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">CGPA to Percentage Calculator</a></li>
-                        <li><a href="#">Date to Age Calculator</a></li>
-                        <li><a href="#">Pregnancy Weight Gain Calculator</a></li>
-                        <li><a href="#">Calories Burned Walking</a></li>
-                        <li><a href="#">Typing Speed Test</a></li>
+                <h2>Counter-Notice Process</h2>
+                <p>If you believe that your material was removed or disabled by mistake or misidentification, you may file a counter-notice with us.</p>
 
-                    </ul>
-                </div>
+                <h3>Counter-Notice Requirements</h3>
+                <p>To file a counter-notice with us, you must provide a written communication that includes:</p>
+                
+                <ol>
+                    <li><strong>Your physical or electronic signature</strong>.</li>
+                    <li><strong>Identification of the material</strong> that has been removed or to which access has been disabled and the location where the material appeared before removal.</li>
+                    <li><strong>A statement under penalty of perjury</strong> that you have a good faith belief that the material was removed or disabled as a result of mistake or misidentification.</li>
+                    <li><strong>Your name, address, and telephone number</strong>, and a statement that you consent to the jurisdiction of federal court in your judicial district (or if outside the United States, that you consent to jurisdiction of federal court in the jurisdiction where Jay Tools is located), and that you will accept service of process from the person who provided the original DMCA notice.</li>
+                </ol>
 
-                <div class="col-md-4 col-sm-12 footer-col">
-                    <h4 class="footer-heading">Legal & Info</h4>
-                    <ul class="footer-links">
-                        <li><a href="terms.html">Terms of Service</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="dmca.html">DMCA Notice</a></li>
-                        <li><a href="disclaimer.html">Disclaimer</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
+                <h2>Repeat Infringer Policy</h2>
+                <p>Jay Tools has a policy of terminating, in appropriate circumstances, users who are deemed to be repeat infringers. We may also at our sole discretion limit access to the website and/or terminate the accounts of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.</p>
+
+                <h2>False Claims</h2>
+                <p>Please note that under Section 512(f) of the DMCA, any person who knowingly materially misrepresents that material or activity is infringing may be subject to liability for damages. If you are unsure whether material available online infringes your copyright, we suggest that you first contact an attorney.</p>
+
+                <h2>No Legal Advice</h2>
+                <p>The information provided on this page does not, and is not intended to, constitute legal advice. All information available on this page is provided for informational purposes only. You should contact your attorney to obtain advice with respect to any particular legal matter.</p>
+
+                <h2>Modification of Terms</h2>
+                <p>Jay Tools reserves the right to modify this DMCA policy at any time. Changes will be effective immediately upon posting to this page. Your continued use of our website following any changes indicates your acceptance of the new terms.</p>
+
+                <h2>Contact Information</h2>
+                <p>If you have any questions about this DMCA policy or need assistance with filing a notice, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:contact@jaytools.github.io">contact@jaytools.github.io</a></li>
+                    <li><strong>DMCA-specific email:</strong> <a href="mailto:dmca@jaytools.github.io">dmca@jaytools.github.io</a></li>
+                    <li><strong>Website:</strong> <a href="https://jay-tools.com">https://jay-tools.com</a></li>
+                </ul>
+
+                <!-- Last Updated -->
+                <div class="last-updated">
+                    Last updated: January 15, 2025
                 </div>
             </div>
+
+            <!-- Back to Top -->
+            <div class="back-to-top">
+                <a href="#top" aria-label="Back to top of page">
+                    <i class="fas fa-arrow-up"></i>
+                    Back to Top
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Jay Tools. All Rights Reserved.</p>
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        // Back to top smooth scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopLink = document.querySelector('.back-to-top a');
+            
+            if (backToTopLink) {
+                backToTopLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
