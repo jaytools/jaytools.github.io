@@ -1432,3 +1432,30 @@ mark {
         padding-top: 1.5rem;
     }
 }
+
+/* Desktop Search Results Dropdown */
+@media (min-width: 768px) {
+    .search-wrapper {
+        position: relative;
+    }
+    
+    .search-wrapper .search-results {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        max-height: 400px;
+        overflow-y: auto;
+        margin-top: 4px;
+        min-width: 300px;
+    }
+    
+    .search-wrapper .search-results.show {
+        display: block;
+    }
+}

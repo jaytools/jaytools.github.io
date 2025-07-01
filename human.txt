@@ -1,13 +1,17 @@
 /* TEAM */
 Developer: Jay Prajapati
 Contact: starofficial202503@gmail.com
-GitHub: https://github.com/jaytools/jaytools.github.io/
+Website: https://www.jay-tools.com
+GitHub: https://github.com/jaytools
 Location: India
 
 /* SITE */
-Last update: 2025-06-25
+Last update: 2025-07-02
 Language: English
 Doctype: HTML5
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Responsive Design, SEO Optimized, Accessibility Ready
+IDE: Visual Studio Code
 IDE: Visual Studio Code
 Standards: HTML5, CSS3, JavaScript
 Libraries/Frameworks: Bootstrap, Font Awesome

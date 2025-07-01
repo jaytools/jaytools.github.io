@@ -60,7 +60,7 @@ const tools = [
     },
     { 
         name: 'Age Difference Calculator',
-        url: 'tools/date-to-age-inline.html',
+        url: 'tools/age-difference-inline.html',
         tags: ['calculator', 'personal']
     },
     { 
@@ -137,6 +137,37 @@ menuToggle?.addEventListener('click', toggleSidebar);
 menuClose?.addEventListener('click', closeSidebar);
 overlay?.addEventListener('click', closeSidebar);
 searchInput?.addEventListener('input', handleSearch);
+
+// Desktop search focus/blur events for tool pages
+searchInput?.addEventListener('focus', function() {
+    // If we're on a tool page and there's a query, show results
+    if (!document.querySelector('.tools-grid') && this.value.trim()) {
+        const query = this.value.toLowerCase().trim();
+        const matchedTools = tools.filter(tool => 
+            tool.name.toLowerCase().includes(query) ||
+            tool.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+        renderSearchResults(matchedTools, query);
+    }
+});
+
+// Hide search results when clicking outside (for desktop search on tool pages)
+document.addEventListener('click', function(e) {
+    if (!document.querySelector('.tools-grid')) { // Only on tool pages
+        const searchContainer = document.querySelector('.search-container');
+        const searchWrapper = document.querySelector('.search-wrapper');
+        const desktopResults = document.querySelector('.desktop-search-results');
+        
+        if (desktopResults && !searchWrapper?.contains(e.target)) {
+            desktopResults.classList.remove('show');
+        }
+        
+        // Also hide mobile search results if clicking outside
+        if (searchResults && !searchContainer?.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.classList.remove('show');
+        }
+    }
+});
 
 // Mobile search event listeners
 searchToggle?.addEventListener('click', openMobileSearch);
@@ -291,12 +322,32 @@ function updateFavorites() {
 }
 
 function handleSearch(e) {
-    const query = e.target.value.toLowerCase();
-    const matchedTools = tools.filter(tool => 
-        tool.name.toLowerCase().includes(query) ||
-        tool.tags.some(tag => tag.toLowerCase().includes(query))
-    );
-    renderTools(matchedTools);
+    const query = e.target.value.toLowerCase().trim();
+    
+    // Check if we're on a tool page (no tools-grid element)
+    const toolsGrid = document.querySelector('.tools-grid');
+    
+    if (!toolsGrid) {
+        // We're on a tool page, use search results display
+        if (query.length === 0) {
+            searchResults?.classList.remove('show');
+            document.querySelector('.desktop-search-results')?.classList.remove('show');
+            return;
+        }
+        
+        const matchedTools = tools.filter(tool => 
+            tool.name.toLowerCase().includes(query) ||
+            tool.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+        renderSearchResults(matchedTools, query);
+    } else {
+        // We're on the homepage, use normal grid rendering
+        const matchedTools = tools.filter(tool => 
+            tool.name.toLowerCase().includes(query) ||
+            tool.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+        renderTools(matchedTools);
+    }
 }
 
 // Mobile search functions
@@ -335,8 +386,28 @@ function handleMobileSearch(e) {
 function renderSearchResults(matchedTools, query) {
     if (!searchResults) return;
     
+    // For desktop search on tool pages, create or use a desktop search results container
+    let resultsContainer = searchResults;
+    const isToolPage = !document.querySelector('.tools-grid');
+    const isDesktopSearch = window.innerWidth >= 768 && !mobileSearchContainer?.classList.contains('active');
+    
+    if (isToolPage && isDesktopSearch) {
+        // Check if desktop search results container exists
+        let desktopResults = document.querySelector('.desktop-search-results');
+        if (!desktopResults) {
+            // Create desktop search results container
+            desktopResults = document.createElement('div');
+            desktopResults.className = 'search-results desktop-search-results';
+            const searchWrapper = document.querySelector('.search-wrapper');
+            if (searchWrapper) {
+                searchWrapper.appendChild(desktopResults);
+            }
+        }
+        resultsContainer = desktopResults;
+    }
+    
     if (matchedTools.length === 0) {
-        searchResults.innerHTML = `
+        resultsContainer.innerHTML = `
             <div class="no-results">
                 <i class="fas fa-search"></i>
                 <h3>No results found</h3>
@@ -361,10 +432,10 @@ function renderSearchResults(matchedTools, query) {
                 `).join('')}
             </ul>
         `;
-        searchResults.innerHTML = resultsHTML;
+        resultsContainer.innerHTML = resultsHTML;
     }
     
-    searchResults.classList.add('show');
+    resultsContainer.classList.add('show');
 }
 
 function highlightSearchTerm(text, searchTerm) {
