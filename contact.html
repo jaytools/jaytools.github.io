@@ -14,7 +14,7 @@
     <meta property="og:title" content="Jay Tools - Contact Us">
     <meta property="og:description" content="Reach out to Jay Tools for any questions or feedback.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.jay-tools.com/contact.html">
+    <meta property="og:url" content="https://jaytools.github.io/contact.html">
 
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="Get in touch with Jay Tools for feedback, support, bug reports and suggestions. We're here to help with your calculator and tool needs.">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.jay-tools.com/contact.html">
+    <link rel="canonical" href="https://jaytools.github.io/contact.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -41,6 +41,41 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Jay Tools",
+        "description": "Get in touch with Jay Tools for feedback, support, bug reports and suggestions. We're here to help with your calculator and tool needs.",
+        "url": "https://jaytools.github.io/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Jay Tools",
+            "url": "https://jaytools.github.io",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://jaytools.github.io/favicon.svg",
+                "width": "96",
+                "height": "96"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "support@jay-tools.com",
+                "contactType": "customer service",
+                "availableLanguage": ["English"],
+                "areaServed": "Worldwide"
+            },
+            "sameAs": [
+                "https://instagram.com/jaytools",
+                "https://github.com/jayprajapati",
+                "https://youtube.com/@jaytools",
+                "https://linkedin.com/in/jayprajapati"
+            ]
+        }
+    }
+    </script>
     
     <!-- Contact Page Specific Styles -->
     <style>
@@ -572,7 +607,7 @@
                 </div>
 
                 <!-- Contact Form -->
-                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form id="contactForm" action="#" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name <span class="required">*</span></label>
                         <input type="text" id="name" name="name" required aria-label="Your full name">

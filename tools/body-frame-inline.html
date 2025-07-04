@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Frame Size Calculator - Jay Tools | Free Online Calculator</title>
+    <meta name="description" content="Use our free Body Frame Size Calculator to determine your frame type using wrist measurements. Learn your body frame size - small, medium, or large.">
+    <meta name="keywords" content="body frame size calculator, wrist measurement calculator, determine body frame size, ideal body size by wrist, body frame calculator, frame size calculator, Jay Tools">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jay Tools">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Body Frame Size Calculator - Jay Tools | Free Online Calculator">
+    <meta property="og:description" content="Determine if you have a small, medium or large body frame using our free body frame size calculator based on wrist circumference measurements.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaytools.github.io/tools/body-frame-inline.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jaytools.github.io/tools/body-frame-inline.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Body Frame Size Calculator",
+        "description": "Calculate your body frame size (small, medium, or large) based on wrist measurements and height.",
+        "url": "https://jaytools.github.io/tools/body-frame-inline.html",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "mainEntity": {
+            "@type": "HowTo",
+            "name": "How to Determine Your Body Frame Size",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Select your preferred measurement units (imperial or metric)"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your gender as it affects the calculation formulas"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Input your height in feet/inches or centimeters"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Measure your wrist circumference just below the wrist bone"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Click 'Calculate Body Frame Size' to see your results"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- FAQPage Structured Data for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I measure my wrist correctly?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To measure your wrist accurately, wrap a flexible measuring tape around your wrist just below the wrist bone (where you would wear a watch). Make sure the tape is snug but not tight. If you don't have a measuring tape, use a string and then measure it against a ruler. For the most accurate results, measure your non-dominant wrist (left wrist if you're right-handed) since it typically has less muscle development that could affect the reading."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does body frame size matter?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your body frame size actually matters quite a bit! It affects your ideal weight range, how clothes fit, and even your overall health considerations. Someone with a larger frame naturally has more bone mass and might weigh more than someone with a small frame, even at the same height and fitness level. Knowing your frame size helps you set more realistic fitness goals and make better health decisions based on your natural body structure rather than comparing yourself to generic charts that don't account for bone structure differences."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate is the wrist measurement method?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The wrist measurement method is generally considered reliable because your wrist consists mostly of bones with minimal fat or muscle, making it a good indicator of your skeletal frame size. That said, it's one of several methods to determine frame size. For the most comprehensive assessment, health professionals may use multiple measurements including elbow breadth and shoulder width. For everyday purposes though, the wrist method is simple and gives a good indication of your frame type."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can my frame size change over time?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your basic frame size is determined by your bone structure, which is primarily genetic and doesn't change significantly throughout adulthood. You can't exercise or diet your way into a different frame size! However, certain factors can affect the appearance of your frame, such as muscle development, weight changes, and age-related bone density changes. Older adults might experience some decrease in frame size due to bone loss, which is why maintaining bone health through proper nutrition and exercise is important."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Tool Specific Styles -->
+    <style>
+        /* Tool Container Styles */
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tool-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e1e8ed;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: #fafbfc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .calculate-btn {
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .calculate-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .calculate-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .integrated-results {
+            border-top: 1px dashed #ccc;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            text-align: center;
+            max-width: 100%;
+            box-sizing: border-box;
+            opacity: 0.6;
+            transition: all 0.4s ease;
+        }
+
+        .integrated-results.show {
+            opacity: 1;
+            background: linear-gradient(135deg, rgba(232, 245, 232, 0.4) 0%, rgba(240, 248, 255, 0.4) 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            animation: fadeIn 0.4s ease;
+            border: 2px solid #27ae60;
+        }
+        
+        .results-divider {
+            position: relative;
+            text-align: center;
+            margin: 0 0 1.5rem;
+        }
+        
+        .results-divider span {
+            background-color: white;
+            padding: 0 15px;
+            position: relative;
+            top: -12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .integrated-results.show .results-divider span {
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .result-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-description {
+            color: #555;
+            font-size: 1.1rem;
+            margin: 1rem auto 1.5rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .reset-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-block;
+            min-width: 180px;
+        }
+
+        .reset-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .info-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .info-section ul {
+            color: #666;
+            padding-left: 2rem;
+        }
+
+        .info-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            70% {
+                opacity: 1;
+                transform: translateY(5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Unit Toggle Styles */
+        .unit-toggle-container {
+            margin-bottom: 1.5rem;
+        }
+        
+        .unit-toggle {
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #e1e8ed;
+            margin-top: 0.5rem;
+        }
+        
+        .unit-btn {
+            flex: 1;
+            padding: 0.75rem;
+            font-weight: 600;
+            background: #f0f4f7;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .unit-btn.active {
+            background: #3498db;
+            color: white;
+        }
+        
+        .hide-input {
+            display: none;
+        }
+        
+        /* Frame Size Result Styling */
+        .frame-size {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            text-align: center;
+            padding: 0.5rem 0;
+            border-radius: 8px;
+            display: inline-block;
+            min-width: 200px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .frame-size.small {
+            color: #2ecc71;
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+        
+        .frame-size.medium {
+            color: #3498db;
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .frame-size.large {
+            color: #e74c3c;
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+        
+        .frame-icon {
+            font-size: 3rem;
+            margin: 0.5rem 0 1.25rem;
+            display: block;
+            animation: pulse 1s ease-in-out;
+        }
+        
+        .ideal-weight {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem auto;
+            border-left: 4px solid #3498db;
+            max-width: 90%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        .ideal-weight h4 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .ideal-weight p {
+            margin: 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Error styles */
+        .error {
+            border-color: #e74c3c !important;
+            background-color: #fdf2f2 !important;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        /* Success state */
+        .success {
+            border-color: #2ecc71 !important;
+            background-color: #f0fff4 !important;
+        }
+
+        .success-icon {
+            position: absolute;
+            right: 10px;
+            top: 40px;
+            color: #2ecc71;
+            display: none;
+        }
+
+        /* Form field enhancements */
+        .input-with-help {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-suffix {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7f8c8d;
+            pointer-events: none;
+            font-size: 0.9rem;
+        }
+
+        .help-text {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        /* Tooltip styles */
+        .label-with-tooltip {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tooltip-trigger {
+            position: relative;
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        .tooltip-content {
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 1rem;
+            width: 250px;
+            max-width: 90vw;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e1e8ed;
+            font-weight: normal;
+        }
+
+        .tooltip-title {
+            font-weight: 600;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .tooltip-text {
+            color: #555;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .tooltip-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
+
+        .tooltip-trigger:hover .tooltip-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Measurement guide */
+        .measurement-guide {
+            display: flex;
+            align-items: flex-start;
+            background: #f1f9fe;
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-top: 0.75rem;
+            border-left: 3px solid #3498db;
+        }
+
+        .guide-icon {
+            margin-right: 0.75rem;
+            color: #3498db;
+            font-size: 1.25rem;
+        }
+
+        .guide-text p {
+            margin: 0 0 0.5rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .guide-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        /* Result content container styles */
+        .result-content {
+            padding: 0.5rem;
+        }
+        
+        /* Action buttons container */
+        .action-buttons {
+            margin-top: 1.5rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Share button */
+        .share-btn {
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-block;
+            min-width: 180px;
+        }
+        
+        .share-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        /* Calculation progress indicator */
+        
+        /* Calculation progress indicator */
+        .calculation-progress {
+            display: none;
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        
+        .progress-spinner {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-text {
+            color: #555;
+        }
+        
+        /* Result insights */
+        .result-insights {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem auto;
+            border-left: 4px solid #9b59b6;
+            max-width: 90%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        .result-insights h4 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .insights-content {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Accessibility improvements */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        
+        /* Desktop specific styles */
+        @media (min-width: 769px) {
+            .result-section {
+                max-width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 2.5rem;
+            }
+            
+            .frame-size {
+                min-width: 250px;
+            }
+            
+            .ideal-weight {
+                max-width: 80%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 0 0.5rem;
+            }
+
+            .tool-header {
+                padding: 1.5rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .tool-header h1 {
+                font-size: 2rem;
+            }
+
+            .tool-header p {
+                font-size: 1.1rem;
+            }
+
+            .tool-card {
+                padding: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-section {
+                padding: 1.5rem 1rem;
+            }
+            
+            .result-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .frame-size {
+                font-size: 1.8rem;
+                min-width: 180px;
+            }
+            
+            .frame-icon {
+                font-size: 2.5rem;
+            }
+            
+            .result-description {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .ideal-weight {
+                padding: 1rem;
+                margin: 1rem auto;
+            }
+
+            .info-section {
+                padding: 1.5rem;
+            }
+
+            .tooltip-content {
+                width: 220px;
+            }
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .tool-container {
+            background-color: #121212;
+        }
+
+        body.dark-mode .tool-header {
+            background: linear-gradient(135deg, #4b6cb7 0%, #553c8b 100%);
+        }
+
+        body.dark-mode .tool-card {
+            background: #1e1e1e;
+            border-color: #333;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .form-group label {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group select,
+        body.dark-mode .form-group textarea {
+            background-color: #2d2d2d;
+            border-color: #444;
+            color: #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .form-group input:focus,
+        body.dark-mode .form-group select:focus,
+        body.dark-mode .form-group textarea:focus {
+            border-color: #3498db;
+            background-color: #333;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        body.dark-mode .form-group input::placeholder {
+            color: #999;
+            opacity: 0.8;
+        }
+
+        body.dark-mode .help-text,
+        body.dark-mode .input-suffix {
+            color: #aaa;
+        }
+
+        body.dark-mode .unit-toggle {
+            border-color: #444;
+        }
+
+        body.dark-mode .unit-btn {
+            background: #2d2d2d;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .unit-btn.active {
+            background: #3498db;
+        }
+
+        body.dark-mode .integrated-results {
+            background: linear-gradient(135deg, rgba(50, 65, 50, 0.4) 0%, rgba(30, 40, 50, 0.4) 100%);
+            border-color: #27ae60;
+        }
+
+        body.dark-mode .integrated-results.show {
+            border-color: #27ae60;
+        }
+
+        body.dark-mode .results-divider span {
+            background-color: #1e1e1e;
+            color: #bbb;
+        }
+
+        body.dark-mode .integrated-results.show .results-divider span {
+            color: #2ecc71;
+        }
+
+        body.dark-mode .result-description {
+            color: #bbb;
+        }
+
+        body.dark-mode .frame-size.small {
+            background-color: rgba(46, 204, 113, 0.15);
+        }
+
+        body.dark-mode .frame-size.medium {
+            background-color: rgba(52, 152, 219, 0.15);
+        }
+
+        body.dark-mode .frame-size.large {
+            background-color: rgba(231, 76, 60, 0.15);
+        }
+
+        body.dark-mode .ideal-weight {
+            background: #2d2d2d;
+            border-left-color: #3498db;
+        }
+
+        body.dark-mode .ideal-weight h4 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .ideal-weight p {
+            color: #bbb;
+        }
+
+        body.dark-mode .result-insights {
+            background: #2d2d2d;
+            border-left-color: #9b59b6;
+        }
+
+        body.dark-mode .result-insights h4 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .insights-content {
+            color: #bbb;
+        }
+
+        body.dark-mode .info-section {
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .info-section h2, 
+        body.dark-mode .info-section h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .info-section p, 
+        body.dark-mode .info-section ul, 
+        body.dark-mode .info-section ol {
+            color: #bbb;
+        }
+
+        body.dark-mode .measurement-guide {
+            background: #2d2d2d;
+            border-left-color: #3498db;
+        }
+        
+        body.dark-mode .guide-icon {
+            color: #3498db;
+        }
+        
+        body.dark-mode .guide-text p {
+            color: #bbb;
+        }
+
+        body.dark-mode .tooltip-content {
+            background: #2d2d2d;
+            border-color: #444;
+        }
+
+        body.dark-mode .tooltip-title {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .tooltip-text {
+            color: #bbb;
+        }
+
+        body.dark-mode .calculation-progress {
+            background: #2d2d2d;
+        }
+
+        body.dark-mode .progress-text {
+            color: #bbb;
+        }
+
+        /* Dark mode toggle button */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: #2d2d2d;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode-toggle i {
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Toast notification for dark mode */
+        .mode-toast {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .mode-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Dark mode error and success styles */
+        body.dark-mode .error {
+            border-color: #e74c3c !important;
+            background-color: rgba(231, 76, 60, 0.15) !important;
+        }
+        
+        body.dark-mode .error-message {
+            color: #ff6b6b;
+        }
+        
+        body.dark-mode .success {
+            border-color: #2ecc71 !important;
+            background-color: rgba(46, 204, 113, 0.15) !important;
+        }
+        
+        body.dark-mode .success-icon {
+            color: #2ecc71;
+        }
+
+        /* FAQ Section Styles */
+        .faq-section {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 1rem;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            position: relative;
+            outline: none;
+        }
+
+        .faq-item summary:hover {
+            background-color: #f1f3f5;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '⌵';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-item .faq-content {
+            padding: 0 1rem 1rem 1rem;
+        }
+
+        .faq-content p {
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Dark Mode for FAQ Section */
+        body.dark-mode .faq-section h2 {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .faq-item {
+            border: 1px solid #444;
+        }
+
+        body.dark-mode .faq-item summary {
+            color: #e0e0e0;
+            background-color: #2c2c2c;
+            border-color: #444;
+        }
+
+        body.dark-mode .faq-item summary:hover {
+            background-color: #383838;
+        }
+
+        body.dark-mode .faq-item[open] summary {
+            background-color: #383838;
+        }
+
+        body.dark-mode .faq-item .faq-content {
+            color: #ddd;
+            background-color: #333;
+            border-color: #444;
+        }
+
+        /* Related Tools section styles */
+        .related-tools-section {
+            margin-top: 4rem;
+            padding: 2rem 1.5rem;
+        }
+
+        .related-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-tool-card {
+            display: block;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            background-color: #fff;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e5e5;
+        }
+
+        .related-tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+            border-color: #d0d0d0;
+        }
+
+        .related-tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .related-tool-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .related-tool-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Dark mode styles for related tools */
+        body.dark-mode .related-tool-card {
+            background-color: #2c2c2c;
+            border-color: #444;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        body.dark-mode .related-tool-card:hover {
+            border-color: #555;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        body.dark-mode .related-tool-card h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .related-tool-card p {
+            color: #bbb;
+        }
+
+        /* Media query for related tools on small screens */
+        @media (max-width: 767px) {
+            .related-tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .related-tool-card {
+                padding: 1.2rem;
+            }
+            
+            .related-tool-icon {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+        }
+        
+        /* WebPage Schema for the page will be added in JSON-LD */
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <!-- Toast notification for mode changes -->
+    <div class="mode-toast" id="modeToast"></div>
+    
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Categories</h2>
+                <button class="sidebar-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="../about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="../contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="../privacy.html" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="../terms.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <h1>Body Frame Size Calculator</h1>
+                <p>Determine if you have a small, medium, or large body frame based on your wrist circumference and height. Knowing your frame size helps set realistic weight and fitness goals.</p>
+            </div>
+
+            <!-- Tool Card -->
+            <div class="tool-card">
+                <form id="toolForm">
+                    <!-- Units Toggle -->
+                    <div class="form-group unit-toggle-container">
+                        <label id="unitsLabel">Measurement Units</label>
+                        <div class="unit-toggle" role="group" aria-labelledby="unitsLabel">
+                            <button type="button" id="imperialBtn" class="unit-btn active" aria-pressed="true">Imperial (in, ft)</button>
+                            <button type="button" id="metricBtn" class="unit-btn" aria-pressed="false">Metric (cm)</button>
+                        </div>
+                    </div>
+
+                    <!-- Input Section -->
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required aria-describedby="genderHelp genderError">
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <div class="help-text" id="genderHelp">Needed for accurate frame size calculation</div>
+                        <div class="error-message" id="genderError">Please select your gender.</div>
+                    </div>
+
+                    <!-- Height Section with Improved UI -->
+                    <div class="form-group">
+                        <div class="label-with-tooltip">
+                            <label id="heightLabel">Your Height</label>
+                            <span class="tooltip-trigger" id="heightHelpTrigger" role="button" tabindex="0" aria-label="Height measurement help">
+                                <i class="fas fa-question-circle"></i>
+                                <span class="tooltip-content">
+                                    <span class="tooltip-title">Height Measurement</span>
+                                    <span class="tooltip-text">
+                                        Enter your barefoot height. Your height is needed to calculate the height-to-wrist ratio which determines your frame size.
+                                    </span>
+                                    <img src="https://jaytools.github.io/img/height-measure.jpg" alt="How to measure height" class="tooltip-image">
+                                </span>
+                            </span>
+                        </div>
+                        
+                        <div id="imperialHeight" class="form-row">
+                            <div class="form-group">
+                                <div class="input-with-help">
+                                    <input type="number" 
+                                           id="heightFeet" 
+                                           name="heightFeet" 
+                                           placeholder="ft" 
+                                           min="4" 
+                                           max="8" 
+                                           step="1" 
+                                           required 
+                                           aria-label="Height in feet"
+                                           aria-describedby="heightFeetHelp heightFeetError">
+                                    <span class="input-suffix">feet</span>
+                                </div>
+                                <div class="help-text" id="heightFeetHelp">Enter feet (4-8)</div>
+                                <div class="error-message" id="heightFeetError">Please enter a valid height.</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-with-help">
+                                    <input type="number" 
+                                           id="heightInches" 
+                                           name="heightInches" 
+                                           placeholder="in" 
+                                           min="0" 
+                                           max="11" 
+                                           step="1" 
+                                           required
+                                           aria-label="Height in inches" 
+                                           aria-describedby="heightInchesHelp heightInchesError">
+                                    <span class="input-suffix">inches</span>
+                                </div>
+                                <div class="help-text" id="heightInchesHelp">Enter inches (0-11)</div>
+                                <div class="error-message" id="heightInchesError">Please enter a valid value (0-11).</div>
+                            </div>
+                        </div>
+
+                        <div id="metricHeight" class="form-group hide-input">
+                            <div class="input-with-help">
+                                <input type="number" 
+                                       id="heightCm" 
+                                       name="heightCm" 
+                                       placeholder="Enter height in cm" 
+                                       min="120" 
+                                       max="250" 
+                                       step="1"
+                                       aria-label="Height in centimeters" 
+                                       aria-describedby="heightCmHelp heightCmError">
+                                <span class="input-suffix">cm</span>
+                            </div>
+                            <div class="help-text" id="heightCmHelp">Enter your height in centimeters (120-250cm)</div>
+                            <div class="error-message" id="heightCmError">Please enter a valid height.</div>
+                        </div>
+                    </div>
+
+                    <!-- Wrist Measurement with Guide -->
+                    <div class="form-group">
+                        <div class="label-with-tooltip">
+                            <label id="wristLabel">Wrist Circumference</label>
+                            <span class="tooltip-trigger" id="wristHelpTrigger" role="button" tabindex="0" aria-label="Wrist measurement help">
+                                <i class="fas fa-question-circle"></i>
+                                <span class="tooltip-content">
+                                    <span class="tooltip-title">How to measure your wrist</span>
+                                    <span class="tooltip-text">
+                                        Measure just below your wrist bone, where your hand meets your wrist. Use a flexible measuring tape or a string that you can measure afterward.
+                                    </span>
+                                    <img src="https://jaytools.github.io/img/wrist-measure-guide.jpg" alt="How to measure wrist" class="tooltip-image">
+                                </span>
+                            </span>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div id="imperialWrist" class="form-group">
+                                <div class="input-with-help">
+                                    <input type="number" 
+                                           id="wristInches" 
+                                           name="wristInches" 
+                                           placeholder="Enter wrist size" 
+                                           min="4" 
+                                           max="10" 
+                                           step="0.25" 
+                                           required
+                                           aria-label="Wrist measurement in inches" 
+                                           aria-describedby="wristInchesHelp wristInchesError">
+                                    <span class="input-suffix">inches</span>
+                                </div>
+                                <div class="help-text" id="wristInchesHelp">Typical range: 5.5-8" for men, 5-7" for women</div>
+                                <div class="error-message" id="wristInchesError">Please enter a valid wrist measurement.</div>
+                            </div>
+                            <div id="metricWrist" class="form-group hide-input">
+                                <div class="input-with-help">
+                                    <input type="number" 
+                                           id="wristCm" 
+                                           name="wristCm" 
+                                           placeholder="Enter wrist size" 
+                                           min="10" 
+                                           max="25" 
+                                           step="0.1"
+                                           aria-label="Wrist measurement in centimeters" 
+                                           aria-describedby="wristCmHelp wristCmError">
+                                    <span class="input-suffix">cm</span>
+                                </div>
+                                <div class="help-text" id="wristCmHelp">Typical range: 14-20cm for men, 13-18cm for women</div>
+                                <div class="error-message" id="wristCmError">Please enter a valid wrist measurement.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="measurement-guide" role="region" aria-labelledby="measurementGuideTitle">
+                            <h4 class="visually-hidden" id="measurementGuideTitle">Wrist Measurement Guide</h4>
+                            <div class="guide-icon">
+                                <i class="fas fa-ruler"></i>
+                            </div>
+                            <div class="guide-text">
+                                <p>For accurate results, measure your wrist at its narrowest point using a measuring tape wrapped snugly but not tightly.</p>
+                                <p>No measuring tape? Use a string and measure it against a ruler.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Calculate Button -->
+                    <button type="submit" class="calculate-btn" id="calculateBtn" aria-label="Calculate body frame size">
+                        <i class="fas fa-calculator"></i>
+                        Calculate Body Frame Size
+                    </button>
+                    
+                    <!-- Calculation Progress Indicator -->
+                    <div class="calculation-progress" id="calculationProgress" aria-hidden="true">
+                        <div class="progress-spinner">
+                            <i class="fas fa-spinner fa-pulse"></i>
+                        </div>
+                        <div class="progress-text">Calculating your body frame size...</div>
+                    </div>
+                    
+                    <!-- Result Section (integrated within form) -->
+<div class="integrated-results" id="resultSection" role="region" aria-live="polite" aria-labelledby="resultTitle">
+    <div class="results-divider">
+        <span id="resultTitle">Your Results</span>
+    </div>
+
+    <div class="result-content">
+        <!-- Frame Result Header -->
+        <div class="result-header">
+            <div class="frame-icon" id="frameIcon" aria-hidden="true">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="frame-size" id="frameSize" role="status" aria-describedby="frameLabel">Medium Frame</div>
+        </div>
+
+        <div class="result-description" id="resultDescription">
+            You have a <strong>medium body frame</strong>. People with this build typically have an average bone structure and a balanced weight distribution. 
+            This can help you set healthy fitness and weight goals tailored to your build.
+        </div>
+
+        <!-- Ideal Weight Section -->
+        <div class="ideal-weight" id="idealWeightSection" role="region" aria-labelledby="idealWeightTitle">
+            <h4 id="idealWeightTitle"><i class="fas fa-weight"></i> Ideal Weight Range</h4>
+            <p id="idealWeightRange">
+                Based on your height and frame size, your ideal weight range is approximately <strong>134 to 144 pounds (61–65 kg)</strong>.
+            </p>
+        </div>
+
+        <!-- Insights Section -->
+        <div class="result-insights" id="resultInsights">
+            <h4><i class="fas fa-lightbulb"></i> What This Means</h4>
+            <div id="frameInsights" class="insights-content">
+                Your <strong>body frame size</strong> influences how your body carries weight and can impact clothing fit, posture, and health goals. Knowing your frame type can help guide you toward a more personalized fitness plan.
+            </div>
+        </div>
+
+    
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button type="button" class="reset-btn" onclick="resetCalculator()" aria-label="Reset calculator">
+                <i class="fas fa-redo"></i>
+                Reset Calculator
+            </button>
+            <button type="button" class="share-btn" id="shareResultBtn" aria-label="Share your result">
+                <i class="fas fa-share-alt"></i>
+                Share Result
+            </button>
+        </div>
+    </div>
+</div>
+                </form>
+            </div>
+
+            <!-- Information Section -->
+            <!-- About the Calculator Section -->
+            <section class="info-section" style="margin-top: 3rem;">
+                <h2>About the Body Frame Size Calculator</h2>
+                
+                <p>Ever tried on a pair of jeans that technically fit your waist but still felt all wrong? Or wondered why your friend who's the same height carries weight so differently? That's where body frame size comes in – it's like your body's underlying architecture.</p>
+                
+                <p>Think of your body frame as the foundation of a house. Some houses are built on narrow foundations, others on wide ones – neither is better, they're just different. Your bones determine your frame size, and it's something you're born with. You can't diet or exercise your way into a different frame size!</p>
+                
+                <h3>How Body Frame Affects Your Life</h3>
+                
+                <p>I remember shopping with my sister (who has a small frame) while I have a medium-to-large frame. We're the same height, but clothes that looked amazing on her hung awkwardly on me – even when we were similar weights. Understanding your frame explains these differences!</p>
+                
+                <p>Here's how knowing your frame size can actually help you:</p>
+                
+                <ul>
+                    <li><strong>More realistic fitness goals</strong> – If you have a large frame, you might naturally weigh more than standard charts suggest, and that's perfectly healthy!</li>
+                    <li><strong>Better clothing choices</strong> – Different cuts and styles complement different frame sizes. No more wondering why certain trends never look right.</li>
+                    <li><strong>Improved confidence</strong> – Stop comparing yourself to people with totally different body structures. Your frame is uniquely yours!</li>
+                    <li><strong>Smarter health decisions</strong> – Doctors can use frame size to make better assessments about your ideal weight range and health needs.</li>
+                </ul>
+                
+                <h3>Why Calculate Your Frame Size?</h3>
+                
+                <p>I worked with a friend who was constantly frustrated with his weight loss journey. He was hitting the gym regularly but still weighed more than his "ideal weight" according to standard charts. When he discovered he had a naturally large frame, it was like a weight lifted from his shoulders – he realized he was actually at a healthy weight for his body type.</p>
+                
+                <p>Knowing your frame size isn't about labeling yourself or finding excuses – it's about understanding the body you were born with so you can make choices that actually work for YOU. It's about setting goals that make sense for your unique structure.</p>
+                
+                <p>So go ahead, take two minutes to measure your wrist, and discover something fundamental about yourself that you might have overlooked your entire life. It might just change how you see yourself!</p>
+            </section>
+
+            <!-- Ideal Weight Table Section -->
+            <section class="info-section weight-table-container">
+                <h2>Ideal Weight by Frame Size</h2>
+                <p>This table provides a general guideline for ideal weight ranges based on height and frame size. Remember that these are estimates and individual factors like muscle mass, age, and overall health should be considered.</p>
+                
+                <table class="weight-table">
+                  <thead>
+                    <tr>
+                      <th>Height</th>
+                      <th>Small Frame</th>
+                      <th>Medium Frame</th>
+                      <th>Large Frame</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>5'2"</td>
+                      <td>108–121 lbs</td>
+                      <td>118–132 lbs</td>
+                      <td>128–143 lbs</td>
+                    </tr>
+                    <tr>
+                      <td>5'4"</td>
+                      <td>114–127 lbs</td>
+                      <td>124–138 lbs</td>
+                      <td>134–151 lbs</td>
+                    </tr>
+                    <tr>
+                      <td>5'6"</td>
+                      <td>117–130 lbs</td>
+                      <td>127–141 lbs</td>
+                      <td>137–154 lbs</td>
+                    </tr>
+                    <tr>
+                      <td>5'8"</td>
+                      <td>121–136 lbs</td>
+                      <td>133–147 lbs</td>
+                      <td>143–163 lbs</td>
+                    </tr>
+                    <tr>
+                      <td>5'10"</td>
+                      <td>129–144 lbs</td>
+                      <td>141–158 lbs</td>
+                      <td>152–176 lbs</td>
+                    </tr>
+                    <tr>
+                      <td>6'0"</td>
+                      <td>136–154 lbs</td>
+                      <td>152–169 lbs</td>
+                      <td>164–188 lbs</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <p class="help-text">Note: These weight ranges are based on general guidelines and may vary based on individual health factors, muscle composition, age, and specific health conditions. Always consult with a healthcare professional for personalized guidance.</p>
+            </section>
+
+            <!-- Informative Article Section -->
+            <article class="info-section">
+              <h2>Why Body Frame Size Matters for Your Fitness Goals</h2>
+              <p>Your body frame isn't just about how broad your shoulders are – it affects your ideal weight, how clothes fit, and even your BMI. For example, two people of the same height may have different healthy weights depending on their frame.</p>
+              
+              <p>When setting fitness goals or evaluating your health metrics, your skeletal structure should be a key consideration. Traditional BMI charts and generic weight recommendations often fall short because they don't account for different body frames. Someone with a naturally larger frame will have more bone mass and likely weigh more, even at optimal fitness levels.</p>
+              
+              <h3>How Athletes Use Frame Size</h3>
+              <p>Athletes often have larger frames due to muscle and bone density. That's why a football player may weigh more without being "overweight." Frame size offers personalized insight into fitness goals.</p>
+              
+              <p>Professional trainers and sports nutritionists regularly factor in frame size when developing training programs. For instance, a basketball player with a naturally small frame might focus on different strength training protocols than someone with a large frame playing the same position.</p>
+              
+              <h3>Frame Size and Your Health Journey</h3>
+              <p>Understanding your frame size can be liberating. Many people struggle with unrealistic weight expectations based on generic charts. If you've always felt that standard weight recommendations don't work for you, your frame size might explain why.</p>
+              
+              <p>Rather than aiming for a number on a scale, focus on health markers like energy levels, strength, flexibility, and cardiovascular fitness. Your ideal weight should reflect your unique body structure, not an arbitrary standard. When you embrace your natural frame size, you can set more realistic, achievable, and sustainable fitness goals.</p>
+              
+              <p>Remember – there's no "ideal" frame size. Small, medium, or large frames all have their advantages in different contexts. The key is understanding your body's natural structure and working with it, not against it, on your health journey.</p>
+            </article>
+
+            <!-- FAQ Section -->
+            <section class="tool-section faq-section">
+                <h2>FAQs</h2>
+                
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>📏 How do I measure my wrist correctly?</summary>
+                        <div class="faq-content">
+                            <p>To measure your wrist accurately, wrap a flexible measuring tape around your wrist just below the wrist bone (where you would wear a watch). Make sure the tape is snug but not tight. If you don't have a measuring tape, use a string and then measure it against a ruler.</p>
+                            <p>For the most accurate results, measure your non-dominant wrist (left wrist if you're right-handed) since it typically has less muscle development that could affect the reading.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>❓ Why does body frame size matter?</summary>
+                        <div class="faq-content">
+                            <p>Your body frame size actually matters quite a bit! It affects your ideal weight range, how clothes fit, and even your overall health considerations. Someone with a larger frame naturally has more bone mass and might weigh more than someone with a small frame, even at the same height and fitness level.</p>
+                            <p>Knowing your frame size helps you set more realistic fitness goals and make better health decisions based on your natural body structure rather than comparing yourself to generic charts that don't account for bone structure differences.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>🧮 How accurate is the wrist measurement method?</summary>
+                        <div class="faq-content">
+                            <p>The wrist measurement method is generally considered reliable because your wrist consists mostly of bones with minimal fat or muscle, making it a good indicator of your skeletal frame size.</p>
+                            <p>That said, it's one of several methods to determine frame size. For the most comprehensive assessment, health professionals may use multiple measurements including elbow breadth and shoulder width. For everyday purposes though, the wrist method is simple and gives a good indication of your frame type.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>🔄 Can my frame size change over time?</summary>
+                        <div class="faq-content">
+                            <p>Your basic frame size is determined by your bone structure, which is primarily genetic and doesn't change significantly throughout adulthood. You can't exercise or diet your way into a different frame size!</p>
+                            <p>However, certain factors can affect the appearance of your frame, such as muscle development, weight changes, and age-related bone density changes. Older adults might experience some decrease in frame size due to bone loss, which is why maintaining bone health through proper nutrition and exercise is important.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Related Tools Section -->
+            <section class="info-section related-tools-section">
+                <h2>Related Tools You Might Like</h2>
+                <div class="related-tools-grid">
+                    <a href="height-converter-inline.html" class="related-tool-card">
+                        <div class="related-tool-icon">📏</div>
+                        <h3>Height Converter</h3>
+                        <p>Convert height between different units like feet, inches, and centimeters.</p>
+                    </a>
+                    <a href="../tools/seperate-tool/calorie-deficit.html" class="related-tool-card">
+                        <div class="related-tool-icon">🔥</div>
+                        <h3>Calorie Deficit Calculator</h3>
+                        <p>Calculate your daily calorie deficit to reach weight loss goals.</p>
+                    </a>
+                    <a href="../tools/seperate-tool/protein-intake.html" class="related-tool-card">
+                        <div class="related-tool-icon">🥩</div>
+                        <h3>Protein Intake Calculator</h3>
+                        <p>Determine your optimal daily protein intake based on your body.</p>
+                    </a>
+                    <a href="../tools/seperate-tool/calories-walking.html" class="related-tool-card">
+                        <div class="related-tool-icon">👟</div>
+                        <h3>Calories Walking Calculator</h3>
+                        <p>Find out how many calories you burn while walking.</p>
+                    </a>
+                    <a href="../tools/seperate-tool/food-calories.html" class="related-tool-card">
+                        <div class="related-tool-icon">🍔</div>
+                        <h3>Food Calories Calculator</h3>
+                        <p>Look up calorie content for different foods and meals.</p>
+                    </a>
+                    <a href="../tools/seperate-tool/pregnancy-weight.html" class="related-tool-card">
+                        <div class="related-tool-icon">👶</div>
+                        <h3>Pregnancy Weight Calculator</h3>
+                        <p>Track healthy weight gain during pregnancy.</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script>
+        // Tool Functionality
+        const toolForm = document.getElementById('toolForm');
+        const resultSection = document.getElementById('resultSection');
+        const frameSize = document.getElementById('frameSize');
+        const frameIcon = document.getElementById('frameIcon');
+        const resultDescription = document.getElementById('resultDescription');
+        const idealWeightSection = document.getElementById('idealWeightSection');
+        const idealWeightRange = document.getElementById('idealWeightRange');
+        
+        // Unit Toggle Functionality
+        const imperialBtn = document.getElementById('imperialBtn');
+        const metricBtn = document.getElementById('metricBtn');
+        const imperialHeight = document.getElementById('imperialHeight');
+        const metricHeight = document.getElementById('metricHeight');
+        const imperialWrist = document.getElementById('imperialWrist');
+        const metricWrist = document.getElementById('metricWrist');
+        
+        // Set default units to imperial
+        let currentUnit = 'imperial';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize tooltips for better mobile experience
+            const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
+            
+            tooltipTriggers.forEach(trigger => {
+                // For keyboard accessibility
+                trigger.setAttribute('tabindex', '0');
+                
+                // Keyboard support for tooltips
+                trigger.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        const tooltipContent = this.querySelector('.tooltip-content');
+                        if (tooltipContent) {
+                            tooltipContent.style.opacity = '1';
+                            tooltipContent.style.visibility = 'visible';
+                            
+                            // Hide tooltip when pressing Enter again
+                            const closeTooltip = function(event) {
+                                if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') {
+                                    tooltipContent.style.opacity = '0';
+                                    tooltipContent.style.visibility = 'hidden';
+                                    document.removeEventListener('keydown', closeTooltip);
+                                }
+                            };
+                            
+                            document.addEventListener('keydown', closeTooltip);
+                        }
+                    }
+                });
+                
+                // For mobile: tap to show/hide tooltip
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tooltipContent = this.querySelector('.tooltip-content');
+                    
+                    // Close all other tooltips first
+                    document.querySelectorAll('.tooltip-content').forEach(tip => {
+                        if (tip !== tooltipContent) {
+                            tip.style.opacity = '0';
+                            tip.style.visibility = 'hidden';
+                        }
+                    });
+                    
+                    // Toggle this tooltip
+                    if (tooltipContent) {
+                        if (tooltipContent.style.visibility === 'visible') {
+                            tooltipContent.style.opacity = '0';
+                            tooltipContent.style.visibility = 'hidden';
+                        } else {
+                            tooltipContent.style.opacity = '1';
+                            tooltipContent.style.visibility = 'visible';
+                            
+                            // Close tooltip when clicking outside
+                            const closeOnClickOutside = function(event) {
+                                if (!trigger.contains(event.target)) {
+                                    tooltipContent.style.opacity = '0';
+                                    tooltipContent.style.visibility = 'hidden';
+                                    document.removeEventListener('click', closeOnClickOutside);
+                                }
+                            };
+                            
+                            setTimeout(() => {
+                                document.addEventListener('click', closeOnClickOutside);
+                            }, 10);
+                        }
+                    }
+                });
+            });
+            
+            // Initialize dark mode
+            initDarkMode();
+        });
+        
+        // Dark Mode Functionality
+        function initDarkMode() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const modeToast = document.getElementById('modeToast');
+            
+            // Check for saved preference or system preference
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+            const savedMode = localStorage.getItem("darkMode");
+            
+            // Initialize based on saved preference or system preference
+            if (savedMode === "dark" || (savedMode === null && prefersDarkScheme.matches)) {
+                document.body.classList.add("dark-mode");
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
+            } else {
+                document.body.classList.remove("dark-mode");
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
+            }
+            
+            // Toggle dark mode when button is clicked
+            darkModeToggle.addEventListener("click", () => {
+                if (document.body.classList.contains("dark-mode")) {
+                    // Switch to light mode
+                    document.body.classList.remove("dark-mode");
+                    localStorage.setItem("darkMode", "light");
+                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                    darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
+                    showModeToast("Light mode activated");
+                } else {
+                    // Switch to dark mode
+                    document.body.classList.add("dark-mode");
+                    localStorage.setItem("darkMode", "dark");
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                    darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
+                    showModeToast("Dark mode activated");
+                }
+            });
+            
+            // Listen for system preference changes
+            prefersDarkScheme.addEventListener("change", (e) => {
+                if (!localStorage.getItem("darkMode")) { // Only if user hasn't explicitly set a preference
+                    if (e.matches) {
+                        document.body.classList.add("dark-mode");
+                        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                        darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
+                    } else {
+                        document.body.classList.remove("dark-mode");
+                        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                        darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
+                    }
+                }
+            });
+        }
+        
+        // Show toast notification when mode changes
+        function showModeToast(message) {
+            const toast = document.getElementById('modeToast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            // Remove toast after 2.5 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+            
+            // Announce for screen readers
+            announceToScreenReader(message);
+        }
+        
+        // Toggle between imperial and metric units
+        imperialBtn.addEventListener('click', function() {
+            setUnit('imperial');
+        });
+        
+        metricBtn.addEventListener('click', function() {
+            setUnit('metric');
+        });
+        
+        // Keyboard accessibility for unit buttons
+        imperialBtn.setAttribute('tabindex', '0');
+        metricBtn.setAttribute('tabindex', '0');
+        
+        imperialBtn.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setUnit('imperial');
+            }
+        });
+        
+        metricBtn.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setUnit('metric');
+            }
+        });
+        
+        function setUnit(unit) {
+            currentUnit = unit;
+            
+            // Update ARIA attributes for accessibility
+            if (unit === 'imperial') {
+                imperialBtn.classList.add('active');
+                metricBtn.classList.remove('active');
+                imperialHeight.classList.remove('hide-input');
+                metricHeight.classList.add('hide-input');
+                imperialWrist.classList.remove('hide-input');
+                metricWrist.classList.add('hide-input');
+                
+                imperialBtn.setAttribute('aria-pressed', 'true');
+                metricBtn.setAttribute('aria-pressed', 'false');
+                
+                // Reset validation state
+                document.getElementById('heightCm').required = false;
+                document.getElementById('wristCm').required = false;
+                document.getElementById('heightFeet').required = true;
+                document.getElementById('heightInches').required = true;
+                document.getElementById('wristInches').required = true;
+                
+                // Clear any validation states when switching units
+                resetValidationForUnitSwitch('metric');
+            } else {
+                metricBtn.classList.add('active');
+                imperialBtn.classList.remove('active');
+                metricHeight.classList.remove('hide-input');
+                imperialHeight.classList.add('hide-input');
+                metricWrist.classList.remove('hide-input');
+                imperialWrist.classList.add('hide-input');
+                
+                imperialBtn.setAttribute('aria-pressed', 'false');
+                metricBtn.setAttribute('aria-pressed', 'true');
+                
+                // Reset validation state
+                document.getElementById('heightFeet').required = false;
+                document.getElementById('heightInches').required = false;
+                document.getElementById('wristInches').required = false;
+                document.getElementById('heightCm').required = true;
+                document.getElementById('wristCm').required = true;
+                
+                // Clear any validation states when switching units
+                resetValidationForUnitSwitch('imperial');
+            }
+            
+            // Announce unit change to screen readers
+            announceToScreenReader(`Units changed to ${unit}`);
+        }
+        
+        // Helper function for screen reader announcements
+        function announceToScreenReader(message) {
+            const announcer = document.createElement('div');
+            announcer.setAttribute('aria-live', 'polite');
+            announcer.classList.add('visually-hidden');
+            announcer.textContent = message;
+            document.body.appendChild(announcer);
+            
+            // Remove the element after announcement
+            setTimeout(() => {
+                document.body.removeChild(announcer);
+            }, 3000);
+        }
+        
+        // Reset validation state when switching units
+        function resetValidationForUnitSwitch(unitToReset) {
+            if (unitToReset === 'imperial') {
+                // Clear imperial inputs validation state
+                const imperialInputs = ['heightFeet', 'heightInches', 'wristInches'];
+                imperialInputs.forEach(id => {
+                    const input = document.getElementById(id);
+                    const errorElement = document.getElementById(id + 'Error');
+                    
+                    if (input) {
+                        input.classList.remove('error');
+                        input.classList.remove('success');
+                    }
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                    }
+                });
+            } else {
+                // Clear metric inputs validation state
+                const metricInputs = ['heightCm', 'wristCm'];
+                metricInputs.forEach(id => {
+                    const input = document.getElementById(id);
+                    const errorElement = document.getElementById(id + 'Error');
+                    
+                    if (input) {
+                        input.classList.remove('error');
+                        input.classList.remove('success');
+                    }
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        // Enhanced form validation functions
+        function validateInput(input, errorElement, message, minVal, maxVal) {
+            // Skip validation if input is not required due to unit selection
+            if (!input.required) return true;
+            
+            const value = input.value.trim();
+            
+            // Remove previous success state
+            input.classList.remove('success');
+            
+            // Basic validation: is it empty or not a number?
+            if (!value || isNaN(value) || value < 0) {
+                input.classList.add('error');
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                return false;
+            }
+            
+            // Range validation if min and max are provided
+            if (minVal !== undefined && maxVal !== undefined) {
+                const numValue = parseFloat(value);
+                
+                if (numValue < minVal || numValue > maxVal) {
+                    input.classList.add('error');
+                    errorElement.textContent = `Value must be between ${minVal} and ${maxVal}`;
+                    errorElement.style.display = 'block';
+                    return false;
+                }
+            }
+            
+            // If we reach here, input is valid
+            input.classList.remove('error');
+            input.classList.add('success');
+            errorElement.style.display = 'none';
+            
+            // Show success icon
+            const parentGroup = input.closest('.input-with-help');
+            if (parentGroup) {
+                let successIcon = parentGroup.querySelector('.success-icon');
+                if (!successIcon) {
+                    successIcon = document.createElement('i');
+                    successIcon.className = 'fas fa-check-circle success-icon';
+                    parentGroup.appendChild(successIcon);
+                }
+                successIcon.style.display = 'block';
+            }
+            
+            return true;
+        }
+
+        function validateSelect(select, errorElement, message) {
+            select.classList.remove('success');
+            
+            if (!select.value) {
+                select.classList.add('error');
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                return false;
+            } else {
+                select.classList.remove('error');
+                select.classList.add('success');
+                errorElement.style.display = 'none';
+                return true;
+            }
+        }
+        
+        // Body Frame Size Calculation
+        function calculateFrameSize(gender, height, wrist) {
+            if (gender === 'male') {
+                return calculateMaleFrameSize(height, wrist);
+            } else {
+                return calculateFemaleFrameSize(height, wrist);
+            }
+        }
+        
+        function calculateMaleFrameSize(height, wrist) {
+            // Height to wrist ratio for males
+            const ratio = height / wrist;
+            
+            if (ratio > 10.4) {
+                return 'small';
+            } else if (ratio < 9.6) {
+                return 'large';
+            } else {
+                return 'medium';
+            }
+        }
+        
+        function calculateFemaleFrameSize(height, wrist) {
+            // Height to wrist ratio for females
+            const ratio = height / wrist;
+            
+            if (ratio > 11) {
+                return 'small';
+            } else if (ratio < 10.1) {
+                return 'large';
+            } else {
+                return 'medium';
+            }
+        }
+        
+        // Calculate ideal weight range based on frame size and height
+        function calculateIdealWeightRange(gender, height, frameSize) {
+            // Base weight ranges (in pounds) for 5'10" male and 5'5" female
+            let baseWeightMale = {
+                small: [144, 154],
+                medium: [154, 170],
+                large: [170, 184]
+            };
+            
+            let baseWeightFemale = {
+                small: [117, 130],
+                medium: [130, 143],
+                large: [143, 158]
+            };
+            
+            // Reference heights (in inches)
+            const refHeightMale = 70; // 5'10"
+            const refHeightFemale = 65; // 5'5"
+            
+            // Weight adjustment per inch difference (approximate)
+            const adjustmentPerInch = 3.5;
+            
+            if (gender === 'male') {
+                // Calculate height difference from reference
+                const heightDiff = height - refHeightMale;
+                
+                // Adjust weight range based on height difference
+                const adjustedMin = baseWeightMale[frameSize][0] + (heightDiff * adjustmentPerInch);
+                const adjustedMax = baseWeightMale[frameSize][1] + (heightDiff * adjustmentPerInch);
+                
+                return [Math.max(0, Math.round(adjustedMin)), Math.max(0, Math.round(adjustedMax))];
+            } else {
+                // Calculate height difference from reference
+                const heightDiff = height - refHeightFemale;
+                
+                // Adjust weight range based on height difference
+                const adjustedMin = baseWeightFemale[frameSize][0] + (heightDiff * adjustmentPerInch);
+                const adjustedMax = baseWeightFemale[frameSize][1] + (heightDiff * adjustmentPerInch);
+                
+                return [Math.max(0, Math.round(adjustedMin)), Math.max(0, Math.round(adjustedMax))];
+            }
+        }
+        
+        // Calculate function with enhanced validation and user feedback
+        function calculate() {
+            const gender = document.getElementById('gender');
+            
+            // Enhanced validation with specific ranges
+            let isValid = true;
+            isValid &= validateSelect(gender, document.getElementById('genderError'), 'Please select your gender.');
+            
+            if (currentUnit === 'imperial') {
+                const heightFeet = document.getElementById('heightFeet');
+                const heightInches = document.getElementById('heightInches');
+                const wristInches = document.getElementById('wristInches');
+                
+                // Validate with appropriate ranges
+                isValid &= validateInput(heightFeet, document.getElementById('heightFeetError'), 'Please enter a valid height in feet.', 4, 8);
+                isValid &= validateInput(heightInches, document.getElementById('heightInchesError'), 'Please enter a valid height in inches.', 0, 11);
+                
+                // Gender-specific wrist validation
+                const genderValue = gender.value;
+                if (genderValue === 'male') {
+                    isValid &= validateInput(wristInches, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5.5, 8.5);
+                } else if (genderValue === 'female') {
+                    isValid &= validateInput(wristInches, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5, 7.5);
+                } else {
+                    isValid &= validateInput(wristInches, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5, 9);
+                }
+            } else {
+                const heightCm = document.getElementById('heightCm');
+                const wristCm = document.getElementById('wristCm');
+                
+                // Validate with appropriate ranges
+                isValid &= validateInput(heightCm, document.getElementById('heightCmError'), 'Please enter a valid height in cm.', 120, 250);
+                
+                // Gender-specific wrist validation
+                const genderValue = gender.value;
+                if (genderValue === 'male') {
+                    isValid &= validateInput(wristCm, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 14, 21);
+                } else if (genderValue === 'female') {
+                    isValid &= validateInput(wristCm, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 13, 19);
+                } else {
+                    isValid &= validateInput(wristCm, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 13, 22);
+                }
+            }
+            
+            if (!isValid) {
+                // Provide audible feedback for screen readers
+                announceToScreenReader("Please correct the errors in the form");
+                return;
+            }
+            
+            // Get values and convert to standard units for calculation
+            const genderValue = gender.value;
+            announceToScreenReader("Calculator has been reset");
+        }
+
+        // Form submission
+        toolForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculate();
+        });
+
+        // Enhanced real-time validation with appropriate ranges
+        document.getElementById('gender').addEventListener('change', function() {
+            validateSelect(this, document.getElementById('genderError'), 'Please select your gender.');
+            
+            // When gender changes, re-validate wrist measurements with gender-specific ranges
+            const gender = this.value;
+            if (gender) {
+                if (currentUnit === 'imperial') {
+                    const wristInches = document.getElementById('wristInches');
+                    if (wristInches.value) {
+                        if (gender === 'male') {
+                            validateInput(wristInches, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5.5, 8.5);
+                        } else if (gender === 'female') {
+                            validateInput(wristInches, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5, 7.5);
+                        }
+                    }
+                } else {
+                    const wristCm = document.getElementById('wristCm');
+                    if (wristCm.value) {
+                        if (gender === 'male') {
+                            validateInput(wristCm, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 14, 21);
+                        } else if (gender === 'female') {
+                            validateInput(wristCm, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 13, 19);
+                        }
+                    }
+                }
+            }
+        });
+
+        document.getElementById('heightFeet').addEventListener('input', function() {
+            validateInput(this, document.getElementById('heightFeetError'), 'Please enter a valid height in feet.', 4, 8);
+        });
+
+        document.getElementById('heightInches').addEventListener('input', function() {
+            validateInput(this, document.getElementById('heightInchesError'), 'Please enter a valid height in inches.', 0, 11);
+        });
+
+        document.getElementById('heightCm').addEventListener('input', function() {
+            validateInput(this, document.getElementById('heightCmError'), 'Please enter a valid height in cm.', 120, 250);
+        });
+
+        document.getElementById('wristInches').addEventListener('input', function() {
+            const gender = document.getElementById('gender').value;
+            
+            if (gender === 'male') {
+                validateInput(this, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5.5, 8.5);
+            } else if (gender === 'female') {
+                validateInput(this, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5, 7.5);
+            } else {
+                validateInput(this, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5, 9);
+            }
+        });
+
+        document.getElementById('wristCm').addEventListener('input', function() {
+            const gender = document.getElementById('gender').value;
+            
+            if (gender === 'male') {
+                validateInput(this, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 14, 21);
+            } else if (gender === 'female') {
+                validateInput(this, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 13, 19);
+            } else {
+                validateInput(this, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 13, 22);
+            }
+        });
+
+        // Improved input handling for better user experience
+        document.querySelectorAll('input, select').forEach(element => {
+            // Clear error on focus
+            element.addEventListener('focus', function() {
+                this.classList.remove('error');
+                const errorElement = document.getElementById(this.id + 'Error');
+                if (errorElement) errorElement.style.display = 'none';
+            });
+            
+            // For number inputs, prevent non-numeric characters
+            if (element.type === 'number') {
+                element.addEventListener('keypress', function(e) {
+                    const allowedChars = /[0-9\.\-]/;
+                    if (!allowedChars.test(e.key)) {
+                        e.preventDefault();
+                    }
+                });
+            }
+        });
+
+        // Share functionality
+        document.getElementById('shareResultBtn').addEventListener('click', function() {
+            shareResults();
+        });
+
+        function shareResults() {
+            // Get the result values
+            const frameSizeValue = document.getElementById('frameSize').textContent;
+            const idealWeightValue = document.getElementById('idealWeightRange').textContent;
+            
+            // Create share text
+            const shareTitle = "My Body Frame Size Results | Jay Tools";
+            const shareText = `I just found out I have a ${frameSizeValue}. ${idealWeightValue} Check your body frame size too!`;
+            const shareUrl = window.location.href;
+            
+            // Use Web Share API if available
+            if (navigator.share) {
+                navigator.share({
+                    title: shareTitle,
+                    text: shareText,
+                    url: shareUrl
+                })
+                .then(() => {
+                    console.log('Shared successfully');
+                })
+                .catch((error) => {
+                    console.log('Error sharing:', error);
+                    showShareDialog(shareTitle, shareText, shareUrl);
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                showShareDialog(shareTitle, shareText, shareUrl);
+            }
+        }
+        
+        function showShareDialog(title, text, url) {
+            // Create modal overlay
+            const overlay = document.createElement('div');
+            overlay.classList.add('share-overlay');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            overlay.style.zIndex = '1000';
+            overlay.style.display = 'flex';
+            overlay.style.justifyContent = 'center';
+            overlay.style.alignItems = 'center';
+            
+            // Create modal content with dark mode support
+            const modal = document.createElement('div');
+            modal.classList.add('share-modal');
+            
+            // Style modal based on current mode
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            
+            if (isDarkMode) {
+                modal.style.backgroundColor = '#2d2d2d';
+                modal.style.color = '#e0e0e0';
+            } else {
+                modal.style.backgroundColor = 'white';
+                modal.style.color = '#2c3e50';
+            }
+            
+            modal.style.borderRadius = '12px';
+            modal.style.padding = '2rem';
+            modal.style.maxWidth = '90%';
+            modal.style.width = '500px';
+            modal.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+            modal.style.position = 'relative';
+            
+            // Create close button
+            const closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '1rem';
+            closeBtn.style.right = '1rem';
+            closeBtn.style.border = 'none';
+            closeBtn.style.background = 'none';
+            closeBtn.style.fontSize = '1.2rem';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.color = isDarkMode ? '#aaa' : '#555';
+            closeBtn.setAttribute('aria-label', 'Close share dialog');
+            
+            // Create modal header
+            const header = document.createElement('h3');
+            header.textContent = 'Share Your Results';
+            header.style.marginTop = '0';
+            header.style.marginBottom = '1.5rem';
+            header.style.color = isDarkMode ? '#e0e0e0' : '#2c3e50';
+            
+            // Create share text area
+            const textArea = document.createElement('textarea');
+            textArea.value = `${title}\n\n${text}\n\n${url}`;
+            textArea.style.width = '100%';
+            textArea.style.padding = '0.75rem';
+            textArea.style.borderRadius = '6px';
+            textArea.style.border = isDarkMode ? '2px solid #444' : '2px solid #e1e8ed';
+            
+            if (isDarkMode) {
+                textArea.style.backgroundColor = '#1e1e1e';
+                textArea.style.color = '#e0e0e0';
+            }
+            textArea.style.marginBottom = '1.5rem';
+            textArea.style.minHeight = '120px';
+            textArea.style.fontFamily = 'inherit';
+            textArea.setAttribute('readonly', 'true');
+            
+            // Create copy button
+            const copyBtn = document.createElement('button');
+            copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy to Clipboard';
+            copyBtn.style.background = '#3498db';
+            copyBtn.style.color = 'white';
+            copyBtn.style.padding = '0.75rem 1.5rem';
+            copyBtn.style.border = 'none';
+            copyBtn.style.borderRadius = '6px';
+            copyBtn.style.fontWeight = '600';
+            copyBtn.style.cursor = 'pointer';
+            copyBtn.style.marginRight = '1rem';
+            copyBtn.style.transition = 'all 0.3s ease';
+            
+            // Create social media buttons container
+            const socialBtns = document.createElement('div');
+            socialBtns.style.marginTop = '1.5rem';
+            socialBtns.style.display = 'flex';
+            socialBtns.style.gap = '0.75rem';
+            socialBtns.style.justifyContent = 'center';
+            
+            // Create social media sharing buttons
+            const platforms = [
+                { name: 'Facebook', icon: 'fa-facebook-f', color: '#1877f2', url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}` },
+                { name: 'Twitter', icon: 'fa-twitter', color: '#1da1f2', url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}` },
+                { name: 'WhatsApp', icon: 'fa-whatsapp', color: '#25d366', url: `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}` },
+                { name: 'LinkedIn', icon: 'fa-linkedin-in', color: '#0077b5', url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}` },
+                { name: 'Email', icon: 'fa-envelope', color: '#555', url: `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(text + '\n\n' + url)}` }
+            ];
+            
+            platforms.forEach(platform => {
+                const btn = document.createElement('a');
+                btn.innerHTML = `<i class="fab ${platform.icon}"></i>`;
+                btn.setAttribute('href', platform.url);
+                btn.setAttribute('target', '_blank');
+                btn.setAttribute('rel', 'noopener');
+                btn.setAttribute('aria-label', `Share on ${platform.name}`);
+                btn.style.display = 'flex';
+                btn.style.justifyContent = 'center';
+                btn.style.alignItems = 'center';
+                btn.style.width = '40px';
+                btn.style.height = '40px';
+                btn.style.borderRadius = '50%';
+                btn.style.backgroundColor = platform.color;
+                btn.style.color = 'white';
+                btn.style.textDecoration = 'none';
+                btn.style.transition = 'all 0.3s ease';
+                
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.transform = 'translateY(-3px)';
+                    btn.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                });
+                
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translateY(0)';
+                    btn.style.boxShadow = 'none';
+                });
+                
+                socialBtns.appendChild(btn);
+            });
+            
+            // Add event listeners
+            closeBtn.addEventListener('click', () => {
+                document.body.removeChild(overlay);
+            });
+            
+            copyBtn.addEventListener('click', () => {
+                textArea.select();
+                document.execCommand('copy');
+                
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                copyBtn.style.backgroundColor = '#2ecc71';
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                    copyBtn.style.backgroundColor = '#3498db';
+                }, 2000);
+            });
+            
+            // Assemble modal
+            modal.appendChild(closeBtn);
+            modal.appendChild(header);
+            modal.appendChild(textArea);
+            modal.appendChild(copyBtn);
+            modal.appendChild(socialBtns);
+            overlay.appendChild(modal);
+            
+            // Add to page
+            document.body.appendChild(overlay);
+            
+            // Select text in textarea for easy copying
+            setTimeout(() => {
+                textArea.focus();
+                textArea.select();
+            }, 100);
+            
+            // Close modal when clicking overlay (outside modal)
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    document.body.removeChild(overlay);
+                }
+            });
+            
+            // Close with escape key
+            document.addEventListener('keydown', function escapeHandler(e) {
+                if (e.key === 'Escape') {
+                    if (document.body.contains(overlay)) {
+                        document.body.removeChild(overlay);
+                    }
+                    document.removeEventListener('keydown', escapeHandler);
+                }
+            });
+        }
+
+        // Dark mode is initialized in the initDarkMode() function above
+        // Please see the initDarkMode() function for dark mode functionality
+    </script>
+</body>
+</html>

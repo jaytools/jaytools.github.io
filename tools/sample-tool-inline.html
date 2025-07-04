@@ -1,3 +1,4 @@
+<!-- Sample Tool page for inline CSS and JS Tools-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +14,10 @@
     <meta property="og:title" content="Sample Tool - Jay Tools | Free Online Calculator">
     <meta property="og:description" content="Use our free Sample Tool calculator for quick and accurate calculations. Simple, fast, and mobile-friendly.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.jay-tools.com/tools/sample-tool-inline.html">
+    <meta property="og:url" content="https://jaytools.github.io/tools/sample-tool-inline.html">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.jay-tools.com/tools/sample-tool-inline.html">
+    <link rel="canonical" href="https://jaytools.github.io/tools/sample-tool-inline.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -35,6 +36,53 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Sample Tool Calculator",
+        "url": "https://jaytools.github.io/tools/sample-tool-inline.html",
+        "description": "A sample calculator tool that performs basic arithmetic operations such as addition, subtraction, multiplication, and division.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": "Basic arithmetic operations; Simple and intuitive interface; Mobile-friendly responsive design; Real-time input validation; Error handling",
+        "screenshot": "https://jaytools.github.io/img/tools/sample-tool-screenshot.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Jay Tools",
+            "url": "https://jaytools.github.io"
+        },
+        "mainEntity": {
+            "@type": "HowTo",
+            "name": "How to Use the Sample Tool Calculator",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your first value in the input field"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your second value in the second input field"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Select the operation you want to perform"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Click 'Calculate Result' to see the answer"
+                }
+            ]
+        }
+    }
+    </script>
     
     <!-- Tool Specific Styles -->
     <style>
@@ -150,15 +198,26 @@
             background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
             border: 2px solid #27ae60;
             border-radius: 12px;
-            padding: 2rem;
-            margin-top: 2rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
             display: none;
             text-align: center;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            box-sizing: border-box;
         }
 
         .result-section.show {
             display: block;
-            animation: slideIn 0.3s ease;
+            max-height: 300px;
+            opacity: 1;
+            padding: 1.5rem;
+            animation: fadeIn 0.3s ease;
         }
 
         .result-title {
@@ -173,12 +232,17 @@
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 0.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         .result-description {
             color: #666;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.5);
+            border-radius: 8px;
+            display: inline-block;
         }
 
         .reset-btn {
@@ -190,10 +254,16 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
         }
 
         .reset-btn:hover {
             background: #c0392b;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
         }
 
         .info-section {
@@ -233,6 +303,15 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
 
@@ -377,7 +456,7 @@
             <!-- Tool Header -->
             <div class="tool-header">
                 <h1>Sample Tool Calculator</h1>
-                <p>This is a sample tool template that you can customize for any calculation or utility. Replace this content with your specific tool description.</p>
+                <p>A versatile calculator to perform basic arithmetic operations like addition, subtraction, multiplication and division quickly and accurately.</p>
             </div>
 
             <!-- Tool Card -->
@@ -410,50 +489,60 @@
                     </div>
 
                     <!-- Calculate Button -->
-                    <button type="submit" class="calculate-btn" id="calculateBtn">
+                    <button type="submit" class="calculate-btn" id="calculateBtn" disabled>
                         <i class="fas fa-calculator"></i>
                         Calculate Result
                     </button>
+                    
+                    <!-- Result Section (Integrated within form) -->
+                    <div class="result-section" id="resultSection">
+                        <div class="result-title">
+                            <i class="fas fa-check-circle"></i>
+                            Calculation Result
+                        </div>
+                        <div class="result-value" id="resultValue">0</div>
+                        <div class="result-description" id="resultDescription">
+                            Your calculation result will appear here
+                        </div>
+                        <button type="button" class="reset-btn" onclick="resetCalculator()">
+                            <i class="fas fa-redo"></i>
+                            Calculate Again
+                        </button>
+                    </div>
                 </form>
-
-                <!-- Result Section -->
-                <div class="result-section" id="resultSection">
-                    <div class="result-title">
-                        <i class="fas fa-check-circle"></i>
-                        Calculation Result
-                    </div>
-                    <div class="result-value" id="resultValue">0</div>
-                    <div class="result-description" id="resultDescription">
-                        Your calculation result will appear here
-                    </div>
-                    <button class="reset-btn" onclick="resetCalculator()">
-                        <i class="fas fa-redo"></i>
-                        Calculate Again
-                    </button>
-                </div>
             </div>
 
             <!-- Information Section -->
             <div class="info-section">
-                <h2>About This Tool</h2>
-                <p>This sample tool demonstrates the basic structure and functionality of Jay Tools calculators. You can customize this template to create any type of calculator or utility tool.</p>
+                <h2>About This Calculator Tool</h2>
+                <p>The Sample Tool Calculator is designed to make everyday calculations quick and easy. Whether you're calculating tips, checking measurements, or helping with homework, this simple yet powerful calculator has you covered with all basic arithmetic operations.</p>
                 
                 <h3>Features:</h3>
                 <ul>
-                    <li>Simple and intuitive interface</li>
-                    <li>Mobile-friendly responsive design</li>
-                    <li>Real-time input validation</li>
-                    <li>Clear result display</li>
-                    <li>Error handling and user feedback</li>
+                    <li>Simple and intuitive interface that's easy for anyone to use</li>
+                    <li>Mobile-friendly responsive design works on any device</li>
+                    <li>Real-time input validation prevents calculation errors</li>
+                    <li>Clear result display with formatted calculations</li>
+                    <li>Error handling and helpful user feedback</li>
+                    <li>Division by zero protection to avoid calculation errors</li>
                 </ul>
 
                 <h3>How to Use:</h3>
                 <ul>
                     <li>Enter your first value in the input field</li>
                     <li>Enter your second value in the second input field</li>
-                    <li>Select the operation you want to perform</li>
+                    <li>Select the operation you want to perform (addition, subtraction, multiplication, or division)</li>
                     <li>Click "Calculate Result" to see the answer</li>
                     <li>Use "Calculate Again" to reset and try with new values</li>
+                </ul>
+                
+                <h3>Common Applications:</h3>
+                <ul>
+                    <li>Quick household calculations</li>
+                    <li>Checking math homework problems</li>
+                    <li>Calculating discounts when shopping</li>
+                    <li>Splitting bills at restaurants</li>
+                    <li>Converting measurements for recipes</li>
                 </ul>
             </div>
         </div>
@@ -584,39 +673,44 @@
 
             let result;
             let description;
+            let formatNum = (n) => {
+                // Format number to show decimals only when needed
+                return n % 1 === 0 ? n.toFixed(0) : n.toFixed(2);
+            };
 
             switch (op) {
                 case 'add':
                     result = num1 + num2;
-                    description = `${num1} + ${num2} = ${result}`;
+                    description = `${formatNum(num1)} + ${formatNum(num2)} = ${formatNum(result)}`;
                     break;
                 case 'subtract':
                     result = num1 - num2;
-                    description = `${num1} - ${num2} = ${result}`;
+                    description = `${formatNum(num1)} - ${formatNum(num2)} = ${formatNum(result)}`;
                     break;
                 case 'multiply':
                     result = num1 * num2;
-                    description = `${num1} × ${num2} = ${result}`;
+                    description = `${formatNum(num1)} × ${formatNum(num2)} = ${formatNum(result)}`;
                     break;
                 case 'divide':
                     if (num2 === 0) {
-                        alert('Cannot divide by zero!');
+                        alert('Cannot divide by zero! Please enter a non-zero second value.');
+                        input2.classList.add('error');
+                        document.getElementById('input2Error').textContent = 'Cannot divide by zero.';
+                        document.getElementById('input2Error').style.display = 'block';
                         return;
                     }
                     result = num1 / num2;
-                    description = `${num1} ÷ ${num2} = ${result}`;
+                    description = `${formatNum(num1)} ÷ ${formatNum(num2)} = ${formatNum(result)}`;
                     break;
                 default:
                     return;
             }
 
             // Display result
-            resultValue.textContent = result.toFixed(2);
+            // Format number to show decimals only when needed
+            resultValue.textContent = result % 1 === 0 ? result.toFixed(0) : result.toFixed(2);
             resultDescription.textContent = description;
             resultSection.classList.add('show');
-
-            // Scroll to result
-            resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // Reset function
@@ -628,8 +722,11 @@
             document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
             document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
             
-            // Scroll back to top of tool
-            document.querySelector('.tool-header').scrollIntoView({ behavior: 'smooth' });
+            // Re-focus on first input for convenience
+            document.getElementById('input1').focus();
+            
+            // Reset calculate button state
+            checkFormValidity();
         }
 
         // Form submission
@@ -651,14 +748,45 @@
             validateSelect(this, document.getElementById('operationError'), 'Please select an operation.');
         });
 
-        // Clear error on focus
+        // Clear error on focus and validate as user types
         document.querySelectorAll('input, select').forEach(element => {
             element.addEventListener('focus', function() {
                 this.classList.remove('error');
                 const errorElement = document.getElementById(this.id + 'Error');
                 if (errorElement) errorElement.style.display = 'none';
             });
+            
+            // Add input event listeners for real-time validation
+            if (element.tagName === 'INPUT' && element.type === 'number') {
+                element.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        validateInput(this, document.getElementById(this.id + 'Error'), 
+                            `Please enter a valid ${this.id === 'input1' ? 'first' : 'second'} number.`);
+                    }
+                });
+            }
         });
+        
+        // Enable button when all fields are filled
+        function checkFormValidity() {
+            const input1 = document.getElementById('input1').value.trim();
+            const input2 = document.getElementById('input2').value.trim();
+            const operation = document.getElementById('operation').value;
+            
+            const isValid = input1 !== '' && !isNaN(input1) && 
+                          input2 !== '' && !isNaN(input2) && 
+                          operation !== '';
+            
+            document.getElementById('calculateBtn').disabled = !isValid;
+        }
+        
+        // Add event listeners to check form validity
+        document.getElementById('input1').addEventListener('input', checkFormValidity);
+        document.getElementById('input2').addEventListener('input', checkFormValidity);
+        document.getElementById('operation').addEventListener('change', checkFormValidity);
+        
+        // Initialize form state
+        checkFormValidity();
     </script>
 </body>
 </html>

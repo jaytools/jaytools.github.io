@@ -13,10 +13,10 @@
     <meta property="og:title" content="Sample Tool - Jay Tools | Free Online Calculator">
     <meta property="og:description" content="Use our free Sample Tool calculator for quick and accurate calculations. Simple, fast, and mobile-friendly.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.jay-tools.com/tools/seperate-tool/sample-tool.html">
+    <meta property="og:url" content="https://jaytools.github.io/tools/seperate-tool/sample-tool.html">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.jay-tools.com/tools/seperate-tool/sample-tool.html">
+    <link rel="canonical" href="https://jaytools.github.io/tools/seperate-tool/sample-tool.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../../favicon.ico">
@@ -36,6 +36,57 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/custom.css">
     <link rel="stylesheet" href="css/sample-tool.css">
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Sample Tool Calculator",
+        "url": "https://jaytools.github.io/tools/seperate-tool/sample-tool.html",
+        "description": "A sample calculator tool with advanced calculation features, history tracking, and a dark mode interface.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": "Advanced arithmetic operations; Dark/Light mode toggle; Calculation history; Save favorite calculations; Mobile-friendly responsive design",
+        "screenshot": "https://jaytools.github.io/img/tools/sample-tool-advanced-screenshot.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Jay Tools",
+            "url": "https://jaytools.github.io"
+        },
+        "mainEntity": {
+            "@type": "HowTo",
+            "name": "How to Use the Advanced Calculator Tool",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your first value in the input field"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your second value in the second input field"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Select the operation you want to perform"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Click 'Calculate' to see the results"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "View previous calculations in the history panel"
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Header Section -->
@@ -127,45 +178,65 @@
         <div class="tool-container">
             <!-- Tool Header -->
             <div class="tool-header">
-                <h1>Sample Tool Calculator</h1>
-                <p>This is a sample tool template that you can customize for any calculation or utility. Replace this content with your specific tool description.</p>
+                <h1>Advanced Calculator Tool</h1>
+                <p>A powerful calculator with history tracking, theme options, and the ability to save your favorite calculations for future reference.</p>
             </div>
 
         <!-- Tool Card -->
         <div class="tool-card">
-            <form id="toolForm">
-                <!-- Input Section -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="input1">First Value</label>
-                        <input type="number" id="input1" name="input1" placeholder="Enter first value" step="any" required>
-                        <div class="error-message" id="input1Error">Please enter a valid number.</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="input2">Second Value</label>
-                        <input type="number" id="input2" name="input2" placeholder="Enter second value" step="any" required>
-                        <div class="error-message" id="input2Error">Please enter a valid number.</div>
-                    </div>
-                </div>
+            <button type="button" class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle dark/light theme">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            
+            <div class="tool-ribbon">
+                <span>Advanced Calculator</span>
+            </div>
 
-                <div class="form-group">
-                    <label for="operation">Operation</label>
-                    <select id="operation" name="operation" required>
-                        <option value="">Select operation</option>
-                        <option value="add">Addition (+)</option>
-                        <option value="subtract">Subtraction (-)</option>
-                        <option value="multiply">Multiplication (×)</option>
-                        <option value="divide">Division (÷)</option>
-                    </select>
-                    <div class="error-message" id="operationError">Please select an operation.</div>
-                </div>
+            <!-- Calculator Interface -->
+            <div class="calculator-interface">
+                <form id="toolForm">
+                    <!-- Input Section -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="input1">First Value</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-hashtag input-icon"></i>
+                                <input type="number" id="input1" name="input1" placeholder="Enter first value" step="any" required>
+                            </div>
+                            <div class="error-message" id="input1Error">Please enter a valid number.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input2">Second Value</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-hashtag input-icon"></i>
+                                <input type="number" id="input2" name="input2" placeholder="Enter second value" step="any" required>
+                            </div>
+                            <div class="error-message" id="input2Error">Please enter a valid number.</div>
+                        </div>
+                    </div>
 
-                <!-- Calculate Button -->
-                <button type="submit" class="calculate-btn" id="calculateBtn">
-                    <i class="fas fa-calculator"></i>
-                    Calculate Result
-                </button>
-            </form>
+                    <div class="form-group">
+                        <label for="operation">Operation</label>
+                        <div class="select-with-icon">
+                            <i class="fas fa-calculator input-icon"></i>
+                            <select id="operation" name="operation" required>
+                                <option value="">Select operation</option>
+                                <option value="add">Addition (+)</option>
+                                <option value="subtract">Subtraction (-)</option>
+                                <option value="multiply">Multiplication (×)</option>
+                                <option value="divide">Division (÷)</option>
+                            </select>
+                        </div>
+                        <div class="error-message" id="operationError">Please select an operation.</div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <button type="submit" class="calculate-btn" id="calculateBtn" disabled>
+                        <i class="fas fa-calculator"></i>
+                        Calculate Result
+                    </button>
+                </form>
+            </div>
 
             <!-- Result Section -->
             <div class="result-section" id="resultSection">
@@ -173,7 +244,9 @@
                     <i class="fas fa-check-circle"></i>
                     Calculation Result
                 </div>
-                <div class="result-value" id="resultValue">0</div>
+                <div class="result-value-container">
+                    <div class="result-value" id="resultValue">0</div>
+                </div>
                 <div class="result-description" id="resultDescription">
                     Your calculation result will appear here
                 </div>
@@ -182,48 +255,73 @@
                         <i class="fas fa-redo"></i>
                         Calculate Again
                     </button>
-                    <a href="../../index.html" class="home-btn">
-                        <i class="fas fa-home"></i>
-                        Back to Home
-                    </a>
+                    <button type="button" class="history-btn" id="showHistoryBtn">
+                        <i class="fas fa-history"></i>
+                        View History
+                    </button>
                 </div>
+            </div>
+            
+            <!-- History Panel -->
+            <div class="history-panel" id="historyPanel">
+                <div class="history-title">
+                    <h3><i class="fas fa-history"></i> Calculation History</h3>
+                    <div class="history-actions">
+                        <span class="history-info">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="history-info-tooltip">Click on "Reuse" to load values. Star to save favorites.</span>
+                        </span>
+                        <button type="button" class="history-clear" id="clearHistoryBtn">
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
+                    </div>
+                </div>
+                <ul class="history-list" id="historyList">
+                    <!-- History items will be added here dynamically -->
+                    <li class="history-item empty-history">No calculations yet. Try making a calculation first!</li>
+                </ul>
             </div>
         </div>
 
         <!-- Information Section -->
         <div class="info-section">
-            <h2>About This Tool</h2>
-            <p>This sample tool demonstrates the basic structure and functionality of Jay Tools calculators. You can customize this template to create any type of calculator or utility tool.</p>
+            <h2>About This Advanced Calculator Tool</h2>
+            <p>The Advanced Calculator Tool offers a more powerful version of our basic calculator with additional features designed to enhance your productivity. Unlike the simple calculator, this version includes calculation history, favorites, and theme customization to provide a more personalized experience.</p>
             
-            <h3>Features:</h3>
+            <h3>Advanced Features:</h3>
             <ul>
-                <li>Simple and intuitive interface</li>
-                <li>Mobile-friendly responsive design</li>
-                <li>Real-time input validation</li>
-                <li>Clear result display</li>
-                <li>Error handling and user feedback</li>
-                <li>Standalone tool page design</li>
+                <li><strong>Dark/Light Mode</strong> - Toggle between dark and light themes for comfortable viewing in any environment</li>
+                <li><strong>Calculation History</strong> - View your previous calculations and reuse them with a single click</li>
+                <li><strong>Favorites System</strong> - Star important calculations to find them quickly later</li>
+                <li><strong>Persistent Storage</strong> - Your history and settings are saved even if you close your browser</li>
+                <li><strong>Enhanced UI</strong> - Modern interface with improved visual feedback and animations</li>
+                <li><strong>Responsive Design</strong> - Optimized for both desktop and mobile devices</li>
             </ul>
 
             <h3>How to Use:</h3>
             <ul>
-                <li>Enter your first value in the input field</li>
-                <li>Enter your second value in the second input field</li>
-                <li>Select the operation you want to perform</li>
-                <li>Click "Calculate Result" to see the answer</li>
-                <li>Use "Calculate Again" to reset and try with new values</li>
-                <li>Click "Back to Home" to return to the main tools page</li>
+                <li>Enter your first and second values in their respective fields</li>
+                <li>Select the operation you want to perform from the dropdown menu</li>
+                <li>Click "Calculate Result" to see your answer</li>
+                <li>Toggle dark/light mode using the moon/sun icon in the top right corner</li>
+                <li>View your calculation history by clicking the "View History" button</li>
+                <li>Reuse previous calculations by clicking "Reuse" on any history item</li>
+                <li>Star your favorite calculations by clicking the star icon</li>
+                <li>Clear your history using the "Clear All" button in the history panel</li>
             </ul>
 
-            <h3>Customization Guide:</h3>
+            <h3>Benefits of the Advanced Version:</h3>
             <ul>
-                <li>Update the title and meta description for SEO</li>
-                <li>Replace the header content with your tool's information</li>
-                <li>Modify the form fields for your specific tool inputs</li>
-                <li>Update the calculation logic in the JavaScript section</li>
-                <li>Customize the styling and colors as needed</li>
-                <li>Add your tool-specific information and instructions</li>
+                <li><strong>Time-Saving</strong> - Reuse previous calculations without re-entering values</li>
+                <li><strong>Better Organization</strong> - Keep track of important calculations with favorites</li>
+                <li><strong>Reduced Eye Strain</strong> - Dark mode option for comfortable use at night</li>
+                <li><strong>Improved Workflow</strong> - All your calculation history in one place</li>
+                <li><strong>Enhanced Accessibility</strong> - Optimized interface for users with different needs</li>
+                <li><strong>Greater Productivity</strong> - Focus on your work, not on redoing calculations</li>
             </ul>
+            
+            <h3>When to Use the Advanced Calculator:</h3>
+            <p>This advanced calculator is ideal for users who perform multiple calculations in a session, need to reference previous results, or prefer a more customizable experience. If you're working on complex projects, studying, or doing financial calculations, the history and favorites features can significantly improve your efficiency.</p>
         </div>
     </main>
 
@@ -298,5 +396,15 @@
     <!-- JavaScript -->
     <script src="../../js/script.js"></script>
     <script src="js/sample-tool.js"></script>
+    <script>
+        // Initialize UI elements after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check that key elements exist
+            console.log("Page loaded, checking key elements");
+            console.log("Theme toggle:", !!document.getElementById('themeToggle'));
+            console.log("Calculate button:", !!document.getElementById('calculateBtn'));
+            console.log("History button:", !!document.getElementById('showHistoryBtn'));
+        });
+    </script>
 </body>
 </html>

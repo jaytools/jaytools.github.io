@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: #333;
 }
@@ -107,24 +107,27 @@ body {
 }
 
 /* Mobile Search Toggle */
-.search-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.25rem;
-    color: #2c3e50;
-    cursor: pointer;
-    padding: 0.5rem;
+.search-toggle, .menu-toggle, .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    align-items: center;
-    justify-content: center;
     transition: background-color 0.2s ease;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
-.search-toggle:hover {
-    background-color: #f8f9fa;
+/* Hide search toggle in desktop view */
+.search-toggle {
+    display: none;
+}
+
+.search-toggle:hover, .menu-toggle:hover, .social-link:hover {
+    background-color: #f3f4f6;
 }
 
 /* Mobile Search Container */
@@ -273,43 +276,18 @@ mark {
 }
 
 /* Menu Toggle */
-.menu-toggle {
-    background: none;
-    border: none;
-    font-size: 1.25rem;
-    color: #2c3e50;
-    cursor: pointer;
-    padding: 0.5rem;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-
-.menu-toggle:hover {
-    background-color: #f1f5f9;
-    color: #3498db;
-}
-
+/* Individual button states */
 .menu-toggle.active {
     background-color: #3498db;
     color: white;
     transform: rotate(180deg);
 }
 
-/* Social Link */
+/* Social Link - Only adding specific properties not covered by the shared class */
 .social-link {
     color: #2c3e50;
     font-size: 1.5rem;
     text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.social-link:hover {
-    color: #3498db;
 }
 
 /* ===================== */
@@ -1217,19 +1195,52 @@ mark {
 }
 
 /* Mobile Styles */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .navbar {
-        padding: 0.75rem;
+        flex-wrap: nowrap;
+        padding: 10px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
     }
-
+    
+    /* Header responsive fixes */
+    body {
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .site-header {
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: visible;
+    }
+    
+    .navbar-brand {
+        flex-basis: 60%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
     .site-title {
         font-size: 1.5rem;
+        white-space: nowrap;
     }
-
+    
     .site-subtitle {
-        font-size: 0.875rem;
+        font-size: 0.8rem;
     }
-
+    
+    .navbar-actions {
+        flex-basis: 40%;
+        justify-content: flex-end;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    
     /* Hide desktop search, show mobile search toggle */
     .search-container {
         display: none;
@@ -1237,6 +1248,11 @@ mark {
 
     .search-toggle {
         display: flex;
+    }
+    
+    .search-wrapper {
+        display: flex;
+        align-items: center;
     }
 
     /* Mobile search overlay */
@@ -1247,11 +1263,40 @@ mark {
     .mobile-search-container.active {
         display: block;
     }
+}
 
-    .navbar-actions {
-        gap: 0.5rem;
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1.2rem;
     }
-
+    
+    .site-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .navbar-brand {
+        flex-basis: 60%;
+        max-width: 60%;
+    }
+    
+    .navbar-actions {
+        flex-basis: 40%;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+    
+    .search-toggle, .menu-toggle, .social-link {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        font-size: 1rem;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
     .menu-dropdown {
         position: fixed;
         top: 60px;

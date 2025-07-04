@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Tool - Jay Tools | Free Online Calculator</title>
+    <meta name="description" content="Use our free Sample Tool calculator for quick and accurate calculations. Simple, fast, and mobile-friendly tool from Jay Tools.">
+    <meta name="keywords" content="sample calculator, online tool, free calculator, Jay Tools, math calculator">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jay Tools">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Sample Tool - Jay Tools | Free Online Calculator">
+    <meta property="og:description" content="Use our free Sample Tool calculator for quick and accurate calculations. Simple, fast, and mobile-friendly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaytools.github.io/tools/seperate-tool/sample-tool.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jaytools.github.io/tools/seperate-tool/sample-tool.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/custom.css">
+    <link rel="stylesheet" href="css/ivf-calculator.css">
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Sample Tool Calculator",
+        "url": "https://jaytools.github.io/tools/seperate-tool/sample-tool.html",
+        "description": "A sample calculator tool with advanced calculation features, history tracking, and a dark mode interface.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": "Advanced arithmetic operations; Dark/Light mode toggle; Calculation history; Save favorite calculations; Mobile-friendly responsive design",
+        "screenshot": "https://jaytools.github.io/img/tools/sample-tool-advanced-screenshot.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Jay Tools",
+            "url": "https://jaytools.github.io"
+        },
+        "mainEntity": {
+            "@type": "HowTo",
+            "name": "How to Use the Advanced Calculator Tool",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your first value in the input field"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your second value in the second input field"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Select the operation you want to perform"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Click 'Calculate' to see the results"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "View previous calculations in the history panel"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../../index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Categories</h2>
+                <button class="sidebar-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../../index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="../../about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="../../contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="../../privacy.html" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="../../terms.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <h1>Advanced Calculator Tool</h1>
+                <p>A powerful calculator with history tracking, theme options, and the ability to save your favorite calculations for future reference.</p>
+            </div>
+
+        <!-- Tool Card -->
+        <div class="tool-card">
+            <button type="button" class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle dark/light theme">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            
+            <div class="tool-ribbon">
+                <span>Advanced Calculator</span>
+            </div>
+
+            <!-- Calculator Interface -->
+            <div class="calculator-interface">
+                <form id="toolForm">
+                    <!-- Input Section -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="input1">First Value</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-hashtag input-icon"></i>
+                                <input type="number" id="input1" name="input1" placeholder="Enter first value" step="any" required>
+                            </div>
+                            <div class="error-message" id="input1Error">Please enter a valid number.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input2">Second Value</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-hashtag input-icon"></i>
+                                <input type="number" id="input2" name="input2" placeholder="Enter second value" step="any" required>
+                            </div>
+                            <div class="error-message" id="input2Error">Please enter a valid number.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="operation">Operation</label>
+                        <div class="select-with-icon">
+                            <i class="fas fa-calculator input-icon"></i>
+                            <select id="operation" name="operation" required>
+                                <option value="">Select operation</option>
+                                <option value="add">Addition (+)</option>
+                                <option value="subtract">Subtraction (-)</option>
+                                <option value="multiply">Multiplication (×)</option>
+                                <option value="divide">Division (÷)</option>
+                            </select>
+                        </div>
+                        <div class="error-message" id="operationError">Please select an operation.</div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <button type="submit" class="calculate-btn" id="calculateBtn" disabled>
+                        <i class="fas fa-calculator"></i>
+                        Calculate Result
+                    </button>
+                </form>
+            </div>
+
+            <!-- Result Section -->
+            <div class="result-section" id="resultSection">
+                <div class="result-title">
+                    <i class="fas fa-check-circle"></i>
+                    Calculation Result
+                </div>
+                <div class="result-value-container">
+                    <div class="result-value" id="resultValue">0</div>
+                </div>
+                <div class="result-description" id="resultDescription">
+                    Your calculation result will appear here
+                </div>
+                <div class="button-group">
+                    <button class="reset-btn" onclick="resetCalculator()">
+                        <i class="fas fa-redo"></i>
+                        Calculate Again
+                    </button>
+                    <button type="button" class="history-btn" id="showHistoryBtn">
+                        <i class="fas fa-history"></i>
+                        View History
+                    </button>
+                </div>
+            </div>
+            
+            <!-- History Panel -->
+            <div class="history-panel" id="historyPanel">
+                <div class="history-title">
+                    <h3><i class="fas fa-history"></i> Calculation History</h3>
+                    <div class="history-actions">
+                        <span class="history-info">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="history-info-tooltip">Click on "Reuse" to load values. Star to save favorites.</span>
+                        </span>
+                        <button type="button" class="history-clear" id="clearHistoryBtn">
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
+                    </div>
+                </div>
+                <ul class="history-list" id="historyList">
+                    <!-- History items will be added here dynamically -->
+                    <li class="history-item empty-history">No calculations yet. Try making a calculation first!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>About This Advanced Calculator Tool</h2>
+            <p>The Advanced Calculator Tool offers a more powerful version of our basic calculator with additional features designed to enhance your productivity. Unlike the simple calculator, this version includes calculation history, favorites, and theme customization to provide a more personalized experience.</p>
+            
+            <h3>Advanced Features:</h3>
+            <ul>
+                <li><strong>Dark/Light Mode</strong> - Toggle between dark and light themes for comfortable viewing in any environment</li>
+                <li><strong>Calculation History</strong> - View your previous calculations and reuse them with a single click</li>
+                <li><strong>Favorites System</strong> - Star important calculations to find them quickly later</li>
+                <li><strong>Persistent Storage</strong> - Your history and settings are saved even if you close your browser</li>
+                <li><strong>Enhanced UI</strong> - Modern interface with improved visual feedback and animations</li>
+                <li><strong>Responsive Design</strong> - Optimized for both desktop and mobile devices</li>
+            </ul>
+
+            <h3>How to Use:</h3>
+            <ul>
+                <li>Enter your first and second values in their respective fields</li>
+                <li>Select the operation you want to perform from the dropdown menu</li>
+                <li>Click "Calculate Result" to see your answer</li>
+                <li>Toggle dark/light mode using the moon/sun icon in the top right corner</li>
+                <li>View your calculation history by clicking the "View History" button</li>
+                <li>Reuse previous calculations by clicking "Reuse" on any history item</li>
+                <li>Star your favorite calculations by clicking the star icon</li>
+                <li>Clear your history using the "Clear All" button in the history panel</li>
+            </ul>
+
+            <h3>Benefits of the Advanced Version:</h3>
+            <ul>
+                <li><strong>Time-Saving</strong> - Reuse previous calculations without re-entering values</li>
+                <li><strong>Better Organization</strong> - Keep track of important calculations with favorites</li>
+                <li><strong>Reduced Eye Strain</strong> - Dark mode option for comfortable use at night</li>
+                <li><strong>Improved Workflow</strong> - All your calculation history in one place</li>
+                <li><strong>Enhanced Accessibility</strong> - Optimized interface for users with different needs</li>
+                <li><strong>Greater Productivity</strong> - Focus on your work, not on redoing calculations</li>
+            </ul>
+            
+            <h3>When to Use the Advanced Calculator:</h3>
+            <p>This advanced calculator is ideal for users who perform multiple calculations in a session, need to reference previous results, or prefer a more customizable experience. If you're working on complex projects, studying, or doing financial calculations, the history and favorites features can significantly improve your efficiency.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../index.html">Home</a></li>
+                            <li><a href="../../about.html">About</a></li>
+                            <li><a href="../../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../../terms.html">Terms of Use</a></li>
+                            <li><a href="../../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="../../js/script.js"></script>
+    <script src="js/ivf-calculator.js"></script>
+    <script>
+        // Initialize UI elements after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check that key elements exist
+            console.log("Page loaded, checking key elements");
+            console.log("Theme toggle:", !!document.getElementById('themeToggle'));
+            console.log("Calculate button:", !!document.getElementById('calculateBtn'));
+            console.log("History button:", !!document.getElementById('showHistoryBtn'));
+        });
+    </script>
+</body>
+</html>
