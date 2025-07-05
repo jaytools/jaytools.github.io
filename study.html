@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page - Jay Tools | Template for Static Content</title>
+    <meta name="description" content="This is a sample informational page from Jay Tools. Use this as a template for legal and static content pages with proper SEO and responsive design.">
+    <meta name="keywords" content="Jay Tools sample page, template, static content, legal pages, responsive design">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Jay Tools">
+    <meta name="category" content="Study">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Sample Page - Jay Tools">
+    <meta property="og:description" content="Sample template page for Jay Tools with proper structure and styling.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jay-tools.com/sample-page.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.jay-tools.com/sample-page.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Sample Page Specific Styles -->
+    <style>
+        /* Brand Link Styles */
+        .brand-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .brand-link:hover {
+            opacity: 0.8;
+        }
+
+        .brand-link:focus {
+            outline: 2px solid #3498db;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Sample Page Content Styles */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            min-height: calc(100vh - 200px);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3498db;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: #999;
+        }
+
+        .page-content {
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+
+        .page-content h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .page-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #34495e;
+            margin: 2rem 0 0.75rem 0;
+        }
+
+        .page-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #34495e;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .page-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .page-content ul,
+        .page-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .page-content li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .page-content ul li {
+            list-style-type: disc;
+        }
+
+        .page-content ol li {
+            list-style-type: decimal;
+        }
+
+        .page-content a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .page-content a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .page-content blockquote {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .page-content code {
+            background: #f1f2f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #e74c3c;
+        }
+
+        .page-content pre {
+            background: #f8f9fa;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .page-content pre code {
+            background: none;
+            padding: 0;
+            color: #2c3e50;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border: 1px solid #e1bee7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: #4a148c;
+            margin-top: 0;
+        }
+
+        .back-to-top {
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            padding-top: 2rem;
+            border-top: 1px solid #e1e8ed;
+        }
+
+        .back-to-top a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top a:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: white;
+            border-top: 1px solid #eee;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+            font-family: system-ui, "Segoe UI", "Roboto", sans-serif;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+
+        .footer-section .social-links {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .footer-section .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-right: 0.5rem;
+        }
+
+        .footer-section .social-links a:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            margin: 0 2rem;
+        }
+
+        .footer-bottom p {
+            color: #999;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 1rem;
+            }
+
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .page-header {
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .page-content h2 {
+                font-size: 1.5rem;
+                margin: 2rem 0 0.75rem 0;
+            }
+
+            .page-content h3 {
+                font-size: 1.25rem;
+                margin: 1.5rem 0 0.5rem 0;
+            }
+
+            .page-content ul,
+            .page-content ol {
+                padding-left: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .site-footer {
+                padding: 2rem 0 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .footer-bottom {
+                padding-top: 1.5rem;
+                margin: 0 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .site-header,
+            .breadcrumb,
+            .back-to-top,
+            .site-footer {
+                display: none;
+            }
+
+            .page-container {
+                max-width: none;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .page-content {
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Categories</h2>
+                <button class="sidebar-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="privacy.html" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="terms.html" class="nav-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-separator">></span>
+            <span>Sample Page</span>
+        </nav>
+
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Header -->
+            <header class="page-header">
+                <h1 class="page-title">Sample Page Title</h1>
+                <p class="page-subtitle">This is a reusable template for creating clean, structured informational pages on Jay Tools. Use this layout for legal content, policies, and static pages.</p>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <h2>Introduction</h2>
+                <p>This is a sample page used to display generic content for Jay Tools. This template provides a clean, professional layout that can be easily customized for various types of static content including privacy policies, terms of service, disclaimers, and other informational pages.</p>
+
+                <p>The page is designed with readability and user experience in mind, featuring proper typography hierarchy, responsive design, and accessibility standards.</p>
+
+                <h3>Why Use This Page Template?</h3>
+                <ul>
+                    <li><strong>Consistent Design:</strong> Maintains the same look and feel as your main Jay Tools website</li>
+                    <li><strong>Mobile-Friendly:</strong> Responsive design that works perfectly on all devices</li>
+                    <li><strong>SEO Optimized:</strong> Proper heading structure and meta tags for search engines</li>
+                    <li><strong>Accessibility:</strong> Built with accessibility standards in mind</li>
+                    <li><strong>Easy to Customize:</strong> Simple HTML structure that's easy to modify</li>
+                    <li><strong>Professional Appearance:</strong> Clean typography and spacing for better readability</li>
+                </ul>
+
+                <h3>Features Included</h3>
+                <ol>
+                    <li>Responsive header with navigation</li>
+                    <li>Breadcrumb navigation for better user experience</li>
+                    <li>Structured content area with proper typography</li>
+                    <li>Support for various content types (headings, paragraphs, lists, etc.)</li>
+                    <li>Footer matching your main website</li>
+                    <li>Back to top functionality</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <h3><i class="fas fa-lightbulb"></i> Pro Tip</h3>
+                    <p>When using this template, simply replace the content within the <code>.page-content</code> section with your own information. Update the page title, meta description, and breadcrumb navigation to match your specific page.</p>
+                </div>
+
+                <h2>Content Formatting Examples</h2>
+                
+                <h3>Text Formatting</h3>
+                <p>You can use various text formatting options:</p>
+                <ul>
+                    <li><strong>Bold text</strong> for emphasis</li>
+                    <li><em>Italic text</em> for subtle emphasis</li>
+                    <li><a href="#">Links</a> that match your site's color scheme</li>
+                    <li><code>Inline code</code> for technical terms</li>
+                </ul>
+
+                <h3>Blockquotes</h3>
+                <blockquote>
+                    "This is an example of a blockquote. It's perfect for highlighting important information, testimonials, or quotes from relevant sources."
+                </blockquote>
+
+                <h3>Code Blocks</h3>
+                <p>For longer code snippets, you can use preformatted text blocks:</p>
+                <pre><code>&lt;div class="example"&gt;
+    &lt;h1&gt;Example HTML&lt;/h1&gt;
+    &lt;p&gt;This shows how code blocks look&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+                <h2>How to Customize This Template</h2>
+                
+                <h3>Step 1: Update Page Information</h3>
+                <p>Replace the following elements with your specific content:</p>
+                <ul>
+                    <li>Page title in the <code>&lt;title&gt;</code> tag</li>
+                    <li>Meta description</li>
+                    <li>Main heading and subtitle</li>
+                    <li>Breadcrumb navigation</li>
+                </ul>
+
+                <h3>Step 2: Replace Content</h3>
+                <p>Delete the sample content and add your own sections, paragraphs, lists, and other elements as needed.</p>
+
+                <h3>Step 3: Test Responsiveness</h3>
+                <p>Make sure to test your page on different devices to ensure it looks good on mobile, tablet, and desktop screens.</p>
+
+                <h2>Additional Resources</h2>
+                <p>For more information about Jay Tools and our services, you can visit:</p>
+                <ul>
+                    <li><a href="index.html">Jay Tools Homepage</a></li>
+                    <li><a href="about.html">About Jay Tools</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+                <!-- Last Updated -->
+                <div class="last-updated">
+                    Last updated: July 1, 2025
+                </div>
+            </div>
+
+            <!-- Back to Top -->
+            <div class="back-to-top">
+                <a href="#top" aria-label="Back to top of page">
+                    <i class="fas fa-arrow-up"></i>
+                    Back to Top
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        // Back to top smooth scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopLink = document.querySelector('.back-to-top a');
+            
+            if (backToTopLink) {
+                backToTopLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

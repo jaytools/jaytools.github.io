@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Deficit Calculator - Jay Tools | Free Weight Loss Tool</title>
+    <meta name="description" content="Calculate your daily calorie deficit for effective weight loss with our free Calorie Deficit Calculator. Simple, accurate, and mobile-friendly tool from Jay Tools.">
+    <meta name="keywords" content="calorie deficit calculator, weight loss calculator, daily calorie deficit, Jay Tools, fitness calculator, calorie counter">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jay Tools">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Calorie Deficit Calculator - Jay Tools | Free Weight Loss Tool">
+    <meta property="og:description" content="Calculate your daily calorie deficit for effective weight loss with our free Calorie Deficit Calculator. Simple, accurate, and personalized.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaytools.github.io/health/calorie-deficit.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jaytools.github.io/health/calorie-deficit.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/custom.css">
+    <link rel="stylesheet" href="css/calorie-deficit.css">
+    <link rel="stylesheet" href="css/calorie-deficit-custom.css">
+    <link rel="stylesheet" href="css/calorie-deficit-custom-animations.css">
+    <link rel="stylesheet" href="css/calorie-deficit-results.css">
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Calorie Deficit Calculator",
+        "url": "https://jaytools.github.io/health/calorie-deficit.html",
+        "description": "A comprehensive calorie deficit calculator that helps you determine the right daily calorie intake for effective weight loss, with personalized recommendations based on your gender, age, activity level, and weight loss goals.",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": "Personalized calorie deficit calculations; BMR and TDEE estimation; Weight loss rate options; Calculation history; Dark/Light mode toggle; Mobile-friendly responsive design",
+        "screenshot": "https://jaytools.github.io/img/tools/calorie-deficit-screenshot.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Jay Tools",
+            "url": "https://jaytools.github.io"
+        },
+        "mainEntity": {
+            "@type": "HowTo",
+            "name": "How to Calculate Your Calorie Deficit for Weight Loss",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your personal details (age, gender, height, and weight)"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Select your activity level from the dropdown options"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Choose your desired weight loss rate (mild, moderate, or aggressive)"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Click 'Calculate' to see your recommended daily calorie intake"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Save your results or view your calculation history"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../../index.html" class="brand-link">
+                    <h1 class="site-title">Jay Tools</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <a href="../../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="../../about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                        <a href="../../contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a href="../../privacy.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="../../terms.html" class="nav-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Terms of Service</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <!-- Main Content -->
+    <main>
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <h1><i class="fas fa-fire-alt"></i> Calorie Deficit Calculator</h1>
+                <p>Achieve your weight loss goals with our advanced calculator Get a personalized calorie plan based on your body metrics, activity level, and weight loss targets. Our scientific approach helps you lose weight effectively while maintaining optimal nutrition.</p>
+            </div>
+
+            <!-- Tool Card -->
+            <div class="tool-card">
+            <button type="button" class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle dark/light theme">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            
+            <div class="tool-ribbon">
+                <span>Calorie Deficit Calculator</span>
+            </div>
+
+            <!-- Calculator Interface -->
+            <div class="calculator-interface">
+                <form id="toolForm">
+                    <!-- Personal Information Section -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-birthday-cake input-icon"></i>
+                                    <input type="number" id="age" name="age" placeholder="Years" min="15" max="100" step="1" required>
+                                </div>
+                                <div class="error-message" id="ageError">Please enter a valid age (15-100).</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <div class="select-with-icon">
+                                    <i class="fas fa-venus-mars input-icon"></i>
+                                    <select id="gender" name="gender" required>
+                                        <option value="">Select gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="error-message" id="genderError">Please select your gender.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="height">Height</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-ruler-vertical input-icon"></i>
+                                    <input type="number" id="height" name="height" placeholder="cm" min="130" max="250" step="1" required>
+                                </div>
+                                <div class="error-message" id="heightError">Please enter a valid height (130-250 cm).</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="weight">Weight</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-weight input-icon"></i>
+                                    <input type="number" id="weight" name="weight" placeholder="kg" min="30" max="300" step="0.1" required>
+                                </div>
+                                <div class="error-message" id="weightError">Please enter a valid weight (30-300 kg).</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity Level Section -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-running"></i> Activity Level</h3>
+                        <div class="form-group">
+                            <div class="select-with-icon">
+                                <i class="fas fa-heartbeat input-icon"></i>
+                                <select id="activityLevel" name="activityLevel" required aria-label="Activity Level">
+                                    <option value="">Select your activity level</option>
+                                    <option value="1.2">Sedentary (little or no exercise)</option>
+                                    <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                                    <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
+                                    <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                                    <option value="1.9">Extremely active (very hard exercise & physical job)</option>
+                                </select>
+                            </div>
+                            <div class="error-message" id="activityLevelError">Please select your activity level.</div>
+                            <div class="help-text">Choose the option that best describes your typical activity level.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Weight Loss Goal Section -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-bullseye"></i> Weight Loss Goal</h3>
+                        <div class="form-group">
+                            <label>Choose your preferred deficit level:</label>
+                            <div class="radio-group" role="radiogroup" aria-labelledby="deficitTypeLabel">
+                                <span id="deficitTypeLabel" class="visually-hidden">Deficit Type</span>
+                                
+                                <label class="radio-option">
+                                    <input type="radio" name="deficitType" value="mild" id="mildDeficit" checked>
+                                    <span class="radio-label">Mild (0.25 kg/week)</span>
+                                    <span class="radio-description">Small deficit for gradual, sustainable weight loss</span>
+                                </label>
+                                
+                                <label class="radio-option">
+                                    <input type="radio" name="deficitType" value="moderate" id="moderateDeficit">
+                                    <span class="radio-label">Moderate (0.5 kg/week)</span>
+                                    <span class="radio-description">Balanced approach to weight loss</span>
+                                </label>
+                                
+                                <label class="radio-option">
+                                    <input type="radio" name="deficitType" value="aggressive" id="aggressiveDeficit">
+                                    <span class="radio-label">Aggressive (1 kg/week)</span>
+                                    <span class="radio-description">Faster results but may be more challenging</span>
+                                </label>
+                            </div>
+                            <div class="help-text">Mild deficit is more sustainable, while aggressive deficit may be harder to maintain long term.</div>
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <button type="submit" class="calculate-btn" id="calculateBtn">
+                        <i class="fas fa-calculator"></i>
+                        Calculate Calorie Deficit
+                    </button>
+                </form>
+            </div>
+
+            <!-- Result Section -->
+            <div class="result-section" id="resultSection">
+                <div class="result-title">
+                    <i class="fas fa-check-circle"></i>
+                    Your Calorie Deficit Plan
+                </div>
+                
+                <div class="result-cards">
+                    <div class="result-card">
+                        <div class="result-card-title">
+                            <i class="fas fa-fire"></i> BMR
+                        </div>
+                        <div class="result-card-value" id="bmrValue">0</div>
+                        <div class="result-card-description">Basal Metabolic Rate (calories/day)</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <div class="result-card-title">
+                            <i class="fas fa-running"></i> TDEE
+                        </div>
+                        <div class="result-card-value" id="tdeeValue">0</div>
+                        <div class="result-card-description">Total Daily Energy Expenditure</div>
+                    </div>
+                    
+                    <div class="result-card highlight">
+                        <div class="result-card-title">
+                            <i class="fas fa-utensils"></i> Daily Calories
+                        </div>
+                        <div class="result-card-value" id="calorieGoalValue">0</div>
+                        <div class="result-card-description">Recommended daily calorie intake</div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <div class="result-card-title">
+                            <i class="fas fa-weight"></i> Weekly Loss
+                        </div>
+                        <div class="result-card-value" id="weeklyLossValue">0</div>
+                        <div class="result-card-description">Estimated weight loss per week</div>
+                    </div>
+                </div>
+                
+                <div class="result-description" id="resultDescription">
+                    <p>Based on your personal information and activity level, we've calculated your optimal daily calorie intake for weight loss.</p>
+                    <div class="result-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <span id="resultTip">For sustainable weight loss, aim to stay within 100 calories of your daily target.</span>
+                    </div>
+                </div>
+                
+                <div class="nutrient-breakdown">
+                    <h4>Recommended Macronutrient Breakdown</h4>
+                    <div class="nutrient-bars">
+                        <div class="nutrient-bar">
+                            <div class="nutrient-label">Protein</div>
+                            <div class="nutrient-progress">
+                                <div class="nutrient-fill protein" id="proteinBar"></div>
+                            </div>
+                            <div class="nutrient-value" id="proteinValue">0g (30%)</div>
+                        </div>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-label">Carbs</div>
+                            <div class="nutrient-progress">
+                                <div class="nutrient-fill carbs" id="carbsBar"></div>
+                            </div>
+                            <div class="nutrient-value" id="carbsValue">0g (45%)</div>
+                        </div>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-label">Fat</div>
+                            <div class="nutrient-progress">
+                                <div class="nutrient-fill fat" id="fatBar"></div>
+                            </div>
+                            <div class="nutrient-value" id="fatValue">0g (25%)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button class="reset-btn" id="resetBtn">
+                        <i class="fas fa-redo"></i>
+                        Recalculate
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>About the Calorie Deficit Calculator</h2>
+            <p>Our Calorie Deficit Calculator helps you determine the optimal daily calorie intake for effective and sustainable weight loss. By analyzing your personal metrics and activity level, this tool creates a personalized weight loss plan that balances your nutritional needs with your weight loss goals.</p>
+            
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Personalized Calculations</strong> - Customized calorie targets based on your age, gender, height, weight, and activity level</li>
+                <li><strong>Multiple Goal Options</strong> - Choose between mild, moderate, or aggressive weight loss approaches</li>
+                <li><strong>BMR & TDEE Analysis</strong> - View your Basal Metabolic Rate and Total Daily Energy Expenditure</li>
+                <li><strong>Macronutrient Breakdown</strong> - Get recommended protein, carbohydrate, and fat intake</li>
+                <li><strong>Calculation History</strong> - Save and revisit your previous calculations</li>
+                <li><strong>Dark/Light Mode</strong> - Toggle between themes for comfortable viewing</li>
+            </ul>
+
+            <h3>How to Use:</h3>
+            <ul>
+                <li>Enter your personal details (age, gender, height, and weight)</li>
+                <li>Select your activity level from the dropdown options</li>
+                <li>Choose your desired weight loss rate (mild, moderate, or aggressive)</li>
+                <li>Click "Calculate Calorie Deficit" to see your recommendations</li>
+                <li>View your BMR, TDEE, daily calorie target, and macronutrient breakdown</li>
+                <li>Save favorites or view your calculation history for future reference</li>
+            </ul>
+
+            <h3>Understanding Your Results:</h3>
+            <ul>
+                <li><strong>BMR (Basal Metabolic Rate)</strong> - The calories your body needs at complete rest</li>
+                <li><strong>TDEE (Total Daily Energy Expenditure)</strong> - Your BMR adjusted for daily activity level</li>
+                <li><strong>Daily Calorie Target</strong> - Recommended calorie intake to achieve your weight loss goal</li>
+                <li><strong>Weekly Weight Loss</strong> - Expected weight loss per week following the plan</li>
+                <li><strong>Macronutrient Breakdown</strong> - Optimal distribution of proteins, carbs, and fats</li>
+            </ul>
+            
+            <h3>Important Notes:</h3>
+            <p>This calculator provides estimates based on established formulas like the Mifflin-St Jeor Equation. Individual results may vary based on factors such as metabolism, medical conditions, and adherence to the plan. The calculator is designed for adults aged 15-100 and should not be used by pregnant or breastfeeding individuals or those with certain medical conditions without consulting a healthcare professional.</p>
+            
+            <h3>For Best Results:</h3>
+            <ul>
+                <li>Combine your calorie deficit with regular physical activity</li>
+                <li>Focus on nutrient-dense whole foods rather than just calorie counting</li>
+                <li>Stay hydrated and get adequate sleep</li>
+                <li>Recalculate as your weight changes or if your activity level changes</li>
+                <li>Consult with a healthcare provider before starting any weight loss program</li>
+            </ul>
+        </div>
+        </div> <!-- Close tool-container -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../index.html">Home</a></li>
+                            <li><a href="../../about.html">About</a></li>
+                            <li><a href="../../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../../terms.html">Terms of Use</a></li>
+                            <li><a href="../../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="../../js/script.js"></script>
+    <script src="js/calorie-deficit.js"></script>
+    <script>
+        // Initialize UI elements after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Page fully loaded, performing final checks");
+            
+            // Check that key elements exist and are properly displayed
+            const toolContainer = document.querySelector('.tool-container');
+            const toolHeader = document.querySelector('.tool-header');
+            const toolCard = document.querySelector('.tool-card');
+            const calculatorInterface = document.querySelector('.calculator-interface');
+            const resultSection = document.getElementById('resultSection');
+            
+            console.log("Tool container visible:", toolContainer && getComputedStyle(toolContainer).display !== 'none');
+            console.log("Tool header visible:", toolHeader && getComputedStyle(toolHeader).display !== 'none');
+            console.log("Tool card visible:", toolCard && getComputedStyle(toolCard).display !== 'none');
+            console.log("Calculator interface visible:", calculatorInterface && getComputedStyle(calculatorInterface).display !== 'none');
+            console.log("Result section initially hidden:", resultSection && getComputedStyle(resultSection).display === 'none');
+            
+            // Force layout recalculation if needed
+            if (toolContainer) toolContainer.style.display = 'flex';
+            if (toolCard) toolCard.style.display = 'block';
+            if (calculatorInterface) calculatorInterface.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

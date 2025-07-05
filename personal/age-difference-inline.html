@@ -99,54 +99,82 @@
                     "text": "Click on Calculate to get the exact age difference"
                 }
             ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.jay-tools.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Personal Tools",
+                    "item": "https://www.jay-tools.com/personal.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Age Difference Calculator",
+                    "item": "https://www.jay-tools.com/personal/age-difference-inline.html"
+                }
+            ]
         }
     }
     </script>
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
     {
-      "@type": "Question",
-      "name": "Why calculate age difference between two dates?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It's useful for relationships, birthdays, legal purposes, and more. This tool calculates the exact gap in years, months, and days."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is age difference calculated in days?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The calculator counts every day between two dates, including leap years and irregular months, then converts them into a precise breakdown."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use this tool for any two dates?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, you can calculate the age gap between any two valid calendar dates."
-      }
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+        "@type": "Question",
+        "name": "Why calculate age difference between two dates?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's useful for relationships, birthdays, legal purposes, and more. This tool calculates the exact gap in years, months, and days."
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "How is age difference calculated in days?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The calculator counts every day between two dates, including leap years and irregular months, then converts them into a precise breakdown."
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "Can I use this tool for any two dates?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can calculate the age gap between any two valid calendar dates."
+        }
+        }
+    ],
+    "about": {
+        "@type": "WebApplication",
+        "name": "Age Difference Calculator",
+        "url": "https://www.jay-tools.com/personal/age-difference-inline.html"
     }
-  ]
-}
-</script>
+    }
+    </script>
 
     
     <!-- Tool Specific Styles -->
     <style>
         :root {
             /* Color Variables */
-            --color-primary: #667eea;
-            --color-primary-dark: #764ba2;
-            --color-secondary: #0ea5e9;
-            --color-success: #10b981;
-            --color-success-dark: #059669;
-            --color-error: #ef4444;
-            --color-error-dark: #dc2626;
+            --color-primary: #333333;
+            --color-primary-dark: #000000;
+            --color-secondary: #555555;
+            --color-success: #2e7d32;
+            --color-success-dark: #1b5e20;
+            --color-error: #c62828;
+            --color-error-dark: #b71c1c;
             --color-gray-50: #f8f9fa;
             --color-gray-100: #f3f4f6;
             --color-gray-200: #e5e7eb;
@@ -177,6 +205,40 @@
             --shadow-focus: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background: var(--color-gray-50);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--color-primary);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: var(--color-gray-500);
+        }
+        
+        /* Page Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
         /* Layout and Containers */
         .tool-container {
             max-width: 800px;
@@ -189,27 +251,26 @@
         /* Card Components */
         .card {
             background: var(--color-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-200);
             overflow: hidden;
             margin-bottom: var(--space-lg);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            border-color: var(--color-gray-500);
         }
 
         .card-header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            color: var(--color-white);
+            background: var(--color-white);
+            color: var(--color-primary);
             padding: var(--space-xl);
             text-align: center;
+            border-bottom: 2px solid var(--color-gray-200);
         }
 
         .card-header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: var(--space-sm);
             letter-spacing: -0.025em;
@@ -217,8 +278,8 @@
 
         .card-header p {
             font-size: 1.1rem;
-            opacity: 0.9;
             font-weight: 400;
+            color: var(--color-gray-700);
         }
 
         .card-body {
@@ -255,8 +316,7 @@
 
         .form-input:focus {
             outline: none;
-            border-color: var(--color-primary);
-            box-shadow: var(--shadow-focus);
+            border-color: var(--color-gray-500);
         }
 
         .form-row {
@@ -289,14 +349,15 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            background: var(--color-primary);
             color: var(--color-white);
             width: 100%;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
         }
 
         .btn-secondary {
@@ -318,20 +379,19 @@
         
         .share-btn:hover {
             background: var(--color-success-dark);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+            transform: translateY(-1px);
         }
 
         /* Results Display */
         .result-card {
             background: var(--color-white);
-            border: 2px solid var(--color-secondary);
-            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
             padding: var(--space-xl);
             margin-top: var(--space-lg);
             display: none;
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+            transition: opacity 0.3s ease-out;
             max-width: 100%;
             box-sizing: border-box;
         }
@@ -339,18 +399,12 @@
         .result-card.show {
             display: block;
             opacity: 1;
-            transform: translateY(0);
-            animation: fadeIn 0.5s ease-in-out;
+            animation: simpleFadeIn 0.4s ease-in-out;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes simpleFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .result-header {
@@ -394,14 +448,11 @@
             background: var(--color-white);
             padding: var(--space-lg);
             border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
             border: 1px solid var(--color-gray-200);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .detail-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            border-color: var(--color-gray-400);
         }
 
         .detail-card h3 {
@@ -418,12 +469,13 @@
         }
 
         .total-days-card {
-            background: var(--color-primary);
-            color: var(--color-white);
+            background: var(--color-gray-100);
+            color: var(--color-gray-800);
             padding: var(--space-lg);
             border-radius: var(--radius-md);
             text-align: center;
             margin-top: var(--space-lg);
+            border: 1px solid var(--color-gray-300);
         }
 
         .total-days-card h3 {
@@ -510,10 +562,12 @@
         }
 
         .info-card h2 {
-            color: var(--color-gray-800);
+            color: var(--color-primary);
             margin-bottom: var(--space-md);
             font-size: 1.5rem;
             font-weight: 600;
+            border-bottom: 1px solid var(--color-gray-200);
+            padding-bottom: var(--space-sm);
         }
 
         .info-card h3 {
@@ -569,14 +623,11 @@
             background: var(--color-white);
             border-radius: var(--radius-md);
             padding: var(--space-lg);
-            box-shadow: var(--shadow-sm);
             border: 1px solid var(--color-gray-200);
-            transition: all 0.3s ease;
         }
         
         .feature-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
+            border-color: var(--color-gray-400);
         }
         
         .feature-header {
@@ -708,136 +759,32 @@
         }
 
         /* Mobile UI Components */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 300px;
-            height: 100vh;
-            background-color: var(--color-white);
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1001;
-            transition: right 0.3s ease;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .sidebar.active {
-            right: 0;
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            display: none;
-        }
-        
-        .overlay.active {
-            display: block;
-        }
-        
-        .menu-toggle {
-            background: none;
-            border: none;
-            font-size: 1.25rem;
-            color: var(--color-gray-800);
-            cursor: pointer;
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-full);
-            transition: background-color 0.2s ease;
-        }
-        
-        /* Improved search and action buttons for mobile */
-        .search-toggle, .menu-toggle, .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            transition: background-color 0.2s ease;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-        }
-        
-        /* Hide search toggle in desktop view */
-        .search-toggle {
-            display: none;
-        }
-        
-        .search-toggle:hover, .menu-toggle:hover, .social-link:hover {
-            background-color: var(--color-gray-100);
-        }
-        
-        /* Mobile search improvements */
-        .mobile-search-container {
-            padding: 0.5rem 1rem;
-            background-color: white;
-            position: relative;
-            display: none;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .mobile-search-container.active {
-            display: block;
-        }
-        
-        .mobile-search-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        
-        .mobile-search-input {
-            flex-grow: 1;
-            padding: 10px 16px;
-            border: 1px solid var(--color-gray-200);
-            border-radius: var(--radius-md);
-            font-size: 1rem;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .mobile-search-close {
-            background: none;
-            border: none;
-            font-size: 1.25rem;
-            color: var(--color-gray-700);
-            cursor: pointer;
-            padding: 8px;
-            margin-left: 8px;
-        }
+        /* Sidebar, search, menu and related header styles are defined in custom.css */
         
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .tool-container {
-                padding: var(--space-md);
+                padding: var(--space-md) var(--space-sm);
+            }
+            
+            .card {
+                margin-bottom: var(--space-md);
+                border-radius: var(--radius-md);
             }
 
             .card-header {
-                padding: var(--space-lg) var(--space-md);
+                padding: var(--space-md);
             }
 
             .card-header h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                line-height: 1.2;
+                margin-bottom: var(--space-xs);
             }
             
             .card-header p {
-                font-size: 1rem;
+                font-size: 0.9rem;
+                line-height: 1.4;
             }
 
             .card-body, .result-card, .info-card {
@@ -878,96 +825,33 @@
                 min-height: 48px; /* More tappable on mobile */
             }
             
-            /* Header responsive fixes */
-            body {
-                padding: 0;
-                overflow-x: hidden;
-                width: 100%;
-            }
-            
-            .site-header {
-                width: 100%;
-                box-sizing: border-box;
-                overflow-x: visible;
-            }
-            
-            .navbar {
-                flex-wrap: nowrap;
-                padding: 10px;
-                width: 100%;
-                align-items: center;
-                justify-content: space-between;
-            }
-            
-            .navbar-brand {
-                flex-basis: 60%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            
-            .site-title {
-                font-size: 1.5rem;
-                white-space: nowrap;
-            }
-            
-            .site-subtitle {
+            /* Breadcrumb responsive fixes */
+            .breadcrumb {
                 font-size: 0.8rem;
+                margin-bottom: var(--space-md);
+                padding: 0.75rem 1rem;
             }
             
-            .navbar-actions {
-                flex-basis: 40%;
-                justify-content: flex-end;
-                display: flex;
-                gap: 12px;
-                align-items: center;
-                flex-shrink: 0;
-            }
-            
-            .search-container {
-                display: none;
-            }
-            
-            .search-toggle {
-                display: flex;
-            }
-            
-            .search-wrapper {
-                display: flex;
-                align-items: center;
-            }
+            /* Header responsive styles are defined in custom.css */
         }
         
         /* Small Mobile Devices */
         @media (max-width: 480px) {
-            .site-title {
-                font-size: 1.2rem;
+            /* Better tool header display on small mobiles */
+            .card-header {
+                padding: var(--space-sm) var(--space-md);
             }
             
-            .site-subtitle {
-                font-size: 0.7rem;
+            .card-header h1 {
+                font-size: 1.4rem;
             }
             
-            .navbar-brand {
-                flex-basis: 60%;
-                max-width: 60%;
+            .card-header p {
+                font-size: 0.85rem;
+                margin-top: 0.2rem;
             }
             
-            .navbar-actions {
-                flex-basis: 40%;
-                justify-content: flex-end;
-                gap: 8px;
-            }
-            
-            .search-toggle, .menu-toggle, .social-link {
-                width: 36px;
-                height: 36px;
-                padding: 0;
-                font-size: 1rem;
-            }
-            
-            .sidebar {
-                width: 100%;
-            }
+            /* Header responsive styles are defined in custom.css */
             
             /* Improve form layout on very small screens */
             .form-input {
@@ -989,6 +873,18 @@
             .btn {
                 padding: 10px 16px;
                 min-height: 44px;
+                font-size: 0.95rem;
+            }
+            
+            /* Improve spacing between form fields */
+            .form-group {
+                margin-bottom: var(--space-sm);
+            }
+            
+            /* Make inputs more compact but still usable */
+            .form-input {
+                padding: 10px;
+                min-height: 42px;
             }
         }
     </style>
@@ -1106,6 +1002,17 @@
 
     <!-- Main Content -->
     <main>
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <a href="../personal.html">Personal Tools</a>
+                <span class="breadcrumb-separator">></span>
+                <span>Age Difference Calculator</span>
+            </nav>
+        </div>
+        
         <div class="tool-container">
             <!-- Tool Card -->
             <div class="card">
@@ -1293,12 +1200,6 @@
                         
                         <div class="faq-item">
                             <h3>How is age difference calculated in days?</h3>
-                            <p>Behind the scenes, our calculator is doing some pretty cool math! It's not as simple as it sounds – we can't just subtract one date from another because, ugh, leap years make everything complicated. The calculator counts every single day between the two birth dates, dealing with all those annoying calendar irregularities (30 days in April but 31 in May? Why??). It then converts those total days into years, months, and days using some clever algorithms. I remember building this and getting stuck for hours on February 29th edge cases! That's why I'm so proud that it handles everything automatically now – even those tricky month-end transitions where you might get negative days without proper adjustment.</p>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <h3>Is a large age gap in a relationship problematic?</h3>
-                            <p>Not necessarily! I mean, it really depends on the people involved. My aunt and uncle have a 12-year gap and they've been happily married for 30+ years. The challenges usually come from being in different life stages – like one person wanting to party while the other is ready for Netflix and slippers by 9pm (been there!). Sometimes there are energy level differences or conflicting goals around major decisions like having kids. The funny "didn't you watch that cartoon growing up?" moments can actually be kinda fun though! What I've noticed is that the most successful age-gap couples are super open communicators who respect each other's perspectives. Age is just one factor in compatibility – sometimes a big one, sometimes barely noticeable.</p>
                         </div>
                         
                         <div class="faq-item">
@@ -1902,6 +1803,28 @@
                 // Reset first (in case there's a previous message)
                 feedback.classList.remove('show');
                 
+                // Small timeout to ensure transition states don't conflict
+                setTimeout(() => {
+                    feedback.textContent = message;
+                    feedback.classList.add('show');
+                    
+                    // Hide after showing for 3 seconds
+                    setTimeout(() => {
+                        feedback.classList.remove('show');
+                    }, 3000);
+                }, 50);
+            }
+            
+            /**
+             * 📅 Timeline Feature
+             * Creates a visual timeline of significant events based on birth dates
+             */
+            function generateTimeline(date1, date2, ageDiff) {
+                const timeline = document.getElementById('timeline');
+                timeline.innerHTML = ''; // Clear existing items
+                
+                const earlierDate = date1 < date2 ? date1 : date2;
+                const laterDate = date1 <
                 // Small timeout to ensure transition states don't conflict
                 setTimeout(() => {
                     feedback.textContent = message;

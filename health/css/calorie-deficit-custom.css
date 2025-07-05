@@ -1,0 +1,534 @@
+/* Additional custom styles for the Calorie Deficit Calculator */
+
+/* Tool container layout */
+.tool-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.tool-card {
+    position: relative;
+    border: none;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.dark-mode .tool-card {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.tool-ribbon {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 0.8rem 0;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-ribbon:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.2) 50%, 
+        rgba(255,255,255,0) 100%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    100% {
+        left: 100%;
+    }
+}
+
+.calculator-interface {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: rotate(15deg);
+}
+
+.dark-mode .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Radio Button Styles */
+.radio-option {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.radio-option:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.05);
+    border-left-color: var(--primary-color);
+}
+
+input[type="radio"]:checked ~ .radio-option {
+    border-left-color: var(--primary-color);
+}
+
+/* Result Card Enhancement */
+.result-card-value {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.result-card.highlight .result-card-value {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Tooltip enhancements */
+.result-tip {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Print styles */
+@media print {
+    .site-header, 
+    .site-footer,
+    .sidebar,
+    .overlay,
+    .tool-header p,
+    .calculate-btn,
+    .history-btn,
+    .theme-toggle {
+        display: none !important;
+    }
+    
+    body, .tool-container {
+        background-color: white;
+        color: black;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .result-section {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .result-cards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .result-card {
+        flex: 1 1 45%;
+        margin: 10px;
+    }
+}
+
+/* CSS Variables for secondary-color-rgb if not defined in calorie-deficit.css */
+:root {
+    --secondary-color-rgb: 46, 204, 113;
+}
+
+/* Enhanced Tool Header Styles */
+.tool-header {
+    padding: 2.5rem;
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.08) 0%, 
+        rgba(var(--primary-color-rgb), 0.03) 100%);
+    border-radius: 1.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tool-header:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233498db' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.tool-header:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-color) 0%, 
+        var(--secondary-color) 50%,
+        var(--primary-color) 100%);
+    border-radius: 0 0 1.5rem 1.5rem;
+    z-index: 1;
+}
+
+.tool-header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    letter-spacing: -0.5px;
+    background: linear-gradient(120deg, var(--text-color) 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tool-header h1 i {
+    font-size: 0.9em;
+    margin-right: 0.3rem;
+    vertical-align: -0.05em;
+    color: var(--primary-color);
+    -webkit-text-fill-color: var(--primary-color); /* Override the transparent text for the icon only */
+    text-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.4);
+}
+
+.tool-header h1:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, rgba(var(--primary-color-rgb), 0) 70%);
+    left: -20px;
+    top: -10px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.tool-header p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--secondary-text-color);
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+    padding-left: 1rem;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.dark-mode .tool-header {
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.2) 0%, 
+        rgba(0, 0, 0, 0.3) 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced Information Section Styles */
+.info-section {
+    margin-top: 4rem;
+    padding: 3rem;
+    background-color: var(--card-bg);
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+}
+
+.info-section:before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, 
+        rgba(var(--secondary-color-rgb), 0.1) 0%, 
+        rgba(var(--secondary-color-rgb), 0) 70%);
+    border-radius: 50%;
+    top: -150px;
+    right: -100px;
+    z-index: 0;
+}
+
+.info-section:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233498db' fill-opacity='0.03'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 20.83l2.83-2.83 1.41 1.41L1.41 22H0v-1.17zM0 3.07l2.83-2.83 1.41 1.41L1.41 4.24H0V3.07zm28.24 35.66l1.41-1.41 2.83 2.83V40h-1.41l-2.83-2.83zm14.58-.24l2.83-2.83 1.41 1.41L40 36.41V40h-1.41l-2.83-2.83zM40 1.41l2.83-2.83 1.41 1.41L40 3.07V0h1.41l2.83 2.83z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.8rem;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.info-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1.2rem;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+.info-section h3:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.info-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+    max-width: 95%;
+}
+
+.info-section ul {
+    margin: 1.2rem 0 2rem 0;
+    position: relative;
+    z-index: 1;
+    list-style: none;
+    padding-left: 0.5rem;
+}
+
+.info-section li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.7;
+}
+
+.info-section li strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.dark-mode .info-section {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced List Styling */
+.info-section ul {
+    list-style: none;
+}
+
+.info-section ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(var(--secondary-color-rgb), 0.15);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .tool-header {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .tool-header h1 {
+        font-size: 2rem;
+    }
+    
+    .tool-header p {
+        font-size: 1.05rem;
+        padding-left: 0.8rem;
+    }
+    
+    .info-section {
+        padding: 2rem 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .info-section h2 {
+        font-size: 1.7rem;
+    }
+    
+    .info-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .info-section p {
+        font-size: 1.05rem;
+        max-width: 100%;
+    }
+    
+    .info-section ul {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .tool-header {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+    
+    .tool-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .tool-header p {
+        font-size: 1rem;
+        border-left-width: 2px;
+    }
+    
+    .info-section {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+    
+    .info-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .info-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .info-section h3:before {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .info-section p {
+        line-height: 1.6;
+    }
+    
+    .info-section li {
+        padding-left: 1.5rem;
+    }
+}
+
+/* View History Button in Main Form */
+.view-history-container {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.view-history-btn {
+    background-color: transparent;
+    color: var(--primary-color, #3498db);
+    border: 1px dashed var(--primary-color, #3498db);
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-radius: var(--border-radius, 8px);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.view-history-btn:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+    border-style: solid;
+}
+
+.view-history-btn i {
+    font-size: 0.9rem;
+}
+
+body.dark-mode .view-history-btn {
+    color: var(--dark-primary-color, #5dade2);
+    border-color: var(--dark-primary-color, #5dade2);
+}
+
+body.dark-mode .view-history-btn:hover {
+    background-color: rgba(93, 173, 226, 0.1);
+}

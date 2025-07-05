@@ -60,6 +60,33 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     
+    <!-- Additional page-specific styles -->
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+    
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
     {
@@ -68,6 +95,9 @@
         "name": "Jay Tools",
         "url": "https://jaytools.github.io",
         "description": "Free online calculators, converters and tools for students, developers and everyday use. Simple, fast and reliable utilities.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-07-05",
+        "inLanguage": "en-US",
         "potentialAction": {
             "@type": "SearchAction",
             "target": "https://jaytools.github.io?search={search_term_string}",
@@ -75,7 +105,8 @@
         },
         "author": {
             "@type": "Person",
-            "name": "Jay Prajapati"
+            "name": "Jay Prajapati",
+            "url": "https://jaytools.github.io/about.html"
         },
         "publisher": {
             "@type": "Organization",
@@ -85,13 +116,119 @@
                 "url": "https://jaytools.github.io/favicon.svg",
                 "width": "96",
                 "height": "96"
-            }
+            },
+            "sameAs": [
+                "https://instagram.com/jaytools",
+                "https://github.com/jayprajapati",
+                "https://youtube.com/@jaytools",
+                "https://linkedin.com/in/jayprajapati"
+            ]
         },
         "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "USD"
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Jay Tools"
+            }
         }
+    }
+    </script>
+    
+    <!-- Organization Schema for rich results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Jay Tools",
+        "url": "https://jaytools.github.io",
+        "logo": "https://jaytools.github.io/favicon.svg",
+        "description": "Free online calculators, converters and tools for students, developers and everyday use.",
+        "sameAs": [
+            "https://instagram.com/jaytools",
+            "https://github.com/jayprajapati",
+            "https://youtube.com/@jaytools",
+            "https://linkedin.com/in/jayprajapati"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "url": "https://jaytools.github.io/contact.html"
+        }
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://jaytools.github.io"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- SiteNavigationElement Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "hasPart": [
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Home",
+                "url": "https://jaytools.github.io/index.html"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Calculator",
+                "url": "https://jaytools.github.io/calculator.html"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Health",
+                "url": "https://jaytools.github.io/health.html"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Study",
+                "url": "https://jaytools.github.io/study.html"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Finance",
+                "url": "https://jaytools.github.io/finance.html"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Personal",
+                "url": "https://jaytools.github.io/personal.html"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Converter",
+                "url": "https://jaytools.github.io/converter.html"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Utility",
+                "url": "https://jaytools.github.io/utility.html"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Planner",
+                "url": "https://jaytools.github.io/planner.html"
+            }
+        ]
     }
     </script>
 </head>
@@ -170,9 +307,9 @@
             <section class="sidebar-section">
                 <h3><i class="fas fa-fire"></i> Popular Tools</h3>
                 <ul class="popular-tools">
-                    <li><a href="tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
-                    <li><a href="tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
-                    <li><a href="tools/seperate-tool/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                    <li><a href="calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="health/ivf-calculator.html">IVF Due Date Calculator</a></li>
                 </ul>
             </section>
 
@@ -218,6 +355,13 @@
 
     <!-- Main Content -->
     <main class="site-main">
+        <!-- Breadcrumb Navigation -->
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <span>Home</span>
+            </nav>
+        </div>
+        
         <div class="tools-container">
             <div class="tools-grid">
                 <!-- Tool cards will be dynamically inserted here -->
