@@ -1,7 +1,5 @@
 # Jay Tools - Simple and Convenient Web Tools
 
-![Jay Tools Logo](img/Jay_img.jpeg)
-
 A comprehensive collection of free online tools and calculators designed to make everyday calculations simple and accessible. Jay Tools provides a wide range of utilities for students, professionals, and anyone who needs quick, reliable calculations - all without requiring sign-ups, downloads, or installations.
 
 ## 🌐 Live Demo
