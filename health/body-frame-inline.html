@@ -122,6 +122,56 @@
     }
     </script>
     
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://jaytools.github.io/index.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Health Tools",
+                "item": "https://jaytools.github.io/health.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Body Frame Size Calculator",
+                "item": "https://jaytools.github.io/health/body-frame-inline.html"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- WebPage Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Body Frame Size Calculator - Jay Tools",
+        "description": "Use our free Body Frame Size Calculator to determine your frame type using wrist measurements. Learn your body frame size - small, medium, or large.",
+        "url": "https://jaytools.github.io/health/body-frame-inline.html",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Jay Tools",
+            "url": "https://jaytools.github.io"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Body frame size"
+        },
+        "specialty": "Health calculators",
+        "lastReviewed": "2025-07-06"
+    }
+    </script>
+    
     <!-- Tool Specific Styles -->
     <style>
         /* Tool Container Styles */
@@ -131,35 +181,97 @@
             padding: 0 1rem;
         }
 
+        /* Breadcrumb Navigation Styles */
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #000;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #333;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: #6c757d;
+        }
+        
+        /* Dark Mode Breadcrumb Styles */
+        body.dark-mode .breadcrumb {
+            background-color: #1e1e1e;
+            border-color: #444;
+            border-left: 4px solid #5aafed;
+        }
+
+        body.dark-mode .breadcrumb a {
+            color: #5aafed;
+        }
+
+        body.dark-mode .breadcrumb a:hover {
+            color: #7bc3ff;
+        }
+
+        body.dark-mode .breadcrumb-separator, 
+        body.dark-mode .breadcrumb span:last-child {
+            color: #e0e0e0;
+        }
+
+        /* Mobile styles for breadcrumbs */
+        @media (max-width: 768px) {
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                margin-bottom: 1.5rem;
+                font-size: 0.85rem;
+                border-left-width: 3px;
+            }
+        }
+
         .tool-header {
             text-align: center;
             margin-bottom: 2rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 12px;
+            padding: 1.5rem;
+            background: #ffffff;
+            color: #000;
+            border-bottom: 1px solid #eaeaea;
         }
 
         .tool-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #000;
         }
 
         .tool-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1rem;
             max-width: 600px;
             margin: 0 auto;
+            color: #333;
         }
 
         .tool-card {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid #e1e8ed;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e1e1e1;
         }
 
         .form-group {
@@ -170,8 +282,8 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c3e50;
+            font-weight: 500;
+            color: #000;
             font-size: 1rem;
         }
 
@@ -179,22 +291,41 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid #e1e8ed;
-            border-radius: 8px;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             font-size: 1rem;
             font-family: inherit;
-            transition: all 0.3s ease;
-            background-color: #fafbfc;
+            background-color: white;
+            color: #000;
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #000;
             background-color: white;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 480px) {
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px; /* Prevents iOS zoom on focus */
+                padding: 0.6rem;
+            }
+            
+            .form-group label {
+                font-size: 0.95rem;
+            }
+            
+            .help-text {
+                font-size: 0.75rem;
+            }
         }
 
         .form-row {
@@ -204,15 +335,14 @@
         }
 
         .calculate-btn {
-            background: #3498db;
+            background: #000;
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.75rem 1rem;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
             width: 100%;
             display: flex;
             align-items: center;
@@ -221,38 +351,31 @@
         }
 
         .calculate-btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+            background: #333;
         }
 
         .calculate-btn:disabled {
-            background: #bdc3c7;
+            background: #888;
             cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
         }
 
         .integrated-results {
-            border-top: 1px dashed #ccc;
-            margin-top: 2rem;
-            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
             text-align: center;
             max-width: 100%;
             box-sizing: border-box;
-            opacity: 0.6;
-            transition: all 0.4s ease;
+            display: none;
         }
 
         .integrated-results.show {
-            opacity: 1;
-            background: linear-gradient(135deg, rgba(232, 245, 232, 0.6) 0%, rgba(240, 248, 255, 0.6) 100%);
-            border-radius: 12px;
+            display: block;
+            background: white;
+            border-radius: 4px;
             padding: 1.5rem;
-            margin-top: 2rem;
-            animation: fadeIn 0.4s ease;
-            border: 2px solid #27ae60;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-top: 1.5rem;
+            border: 1px solid #ddd;
         }
         
         .results-divider {
@@ -268,13 +391,13 @@
             top: -12px;
             font-size: 1.3rem;
             font-weight: 700;
-            color: #27ae60;
+            color: #000;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
         .integrated-results.show .results-divider span {
-            color: #27ae60;
+            color: #000;
             font-weight: 700;
             font-size: 1.3rem;
         }
@@ -291,538 +414,497 @@
         .result-value {
             font-size: 1.7rem;
             font-weight: 700;
-            color: #2c3e50;
+            color: #000;
             margin-bottom: 0.5rem;
         }
 
         .result-description {
-            color: #333;
+            color: #000;
             font-size: 1.15rem;
             margin: 1.25rem auto 1.75rem;
             max-width: 600px;
             line-height: 1.7;
             padding: 1rem 1.5rem;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            background-color: rgba(245, 245, 245, 0.7);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .reset-btn {
-            background: #e74c3c;
+            background: #333;
             color: white;
             padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 6px;
-            font-weight: 600;
+            border-radius: 4px;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             margin-top: 1rem;
             display: inline-block;
             min-width: 180px;
         }
 
         .reset-btn:hover {
-            background: #c0392b;
-            transform: translateY(-2px);
+            background: #000;
+        }
+        
+        .share-btn {
+            background: #f5f5f5;
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            display: inline-block;
+            min-width: 180px;
+        }
+        
+        .share-btn:hover {
+            background: #e9e9e9;
+        }
+        
+        .action-buttons {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Dark mode action buttons */
+        body.dark-mode .reset-btn {
+            background: #333;
+        }
+        
+        body.dark-mode .reset-btn:hover {
+            background: #444;
+        }
+        
+        body.dark-mode .share-btn {
+            background: #2d2d2d;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+        
+        body.dark-mode .share-btn:hover {
+            background: #333;
         }
 
         .info-section {
-            background: #f8f9fa;
-            border-radius: 12px;
+            background: #ffffff;
+            border-radius: 4px;
             padding: 2rem;
             margin-top: 2rem;
+            border: 1px solid #e1e1e1;
         }
 
+        .info-section-top {
+            margin-top: 3rem;
+        }
+        
         .info-section h2 {
-            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 1rem;
             font-weight: 600;
-            color: #2c3e50;
+        }
+        
+        .info-section h3 {
+            color: #000;
+            margin: 1.5rem 0 0.75rem;
+            font-weight: 500;
+        }
+        
+        .info-section p, .info-section li {
+            color: #333;
             margin-bottom: 1rem;
         }
-
-        .info-section p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .info-section ul {
-            color: #666;
-            padding-left: 2rem;
-        }
-
-        .info-section li {
-            margin-bottom: 0.5rem;
-        }
-
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-15px);
-            }
-            70% {
-                opacity: 1;
-                transform: translateY(5px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Unit Toggle Styles */
+        
+        /* Unit toggle styles */
         .unit-toggle-container {
             margin-bottom: 1.5rem;
         }
         
         .unit-toggle {
             display: flex;
-            border-radius: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             overflow: hidden;
-            border: 2px solid #e1e8ed;
-            margin-top: 0.5rem;
         }
         
         .unit-btn {
             flex: 1;
-            padding: 0.75rem;
-            font-weight: 600;
-            background: #f0f4f7;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
             border: none;
+            background: #f5f5f5;
+            color: #333;
             cursor: pointer;
-            transition: all 0.3s ease;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .unit-btn:hover {
+            background: #e9e9e9;
         }
         
         .unit-btn.active {
-            background: #3498db;
+            background: #000;
             color: white;
+            font-weight: 500;
         }
-        
-        .hide-input {
-            display: none;
-        }
-        
-        /* Frame Size Result Styling */
+
+        /* Frame size and ideal weight section */
         .frame-size {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin: 1rem 0;
-            text-align: center;
-            padding: 0.8rem 1.2rem;
-            border-radius: 10px;
             display: inline-block;
-            min-width: 220px;
-            animation: fadeIn 0.5s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            border: 2px solid;
-            text-shadow: 0 1px 1px rgba(0,0,0,0.1);
-        }
-        
-        .frame-size.small {
-            color: #2ecc71;
-            background-color: rgba(46, 204, 113, 0.15);
-            border-color: rgba(46, 204, 113, 0.5);
-        }
-        
-        .frame-size.medium {
-            color: #3498db;
-            background-color: rgba(52, 152, 219, 0.15);
-            border-color: rgba(52, 152, 219, 0.5);
-        }
-        
-        .frame-size.large {
-            color: #e74c3c;
-            background-color: rgba(231, 76, 60, 0.15);
-            border-color: rgba(231, 76, 60, 0.5);
-        }
-        
-        .frame-icon {
-            font-size: 3rem;
-            margin: 0.5rem 0 1.25rem;
-            display: block;
-            animation: pulse 1s ease-in-out;
-            color: #3498db;
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #000;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            min-width: 200px;
             text-align: center;
-            background-color: rgba(52, 152, 219, 0.1);
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            border: 2px solid rgba(52, 152, 219, 0.3);
-        }
-        
-        body.dark-mode .frame-icon {
-            color: #5aafed;
-            background-color: rgba(52, 152, 219, 0.2);
-            border-color: rgba(52, 152, 219, 0.4);
         }
         
         .ideal-weight {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 1.75rem auto;
-            border-left: 5px solid #3498db;
-            max-width: 90%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
-        
-        .ideal-weight:hover {
-            transform: translateY(-3px);
+            background-color: #f9f9f9;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            padding: 1.25rem;
+            margin: 1.5rem auto;
+            max-width: 95%;
         }
         
         .ideal-weight h4 {
-            margin-top: 0;
-            margin-bottom: 0.75rem;
-            color: #2c3e50;
-            font-size: 1.2rem;
-            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         
         .ideal-weight h4 i {
-            color: #3498db;
+            margin-right: 0.75rem;
         }
         
         .ideal-weight p {
-            margin: 0;
-            color: #444;
-            line-height: 1.6;
-            font-size: 1.05rem;
-            padding: 0.5rem 0;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.5;
         }
-
-        /* Error styles */
-        .error {
-            border-color: #e74c3c !important;
-            background-color: #fdf2f2 !important;
+        
+        /* Table styles */
+        .weight-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 2rem;
         }
-
-        .error-message {
-            color: #e74c3c;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
+        
+        .weight-table th, 
+        .weight-table td {
+            padding: 0.75rem;
+            border: 1px solid #e1e1e1;
+            text-align: center;
+        }
+        
+        .weight-table th {
+            background-color: #f5f5f5;
+            color: #000;
+            font-weight: 600;
+        }
+        
+        .weight-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* Dark mode table */
+        body.dark-mode .weight-table th, 
+        body.dark-mode .weight-table td {
+            border-color: #444;
+        }
+        
+        body.dark-mode .weight-table th {
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .weight-table tr:nth-child(even) {
+            background-color: #292929;
+        }
+        
+        body.dark-mode .weight-table tr:nth-child(odd) {
+            background-color: #1e1e1e;
+        }
+        
+        /* Calculation Progress Styles */
+        .calculation-progress {
             display: none;
-            animation: fadeIn 0.3s ease-in;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1.25rem;
+            gap: 0.75rem;
+            margin: 1rem 0;
         }
-
-        /* Success state */
-        .success {
-            border-color: #2ecc71 !important;
-            background-color: #f0fff4 !important;
+        
+        .progress-spinner i {
+            font-size: 1.75rem;
+            color: #333;
         }
-
-        .success-icon {
-            position: absolute;
-            right: 10px;
-            top: 40px;
-            color: #2ecc71;
-            display: none;
+        
+        body.dark-mode .progress-spinner i {
+            color: #e0e0e0;
         }
-
-        /* Form field enhancements */
+        
+        .progress-text {
+            font-size: 0.95rem;
+            color: #333;
+            text-align: center;
+        }
+        
+        body.dark-mode .progress-text {
+            color: #e0e0e0;
+        }
+        
+        @media (max-width: 480px) {
+            .progress-spinner i {
+                font-size: 1.5rem;
+            }
+            
+            .progress-text {
+                font-size: 0.9rem;
+            }
+            
+            .calculation-progress {
+                padding: 1rem;
+            }
+        }
+        
+        /* Input field styles */
         .input-with-help {
             position: relative;
             display: flex;
             align-items: center;
         }
-
+        
         .input-suffix {
             position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #7f8c8d;
+            right: 12px;
+            color: #777;
             pointer-events: none;
-            font-size: 0.9rem;
         }
-
+        
         .help-text {
-            font-size: 0.85rem;
-            color: #7f8c8d;
+            font-size: 0.8rem;
+            color: #666;
             margin-top: 0.25rem;
-            display: block;
         }
-
-        /* Tooltip styles */
+        
+        .error-message {
+            font-size: 0.8rem;
+            color: #e74c3c;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
         .label-with-tooltip {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            margin-bottom: 0.5rem;
         }
-
+        
+        /* Tooltip styles */
         .tooltip-trigger {
             position: relative;
-            color: #3498db;
+            display: inline-block;
+            color: #777;
             cursor: pointer;
         }
-
+        
+        .tooltip-trigger:hover .tooltip-content,
+        .tooltip-trigger:focus .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .tooltip-content {
             position: absolute;
-            top: calc(100% + 5px);
             left: 50%;
-            transform: translateX(-50%);
+            top: 100%;
+            transform: translateX(-50%) translateY(-10px);
+            width: 240px;
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ddd;
+            border-radius: 4px;
             padding: 1rem;
-            width: 250px;
-            max-width: 90vw;
-            z-index: 100;
-            opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid #e1e8ed;
-            font-weight: normal;
-        }
-
-        .tooltip-title {
-            font-weight: 600;
-            color: #2c3e50;
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .tooltip-text {
-            color: #555;
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        .tooltip-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            margin-top: 0.5rem;
-        }
-
-        .tooltip-trigger:hover .tooltip-content {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Measurement guide */
-        .measurement-guide {
-            display: flex;
-            align-items: flex-start;
-            background: #f1f9fe;
-            padding: 0.75rem;
-            border-radius: 8px;
-            margin-top: 0.75rem;
-            border-left: 3px solid #3498db;
-        }
-
-        .guide-icon {
-            margin-right: 0.75rem;
-            color: #3498db;
-            font-size: 1.25rem;
-        }
-
-        .guide-text p {
-            margin: 0 0 0.5rem;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: #555;
-        }
-
-        .guide-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Responsive Design */
-        /* Result content container styles */
-        .result-content {
-            padding: 0.5rem;
-        }
-        
-        /* Action buttons container */
-        .action-buttons {
-            margin-top: 1.5rem;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* Share button */
-        .share-btn {
-            background: #3498db;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-            display: inline-block;
-            min-width: 180px;
-        }
-        
-        .share-btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
-        
-        /* Calculation progress indicator */
-        
-        /* Calculation progress indicator */
-        .calculation-progress {
-            display: none;
-            text-align: center;
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            animation: pulse 1.5s infinite ease-in-out;
-        }
-        
-        .progress-spinner {
-            font-size: 2rem;
-            color: #3498db;
-            margin-bottom: 0.5rem;
-        }
-        
-        .progress-text {
-            color: #555;
-        }
-        
-        /* Result insights */
-        .result-insights {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.25rem;
-            margin: 1.5rem auto;
-            border-left: 4px solid #9b59b6;
-            max-width: 90%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            opacity: 0;
+            transition: all 0.2s ease;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             text-align: left;
         }
         
-        .result-insights h4 {
-            margin-top: 0;
-            margin-bottom: 0.75rem;
-            color: #2c3e50;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .tooltip-title {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
         }
         
-        .insights-content {
-            color: #555;
-            line-height: 1.5;
+        .tooltip-text {
+            display: block;
+            color: #333;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
-
-        /* Accessibility improvements */
+        
+        .tooltip-image {
+            max-width: 100%;
+            margin-top: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        /* Visually hidden elements (for screen readers) */
         .visually-hidden {
             position: absolute;
             width: 1px;
             height: 1px;
-            margin: -1px;
             padding: 0;
+            margin: -1px;
             overflow: hidden;
             clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
             border: 0;
         }
         
-        /* Desktop specific styles */
-        @media (min-width: 769px) {
-            .result-section {
-                max-width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 2.5rem;
-            }
-            
-            .frame-size {
-                min-width: 250px;
-            }
-            
-            .ideal-weight {
-                max-width: 80%;
-            }
+        /* Hidden inputs */
+        .hide-input {
+            display: none;
         }
         
         @media (max-width: 768px) {
             .tool-container {
                 padding: 0 0.5rem;
+                margin: 1rem auto;
             }
 
             .tool-header {
-                padding: 1.5rem 1rem;
-                margin-bottom: 1.5rem;
+                padding: 1.25rem 0.75rem;
+                margin-bottom: 1rem;
             }
 
             .tool-header h1 {
-                font-size: 2rem;
-            }
-
-            .tool-header p {
-                font-size: 1.1rem;
+                font-size: 1.6rem;
             }
 
             .tool-card {
-                padding: 1.5rem;
+                padding: 1rem;
+                border-radius: 8px;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
+                gap: 0.5rem;
             }
             
             .result-section {
-                padding: 1.5rem 1rem;
+                padding: 1rem 0.75rem;
             }
             
             .result-title {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
+                font-size: 1.2rem;
+                margin-bottom: 0.75rem;
             }
 
             .frame-size {
-                font-size: 1.8rem;
-                min-width: 180px;
+                font-size: 1.4rem;
+                min-width: 150px;
+                padding: 0.5rem 1rem;
             }
             
             .frame-icon {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .result-description {
-                font-size: 1rem;
-                margin-bottom: 1rem;
+                font-size: 0.95rem;
+                margin: 1rem auto;
+                padding: 0.75rem;
+                line-height: 1.5;
             }
             
             .ideal-weight {
-                padding: 1rem;
-                margin: 1rem auto;
+                padding: 0.75rem;
+                margin: 0.75rem auto;
+            }
+            
+            .ideal-weight h4 {
+                font-size: 1rem;
+            }
+            
+            .ideal-weight p {
+                font-size: 0.9rem;
             }
 
             .info-section {
-                padding: 1.5rem;
+                padding: 1rem;
+                margin-top: 1.5rem;
+            }
+            
+            .info-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .info-section h3 {
+                font-size: 1.1rem;
             }
 
             .tooltip-content {
-                width: 220px;
+                width: 200px;
+            }
+            
+            .calculate-btn {
+                padding: 0.6rem 0.75rem;
+                font-size: 0.95rem;
+            }
+            
+            .reset-btn, .share-btn {
+                min-width: auto;
+                padding: 0.6rem 1rem;
+                margin-top: 0.75rem;
+                font-size: 0.9rem;
+            }
+            
+            .action-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .share-btn {
+                margin-left: 0;
+            }
+            
+            .result-insights {
+                padding: 1rem;
+            }
+            
+            .result-insights h4 {
+                font-size: 1rem;
+            }
+            
+            .insights-content {
+                font-size: 0.9rem;
             }
         }
 
@@ -837,13 +919,23 @@
         }
 
         body.dark-mode .tool-header {
-            background: linear-gradient(135deg, #4b6cb7 0%, #553c8b 100%);
+            background: #1a1a1a;
+            border-color: #333;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .tool-header h1 {
+            color: #ffffff;
+        }
+        
+        body.dark-mode .tool-header p {
+            color: #d0d0d0;
         }
 
         body.dark-mode .tool-card {
             background: #1e1e1e;
             border-color: #333;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         body.dark-mode .form-group label {
@@ -856,15 +948,15 @@
             background-color: #2d2d2d;
             border-color: #444;
             color: #e0e0e0;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            box-shadow: none;
         }
 
         body.dark-mode .form-group input:focus,
         body.dark-mode .form-group select:focus,
         body.dark-mode .form-group textarea:focus {
-            border-color: #3498db;
+            border-color: #666;
             background-color: #333;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
         }
         
         body.dark-mode .form-group input::placeholder {
@@ -887,30 +979,34 @@
         }
 
         body.dark-mode .unit-btn.active {
-            background: #3498db;
+            background: #000;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .unit-btn:hover {
+            background: #333;
         }
 
         body.dark-mode .integrated-results {
-            background: linear-gradient(135deg, rgba(50, 65, 50, 0.4) 0%, rgba(30, 40, 50, 0.4) 100%);
-            border-color: #27ae60;
+            background: #1e1e1e;
+            border-color: #333;
         }
 
         body.dark-mode .integrated-results.show {
-            background: linear-gradient(135deg, rgba(40, 55, 40, 0.7) 0%, rgba(30, 40, 60, 0.7) 100%);
-            border-color: #2ecc71;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: #1e1e1e;
+            border-color: #333;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         body.dark-mode .results-divider span {
             background-color: #1e1e1e;
-            color: #2ecc71;
+            color: #e0e0e0;
             font-weight: 700;
         }
 
         body.dark-mode .integrated-results.show .results-divider span {
-            color: #2ecc71;
-            background-color: #222;
-            text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+            color: #e0e0e0;
+            background-color: #1e1e1e;
         }
 
         body.dark-mode .result-description {
@@ -919,25 +1015,14 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
-        body.dark-mode .frame-size.small {
-            background-color: rgba(46, 204, 113, 0.2);
-            color: #4eda89;
-            border-color: rgba(46, 204, 113, 0.6);
-            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.15);
+        body.dark-mode .frame-size {
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+            border: 1px solid #444;
         }
-
-        body.dark-mode .frame-size.medium {
-            background-color: rgba(52, 152, 219, 0.2);
-            color: #5aafed;
-            border-color: rgba(52, 152, 219, 0.6);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
-        }
-
-        body.dark-mode .frame-size.large {
-            background-color: rgba(231, 76, 60, 0.2);
-            color: #f27063;
-            border-color: rgba(231, 76, 60, 0.6);
-            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.15);
+        
+        body.dark-mode .result-description {
+            background-color: rgba(35, 35, 35, 0.7);
         }
 
         body.dark-mode .ideal-weight {
@@ -958,66 +1043,92 @@
             color: #d0d0d0;
         }
 
+        /* Result insights section */
+        .result-insights {
+            background: #f9f9f9;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            padding: 1.25rem;
+            margin: 1.5rem auto;
+            max-width: 95%;
+        }
+        
+        .result-insights h4 {
+            display: flex;
+            align-items: center;
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .result-insights h4 i {
+            margin-right: 0.75rem;
+        }
+        
+        .insights-content {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* Dark mode styles for result insights */
         body.dark-mode .result-insights {
-            background: #2d2d2d;
-            border-left-color: #9b59b6;
-        }
-
-        body.dark-mode .result-insights h4 {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .insights-content {
-            color: #bbb;
-        }
-
-        body.dark-mode .info-section {
             background: #1e1e1e;
-            color: #e0e0e0;
+            border-color: #333;
         }
-
-        body.dark-mode .info-section h2, 
-        body.dark-mode .info-section h3 {
-            color: #e0e0e0;
+        
+        body.dark-mode .result-insights h4 {
+            color: #ffffff;
         }
-
-        body.dark-mode .info-section p, 
-        body.dark-mode .info-section ul, 
-        body.dark-mode .info-section ol {
-            color: #bbb;
+        
+        body.dark-mode .result-insights h4 i {
+            color: #5aafed;
         }
-
+        
+        body.dark-mode .insights-content {
+            color: #d0d0d0;
+        }
+        
+        /* Measurement guide styles */
+        .measurement-guide {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid #e1e1e1;
+        }
+        
+        .guide-icon {
+            font-size: 1.2rem;
+            color: #000;
+            margin-right: 1rem;
+            padding-top: 0.25rem;
+        }
+        
+        .guide-text p {
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        .guide-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Dark mode measurement guide */
         body.dark-mode .measurement-guide {
-            background: #2d2d2d;
-            border-left-color: #3498db;
+            background-color: #2d2d2d;
+            border-color: #444;
         }
         
         body.dark-mode .guide-icon {
-            color: #3498db;
+            color: #e0e0e0;
         }
         
         body.dark-mode .guide-text p {
-            color: #bbb;
-        }
-
-        body.dark-mode .tooltip-content {
-            background: #2d2d2d;
-            border-color: #444;
-        }
-
-        body.dark-mode .tooltip-title {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .tooltip-text {
-            color: #bbb;
-        }
-
-        body.dark-mode .calculation-progress {
-            background: #2d2d2d;
-        }
-
-        body.dark-mode .progress-text {
             color: #bbb;
         }
 
@@ -1026,19 +1137,19 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #3498db;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            background: #000;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             border: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
             z-index: 100;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .dark-mode-toggle:hover {
@@ -1106,7 +1217,7 @@
         .faq-section h2 {
             text-align: center;
             margin-bottom: 1.5rem;
-            color: #333;
+            color: #000;
         }
 
         .faq-container {
@@ -1116,20 +1227,21 @@
 
         .faq-item {
             margin-bottom: 1rem;
-            border: 1px solid #e1e8ed;
-            border-radius: 8px;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
             overflow: hidden;
         }
 
         .faq-item summary {
             padding: 1rem;
-            background-color: #f8f9fa;
+            background-color: #f9f9f9;
             cursor: pointer;
             font-weight: 600;
+            color: #000;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             position: relative;
             outline: none;
         }
@@ -1162,32 +1274,13 @@
         }
 
         /* Dark Mode for FAQ Section */
+        body.dark-mode .faq-section {
+            background: #1e1e1e;
+            border-color: #333;
+        }
+        
         body.dark-mode .faq-section h2 {
-            color: #e1e1e1;
-        }
-
-        body.dark-mode .faq-item {
-            border: 1px solid #444;
-        }
-
-        body.dark-mode .faq-item summary {
-            color: #e0e0e0;
-            background-color: #2c2c2c;
-            border-color: #444;
-        }
-
-        body.dark-mode .faq-item summary:hover {
-            background-color: #383838;
-        }
-
-        body.dark-mode .faq-item[open] summary {
-            background-color: #383838;
-        }
-
-        body.dark-mode .faq-item .faq-content {
-            color: #ddd;
-            background-color: #333;
-            border-color: #444;
+            color: #ffffff;
         }
 
         /* Related Tools section styles */
@@ -1337,6 +1430,17 @@
         </div>
     </header>
 
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="breadcrumb-separator">></span>
+            <a href="../health.html">Health Tools</a>
+            <span class="breadcrumb-separator">></span>
+            <span>Body Frame Size Calculator</span>
+        </nav>
+    </div>
+
     <!-- Sidebar Menu -->
     <aside class="sidebar" aria-label="Main menu">
         <div class="sidebar-header">
@@ -1400,7 +1504,6 @@
             <!-- Tool Header -->
             <div class="tool-header">
                 <h1>Body Frame Size Calculator</h1>
-                <p>Determine if you have a small, medium, or large body frame based on your wrist circumference and height. Knowing your frame size helps set realistic weight and fitness goals.</p>
             </div>
 
             <!-- Tool Card -->
@@ -1509,7 +1612,6 @@
                                     <span class="tooltip-text">
                                         Measure just below your wrist bone, where your hand meets your wrist. Use a flexible measuring tape or a string that you can measure afterward.
                                     </span>
-                                    <img src="https://jaytools.github.io/img/wrist-measure-guide.jpg" alt="How to measure wrist" class="tooltip-image">
                                 </span>
                             </span>
                         </div>
@@ -1550,24 +1652,13 @@
                             </div>
                         </div>
                         
-                        <div class="measurement-guide" role="region" aria-labelledby="measurementGuideTitle">
-                            <h4 class="visually-hidden" id="measurementGuideTitle">Wrist Measurement Guide</h4>
-                            <div class="guide-icon">
-                                <i class="fas fa-ruler"></i>
-                            </div>
-                            <div class="guide-text">
-                                <p>For accurate results, measure your wrist at its narrowest point using a measuring tape wrapped snugly but not tightly.</p>
-                                <p>No measuring tape? Use a string and measure it against a ruler.</p>
-                            </div>
-                        </div>
+                        <!-- Measurement guide removed as requested -->
                     </div>
-
-
 
                     <!-- Calculate Button -->
                     <button type="submit" class="calculate-btn" id="calculateBtn" aria-label="Calculate body frame size">
                         <i class="fas fa-calculator"></i>
-                        Calculate Body Frame Size
+                        Calculate My Frame Size
                     </button>
                     
                     <!-- Calculation Progress Indicator -->
@@ -1634,7 +1725,7 @@
 
             <!-- Information Section -->
             <!-- About the Calculator Section -->
-            <section class="info-section" style="margin-top: 3rem;">
+            <section class="info-section info-section-top">
                 <h2>About the Body Frame Size Calculator</h2>
                 
                 <p>Ever tried on a pair of jeans that technically fit your waist but still felt all wrong? Or wondered why your friend who's the same height carries weight so differently? That's where body frame size comes in – it's like your body's underlying architecture.</p>
@@ -2079,6 +2170,11 @@
             }
         });
         
+        // Hide the result section on page load
+        window.addEventListener('load', function() {
+            document.getElementById('resultSection').style.display = 'none';
+        });
+        
         function setUnit(unit) {
             currentUnit = unit;
             
@@ -2125,107 +2221,33 @@
                 resetValidationForUnitSwitch('imperial');
             }
             
-            // Announce unit change to screen readers
-            announceToScreenReader(`Units changed to ${unit}`);
-        }
-        
-        // Helper function for screen reader announcements
-        function announceToScreenReader(message) {
-            const announcer = document.createElement('div');
-            announcer.setAttribute('aria-live', 'polite');
-            announcer.classList.add('visually-hidden');
-            announcer.textContent = message;
-            document.body.appendChild(announcer);
-            
-            // Remove the element after announcement
-            setTimeout(() => {
-                document.body.removeChild(announcer);
-            }, 3000);
-        }
-        
-        // Reset validation state when switching units
-        function resetValidationForUnitSwitch(unitToReset) {
-            if (unitToReset === 'imperial') {
-                // Clear imperial inputs validation state
-                const imperialInputs = ['heightFeet', 'heightInches', 'wristInches'];
-                imperialInputs.forEach(id => {
-                    const input = document.getElementById(id);
-                    const errorElement = document.getElementById(id + 'Error');
-                    
-                    if (input) {
-                        input.classList.remove('error');
-                        input.classList.remove('success');
-                    }
-                    if (errorElement) {
-                        errorElement.style.display = 'none';
-                    }
-                });
-            } else {
-                // Clear metric inputs validation state
-                const metricInputs = ['heightCm', 'wristCm'];
-                metricInputs.forEach(id => {
-                    const input = document.getElementById(id);
-                    const errorElement = document.getElementById(id + 'Error');
-                    
-                    if (input) {
-                        input.classList.remove('error');
-                        input.classList.remove('success');
-                    }
-                    if (errorElement) {
-                        errorElement.style.display = 'none';
-                    }
-                });
-            }
-        }
-
-        // Enhanced form validation functions
-        function validateInput(input, errorElement, message, minVal, maxVal) {
-            // Skip validation if input is not required due to unit selection
-            if (!input.required) return true;
-            
-            const value = input.value.trim();
-            
-            // Remove previous success state
-            input.classList.remove('success');
-            
-            // Basic validation: is it empty or not a number?
-            if (!value || isNaN(value) || value < 0) {
-                input.classList.add('error');
-                errorElement.textContent = message;
-                errorElement.style.display = 'block';
-                return false;
-            }
-            
-            // Range validation if min and max are provided
-            if (minVal !== undefined && maxVal !== undefined) {
-                const numValue = parseFloat(value);
-                
-                if (numValue < minVal || numValue > maxVal) {
-                    input.classList.add('error');
-                    errorElement.textContent = `Value must be between ${minVal} and ${maxVal}`;
-                    errorElement.style.display = 'block';
-                    return false;
-                }
-            }
-            
-            // If we reach here, input is valid
-            input.classList.remove('error');
-            input.classList.add('success');
-            errorElement.style.display = 'none';
-            
-            // Show success icon
-            const parentGroup = input.closest('.input-with-help');
-            if (parentGroup) {
-                let successIcon = parentGroup.querySelector('.success-icon');
-                if (!successIcon) {
-                    successIcon = document.createElement('i');
-                    successIcon.className = 'fas fa-check-circle success-icon';
-                    parentGroup.appendChild(successIcon);
-                }
-                successIcon.style.display = 'block';
-            }
-            
             return true;
+        }
+        
+        function resetValidationForUnitSwitch(fromUnit) {
+            // Clear error states when switching units
+            if (fromUnit === 'imperial') {
+                const heightFeet = document.getElementById('heightFeet');
+                const heightInches = document.getElementById('heightInches');
+                const wristInches = document.getElementById('wristInches');
+                
+                heightFeet.classList.remove('error', 'success');
+                heightInches.classList.remove('error', 'success');
+                wristInches.classList.remove('error', 'success');
+                
+                document.getElementById('heightFeetError').style.display = 'none';
+                document.getElementById('heightInchesError').style.display = 'none';
+                document.getElementById('wristInchesError').style.display = 'none';
+            } else {
+                const heightCm = document.getElementById('heightCm');
+                const wristCm = document.getElementById('wristCm');
+                
+                heightCm.classList.remove('error', 'success');
+                wristCm.classList.remove('error', 'success');
+                
+                document.getElementById('heightCmError').style.display = 'none';
+                document.getElementById('wristCmError').style.display = 'none';
+            }
         }
 
         function validateSelect(select, errorElement, message) {
@@ -2259,6 +2281,8 @@
             
             if (ratio > 10.4) {
                 return 'small';
+
+
             } else if (ratio < 9.6) {
                 return 'large';
             } else {
@@ -2322,6 +2346,23 @@
             }
         }
         
+        // Input validation function
+        function validateInput(input, errorElement, message, minValue, maxValue) {
+            input.classList.remove('success');
+            
+            if (!input.value || isNaN(parseFloat(input.value)) || parseFloat(input.value) < minValue || parseFloat(input.value) > maxValue) {
+                input.classList.add('error');
+                errorElement.textContent = `${message} (${minValue}-${maxValue})`;
+                errorElement.style.display = 'block';
+                return false;
+            } else {
+                input.classList.remove('error');
+                input.classList.add('success');
+                errorElement.style.display = 'none';
+                return true;
+            }
+        }
+        
         // Calculate function with enhanced validation and user feedback
         function calculate() {
             const gender = document.getElementById('gender');
@@ -2329,6 +2370,9 @@
             // Enhanced validation with specific ranges
             let isValid = true;
             isValid &= validateSelect(gender, document.getElementById('genderError'), 'Please select your gender.');
+            
+            let height = 0; // in inches or cm depending on unit
+            let wrist = 0; // in inches or cm depending on unit
             
             if (currentUnit === 'imperial') {
                 const heightFeet = document.getElementById('heightFeet');
@@ -2348,6 +2392,10 @@
                 } else {
                     isValid &= validateInput(wristInches, document.getElementById('wristInchesError'), 'Please enter a valid wrist measurement.', 5, 9);
                 }
+                
+                // Calculate height in inches for the formula
+                height = (parseFloat(heightFeet.value) * 12) + parseFloat(heightInches.value);
+                wrist = parseFloat(wristInches.value);
             } else {
                 const heightCm = document.getElementById('heightCm');
                 const wristCm = document.getElementById('wristCm');
@@ -2364,6 +2412,9 @@
                 } else {
                     isValid &= validateInput(wristCm, document.getElementById('wristCmError'), 'Please enter a valid wrist measurement.', 13, 22);
                 }
+                
+                height = parseFloat(heightCm.value);
+                wrist = parseFloat(wristCm.value);
             }
             
             if (!isValid) {
@@ -2372,9 +2423,45 @@
                 return;
             }
             
-            // Get values and convert to standard units for calculation
+            // Show calculation in progress
+            const calculationProgress = document.getElementById('calculationProgress');
+            calculationProgress.style.display = 'flex';
+            document.getElementById('resultSection').style.display = 'none';
+            
+            // Get values for calculation
             const genderValue = gender.value;
-            announceToScreenReader("Calculator has been reset");
+            
+            // Short timeout to show calculation animation
+            setTimeout(() => {
+                // Calculate frame size based on gender and measurements
+                const frameSize = calculateFrameSize(genderValue, height, wrist);
+                
+                // Set result based on frame size
+                setFrameSizeResult(frameSize);
+                
+                // Calculate and display ideal weight range
+                let heightForWeight = height;
+                if (currentUnit === 'metric') {
+                    // Convert cm to inches for ideal weight calculation
+                    heightForWeight = height / 2.54;
+                }
+                
+                const idealWeight = calculateIdealWeightRange(genderValue, heightForWeight, frameSize);
+                setIdealWeightResult(idealWeight, currentUnit);
+                
+                // Update insights based on frame size
+                updateFrameInsights(frameSize);
+                
+                // Hide progress indicator and show results
+                calculationProgress.style.display = 'none';
+                document.getElementById('resultSection').style.display = 'block';
+                
+                // Scroll to results
+                document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Announce result for screen readers
+                announceToScreenReader(`Your body frame size is ${frameSize}`);
+            }, 800); // Just long enough to show the animation
         }
 
         // Form submission
@@ -2468,6 +2555,134 @@
             }
         });
 
+        // Reset calculator function
+        function resetCalculator() {
+            // Reset the form
+            document.getElementById('toolForm').reset();
+            
+            // Reset validation states and styles
+            document.querySelectorAll('.form-group input, .form-group select').forEach(element => {
+                element.classList.remove('error', 'success');
+            });
+            
+            // Hide error messages
+            document.querySelectorAll('.error-message').forEach(element => {
+                element.style.display = 'none';
+            });
+            
+            // Hide results section
+            document.getElementById('resultSection').style.display = 'none';
+            
+            // Scroll back to top of form
+            document.querySelector('.tool-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Announce for screen readers
+            announceToScreenReader("Calculator has been reset");
+        }
+
+        // Function to set the frame size result
+        function setFrameSizeResult(frameSize) {
+            const frameSizeElement = document.getElementById('frameSize');
+            const frameIcon = document.getElementById('frameIcon');
+            
+            // Set text and icon based on frame size
+            frameSizeElement.textContent = frameSize.charAt(0).toUpperCase() + frameSize.slice(1) + ' Frame';
+            
+            // Clear any previous icon classes
+            frameIcon.innerHTML = '';
+            
+            const icon = document.createElement('i');
+            
+            // Set icon based on frame size
+            switch (frameSize) {
+                case 'small':
+                    icon.className = 'fas fa-user';
+                    frameIcon.style.color = '#4a6fa5';
+                    break;
+                case 'medium':
+                    icon.className = 'fas fa-user';
+                    frameIcon.style.color = '#5a9a5a';
+                    break;
+                case 'large':
+                    icon.className = 'fas fa-user';
+                    frameIcon.style.color = '#9a5a5a';
+                    break;
+            }
+            
+            frameIcon.appendChild(icon);
+            
+            // Set the result description
+            const resultDescription = document.getElementById('resultDescription');
+            if (frameSize === 'small') {
+                resultDescription.innerHTML = `
+                    You have a <strong>small body frame</strong>. People with this build typically have a more delicate bone structure and may appear lean. 
+                    This information can help you set realistic fitness and weight goals based on your natural build.
+                `;
+            } else if (frameSize === 'medium') {
+                resultDescription.innerHTML = `
+                    You have a <strong>medium body frame</strong>. People with this build typically have an average bone structure and a balanced weight distribution. 
+                    This can help you set healthy fitness and weight goals tailored to your build.
+                `;
+            } else {
+                resultDescription.innerHTML = `
+                    You have a <strong>large body frame</strong>. People with this build typically have a robust bone structure and may naturally carry more weight. 
+                    Understanding your frame type helps set appropriate health and fitness goals.
+                `;
+            }
+        }
+        
+        // Function to set ideal weight result
+        function setIdealWeightResult(weightRange, unit) {
+            const idealWeightElement = document.getElementById('idealWeightRange');
+            
+            // Convert to kg for display if using metric
+            let kgMin = Math.round(weightRange[0] / 2.2);
+            let kgMax = Math.round(weightRange[1] / 2.2);
+            
+            idealWeightElement.innerHTML = `
+                Based on your height and frame size, your ideal weight range is approximately <strong>${weightRange[0]} to ${weightRange[1]} pounds (${kgMin}–${kgMax} kg)</strong>.
+            `;
+        }
+        
+        // Function to update insights based on frame size
+        function updateFrameInsights(frameSize) {
+            const insightsElement = document.getElementById('frameInsights');
+            
+            if (frameSize === 'small') {
+                insightsElement.innerHTML = `
+                    With your <strong>small frame</strong>, you may find that you look slimmer than others of the same weight. This frame type often benefits from strength training to build muscle definition. For clothing, you might prefer fitted styles that complement your more delicate bone structure. Remember that BMI charts may overestimate ideal weight for your frame type.
+                `;
+            } else if (frameSize === 'medium') {
+                insightsElement.innerHTML = `
+                    Your <strong>medium frame</strong> provides a balanced foundation that works well with many fitness approaches. You typically have the flexibility to build muscle or lose weight with predictable results. Standard size clothing and BMI charts are generally most accurate for your body type, and you can usually adapt to various workout styles with good results.
+                `;
+            } else {
+                insightsElement.innerHTML = `
+                    With your <strong>large frame</strong>, you naturally have a stronger bone structure that can support more muscle and overall body weight healthily. Standard BMI charts may underestimate your ideal weight range. You might benefit from focusing on strength-based activities that leverage your natural build, and you may find that styles with structure complement your physique best.
+                `;
+            }
+        }
+        
+        // Screen reader announcements helper function
+        function announceToScreenReader(message) {
+            const announcer = document.getElementById('srAnnouncer');
+            if (!announcer) {
+                const newAnnouncer = document.createElement('div');
+                newAnnouncer.id = 'srAnnouncer';
+                newAnnouncer.setAttribute('role', 'status');
+                newAnnouncer.setAttribute('aria-live', 'polite');
+                newAnnouncer.className = 'sr-only';
+                document.body.appendChild(newAnnouncer);
+                
+                // Give the screen reader a moment to recognize the new element
+                setTimeout(() => {
+                    newAnnouncer.textContent = message;
+                }, 100);
+            } else {
+                announcer.textContent = message;
+            }
+        }
+        
         // Share functionality
         document.getElementById('shareResultBtn').addEventListener('click', function() {
             shareResults();
@@ -2690,9 +2905,6 @@
                 }
             });
         }
-
-        // Dark mode is initialized in the initDarkMode() function above
-        // Please see the initDarkMode() function for dark mode functionality
     </script>
 </body>
 </html>
