@@ -8,63 +8,83 @@
 
 
 <url>
-  <loc>https://www.jay-tools.com/</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/index.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/index.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/tools/cgpa-percentage-inline.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/calculator/cgpa-percentage-inline.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/tools/seperate-tool/calorie-deficit.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/health/calorie-deficit.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/tools/seperate-tool/ivf-calculator.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/health/ivf-calculator.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/about.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/about.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/contact.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/contact.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/privacy.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/privacy.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/terms.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/terms.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/disclaimer.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/disclaimer.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/dmca.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/dmca.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.jay-tools.com/sample-page.html</loc>
-  <lastmod>2025-07-01T20:52:47+00:00</lastmod>
+  <loc>https://jaytools.github.io/tools/seperate-tool/calorie-deficit.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jaytools.github.io/health/protein-intake.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jaytools.github.io/health/body-frame-inline.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jaytools.github.io/health/calories-walking.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jaytools.github.io/health/food-calories.html</loc>
+  <lastmod>2025-07-08T08:12:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
