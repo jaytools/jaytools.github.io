@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.jay-tools.com/sitemap.xml
+Sitemap: https://jaytools.github.io/sitemap.xml
