@@ -14,6 +14,12 @@
     <meta property="og:description" content="Calculate your daily calorie deficit for effective weight loss with our free Calorie Deficit Calculator. Simple, accurate, and personalized.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jaytools.github.io/health/calorie-deficit.html">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calorie Deficit Calculator - Jay Tools">
+    <meta name="twitter:description" content="Get a personalized calorie plan based on your body metrics, activity level, and weight loss targets.">
+    <meta name="twitter:image" content="https://www.jay-tools.com/img/tools/age-difference-calculator-screenshot.jpg">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://jaytools.github.io/health/calorie-deficit.html">
@@ -28,68 +34,442 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../css/custom.css">
+    <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="css/calorie-deficit.css">
-    <link rel="stylesheet" href="css/calorie-deficit-custom.css">
-    <link rel="stylesheet" href="css/calorie-deficit-custom-animations.css">
-    <link rel="stylesheet" href="css/calorie-deficit-results.css">
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Calorie Deficit Calculator",
+        "@type": "WebPage",
+        "name": "Calorie Deficit Calculator - Jay Tools | Free Weight Loss Tool",
+        "description": "Calculate your daily calorie deficit for effective weight loss with our free Calorie Deficit Calculator. Simple, accurate, and mobile-friendly tool from Jay Tools.",
         "url": "https://jaytools.github.io/health/calorie-deficit.html",
-        "description": "A comprehensive calorie deficit calculator that helps you determine the right daily calorie intake for effective weight loss, with personalized recommendations based on your gender, age, activity level, and weight loss goals.",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": "Personalized calorie deficit calculations; BMR and TDEE estimation; Weight loss rate options; Calculation history; Dark/Light mode toggle; Mobile-friendly responsive design",
-        "screenshot": "https://jaytools.github.io/img/tools/calorie-deficit-screenshot.jpg",
-        "author": {
-            "@type": "Organization",
+        "isPartOf": {
+            "@type": "WebSite",
             "name": "Jay Tools",
             "url": "https://jaytools.github.io"
         },
-        "mainEntity": {
-            "@type": "HowTo",
-            "name": "How to Calculate Your Calorie Deficit for Weight Loss",
-            "step": [
+        "inLanguage": "en-US",
+        "datePublished": "2023-05-15",
+        "dateModified": "2025-07-07",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
                 {
-                    "@type": "HowToStep",
-                    "text": "Enter your personal details (age, gender, height, and weight)"
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://jaytools.github.io"
                 },
                 {
-                    "@type": "HowToStep",
-                    "text": "Select your activity level from the dropdown options"
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Health Tools",
+                    "item": "https://jaytools.github.io/health.html"
                 },
                 {
-                    "@type": "HowToStep",
-                    "text": "Choose your desired weight loss rate (mild, moderate, or aggressive)"
-                },
-                {
-                    "@type": "HowToStep",
-                    "text": "Click 'Calculate' to see your recommended daily calorie intake"
-                },
-                {
-                    "@type": "HowToStep",
-                    "text": "Save your results or view your calculation history"
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Calorie Deficit Calculator",
+                    "item": "https://jaytools.github.io/health/calorie-deficit.html"
                 }
             ]
+        },
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "Calorie Deficit Calculator",
+            "url": "https://jaytools.github.io/health/calorie-deficit.html",
+            "description": "A comprehensive calorie deficit calculator that helps you determine the right daily calorie intake for effective weight loss, with personalized recommendations based on your gender, age, activity level, and weight loss goals.",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Any",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "featureList": "Personalized calorie deficit calculations; BMR and TDEE estimation; Weight loss rate options; Calculation history; Dark/Light mode toggle; Mobile-friendly responsive design",
+            "screenshot": "https://jaytools.github.io/img/tools/calorie-deficit-screenshot.jpg",
+            "author": {
+                "@type": "Organization",
+                "name": "Jay Tools",
+                "url": "https://jaytools.github.io"
+            }
         }
     }
     </script>
+    
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Calculate Your Calorie Deficit for Weight Loss",
+        "description": "A simple step-by-step guide to using the Calorie Deficit Calculator for personalized weight loss plans",
+        "tool": [
+            {
+                "@type": "HowToTool",
+                "name": "Calorie Deficit Calculator"
+            }
+        ],
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Enter Personal Information",
+                "text": "Fill in your age, gender, height, and weight.",
+                "url": "https://jaytools.github.io/health/calorie-deficit.html#how-to-use"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Select Activity Level",
+                "text": "Choose how active you are in a typical week.",
+                "url": "https://jaytools.github.io/health/calorie-deficit.html#how-to-use"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Choose Weight Loss Goal",
+                "text": "Select mild, moderate, or aggressive weight loss.",
+                "url": "https://jaytools.github.io/health/calorie-deficit.html#how-to-use"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Calculate",
+                "text": "Click the calculate button to see your personalized plan.",
+                "url": "https://jaytools.github.io/health/calorie-deficit.html#how-to-use"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "View Results",
+                "text": "See your daily calorie target and macronutrient breakdown.",
+                "url": "https://jaytools.github.io/health/calorie-deficit.html#how-to-use"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How accurate is the calorie deficit calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our calculator uses scientifically validated formulas like the Mifflin-St Jeor Equation to estimate your calorie needs. While it provides a reliable starting point, individual factors like metabolism can cause variations. Monitor your results over 2-3 weeks and adjust as needed."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I lose weight faster with a bigger calorie deficit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Technically yes, but extreme deficits (>25% below TDEE) often lead to muscle loss, metabolic adaptation, nutrient deficiencies, and increased hunger. This makes them difficult to sustain and can result in weight regain. Our calculator offers a moderate approach for healthy, sustainable results."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why am I not losing weight despite being in a calorie deficit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Several factors might be at play: water retention (especially after starting a new exercise routine), inaccurate calorie tracking, undiagnosed medical conditions, or your body adapting to the lower calorie intake. If you've consistently followed your plan for 3-4 weeks without results, consider consulting a healthcare professional."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I eat back calories burned from exercise?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Generally, it's best not to eat back all exercise calories as most trackers and machines overestimate calories burned. If you're feeling excessively fatigued or hungry, consider eating back 50% of your estimated exercise calories to support recovery while maintaining a deficit."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I recalculate my calorie deficit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Recalculate when you lose about 5-10 pounds (2-5 kg) or if your activity level changes significantly. As you lose weight, your calorie needs decrease, so periodic adjustments help maintain steady progress and prevent plateaus."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <style>
+    /* Professional Heading Styles */
+    .info-section {
+        position: relative;
+        padding: 1.5rem 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-section h2 {
+        position: relative;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--primary-color, #3498db);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: none;
+    }
+
+    .info-section h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--primary-color, #3498db);
+        border-radius: 2px;
+    }
+
+    .info-section h3 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: var(--color-primary, #333333);
+        margin: 1.75rem 0 1rem;
+        padding-left: 0;
+    }
+
+    .info-section h3::before {
+        content: none;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode .info-section h2 {
+        color: #5dade2;
+    }
+
+    body.dark-mode .info-section h2::after {
+        background: #5dade2;
+    }
+
+    body.dark-mode .info-section h3 {
+        color: #e0e0e0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .info-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .info-section h3 {
+            font-size: 1.2rem;
+        }
+    }
+
+    /* Section-specific styles */
+    #about-tool h2, 
+    #how-to-use h2, 
+    #article h2, 
+    #faq h2, 
+    #related-tools h2 {
+        display: flex;
+        align-items: center;
+    }
+
+    #about-tool h2::before {
+        content: '\f05a';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 0.75rem;
+    }
+
+    #how-to-use h2::before {
+        content: '\f15c';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 0.75rem;
+    }
+
+    #article h2::before {
+        content: '\f02d';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 0.75rem;
+    }
+
+    #faq h2::before {
+        content: '\f059';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 0.75rem;
+    }
+
+    #related-tools h2::before {
+        content: '\f0c8';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 0.75rem;
+    }
+
+    /* Additional section styling */
+    .section-content {
+        padding-left: 1.25rem;
+        border-left: 2px solid rgba(52, 152, 219, 0.2);
+        margin-top: -0.5rem;
+    }
+
+    .info-section {
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .info-section:last-child {
+        margin-bottom: 1rem;
+    }
+
+    .info-list li {
+        margin-bottom: 0.75rem;
+        position: relative;
+    }
+
+    .simple-steps li {
+        padding-left: 2rem;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .simple-steps li::before {
+        content: attr(value);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: var(--primary-color, #3498db);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .info-article p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    body.dark-mode .section-content {
+        border-left-color: rgba(93, 173, 226, 0.2);
+    }
+
+    /* Improved FAQ styling */
+    .faq-item {
+        margin-bottom: 1.25rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    body.dark-mode .faq-item {
+        border-color: #444;
+    }
+
+    .faq-question {
+        padding: 1rem;
+        margin: 0;
+        cursor: pointer;
+        background-color: #f8f9fa;
+        font-weight: 600;
+        font-size: 1.1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .faq-question::after {
+        content: '\f107';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question::after {
+        transform: rotate(180deg);
+    }
+
+    body.dark-mode .faq-question {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+
+    .faq-answer {
+        padding: 0 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 1rem;
+        max-height: 500px;
+    }
+
+    /* Section animations */
+    .section-fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .section-fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Heading animations */
+    .info-section h2 {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .info-section.visible h2::after {
+        animation: expand 0.8s ease forwards;
+    }
+
+    @keyframes expand {
+        from { width: 0; }
+        to { width: 60px; }
+    }
+
+    /* Separate section visual indicators */
+    .info-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 0;
+        background: var(--primary-color, #3498db);
+        border-radius: 5px;
+        transition: height 0.8s ease;
+    }
+
+    .info-section.visible::before {
+        height: 50px;
+    }
+
+    /* Enhanced Focus */
+    .section-content:focus-within {
+        border-left-color: var(--primary-color, #3498db);
+    }
+    </style>
 </head>
 <body>
     
@@ -98,7 +478,7 @@
         <nav class="navbar">
             <!-- Left side: Logo and subtitle -->
             <div class="navbar-brand">
-                <a href="../../index.html" class="brand-link">
+                <a href="../index.html" class="brand-link">
                     <h1 class="site-title">Jay Tools</h1>
                     <p class="site-subtitle">Simple and Convenient Web Tools</p>
                 </a>
@@ -172,23 +552,23 @@
                 <h3><i class="fas fa-tags"></i> Categories</h3>
                 <div class="sidebar-tags-nav">
                     <div class="sidebar-tags-scroll">
-                        <a href="../../index.html" class="nav-link">
+                        <a href="../index.html" class="nav-link">
                             <i class="fas fa-home"></i>
                             <span>Home</span>
                         </a>
-                        <a href="../../about.html" class="nav-link">
+                        <a href="../about.html" class="nav-link">
                             <i class="fas fa-info-circle"></i>
                             <span>About</span>
                         </a>
-                        <a href="../../contact.html" class="nav-link">
+                        <a href="../contact.html" class="nav-link">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
                         </a>
-                        <a href="../../privacy.html" class="nav-link">
+                        <a href="../privacy.html" class="nav-link">
                             <i class="fas fa-shield-alt"></i>
                             <span>Privacy Policy</span>
                         </a>
-                        <a href="../../terms.html" class="nav-link">
+                        <a href="../terms.html" class="nav-link">
                             <i class="fas fa-file-contract"></i>
                             <span>Terms of Service</span>
                         </a>
@@ -199,34 +579,37 @@
     </aside>
     <!-- Main Content -->
     <main>
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <a href="../health.html">Health Tools</a>
+                <span class="breadcrumb-separator">></span>
+                <span>Calorie Deficit Calculator</span>
+            </nav>
+        </div>
+
         <!-- Tool Container -->
         <div class="tool-container">
-            <!-- Tool Header -->
-            <div class="tool-header">
-                <h1><i class="fas fa-fire-alt"></i> Calorie Deficit Calculator</h1>
-                <p>Achieve your weight loss goals with our advanced calculator Get a personalized calorie plan based on your body metrics, activity level, and weight loss targets. Our scientific approach helps you lose weight effectively while maintaining optimal nutrition.</p>
-            </div>
-
             <!-- Tool Card -->
-            <div class="tool-card">
-            <button type="button" class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle dark/light theme">
-                <i class="fas fa-moon" id="themeIcon"></i>
-            </button>
+            <div class="card">
+                <!-- Tool Header -->
+                <div class="card-header">
+                    <h1><i class="fas fa-fire-alt"></i> Calorie Deficit Calculator</h1>
+                </div>
+            <div class="card-body">
             
-            <div class="tool-ribbon">
-                <span>Calorie Deficit Calculator</span>
-            </div>
-
             <!-- Calculator Interface -->
             <div class="calculator-interface">
                 <form id="toolForm">
                     <!-- Personal Information Section -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                    <div class="form-section form-section-dark">
+                        <h3 class="section-heading"><i class="fas fa-user"></i> Personal Information</h3>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="age">Age</label>
+                                <label for="age" class="form-label">Age</label>
                                 <div class="input-with-icon">
                                     <i class="fas fa-birthday-cake input-icon"></i>
                                     <input type="number" id="age" name="age" placeholder="Years" min="15" max="100" step="1" required>
@@ -235,7 +618,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="gender">Gender</label>
+                                <label for="gender" class="form-label">Gender</label>
                                 <div class="select-with-icon">
                                     <i class="fas fa-venus-mars input-icon"></i>
                                     <select id="gender" name="gender" required>
@@ -250,19 +633,19 @@
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="height">Height</label>
+                                <label for="height" class="form-label">Height</label>
                                 <div class="input-with-icon">
                                     <i class="fas fa-ruler-vertical input-icon"></i>
-                                    <input type="number" id="height" name="height" placeholder="cm" min="130" max="250" step="1" required>
+                                    <input type="number" id="height" name="height" placeholder="cm" min="130" max="250" step="1" required class="form-input">
                                 </div>
                                 <div class="error-message" id="heightError">Please enter a valid height (130-250 cm).</div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="weight">Weight</label>
+                                <label for="weight" class="form-label">Weight</label>
                                 <div class="input-with-icon">
                                     <i class="fas fa-weight input-icon"></i>
-                                    <input type="number" id="weight" name="weight" placeholder="kg" min="30" max="300" step="0.1" required>
+                                    <input type="number" id="weight" name="weight" placeholder="kg" min="30" max="300" step="0.1" required class="form-input">
                                 </div>
                                 <div class="error-message" id="weightError">Please enter a valid weight (30-300 kg).</div>
                             </div>
@@ -270,12 +653,12 @@
                     </div>
                     
                     <!-- Activity Level Section -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-running"></i> Activity Level</h3>
+                    <div class="form-section form-section-dark">
+                        <h3 class="section-heading"><i class="fas fa-running"></i> Activity Level</h3>
                         <div class="form-group">
                             <div class="select-with-icon">
                                 <i class="fas fa-heartbeat input-icon"></i>
-                                <select id="activityLevel" name="activityLevel" required aria-label="Activity Level">
+                                <select id="activityLevel" name="activityLevel" required aria-label="Activity Level" class="form-select">
                                     <option value="">Select your activity level</option>
                                     <option value="1.2">Sedentary (little or no exercise)</option>
                                     <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
@@ -290,10 +673,10 @@
                     </div>
                     
                     <!-- Weight Loss Goal Section -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-bullseye"></i> Weight Loss Goal</h3>
+                    <div class="form-section form-section-dark">
+                        <h3 class="section-heading"><i class="fas fa-bullseye"></i> Weight Loss Goal</h3>
                         <div class="form-group">
-                            <label>Choose your preferred deficit level:</label>
+                            <label class="form-label">Choose your preferred deficit level:</label>
                             <div class="radio-group" role="radiogroup" aria-labelledby="deficitTypeLabel">
                                 <span id="deficitTypeLabel" class="visually-hidden">Deficit Type</span>
                                 
@@ -409,54 +792,274 @@
                         Recalculate
                     </button>
                 </div>
+                <div class="share-section">
+                            <button class="btn btn-primary share-btn" onclick="shareResult()" id="shareBtn">
+                                <i class="fas fa-share-alt"></i>
+                                Share This Result
+                            </button>
+                            <div class="share-feedback" id="shareFeedback"></div>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
 
         <!-- Information Section -->
-        <div class="info-section">
-            <h2>About the Calorie Deficit Calculator</h2>
-            <p>Our Calorie Deficit Calculator helps you determine the optimal daily calorie intake for effective and sustainable weight loss. By analyzing your personal metrics and activity level, this tool creates a personalized weight loss plan that balances your nutritional needs with your weight loss goals.</p>
-            
-            <h3>Key Features:</h3>
-            <ul>
-                <li><strong>Personalized Calculations</strong> - Customized calorie targets based on your age, gender, height, weight, and activity level</li>
-                <li><strong>Multiple Goal Options</strong> - Choose between mild, moderate, or aggressive weight loss approaches</li>
-                <li><strong>BMR & TDEE Analysis</strong> - View your Basal Metabolic Rate and Total Daily Energy Expenditure</li>
-                <li><strong>Macronutrient Breakdown</strong> - Get recommended protein, carbohydrate, and fat intake</li>
-                <li><strong>Calculation History</strong> - Save and revisit your previous calculations</li>
-                <li><strong>Dark/Light Mode</strong> - Toggle between themes for comfortable viewing</li>
-            </ul>
-
-            <h3>How to Use:</h3>
-            <ul>
-                <li>Enter your personal details (age, gender, height, and weight)</li>
-                <li>Select your activity level from the dropdown options</li>
-                <li>Choose your desired weight loss rate (mild, moderate, or aggressive)</li>
-                <li>Click "Calculate Calorie Deficit" to see your recommendations</li>
-                <li>View your BMR, TDEE, daily calorie target, and macronutrient breakdown</li>
-                <li>Save favorites or view your calculation history for future reference</li>
-            </ul>
-
-            <h3>Understanding Your Results:</h3>
-            <ul>
-                <li><strong>BMR (Basal Metabolic Rate)</strong> - The calories your body needs at complete rest</li>
-                <li><strong>TDEE (Total Daily Energy Expenditure)</strong> - Your BMR adjusted for daily activity level</li>
-                <li><strong>Daily Calorie Target</strong> - Recommended calorie intake to achieve your weight loss goal</li>
-                <li><strong>Weekly Weight Loss</strong> - Expected weight loss per week following the plan</li>
-                <li><strong>Macronutrient Breakdown</strong> - Optimal distribution of proteins, carbs, and fats</li>
-            </ul>
-            
-            <h3>Important Notes:</h3>
-            <p>This calculator provides estimates based on established formulas like the Mifflin-St Jeor Equation. Individual results may vary based on factors such as metabolism, medical conditions, and adherence to the plan. The calculator is designed for adults aged 15-100 and should not be used by pregnant or breastfeeding individuals or those with certain medical conditions without consulting a healthcare professional.</p>
-            
-            <h3>For Best Results:</h3>
-            <ul>
-                <li>Combine your calorie deficit with regular physical activity</li>
-                <li>Focus on nutrient-dense whole foods rather than just calorie counting</li>
-                <li>Stay hydrated and get adequate sleep</li>
-                <li>Recalculate as your weight changes or if your activity level changes</li>
-                <li>Consult with a healthcare provider before starting any weight loss program</li>
-            </ul>
+        <div class="card info-card">
+            <div class="card-body">
+                <section id="about-tool" class="info-section">
+                    <h2>About the Calorie Deficit Calculator</h2>
+                    <div class="section-content">
+                        <p>Our <strong></strong>Calorie Deficit Calculator</strong> helps you determine the optimal daily calorie intake for effective and sustainable weight loss. By analyzing your personal metrics and activity level, this evidence-based tool creates a personalized weight loss plan that balances your nutritional needs with your weight loss goals, setting you on the path to successful weight management.</p>
+                        
+                        <p>Weight loss success hinges on creating a caloric deficit – consuming fewer calories than your body burns. This calculator uses scientifically validated formulas to determine your metabolic rate and energy requirements, then creates a safe deficit tailored to your goals.</p>
+                        
+                        <h3>Key Features:</h3>
+                        <ul class="info-list">
+                            <li><strong>Personalized Calculations</strong> - Customized calorie targets based on your age, gender, height, weight, and activity level</li>
+                            <li><strong>Multiple Goal Options</strong> - Choose between mild (0.25kg/week), moderate (0.5kg/week), or aggressive (1kg/week) weight loss approaches based on your preferences and health needs</li>
+                            <li><strong>BMR & TDEE Analysis</strong> - View your Basal Metabolic Rate and Total Daily Energy Expenditure to understand your body's energy requirements</li>
+                            <li><strong>Macronutrient Breakdown</strong> - Get recommended protein, carbohydrate, and fat intake distributions to optimize nutrition during your weight loss journey</li>
+                            <li><strong>Scientific Accuracy</strong> - Calculations based on the Mifflin-St Jeor Equation, recognized for its reliability in estimating caloric needs</li>
+                            <li><strong>User-Friendly Interface</strong> - Simple inputs and clear results presentation make planning your diet straightforward</li>
+                        </ul>
+                        
+                        <p>Whether you're just beginning your weight loss journey or looking to break through a plateau, our calculator provides the nutritional guidance you need to achieve lasting results.</p>
+                    </div>
+                </section>
+                
+                <section id="how-to-use" class="info-section">
+                    <h2>How to Use the Calorie Deficit Calculator (Step-by-Step Guide)</h2>
+                    <div class="section-content">
+                        <p>Follow these simple steps to get your personalized calorie deficit plan for effective weight loss:</p>
+                        
+                        <ol class="simple-steps">
+                            <li><strong>Enter Personal Information:</strong> Input your age (15-100 years), select your gender, and provide your height (in cm) and weight (in kg). These metrics are essential for calculating your basal metabolic rate accurately.</li>
+                            <li><strong>Select Activity Level:</strong> Choose the option that best describes your typical weekly physical activity:
+                                <ul>
+                                    <li>Sedentary: Little or no exercise, desk job</li>
+                                    <li>Lightly active: Light exercise 1-3 days/week</li>
+                                    <li>Moderately active: Moderate exercise 3-5 days/week</li>
+                                    <li>Very active: Hard exercise 6-7 days/week</li>
+                                    <li>Extremely active: Very hard daily exercise or physical job</li>
+                                </ul>
+                            </li>
+                            <li><strong>Choose Weight Loss Goal:</strong> Select your preferred deficit level based on your goals and health status:
+                                <ul>
+                                    <li>Mild (0.25 kg/week): Gradual, sustainable approach</li>
+                                    <li>Moderate (0.5 kg/week): Balanced weight loss rate</li>
+                                    <li>Aggressive (1 kg/week): Faster results (best for those with significant weight to lose)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Calculate Your Plan:</strong> Click the "Calculate Calorie Deficit" button to process your information and generate personalized recommendations.</li>
+                            <li><strong>Review Your Results:</strong> Examine your comprehensive weight loss plan, including:
+                                <ul>
+                                    <li>BMR (Basal Metabolic Rate): Calories your body needs at complete rest</li>
+                                    <li>TDEE (Total Daily Energy Expenditure): Total calories burned daily</li>
+                                    <li>Daily Calorie Target: Your recommended calorie intake for weight loss</li>
+                                    <li>Estimated Weekly Loss: Expected weight loss rate</li>
+                                    <li>Macronutrient Distribution: Recommended protein, carbohydrates, and fat intake</li>
+                                </ul>
+                            </li>
+                            <li><strong>Implement Your Plan:</strong> Use your calculated daily calorie target and macronutrient breakdown to guide your meal planning and food choices.</li>
+                            <li><strong>Monitor and Adjust:</strong> Track your progress and recalculate your needs after losing 5-10 pounds or if your activity level changes.</li>
+                        </ol>
+                        
+                        <p>For best results, combine your calorie deficit plan with regular physical activity and prioritize nutrient-dense whole foods in your diet.</p>
+                    </div>
+                </section>
+                
+                <section id="article" class="info-section">
+                    <h2>Understanding Calorie Deficit for Weight Loss: The Science Behind Results</h2>
+                    <article class="info-article">
+                        <h3>The Fundamental Principle of Weight Loss</h3>
+                        <p>A <strong>calorie deficit</strong> occurs when you consume fewer calories than your body burns, forcing it to use stored fat for energy. This metabolic process is the fundamental principle behind all effective weight loss strategies and is supported by the first law of thermodynamics as applied to human metabolism.</p>
+                        
+                        <p>Your body requires a specific number of calories to maintain basic functions (Basal Metabolic Rate or BMR) plus additional calories for daily activities (resulting in your Total Daily Energy Expenditure or TDEE). When you consume fewer calories than your TDEE, you create a deficit that leads to weight loss through fat mobilization and oxidation.</p>
+                        
+                        <h3>Calculating Your Deficit: The Numbers Behind Weight Loss</h3>
+                        <p>The science is quantifiable: one pound (0.45kg) of body fat contains approximately 3,500 calories of stored energy. Therefore, a daily deficit of 500 calories should theoretically result in losing one pound per week. Similarly, a deficit of 1,000 calories daily would yield approximately two pounds of weight loss per week.</p>
+                        
+                        <p>However, individual factors like metabolic rate, hormone levels, sleep quality, genetic factors, and stress can influence this rate. The body also adapts to consistent caloric restriction, which is why weight loss often follows a non-linear pattern over time.</p>
+                        
+                        <h3>Finding Your Optimal Deficit Range</h3>
+                        <p>Creating a moderate calorie deficit of 15-20% below your TDEE is generally considered sustainable and healthy for most individuals. Research indicates this range optimizes fat loss while minimizing muscle loss and metabolic adaptation. For example:</p>
+                        
+                        <ul>
+                            <li>A person with a TDEE of 2,000 calories would aim for 1,600-1,700 calories daily (15-20% deficit)</li>
+                            <li>A person with a TDEE of 2,500 calories would aim for 2,000-2,125 calories daily (15-20% deficit)</li>
+                        </ul>
+                        
+                        <p>Larger deficits (>25% below TDEE) may accelerate short-term weight loss but often lead to muscle loss, metabolic slowdown, hormonal disruption, and increased hunger, making them difficult to maintain long-term. Studies show that extreme caloric restriction can reduce resting metabolic rate beyond what would be expected from weight loss alone.</p>
+                        
+                        <h3>Nutritional Strategy During a Deficit</h3>
+                        <p>Proper nutrition during a calorie deficit is crucial for preserving health and lean body mass. Research suggests these evidence-based priorities:</p>
+                        
+                        <ol>
+                            <li><strong>Adequate Protein Intake</strong>: 1.6-2.2g per kg of body weight daily to preserve muscle mass and enhance satiety</li>
+                            <li><strong>Fiber-Rich Complex Carbohydrates</strong>: 20-35g of fiber daily to provide sustained energy, support digestive health, and increase fullness</li>
+                            <li><strong>Essential Fatty Acids</strong>: Include sources of omega-3 and omega-6 fatty acids to support hormone production and nutrient absorption</li>
+                            <li><strong>Micronutrient Density</strong>: Focus on nutrient-rich foods to avoid deficiencies during reduced caloric intake</li>
+                            <li><strong>Hydration</strong>: Adequate water intake (2-3 liters daily for most adults) to support metabolism and potentially reduce hunger</li>
+                        </ol>
+                        
+                        <h3>Exercise: Optimizing Your Deficit Strategy</h3>
+                        <p>Regular physical activity enhances a calorie deficit through multiple mechanisms:</p>
+                        
+                        <ul>
+                            <li>Increases daily energy expenditure, creating a larger deficit without extreme food restriction</li>
+                            <li>Preserves or builds muscle mass, supporting metabolic health</li>
+                            <li>Improves insulin sensitivity, enhancing the body's ability to utilize fat stores</li>
+                            <li>Reduces stress hormones that can interfere with weight loss</li>
+                        </ul>
+                        
+                        <p>Scientific research consistently shows that combining resistance training (2-3 sessions weekly) with moderate cardiovascular exercise (150+ minutes weekly) provides optimal results for body composition and metabolic health during weight loss.</p>
+                        
+                        <h3>The Psychology of Sustainable Deficits</h3>
+                        <p>Sustainable weight loss is a gradual process that requires behavioral adaptation. While rapid results may be tempting, longitudinal studies show that the most successful long-term outcomes typically come from moderate approaches that create new habits rather than unsustainable restrictions.</p>
+                        
+                        <p>Our calculator helps you find this science-based balance for your individual needs, setting realistic expectations and providing a framework for lasting results. Remember that consistency over time, rather than perfection in the short term, is the most reliable predictor of weight loss success.</p>
+                    </article>
+                </section>
+                
+                <section id="faq" class="info-section faq-section">
+                    <h2>Frequently Asked Questions (FAQs)</h2>
+                    <div class="section-content">
+                        <div class="faq-container">
+                            <div class="faq-item">
+                                <h3 class="faq-question">How accurate is the calorie deficit calculator?</h3>
+                                <div class="faq-answer">
+                                    <p>Our calculator uses scientifically validated formulas like the Mifflin-St Jeor Equation to estimate your calorie needs. While it provides a reliable starting point, individual factors like metabolism can cause variations. Monitor your results over 2-3 weeks and adjust as needed.</p>
+                                </div>
+                            </div>
+                        <div class="faq-item">
+                            <h3 class="faq-question">Can I lose weight faster with a bigger calorie deficit?</h3>
+                            <div class="faq-answer">
+                                <p>Technically yes, but extreme deficits (>25% below TDEE) often lead to muscle loss, metabolic adaptation, nutrient deficiencies, and increased hunger. This makes them difficult to sustain and can result in weight regain. Our calculator offers a moderate approach for healthy, sustainable results.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <h3 class="faq-question">Why am I not losing weight despite being in a calorie deficit?</h3>
+                            <div class="faq-answer">
+                                <p>Several factors might be at play: water retention (especially after starting a new exercise routine), inaccurate calorie tracking, undiagnosed medical conditions, or your body adapting to the lower calorie intake. If you've consistently followed your plan for 3-4 weeks without results, consider consulting a healthcare professional.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <h3 class="faq-question">Should I eat back calories burned from exercise?</h3>
+                            <div class="faq-answer">
+                                <p>Generally, it's best not to eat back all exercise calories as most trackers and machines overestimate calories burned. If you're feeling excessively fatigued or hungry, consider eating back 50% of your estimated exercise calories to support recovery while maintaining a deficit.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <h3 class="faq-question">How often should I recalculate my calorie deficit?</h3>
+                            <div class="faq-answer">
+                                <p>Recalculate when you lose about 5-10 pounds (2-5 kg) or if your activity level changes significantly. As you lose weight, your calorie needs decrease, so periodic adjustments help maintain steady progress and prevent plateaus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="related-tools" class="info-section">
+                    <h2>Related Tools You Might Find Helpful</h2>
+                    <div class="section-content">
+                        <style>
+                        /* Improved Related Tools styling */
+                        .related-tools-grid {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: 15px;
+                            margin-top: 20px;
+                        }
+                        
+                        .related-tool-card {
+                            background: var(--card-bg, #fff);
+                            border: 1px solid #e0e0e0;
+                            border-radius: 10px;
+                            padding: 15px;
+                            transition: all 0.3s ease;
+                            text-decoration: none;
+                            color: inherit;
+                            display: block;
+                        }
+                        
+                        .related-tool-card:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                            border-color: var(--primary-color, #3498db);
+                        }
+                        
+                        .tool-card-header {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 10px;
+                        }
+                        
+                        .tool-card-icon {
+                            font-size: 24px;
+                            margin-right: 10px;
+                            color: var(--primary-color, #3498db);
+                        }
+                        
+                        .tool-card-title {
+                            font-size: 18px;
+                            font-weight: 600;
+                            margin: 0;
+                        }
+                        
+                        .tool-card-desc {
+                            font-size: 14px;
+                            color: #666;
+                            line-height: 1.4;
+                            margin: 0;
+                        }
+                        
+                        body.dark-mode .related-tool-card {
+                            background: #2d2d2d;
+                            border-color: #444;
+                        }
+                        
+                        body.dark-mode .tool-card-desc {
+                            color: #bbb;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .related-tools-grid {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                        </style>
+                        <div class="related-tools-grid">
+                        <a href="protein-intake.html" class="related-tool-card">
+                            <div class="tool-card-header">
+                                <i class="fas fa-drumstick-bite tool-card-icon"></i>
+                                <h3 class="tool-card-title">Protein Intake Calculator</h3>
+                            </div>
+                            <p class="tool-card-desc">Calculate your optimal daily protein requirements based on your weight and activity level.</p>
+                        </a>
+                        <a href="body-frame-inline.html" class="related-tool-card">
+                            <div class="tool-card-header">
+                                <i class="fas fa-child tool-card-icon"></i>
+                                <h3 class="tool-card-title">Body Frame Calculator</h3>
+                            </div>
+                            <p class="tool-card-desc">Determine your body frame size to better understand your ideal weight range.</p>
+                        </a>
+                        <a href="calories-walking.html" class="related-tool-card">
+                            <div class="tool-card-header">
+                                <i class="fas fa-walking tool-card-icon"></i>
+                                <h3 class="tool-card-title">Walking Calories Calculator</h3>
+                            </div>
+                            <p class="tool-card-desc">Find out how many calories you burn while walking based on distance, speed, and weight.</p>
+                        </a>
+                        <a href="food-calories.html" class="related-tool-card">
+                            <div class="tool-card-header">
+                                <i class="fas fa-apple-alt tool-card-icon"></i>
+                                <h3 class="tool-card-title">Food Calories Database</h3>
+                            </div>
+                            <p class="tool-card-desc">Look up calorie and nutrient information for thousands of common foods.</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
         </div>
         </div> <!-- Close tool-container -->
     </main>
@@ -470,9 +1073,9 @@
                     <h3>Pages</h3>
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="../../index.html">Home</a></li>
-                            <li><a href="../../about.html">About</a></li>
-                            <li><a href="../../contact.html">Contact</a></li>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -482,10 +1085,10 @@
                     <h3>Legal & Info</h3>
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="../../privacy.html">Privacy Policy</a></li>
-                            <li><a href="../../terms.html">Terms of Use</a></li>
-                            <li><a href="../../disclaimer.html">Disclaimer</a></li>
-                            <li><a href="../../dmca.html">DMCA</a></li>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -520,6 +1123,7 @@
                 </div>
             </div>
 
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Jay Tools by Jay Prajapati. All rights reserved.</p>
             </div>
@@ -530,7 +1134,7 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="../../js/script.js"></script>
+    <script src="../js/script.js"></script>
     <script src="js/calorie-deficit.js"></script>
     <script>
         // Initialize UI elements after page load
@@ -539,21 +1143,318 @@
             
             // Check that key elements exist and are properly displayed
             const toolContainer = document.querySelector('.tool-container');
-            const toolHeader = document.querySelector('.tool-header');
-            const toolCard = document.querySelector('.tool-card');
+            const cardHeader = document.querySelector('.card-header');
+            const card = document.querySelector('.card');
             const calculatorInterface = document.querySelector('.calculator-interface');
             const resultSection = document.getElementById('resultSection');
             
-            console.log("Tool container visible:", toolContainer && getComputedStyle(toolContainer).display !== 'none');
-            console.log("Tool header visible:", toolHeader && getComputedStyle(toolHeader).display !== 'none');
-            console.log("Tool card visible:", toolCard && getComputedStyle(toolCard).display !== 'none');
-            console.log("Calculator interface visible:", calculatorInterface && getComputedStyle(calculatorInterface).display !== 'none');
-            console.log("Result section initially hidden:", resultSection && getComputedStyle(resultSection).display === 'none');
+            // Add theme toggle button if not already present
+            if (!document.querySelector('.theme-toggle')) {
+                const themeToggle = document.createElement('button');
+                themeToggle.className = 'theme-toggle';
+                themeToggle.setAttribute('aria-label', 'Toggle dark/light mode');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                
+                // Insert at the top of the first card
+                if (card) {
+                    card.style.position = 'relative';
+                    card.appendChild(themeToggle);
+                }
+                
+                // Set up theme toggle functionality
+                themeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-mode');
+                    
+                    // Update toggle icon
+                    const icon = this.querySelector('i');
+                    if (document.body.classList.contains('dark-mode')) {
+                        icon.className = 'fas fa-sun';
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        icon.className = 'fas fa-moon';
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+                
+                // Check saved theme preference
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                    themeToggle.querySelector('i').className = 'fas fa-sun';
+                }
+            }
             
             // Force layout recalculation if needed
             if (toolContainer) toolContainer.style.display = 'flex';
-            if (toolCard) toolCard.style.display = 'block';
+            if (card) card.style.display = 'block';
             if (calculatorInterface) calculatorInterface.style.display = 'block';
+            
+            // Mobile optimizations
+            function adjustForMobile() {
+                const isMobile = window.innerWidth <= 480;
+                
+                // Increase tap targets for mobile
+                const inputs = document.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    input.style.fontSize = isMobile ? '16px' : ''; // Prevent zoom on iOS
+                });
+                
+                // Add fastclick for eliminating the 300ms delay on mobile
+                if (isMobile) {
+                    document.body.addEventListener('touchstart', function(){}, {passive: true});
+                    
+                    // Ensure proper spacing on mobile forms
+                    const formRows = document.querySelectorAll('.form-row');
+                    formRows.forEach(row => {
+                        row.style.display = 'block';
+                    });
+                    
+                    // Increase touch area for radio options
+                    const radioOptions = document.querySelectorAll('.radio-option');
+                    radioOptions.forEach(option => {
+                        option.style.padding = '1.2rem 1rem';
+                        option.style.marginBottom = '0.8rem';
+                    });
+                    
+                    // Better text size for form elements on mobile
+                    const formLabels = document.querySelectorAll('.form-label');
+                    formLabels.forEach(label => {
+                        label.style.fontSize = '0.95rem';
+                        label.style.marginBottom = '0.5rem';
+                    });
+                    
+                    // Ensure weight loss section has proper spacing
+                    const weightLossSection = document.querySelector('.form-section-dark:nth-of-type(3)');
+                    if (weightLossSection) {
+                        weightLossSection.style.marginBottom = '1rem';
+                    }
+                }
+            }
+            
+            // Run mobile adjustments
+            adjustForMobile();
+            window.addEventListener('resize', adjustForMobile);
+            
+            // Enhance radio buttons for touch devices
+            const radioOptions = document.querySelectorAll('.radio-option');
+            radioOptions.forEach(option => {
+                // Make entire radio option clickable
+                option.addEventListener('click', function(e) {
+                    const input = this.querySelector('input[type="radio"]');
+                    if (input) input.checked = true;
+                    
+                    // Add visual feedback on mobile
+                    if (window.innerWidth <= 480) {
+                        const currentActive = document.querySelector('.radio-option.active-touch');
+                        if (currentActive) currentActive.classList.remove('active-touch');
+                        this.classList.add('active-touch');
+                    }
+                });
+                
+                // Handle touch events better
+                option.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    const input = this.querySelector('input[type="radio"]');
+                    if (input) input.checked = true;
+                    
+                    // Add visual feedback
+                    const currentActive = document.querySelector('.radio-option.active-touch');
+                    if (currentActive) currentActive.classList.remove('active-touch');
+                    this.classList.add('active-touch');
+                });
+            });
+            
+            // Initialize FAQ functionality
+            initFAQAccordion();
+            
+            // Add smooth scrolling to section links
+            addSmoothScrolling();
+            
+            // Desktop enhancements
+            enhanceDesktopExperience();
+        });
+        
+        // FAQ Accordion functionality
+        function initFAQAccordion() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+            
+            // Open first FAQ by default on desktop
+            if (window.innerWidth > 768 && faqQuestions.length > 0) {
+                faqQuestions[0].parentElement.classList.add('active');
+            }
+        }
+        
+        // Add smooth scrolling to section links
+        function addSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Desktop-specific enhancements
+        function enhanceDesktopExperience() {
+            if (window.innerWidth >= 1024) {
+                // Add hover effects to step cards
+                const steps = document.querySelectorAll('.step');
+                steps.forEach(step => {
+                    step.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-5px)';
+                        this.style.boxShadow = 'var(--shadow-lg)';
+                    });
+                    
+                    step.addEventListener('mouseleave', function() {
+                        this.style.transform = '';
+                        this.style.boxShadow = 'var(--shadow-sm)';
+                    });
+                });
+                
+                // Better form spacing on desktop
+                const formSections = document.querySelectorAll('.form-section');
+                formSections.forEach(section => {
+                    section.style.marginBottom = '2rem';
+                });
+                
+                // Enhance tool card for desktop
+                const toolCard = document.querySelector('.card');
+                if (toolCard) {
+                    toolCard.style.maxWidth = '900px';
+                    toolCard.style.margin = '0 auto 2.5rem';
+                }
+                
+                // Add visual cue to calculate button
+                const calculateBtn = document.querySelector('.calculate-btn');
+                if (calculateBtn) {
+                    calculateBtn.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-2px)';
+                        this.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.2)';
+                    });
+                    
+                    calculateBtn.addEventListener('mouseleave', function() {
+                        this.style.transform = '';
+                        this.style.boxShadow = '';
+                    });
+                }
+            }
+        }
+    </script>
+    <script>
+        // Enhance Related Tools Section
+        document.addEventListener('DOMContentLoaded', function() {
+            const relatedToolsSection = document.getElementById('related-tools');
+            const relatedToolCards = document.querySelectorAll('.related-tool-card');
+            
+            if (relatedToolsSection && relatedToolCards.length > 0) {
+                // Create observer to detect when section is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        // Add animation to each card with staggered delay
+                        relatedToolCards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, index * 150);
+                        });
+                        
+                        // Stop observing after animation
+                        observer.unobserve(entries[0].target);
+                    }
+                }, { threshold: 0.1 });
+                
+                // Set initial styles
+                relatedToolCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                });
+                
+                // Start observing
+                observer.observe(relatedToolsSection);
+            }
+        });
+    </script>
+    <script>
+        // Enhance section headings and FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle FAQ accordion functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Toggle the current item
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    faqItems.forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                    });
+                    
+                    // If it wasn't active, make it active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Auto-open first FAQ item
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+            }
+            
+            // Add automatic numbering to steps
+            const steps = document.querySelectorAll('.simple-steps li');
+            steps.forEach((step, index) => {
+                step.setAttribute('value', index + 1);
+            });
+            
+            // Enhance heading visibility with scroll animation
+            const infoSections = document.querySelectorAll('.info-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            infoSections.forEach(section => {
+                observer.observe(section);
+                
+                // Add initial fade-in class
+                section.classList.add('section-fade-in');
+            });
         });
     </script>
 </body>

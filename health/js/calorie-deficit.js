@@ -137,6 +137,52 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Theme initialized to:', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
     }
     
+    // Enhance Related Tools Section
+    function enhanceRelatedToolsSection() {
+        const relatedToolCards = document.querySelectorAll('.related-tool-card');
+        
+        // Add animation delay for staggered appearance
+        relatedToolCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.15}s`;
+            
+            // Add hover effect for icons
+            const icon = card.querySelector('i');
+            if (icon) {
+                card.addEventListener('mouseenter', () => {
+                    icon.style.transform = 'scale(1.2)';
+                    icon.style.transition = 'transform 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    icon.style.transform = 'scale(1)';
+                });
+            }
+            
+            // Make entire card clickable
+            card.addEventListener('click', (event) => {
+                if (event.target.tagName !== 'A') {
+                    card.querySelector('a')?.click();
+                }
+            });
+        });
+        
+        // Add intersection observer for animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        // Observe related tools section
+        const relatedToolsSection = document.getElementById('related-tools');
+        if (relatedToolsSection) {
+            observer.observe(relatedToolsSection);
+        }
+    }
+
     // Utility Functions
     
     // Validate form inputs
@@ -286,4 +332,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check that calculate button exists
     const calculateBtn = document.getElementById('calculateBtn');
     console.log('- Calculate button exists:', !!calculateBtn);
+    
+    // Initialize related tools section enhancements
+    enhanceRelatedToolsSection();
 });
