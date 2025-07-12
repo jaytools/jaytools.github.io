@@ -102,49 +102,58 @@
     <!-- Contact Page Specific Styles -->
     <style>
         /* Contact Page Specific Styles */
+        /* Mobile tap highlight color and box sizing */
+        * {
+            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
         .contact-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
+            background: #ffffff;
+            color: #333333;
+            padding: 2rem 0;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            width: 100%;
         }
 
         .breadcrumb {
             background: #f8f9fa;
             padding: 1rem 2rem;
             margin-bottom: 2rem;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #333333;
             font-size: 0.9rem;
             max-width: 1200px;
             margin: 0 auto 2rem;
+            color: #333333;
         }
 
         .breadcrumb a {
-            color: #3498db;
+            color: #333333;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 500;
         }
 
         .breadcrumb a:hover {
-            color: #2980b9;
+            color: #000000;
             text-decoration: underline;
         }
 
         .breadcrumb-separator {
             margin: 0 0.5rem;
-            color: #999;
+            color: #666666;
         }
 
         .contact-hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
         }
 
         .contact-hero p {
             font-size: 1.2rem;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             opacity: 0.9;
         }
@@ -155,7 +164,7 @@
             padding: 0 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: start;
         }
 
@@ -163,8 +172,18 @@
             background: white;
             padding: 2.5rem;
             border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             border: 1px solid #e1e8ed;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        @media (hover: hover) {
+            .contact-form-section:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            }
         }
 
         .contact-form h2 {
@@ -172,6 +191,8 @@
             color: #2c3e50;
             margin-bottom: 1.5rem;
             font-weight: 600;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
         }
 
         .form-group {
@@ -196,25 +217,30 @@
             font-family: inherit;
             transition: all 0.3s ease;
             background-color: #fafbfc;
+            box-sizing: border-box;
+            -webkit-appearance: none; /* Removes iOS styling */
+            appearance: none;
+            max-width: 100%;
+            touch-action: manipulation; /* Improves touch response */
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #333333;
             background-color: white;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
         }
 
         .submit-btn {
-            background: #3498db;
+            background: #333333;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             border: none;
             border-radius: 8px;
             font-size: 1.1rem;
@@ -226,12 +252,23 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            touch-action: manipulation; /* Improves touch response */
+            -webkit-appearance: none; /* Removes iOS styling */
+            appearance: none;
         }
 
-        .submit-btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        @media (hover: hover) {
+            .submit-btn:hover {
+                background: #000000;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            }
+        }
+        
+        /* Touch device active state */
+        .submit-btn:active {
+            background: #000000;
+            transform: translateY(1px);
         }
 
         .submit-btn:disabled {
@@ -245,8 +282,18 @@
             background: white;
             padding: 2.5rem;
             border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             border: 1px solid #e1e8ed;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        @media (hover: hover) {
+            .contact-info:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            }
         }
 
         .contact-info h2 {
@@ -254,23 +301,40 @@
             color: #2c3e50;
             margin-bottom: 1.5rem;
             font-weight: 600;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
         }
 
         .contact-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 1.5rem;
             padding: 1rem;
             background: #f8f9fa;
             border-radius: 8px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #333333;
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        @media (hover: hover) {
+            .contact-item:hover {
+                transform: translateX(5px);
+            }
+        }
+        
+        /* Touch device active state */
+        .contact-item:active {
+            background: #f1f2f3;
         }
 
         .contact-item i {
             font-size: 1.2rem;
-            color: #3498db;
+            color: #333333;
             margin-right: 1rem;
             width: 20px;
+            padding-top: 2px; /* Better alignment with text */
         }
 
         .contact-item-content h3 {
@@ -308,7 +372,7 @@
             justify-content: center;
             width: 50px;
             height: 50px;
-            background: #3498db;
+            background: #333333;
             color: white;
             border-radius: 50%;
             text-decoration: none;
@@ -317,9 +381,9 @@
         }
 
         .social-icon:hover {
-            background: #2980b9;
+            background: #000000;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .success-message,
@@ -373,30 +437,165 @@
         @media (max-width: 968px) {
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
             }
             
             .contact-hero h1 {
                 font-size: 2rem;
+                padding: 0 1rem;
             }
             
-            .contact-hero p {
-                font-size: 1.1rem;
+            .contact-form-section h2,
+            .contact-info h2 {
+                font-size: 1.6rem;
             }
         }
 
         @media (max-width: 768px) {
             .contact-hero {
-                padding: 3rem 1rem;
+                padding: 1.25rem 0.5rem;
+                margin-bottom: 1.25rem;
             }
             
             .contact-form-section,
             .contact-info {
-                padding: 1.5rem;
+                padding: 1.25rem;
+                border-radius: 8px;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             }
             
             .contact-container {
                 padding: 0 1rem;
+                gap: 1.25rem;
+            }
+            
+            .breadcrumb {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #333333;
+            }
+            
+            .form-group {
+                margin-bottom: 1rem;
+            }
+            
+            .form-group label {
+                font-size: 0.9rem;
+                margin-bottom: 0.25rem;
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 0.75rem;
+                font-size: 16px; /* Prevents iOS zoom on focus */
+                border-radius: 6px;
+            }
+            
+            .contact-item {
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+                border-radius: 6px;
+            }
+            
+            .submit-btn {
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+            
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .contact-item-content h3 {
+                font-size: 0.95rem;
+            }
+            
+            .contact-item-content p {
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .contact-hero {
+                padding: 1rem 0.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+            
+            .contact-form-section,
+            .contact-info {
+                padding: 1rem;
+                border-radius: 8px;
+            }
+            
+            .contact-container {
+                padding: 0 0.75rem;
+                gap: 1rem;
+            }
+            
+            .contact-form-section h2,
+            .contact-info h2 {
+                font-size: 1.4rem;
+                margin-bottom: 0.75rem;
+                padding-bottom: 0.5rem;
+            }
+            
+            .social-icons {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            
+            .social-links h3 {
+                font-size: 1.1rem;
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 0.7rem;
+            }
+            
+            .form-group {
+                margin-bottom: 0.75rem;
+            }
+            
+            .submit-btn {
+                padding: 0.7rem;
+            }
+            
+            .error-text,
+            .form-group label {
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 360px) {
+            .contact-hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-form-section,
+            .contact-info {
+                padding: 0.75rem;
+            }
+            
+            .contact-item i {
+                font-size: 1rem;
+                margin-right: 0.75rem;
+            }
+            
+            .social-icon {
+                width: 36px;
+                height: 36px;
             }
         }
 
@@ -615,9 +814,9 @@
             <section class="sidebar-section">
                 <h3><i class="fas fa-fire"></i> Popular Tools</h3>
                 <ul class="popular-tools">
-                    <li><a href="../tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
-                    <li><a href="../tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
-                    <li><a href="../tools/seperate-tool/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                    <li><a href="calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="health/ivf-calculator.html">IVF Due Date Calculator</a></li>
                 </ul>
             </section>
 
@@ -654,16 +853,17 @@
     <!-- Main Content -->
     <main>
         <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="breadcrumb-separator">></span>
-            <span>Contact</span>
-        </nav>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <span>Contact</span>
+            </nav>
+        </div>
         
         <!-- Hero Section -->
         <section class="contact-hero">
             <h1>Contact Us</h1>
-            <p>We'd love to hear from you! Whether you have suggestions, need support, or want to discuss business opportunities, feel free to reach out.</p>
         </section>
 
         <!-- Contact Content -->
@@ -675,7 +875,7 @@
                 <!-- Success/Error Messages -->
                 <div id="successMessage" class="success-message">
                     <i class="fas fa-check-circle"></i>
-                    Thanks! We'll get back to you shortly.
+                    Thank you for reaching out! We've received your message and will respond shortly.
                 </div>
                 
                 <div id="errorMessage" class="error-message">
@@ -687,24 +887,24 @@
                 <form id="contactForm" action="#" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required aria-label="Your full name">
+                        <input type="text" id="name" name="name" required aria-label="Your full name" placeholder="John Doe">
                         <div class="error-text" id="nameError">Please enter your name.</div>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Your Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required aria-label="Your email address">
+                        <input type="email" id="email" name="email" required aria-label="Your email address" placeholder="you@example.com">
                         <div class="error-text" id="emailError">Please enter a valid email address.</div>
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Tool suggestion, bug report, business inquiry..." aria-label="Message subject">
+                        <input type="text" id="subject" name="subject" placeholder="Feedback, suggestion, question..." aria-label="Message subject">
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message <span class="required">*</span></label>
-                        <textarea id="message" name="message" required placeholder="Tell us how we can help you..." aria-label="Your message"></textarea>
+                        <textarea id="message" name="message" required placeholder="I'm writing because..." aria-label="Your message"></textarea>
                         <div class="error-text" id="messageError">Please enter your message.</div>
                     </div>
 
@@ -713,8 +913,8 @@
                     <input type="hidden" name="_next" value="thank-you">
 
                     <button type="submit" class="submit-btn" id="submitBtn">
-                        <i class="fas fa-envelope"></i>
-                        <span id="btnText">Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                        <span id="btnText">Send Your Message</span>
                         <div class="loading-spinner" id="loadingSpinner"></div>
                     </button>
                 </form>
@@ -722,52 +922,52 @@
 
             <!-- Contact Information -->
             <div class="contact-info">
-                <h2>Get in Touch</h2>
+                <h2>How We Can Help</h2>
                 
                 <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-lightbulb"></i>
                     <div class="contact-item-content">
-                        <h3>Location</h3>
-                        <p>Gujarat, India</p>
+                        <h3>Tool Suggestions</h3>
+                        <p>Have an idea for a new tool? Let us know and we might build it!</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-bug"></i>
+                    <div class="contact-item-content">
+                        <h3>Report an Issue</h3>
+                        <p>Found a bug or calculation error? We'll fix it promptly.</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-handshake"></i>
+                    <div class="contact-item-content">
+                        <h3>Collaborations</h3>
+                        <p>Interested in working together? We're open to partnerships.</p>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div class="contact-item-content">
-                        <h3>Business Email</h3>
+                        <h3>Email Us Directly</h3>
                         <p>support@jay-tools.com</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
-                    <div class="contact-item-content">
-                        <h3>Response Time</h3>
-                        <p>Usually within 24-48 hours</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fas fa-tools"></i>
-                    <div class="contact-item-content">
-                        <h3>What We Help With</h3>
-                        <p>Tool suggestions, bug reports, business partnerships, technical support</p>
                     </div>
                 </div>
 
                 <!-- Social Links -->
                 <div class="social-links">
-                    <h3>Follow Us</h3>
+                    <h3>Connect With Us</h3>
                     <div class="social-icons">
                         <a href="https://instagram.com/jaytools" class="social-icon" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-icon" target="_blank" rel="noopener" aria-label="Follow us on Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://github.com/jayprajapati" class="social-icon" target="_blank" rel="noopener" aria-label="Follow us on GitHub">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-icon" target="_blank" rel="noopener" aria-label="Like us on Facebook">
-                            <i class="fab fa-facebook"></i>
+                        <a href="https://linkedin.com/in/jayprajapati" class="social-icon" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">
+                            <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
                 </div>
@@ -787,7 +987,6 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li><a href="sample-page.html">Sample Page</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -878,9 +878,8 @@
                         <p>Your body requires a specific number of calories to maintain basic functions (Basal Metabolic Rate or BMR) plus additional calories for daily activities (resulting in your Total Daily Energy Expenditure or TDEE). When you consume fewer calories than your TDEE, you create a deficit that leads to weight loss through fat mobilization and oxidation.</p>
                         
                         <h3>Calculating Your Deficit: The Numbers Behind Weight Loss</h3>
-                        <p>The science is quantifiable: one pound (0.45kg) of body fat contains approximately 3,500 calories of stored energy. Therefore, a daily deficit of 500 calories should theoretically result in losing one pound per week. Similarly, a deficit of 1,000 calories daily would yield approximately two pounds of weight loss per week.</p>
-                        
-                        <p>However, individual factors like metabolic rate, hormone levels, sleep quality, genetic factors, and stress can influence this rate. The body also adapts to consistent caloric restriction, which is why weight loss often follows a non-linear pattern over time.</p>
+                        <p>The science is quantifiable: one pound (0.45kg) of body fat contains approximately 3,500 calories of stored energy. Therefore, a daily deficit of 500 calories should theoretically result in losing one pound per week. Similarly, a deficit of 1,000 calories daily would yield approximately two pounds of weight loss per week.</p>                        
+                        <p>However, individual factors like metabolism rate, hormone levels, sleep quality, genetic factors, and stress can influence this rate. The body also adapts to consistent caloric restriction, which is why weight loss often follows a non-linear pattern over time.</p>
                         
                         <h3>Finding Your Optimal Deficit Range</h3>
                         <p>Creating a moderate calorie deficit of 15-20% below your TDEE is generally considered sustainable and healthy for most individuals. Research indicates this range optimizes fat loss while minimizing muscle loss and metabolic adaptation. For example:</p>
@@ -1402,60 +1401,6 @@
             }
         });
     </script>
-    <script>
-        // Enhance section headings and FAQ functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Handle FAQ accordion functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    // Toggle the current item
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all FAQ items
-                    faqItems.forEach(faqItem => {
-                        faqItem.classList.remove('active');
-                    });
-                    
-                    // If it wasn't active, make it active
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-            
-            // Auto-open first FAQ item
-            if (faqItems.length > 0) {
-                faqItems[0].classList.add('active');
-            }
-            
-            // Add automatic numbering to steps
-            const steps = document.querySelectorAll('.simple-steps li');
-            steps.forEach((step, index) => {
-                step.setAttribute('value', index + 1);
-            });
-            
-            // Enhance heading visibility with scroll animation
-            const infoSections = document.querySelectorAll('.info-section');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            infoSections.forEach(section => {
-                observer.observe(section);
-                
-                // Add initial fade-in class
-                section.classList.add('section-fade-in');
-            });
-        });
-    </script>
+
 </body>
 </html>

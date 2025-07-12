@@ -74,8 +74,26 @@
             background: #f8f9fa;
             padding: 1rem 2rem;
             margin-bottom: 2rem;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #333333;
             font-size: 0.9rem;
+            color: #333333;
+        }
+        
+        .breadcrumb a {
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .breadcrumb a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: #666666;
         }
         
         @media (max-width: 768px) {
@@ -358,7 +376,7 @@
         <!-- Breadcrumb Navigation -->
         <div class="container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
-                <span>Home</span>
+                <a href="index.html">Home</a>
             </nav>
         </div>
         

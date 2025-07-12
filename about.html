@@ -111,28 +111,38 @@
             padding: 2rem 1rem;
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
         .breadcrumb {
             background: #f8f9fa;
             padding: 1rem 2rem;
             margin-bottom: 2rem;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #333333;
             font-size: 0.9rem;
+            color: #333333;
         }
 
         .breadcrumb a {
-            color: #3498db;
+            color: #333333;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 500;
         }
 
         .breadcrumb a:hover {
-            color: #2980b9;
+            color: #000000;
             text-decoration: underline;
         }
 
         .breadcrumb-separator {
             margin: 0 0.5rem;
-            color: #999;
+            color: #666666;
         }
 
         .about-section {
@@ -140,31 +150,30 @@
             padding: 2rem;
             background-color: #f8f9fa;
             border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .about-section:nth-child(even) {
-            background-color: #f9f9f9;
+        .about-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .about-hero {
             text-align: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            margin-bottom: 3rem;
-            padding: 3rem 2rem;
+            background: #ffffff;
+            margin-bottom: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
         }
 
         .about-hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .about-hero p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333333;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .about-section h2 {
@@ -172,6 +181,8 @@
             font-weight: 600;
             color: #2c3e50;
             margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
         }
 
         .about-section p {
@@ -194,11 +205,17 @@
             border-radius: 6px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .feature-item i {
             font-size: 2rem;
-            color: #3498db;
+            color: #333333;
             margin-bottom: 1rem;
         }
 
@@ -230,12 +247,22 @@
             color: #2c3e50;
             margin-bottom: 1rem;
         }
+        
+        .mission-list {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-list li {
+            margin-bottom: 0.5rem;
+        }
 
         .cta-section {
             text-align: center;
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            background: linear-gradient(135deg, #333333 0%, #222222 100%);
             color: white;
             padding: 3rem 2rem;
+            border-radius: 8px;
         }
 
         .cta-section h2 {
@@ -258,7 +285,7 @@
 
         .cta-btn {
             background-color: white;
-            color: #3498db;
+            color: #333333;
             padding: 0.75rem 2rem;
             text-decoration: none;
             border-radius: 6px;
@@ -269,6 +296,7 @@
         .cta-btn:hover {
             background-color: #f8f9fa;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .cta-btn.secondary {
@@ -279,7 +307,7 @@
 
         .cta-btn.secondary:hover {
             background-color: white;
-            color: #3498db;
+            color: #333333;
         }
 
         /* Responsive Design */
@@ -294,20 +322,37 @@
             }
 
             .about-hero {
-                padding: 2rem 1rem;
+                padding: 1.5rem 0.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .about-hero h1 {
-                font-size: 2rem;
-            }
-
-            .about-hero p {
-                font-size: 1.1rem;
+                font-size: 1.75rem;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-container {
+                padding: 0.75rem;
+            }
+            
+            .about-section {
+                padding: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .about-hero {
+                padding: 1.25rem 0.5rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .about-hero h1 {
+                font-size: 1.5rem;
             }
 
             .cta-buttons {
@@ -317,6 +362,10 @@
 
             .cta-btn {
                 width: 200px;
+            }
+            
+            .breadcrumb {
+                padding: 0.75rem 1rem;
             }
         }
     </style>
@@ -391,9 +440,9 @@
             <section class="sidebar-section">
                 <h3><i class="fas fa-fire"></i> Popular Tools</h3>
                 <ul class="popular-tools">
-                    <li><a href="tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
-                    <li><a href="tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
-                    <li><a href="tools/seperate-tool/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                    <li><a href="calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="health/ivf-calculator.html">IVF Due Date Calculator</a></li>
                 </ul>
             </section>
 
@@ -419,7 +468,7 @@
     <!-- Main Content -->
     <main class="about-main">
         <!-- Breadcrumb Navigation -->
-        <div class="about-container">
+        <div class="container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="index.html">Home</a>
                 <span class="breadcrumb-separator">></span>
@@ -430,47 +479,51 @@
         <div class="about-container">
             <!-- Hero Section -->
             <section class="about-hero">
-                <h1>Empowering People With Smart Web Tools</h1>
-                <p>Jay Tools is your go-to platform for daily-use digital utilities.</p>
+                <h1>ABOUT Us</h1>
             </section>
 
             <!-- Our Story Section -->
             <section class="about-section">
                 <h2>Our Story</h2>
-                <p>Jay Tools started as a passion project by Jay Prajapati to solve common everyday online problems that people face. What began as a simple collection of utility tools has evolved into a comprehensive platform offering free, fast and mobile-friendly solutions for students, developers and everyday users.</p>
-                <p>We recognized that people often needed quick calculations, conversions and utilities without the hassle of downloading apps or dealing with complex interfaces. That's why we created Jay Tools - to provide instant access to essential digital utilities that just work.</p>
+                <p>Jay Tools began as a passion project by Jay Prajapati to address common everyday challenges people face online. What started as a simple collection of utility tools has grown into a comprehensive platform offering free, fast, and mobile-friendly solutions for students, professionals, and everyday users.</p>
+                <p>We noticed that people frequently need quick calculations, conversions, and utilities without the hassle of downloading apps or navigating complex interfaces. That's why we created Jay Tools – to provide instant access to essential digital utilities that simply work when you need them.</p>
             </section>
 
             <!-- What We Offer Section -->
             <section class="about-section">
                 <h2>What We Offer</h2>
-                <p>Our platform provides a wide range of tools designed to make your daily digital tasks easier and more efficient.</p>
+                <p>Our platform provides a diverse range of tools designed to make your daily digital tasks easier, more efficient, and accessible from any device.</p>
                 
                 <div class="features-grid">
                     <div class="feature-item">
                         <i class="fas fa-gift"></i>
-                        <h3>Free Tools for Daily Use</h3>
-                        <p>All our tools are completely free with no hidden costs or subscriptions.</p>
+                        <h3>Always Free</h3>
+                        <p>All our tools are completely free to use with no hidden costs, subscriptions, or paywalls.</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-code"></i>
-                        <h3>Built with HTML, CSS, JS</h3>
-                        <p>Lightweight and fast-loading tools built with modern web technologies.</p>
+                        <h3>Fast & Lightweight</h3>
+                        <p>Built with modern web standards for lightning-fast loading and minimal resource usage.</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-mobile-alt"></i>
-                        <h3>100% Mobile Friendly</h3>
-                        <p>All tools work perfectly on desktop, tablet and mobile devices.</p>
+                        <h3>Mobile Responsive</h3>
+                        <p>Every tool works flawlessly on desktop, tablet, and mobile devices of all screen sizes.</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-graduation-cap"></i>
-                        <h3>Student & Developer Friendly</h3>
-                        <p>Designed with students and developers in mind for quick calculations.</p>
+                        <h3>Education Focused</h3>
+                        <p>Special attention to tools that help students, educators, and lifelong learners succeed.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lock"></i>
+                        <h3>Privacy Friendly</h3>
+                        <p>No tracking or data collection – your information stays private and secure.</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-lightbulb"></i>
-                        <h3>Study, Health, Utility, Finance</h3>
-                        <p>Comprehensive tools covering various aspects of daily life.</p>
+                        <h3>Comprehensive Coverage</h3>
+                        <p>Tools for health, finance, study, personal planning, and more – all in one place.</p>
                     </div>
                 </div>
             </section>
@@ -478,8 +531,14 @@
             <!-- Our Mission Section -->
             <section class="about-section">
                 <h2>Our Mission</h2>
-                <p>We believe technology should simplify life, not complicate it. Our mission is to deliver simple and useful tools for students, developers and everyday users. We strive to create intuitive interfaces that provide instant results without any learning curve.</p>
-                <p>Every tool we build focuses on three core principles: simplicity, speed and accessibility. We want anyone, anywhere, to be able to access our tools and get the help they need in seconds, not minutes.</p>
+                <p>We believe technology should simplify life, not complicate it. Our mission is to create and maintain a collection of web-based tools that are intuitive, accessible, and immediately useful for everyone – from students to professionals to everyday users.</p>
+                <p>Every tool we build focuses on three core principles:</p>
+                <ul class="mission-list">
+                    <li><strong>Simplicity:</strong> Clean interfaces that anyone can use without a learning curve</li>
+                    <li><strong>Speed:</strong> Fast-loading tools that provide instant results</li>
+                    <li><strong>Accessibility:</strong> Designed for everyone, regardless of device or technical ability</li>
+                </ul>
+                <p>We want anyone, anywhere, to access our tools and get the help they need in seconds, not minutes.</p>
             </section>
 
             <!-- Meet the Creator Section -->
@@ -488,17 +547,18 @@
                 <div class="creator-info">
                     <h3 class="creator-name">Jay Prajapati — Founder & Developer</h3>
                     <p>Jay is a passionate web developer and problem-solver who believes in the power of simple, effective tools. With a background in computer science and a keen eye for user experience, Jay has dedicated countless hours to creating and refining each tool on this platform.</p>
-                    <p>When not coding, Jay enjoys exploring new technologies, contributing to open-source projects and finding creative solutions to everyday problems that affect millions of people worldwide.</p>
+                    <p>His philosophy is that technology should work for people, not the other way around. This belief guides the development of every tool on Jay Tools – ensuring they're intuitive, fast, and solve real problems people face daily.</p>
+                    <p>When not coding, Jay enjoys exploring new technologies, contributing to open-source projects, and finding creative solutions to everyday challenges that affect millions of people worldwide.</p>
                 </div>
             </section>
 
             <!-- Call to Action Section -->
             <section class="cta-section">
-                <h2>Ready to Explore?</h2>
-                <p>Explore our tools or suggest a new one!</p>
+                <h2>Ready to Explore Our Tools?</h2>
+                <p>Discover our collection of free tools or suggest a new one you'd like to see!</p>
                 <div class="cta-buttons">
-                    <a href="index.html" class="cta-btn">Browse Tools</a>
-                    <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+                    <a href="index.html" class="cta-btn">Browse All Tools</a>
+                    <a href="contact.html" class="cta-btn secondary">Suggest a Tool</a>
                 </div>
             </section>
         </div>
@@ -519,7 +579,6 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li><a href="sample-page.html">Sample Page</a></li>
                         </ul>
                     </nav>
                 </div>

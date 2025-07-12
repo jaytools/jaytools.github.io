@@ -23,12 +23,12 @@
     --color-gray-800: #1f2937;
     --color-gray-900: #111827;
     --color-white: #ffffff;
-    --primary-color: #3498db;
-    --primary-color-rgb: 52, 152, 219;
-    --primary-dark: #2980b9;
-    --secondary-color: #2ecc71;
-    --secondary-color-rgb: 46, 204, 113;
-    --secondary-dark: #27ae60;
+    --primary-color: #333333;
+    --primary-color-rgb: 51, 51, 51;
+    --primary-dark: #000000;
+    --secondary-color: #666666;
+    --secondary-color-rgb: 102, 102, 102;
+    --secondary-dark: #444444;
     --error-color: #e74c3c;
     --error-color-rgb: 231, 76, 60;
     --button-text: #ffffff;
@@ -57,11 +57,11 @@
 
 /* CSS Variables - Light Mode (Default) */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --secondary-text-color: #333333;
+    --bg-color: #f8f8f8;
+    --text-color: #333333;
+    --secondary-text-color: #555555;
     --card-bg: #ffffff;
-    --input-bg: #f9f9f9;
+    --input-bg: #f0f0f0;
     --border-color: #e0e0e0;
     --dark-border-color: #cccccc;
     --tooltip-bg: #333333;
@@ -70,15 +70,15 @@
 
 /* Dark Mode Theme */
 body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --secondary-text-color: #e0e0e0;
-    --card-bg: #1e1e1e;
-    --input-bg: #2a2a2a;
-    --border-color: #444444;
-    --dark-border-color: #666666;
-    --tooltip-bg: #f5f7fa;
-    --tooltip-text: #333333;
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --secondary-text-color: #bbbbbb;
+    --card-bg: #2a2a2a;
+    --input-bg: #3a3a3a;
+    --border-color: #555555;
+    --dark-border-color: #777777;
+    --tooltip-bg: #e0e0e0;
+    --tooltip-text: #1a1a1a;
 }
 
 /* Apply Theme to Body */
@@ -102,7 +102,7 @@ body {
 }
 
 .breadcrumb a {
-    color: var(--color-primary);
+    color: var(--primary-dark);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -128,7 +128,7 @@ body.dark-mode .breadcrumb a {
 }
 
 body.dark-mode .breadcrumb a:hover {
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 
 body.dark-mode .breadcrumb-separator {
@@ -168,7 +168,7 @@ body.dark-mode .breadcrumb-separator {
     border: none;
     background-color: var(--card-bg);
     border-radius: 1rem;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
@@ -176,16 +176,16 @@ body.dark-mode .breadcrumb-separator {
 }
 
 .dark-mode .tool-card {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .tool-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .tool-ribbon {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     padding: 0.8rem 0;
     text-align: center;
     color: white;
@@ -260,7 +260,7 @@ body.dark-mode .breadcrumb-separator {
     height: 6px;
     background: linear-gradient(90deg, 
         var(--primary-color) 0%, 
-        var(--secondary-color) 50%,
+        var(--primary-dark) 50%,
         var(--primary-color) 100%);
     border-radius: 0 0 1.5rem 1.5rem;
     z-index: 1;
@@ -276,7 +276,7 @@ body.dark-mode .breadcrumb-separator {
     display: inline-block;
     z-index: 1;
     letter-spacing: -0.5px;
-    background: linear-gradient(120deg, var(--text-color) 0%, var(--primary-color) 100%);
+    background: linear-gradient(120deg, var(--text-color) 0%, var(--primary-dark) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -286,16 +286,16 @@ body.dark-mode .breadcrumb-separator {
     font-size: 0.9em;
     margin-right: 0.3rem;
     vertical-align: -0.05em;
-    color: var(--primary-color);
-    -webkit-text-fill-color: var(--primary-color); /* Override the transparent text for the icon only */
-    text-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.4);
+    color: var(--primary-dark);
+    -webkit-text-fill-color: var(--primary-dark); /* Override the transparent text for the icon only */
+    text-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.2);
 }
 
 .tool-header h1:after {
     position: absolute;
     width: 70%;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
     bottom: -8px;
     left: 0;
     border-radius: 2px;
@@ -318,7 +318,7 @@ body.dark-mode .breadcrumb-separator {
     z-index: 1;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
     padding-left: 1rem;
-    border-left: 3px solid var(--secondary-color);
+    border-left: 3px solid var(--primary-color);
 }
 
 .dark-mode .tool-header {
@@ -737,7 +737,7 @@ body.dark-mode .radio-description {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 2.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     position: relative;
@@ -750,7 +750,7 @@ body.dark-mode .radio-description {
 .calculate-btn:hover {
     background-color: #333333;
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .calculate-btn:active {
@@ -761,12 +761,12 @@ body.dark-mode .radio-description {
 body.dark-mode .calculate-btn {
     background-color: #ffffff;
     color: #000000;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .calculate-btn:hover {
     background-color: #f0f0f0;
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
 }
 
 .calculate-btn i {
@@ -806,7 +806,7 @@ body.dark-mode .calculate-btn:hover {
 .result-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -814,7 +814,7 @@ body.dark-mode .calculate-btn:hover {
 }
 
 .result-title i {
-    color: var(--secondary-color);
+    color: var(--primary-dark);
 }
 
 .result-cards {
@@ -1023,7 +1023,7 @@ body.dark-mode .result-tip i {
 }
 
 .nutrient-fill.fat {
-    background: linear-gradient(90deg, #f39c12, #f1c40f);
+    background: linear-gradient(90deg, #888888, #aaaaaa);
 }
 
 .nutrient-value {
@@ -1078,12 +1078,12 @@ body.dark-mode .reset-btn:hover {
 
 .history-btn {
     background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
 }
 
 .history-btn:hover {
-    background-color: rgba(var(--primary-color-rgb), 0.1);
+    background-color: rgba(var(--primary-color-rgb), 0.05);
 }
 
 .reset-btn i, .history-btn i {
@@ -1098,8 +1098,8 @@ body.dark-mode .reset-btn:hover {
 
 .view-history-btn {
     background-color: transparent;
-    color: var(--primary-color, #3498db);
-    border: 1px dashed var(--primary-color, #3498db);
+    color: var(--primary-dark, #333333);
+    border: 1px dashed var(--primary-dark, #333333);
     padding: 10px 16px;
     font-size: 0.9rem;
     border-radius: var(--border-radius, 8px);
@@ -1112,7 +1112,7 @@ body.dark-mode .reset-btn:hover {
 }
 
 .view-history-btn:hover {
-    background-color: rgba(52, 152, 219, 0.05);
+    background-color: rgba(51, 51, 51, 0.05);
     border-style: solid;
 }
 
@@ -1121,12 +1121,12 @@ body.dark-mode .reset-btn:hover {
 }
 
 body.dark-mode .view-history-btn {
-    color: var(--dark-primary-color, #5dade2);
-    border-color: var(--dark-primary-color, #5dade2);
+    color: var(--primary-color, #bbbbbb);
+    border-color: var(--primary-color, #bbbbbb);
 }
 
 body.dark-mode .view-history-btn:hover {
-    background-color: rgba(93, 173, 226, 0.1);
+    background-color: rgba(102, 102, 102, 0.1);
 }
 
 /* History Panel */
@@ -1332,7 +1332,7 @@ body.dark-mode .view-history-btn:hover {
 
 .result-highlight {
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     display: block;
     margin-bottom: 0.2rem;
 }
@@ -1373,7 +1373,7 @@ body.dark-mode .view-history-btn:hover {
     padding: 3rem;
     background-color: var(--card-bg);
     border-radius: 1.5rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(var(--primary-color-rgb), 0.1);
@@ -1385,8 +1385,8 @@ body.dark-mode .view-history-btn:hover {
     width: 300px;
     height: 300px;
     background: radial-gradient(circle, 
-        rgba(var(--secondary-color-rgb), 0.1) 0%, 
-        rgba(var(--secondary-color-rgb), 0) 70%);
+        rgba(var(--primary-color-rgb), 0.05) 0%, 
+        rgba(var(--primary-color-rgb), 0) 70%);
     border-radius: 50%;
     top: -150px;
     right: -100px;
@@ -1401,7 +1401,7 @@ body.dark-mode .view-history-btn:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233498db' fill-opacity='0.03'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 20.83l2.83-2.83 1.41 1.41L1.41 22H0v-1.17zM0 3.07l2.83-2.83 1.41 1.41L1.41 4.24H0V3.07zm28.24 35.66l1.41-1.41 2.83 2.83V40h-1.41l-2.83-2.83zm14.58-.24l2.83-2.83 1.41 1.41L40 36.41V40h-1.41l-2.83-2.83zM40 1.41l2.83-2.83 1.41 1.41L40 3.07V0h1.41l2.83 2.83z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23333333' fill-opacity='0.03'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 20.83l2.83-2.83 1.41 1.41L1.41 22H0v-1.17zM0 3.07l2.83-2.83 1.41 1.41L1.41 4.24H0V3.07zm28.24 35.66l1.41-1.41 2.83 2.83V40h-1.41l-2.83-2.83zm14.58-.24l2.83-2.83 1.41 1.41L40 36.41V40h-1.41l-2.83-2.83zM40 1.41l2.83-2.83 1.41 1.41L40 3.07V0h1.41l2.83 2.83z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     opacity: 0.4;
     z-index: 0;
 }
@@ -1415,7 +1415,7 @@ body.dark-mode .view-history-btn:hover {
     z-index: 1;
     display: inline-block;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--color-primary);
+    border-bottom: 3px solid var(--primary-dark);
 }
 
 .info-section h3 {
@@ -1435,7 +1435,7 @@ body.dark-mode .view-history-btn:hover {
     width: 18px;
     height: 18px;
     margin-right: 10px;
-    background: var(--color-primary);
+    background: var(--primary-dark);
     border-radius: 50%;
     opacity: 0.2;
 }
@@ -1477,7 +1477,7 @@ body.dark-mode .view-history-btn:hover {
     top: 0.6rem;
     width: 8px;
     height: 8px;
-    background-color: var(--color-primary);
+    background-color: var(--primary-dark);
     border-radius: 50%;
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
@@ -1485,7 +1485,7 @@ body.dark-mode .view-history-btn:hover {
 /* Dark mode specific styles for info section */
 body.dark-mode .info-section {
     background-color: var(--card-bg);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -1644,11 +1644,11 @@ body.dark-mode .step-number {
 
 .simple-steps strong {
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 
 body.dark-mode .simple-steps strong {
-    color: var(--primary-light);
+    color: var(--secondary-text-color);
 }
 
 @media (max-width: 768px) {
@@ -1763,7 +1763,7 @@ body.dark-mode .faq-question {
 .related-tool-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-color, #3498db);
+    border-color: var(--primary-dark, #333333);
 }
 
 .tool-card-content {
@@ -1774,7 +1774,7 @@ body.dark-mode .faq-question {
 
 .tool-card-content i {
     font-size: 2rem;
-    color: var(--primary-color, #3498db);
+    color: var(--primary-dark, #333333);
     margin-bottom: 0.75rem;
 }
 
@@ -1801,7 +1801,7 @@ body.dark-mode .related-tool-card {
 
 body.dark-mode .related-tool-card:hover {
     border-color: var(--primary-color, #3498db);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
 }
 
 body.dark-mode .tool-card-content h3 {
@@ -1870,9 +1870,9 @@ body.dark-mode .tool-card-content p {
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid var(--primary-dark);
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.2);
+    box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.1);
 }
 
 /* Accessibility */
@@ -1888,7 +1888,84 @@ select:focus-visible {
     border: 0;
 }
 
-/* Mobile Responsive Adjustments */
+/* Responsive Adjustments */
+
+/* Simple Steps List Styling */
+.simple-steps {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+}
+
+.simple-steps li {
+    counter-increment: step-counter;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.simple-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .simple-steps li::before {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.simple-steps li strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.simple-steps li ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+.simple-steps li ul li {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+}
+
+.simple-steps li ul li::before {
+    content: '\2022'; /* Bullet point */
+    color: #000000; /* Black bullet */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: static; /* Reset positioning */
+    background: none; /* Remove background */
+    box-shadow: none; /* Remove shadow */
+    border-radius: 0; /* Remove border-radius */
+    height: auto;
+    vertical-align: middle;
+}
+
+body.dark-mode .simple-steps li ul li::before {
+    color: #ffffff; /* White bullet in dark mode */
+}
 @media (max-width: 768px) {
     .tool-header {
         padding: 2rem 1.5rem;

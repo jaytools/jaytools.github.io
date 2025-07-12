@@ -141,24 +141,26 @@
             background: #f8f9fa;
             padding: 1rem 2rem;
             margin-bottom: 2rem;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #333333;
             font-size: 0.9rem;
+            color: #333333;
         }
-
+        
         .breadcrumb a {
-            color: #3498db;
+            color: #333333;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 500;
         }
-
+        
         .breadcrumb a:hover {
-            color: #2980b9;
+            color: #000000;
             text-decoration: underline;
         }
-
+        
         .breadcrumb-separator {
             margin: 0 0.5rem;
-            color: #999;
+            color: #666666;
         }
 
         .page-content {
@@ -312,8 +314,9 @@
             }
 
             .breadcrumb {
-                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
                 margin-bottom: 1rem;
+                padding: 0.75rem 1rem;
             }
 
             .page-header {
@@ -363,6 +366,16 @@
             .page-content {
                 color: black;
             }
+        }
+
+        /* Page specific styles */
+        /* Container for consistent spacing */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -475,11 +488,13 @@
     <!-- Main Content -->
     <main>
         <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="breadcrumb-separator">></span>
-            <span>DMCA Notice</span>
-        </nav>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <span>DMCA Notice</span>
+            </nav>
+        </div>
 
         <!-- Page Container -->
         <div class="page-container">
