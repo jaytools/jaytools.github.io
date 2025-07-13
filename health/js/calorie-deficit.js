@@ -1,45 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Calorie Deficit Calculator initializing...');
-    
-    // Get DOM elements
-    const toolForm = document.getElementById('toolForm');
-    const resultSection = document.getElementById('resultSection');
-    const resetBtn = document.getElementById('resetBtn');
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    
-    // Make sure result section is hidden initially
-    if (resultSection) {
-        resultSection.style.display = 'none';
-        console.log('Result section initialized and hidden.');
-    } else {
-        console.error('Result section not found in DOM!');
-    }
-    
-    // Result elements
-    const bmrValue = document.getElementById('bmrValue');
-    const tdeeValue = document.getElementById('tdeeValue');
-    const calorieGoalValue = document.getElementById('calorieGoalValue');
-    const weeklyLossValue = document.getElementById('weeklyLossValue');
-    const proteinValue = document.getElementById('proteinValue');
-    const carbsValue = document.getElementById('carbsValue');
-    const fatValue = document.getElementById('fatValue');
-    const resultTip = document.getElementById('resultTip');
 
-    // Error message elements
-    const ageError = document.getElementById('ageError');
-    const genderError = document.getElementById('genderError');
-    const heightError = document.getElementById('heightError');
-    const weightError = document.getElementById('weightError');
-    const activityLevelError = document.getElementById('activityLevelError');
-    
-    // Form data
-    let age, gender, height, weight, activityLevel, deficitType;
-    
-    // Calculation results
-    let bmr, tdee, calorieGoal, weeklyLoss;
-    let protein, carbs, fat;
-    
     // Constants for calculations
     const CALORIES_PER_KG = 7700; // Approximately 7700 calories per kg of body weight
     const DEFICIT_VALUES = {
@@ -47,12 +8,74 @@ document.addEventListener('DOMContentLoaded', function() {
         'moderate': 0.5,   // 0.5 kg per week (moderate deficit)
         'aggressive': 1.0  // 1.0 kg per week (aggressive deficit)
     };
-    
+    const MIN_AGE = 15;
+    const MAX_AGE = 100;
+
+    // Centralized DOM element selection
+    const DOM = {
+        toolForm: document.getElementById('toolForm'),
+        resultSection: document.getElementById('resultSection'),
+        resetBtn: document.getElementById('resetBtn'),
+        themeToggle: document.getElementById('themeToggle'),
+        themeIcon: document.getElementById('themeIcon'),
+        bmrValue: document.getElementById('bmrValue'),
+        tdeeValue: document.getElementById('tdeeValue'),
+        calorieGoalValue: document.getElementById('calorieGoalValue'),
+        weeklyLossValue: document.getElementById('weeklyLossValue'),
+        proteinValue: document.getElementById('proteinValue'),
+        carbsValue: document.getElementById('carbsValue'),
+        fatValue: document.getElementById('fatValue'),
+        resultTip: document.getElementById('resultTip'),
+        ageError: document.getElementById('ageError'),
+        genderError: document.getElementById('genderError'),
+        heightError: document.getElementById('heightError'),
+        weightError: document.getElementById('weightError'),
+        activityLevelError: document.getElementById('activityLevelError'),
+        ageInput: document.getElementById('age'),
+        genderInput: document.getElementById('gender'),
+        heightInput: document.getElementById('height'),
+        weightInput: document.getElementById('weight'),
+        activityLevelInput: document.getElementById('activityLevel')
+    };
+
+    // Form data and calculation results (can be managed within functions or a state object)
+    let formData = {};
+    let calculationResults = {};
+
+    /**
+     * Initializes the result section to be hidden.
+     */
+    function initializeResultSection() {
+        if (DOM.resultSection) {
+            DOM.resultSection.style.display = 'none';
+            console.log('Result section initialized and hidden.');
+        } else {
+            console.error('Result section not found in DOM!');
+        }
+    }
+
+    /**
+     * Resets all error messages and input error classes.
+     */
+    function resetErrors() {
+        Object.values(DOM).forEach(element => {
+            if (element && element.id && element.id.endsWith('Error')) {
+                element.style.display = 'none';
+            }
+            if (element && element.classList && element.tagName === 'INPUT') {
+                element.classList.remove('error');
+            }
+        });
+    }
+
     console.log('Tool initialization complete. Ready for user input.');
-    
+
+    // Initialize result section visibility
+    initializeResultSection();
+
     // Form submission handler
-    if (toolForm) {
-        toolForm.addEventListener('submit', function(e) {
+    if (DOM.toolForm) {
+        DOM.toolForm.addEventListener('submit', function(e) {
             e.preventDefault();
             console.log('Form submitted, processing data...');
             
@@ -60,15 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
             resetErrors();
             
             // Get form values
-            age = parseInt(document.getElementById('age').value);
-            gender = document.getElementById('gender').value;
-            height = parseFloat(document.getElementById('height').value);
-            weight = parseFloat(document.getElementById('weight').value);
-            activityLevel = parseFloat(document.getElementById('activityLevel').value);
-            deficitType = document.querySelector('input[name="deficitType"]:checked').value;
+            getFormData();
             
             // Validate form values
-            if (!validateForm()) {
+            if (!validateForm(formData)) {
                 console.log('Form validation failed.');
                 return;
             }
@@ -80,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             displayResults();
             
             // Scroll to results
-            resultSection.scrollIntoView({ behavior: 'smooth' });
+            DOM.resultSection.scrollIntoView({ behavior: 'smooth' });
             
             console.log('Form processed successfully, results displayed.');
         });
@@ -89,35 +107,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Reset button handler
-    if (resetBtn) {
-        resetBtn.addEventListener('click', function() {
+    if (DOM.resetBtn) {
+        DOM.resetBtn.addEventListener('click', function() {
             console.log('Reset button clicked.');
-            
-            // Hide result section
-            resultSection.style.display = 'none';
-            
-            // Reset form
-            toolForm.reset();
-            
-            // Scroll to top of form
-            toolForm.scrollIntoView({ behavior: 'smooth' });
-            
-            console.log('Form reset complete.');
+            clearForm();
         });
     }
     
     // Theme toggle handler
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
+    if (DOM.themeToggle) {
+        DOM.themeToggle.addEventListener('click', function() {
             document.body.classList.toggle('dark-theme');
             
             // Update icon
             if (document.body.classList.contains('dark-theme')) {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
+                DOM.themeIcon.classList.remove('fa-moon');
+                DOM.themeIcon.classList.add('fa-sun');
             } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
+                DOM.themeIcon.classList.remove('fa-sun');
+                DOM.themeIcon.classList.add('fa-moon');
             }
             
             // Save theme preference
@@ -130,8 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const savedTheme = localStorage.getItem('calorieDeficitTheme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-theme');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
+            DOM.themeIcon.classList.remove('fa-moon');
+            DOM.themeIcon.classList.add('fa-sun');
         }
         
         console.log('Theme initialized to:', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
@@ -183,20 +191,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Utility Functions
-    
-    // Validate form inputs
-    function validateForm() {
+    /**
+     * Gathers form data from the DOM and stores it in the formData object.
+     */
+    function getFormData() {
+        formData.age = parseInt(DOM.ageInput.value);
+        formData.gender = DOM.genderInput.value;
+        formData.height = parseFloat(DOM.heightInput.value);
+        formData.weight = parseFloat(DOM.weightInput.value);
+        formData.activityLevel = parseFloat(DOM.activityLevelInput.value);
+        formData.deficitType = document.querySelector('input[name="deficitType"]:checked').value;
+        console.log('Form data gathered:', formData);
+    }
+
+    /**
+     * Validates the form inputs.
+     * @param {object} data - The form data to validate.
+     * @returns {boolean} - True if all inputs are valid, false otherwise.
+     */
+    function validateForm(data) {
         let isValid = true;
         
-        // Age validation (15-100)
-        if (isNaN(age) || age < 15 || age > 100) {
-            ageError.style.display = 'block';
-            document.getElementById('age').classList.add('error');
+        // Age validation (MIN_AGE-MAX_AGE)
+        if (isNaN(data.age) || data.age < MIN_AGE || data.age > MAX_AGE) {
+            DOM.ageError.style.display = 'block';
+            DOM.ageInput.classList.add('error');
             isValid = false;
         } else {
-            ageError.style.display = 'none';
-            document.getElementById('age').classList.remove('error');
+            DOM.ageError.style.display = 'none';
+            DOM.ageInput.classList.remove('error');
         }
         
         // Gender validation
