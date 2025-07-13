@@ -1,10 +1,10 @@
-# Jay Tools - Simple and Convenient Web Tools
+# Task Proper - Simple and Convenient Web Tools
 
-A comprehensive collection of free online tools and calculators designed to make everyday calculations simple and accessible. Jay Tools provides a wide range of utilities for students, professionals, and anyone who needs quick, reliable calculations - all without requiring sign-ups, downloads, or installations.
+A comprehensive collection of free online tools and calculators designed to make everyday calculations simple and accessible. Task Proper provides a wide range of utilities for students, professionals, and anyone who needs quick, reliable calculations - all without requiring sign-ups, downloads, or installations.
 
 ## 🌐 Live Demo
 
-**🔗 Website**: [https://jaytools.github.io](https://jaytools.github.io)
+**🔗 Website**: [https://taskproper.com](https://taskproper.com)
 
 Experience all the tools live on our website. No installation or signup required - just visit and start using any calculator or utility tool instantly!
 
@@ -61,7 +61,7 @@ Experience all the tools live on our website. No installation or signup required
 ## 📁 Project Structure
 
 ```
-jay-tools/
+task-proper/
 ├── index.html              # Homepage with tool listings
 ├── about.html              # About page
 ├── contact.html            # Contact information
@@ -170,8 +170,8 @@ The website is fully responsive and optimized for:
 
 1. **Clone or Download** the project files:
 ```bash
-git clone https://github.com/your-username/jay-tools.git
-cd jay-tools
+git clone https://github.com/your-username/task-proper.git
+cd task-proper
 ```
 
 2. **Open** any HTML file in your browser or use a local server:
@@ -246,7 +246,7 @@ The website includes:
 
 ## 🤝 Contributing
 
-We welcome contributions to improve Jay Tools:
+We welcome contributions to improve Task Proper:
 
 1. **Report Bugs**: Use the contact form to report issues
 2. **Suggest Features**: Propose new tools or improvements
@@ -262,8 +262,8 @@ We welcome contributions to improve Jay Tools:
 ## 📞 Support
 
 For support, questions, or feedback:
-- **Website**: [https://www.jay-tools.com](https://www.jay-tools.com)
-- **Contact Page**: Visit our [contact page](https://www.jay-tools.com/contact.html)
+- **Website**: [https://taskproper.com](https://taskproper.com)
+- **Contact Page**: Visit our [contact page](https://taskproper.com/contact.html)
 - **Social Media**: Follow us on Instagram [@jaytools](https://instagram.com/jaytools)
 
 ## 📄 License
@@ -278,7 +278,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## ✨ Best Practices for Tool Development
 
-When creating new tools for Jay-Tools, follow these best practices:
+When creating new tools for Task Proper, follow these best practices:
 
 1. **Modular JavaScript**: Separate concerns into discrete functions
 2. **Error Handling**: Validate all user inputs and provide clear error messages
@@ -293,6 +293,6 @@ When creating new tools for Jay-Tools, follow these best practices:
 
 ---
 
-**Jay Tools** - Making calculations simple and accessible for everyone.
+**Task Proper** - Making calculations simple and accessible for everyone.
 
 *Last Updated: July 2025*

@@ -58,10 +58,10 @@ foreach ($category in $categoryFolders) {
             $content = $content -replace "href=`"\.\./$oldPath`"", "href=`"$relativePrefix$newPath`""
             
             # In canonical and Open Graph URLs
-            $content = $content -replace "jaytools\.github\.io/$oldPath", "jaytools.github.io/$newPath"
+            $content = $content -replace "jaytools\.github\.io/$oldPath", "taskproper.com/$newPath"
             
             # In schema.org JSON-LD
-            $content = $content -replace "`"url`":\s*`"https://jaytools\.github\.io/$oldPath`"", "`"url`": `"https://jaytools.github.io/$newPath`""
+            $content = $content -replace "`"url`":\s*`"https://jaytools\.github\.io/$oldPath`"", "`"url`": `"https://taskproper.com/$newPath`""
         }
         
         # Update the popular tools section specifically

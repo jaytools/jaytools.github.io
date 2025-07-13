@@ -1,11 +1,12 @@
 /* TEAM */
-Developer: Jay Prajapati
-Contact: starofficial202503@gmail.com
-Website: https://jaytools.github.io
-GitHub: https://github.com/jaytools
+Developer: Task Proper
+Contact: contact@taskproper.com
+Website: https://taskproper.com
+GitHub: https://github.com/taskproper
 Location: India
 
 /* SITE */
+Site: Task Proper
 Last update: 2023-07-19
 Language: English
 Doctype: HTML5
