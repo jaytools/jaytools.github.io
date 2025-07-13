@@ -10,28 +10,46 @@
     <meta name="author" content="Jay Prajapati">
     <meta name="google-site-verification" content="Jtzh2Fz6HEgUsb1J2Y_FIyaS4aqLDLoKQ1K9HJcCkl4" />
 
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Task Proper - Simple and Convenient Web Tools">
+    <meta property="og:description" content="Task Proper offers free calculators, converters and tools for students, developers and daily use. Simple, fast and reliable utilities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.taskproper.com">
+    <meta property="og:image" content="https://www.taskproper.com/favicon.ico">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Task Proper - Simple and Convenient Web Tools">
+    <meta name="twitter:description" content="Task Proper offers free calculators, converters and tools for students, developers and daily use. Simple, fast and reliable utilities.">
+    <meta name="twitter:image" content="https://www.taskproper.com/favicon.ico">
+
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://taskproper.com/">
+    <link rel="canonical" href="https://www.taskproper.com/">
 
-    <!-- Preload Important Assets -->
-    <link rel="preload" href="css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/custom.css"></noscript>
-    <link rel="preload" as="image" href="/path-to-your-logo.webp">
-
-    <!-- Fonts with display swap -->
+    <!-- Fonts and CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
+    <link rel="preload" href="css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/custom.css"></noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- JavaScript (deferred for performance) -->
-    <script src="js/script.js" defer></script>
+    <!-- Icons -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
-    <!-- Google Analytics -->
+    <!-- Accessibility Improvements -->
+    <style>
+      :focus {
+        outline: 2px dashed #007acc;
+        outline-offset: 2px;
+      }
+    </style>
+
+    <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGPGZR9Y07"></script>
-    <script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -39,18 +57,11 @@
     </script>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5SJZF69M');</script>
-
-    <!-- Favicon and Apple Touch Icons -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
 
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -196,227 +207,202 @@
         ]
     }
     </script>
+
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJZF69M"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <!-- Header Section -->
-    <header class="site-header">
-        <nav class="navbar">
-            <!-- Left side: Logo and subtitle -->
-            <div class="navbar-brand">
-                <a href="index.html" class="brand-link">
-                    <h1 class="site-title">Task Proper</h1>
-                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
-                </a>
-            </div>
 
-            <!-- Right side: Search, menu and social -->
-            <div class="navbar-actions">
-                <div class="search-wrapper">
-                    <!-- Desktop Search -->
-                    <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
-                        <button class="search-button" aria-label="Search tools">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <!-- Mobile Search Toggle -->
-                    <button class="search-toggle" aria-label="Toggle search">
+<!-- Header Section -->
+<header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+        <!-- Left side: Logo and subtitle -->
+        <div class="navbar-brand">
+            <a href="index.html" class="brand-link">
+                <h1 class="site-title">Task Proper</h1>
+                <p class="site-subtitle">Simple and Convenient Web Tools</p>
+            </a>
+        </div>
+
+        <!-- Right side: Search, menu and social -->
+        <div class="navbar-actions">
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search tools..." aria-label="Search tools">
+                    <button class="search-button" aria-label="Search">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <button class="menu-toggle" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </nav>
-
-        <!-- Mobile Search Container -->
-        <div class="mobile-search-container">
-            <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
-                <button class="mobile-search-close" aria-label="Close search">
-                    <i class="fas fa-times"></i>
+                <button class="search-toggle" aria-label="Open search">
+                    <i class="fas fa-search"></i>
                 </button>
             </div>
-            <div class="search-results">
-                <!-- Search results will be populated here -->
-            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Instagram profile">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Sidebar Menu -->
-    <aside class="sidebar" aria-label="Main menu">
-        <div class="sidebar-header">
-            <h2>Menu</h2>
-            <button class="sidebar-close" aria-label="Close menu">
+    <!-- Mobile Search Container -->
+    <div class="mobile-search-container">
+        <div class="mobile-search-wrapper">
+            <input type="text" class="mobile-search-input" placeholder="Search tools..." aria-label="Search tools mobile">
+            <button class="mobile-search-close" aria-label="Close search">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-
-        <div class="sidebar-content">
-            <section class="sidebar-section">
-                <h3><i class="fas fa-star"></i> Favorites</h3>
-                <div class="favorites-container">
-                    <p class="no-favorites">No favorite tools yet.</p>
-                </div>
-            </section>
-
-            <section class="sidebar-section">
-                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
-                <ul class="popular-tools">
-                    <li><a href="calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
-                    <li><a href="health/calorie-deficit.html">Calorie Deficit Finder</a></li>
-                    <li><a href="health/ivf-calculator.html">IVF Due Date Calculator</a></li>
-                </ul>
-            </section>
-
-            <section class="sidebar-section">
-                <h3><i class="fas fa-tags"></i> Tags</h3>
-                <div class="sidebar-tags-nav">
-                    <div class="sidebar-tags-scroll">
-                        <button class="tag-btn active" data-tag="all">All Tools</button>
-                        <button class="tag-btn" data-tag="calculator">Calculator</button>
-                        <button class="tag-btn" data-tag="health">Health</button>
-                        <button class="tag-btn" data-tag="study">Study</button>
-                        <button class="tag-btn" data-tag="finance">Finance</button>
-                        <button class="tag-btn" data-tag="personal">Personal</button>
-                        <button class="tag-btn" data-tag="converter">Converter</button>
-                        <button class="tag-btn" data-tag="utility">Utility</button>
-                        <button class="tag-btn" data-tag="planner">Planner</button>
-                    </div>
-                </div>
-            </section>
+        <div class="search-results" aria-live="polite">
+            <!-- Search results populated dynamically -->
         </div>
-    </aside>
+    </div>
+</header>
 
-    <!-- Tags Navigation -->
-    <nav class="tags-nav" aria-label="Filter tools by tag">
-        <button class="scroll-btn scroll-left" aria-label="Scroll left">
-            <i class="fas fa-chevron-left"></i>
+<!-- Sidebar Menu -->
+<aside class="sidebar" aria-label="Main menu">
+    <div class="sidebar-header">
+        <h2>Menu</h2>
+        <button class="sidebar-close" aria-label="Close sidebar">
+            <i class="fas fa-times"></i>
         </button>
-        <div class="tags-scroll">
-            <button class="tag-btn active" data-tag="all">All Tools</button>
-            <button class="tag-btn" data-tag="calculator">Calculator</button>
-            <button class="tag-btn" data-tag="health">Health</button>
-            <button class="tag-btn" data-tag="study">Study</button>
-            <button class="tag-btn" data-tag="finance">Finance</button>
-            <button class="tag-btn" data-tag="personal">Personal</button>
-            <button class="tag-btn" data-tag="converter">Converter</button>
-            <button class="tag-btn" data-tag="utility">Utility</button>
-            <button class="tag-btn" data-tag="planner">Planner</button>
-        </div>
-        <button class="scroll-btn scroll-right" aria-label="Scroll right">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    </nav>
+    </div>
 
-    <!-- Main Content -->
-    <main class="site-main">
-        <!-- Breadcrumb Navigation -->
-        <div class="container">
-            <nav class="breadcrumb" aria-label="Breadcrumb">
-                <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            </nav>
-        </div>
-        
-        <div class="tools-container">
-            <div class="tools-grid">
-                <!-- Tool cards will be dynamically inserted here -->
+    <div class="sidebar-content">
+        <section class="sidebar-section">
+            <h3><i class="fas fa-star"></i> Favorites</h3>
+            <div class="favorites-container">
+                <p class="no-favorites">No favorite tools yet.</p>
             </div>
+        </section>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <!-- Pagination will be dynamically inserted here -->
-            </div>
-        </div>
-    </main>
+        <section class="sidebar-section">
+            <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+            <ul class="popular-tools">
+                <li><a href="calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                <li><a href="health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                <li><a href="health/ivf-calculator.html">IVF Due Date Calculator</a></li>
+            </ul>
+        </section>
 
-    <!-- Overlay -->
-    <div class="overlay" aria-hidden="true"></div>
-
-    <!-- Template for tool card -->
-    <template id="tool-card-template">
-        <a class="tool-link">
-            <article class="tool-card">
-                <button class="favorite-btn" aria-label="Toggle favorite">
-                    <i class="fas fa-star"></i>
-                </button>
-                <h3 class="tool-title"></h3>
-            </article>
-        </a>
-    </template>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-columns">
-                <!-- Pages -->
-                <div class="footer-column">
-                    <h3>Pages</h3>
-                    <nav class="footer-nav">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- Legal & Info -->
-                <div class="footer-column">
-                    <h3>Legal & Info</h3>
-                    <nav class="footer-nav">
-                        <ul>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="terms.html">Terms of Use</a></li>
-                            <li><a href="disclaimer.html">Disclaimer</a></li>
-                            <li><a href="dmca.html">DMCA</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- Social -->
-                <div class="footer-column">
-                    <h3>Social</h3>
-                    <nav class="footer-nav">
-                        <ul class="social-links">
-                            <li>
-                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+        <section class="sidebar-section">
+            <h3><i class="fas fa-tags"></i> Tags</h3>
+            <div class="sidebar-tags-nav">
+                <div class="sidebar-tags-scroll">
+                    <button class="tag-btn active" data-tag="all" aria-label="Show all tools">All Tools</button>
+                    <button class="tag-btn" data-tag="calculator">Calculator</button>
+                    <button class="tag-btn" data-tag="health">Health</button>
+                    <button class="tag-btn" data-tag="study">Study</button>
+                    <button class="tag-btn" data-tag="finance">Finance</button>
+                    <button class="tag-btn" data-tag="personal">Personal</button>
+                    <button class="tag-btn" data-tag="converter">Converter</button>
+                    <button class="tag-btn" data-tag="utility">Utility</button>
+                    <button class="tag-btn" data-tag="planner">Planner</button>
                 </div>
             </div>
+        </section>
+    </div>
+</aside>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Task Proper by Jay Prajapati. All rights reserved.</p>
+<!-- Tags Navigation -->
+<nav class="tags-nav" aria-label="Tool categories">
+    <button class="scroll-btn scroll-left" aria-label="Scroll left">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="tags-scroll">
+        <button class="tag-btn active" data-tag="all">All Tools</button>
+        <button class="tag-btn" data-tag="calculator">Calculator</button>
+        <button class="tag-btn" data-tag="health">Health</button>
+        <button class="tag-btn" data-tag="study">Study</button>
+        <button class="tag-btn" data-tag="finance">Finance</button>
+        <button class="tag-btn" data-tag="personal">Personal</button>
+        <button class="tag-btn" data-tag="converter">Converter</button>
+        <button class="tag-btn" data-tag="utility">Utility</button>
+        <button class="tag-btn" data-tag="planner">Planner</button>
+    </div>
+    <button class="scroll-btn scroll-right" aria-label="Scroll right">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</nav>
+
+<!-- Main Content -->
+<main class="site-main">
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </nav>
+    </div>
+    
+    <div class="tools-container">
+        <div class="tools-grid">
+            <!-- Tool cards dynamically inserted -->
+        </div>
+        <div class="pagination" aria-label="Tool pagination">
+            <!-- Pagination inserted dynamically -->
+        </div>
+    </div>
+</main>
+
+<!-- Overlay -->
+<div class="overlay" aria-hidden="true"></div>
+
+<!-- Template for tool card -->
+<template id="tool-card-template">
+    <a class="tool-link">
+        <article class="tool-card">
+            <button class="favorite-btn" aria-label="Toggle favorite tool">
+                <i class="fas fa-star"></i>
+            </button>
+            <h3 class="tool-title"></h3>
+        </article>
+    </a>
+</template>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Pages</h3>
+                <nav class="footer-nav" aria-label="Footer pages">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal & Info</h3>
+                <nav class="footer-nav" aria-label="Legal and information">
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="dmca.html">DMCA</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-column">
+                <h3>Social</h3>
+                <nav class="footer-nav" aria-label="Social links">
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://github.com/taskproper" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                        <li><a href="https://www.linkedin.com/in/taskproper" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Task Proper by Jay Prajapati. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <script defer src="js/script.js"></script>
 </body>
 </html>
