@@ -1045,6 +1045,48 @@ mark {
     margin-top: 0.5rem;
 }
 
+.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #333333;
+            font-size: 0.9rem;
+            color: #333333;
+        }
+        
+        .breadcrumb a {
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .breadcrumb a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: #666666;
+        }
+        
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+
 /* Tool List */
 .tool-list {
     list-style: none;

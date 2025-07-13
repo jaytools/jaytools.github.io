@@ -9,24 +9,27 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Jay Prajapati">
     <meta name="google-site-verification" content="Jtzh2Fz6HEgUsb1J2Y_FIyaS4aqLDLoKQ1K9HJcCkl4" />
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Task Proper - Simple and Convenient Web Tools">
-    <meta property="og:description" content="Task Proper offers free calculators, converters and tools for students, developers and daily use. Simple, fast and reliable utilities.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.taskproper.com">
-    <meta property="og:image" content="https://www.taskproper.com/favicon.ico">
-    
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Task Proper - Simple and Convenient Web Tools">
-    <meta name="twitter:description" content="Task Proper offers free calculators, converters and tools for students, developers and daily use. Simple, fast and reliable utilities.">
-    <meta name="twitter:image" content="https://www.taskproper.com/favicon.ico">
-    
+
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.taskproper.com/">
-    
-    <!-- Google tag (gtag.js) -->
+    <link rel="canonical" href="https://taskproper.com/">
+
+    <!-- Preload Important Assets -->
+    <link rel="preload" href="css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/custom.css"></noscript>
+    <link rel="preload" as="image" href="/path-to-your-logo.webp">
+
+    <!-- Fonts with display swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JavaScript (deferred for performance) -->
+    <script src="js/script.js" defer></script>
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGPGZR9Y07"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -41,71 +44,14 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5SJZF69M');</script>
-    <!-- End Google Tag Manager -->
-    
-    <!-- Favicon -->
+
+    <!-- Favicon and Apple Touch Icons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    
-    <!-- Additional page-specific styles -->
-    <style>
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .breadcrumb {
-            background: #f8f9fa;
-            padding: 1rem 2rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid #333333;
-            font-size: 0.9rem;
-            color: #333333;
-        }
-        
-        .breadcrumb a {
-            color: #333333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .breadcrumb a:hover {
-            color: #000000;
-            text-decoration: underline;
-        }
-        
-        .breadcrumb-separator {
-            margin: 0 0.5rem;
-            color: #666666;
-        }
-        
-        @media (max-width: 768px) {
-            .breadcrumb {
-                font-size: 0.8rem;
-                margin-bottom: 1rem;
-                padding: 0.75rem 1rem;
-            }
-        }
-    </style>
-    
+
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
     {
@@ -472,8 +418,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Custom JavaScript -->
-    <script src="js/script.js"></script>
 </body>
 </html>
