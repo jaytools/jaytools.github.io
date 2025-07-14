@@ -31,12 +31,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload and then load icon-svg.css for optimized SVG icons -->
+    <link rel="preload" href="css/icon-svg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/icon-svg.css"></noscript>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/health-page.css">
+
+    <!-- Accessibility: Focus Outline for keyboard navigation -->
+    <style>
+        /* Universal focus outline for accessibility */
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -92,7 +102,7 @@
                     <div class="search-container">
                         <input type="text" class="search-input" placeholder="Search tools...">
                         <button class="search-button" aria-label="Search tools">
-                            <i class="fas fa-search"></i>
+                            <span class="icon-search" aria-hidden="true"></span>
                         </button>
                     </div>
                     <!-- Mobile Search Toggle -->
@@ -101,7 +111,7 @@
                     </button>
                 </div>
                 <button class="menu-toggle" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
+                    <span class="icon-menu" aria-hidden="true"></span>
                 </button>
             </div>
         </nav>
@@ -111,7 +121,7 @@
             <div class="mobile-search-wrapper">
                 <input type="text" class="mobile-search-input" placeholder="Search tools...">
                 <button class="mobile-search-close" aria-label="Close search">
-                    <i class="fas fa-times"></i>
+                    <span class="icon-times" aria-hidden="true"></span>
                 </button>
             </div>
             <div class="search-results">
@@ -131,14 +141,14 @@
 
         <div class="sidebar-content">
             <section class="sidebar-section">
-                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <h3><span class="icon-star" aria-hidden="true"></span> Favorites</h3>
                 <div class="favorites-container">
                     <p class="no-favorites">No favorite tools yet.</p>
                 </div>
             </section>
 
             <section class="sidebar-section">
-                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <h3><span class="icon-fire" aria-hidden="true"></span> Popular Tools</h3>
                 <ul class="popular-tools">
                     <li><a href="calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
                     <li><a href="health/calorie-deficit.html">Calorie Deficit Finder</a></li>
@@ -151,23 +161,23 @@
                 <div class="sidebar-tags-nav">
                     <div class="sidebar-tags-scroll">
                         <a href="index.html" class="nav-link">
-                            <i class="fas fa-home"></i>
+                            <span class="icon-home" aria-hidden="true"></span>
                             <span>Home</span>
                         </a>
                         <a href="about.html" class="nav-link">
-                            <i class="fas fa-info-circle"></i>
+                            <span class="icon-info-circle" aria-hidden="true"></span>
                             <span>About</span>
                         </a>
                         <a href="contact.html" class="nav-link">
-                            <i class="fas fa-envelope"></i>
+                            <span class="icon-envelope" aria-hidden="true"></span>
                             <span>Contact</span>
                         </a>
                         <a href="privacy.html" class="nav-link">
-                            <i class="fas fa-shield-alt"></i>
+                            <span class="icon-shield-alt" aria-hidden="true"></span>
                             <span>Privacy Policy</span>
                         </a>
                         <a href="terms.html" class="nav-link">
-                            <i class="fas fa-file-contract"></i>
+                            <span class="icon-file-contract" aria-hidden="true"></span>
                             <span>Terms of Service</span>
                         </a>
                     </div>
@@ -187,7 +197,7 @@
                         <span class="breadcrumb-separator">/</span>
                     </li>
                     <li>
-                        <span><i class="fas fa-heartbeat"></i> Health</span>
+                        <span><span class="icon-heartbeat" aria-hidden="true"></span> Health</span>
                     </li>
                 </ol>
             </nav>
@@ -224,19 +234,19 @@
                 <!-- Features Grid -->
                 <div class="features-grid">
                     <div class="feature-card">
-                        <i class="fas fa-calculator"></i>
+                        <span class="icon-calculator" aria-hidden="true"></span>
                         <h3>Simple & Accurate</h3>
                         <p>All calculations are based on scientific formulas with clear, easy-to-understand results.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <i class="fas fa-mobile-alt"></i>
+                        <span class="icon-mobile-alt" aria-hidden="true"></span>
                         <h3>Mobile Friendly</h3>
                         <p>Use our tools on any device – perfect for checking health metrics on the go.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <i class="fas fa-lock"></i>
+                        <span class="icon-lock" aria-hidden="true"></span>
                         <h3>Privacy First</h3>
                         <p>All calculations are done in your browser – no personal health data is ever stored or shared.</p>
                     </div>
@@ -247,7 +257,7 @@
         <!-- Back to Top -->
         <div class="back-to-top">
             <a href="#top" aria-label="Back to top of page">
-                <i class="fas fa-arrow-up"></i>
+                <span class="icon-arrow-up" aria-hidden="true"></span>
                 Back to Top
             </a>
         </div>
@@ -422,7 +432,7 @@
             toolCard.innerHTML = `
                 <article class="tool-card">
                     <button class="favorite-btn" aria-label="Toggle favorite">
-                        <i class="fas fa-star"></i>
+                        <span class="icon-star" aria-hidden="true"></span>
                     </button>
                     <h3 class="tool-title">${tool.name}</h3>
                 </article>
@@ -559,7 +569,7 @@
             // Previous button
             if (currentHealthPage > 1) {
                 html += `<button class="pagination-btn" onclick="changeHealthPage(${currentHealthPage - 1})">
-                    <i class="fas fa-chevron-left"></i> Previous
+                    <span class="icon-chevron-left" aria-hidden="true"></span> Previous
                 </button>`;
             }
 
@@ -600,7 +610,7 @@
             // Next button
             if (currentHealthPage < totalPages) {
                 html += `<button class="pagination-btn" onclick="changeHealthPage(${currentHealthPage + 1})">
-                    Next <i class="fas fa-chevron-right"></i>
+                    Next <span class="icon-chevron-right" aria-hidden="true"></span>
                 </button>`;
             }
 
@@ -618,5 +628,6 @@
             window.scrollTo({ top: document.querySelector('.category-header').offsetTop, behavior: 'smooth' });
         }
     </script>
+    <script src="/js/icon-replacement.js"></script>
 </body>
 </html>

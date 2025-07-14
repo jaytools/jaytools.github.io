@@ -31,11 +31,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SVG Icons CSS (preloaded for performance) -->
+    <link rel="preload" href="css/icon-svg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/icon-svg.css"></noscript>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Accessibility Improvements -->
+    <style>
+      :focus {
+        outline: 2px dashed #007acc;
+        outline-offset: 2px;
+      }
+    </style>
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -1063,7 +1072,7 @@
                 toolCard.innerHTML = `
                     <article class="tool-card">
                         <button class="favorite-btn" aria-label="Toggle favorite">
-                            <i class="fas fa-star"></i>
+                            <span class="icon icon-star"></span>
                         </button>
                         <h3 class="tool-title">${tool.name}</h3>
                     </article>
@@ -1168,5 +1177,7 @@
             processConverterTools(window.tools, converterGrid, paginationContainer);
         }
     </script>
+    <!-- Load icon replacement script to optimize FontAwesome usage -->
+    <script src="js/icon-replacement.js" defer></script>
 </body>
 </html>

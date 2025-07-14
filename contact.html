@@ -36,11 +36,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SVG Icons CSS (preloaded for performance) -->
+    <link rel="preload" href="css/icon-svg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/icon-svg.css"></noscript>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Accessibility Improvements -->
+    <style>
+      :focus {
+        outline: 2px dashed #007acc;
+        outline-offset: 2px;
+      }
+    </style>
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -913,7 +922,7 @@
                     <input type="hidden" name="_next" value="thank-you">
 
                     <button type="submit" class="submit-btn" id="submitBtn">
-                        <i class="fas fa-paper-plane"></i>
+                        <span class="icon icon-paper-plane"></span>
                         <span id="btnText">Send Your Message</span>
                         <div class="loading-spinner" id="loadingSpinner"></div>
                     </button>
@@ -925,7 +934,7 @@
                 <h2>How We Can Help</h2>
                 
                 <div class="contact-item">
-                    <i class="fas fa-lightbulb"></i>
+                    <span class="icon icon-lightbulb"></span>
                     <div class="contact-item-content">
                         <h3>Tool Suggestions</h3>
                         <p>Have an idea for a new tool? Let us know and we might build it!</p>
@@ -933,7 +942,7 @@
                 </div>
 
                 <div class="contact-item">
-                    <i class="fas fa-bug"></i>
+                    <span class="icon icon-bug"></span>
                     <div class="contact-item-content">
                         <h3>Report an Issue</h3>
                         <p>Found a bug or calculation error? We'll fix it promptly.</p>
@@ -941,7 +950,7 @@
                 </div>
 
                 <div class="contact-item">
-                    <i class="fas fa-handshake"></i>
+                    <span class="icon icon-handshake"></span>
                     <div class="contact-item-content">
                         <h3>Collaborations</h3>
                         <p>Interested in working together? We're open to partnerships.</p>
@@ -949,7 +958,7 @@
                 </div>
 
                 <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
+                    <span class="icon icon-envelope"></span>
                     <div class="contact-item-content">
                         <h3>Email Us Directly</h3>
                         <p>support@jay-tools.com</p>
@@ -961,13 +970,13 @@
                     <h3>Connect With Us</h3>
                     <div class="social-icons">
                         <a href="https://instagram.com/jaytools" class="social-icon" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
-                            <i class="fab fa-instagram"></i>
+                            <span class="icon icon-instagram"></span>
                         </a>
                         <a href="https://github.com/jayprajapati" class="social-icon" target="_blank" rel="noopener" aria-label="Follow us on GitHub">
-                            <i class="fab fa-github"></i>
+                            <span class="icon icon-github"></span>
                         </a>
                         <a href="https://linkedin.com/in/jayprajapati" class="social-icon" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">
-                            <i class="fab fa-linkedin"></i>
+                            <span class="icon icon-linkedin"></span>
                         </a>
                     </div>
                 </div>
@@ -1021,12 +1030,12 @@
                             </li>
                             <li>
                                 <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                    <span class="icon icon-youtube"></span> YouTube
                                 </a>
                             </li>
                             <li>
                                 <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                    <span class="icon icon-linkedin"></span> LinkedIn
                                 </a>
                             </li>
                         </ul>
@@ -1045,5 +1054,8 @@
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
+    
+    <!-- Load icon replacement script to optimize FontAwesome usage -->
+    <script src="js/icon-replacement.js" defer></script>
 </body>
 </html>

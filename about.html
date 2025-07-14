@@ -36,8 +36,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Optimized Icons - SVG-based solution -->
+    <link rel="preload" href="css/icon-svg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/icon-svg.css"></noscript>
+    
+    <!-- Accessibility Improvements -->
+    <style>
+      :focus {
+        outline: 2px solid rgba(0,122,204,0.5);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 2px rgba(0,122,204,0.2);
+      }
+    </style>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
@@ -497,32 +507,32 @@
                 
                 <div class="features-grid">
                     <div class="feature-item">
-                        <i class="fas fa-gift"></i>
+                        <span class="icon icon-gift"></span>
                         <h3>Always Free</h3>
                         <p>All our tools are completely free to use with no hidden costs, subscriptions, or paywalls.</p>
                     </div>
                     <div class="feature-item">
-                        <i class="fas fa-code"></i>
+                        <span class="icon icon-code"></span>
                         <h3>Fast & Lightweight</h3>
                         <p>Built with modern web standards for lightning-fast loading and minimal resource usage.</p>
                     </div>
                     <div class="feature-item">
-                        <i class="fas fa-mobile-alt"></i>
+                        <span class="icon icon-mobile-alt"></span>
                         <h3>Mobile Responsive</h3>
                         <p>Every tool works flawlessly on desktop, tablet, and mobile devices of all screen sizes.</p>
                     </div>
                     <div class="feature-item">
-                        <i class="fas fa-graduation-cap"></i>
+                        <span class="icon icon-graduation-cap"></span>
                         <h3>Education Focused</h3>
                         <p>Special attention to tools that help students, educators, and lifelong learners succeed.</p>
                     </div>
                     <div class="feature-item">
-                        <i class="fas fa-lock"></i>
+                        <span class="icon icon-lock"></span>
                         <h3>Privacy Friendly</h3>
                         <p>No tracking or data collection – your information stays private and secure.</p>
                     </div>
                     <div class="feature-item">
-                        <i class="fas fa-lightbulb"></i>
+                        <span class="icon icon-lightbulb"></span>
                         <h3>Comprehensive Coverage</h3>
                         <p>Tools for health, finance, study, personal planning, and more – all in one place.</p>
                     </div>
@@ -604,22 +614,22 @@
                         <ul class="social-links">
                             <li>
                                 <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
+                                    <span class="icon icon-instagram"></span> Instagram
                                 </a>
                             </li>
                             <li>
                                 <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
+                                    <span class="icon icon-github"></span> GitHub
                                 </a>
                             </li>
                             <li>
                                 <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                    <span class="icon icon-youtube"></span> YouTube
                                 </a>
                             </li>
                             <li>
                                 <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                    <span class="icon icon-linkedin"></span> LinkedIn
                                 </a>
                             </li>
                         </ul>
@@ -635,5 +645,8 @@
 
     <!-- Custom JavaScript -->
     <script src="js/script.js"></script>
+    
+    <!-- Load icon replacement script to optimize FontAwesome usage -->
+    <script src="js/icon-replacement.js" defer></script>
 </body>
 </html>

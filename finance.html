@@ -31,14 +31,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload and then load icon-svg.css for optimized SVG icons -->
+    <link rel="preload" href="css/icon-svg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/icon-svg.css"></noscript>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     
-    <!-- Sample Page Specific Styles -->
+    <!-- Accessibility: Focus Outline for keyboard navigation -->
     <style>
+        /* Universal focus outline for accessibility */
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
         /* Brand Link Styles */
         .brand-link {
             text-decoration: none;
@@ -634,7 +641,7 @@
             <!-- Back to Top -->
             <div class="back-to-top">
                 <a href="#top" aria-label="Back to top of page">
-                    <i class="fas fa-arrow-up"></i>
+                    <span class="icon icon-arrow-up"></span>
                     Back to Top
                 </a>
             </div>
@@ -677,22 +684,22 @@
                         <ul class="social-links">
                             <li>
                                 <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
+                                    <span class="icon icon-instagram"></span> Instagram
                                 </a>
                             </li>
                             <li>
                                 <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
+                                    <span class="icon icon-github"></span> GitHub
                                 </a>
                             </li>
                             <li>
                                 <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                    <span class="icon icon-youtube"></span> YouTube
                                 </a>
                             </li>
                             <li>
                                 <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                    <span class="icon icon-linkedin"></span> LinkedIn
                                 </a>
                             </li>
                         </ul>
@@ -727,5 +734,7 @@
             }
         });
     </script>
+    <!-- Load icon replacement script to optimize FontAwesome usage -->
+    <script src="js/icon-replacement.js" defer></script>
 </body>
 </html>

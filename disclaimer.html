@@ -9,7 +9,7 @@
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="Task Proper disclaimer, legal notice, terms of use, liability, free tools">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Task Proper">
+    <meta name="author" content="Jay Prajapati">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Task Proper Disclaimer">
@@ -28,15 +28,27 @@
     <link rel="manifest" href="site.webmanifest">
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Custom CSS -->
+  <link rel="preload" href="css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/custom.css"></noscript>
+
+  <!-- Optimized Icons - SVG-based solution -->
+  <link rel="preload" href="css/icon-svg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/icon-svg.css"></noscript>
+
+    <!-- Accessibility: Focus Outline for keyboard navigation -->
+    <style>
+        /* Universal focus outline for accessibility */
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -583,7 +595,8 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/icon-replacement.js" defer></script>
     <script>
         // Back to top smooth scroll
         document.addEventListener('DOMContentLoaded', function() {

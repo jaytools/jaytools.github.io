@@ -29,18 +29,18 @@
     <link rel="manifest" href="site.webmanifest">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/rules.css">
-    <link rel="stylesheet" href="css/preloader.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="preload" href="css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/custom.css"></noscript>
 
-    <!-- JS -->
-    <script src="js/script.js" defer></script>
-    <script src="js/wow.min.js" defer></script>
-    <script src="js/preloader.js" defer></script>
+  <!-- Optimized Icons - SVG-based solution -->
+  <link rel="preload" href="css/icon-svg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/icon-svg.css"></noscript>
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -505,19 +505,19 @@
                     <div class="search-container">
                         <input type="text" class="search-input" placeholder="Search tools...">
                         <button class="search-button" aria-label="Search tools">
-                            <i class="fas fa-search"></i>
+                            <span class="icon icon-search"></span>
                         </button>
                     </div>
                     <!-- Mobile Search Toggle -->
                     <button class="search-toggle" aria-label="Toggle search">
-                        <i class="fas fa-search"></i>
+                        <span class="icon icon-search"></span>
                     </button>
                 </div>
                 <button class="menu-toggle" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
+                    <span class="icon icon-bars"></span>
                 </button>
                 <a href="https://www.instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
+                    <span class="icon icon-instagram"></span>
                 </a>
             </div>
         </nav>
@@ -527,7 +527,7 @@
             <div class="mobile-search-wrapper">
                 <input type="text" class="mobile-search-input" placeholder="Search tools...">
                 <button class="mobile-search-close" aria-label="Close search">
-                    <i class="fas fa-times"></i>
+                    <span class="icon icon-times"></span>
                 </button>
             </div>
             <div class="search-results">
@@ -541,20 +541,20 @@
         <div class="sidebar-header">
             <h2>Menu</h2>
             <button class="sidebar-close" aria-label="Close menu">
-                <i class="fas fa-times"></i>
+                <span class="icon icon-times"></span>
             </button>
         </div>
 
         <div class="sidebar-content">
             <section class="sidebar-section">
-                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <h3><span class="icon icon-star"></span> Favorites</h3>
                 <div class="favorites-container">
                     <p class="no-favorites">No favorite tools yet.</p>
                 </div>
             </section>
 
             <section class="sidebar-section">
-                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <h3><span class="icon icon-fire"></span> Popular Tools</h3>
                 <ul class="popular-tools">
                     <li><a href="../tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
                     <li><a href="../tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
@@ -563,27 +563,27 @@
             </section>
 
             <section class="sidebar-section">
-                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <h3><span class="icon icon-tags"></span> Categories</h3>
                 <div class="sidebar-tags-nav">
                     <div class="sidebar-tags-scroll">
                         <a href="../index.html" class="nav-link">
-                            <i class="fas fa-home"></i>
+                            <span class="icon icon-home"></span>
                             <span>Home</span>
                         </a>
                         <a href="../about.html" class="nav-link">
-                            <i class="fas fa-info-circle"></i>
+                            <span class="icon icon-info-circle"></span>
                             <span>About</span>
                         </a>
                         <a href="../contact.html" class="nav-link">
-                            <i class="fas fa-envelope"></i>
+                            <span class="icon icon-envelope"></span>
                             <span>Contact</span>
                         </a>
                         <a href="../privacy.html" class="nav-link">
-                            <i class="fas fa-shield-alt"></i>
+                            <span class="icon icon-shield-alt"></span>
                             <span>Privacy Policy</span>
                         </a>
                         <a href="../terms.html" class="nav-link">
-                            <i class="fas fa-file-contract"></i>
+                            <span class="icon icon-file-contract"></span>
                             <span>Terms of Service</span>
                         </a>
                     </div>
@@ -783,7 +783,8 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/icon-replacement.js" defer></script>
     <script>
         // Back to top smooth scroll
         document.addEventListener('DOMContentLoaded', function() {
