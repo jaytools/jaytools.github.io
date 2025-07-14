@@ -11,7 +11,7 @@ const tools = [
     { 
         name: 'IVF Due Date Calculator',
         url: 'health/ivf-calculator.html',
-        tags: ['calculator', 'health']
+        tags: ['health', 'personal']
     },
     { 
         name: 'Pregnancy Weight Gain Calculator',
@@ -26,7 +26,7 @@ const tools = [
     { 
         name: 'Typing Speed Test Paragraph',
         url: 'study/typing-speed.html',
-        tags: ['utility', 'study']
+        tags: ['study', 'utility']
     },
     { 
         name: 'Calories Burned Walking',
@@ -41,7 +41,7 @@ const tools = [
     { 
         name: 'Calorie Deficit Finder',
         url: 'health/calorie-deficit.html',
-        tags: ['calculator', 'health']
+        tags: ['health', 'calculator']
     },
     { 
         name: 'Body Frame Size Calculator',
@@ -81,17 +81,17 @@ const tools = [
     { 
         name: 'Calories in Food Checker',
         url: 'health/food-calories.html',
-        tags: ['calculator', 'health']
+        tags: ['health', 'calculator']
     },
     { 
-        name: 'Pomodoro Timer',
+        name: 'Pomodoro Calculator',
         url: 'planner/pomodoro.html',
         tags: ['utility', 'study']
     },
     { 
         name: 'Daily Expense Tracker',
         url: 'finance/expense-tracker.html',
-        tags: ['planner', 'finance']
+        tags: ['finance', 'personal']
     },
     { 
         name: 'GPA to Percentage Calculator',
@@ -107,16 +107,6 @@ const tools = [
         name: 'Invite Generator',
         url: 'personal/invite-generator-inline.html',
         tags: ['utility', 'personal']
-    },
-    { 
-        name: 'Goal Planner',
-        url: 'planner/goal-planner.html',
-        tags: ['planner', 'personal']
-    },
-    { 
-        name: 'Protein Intake Calculator',
-        url: 'health/protein-intake.html',
-        tags: ['health', 'calculator']
     }
 ];
 
@@ -164,57 +154,50 @@ searchInput?.addEventListener('focus', function() {
 searchInput?.addEventListener('blur', function() {
     // Give time for click events to register before hiding results
     setTimeout(() => {
-        document.querySelector('.search-results')?.classList.remove('active');
+        const resultsContainer = document.querySelector('.search-results');
+        const desktopResultsContainer = document.querySelector('.desktop-search-results');
+        
+        if (resultsContainer) {
+            resultsContainer.classList.remove('active');
+            resultsContainer.classList.remove('show');
+        }
+        
+        if (desktopResultsContainer) {
+            desktopResultsContainer.classList.remove('active');
+            desktopResultsContainer.classList.remove('show');
+        }
     }, 200);
 });
 
-// Mobile search
-searchToggle?.addEventListener('click', toggleMobileSearch);
+// Hide search results when clicking outside (for desktop search on tool pages)
+document.addEventListener('click', function(e) {
+    if (!document.querySelector('.tools-grid')) { // Only on tool pages
+        const searchContainer = document.querySelector('.search-container');
+        const searchWrapper = document.querySelector('.search-wrapper');
+        const desktopResults = document.querySelector('.desktop-search-results');
+        
+        if (desktopResults && !searchWrapper?.contains(e.target)) {
+            desktopResults.classList.remove('show');
+            desktopResults.classList.remove('active');
+        }
+        
+        // Also hide mobile search results if clicking outside
+        if (searchResults && !searchContainer?.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.classList.remove('show');
+            searchResults.classList.remove('active');
+        }
+    }
+});
+
+// Mobile search event listeners
+searchToggle?.addEventListener('click', openMobileSearch);
 mobileSearchClose?.addEventListener('click', closeMobileSearch);
 mobileSearchInput?.addEventListener('input', handleMobileSearch);
 
-// Tag navigation
-document.querySelectorAll('.tag-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const tag = this.getAttribute('data-tag');
-        filterByTag(tag);
-        
-        // Update active state in both navs
-        document.querySelectorAll('.tag-btn').forEach(b => {
-            b.classList.toggle('active', b.getAttribute('data-tag') === tag);
-        });
-    });
-});
-
-// Horizontal tag scroll buttons
-const scrollLeftBtn = document.querySelector('.scroll-left');
-const scrollRightBtn = document.querySelector('.scroll-right');
-const tagsScroll = document.querySelector('.tags-scroll');
-
-if (scrollLeftBtn && scrollRightBtn && tagsScroll) {
-    scrollLeftBtn.addEventListener('click', () => {
-        tagsScroll.scrollBy({ left: -200, behavior: 'smooth' });
-    });
-    
-    scrollRightBtn.addEventListener('click', () => {
-        tagsScroll.scrollBy({ left: 200, behavior: 'smooth' });
-    });
-}
-
-// Initialize
-window.addEventListener('DOMContentLoaded', () => {
-    // Set initial tool list
-    renderTools();
-    updateFavorites();
-    
-    // Check for active tags in URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const tagParam = urlParams.get('tag');
-    if (tagParam) {
-        filterByTag(tagParam);
-        document.querySelectorAll('.tag-btn').forEach(b => {
-            b.classList.toggle('active', b.getAttribute('data-tag') === tagParam);
-        });
+// Close mobile search when clicking outside
+mobileSearchContainer?.addEventListener('click', (e) => {
+    if (e.target === mobileSearchContainer) {
+        closeMobileSearch();
     }
 });
 
@@ -222,310 +205,356 @@ window.addEventListener('DOMContentLoaded', () => {
 function toggleSidebar() {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
+    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
 }
 
 function closeSidebar() {
     sidebar.classList.remove('active');
     overlay.classList.remove('active');
-    document.body.classList.remove('no-scroll');
+    document.body.style.overflow = '';
 }
 
-function toggleMobileSearch() {
-    mobileSearchContainer.classList.add('active');
-    setTimeout(() => mobileSearchInput.focus(), 300);
+function createToolCard(tool) {
+    const template = document.querySelector('#tool-card-template');
+    const card = template.content.cloneNode(true);
+    
+    const title = card.querySelector('.tool-title');
+    const link = card.querySelector('.tool-link');
+    const favoriteBtn = card.querySelector('.favorite-btn');
+    
+    title.textContent = tool.name;
+    link.href = tool.url;
+    favoriteBtn.classList.toggle('active', favorites.includes(tool.name));
+    favoriteBtn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFavorite(tool.name);
+    };
+    
+    return card;
 }
 
-function closeMobileSearch() {
-    mobileSearchContainer.classList.remove('active');
-    searchResults.classList.remove('active');
-    mobileSearchInput.value = '';
+function renderTools(toolsList = tools) {
+    const start = currentTag === 'all' ? (currentPage - 1) * ITEMS_PER_PAGE : 0;
+    const end = currentTag === 'all' ? start + ITEMS_PER_PAGE : toolsList.length;
+    
+    // Sort tools: favorites first, then alphabetically
+    const sortedTools = [...toolsList].sort((a, b) => {
+        const aFav = favorites.includes(a.name);
+        const bFav = favorites.includes(b.name);
+        if (aFav !== bFav) return bFav - aFav;
+        return a.name.localeCompare(b.name);
+    });
+
+    const displayedTools = sortedTools.slice(start, end);
+    
+    toolsGrid.innerHTML = '';
+    displayedTools.forEach(tool => {
+        toolsGrid.appendChild(createToolCard(tool));
+    });
+
+    if (currentTag === 'all') {
+        renderPagination(toolsList.length);
+    } else {
+        document.querySelector('.pagination').style.display = 'none';
+    }
+}
+
+function renderPagination(totalItems) {
+    const pagination = document.querySelector('.pagination');
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+    if (totalPages <= 1) {
+        pagination.style.display = 'none';
+        return;
+    }
+
+    pagination.style.display = 'flex';
+    let html = '';
+
+    if (currentPage > 1) {
+        html += `<button class="pagination-btn" onclick="changePage(${currentPage - 1})">Previous</button>`;
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+        html += `
+            <button class="pagination-btn ${i === currentPage ? 'active' : ''}" 
+                    onclick="changePage(${i})">${i}</button>
+        `;
+    }
+
+    if (currentPage < totalPages) {
+        html += `<button class="pagination-btn" onclick="changePage(${currentPage + 1})">Next</button>`;
+    }
+
+    pagination.innerHTML = html;
+}
+
+function changePage(page) {
+    currentPage = page;
+    renderTools(filterTools());
+    window.scrollTo({ top: toolsGrid.offsetTop - 100, behavior: 'smooth' });
+}
+
+function filterTools() {
+    if (currentTag === 'all') return tools;
+    return tools.filter(tool => tool.tags.includes(currentTag));
+}
+
+function handleTagClick(tag) {
+    currentTag = tag;
+    currentPage = 1;
+    
+    document.querySelectorAll('.tag-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tag === tag);
+    });
+    
+    renderTools(filterTools());
+}
+
+function toggleFavorite(toolName) {
+    const index = favorites.indexOf(toolName);
+    if (index === -1) {
+        favorites.push(toolName);
+    } else {
+        favorites.splice(index, 1);
+    }
+    
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    updateFavorites();
+    renderTools(filterTools());
+}
+
+function updateFavorites() {
+    if (favorites.length === 0) {
+        favoritesList.innerHTML = '<p class="no-favorites">No favorite tools yet.</p>';
+        return;
+    }
+
+    const favTools = tools.filter(tool => favorites.includes(tool.name));
+    favoritesList.innerHTML = `
+        <ul class="favorites-list">
+            ${favTools.map(tool => `
+                <li><a href="${tool.url}">${tool.name}</a></li>
+            `).join('')}
+        </ul>
+    `;
 }
 
 function handleSearch(e) {
     const query = e.target.value.toLowerCase().trim();
     
-    // Only show results if there's something to search for
-    if (query) {
+    // Check if we're on a tool page (no tools-grid element)
+    const toolsGrid = document.querySelector('.tools-grid');
+    
+    if (!toolsGrid) {
+        // We're on a tool page, use search results display
+        if (query.length === 0) {
+            // Hide all search results containers
+            const resultsContainers = document.querySelectorAll('.search-results, .desktop-search-results');
+            resultsContainers.forEach(container => {
+                if (container) {
+                    container.classList.remove('show');
+                    container.classList.remove('active');
+                }
+            });
+            return;
+        }
+        
         const matchedTools = tools.filter(tool => 
             tool.name.toLowerCase().includes(query) ||
             tool.tags.some(tag => tag.toLowerCase().includes(query))
         );
         renderSearchResults(matchedTools, query);
     } else {
-        document.querySelector('.search-results')?.classList.remove('active');
+        // We're on the homepage, use normal grid rendering
+        const matchedTools = tools.filter(tool => 
+            tool.name.toLowerCase().includes(query) ||
+            tool.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+        renderTools(matchedTools);
     }
+}
+
+// Mobile search functions
+function openMobileSearch() {
+    mobileSearchContainer?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // Focus on search input after animation
+    setTimeout(() => {
+        mobileSearchInput?.focus();
+    }, 100);
+}
+
+function closeMobileSearch() {
+    mobileSearchContainer?.classList.remove('active');
+    if (searchResults) {
+        searchResults.classList.remove('show');
+        searchResults.classList.remove('active');
+    }
+    document.body.style.overflow = '';
+    mobileSearchInput.value = '';
 }
 
 function handleMobileSearch(e) {
     const query = e.target.value.toLowerCase().trim();
     
-    if (query) {
-        const matchedTools = tools.filter(tool => 
-            tool.name.toLowerCase().includes(query) ||
-            tool.tags.some(tag => tag.toLowerCase().includes(query))
-        );
-        renderMobileSearchResults(matchedTools, query);
-    } else {
-        searchResults.classList.remove('active');
+    if (query.length === 0) {
+        if (searchResults) {
+            searchResults.classList.remove('show');
+            searchResults.classList.remove('active');
+        }
+        return;
     }
+
+    const matchedTools = tools.filter(tool => 
+        tool.name.toLowerCase().includes(query) ||
+        tool.tags.some(tag => tag.toLowerCase().includes(query))
+    );
+    
+    renderSearchResults(matchedTools, query);
 }
 
 function renderSearchResults(matchedTools, query) {
-    const resultsContainer = document.querySelector('.search-results');
+    if (!searchResults && !document.querySelector('.search-wrapper')) return;
+    
+    // For desktop search on tool pages, create or use a desktop search results container
+    let resultsContainer = searchResults;
+    const isToolPage = !document.querySelector('.tools-grid');
+    const isDesktopSearch = window.innerWidth >= 768 && !mobileSearchContainer?.classList.contains('active');
+    
+    if (isToolPage && isDesktopSearch) {
+        // Check if desktop search results container exists
+        let desktopResults = document.querySelector('.desktop-search-results');
+        if (!desktopResults) {
+            // Create desktop search results container
+            desktopResults = document.createElement('div');
+            desktopResults.className = 'search-results desktop-search-results';
+            const searchWrapper = document.querySelector('.search-wrapper');
+            if (searchWrapper) {
+                searchWrapper.appendChild(desktopResults);
+            }
+        }
+        resultsContainer = desktopResults;
+    }
+    
     if (!resultsContainer) return;
     
-    resultsContainer.innerHTML = '';
+    if (matchedTools.length === 0) {
+        resultsContainer.innerHTML = `
+            <div class="no-results">
+                <i class="fas fa-search"></i>
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+        `;
+    } else {
+        const resultsHTML = `
+            <div class="search-results-header">
+                <h3>Found ${matchedTools.length} tool${matchedTools.length !== 1 ? 's' : ''}</h3>
+            </div>
+            <ul class="search-results-list">
+                ${matchedTools.map(tool => `
+                    <li class="search-result-item">
+                        <a href="${tool.url}" class="search-result-link">
+                            <h4 class="search-result-title">${highlightSearchTerm(tool.name, query)}</h4>
+                            <p class="search-result-tags">
+                                ${tool.tags.map(tag => `<span class="search-result-tag">${tag}</span>`).join('')}
+                            </p>
+                        </a>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+        resultsContainer.innerHTML = resultsHTML;
+    }
+    
+    // Make sure both classes are added for proper display
+    resultsContainer.classList.add('show');
     resultsContainer.classList.add('active');
-    
-    if (matchedTools.length === 0) {
-        resultsContainer.innerHTML = '<p class="no-results">No tools found matching your search.</p>';
-        return;
-    }
-    
-    const limitedResults = matchedTools.slice(0, 5); // Limit to 5 results
-    
-    limitedResults.forEach(tool => {
-        const resultItem = document.createElement('a');
-        resultItem.href = tool.url;
-        resultItem.className = 'search-result-item';
-        
-        // Highlight the matched text
-        const nameWithHighlight = highlightMatch(tool.name, query);
-        
-        resultItem.innerHTML = `
-            <span class="result-name">${nameWithHighlight}</span>
-            <span class="result-tags">${tool.tags.join(', ')}</span>
-        `;
-        
-        resultsContainer.appendChild(resultItem);
-    });
-    
-    if (matchedTools.length > 5) {
-        const moreResults = document.createElement('p');
-        moreResults.className = 'more-results';
-        moreResults.textContent = `+ ${matchedTools.length - 5} more results...`;
-        resultsContainer.appendChild(moreResults);
-    }
 }
 
-function renderMobileSearchResults(matchedTools, query) {
-    searchResults.innerHTML = '';
-    searchResults.classList.add('active');
+function highlightSearchTerm(text, searchTerm) {
+    if (!searchTerm) return text;
     
-    if (matchedTools.length === 0) {
-        searchResults.innerHTML = '<p class="no-results">No tools found matching your search.</p>';
-        return;
-    }
-    
-    matchedTools.forEach(tool => {
-        const resultItem = document.createElement('a');
-        resultItem.href = tool.url;
-        resultItem.className = 'search-result-item';
-        
-        // Highlight the matched text
-        const nameWithHighlight = highlightMatch(tool.name, query);
-        
-        resultItem.innerHTML = `
-            <span class="result-name">${nameWithHighlight}</span>
-            <span class="result-tags">${tool.tags.join(', ')}</span>
-        `;
-        
-        searchResults.appendChild(resultItem);
-    });
-}
-
-function highlightMatch(text, query) {
-    const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
     return text.replace(regex, '<mark>$1</mark>');
 }
 
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function filterByTag(tag) {
-    currentTag = tag;
-    currentPage = 1; // Reset to first page when changing tags
-    renderTools();
-    
-    // Update URL with the tag parameter without reloading the page
-    const url = new URL(window.location);
-    if (tag === 'all') {
-        url.searchParams.delete('tag');
-    } else {
-        url.searchParams.set('tag', tag);
+// Handle escape key to close mobile search
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileSearchContainer?.classList.contains('active')) {
+        closeMobileSearch();
     }
-    window.history.pushState({}, '', url);
-}
+});
 
-function renderTools() {
-    if (!toolsGrid) return;
-    
-    // Filter tools by tag
-    const filteredTools = currentTag === 'all' 
-        ? tools 
-        : tools.filter(tool => tool.tags.includes(currentTag));
-    
-    // Calculate pagination
-    const totalPages = Math.ceil(filteredTools.length / ITEMS_PER_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    const paginatedTools = filteredTools.slice(startIndex, endIndex);
-    
-    // Clear existing content
-    toolsGrid.innerHTML = '';
-    
-    if (paginatedTools.length === 0) {
-        toolsGrid.innerHTML = '<p class="no-tools">No tools found in this category.</p>';
-        document.querySelector('.pagination').innerHTML = '';
-        return;
-    }
-    
-    // Render tool cards
-    paginatedTools.forEach(tool => {
-        const toolCardTemplate = document.getElementById('tool-card-template');
-        const toolCardClone = document.importNode(toolCardTemplate.content, true);
-        
-        const toolLink = toolCardClone.querySelector('.tool-link');
-        const toolTitle = toolCardClone.querySelector('.tool-title');
-        const favoriteBtn = toolCardClone.querySelector('.favorite-btn');
-        
-        toolLink.href = tool.url;
-        toolTitle.textContent = tool.name;
-        
-        // Set favorite status
-        const isFavorite = favorites.some(fav => fav.url === tool.url);
-        if (isFavorite) {
-            favoriteBtn.classList.add('active');
-        }
-        
-        // Add tag classes for filtering via CSS if needed
-        const toolCard = toolCardClone.querySelector('.tool-card');
-        tool.tags.forEach(tag => toolCard.classList.add(`tag-${tag}`));
-        
-        // Toggle favorite
-        favoriteBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleFavorite(tool);
-            favoriteBtn.classList.toggle('active');
-        });
-        
-        toolsGrid.appendChild(toolCardClone);
+// Category scroll functionality
+const scrollLeft = document.querySelector('.scroll-left');
+const scrollRight = document.querySelector('.scroll-right');
+const tagsScroll = document.querySelector('.tags-scroll');
+
+scrollLeft?.addEventListener('click', () => {
+    tagsScroll.scrollBy({
+        left: -200,
+        behavior: 'smooth'
     });
-    
-    // Render pagination
-    renderPagination(totalPages);
-}
+});
 
-function renderPagination(totalPages) {
-    const paginationContainer = document.querySelector('.pagination');
-    if (!paginationContainer) return;
-    
-    paginationContainer.innerHTML = '';
-    
-    if (totalPages <= 1) {
-        return; // No pagination needed for just one page
-    }
-    
-    // Previous button
-    const prevButton = document.createElement('button');
-    prevButton.className = 'page-btn prev-btn';
-    prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
-    prevButton.disabled = currentPage === 1;
-    prevButton.addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            renderTools();
-            window.scrollTo(0, 0);
-        }
+scrollRight?.addEventListener('click', () => {
+    tagsScroll.scrollBy({
+        left: 200,
+        behavior: 'smooth'
     });
-    paginationContainer.appendChild(prevButton);
-    
-    // Page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        const pageButton = document.createElement('button');
-        pageButton.className = `page-btn ${i === currentPage ? 'active' : ''}`;
-        pageButton.textContent = i;
-        pageButton.addEventListener('click', () => {
-            currentPage = i;
-            renderTools();
-            window.scrollTo(0, 0);
-        });
-        paginationContainer.appendChild(pageButton);
-    }
-    
-    // Next button
-    const nextButton = document.createElement('button');
-    nextButton.className = 'page-btn next-btn';
-    nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
-    nextButton.disabled = currentPage === totalPages;
-    nextButton.addEventListener('click', () => {
-        if (currentPage < totalPages) {
-            currentPage++;
-            renderTools();
-            window.scrollTo(0, 0);
-        }
-    });
-    paginationContainer.appendChild(nextButton);
-}
+});
 
-function toggleFavorite(tool) {
-    const index = favorites.findIndex(fav => fav.url === tool.url);
+// Hide/show scroll buttons based on scroll position
+const updateScrollButtons = () => {
+    if (!scrollLeft || !scrollRight || !tagsScroll) return;
     
-    if (index === -1) {
-        // Add to favorites
-        favorites.push(tool);
-    } else {
-        // Remove from favorites
-        favorites.splice(index, 1);
-    }
+    const { scrollLeft: position, scrollWidth, clientWidth } = tagsScroll;
     
-    // Update localStorage
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    
-    // Update favorites list
+    scrollLeft.style.opacity = position > 0 ? '1' : '0';
+    scrollRight.style.opacity = position < scrollWidth - clientWidth ? '1' : '0';
+};
+
+tagsScroll?.addEventListener('scroll', updateScrollButtons);
+window.addEventListener('resize', updateScrollButtons);
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
     updateFavorites();
-}
+    renderTools();
 
-function updateFavorites() {
-    if (!favoritesList) return;
+    // Add click handlers to tag buttons
+    document.querySelectorAll('.tag-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleTagClick(btn.dataset.tag));
+    });
+
+    // Initial update
+    updateScrollButtons();
     
-    if (favorites.length === 0) {
-        favoritesList.innerHTML = '<p class="no-favorites">No favorite tools yet.</p>';
-        return;
+    // Verify search functionality is working properly
+    verifySearchFunctionality();
+});
+
+// Function to verify search functionality is working properly
+function verifySearchFunctionality() {
+    // Ensure desktop search results container exists for tool pages
+    if (!document.querySelector('.tools-grid')) { // We're on a tool page
+        const searchWrapper = document.querySelector('.search-wrapper');
+        if (searchWrapper && !document.querySelector('.desktop-search-results')) {
+            const desktopResults = document.createElement('div');
+            desktopResults.className = 'search-results desktop-search-results';
+            searchWrapper.appendChild(desktopResults);
+        }
     }
     
-    favoritesList.innerHTML = '';
-    
-    favorites.forEach(tool => {
-        const favoriteItem = document.createElement('a');
-        favoriteItem.href = tool.url;
-        favoriteItem.className = 'favorite-item';
-        
-        favoriteItem.innerHTML = `
-            <span class="favorite-name">${tool.name}</span>
-            <button class="remove-favorite" aria-label="Remove from favorites">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        
-        const removeBtn = favoriteItem.querySelector('.remove-favorite');
-        removeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleFavorite(tool);
-            
-            // Also update any visible tool cards
-            document.querySelectorAll('.tool-card').forEach(card => {
-                const cardLink = card.closest('.tool-link');
-                if (cardLink && cardLink.href.endsWith(tool.url)) {
-                    card.querySelector('.favorite-btn').classList.remove('active');
-                }
-            });
-        });
-        
-        favoritesList.appendChild(favoriteItem);
+    // Add missing classes to any search results containers if needed
+    const allSearchContainers = document.querySelectorAll('.search-results');
+    allSearchContainers.forEach(container => {
+        if (!container.classList.contains('show') && !container.classList.contains('active')) {
+            // Make sure container is initially hidden
+            container.style.display = 'none';
+        }
     });
 }
