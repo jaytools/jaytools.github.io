@@ -29,8 +29,12 @@
     <!-- Fonts and CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    <!-- Preload Inter font woff2 files for critical rendering path -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCOgDWKxCtS2-Za5xwJ.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCOgDWKxCtS2-Za5xwJ_F-BLxG_A.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCOgDWKxCtS2-Za5xwJ_F-BLxG_A.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCOgDWKxCtS2-Za5xwJ_F-BLxG_A.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preload" href="css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/custom.css"></noscript>
 
@@ -224,7 +228,7 @@
             {
                 "@type": "SiteNavigationElement",
                 "name": "Home",
-                "url": "https://www.taskproper.com/index.html"
+                "url": "https://www.taskproper.com/"
             },
             {
                 "@type": "SiteNavigationElement",
@@ -280,7 +284,7 @@
     <nav class="navbar" aria-label="Main navigation">
         <!-- Left side: Logo and subtitle -->
         <div class="navbar-brand">
-            <a href="index.html" class="brand-link">
+            <a href="/" class="brand-link">
                 <h1 class="site-title">Task Proper</h1>
                 <p class="site-subtitle">Simple and Convenient Web Tools</p>
             </a>
@@ -392,7 +396,7 @@
 <main class="site-main">
     <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html"><span class="icon icon-home"></span> Home</a>
+            <a href="/"><span class="icon icon-home"></span> Home</a>
         </nav>
     </div>
     
@@ -431,7 +435,7 @@
                 <h3>Pages</h3>
                 <nav class="footer-nav" aria-label="Footer pages">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
