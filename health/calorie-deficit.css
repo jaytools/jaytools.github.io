@@ -1,0 +1,430 @@
+:root {
+    /* Animation */
+    --fade-in-duration: 0.5s;
+    --slide-in-distance: 20px;
+    /* Color palette */
+    --primary: #4A90E2;
+    --primary-dark: #357ABD;
+    --secondary: #6C757D;
+    --success: #28A745;
+    --danger: #DC3545;
+    --warning: #FFC107;
+    --info: #17A2B8;
+    --light: #F8F9FA;
+    --dark: #343A40;
+    
+    /* Light mode variables */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --text-primary: #212529;
+    --text-secondary: #6C757D;
+    --border-color: #DEE2E6;
+    --input-bg: #FFFFFF;
+    --input-border: #CED4DA;
+    --card-bg: #FFFFFF;
+    
+    
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Border radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    
+    /* Box shadow */
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* Result Section */
+.result-section {
+    display: none;
+    margin: 2rem auto;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.result-section.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.result-title {
+    text-align: center;
+    color: var(--dark-text-primary); /* Changed to white for better contrast with primary background */
+    font-size: 2.2rem; /* Slightly larger font size */
+    font-weight: 700;
+    margin: 0 0 2.5rem 0;
+    padding: 2rem; /* Increased padding */
+    background: var(--primary); /* Changed background to primary color */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow); /* Stronger shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.result-title:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+.result-title i {
+    color: var(--success);
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.result-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default to 2 columns */
+    gap: 2rem;
+    margin: 0 auto 2.5rem;
+}
+
+.result-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--box-shadow-sm);
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.result-card-title {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.result-card-value {
+    color: var(--text-primary);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0.75rem 0;
+}
+
+.result-card-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.result-card.highlight {
+    background: var(--primary);
+    color: white;
+}
+
+.result-card.highlight .result-card-title,
+.result-card.highlight .result-card-value,
+.result-card.highlight .result-card-description {
+    color: white;
+}
+
+
+
+.result-card.highlight .result-card-title,
+.result-card.highlight .result-card-value,
+.result-card.highlight .result-card-description {
+    color: white;
+}
+
+/* Nutrient Breakdown Section */
+.nutrient-breakdown {
+    margin: 2.5rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+}
+
+.nutrient-breakdown h4 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.nutrient-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.nutrient-bar {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nutrient-label {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.nutrient-progress {
+    height: 12px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.nutrient-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 6px;
+    transition: width 0.8s ease-in-out;
+}
+
+.nutrient-fill.protein {
+    background: linear-gradient(90deg, #FF6B6B, #FF8787);
+}
+
+.nutrient-fill.carbs {
+    background: linear-gradient(90deg, #4A90E2, #63A4E7);
+}
+
+.nutrient-fill.fat {
+    background: linear-gradient(90deg, #FFC107, #FFD54F);
+}
+
+.nutrient-value {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Dark Mode Styles */
+
+
+/* Assuming general paragraph styles apply, or you can add specific styles */
+.result-description p {
+    margin-bottom: var(--spacing-md); /* Adjust as needed */
+    line-height: 1.7; /* Adjust for readability */
+    color: var(--text-primary); /* Or a secondary text color */
+}
+
+.result-tip {
+    /* Styles for the tip section */
+    background-color: var(--light); /* Example background */
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.result-tip i {
+    color: var(--info); /* Or another suitable color for the icon */
+}
+
+.nutrient-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Currently 2 columns, can be changed to 1fr for 3 rows */
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.nutrient-bar {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px; /* Label, Progress Bar, Value */
+    align-items: center;
+    gap: 1rem;
+}
+
+.nutrient-label {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.nutrient-progress {
+    height: 12px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.nutrient-fill {
+    height: 100%;
+    width: 0%; /* Will be set by JS */
+    border-radius: 6px;
+    transition: width 0.8s ease-in-out;
+}
+
+.nutrient-fill.protein {
+    background: linear-gradient(90deg, #FF6B6B, #FF8787);
+}
+
+.nutrient-fill.carbs {
+    background: linear-gradient(90deg, #4A90E2, #63A4E7);
+}
+
+.nutrient-fill.fat {
+    background: linear-gradient(90deg, #FFC107, #FFD54F);
+}
+
+.nutrient-value {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .nutrient-bars {
+        grid-template-columns: 1fr; /* Stacks them vertically on smaller screens */
+        gap: 1.5rem;
+    }
+}
+
+/* Assuming a base button style like .btn or similar is defined elsewhere */
+.reset-btn {
+    background-color: var(--secondary); /* Example color */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.reset-btn:hover {
+    background-color: var(--dark); /* Darker shade on hover */
+    transform: translateY(-2px);
+}
+
+.share-btn {
+    background-color: var(--primary); /* Example color */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.share-btn:hover {
+    background-color: var(--primary-dark); /* Darker shade on hover */
+    transform: translateY(-2px);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.share-section {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .btn-calculate, .reset-btn, .share-btn {
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .result-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsive Design */
+    .nutrient-bars {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .result-card-value {
+        font-size: 2rem;
+    }
+
+    .result-title {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .result-card {
+        padding: 1.5rem;
+    }
+
+    .result-card-value {
+        font-size: 1.75rem;
+    }
+
+    .nutrient-bar {
+        grid-template-columns: 70px 1fr 80px;
+        gap: 0.75rem;
+    }
+
+    .nutrient-label,
+    .nutrient-value {
+        font-size: 0.85rem;
+    }
+}
