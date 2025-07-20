@@ -203,6 +203,39 @@
         ]
     }
     </script>
+    <style>
+        :focus {
+  outline: 2px solid rgba(0,122,204,0.5);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px r
+  gba(0,122,204,0.2);
+}
+.breadcrumb {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #333333;
+            font-size: 0.9rem;
+            color: #333333;
+        }
+
+        .breadcrumb a {
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: #666666;
+        }
+    </style>
     
 </head>
 <body>
@@ -316,9 +349,9 @@
         <div class="container">
             <!-- Breadcrumb Navigation -->
             <nav class="breadcrumb" aria-label="Breadcrumb">
-                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="../index.html">Home</a>
                 <span class="breadcrumb-separator">></span>
-                <a href="../health.html"><span><i class="fas fa-heartbeat"></i> Health</span></a>
+                <a href="../health.html"><span> Health</span></a>
                 <span class="breadcrumb-separator">></span>
                 <span>Calorie Deficit Calculator</span>
             </nav>
