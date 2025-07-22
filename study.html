@@ -3,21 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Tools - Task Proper | Free Online Study & Productivity Tools</title>
-    <meta name="description" content="Access free online study and productivity tools including study planners, typing speed tests, and more. Simple, fast, and mobile-friendly study tools by Task Proper.">
+    <title>Study Tools - Task Proper | Free Study & Learning Tools</title>
+    <meta name="description" content="Access free online study tools including calculators, converters, and learning resources with Task Proper.">
     <meta name="keywords" content="free study tools, online study aids, study planner, typing speed test, productivity tools, Task Proper">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Jay Prajapati">
     <meta name="category" content="Study">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Study Tools - Task Proper | Free Online Study & Productivity Tools">
-    <meta property="og:description" content="Access free online study and productivity tools including study planners, typing speed tests, and more. Simple, fast, and mobile-friendly study tools.">
+    <meta property="og:title" content="Study Tools - Task Proper | Free Study & Learning Tools">
+    <meta property="og:description" content="Access free online study tools including calculators, converters, and learning resources with Task Proper.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://taskproper.com/study.html">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://taskproper.com/study.html">
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Study Tools - Task Proper",
+        "description": "Access free online study tools including calculators, converters, and learning resources.",
+        "url": "https://taskproper.com/study.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Task Proper",
+            "url": "https://taskproper.com"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://taskproper.com/index.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Study",
+                    "item": "https://taskproper.com/study.html"
+                }
+            ]
+        }
+    }
+    </script>
+
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -36,6 +70,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/personal.css">
     
     <!-- Sample Page Specific Styles -->
     <style>
@@ -94,7 +129,7 @@
             background: #f8f9fa;
             padding: 1rem 2rem;
             margin-bottom: 2rem;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #000000;
             font-size: 0.9rem;
         }
 
@@ -235,11 +270,11 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #3498db;
+            color: #000000;
             text-decoration: none;
             font-weight: 500;
             padding: 0.75rem 1.5rem;
-            border: 2px solid #3498db;
+            border: 2px solid #000000;
             border-radius: 25px;
             transition: all 0.3s ease;
         }
@@ -480,7 +515,7 @@
             </div>
         </nav>
 
-        <!-- Mobile Search Container -->
+         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
                 <input type="text" class="mobile-search-input" placeholder="Search tools...">
@@ -496,148 +531,133 @@
 
     <!-- Sidebar Menu -->
     <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
         <div class="sidebar-content">
-            <div class="sidebar-header">
-                <h2>Categories</h2>
-                <button class="sidebar-close" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="/" class="nav-link">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-                <a href="about.html" class="nav-link">
-                    <i class="fas fa-info-circle"></i>
-                    <span>About</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <i class="fas fa-envelope"></i>
-                    <span>Contact</span>
-                </a>
-                <a href="privacy.html" class="nav-link">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Privacy Policy</span>
-                </a>
-                <a href="terms.html" class="nav-link">
-                    <i class="fas fa-file-contract"></i>
-                    <span>Terms of Service</span>
-                </a>
-            </nav>
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="health/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a href="privacy.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="terms.html" class="nav-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Terms of Service</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </aside>
 
     <!-- Main Content -->
     <main>
-        <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <span class="breadcrumb-separator">></span>
-            <span>Sample Page</span>
-        </nav>
-
-        <!-- Page Container -->
-        <div class="page-container">
-            <!-- Page Header -->
-            <header class="page-header">
-                <h1 class="page-title">Sample Page Title</h1>
-                <p class="page-subtitle">This is a reusable template for creating clean, structured informational pages on Task Proper. Use this layout for legal content, policies, and static pages.</p>
-            </header>
-
-            <!-- Page Content -->
-            <div class="page-content">
-                <h2>Introduction</h2>
-                <p>This is a sample page used to display generic content for Task Proper. This template provides a clean, professional layout that can be easily customized for various types of static content including privacy policies, terms of service, disclaimers, and other informational pages.</p>
-
-                <p>The page is designed with readability and user experience in mind, featuring proper typography hierarchy, responsive design, and accessibility standards.</p>
-
-                <h3>Why Use This Page Template?</h3>
-                <ul>
-                    <li><strong>Consistent Design:</strong> Maintains the same look and feel as your main Task Proper website</li>
-                    <li><strong>Mobile-Friendly:</strong> Responsive design that works perfectly on all devices</li>
-                    <li><strong>SEO Optimized:</strong> Proper heading structure and meta tags for search engines</li>
-                    <li><strong>Accessibility:</strong> Built with accessibility standards in mind</li>
-                    <li><strong>Easy to Customize:</strong> Simple HTML structure that's easy to modify</li>
-                    <li><strong>Professional Appearance:</strong> Clean typography and spacing for better readability</li>
-                </ul>
-
-                <h3>Features Included</h3>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
                 <ol>
-                    <li>Responsive header with navigation</li>
-                    <li>Breadcrumb navigation for better user experience</li>
-                    <li>Structured content area with proper typography</li>
-                    <li>Support for various content types (headings, paragraphs, lists, etc.)</li>
-                    <li>Footer matching your main website</li>
-                    <li>Back to top functionality</li>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-book"></i> Study</span>
+                    </li>
                 </ol>
+            </nav>
+        </div>
 
-                <div class="highlight-box">
-                    <h3><i class="fas fa-lightbulb"></i> Pro Tip</h3>
-                    <p>When using this template, simply replace the content within the <code>.page-content</code> section with your own information. Update the page title, meta description, and breadcrumb navigation to match your specific page.</p>
+        <!-- Category Header -->
+        <section class="category-header">
+            <div class="container">
+                <h1 class="text-center"><i class="fas fa-book"></i> Study Tools</h1>
+            </div>
+        </section>
+
+       <!-- Tools Grid -->
+        <div class="container">
+            <div class="tools-container">
+                <!-- Study Tools Grid - Will be populated by JavaScript -->
+                <div class="tools-grid" id="study-tools-grid">
+                    <!-- Tools will be loaded dynamically via JavaScript -->
                 </div>
-
-                <h2>Content Formatting Examples</h2>
                 
-                <h3>Text Formatting</h3>
-                <p>You can use various text formatting options:</p>
-                <ul>
-                    <li><strong>Bold text</strong> for emphasis</li>
-                    <li><em>Italic text</em> for subtle emphasis</li>
-                    <li><a href="#">Links</a> that match your site's color scheme</li>
-                    <li><code>Inline code</code> for technical terms</li>
-                </ul>
-
-                <h3>Blockquotes</h3>
-                <blockquote>
-                    "This is an example of a blockquote. It's perfect for highlighting important information, testimonials, or quotes from relevant sources."
-                </blockquote>
-
-                <h3>Code Blocks</h3>
-                <p>For longer code snippets, you can use preformatted text blocks:</p>
-                <pre><code>&lt;div class="example"&gt;
-    &lt;h1&gt;Example HTML&lt;/h1&gt;
-    &lt;p&gt;This shows how code blocks look&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-
-                <h2>How to Customize This Template</h2>
-                
-                <h3>Step 1: Update Page Information</h3>
-                <p>Replace the following elements with your specific content:</p>
-                <ul>
-                    <li>Page title in the <code>&lt;title&gt;</code> tag</li>
-                    <li>Meta description</li>
-                    <li>Main heading and subtitle</li>
-                    <li>Breadcrumb navigation</li>
-                </ul>
-
-                <h3>Step 2: Replace Content</h3>
-                <p>Delete the sample content and add your own sections, paragraphs, lists, and other elements as needed.</p>
-
-                <h3>Step 3: Test Responsiveness</h3>
-                <p>Make sure to test your page on different devices to ensure it looks good on mobile, tablet, and desktop screens.</p>
-
-                <h2>Additional Resources</h2>
-                <p>For more information about Task Proper and our services, you can visit:</p>
-                <ul>
-                    <li><a href="/">Task Proper Homepage</a></li>
-                    <li><a href="about.html">About Task Proper</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-
-                <!-- Last Updated -->
-                <div class="last-updated">
-                    Last updated: July 1, 2025
+                <!-- Pagination -->
+                <div class="pagination" id="study-pagination">
+                    <!-- Pagination will be added by JavaScript if needed -->
                 </div>
             </div>
+        </div>
 
-            <!-- Back to Top -->
-            <div class="back-to-top">
-                <a href="#top" aria-label="Back to top of page">
-                    <i class="fas fa-arrow-up"></i>
-                    Back to Top
-                </a>
+        <!-- Category Info Section -->
+        <section class="category-info">
+            <div class="container">
+                <h2>About Our Study Tools</h2>
+                <p>Enhance your learning and productivity with our collection of study-focused tools. From planning your study sessions to improving your typing speed, these tools are designed to support your academic and personal growth.</p>
+                
+                <!-- Features Grid -->
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Boost Productivity</h3>
+                        <p>Optimize your study habits and manage your time effectively with our smart tools.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Skill Development</h3>
+                        <p>Improve key skills like typing speed and critical thinking with interactive exercises.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Academic Support</h3>
+                        <p>Get the assistance you need for various academic tasks, making learning more accessible.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+        
+        <!-- Back to Top -->
+        <div class="back-to-top">
+            <a href="#top" aria-label="Back to top of page">
+                <i class="fas fa-arrow-up"></i>
+                Back to Top
+            </a>
         </div>
     </main>
 
@@ -712,9 +732,23 @@
     <!-- JavaScript -->
     <script src="js/script.js"></script>
     <script>
-        // Back to top smooth scroll
+        // Constants for study page
+        const STUDY_ITEMS_PER_PAGE = 12; // Show more tools per page
+        let currentStudyPage = 1;
+        
         document.addEventListener('DOMContentLoaded', function() {
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
             const backToTopLink = document.querySelector('.back-to-top a');
+            
+            // Show/hide back to top button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
             
             if (backToTopLink) {
                 backToTopLink.addEventListener('click', function(e) {
@@ -725,7 +759,273 @@
                     });
                 });
             }
+
+            // Load study tools immediately if the tools array is available
+            if (window.tools && Array.isArray(window.tools)) {
+                loadStudyTools();
+            } else {
+                // Load tools with a small delay to ensure script.js is loaded
+                setTimeout(() => {
+                    loadStudyTools();
+                }, 100);
+            }
         });
+
+        /**
+         * Process and display study tools on the page
+         * @param {Array} toolsData - Array of tool objects
+         * @param {HTMLElement} toolsGrid - DOM element to display tools
+         * @param {HTMLElement} paginationContainer - DOM element for pagination
+         */
+        function processStudyTools(toolsData, toolsGrid, paginationContainer) {
+            // Filter to just study tools
+            const studyTools = toolsData.filter(tool => 
+                tool.tags && tool.tags.includes('study')
+            );
+
+            if (studyTools.length === 0) {
+                toolsGrid.innerHTML = '<p class="no-tools">No study tools found.</p>';
+                return;
+            }
+
+            // Sort: favorites first, then alphabetically
+            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            const sortedTools = [...studyTools].sort((a, b) => {
+                const aFav = favorites.includes(a.name);
+                const bFav = favorites.includes(b.name);
+                if (aFav !== bFav) return bFav - aFav;
+                return a.name.localeCompare(b.name);
+            });
+
+            // Pagination
+            const startIndex = (currentStudyPage - 1) * STUDY_ITEMS_PER_PAGE;
+            const endIndex = startIndex + STUDY_ITEMS_PER_PAGE;
+            const displayedTools = sortedTools.slice(startIndex, endIndex);
+            
+            // Clear grid
+            toolsGrid.innerHTML = '';
+            
+            // Create and add tool cards
+            displayedTools.forEach(tool => {
+                // Create tool card element
+                const toolCard = createToolCard(tool, favorites);
+                toolsGrid.appendChild(toolCard);
+            });
+            
+            // Render pagination
+            renderStudyPagination(sortedTools.length, paginationContainer);
+        }
+
+        /**
+         * Create a tool card element
+         * @param {Object} tool - Tool data object
+         * @param {Array} favorites - Array of favorited tool names
+         * @returns {HTMLElement} - The created tool card element
+         */
+        function createToolCard(tool, favorites) {
+            const toolCard = document.createElement('a');
+            toolCard.href = tool.url;
+            toolCard.className = 'tool-link';
+            
+            toolCard.innerHTML = `
+                <article class="tool-card">
+                    <button class="favorite-btn" aria-label="Toggle favorite">
+                        <i class="far fa-star"></i>
+                    </button>
+                    <h3 class="tool-title">${tool.name}</h3>
+                </article>
+            `;
+
+            // Set up the favorite button
+            const favoriteBtn = toolCard.querySelector('.favorite-btn');
+            const favoriteIcon = favoriteBtn.querySelector('i');
+            
+            if (favorites.includes(tool.name)) {
+                favoriteIcon.classList.remove('far');
+                favoriteIcon.classList.add('fas');
+                favoriteBtn.classList.add('active');
+            }
+
+            favoriteBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                toggleFavorite(tool.name, favoriteBtn);
+            });
+            
+            return toolCard;
+        }
+
+        /**
+         * Toggle a tool's favorite status
+         * @param {string} toolName - Name of the tool
+         * @param {HTMLElement} buttonElement - Button element to update
+         */
+        function toggleFavorite(toolName, buttonElement) {
+            // Toggle favorite with animation
+            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            const index = favorites.indexOf(toolName);
+
+            const favoriteIcon = buttonElement.querySelector('i');
+
+            if (index === -1) {
+                favorites.push(toolName);
+                favoriteIcon.classList.remove('far');
+                favoriteIcon.classList.add('fas');
+                buttonElement.classList.add('active');
+                buttonElement.classList.add('favorite-animation');
+            } else {
+                favorites.splice(index, 1);
+                favoriteIcon.classList.remove('fas');
+                favoriteIcon.classList.add('far');
+                buttonElement.classList.remove('active');
+            }
+
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            
+            // Update sidebar favorites if present
+            updateSidebarFavorites();
+            
+            // Remove animation class after animation completes
+            setTimeout(() => {
+                buttonElement.classList.remove('favorite-animation');
+            }, 500);
+        }
+
+        /**
+         * Update the sidebar favorites section if it exists
+         */
+        function updateSidebarFavorites() {
+            const favoritesList = document.querySelector('.favorites-container');
+            if (favoritesList) {
+                const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+                if (favorites.length === 0) {
+                    favoritesList.innerHTML = '<p class="no-favorites">No favorite tools yet.</p>';
+                    return;
+                }
+                
+                // Find favorite tools
+                const favTools = window.tools.filter(tool => favorites.includes(tool.name));
+                
+                // Create links for favorites
+                favoritesList.innerHTML = '';
+                favTools.forEach(tool => {
+                    const link = document.createElement('a');
+                    link.href = tool.url;
+                    link.textContent = tool.name;
+                    favoritesList.appendChild(link);
+                });
+            }
+        }
+
+        /**
+         * Load study tools onto the page
+         */
+        function loadStudyTools() {
+            // Get the study tools grid
+            const studyGrid = document.getElementById('study-tools-grid');
+            const paginationContainer = document.getElementById('study-pagination');
+            
+            // Check if elements exist
+            if (!studyGrid) {
+                console.error("Study grid not found");
+                return;
+            }
+            
+            // Get tools data
+            if (!window.tools || !Array.isArray(window.tools)) {
+                console.error("Tools array not available");
+                
+                // Fallback to direct data if tools not loaded from script.js
+                const fallbackTools = [
+                    { name: 'Study Planner', url: 'study/study-planner.html', tags: ['study'] },
+                    { name: 'Typing Speed Test', url: 'study/typing-speed.html', tags: ['study'] }
+                ];
+                processStudyTools(fallbackTools, studyGrid, paginationContainer);
+                return;
+            }
+            
+            // Process with the tools from window.tools
+            processStudyTools(window.tools, studyGrid, paginationContainer);
+        }
+        
+        /**
+         * Render pagination controls
+         * @param {number} totalItems - Total number of items to paginate
+         * @param {HTMLElement} paginationContainer - DOM element for pagination controls
+         */
+        function renderStudyPagination(totalItems, paginationContainer) {
+            const totalPages = Math.ceil(totalItems / STUDY_ITEMS_PER_PAGE);
+            
+            if (totalPages <= 1) {
+                paginationContainer.style.display = 'none';
+                return;
+            }
+
+            paginationContainer.style.display = 'flex';
+            let html = '';
+
+            // Previous button
+            if (currentStudyPage > 1) {
+                html += `<button class="pagination-btn" onclick="changeStudyPage(${currentStudyPage - 1})">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>`;
+            }
+
+            // Page numbers
+            const showMaxButtons = 5; // Maximum number of page buttons to show
+            let startPage = Math.max(1, currentStudyPage - Math.floor(showMaxButtons / 2));
+            let endPage = Math.min(totalPages, startPage + showMaxButtons - 1);
+            
+            // Adjust startPage if we're near the end
+            if (endPage - startPage + 1 < showMaxButtons) {
+                startPage = Math.max(1, endPage - showMaxButtons + 1);
+            }
+            
+            // First page button if not showing from the beginning
+            if (startPage > 1) {
+                html += `<button class="pagination-btn" onclick="changeStudyPage(1)">1</button>`;
+                if (startPage > 2) {
+                    html += `<span class="pagination-ellipsis">...</span>`;
+                }
+            }
+            
+            // Page number buttons
+            for (let i = startPage; i <= endPage; i++) {
+                html += `
+                    <button class="pagination-btn ${i === currentStudyPage ? 'active' : ''}" 
+                            onclick="changeStudyPage(${i})">${i}</button>
+                `;
+            }
+            
+            // Last page button if not showing to the end
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    html += `<span class="pagination-ellipsis">...</span>`;
+                }
+                html += `<button class="pagination-btn" onclick="changeStudyPage(${totalPages})">${totalPages}</button>`;
+            }
+
+            // Next button
+            if (currentStudyPage < totalPages) {
+                html += `<button class="pagination-btn" onclick="changeStudyPage(${currentStudyPage + 1})">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>`;
+            }
+
+            paginationContainer.innerHTML = html;
+        }
+        
+        /**
+         * Change to a different page of results
+         * @param {number} page - Page number to display
+         */
+        function changeStudyPage(page) {
+            currentStudyPage = page;
+            loadStudyTools();
+            // Scroll to top of tools area
+            window.scrollTo({ top: document.querySelector('.category-header').offsetTop, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>

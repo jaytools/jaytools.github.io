@@ -26,6 +26,39 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Utility Tools - Task Proper",
+        "description": "Access a variety of free online utility tools including DPI Checker, Age Difference Calculator, and more.",
+        "url": "https://taskproper.com/utility.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Task Proper",
+            "url": "https://taskproper.com"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://taskproper.com/index.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Utility",
+                    "item": "https://taskproper.com/utility.html"
+                }
+            ]
+        }
+    }
+    </script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -537,107 +570,73 @@
             <span>Sample Page</span>
         </nav>
 
-        <!-- Page Container -->
-        <div class="page-container">
-            <!-- Page Header -->
-            <header class="page-header">
-                <h1 class="page-title">Sample Page Title</h1>
-                <p class="page-subtitle">This is a reusable template for creating clean, structured informational pages on Task Proper. Use this layout for legal content, policies, and static pages.</p>
-            </header>
+        <!-- Category Header Section -->
+        <section class="category-header-section">
+            <div class="category-header-content">
+                <h1 class="category-title">Utility Tools</h1>
+                <p class="category-description">Explore a wide range of free online utility tools designed to simplify your daily tasks and boost productivity. From converters to calculators, find the perfect tool for your needs.</p>
+            </div>
+        </section>
 
-            <!-- Page Content -->
-            <div class="page-content">
-                <h2>Introduction</h2>
-                <p>This is a sample page used to display generic content for Task Proper. This template provides a clean, professional layout that can be easily customized for various types of static content including privacy policies, terms of service, disclaimers, and other informational pages.</p>
+        <!-- Tools Container -->
+        <div class="tools-container">
+            <div class="tools-grid" id="utility-tools-grid">
+                <!-- Utility tool cards will be loaded here -->
+            </div>
+            <div class="pagination" id="utility-pagination">
+                <!-- Utility pagination will be loaded here -->
+            </div>
+        </div>
 
-                <p>The page is designed with readability and user experience in mind, featuring proper typography hierarchy, responsive design, and accessibility standards.</p>
+        <!-- Category Info Section -->
+        <section class="category-info-section">
+            <div class="category-info-content">
+                <h2>Why Use Our Utility Tools?</h2>
+                <p>Our utility tools are designed with simplicity and efficiency in mind. Whether you need to convert units, calculate values, or perform quick lookups, our tools provide accurate results instantly. They are perfect for students, professionals, and anyone looking for quick, reliable solutions.</p>
+                
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-bolt"></i> Fast & Accurate</h3>
+                        <p>Get instant results with high precision for all your utility needs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-mobile-alt"></i> Mobile-Friendly</h3>
+                        <p>Access and use our tools seamlessly on any device, anytime, anywhere.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-cogs"></i> Diverse Range</h3>
+                        <p>From everyday conversions to specialized calculations, we have a tool for you.</p>
+                    </div>
+                </div>
 
-                <h3>Why Use This Page Template?</h3>
+                <h2>Popular Utility Tools</h2>
+                <p>Some of our most frequently used utility tools include:</p>
                 <ul>
-                    <li><strong>Consistent Design:</strong> Maintains the same look and feel as your main Task Proper website</li>
-                    <li><strong>Mobile-Friendly:</strong> Responsive design that works perfectly on all devices</li>
-                    <li><strong>SEO Optimized:</strong> Proper heading structure and meta tags for search engines</li>
-                    <li><strong>Accessibility:</strong> Built with accessibility standards in mind</li>
-                    <li><strong>Easy to Customize:</strong> Simple HTML structure that's easy to modify</li>
-                    <li><strong>Professional Appearance:</strong> Clean typography and spacing for better readability</li>
+                    <li><strong>DPI Checker:</strong> Quickly check the Dots Per Inch of any image.</li>
+                    <li><strong>Age Difference Calculator:</strong> Find the age difference between two dates.</li>
+                    <li><strong>Unit Converters:</strong> Convert between various units of measurement.</li>
+                    <li><strong>Random Password Generator:</strong> Create strong, secure passwords instantly.</li>
                 </ul>
 
-                <h3>Features Included</h3>
+                <h2>How to Use Our Utility Tools</h2>
+                <p>Using our tools is straightforward:</p>
                 <ol>
-                    <li>Responsive header with navigation</li>
-                    <li>Breadcrumb navigation for better user experience</li>
-                    <li>Structured content area with proper typography</li>
-                    <li>Support for various content types (headings, paragraphs, lists, etc.)</li>
-                    <li>Footer matching your main website</li>
-                    <li>Back to top functionality</li>
+                    <li><strong>Browse:</strong> Navigate through our categories or use the search bar to find the tool you need.</li>
+                    <li><strong>Input:</strong> Enter the required information into the tool's fields.</li>
+                    <li><strong>Calculate/Convert:</strong> Click the button to get your results instantly.</li>
+                    <li><strong>Save/Share:</strong> Many tools allow you to save or share your results for future reference.</li>
                 </ol>
 
-                <div class="highlight-box">
-                    <h3><i class="fas fa-lightbulb"></i> Pro Tip</h3>
-                    <p>When using this template, simply replace the content within the <code>.page-content</code> section with your own information. Update the page title, meta description, and breadcrumb navigation to match your specific page.</p>
-                </div>
-
-                <h2>Content Formatting Examples</h2>
-                
-                <h3>Text Formatting</h3>
-                <p>You can use various text formatting options:</p>
-                <ul>
-                    <li><strong>Bold text</strong> for emphasis</li>
-                    <li><em>Italic text</em> for subtle emphasis</li>
-                    <li><a href="#">Links</a> that match your site's color scheme</li>
-                    <li><code>Inline code</code> for technical terms</li>
-                </ul>
-
-                <h3>Blockquotes</h3>
-                <blockquote>
-                    "This is an example of a blockquote. It's perfect for highlighting important information, testimonials, or quotes from relevant sources."
-                </blockquote>
-
-                <h3>Code Blocks</h3>
-                <p>For longer code snippets, you can use preformatted text blocks:</p>
-                <pre><code>&lt;div class="example"&gt;
-    &lt;h1&gt;Example HTML&lt;/h1&gt;
-    &lt;p&gt;This shows how code blocks look&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-
-                <h2>How to Customize This Template</h2>
-                
-                <h3>Step 1: Update Page Information</h3>
-                <p>Replace the following elements with your specific content:</p>
-                <ul>
-                    <li>Page title in the <code>&lt;title&gt;</code> tag</li>
-                    <li>Meta description</li>
-                    <li>Main heading and subtitle</li>
-                    <li>Breadcrumb navigation</li>
-                </ul>
-
-                <h3>Step 2: Replace Content</h3>
-                <p>Delete the sample content and add your own sections, paragraphs, lists, and other elements as needed.</p>
-
-                <h3>Step 3: Test Responsiveness</h3>
-                <p>Make sure to test your page on different devices to ensure it looks good on mobile, tablet, and desktop screens.</p>
-
-                <h2>Additional Resources</h2>
-                <p>For more information about Task Proper and our services, you can visit:</p>
-                <ul>
-                    <li><a href="index.html">Task Proper Homepage</a></li>
-                    <li><a href="about.html">About Task Proper</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-
-                <!-- Last Updated -->
-                <div class="last-updated">
-                    Last updated: July 1, 2025
-                </div>
+                <p>We are constantly adding new tools and improving existing ones based on user feedback. If you have a suggestion for a new tool or an improvement, please feel free to <a href="contact.html">contact us</a>.</p>
             </div>
+        </section>
 
-            <!-- Back to Top -->
-            <div class="back-to-top">
-                <a href="#top" aria-label="Back to top of page">
-                    <i class="fas fa-arrow-up"></i>
-                    Back to Top
-                </a>
-            </div>
+        <!-- Back to Top -->
+        <div class="back-to-top">
+            <a href="#top" aria-label="Back to top of page">
+                <i class="fas fa-arrow-up"></i>
+                Back to Top
+            </a>
         </div>
     </main>
 
