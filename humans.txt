@@ -1,7 +1,7 @@
 /* TEAM */
 Developer: Task Proper
 Contact: contact@taskproper.com
-Website: https://taskproper.com
+Website: https://www.taskproper.com
 GitHub: https://github.com/taskproper
 Location: India
 

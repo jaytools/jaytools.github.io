@@ -1,10 +1,10 @@
 # Task Proper - Simple and Convenient Web Tools
 
-A comprehensive collection of free online tools and calculators designed to make everyday calculations simple and accessible. Task Proper provides a wide range of utilities for students, professionals, and anyone who needs quick, reliable calculations - all without requiring sign-ups, downloads, or installations.
+A comprehensive collection of free online tools and calculators designed to make everyday calculations simple and accessible. Task Proper provides a wide range of utilities for students, professionals and anyone who needs quick, reliable calculations - all without requiring sign-ups, downloads, or installations.
 
 ## 🌐 Live Demo
 
-**🔗 Website**: [https://taskproper.com](https://taskproper.com)
+**🔗 Website**: [https://www.taskproper.com](https://www.taskproper.com)
 
 Experience all the tools live on our website. No installation or signup required - just visit and start using any calculator or utility tool instantly!
 
