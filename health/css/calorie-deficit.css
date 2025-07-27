@@ -10,6 +10,10 @@
     --card-background: #ffffff;
     --shadow-color: rgba(0,0,0,0.08);
 
+    --z-index-header: 100;
+    --z-index-modal: 1000;
+    --z-index-overlay: 999;
+
     /* Dark Mode Colors */
     --dark-primary-color: #eee;
     --dark-secondary-color: #bbb;
@@ -38,6 +42,10 @@
     --box-shadow-md: 0 3px 10px var(--shadow-color);
     --box-shadow-lg: 0 5px 15px rgba(0,0,0,0.15);
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -205,6 +213,11 @@ body.dark-mode .form-label {
 .input-with-icon, .select-with-icon {
     position: relative;
 }
+input[type="number"], input[type="text"] {
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1rem;
+}
 
 .input-icon {
     position: absolute;
@@ -304,6 +317,12 @@ body.dark-mode .help-text {
     flex-wrap: wrap;
     gap: var(--spacing-md);
 }
+input:focus,
+button:focus {
+  outline: 2px dashed var(--accent-color);
+  outline-offset: 2px;
+}
+
 
 .radio-option {
     flex: 1 1 auto;
@@ -530,6 +549,14 @@ body.dark-mode .btn-calculate {
 
 body.dark-mode .btn-calculate:hover {
     background: #27ae60;
+}
+
+.section-box {
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  background: var(--card-background);
+  box-shadow: var(--box-shadow-sm);
+  margin-bottom: var(--spacing-xl);
 }
 
 /* Results Section - Premium Redesign */
@@ -1000,7 +1027,7 @@ body.dark-mode .faq-item {
 
 .faq-question {
     padding: var(--spacing-md);
-    font-weight: 600;
+    font-weight: 100;
     background-color: var(--background-color);
     cursor: pointer;
     display: flex;
@@ -1095,13 +1122,6 @@ body.dark-mode .faq-answer {
 .tool-card-title {
     font-size: 18px;
     font-weight: 600;
-    margin: 0;
-}
-
-.tool-card-desc {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.4;
     margin: 0;
 }
 
@@ -1327,7 +1347,6 @@ body.dark-mode .tool-card-desc {
     }
 
     .info-section h3 {
-        font-size: 1.75rem;
         margin: 2rem 0 1.5rem;
     }
 
@@ -1346,7 +1365,7 @@ body.dark-mode .tool-card-desc {
     /* FAQ Section */
     .faq-question {
         padding: 1.5rem 2rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .faq-item.active .faq-answer {
@@ -1354,7 +1373,7 @@ body.dark-mode .tool-card-desc {
     }
 
     .faq-answer p {
-        font-size: 1.05rem;
+        font-size: 1.0rem;
         line-height: 1.7;
     }
 
@@ -1377,11 +1396,6 @@ body.dark-mode .tool-card-desc {
     .tool-card-title {
         font-size: 1.25rem;
     }
-
-    .tool-card-desc {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
 }
 
 /* Extra Large Desktop Enhancements */
@@ -1392,8 +1406,11 @@ body.dark-mode .tool-card-desc {
     }
 
     .calculator-interface {
-        max-width: 1000px;
-        padding: 4rem;
+        padding: 2rem;      /* Was 3rem or 4rem, now less */
+        margin-bottom: 2rem;
+        max-width: 700px;   /* Was 800px+, now less */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .result-section {
@@ -1475,7 +1492,7 @@ body.dark-mode .tool-card-desc {
 
     .faq-question {
         padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 0.95rem;
+        font-size: 0.90rem;
     }
 
     .faq-item.active .faq-answer {
@@ -1593,4 +1610,40 @@ body.dark-mode .tool-card-desc {
         font-size: 0.9rem;
         padding: var(--spacing-sm);
     }
+}
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .calculator-interface,
+  .results-section,
+  .info-section {
+    box-shadow: none;
+    border: none;
+  }
+  header, footer, .share-section, .btn-calculate, .reset-btn {
+    display: none !important;
+  }
+}
+html {
+  font-size: 16px; /* Default: safe and consistent */
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
 }
