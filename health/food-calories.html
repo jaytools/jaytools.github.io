@@ -1,133 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calories in Food Checker</title>
-    <meta name="description" content="Calculate calories in food by weight, calories per 100g, and servings. A simple, offline, and user-friendly tool for diet management.">
-    <meta name="keywords" content="calories in food, food calorie checker, calorie calculator, food weight calories, calories per 100g, food servings calories, diet management tool, offline calorie calculator">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Jay Prajapati">
-    <link rel="canonical" href="https://www.jaytools.com/health/food-calories.html">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <title>Food & Drink Calories Checker - Task Proper</title>
+    <meta name="description" content="Check the calorie content of various foods and drinks with our easy-to-use Food Calories Checker. Get instant nutritional information to help with your diet and health goals.">
+    <meta name="keywords" content="food calories, calorie checker, nutrition calculator, diet tool, health, food database, calories in food">
+    <meta name="author" content="Task Proper">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logo.png">
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="/health/css/food-calories.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/food-calories.css">
 
-    <!-- Schema.org JSON-LD for SEO -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebTool",
-          "name": "Calories in Food Checker",
-          "url": "https://www.jaytools.com/health/food-calories.html",
-          "description": "An online tool to calculate the approximate calorie content of various foods based on their weight, calories per 100g, and number of servings.",
-          "applicationCategory": "HealthAndFitness",
-          "operatingSystem": "Any",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
+      "@type": "WebPage",
+      "name": "Food & Drink Calories Checker - Task Proper",
+      "description": "An online tool to check the calorie content of various foods and drinks.",
+      "url": "https://taskproper.com/health/food-calories.html",
+      "mainEntity": {
+        "@type": "HowTo", 
+        "name": "How to Check Food Calories",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "instruction": "Enter the name of the food item you want to check."
           },
-          "featureList": [
-            "Calorie calculation based on food weight, calories per 100g, and servings",
-            "User-friendly interface",
-            "Responsive design for desktop and mobile",
-            "Real-time results",
-            "Reset functionality",
-            "Offline capability"
-          ]
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "instruction": "Enter the quantity of the food in grams."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "instruction": "Click 'Calculate Calories' to see the nutritional information."
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://taskproper.com/health/food-calories.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Task Proper",
+        "url": "https://taskproper.com"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How accurate are the calorie counts in your database?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calorie data is sourced from reliable nutritional databases and food manufacturers. While we strive for accuracy, calorie content can vary based on preparation methods, brand variations and natural differences in foods. The values provided are good estimates for general dietary planning."
+          }
         },
         {
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          "name": "How to Use the Calories in Food Checker",
-          "description": "Simple steps to calculate the calorie content of your food.",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "text": "Enter the weight of your food in grams into the 'Food Weight (grams)' field."
-            },
-            {
-              "@type": "HowToStep",
-              "text": "Input the 'Calories per 100g' for your food item. This information can usually be found on food packaging or online nutritional databases."
-            },
-            {
-              "@type": "HowToStep",
-              "text": "Optionally, enter the 'Number of Servings' if you are consuming multiple portions. If left blank, it defaults to 1."
-            },
-            {
-              "@type": "HowToStep",
-              "text": "Select the 'Meal Time' from the dropdown (optional, for future tracking)."
-            },
-            {
-              "@type": "HowToStep",
-              "text": "Click the 'Calculate Calories' button to see the total calorie content."
-            },
-            {
-              "@type": "HowToStep",
-              "text": "Use the 'Reset' button to clear all inputs and start a new calculation."
-            }
-          ]
+          "@type": "Question",
+          "name": "Can I use this tool for weight loss planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! This tool is excellent for weight loss planning. By tracking the calories in your food, you can better manage your daily caloric intake and create the calorie deficit needed for weight loss. Combine this with our Calorie Deficit Calculator for a complete weight management approach."
+          }
         },
         {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How accurate is this calorie checker?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "This tool provides an approximate calorie count based on the data you input. For precise nutritional information, always refer to food labels or consult with a registered dietitian or nutritionist."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do I need an internet connection to use this tool?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No, once the page is loaded, the tool works completely offline. All calculations are performed directly in your browser using JavaScript."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What if I don't know the calories per 100g for my food?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can often find this information on food packaging, through a quick online search for the specific food item, or by using general nutritional databases."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I track my meals with this tool?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Currently, the tool calculates calories for individual food items. Future updates may include features for tracking meals over time, but for now, you can manually record your results."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "What if I can't find a specific food in the database?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our database includes hundreds of common foods, but if you can't find a specific item, try searching for similar foods or generic versions. For example, if you can't find a specific brand of bread, search for bread (white) or bread (whole wheat) for a close approximation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I measure food portions accurately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For the most accurate results, use a kitchen scale to weigh your food in grams. If you don't have a scale, you can use standard measuring cups and convert to grams, or estimate using common reference objects. Remember that accuracy in portion measurement directly affects the accuracy of calorie calculations."
+          }
         }
       ]
     }
     </script>
 </head>
-<body>
-  
-    <!-- Header Section -->
+
+<body class="bg-gray-100 font-sans">
+     <!-- Header Section -->
     <header class="site-header">
         <nav class="navbar">
             <!-- Left side: Logo and subtitle -->
@@ -196,9 +170,9 @@
             <section class="sidebar-section">
                 <h3><i class="fas fa-fire"></i> Popular Tools</h3>
                 <ul class="popular-tools">
-                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
-                    <li><a href="calorie-deficit.html">Calorie Deficit Finder</a></li>
-                    <li><a href="ivf-calculator.html">IVF Due Date Calculator</a></li>
+                    <li><a href="../tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../tools/seperate-tool/ivf-calculator.html">IVF Due Date Calculator</a></li>
                 </ul>
             </section>
 
@@ -231,113 +205,251 @@
             </section>
         </div>
     </aside>
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../health.html">Health</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Food & Drink Calories Checker</li>
+        </ol>
+    </nav>
 
-    <main class="container">
-        <div class="breadcrumb">
-            <a href="/index.html">Home</a> &gt; <a href="/health.html">Health Tools</a> &gt; Calories in Food Checker
-        </div>
-
-        <h1 class="tool-title">Calories in Food Checker</h1>
-        <div class="tool-card">
-                <div class="calculator-form">
-                    <div class="form-group">
-                            <label for="foodName">Food Name:</label>
-                            <div class="input-with-suggestions">
-                                <input type="text" id="foodName" placeholder="e.g., Apple, Chicken Breast" aria-label="Food Name">
-                                <button type="button" id="clearFoodName" class="clear-input-btn" aria-label="Clear food name input"><i class="fas fa-times-circle"></i></button>
-                                <div id="suggestionsBox" class="suggestions-box"></div>
+    <!-- Main Content -->
+    <main class="site-main">
+        <div class="container main-container">
+            <div class="fc-wrapper">
+                <!-- Tool UI Section -->
+                <div class="card">
+                    <div class="card-header">
+                        <h1><i class="fas fa-apple-alt"></i> Food & Drink Calories Checker</h1>
+                        <button id="darkModeToggle" class="tool-dark-mode-toggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="calculator-interface">
+                            <form id="toolForm" class="mobile-optimized-form">
+                                <div class="form-section">
+                                    <h3 class="section-heading"><i class="fas fa-utensils"></i> Food Information</h3>
+                                    
+                                    <div class="form-group">
+                                        <label for="foodName" class="form-label">Food Name</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-search input-icon"></i>
+                                            <input type="text" id="foodName" name="foodName" placeholder="Start typing food name..." required class="form-input">
+                                            <div id="suggestionsBox" class="suggestions-box"></div>
+                                            <button type="button" id="clearFoodName" class="clear-btn" style="display: none;">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="help-text">Search from our database of common foods and drinks.</div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="foodWeight" class="form-label">Weight/Quantity</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-weight input-icon"></i>
+                                                <input type="number" id="foodWeight" name="foodWeight" placeholder="grams" min="1" max="5000" step="1" required class="form-input">
+                                            </div>
+                                            <div class="help-text">Enter weight in grams or quantity for items sold by piece.</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="servings" class="form-label">Servings</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-utensils input-icon"></i>
+                                                <input type="number" id="servings" name="servings" value="1" min="1" max="20" step="1" required class="form-input">
+                                            </div>
+                                            <div class="help-text">Number of servings you plan to consume.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button type="button" id="calculateBtn" class="btn-calculate">
+                                    <i class="fas fa-calculator"></i> Calculate Calories
+                                </button>
+                            </form>
+                            
+                            <!-- Results Section -->
+                            <div id="resultBox" class="results-section" style="display: none;">
+                                <div class="results-header">
+                                    <div class="results-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <h3 class="results-title">Nutritional Information</h3>
+                                </div>
+                                
+                                <div class="results-card">
+                                    <div class="result-item">
+                                        <span class="result-label">Total Calories:</span>
+                                        <span class="result-value highlight-value"><span id="totalCalories">0</span> kcal</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-label">Calories per unit:</span>
+                                        <span class="result-value" id="caloriesPer100gDisplay">-</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="results-details">
+                                    <p id="resultMessage"></p>
+                                </div>
+                                
+                                <div class="action-buttons">
+                                    <button type="button" class="reset-btn" id="resetBtn">
+                                        <i class="fas fa-redo"></i> Calculate Again
+                                    </button>
+                                </div>
                             </div>
+                            
+                            <div id="errorMessage" class="error-message"></div>
                         </div>
-                        <div class="form-group">
-                            <label for="foodWeight">Food Weight (grams or pieces):</label>
-                            <input type="number" id="foodWeight" placeholder="e.g., 100" required>
-                        </div>
-                    <div class="form-group">
-                        <label for="servings">Number of Servings (Optional):</label>
-                        <input type="number" id="servings" placeholder="e.g., 1 (defaults to 1)">
-                    </div>
-                    <div class="form-group">
-                        <label for="mealTime">Meal Time (Optional):</label>
-                        <select id="mealTime">
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="dinner">Dinner</option>
-                            <option value="snack">Snack</option>
-                        </select>
-                    </div>
-                    <div class="button-group">
-                        <button id="calculateBtn" class="primary-btn">Calculate Calories</button>
-                        <button id="resetBtn" class="secondary-btn">Reset</button>
-                    </div>
-                    <div id="errorMessage" class="error-message"></div>
-                    <div id="resultBox" class="result-box" style="display:none;">
-                        <p>Calories per 100g/piece: <span id="caloriesPer100gDisplay"></span></p>
-                        <p>Total Estimated Calories: <span id="totalCalories">0</span> kcal</p>
-                        <p id="resultMessage"></p>
                     </div>
                 </div>
-            </div>
-        <div class="tool-layout">
-            <div class="tool-description">
-                <h2>About the Tool</h2>
-                <p>The <strong>Calories in Food Checker</strong> is a sophisticated tool designed to provide precise estimations of the caloric content in various food items. By leveraging inputs such as food weight in grams, calories per 100g, and the number of servings, this tool empowers users with critical insights for effective dietary management, whether their objective is weight reduction, maintenance, or gain.</p>
-                <p>This checker offers a highly adaptable platform for assessing calorie intake based on specific portion sizes. Its design emphasizes user autonomy, enabling the direct input of food data without dependence on pre-established databases. Users can simply enter the food's weight, its caloric density per 100g, and optionally the number of servings to obtain immediate and accurate calculations.</p>
 
-                <h2>How to Use</h2>
-                <ol>
-                    <li><strong>Food Weight (grams):</strong> Enter the weight of your food in grams (e.g., 150).</li>
-                    <li><strong>Calories per 100g:</strong> Input the calorie content per 100 grams for your food item (e.g., 150).</li>
-                    <li><strong>Number of Servings (Optional):</strong> If you're consuming multiple portions, enter the number of servings. If left blank, it defaults to 1.</li>
-                    <li><strong>Meal Time (Optional):</strong> Select the meal time from the dropdown (e.g., Breakfast, Lunch). This is for your reference and future tracking.</li>
-                    <li><strong>Calculate:</strong> Click the "Calculate Calories" button to get your total calorie intake.</li>
-                    <li><strong>Reset:</strong> Use the "Reset" button to clear all fields and start a new calculation.</li>
-                </ol>
-            </div>
+                <!-- About the Tool Section -->
+                <section class="fc-about info-section">
+                    <h2>About This Food Calories Checker</h2>
+                    <p>Our Food & Drink Calories Checker is a comprehensive tool designed to help you make informed dietary choices by providing accurate calorie information for a wide variety of foods and beverages.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-database feature-icon"></i>
+                            <h3>Extensive Food Database</h3>
+                            <p>Access nutritional data for hundreds of common foods, including fruits, vegetables, grains, proteins and processed foods.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-calculator feature-icon"></i>
+                            <h3>Accurate Calculations</h3>
+                            <p>Get precise calorie counts based on actual weight or serving sizes, with support for multiple servings.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt feature-icon"></i>
+                            <h3>Easy to Use</h3>
+                            <p>Simple, intuitive interface with autocomplete search functionality and instant results.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart feature-icon"></i>
+                            <h3>Health-Focused</h3>
+                            <p>Make better dietary decisions with reliable nutritional information at your fingertips.</p>
+                        </div>
+                    </div>
+                </section>
 
-            
+                <!-- How to Use Section -->
+                <section class="fc-howto info-section">
+                    <h2>How to Use the Food Calories Checker</h2>
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Search for Food</h3>
+                                <p>Start typing the name of the food or drink you want to check. Our autocomplete feature will show matching items from our database.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Select from Suggestions</h3>
+                                <p>Click on the food item from the dropdown suggestions to select it. The calorie information per unit will be displayed.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Enter Weight/Quantity</h3>
+                                <p>Input the weight in grams or the number of pieces (for items sold individually like fruits or slices).</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Set Servings</h3>
+                                <p>Specify how many servings you plan to consume. The default is 1 serving.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h3>Get Results</h3>
+                                <p>Click "Calculate Calories" to see the total calorie content and detailed nutritional breakdown.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SEO Article Section -->
+                <section class="fc-article info-section">
+                    <h2>The Importance of Tracking Food Calories</h2>
+                    <p>Understanding the caloric content of your food is fundamental to maintaining a healthy lifestyle and achieving your fitness goals. Whether you're trying to lose weight, gain muscle, or simply maintain your current health status, knowing how many calories you consume daily is crucial.</p>
+                    
+                    <p>Calorie tracking helps create awareness about portion sizes and food choices, enabling you to make informed decisions about your diet. Our Food Calories Checker simplifies this process by providing instant access to nutritional information for hundreds of common foods and beverages. With accurate calorie counts at your fingertips, you can better balance your energy intake with your daily activities and long-term health objectives.</p>
+                    
+                    <p>Regular use of calorie tracking tools has been shown to improve dietary habits, support weight management goals and increase nutritional awareness. Start making smarter food choices today with our easy-to-use calculator.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="fc-faq info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">How accurate are the calorie counts in your database?</summary>
+                        <div class="faq-answer">
+                            <p>Our calorie data is sourced from reliable nutritional databases and food manufacturers. While we strive for accuracy, calorie content can vary based on preparation methods, brand variations and natural differences in foods. The values provided are good estimates for general dietary planning.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">Can I use this tool for weight loss planning?</summary>
+                        <div class="faq-answer">
+                            <p>Yes! This tool is excellent for weight loss planning. By tracking the calories in your food, you can better manage your daily caloric intake and create the calorie deficit needed for weight loss. Combine this with our Calorie Deficit Calculator for a complete weight management approach.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">What if I can't find a specific food in the database?</summary>
+                        <div class="faq-answer">
+                            <p>Our database includes hundreds of common foods, but if you can't find a specific item, try searching for similar foods or generic versions. For example, if you can't find a specific brand of bread, search for "bread (white)" or "bread (whole wheat)" for a close approximation.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">How do I measure food portions accurately?</summary>
+                        <div class="faq-answer">
+                            <p>For the most accurate results, use a kitchen scale to weigh your food in grams. If you don't have a scale, you can use standard measuring cups and convert to grams, or estimate using common reference objects. Remember that accuracy in portion measurement directly affects the accuracy of calorie calculations.</p>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Related Tools Section -->
+                <section class="fc-related info-section">
+                    <h2>Related Health Tools</h2>
+                    <div class="related-tools-grid">
+                        <a href="calorie-deficit.html" class="related-tool-card">
+                            <i class="fas fa-calculator card-icon"></i>
+                            <h3>Calorie Deficit Calculator</h3>
+                            <p>Calculate your daily calorie needs and create a deficit for effective weight loss planning.</p>
+                        </a>
+                        <a href="calories-walking.html" class="related-tool-card">
+                            <i class="fas fa-walking card-icon"></i>
+                            <h3>Calories Burned Walking</h3>
+                            <p>Find out how many calories you burn during your walking sessions based on speed and duration.</p>
+                        </a>
+                        <a href="protein-intake.html" class="related-tool-card">
+                            <i class="fas fa-drumstick-bite card-icon"></i>
+                            <h3>Protein Intake Calculator</h3>
+                            <p>Determine your optimal daily protein requirements for your fitness and health goals.</p>
+                        </a>
+                        <a href="pregnancy-weight.html" class="related-tool-card">
+                            <i class="fas fa-baby card-icon"></i>
+                            <h3>Pregnancy Weight Tracker</h3>
+                            <p>Monitor healthy weight gain during pregnancy with our specialized tracking tool.</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
         </div>
-
-        <section class="info-section">
-            <h2>Frequently Asked Questions (FAQs)</h2>
-            <div class="faq-item">
-                <h3>How accurate is this calorie checker?</h3>
-                <p>This tool provides an approximate calorie count based on the data you input. For precise nutritional information, always refer to food labels or consult with a registered dietitian or nutritionist.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Do I need an internet connection to use this tool?</h3>
-                <p>No, once the page is loaded, the tool works completely offline. All calculations are performed directly in your browser using JavaScript.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What if I don't know the calories per 100g for my food?</h3>
-                <p>You can often find this information on food packaging, through a quick online search for the specific food item, or by using general nutritional databases.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I track my meals with this tool?</h3>
-                <p>Currently, the tool calculates calories for individual food items. Future updates may include features for tracking meals over time, but for now, you can manually record your results.</p>
-            </div>
-        </section>
-
-        <section class="info-section">
-            <h2>Understanding Calories and Your Diet</h2>
-            <p>Calories are a measure of energy, and they are essential for your body to function. Whether you're looking to lose, gain, or maintain weight, understanding your caloric intake is fundamental. This tool simplifies the process of calculating calories for your specific food portions, empowering you to make informed dietary choices. Remember, a balanced diet and regular physical activity are key to overall health.</p>
-            <p>While this tool is a great starting point, consider it a guide. Individual nutritional needs vary based on age, gender, activity level, and health goals. Always aim for a diverse diet rich in whole foods, and consult healthcare professionals for personalized advice.</p>
-        </section>
-
-        <section class="info-section">
-            <h2>Related Health Tools</h2>
-            <div class="related-tools-grid">
-                <a href="/health/calorie-deficit.html" class="tool-card">
-                    <i class="fas fa-fire"></i>
-                    <h3>Calorie Deficit Calculator</h3>
-                    <p>Find out your ideal calorie deficit for weight loss.</p>
-                </a>
-                <a href="/health/protein-intake.html" class="tool-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>Protein Intake Calculator</h3>
-                    <p>Determine your daily protein needs for muscle gain or maintenance.</p>
-                </a>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -399,14 +511,19 @@
                 </div>
             </div>
 
-
             <div class="footer-bottom">
                 <p>&copy; 2025 Task Proper by Task Proper. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="/health/js/food-calories.js"></script>
-    <script src="/js/script.js"></script>
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="../js/script.js" defer></script>
+    <script src="js/food-calories.js"></script>
+
 </body>
+
 </html>

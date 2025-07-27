@@ -43,6 +43,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="css/calorie-deficit.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -365,62 +366,78 @@
               
             <div class="card-body">
               <!-- Tool Header -->
-                <div class="card-header">
-                    <center><h1><i class="fas fa-fire-alt"></i> Calorie Deficit Calculator</h1>
-                    <p>Wondering how much to eat for weight loss? This calorie deficit calculator gives you clear answers instantly - no guesswork</p></center>
-                </div>
+                <div class="text-center py-8 md:py-12 bg-gray-50 rounded-lg">
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-4 flex items-center justify-center px-2">
+                    <i class="fas fa-fire-alt mr-2 md:mr-4 text-orange-500"></i>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+                        Calorie Deficit Calculator
+                    </span>
+                </h1>
+                <p class="text-sm md:text-base text-gray-500 max-w-3xl mx-auto px-4">Wondering how much to eat for weight loss? This calorie deficit calculator gives you clear answers instantly - no guesswork</p>
+            </div>
             <!-- Calculator Interface -->
             <div class="calculator-interface">
                 <form id="toolForm">
                     <!-- Personal Information Section -->
-                    <div class="form-section form-section-dark">
-                        <h3 class="section-heading"><i class="fas fa-user"></i> Personal Information</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-600 mb-6">
+                        <h3 class="text-lg font-semibold mb-4 flex items-center"><i class="fas fa-user mr-2"></i> Personal Information</h3>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="age" class="form-label">Age</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-birthday-cake input-icon"></i>
-                                    <input type="number" id="age" name="age" placeholder="Enter your age" min="15" max="100" step="1" required class="form-input">
-                                    <span class="input-unit">Years</span>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                            <!-- Age Field -->
+                            <div>
+                                <label for="age" class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+                                <div class="relative">
+                                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                        <i class="fas fa-birthday-cake text-gray-400"></i>
+                                    </div>
+                                    <input type="number" id="age" name="age" placeholder="Enter your age" required class="block w-full rounded-md border-gray-300 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" min="15" max="100">
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                                        <span class="text-gray-500 sm:text-sm">Years</span>
+                                    </div>
                                 </div>
-                                <div class="error-message" id="ageError">Please enter a valid age (15-100).</div>
                             </div>
-                            
-                            
-                            <div class="form-group">
-                                <label for="gender" class="form-label">Gender</label>
-                                <div class="select-with-icon">
-                                    <i class="fas fa-venus-mars input-icon"></i>
-                                    <select id="gender" name="gender" required class="form-select">
+
+                            <!-- Gender Field -->
+                            <div>
+                                <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                                <div class="relative">
+                                     <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                        <i class="fas fa-venus-mars text-gray-400"></i>
+                                    </div>
+                                    <select id="gender" name="gender" required class="block w-full rounded-md border-gray-300 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                         <option value="">Select gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
                                 </div>
-                                <div class="error-message" id="genderError">Please select your gender.</div>
                             </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="height" class="form-label">Height</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-ruler-vertical input-icon"></i>
-                                    <input type="number" id="height" name="height" placeholder="" min="130" max="250" step="1" required class="form-input">
-                                    <span class="input-unit">cm</span>
+
+                            <!-- Height Field -->
+                            <div>
+                                <label for="height" class="block text-sm font-medium text-gray-700 mb-1">Height</label>
+                                <div class="relative">
+                                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                        <i class="fas fa-ruler-vertical text-gray-400"></i>
+                                    </div>
+                                    <input type="number" id="height" name="height" placeholder="e.g., 175" required class="block w-full rounded-md border-gray-300 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" min="130" max="250">
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                                        <span class="text-gray-500 sm:text-sm">cm</span>
+                                    </div>
                                 </div>
-                                <div class="error-message" id="heightError">Please enter a valid height (130-250 cm).</div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="weight" class="form-label">Weight</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-weight input-icon"></i>
-                                    <input type="number" id="weight" name="weight" placeholder="" min="30" max="300" step="0.1" required class="form-input">
-                                    <span class="input-unit">kg</span>
+
+                            <!-- Weight Field -->
+                            <div>
+                                <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Weight</label>
+                                <div class="relative">
+                                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                        <i class="fas fa-weight text-gray-400"></i>
+                                    </div>
+                                    <input type="number" id="weight" name="weight" placeholder="e.g., 70" required class="block w-full rounded-md border-gray-300 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" min="30" max="300">
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                                        <span class="text-gray-500 sm:text-sm">kg</span>
+                                    </div>
                                 </div>
-                                <div class="error-message" id="weightError">Please enter a valid weight (30-300 kg).</div>
                             </div>
                         </div>
                     </div>

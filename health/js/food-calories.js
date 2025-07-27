@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultBox = document.getElementById('resultBox');
     const resultMessage = document.getElementById('resultMessage');
     const suggestionsBox = document.getElementById('suggestionsBox');
+    const darkModeToggle = document.getElementById('darkModeToggle');
 
-    // Store 50 common food items with their calorie values (per 100g or per piece)
     const foodData = [
         { name: "Apple", caloriesPer100g: 52, unit: "100g" },
         { name: "Banana", caloriesPer100g: 89, unit: "100g" },
@@ -63,137 +63,371 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Tea (black)", caloriesPer100g: 1, unit: "100ml" },
         { name: "Coca-Cola", caloriesPer100g: 42, unit: "100ml" },
         { name: "Beer", caloriesPer100g: 43, unit: "100ml" },
-        { name: "Wine", caloriesPer100g: 85, unit: "100ml" }
+        { name: "Wine", caloriesPer100g: 85, unit: "100ml" },
+        { name: "Avocado", caloriesPer100g: 160, unit: "100g" },
+        { name: "Mango", caloriesPer100g: 60, unit: "100g" },
+        { name: "Grapes", caloriesPer100g: 62, unit: "100g" },
+        { name: "Strawberries", caloriesPer100g: 32, unit: "100g" },
+        { name: "Blueberries", caloriesPer100g: 57, unit: "100g" },
+        { name: "Pineapple", caloriesPer100g: 50, unit: "100g" },
+        { name: "Watermelon", caloriesPer100g: 30, unit: "100g" },
+        { name: "Pasta (cooked)", caloriesPer100g: 131, unit: "100g" },
+        { name: "Quinoa (cooked)", caloriesPer100g: 120, unit: "100g" },
+        { name: "Oats (cooked)", caloriesPer100g: 68, unit: "100g" },
+        { name: "Greek Yogurt", caloriesPer100g: 97, unit: "100g" },
+        { name: "Cheese (cheddar)", caloriesPer100g: 402, unit: "100g" },
+        { name: "Tuna (canned)", caloriesPer100g: 116, unit: "100g" },
+        { name: "Sweet Potato", caloriesPer100g: 86, unit: "100g" }
     ];
 
     let selectedFood = null;
 
-    // Function to calculate calories
-    function calculateCalories() {
-        const foodWeight = parseFloat(foodWeightInput.value);
-        let servings = parseFloat(servingsInput.value);
-
-        if (!selectedFood) {
-            errorMessageDiv.textContent = 'Please select a food item from the suggestions.';
-            totalCaloriesSpan.textContent = '0';
-            resultBox.style.display = 'none';
-            return;
+    // Dark mode functionality
+    function initializeDarkMode() {
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            updateDarkModeIcon(true);
         }
-
-        // Input validation for food weight
-        if (isNaN(foodWeight) || foodWeight <= 0) {
-            errorMessageDiv.textContent = 'Please enter a valid food weight (e.g., 100).';
-            totalCaloriesSpan.textContent = '0';
-            resultBox.style.display = 'none';
-            return;
-        }
-
-        // Default servings to 1 if empty or invalid
-        if (isNaN(servings) || servings <= 0) {
-            servings = 1;
-            servingsInput.value = 1; // Update input field to show default
-        }
-
-        errorMessageDiv.textContent = ''; // Clear any previous error messages
-
-        // Core Calculation Logic:
-        // Total Calories = (Grams × Calories per 100g × Servings) / 100
-        // If unit is 'piece' or 'slice', foodWeight is treated as number of pieces/slices
-        let totalCalories;
-        if (selectedFood.unit === "piece" || selectedFood.unit === "slice") {
-            totalCalories = foodWeight * selectedFood.caloriesPer100g * servings;
-        } else {
-            totalCalories = (foodWeight * selectedFood.caloriesPer100g * servings) / 100;
-        }
-
-        totalCaloriesSpan.textContent = totalCalories.toFixed(2); // Display with 2 decimal places
-        caloriesPer100gDisplay.textContent = `${selectedFood.caloriesPer100g} kcal per ${selectedFood.unit}`;
-        resultMessage.textContent = `Based on your input, consuming ${foodWeight}${selectedFood.unit === "piece" || selectedFood.unit === "slice" ? " piece(s)" : "g"} of ${selectedFood.name} for ${servings} serving(s) results in approximately ${totalCalories.toFixed(2)} kcal.`;
-        resultBox.style.display = 'block'; // Show the result box
-
-        // Animate or fade-in result box for good UX
-        resultBox.style.opacity = 0;
-        let opacity = 0;
-        const fadeInInterval = setInterval(() => {
-            if (opacity < 1) {
-                opacity += 0.1;
-                resultBox.style.opacity = opacity;
-            } else {
-                clearInterval(fadeInInterval);
-            }
-        }, 50);
     }
 
-    // Function to reset calculator
+    function updateDarkModeIcon(isDark) {
+        const icon = darkModeToggle.querySelector('i');
+        if (isDark) {
+            icon.className = 'fas fa-sun';
+        } else {
+            icon.className = 'fas fa-moon';
+        }
+    }
+
+    function toggleDarkMode() {
+        const isDarkMode = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+        updateDarkModeIcon(isDarkMode);
+    }
+
+    // Clear error messages
+    function clearErrors() {
+        errorMessageDiv.textContent = '';
+        errorMessageDiv.style.display = 'none';
+    }
+
+    // Show error message
+    function showError(message) {
+        errorMessageDiv.textContent = message;
+        errorMessageDiv.style.display = 'block';
+    }
+
+    // Validate inputs
+    function validateInputs() {
+        if (!selectedFood) {
+            showError('Please select a food from the suggestions.');
+            return false;
+        }
+
+        const foodWeight = parseFloat(foodWeightInput.value);
+        const servings = parseInt(servingsInput.value, 10);
+
+        if (isNaN(foodWeight) || foodWeight <= 0) {
+            showError('Please enter a valid weight/quantity greater than 0.');
+            foodWeightInput.focus();
+            return false;
+        }
+
+        if (foodWeight > 5000) {
+            showError('Weight/quantity seems too high. Please enter a reasonable amount.');
+            foodWeightInput.focus();
+            return false;
+        }
+
+        if (isNaN(servings) || servings <= 0) {
+            showError('Please enter a valid number of servings (1 or more).');
+            servingsInput.focus();
+            return false;
+        }
+
+        if (servings > 20) {
+            showError('Number of servings seems too high. Please enter a reasonable amount.');
+            servingsInput.focus();
+            return false;
+        }
+
+        return true;
+    }
+
+    // Calculate calories
+    function calculateCalories() {
+        clearErrors();
+
+        if (!validateInputs()) {
+            return;
+        }
+
+        const foodWeight = parseFloat(foodWeightInput.value);
+        const servings = parseInt(servingsInput.value, 10);
+
+        let totalCalories;
+        let unitText = '';
+
+        if (selectedFood.unit === "piece" || selectedFood.unit === "slice") {
+            totalCalories = foodWeight * selectedFood.caloriesPer100g * servings;
+            unitText = foodWeight === 1 ? 'piece' : 'pieces';
+        } else {
+            totalCalories = (foodWeight * selectedFood.caloriesPer100g * servings) / 100;
+            unitText = selectedFood.unit === "100ml" ? 'ml' : 'g';
+        }
+
+        // Update results
+        totalCaloriesSpan.textContent = Math.round(totalCalories);
+        caloriesPer100gDisplay.textContent = `${selectedFood.caloriesPer100g} kcal per ${selectedFood.unit}`;
+        
+        // Create detailed result message
+        const servingText = servings === 1 ? 'serving' : 'servings';
+        const weightText = selectedFood.unit === "piece" || selectedFood.unit === "slice" 
+            ? `${foodWeight} ${unitText}` 
+            : `${foodWeight}${unitText}`;
+        
+        resultMessage.textContent = `Based on your input, consuming ${weightText} of ${selectedFood.name} for ${servings} ${servingText} contains approximately ${Math.round(totalCalories)} calories.`;
+        
+        // Show results with animation
+        resultBox.style.display = 'block';
+        resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        
+        // Add fade-in animation
+        resultBox.style.opacity = '0';
+        setTimeout(() => {
+            resultBox.style.transition = 'opacity 0.5s ease-in-out';
+            resultBox.style.opacity = '1';
+        }, 100);
+    }
+
+    // Reset calculator
     function resetCalculator() {
         foodNameInput.value = '';
         foodWeightInput.value = '';
-        servingsInput.value = '';
+        servingsInput.value = '1';
         totalCaloriesSpan.textContent = '0';
-        caloriesPer100gDisplay.textContent = '';
-        errorMessageDiv.textContent = '';
-        resultBox.style.display = 'none'; // Hide the result box
-        resultBox.style.opacity = 1; // Reset opacity for next calculation
-        suggestionsBox.innerHTML = ''; // Clear suggestions
+        caloriesPer100gDisplay.textContent = '-';
+        clearErrors();
+        resultBox.style.display = 'none';
+        resultBox.style.opacity = '1';
+        resultBox.style.transition = '';
+        suggestionsBox.innerHTML = '';
         selectedFood = null;
+        clearFoodNameBtn.style.display = 'none';
+        
+        // Focus on food name input
+        foodNameInput.focus();
     }
 
-    // Auto-suggest functionality
-    foodNameInput.addEventListener('input', function() {
-        const query = foodNameInput.value.toLowerCase();
+    // Handle food name input
+    function handleFoodNameInput() {
+        const query = foodNameInput.value.toLowerCase().trim();
         suggestionsBox.innerHTML = '';
-        selectedFood = null; // Reset selected food when typing
+        selectedFood = null;
+        clearErrors();
 
+        // Show/hide clear button
         if (query.length > 0) {
             clearFoodNameBtn.style.display = 'block';
         } else {
             clearFoodNameBtn.style.display = 'none';
-        }
-
-        if (query.length === 0) {
+            caloriesPer100gDisplay.textContent = '-';
             return;
         }
 
+        if (query.length < 2) {
+            return;
+        }
+
+        // Filter foods based on query
         const filteredFoods = foodData.filter(food =>
             food.name.toLowerCase().includes(query)
-        ).slice(0, 5); // Limit to 5 suggestions
+        ).slice(0, 8); // Show more suggestions
 
         if (filteredFoods.length > 0) {
             filteredFoods.forEach(food => {
                 const suggestionItem = document.createElement('div');
                 suggestionItem.classList.add('suggestion-item');
-                suggestionItem.textContent = food.name;
+                suggestionItem.innerHTML = `
+                    <strong>${food.name}</strong>
+                    <small style="color: #666; margin-left: 8px;">${food.caloriesPer100g} kcal per ${food.unit}</small>
+                `;
+                
                 suggestionItem.addEventListener('click', () => {
-                    foodNameInput.value = food.name;
-                    selectedFood = food;
-                    caloriesPer100gDisplay.textContent = `${food.caloriesPer100g} kcal per ${food.unit}`;
-                    suggestionsBox.innerHTML = ''; // Clear suggestions after selection
-                    errorMessageDiv.textContent = ''; // Clear error message
+                    selectFood(food);
                 });
+                
                 suggestionsBox.appendChild(suggestionItem);
             });
         } else {
-            errorMessageDiv.textContent = 'Sorry, data not found for this food.';
-            caloriesPer100gDisplay.textContent = '';
+            const noResultsItem = document.createElement('div');
+            noResultsItem.classList.add('suggestion-item');
+            noResultsItem.style.color = '#999';
+            noResultsItem.style.fontStyle = 'italic';
+            noResultsItem.textContent = 'No matching foods found. Try a different search term.';
+            suggestionsBox.appendChild(noResultsItem);
         }
-    });
+    }
 
-    // Clear suggestions when clicking outside the input/suggestions box
-    document.addEventListener('click', function(event) {
-        if (!foodNameInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
-            suggestionsBox.innerHTML = '';
+    // Select a food item
+    function selectFood(food) {
+        foodNameInput.value = food.name;
+        selectedFood = food;
+        caloriesPer100gDisplay.textContent = `${food.caloriesPer100g} kcal per ${food.unit}`;
+        suggestionsBox.innerHTML = '';
+        clearErrors();
+        
+        // Focus on weight input
+        foodWeightInput.focus();
+        
+        // Update placeholder text based on unit
+        if (food.unit === "piece" || food.unit === "slice") {
+            foodWeightInput.placeholder = "quantity";
+        } else {
+            foodWeightInput.placeholder = "grams";
         }
-    });
+    }
 
-    // Event Listeners
-    calculateBtn.addEventListener('click', calculateCalories);
-    resetBtn.addEventListener('click', resetCalculator);
-
-    clearFoodNameBtn.addEventListener('click', () => {
+    // Clear food name input
+    function clearFoodName() {
         foodNameInput.value = '';
         suggestionsBox.innerHTML = '';
         selectedFood = null;
         clearFoodNameBtn.style.display = 'none';
-        errorMessageDiv.textContent = '';
+        caloriesPer100gDisplay.textContent = '-';
+        clearErrors();
+        foodWeightInput.placeholder = "grams";
+        foodNameInput.focus();
+    }
+
+    // Handle clicks outside suggestions
+    function handleDocumentClick(event) {
+        if (!foodNameInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
+            suggestionsBox.innerHTML = '';
+        }
+    }
+
+    // Handle keyboard navigation
+    function handleKeyboardNavigation(event) {
+        const suggestions = suggestionsBox.querySelectorAll('.suggestion-item');
+        if (suggestions.length === 0) return;
+
+        let currentIndex = -1;
+        suggestions.forEach((item, index) => {
+            if (item.classList.contains('highlighted')) {
+                currentIndex = index;
+            }
+        });
+
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            currentIndex = (currentIndex + 1) % suggestions.length;
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            currentIndex = currentIndex <= 0 ? suggestions.length - 1 : currentIndex - 1;
+        } else if (event.key === 'Enter') {
+            event.preventDefault();
+            if (currentIndex >= 0 && suggestions[currentIndex]) {
+                suggestions[currentIndex].click();
+            }
+            return;
+        } else if (event.key === 'Escape') {
+            suggestionsBox.innerHTML = '';
+            return;
+        } else {
+            return;
+        }
+
+        // Update highlighting
+        suggestions.forEach((item, index) => {
+            if (index === currentIndex) {
+                item.classList.add('highlighted');
+                item.style.backgroundColor = '#f0f0f0';
+            } else {
+                item.classList.remove('highlighted');
+                item.style.backgroundColor = '';
+            }
+        });
+    }
+
+    // Initialize the application
+    function init() {
+        initializeDarkMode();
+        
+        // Set default values
+        servingsInput.value = '1';
+        caloriesPer100gDisplay.textContent = '-';
+        
+        // Focus on food name input
+        setTimeout(() => {
+            foodNameInput.focus();
+        }, 100);
+    }
+
+    // Event listeners
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+    }
+
+    if (foodNameInput) {
+        foodNameInput.addEventListener('input', handleFoodNameInput);
+        foodNameInput.addEventListener('keydown', handleKeyboardNavigation);
+    }
+
+    if (clearFoodNameBtn) {
+        clearFoodNameBtn.addEventListener('click', clearFoodName);
+    }
+
+    if (calculateBtn) {
+        calculateBtn.addEventListener('click', calculateCalories);
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', resetCalculator);
+    }
+
+    // Handle Enter key on form inputs
+    if (foodWeightInput) {
+        foodWeightInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                servingsInput.focus();
+            }
+        });
+    }
+
+    if (servingsInput) {
+        servingsInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                calculateCalories();
+            }
+        });
+    }
+
+    // Handle clicks outside suggestions
+    document.addEventListener('click', handleDocumentClick);
+
+    // Initialize the app
+    init();
+
+    // FAQ functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const summary = item.querySelector('summary');
+        if (summary) {
+            summary.addEventListener('click', function(e) {
+                // Let the browser handle the details toggle
+                setTimeout(() => {
+                    if (item.hasAttribute('open')) {
+                        // Scroll into view if on mobile
+                        if (window.innerWidth < 768) {
+                            summary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                    }
+                }, 100);
+            });
+        }
     });
 });

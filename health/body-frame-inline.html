@@ -2077,23 +2077,12 @@
         // Dark Mode Functionality
         function initDarkMode() {
             const darkModeToggle = document.getElementById('darkModeToggle');
-            const modeToast = document.getElementById('modeToast');
             
-            // Check for saved preference or system preference
-            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-            const savedMode = localStorage.getItem("darkMode");
-            
-            // Initialize based on saved preference or system preference
-            if (savedMode === "dark" || (savedMode === null && prefersDarkScheme.matches)) {
-                document.body.classList.add("dark-mode");
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
-            } else {
-                document.body.classList.remove("dark-mode");
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
-            }
-            
+            // Set default to light mode
+            document.body.classList.remove("dark-mode");
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
+
             // Toggle dark mode when button is clicked
             darkModeToggle.addEventListener("click", () => {
                 if (document.body.classList.contains("dark-mode")) {
@@ -2110,21 +2099,6 @@
                     darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
                     darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
                     showModeToast("Dark mode activated");
-                }
-            });
-            
-            // Listen for system preference changes
-            prefersDarkScheme.addEventListener("change", (e) => {
-                if (!localStorage.getItem("darkMode")) { // Only if user hasn't explicitly set a preference
-                    if (e.matches) {
-                        document.body.classList.add("dark-mode");
-                        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                        darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
-                    } else {
-                        document.body.classList.remove("dark-mode");
-                        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                        darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
-                    }
                 }
             });
         }
