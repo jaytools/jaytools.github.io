@@ -1,0 +1,446 @@
+/* =========================
+   Daily Expense Tracker CSS
+   Professional & Attractive
+============================ */
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary-color: #64748b;
+  --accent-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #0ea5e9;
+  --text-color: #1f2937;
+  --light-text-color: #6b7280;
+  --border-color: #d1d5db;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --light-bg: #f1f5f9;
+  --shadow-color: rgba(0, 0, 0, 0.06);
+
+  --dark-background-color: #1e293b;
+  --dark-card-background: #111827;
+  --dark-text-color: #f3f4f6;
+  --dark-border-color: #374151;
+  --dark-shadow-color: rgba(255, 255, 255, 0.05);
+
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color var(--transition), color var(--transition);
+}
+/* Breadcrumbs */
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.95rem;
+}
+
+.breadcrumb a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    margin: 0 var(--spacing-xs);
+    color: var(--border-color);
+}
+
+.breadcrumb span:last-child {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+body.dark-mode .breadcrumb a {
+    color: var(--dark-light-text-color);
+}
+
+body.dark-mode .breadcrumb a:hover {
+    color: var(--dark-primary-color);
+}
+
+body.dark-mode .breadcrumb span:last-child {
+    color: var(--dark-primary-color);
+}
+
+body.dark-mode .breadcrumb-separator {
+    color: var(--dark-border-color);
+}
+.main-content {
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  background: var(--card-background);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tool-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.theme-toggle-button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.theme-toggle-button:hover {
+  background: var(--primary-dark);
+}
+
+.card {
+  background: var(--card-background);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px var(--shadow-color);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+.add-expense-btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.add-expense-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+/* ===== Table Styling ===== */
+.expense-table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background: #fff;
+}
+
+#expenseTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+#expenseTable th,
+#expenseTable td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+    text-align: left;
+}
+
+#expenseTable th {
+    background-color: var(--light-gray, #f5f5f5);
+    font-weight: 600;
+    color: #333;
+}
+
+#expenseTable tr:hover {
+    background-color: #f9f9f9;
+}
+
+#expenseTable td .btn {
+    padding: 4px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+#expenseTable .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+.expense-results-section {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.total-section {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.total-section h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.totals-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.total-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  min-width: 130px;
+  transition: transform 0.2s ease;
+}
+
+.total-card:hover {
+  transform: scale(1.05);
+}
+
+.total-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.total-amount {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.expense-table-container h2,
+.info-section h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expense-table th,
+.expense-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.expense-table th {
+  background: var(--light-bg);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.expense-table tr:hover {
+  background: #f1f5f9;
+}
+
+.feature-grid,
+.related-tools-grid,
+.how-to-steps-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.feature-item,
+.step-card {
+  background: var(--light-bg);
+  color: var(--text-color);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+.tool-card {
+  background: var(--light-bg);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow var(--transition);
+}
+
+.feature-item i,
+.tool-card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform var(--transition);
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.step-number {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+/* Empty State */
+.empty-message {
+  text-align: center;
+  color: var(--light-text-color);
+  font-style: italic;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: var(--dark-background-color);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .card,
+body.dark-mode .tool-card,
+body.dark-mode .feature-item {
+  background: var(--dark-card-background);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background: #1e293b;
+  color: var(--dark-text-color);
+  border-color: var(--dark-border-color);
+}
+
+body.dark-mode .expense-table th {
+  background: #1e293b;
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .tool-card:hover {
+  box-shadow: 0 6px 12px var(--dark-shadow-color);
+}
+
+body.dark-mode .step-card {
+  background: var(--dark-card-background);
+  color: var(--dark-text-color);
+  box-shadow: 0 4px 10px var(--dark-shadow-color);
+}
+
+body.dark-mode .step-number {
+  background: var(--primary-color); /* You can use accent if preferred */
+  color: white;
+}
+
+body.dark-mode .total-section {
+  background-color: var(--dark-card-background);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .total-section h2 {
+  color: var(--dark-text-color);
+}
