@@ -220,7 +220,7 @@ function createToolCard(tool) {
     
     const title = card.querySelector('.tool-title');
     const link = card.querySelector('.tool-link');
-    const favoriteBtn = card.querySelector('.favorite-btn');
+    const favoriteBtn = card.querySelector('.favorite-button');
     
     title.textContent = tool.name;
     link.href = tool.url;
