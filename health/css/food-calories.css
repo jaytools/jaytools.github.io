@@ -34,6 +34,15 @@
     color: #6c757d;
 }
 
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
 /* Main Container */
 .main-container {
     width: 100%;
@@ -43,10 +52,63 @@
     margin: 0 auto;
 }
 
+/* Enhanced Mobile Optimizations */
 @media (max-width: 576px) {
     .main-container {
         padding: 0 15px;
     }
+    
+    .card-header h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .steps-container .step-item {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Enhanced Animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced Form Animations */
+.form-input:focus {
+    transform: scale(1.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-calculate:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+/* Results Animation */
+.results-section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Suggestion Items Hover */
+.suggestion-item {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.suggestion-item:hover {
+    transform: translateX(2px);
+    background-color: #f8f9fa;
 }
 
 /* FC Wrapper */
