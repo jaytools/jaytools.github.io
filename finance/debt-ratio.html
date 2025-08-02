@@ -3,90 +3,940 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Tool - Task Proper | Free Online Calculator</title>
-    <meta name="description" content="Use our free Sample Tool calculator for quick and accurate calculations. Simple, fast, and mobile-friendly tool from Task Proper.">
-    <meta name="keywords" content="sample calculator, online tool, free calculator, Task Proper, math calculator">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Task Proper">
+    <title>Calculate Debt to Income Ratio - Free DTI Calculator | Task Proper</title>
+    <meta name="description" content="Calculate debt to income ratio instantly with our free online calculator. Get your DTI percentage for mortgage, car loan applications. 100% free DTI tool.">
+    <link rel="canonical" href="https://www.taskproper.com/finance/debt-ratio.html" />
     
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Sample Tool - Task Proper | Free Online Calculator">
-    <meta property="og:description" content="Use our free Sample Tool calculator for quick and accurate calculations. Simple, fast, and mobile-friendly.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Calculate Debt to Income Ratio - Free DTI Calculator">
+    <meta property="og:description" content="Calculate debt to income ratio instantly with our free online calculator. Get your DTI percentage for mortgage, car loan applications.">
+    <meta property="og:image" content="https://www.taskproper.com/apple-touch-icon.png">
+    <meta property="og:url" content="https://www.taskproper.com/finance/debt-ratio.html">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://taskproper.com/tools/seperate-tool/sample-tool.html">
+    <meta property="og:site_name" content="Task Proper">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://taskproper.com/tools/seperate-tool/sample-tool.html">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculate Debt to Income Ratio - Free DTI Calculator">
+    <meta name="twitter:description" content="Calculate debt to income ratio instantly with our free online calculator. Get your DTI percentage for mortgage, car loan applications.">
+    <meta name="twitter:image" content="https://www.taskproper.com/apple-touch-icon.png">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-    <link rel="manifest" href="../../site.webmanifest">
+    <!-- Favicons -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../css/custom.css">
-    <link rel="stylesheet" href="css/debt-ratio.css">
-    
-    <!-- Schema.org JSON-LD for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Sample Tool Calculator",
-        "url": "https://taskproper.com/tools/seperate-tool/sample-tool.html",
-        "description": "A sample calculator tool with advanced calculation features, history tracking, and a dark mode interface.",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": "Advanced arithmetic operations; Dark/Light mode toggle; Calculation history; Save favorite calculations; Mobile-friendly responsive design",
-        "screenshot": "https://taskproper.com/img/tools/sample-tool-advanced-screenshot.jpg",
-        "author": {
-            "@type": "Organization",
-            "name": "Task Proper",
-            "url": "https://taskproper.com"
-        },
-        "mainEntity": {
-            "@type": "HowTo",
-            "name": "How to Use the Advanced Calculator Tool",
-            "step": [
-                {
-                    "@type": "HowToStep",
-                    "text": "Enter your first value in the input field"
-                },
-                {
-                    "@type": "HowToStep",
-                    "text": "Enter your second value in the second input field"
-                },
-                {
-                    "@type": "HowToStep",
-                    "text": "Select the operation you want to perform"
-                },
-                {
-                    "@type": "HowToStep",
-                    "text": "Click 'Calculate' to see the results"
-                },
-                {
-                    "@type": "HowToStep",
-                    "text": "View previous calculations in the history panel"
-                }
-            ]
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- Tool Specific Styles -->
+    <style>
+        :root {
+            /* Color Variables - Professional B&W Theme */
+            --color-primary: #333333;
+            --color-primary-dark: #000000;
+            --color-secondary: #555555;
+            --color-success: #2e7d32;
+            --color-success-dark: #1b5e20;
+            --color-error: #c62828;
+            --color-error-dark: #b71c1c;
+            --color-gray-50: #f8f9fa;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-500: #6b7280;
+            --color-gray-600: #4b5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+            --color-white: #ffffff;
+
+            /* Spacing Variables */
+            --space-xs: 5px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 50%;
+            
+            /* Box Shadow */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --shadow-focus: 0 0 0 3px rgba(51, 51, 51, 0.1);
         }
-    }
-    </script>
+
+        /* Global Styles */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-gray-800);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background: var(--color-gray-50);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--color-primary);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: var(--color-gray-500);
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-lg);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Card Components */
+        .card {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-200);
+            overflow: hidden;
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card:hover {
+            border-color: var(--color-gray-500);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-header {
+            background: var(--color-white);
+            color: var(--color-primary);
+            padding: var(--space-xl);
+            text-align: center;
+            border-bottom: 2px solid var(--color-gray-200);
+        }
+
+        .card-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.025em;
+            color: var(--color-primary);
+        }
+
+        .card-header p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--color-gray-700);
+            margin: 0;
+        }
+
+        .card-body {
+            padding: var(--space-xl);
+        }
+
+        /* Form Components */
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            color: var(--color-gray-700);
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px var(--space-md);
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: var(--color-white);
+            box-sizing: border-box;
+            color: var(--color-gray-800);
+            min-height: 48px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-focus);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        /* Input Wrapper for Currency Symbol */
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 16px;
+            color: var(--color-gray-600);
+            font-weight: 500;
+            font-size: 1rem;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .input-wrapper .form-input {
+            padding-left: 40px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: inherit;
+            min-height: 48px;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary {
+            background: var(--color-gray-100);
+            color: var(--color-gray-700);
+            border: 2px solid var(--color-gray-200);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-gray-200);
+            transform: translateY(-1px);
+        }
+
+        /* Results Section */
+        .results-section {
+            margin-top: var(--space-xl);
+            padding: var(--space-xl);
+            background: var(--color-gray-50);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .results-section.hidden {
+            display: none;
+        }
+
+        .result-card {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .result-header h3 {
+            color: var(--color-gray-800);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .dti-percentage {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .result-status {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            background: var(--color-gray-50);
+        }
+
+        .status-indicator {
+            width: 16px;
+            height: 16px;
+            border-radius: var(--radius-full);
+            flex-shrink: 0;
+        }
+
+        .status-indicator.excellent {
+            background: var(--color-success);
+        }
+
+        .status-indicator.good {
+            background: #3b82f6;
+        }
+
+        .status-indicator.fair {
+            background: #f59e0b;
+        }
+
+        .status-indicator.poor {
+            background: var(--color-error);
+        }
+
+        .status-message {
+            font-weight: 600;
+            color: var(--color-gray-800);
+            font-size: 1.1rem;
+        }
+
+        .result-details {
+            color: var(--color-gray-700);
+            line-height: 1.6;
+        }
+
+        .result-message p {
+            margin-bottom: var(--space-md);
+        }
+
+        .calculation-breakdown {
+            margin-top: var(--space-lg);
+            padding: var(--space-lg);
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .calculation-breakdown h4 {
+            color: var(--color-gray-800);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 var(--space-md) 0;
+        }
+
+        .calculation-breakdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .calculation-breakdown li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-gray-200);
+            color: var(--color-gray-700);
+        }
+
+        .calculation-breakdown li:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            color: var(--color-gray-800);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .action-buttons .btn {
+            flex: 1;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            padding: var(--space-lg);
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .info-icon.excellent {
+            background: var(--color-success);
+        }
+
+        .info-icon.good {
+            background: #3b82f6;
+        }
+
+        .info-icon.fair {
+            background: #f59e0b;
+        }
+
+        .info-icon.poor {
+            background: var(--color-error);
+        }
+
+        .info-content h4 {
+            color: var(--color-gray-800);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 var(--space-sm) 0;
+        }
+
+        .info-content p {
+            color: var(--color-gray-600);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Related Tools Section */
+        .related-section {
+            margin-top: var(--space-xl);
+        }
+
+        .related-section h2 {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            color: var(--color-gray-800);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0 0 var(--space-sm) 0;
+        }
+
+        .related-section h2 i {
+            color: var(--color-primary);
+        }
+
+        .section-description {
+            color: var(--color-gray-600);
+            font-size: 1.1rem;
+            margin: 0 0 var(--space-xl) 0;
+            line-height: 1.5;
+        }
+
+        .related-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .tool-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: var(--space-xl) var(--space-lg);
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: var(--color-gray-800);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .tool-card i {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .tool-card span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        /* Loading State */
+        .btn.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .btn.loading i {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            /* Container Adjustments */
+            .container {
+                padding: 0 var(--space-sm);
+            }
+
+            .tool-container {
+                padding: var(--space-sm);
+                max-width: 100%;
+            }
+
+            /* Card Responsive Design */
+            .card {
+                margin-bottom: var(--space-md);
+                border-radius: var(--radius-sm);
+            }
+
+            .card-header {
+                padding: var(--space-md);
+                text-align: center;
+            }
+
+            .card-header h1 {
+                font-size: 1.6rem;
+                line-height: 1.2;
+                margin-bottom: var(--space-sm);
+            }
+
+            .card-header p {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+
+            .card-body {
+                padding: var(--space-md);
+            }
+
+            /* Form Mobile Optimization */
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .form-input {
+                padding: 12px var(--space-md);
+                font-size: 16px; /* Prevents zoom on iOS */
+                min-height: 48px;
+            }
+
+            .input-wrapper .form-input {
+                padding-left: 40px;
+            }
+
+            .currency-symbol {
+                left: 16px;
+                font-size: 1rem;
+            }
+
+            /* Button Mobile Optimization */
+            .btn {
+                padding: var(--space-md);
+                font-size: 1rem;
+                min-height: 48px;
+                width: 100%;
+            }
+
+            /* Results Section Mobile */
+            .results-section {
+                margin-top: var(--space-md);
+                padding: var(--space-md);
+                border-radius: var(--radius-sm);
+            }
+
+            .result-card {
+                padding: var(--space-md);
+                margin-bottom: var(--space-sm);
+                border-radius: var(--radius-sm);
+            }
+
+            .result-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+                text-align: left;
+                padding-bottom: var(--space-sm);
+            }
+
+            .result-header h3 {
+                font-size: 1.1rem;
+                margin: 0;
+            }
+
+            .dti-percentage {
+                font-size: 2rem;
+                font-weight: 700;
+                align-self: flex-start;
+            }
+
+            .result-status {
+                padding: var(--space-sm);
+                margin-bottom: var(--space-sm);
+                flex-wrap: wrap;
+                border-radius: var(--radius-sm);
+            }
+
+            .status-indicator {
+                width: 14px;
+                height: 14px;
+            }
+
+            .status-message {
+                font-size: 0.95rem;
+                line-height: 1.3;
+            }
+
+            .result-details {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            /* Action Buttons Mobile */
+            .action-buttons {
+                flex-direction: column;
+                gap: var(--space-sm);
+                margin-top: var(--space-sm);
+            }
+
+            .action-buttons .btn {
+                width: 100%;
+                padding: var(--space-sm);
+                font-size: 0.95rem;
+                min-height: 44px;
+            }
+
+            /* Info Cards Mobile */
+            .info-cards {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+                margin: var(--space-md) 0;
+            }
+
+            .info-card {
+                padding: var(--space-sm);
+                border-radius: var(--radius-sm);
+                gap: var(--space-sm);
+            }
+
+            .info-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+                flex-shrink: 0;
+            }
+
+            .info-content h4 {
+                font-size: 0.95rem;
+                margin-bottom: var(--space-xs);
+            }
+
+            .info-content p {
+                font-size: 0.85rem;
+                line-height: 1.3;
+            }
+
+            /* Related Section Mobile */
+            .related-section {
+                margin-top: var(--space-md);
+            }
+
+            .related-section h2 {
+                font-size: 1.4rem;
+                gap: var(--space-sm);
+                margin-bottom: var(--space-sm);
+            }
+
+            .section-description {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                margin-bottom: var(--space-md);
+            }
+
+            /* Related Tools Grid Mobile */
+            .related-tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-sm);
+            }
+
+            .tool-card {
+                padding: var(--space-sm);
+                border-radius: var(--radius-sm);
+                text-align: center;
+            }
+
+            .tool-card i {
+                font-size: 1.8rem;
+                margin-bottom: var(--space-xs);
+            }
+
+            .tool-card span {
+                font-size: 0.85rem;
+                line-height: 1.2;
+            }
+
+            /* Table Mobile Responsive */
+            .related-section table {
+                font-size: 0.8rem;
+            }
+
+            .related-section th,
+            .related-section td {
+                padding: 0.5rem !important;
+            }
+
+            /* Breadcrumb Mobile */
+            .breadcrumb {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra Small Mobile */
+            .container {
+                padding: 0 var(--space-xs);
+            }
+
+            .tool-container {
+                padding: var(--space-xs);
+            }
+
+            /* Ultra Compact Cards */
+            .card-header {
+                padding: var(--space-sm);
+            }
+
+            .card-header h1 {
+                font-size: 1.4rem;
+                line-height: 1.3;
+            }
+
+            .card-header p {
+                font-size: 0.9rem;
+            }
+
+            .card-body {
+                padding: var(--space-sm);
+            }
+
+            /* Ultra Compact Results */
+            .results-section {
+                padding: var(--space-sm);
+                margin-top: var(--space-sm);
+            }
+
+            .result-card {
+                padding: var(--space-sm);
+            }
+
+            .dti-percentage {
+                font-size: 1.8rem;
+            }
+
+            .result-header h3 {
+                font-size: 1rem;
+            }
+
+            .status-message {
+                font-size: 0.9rem;
+            }
+
+            .result-details {
+                font-size: 0.85rem;
+            }
+
+            /* Single Column Layout */
+            .related-tools-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-xs);
+            }
+
+            .tool-card {
+                padding: var(--space-xs);
+            }
+
+            .tool-card i {
+                font-size: 1.5rem;
+            }
+
+            .tool-card span {
+                font-size: 0.8rem;
+            }
+
+            /* Ultra Compact Info Cards */
+            .info-cards {
+                gap: var(--space-xs);
+                margin: var(--space-sm) 0;
+            }
+
+            .info-card {
+                padding: var(--space-xs);
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .info-icon {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+                margin-bottom: var(--space-xs);
+            }
+
+            .info-content h4 {
+                font-size: 0.9rem;
+            }
+
+            .info-content p {
+                font-size: 0.8rem;
+            }
+
+            /* Ultra Compact Sections */
+            .related-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-description {
+                font-size: 0.85rem;
+            }
+
+            /* Form Ultra Compact */
+            .form-input {
+                padding: 10px var(--space-sm);
+                font-size: 16px;
+                min-height: 44px;
+            }
+
+            .input-wrapper .form-input {
+                padding-left: 32px;
+            }
+
+            .currency-symbol {
+                left: 12px;
+                font-size: 0.9rem;
+            }
+
+            /* Button Ultra Compact */
+            .btn {
+                padding: 10px var(--space-sm);
+                font-size: 0.9rem;
+                min-height: 44px;
+            }
+
+            .action-buttons .btn {
+                padding: 8px var(--space-sm);
+                font-size: 0.85rem;
+                min-height: 40px;
+            }
+
+            /* Breadcrumb Ultra Compact */
+            .breadcrumb {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+                margin-bottom: 0.8rem;
+            }
+        }
+
+        /* Landscape Phone Orientation */
+        @media (max-width: 896px) and (orientation: landscape) {
+            .card-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .dti-percentage {
+                font-size: 1.8rem;
+            }
+
+            .related-tools-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+          
 </head>
 <body>
     <!-- Header Section -->
@@ -196,156 +1046,387 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Tool Container -->
-        <div class="tool-container">
-            <!-- Tool Header -->
-            <div class="tool-header">
-                <h1>Advanced Calculator Tool</h1>
-                <p>A powerful calculator with history tracking, theme options, and the ability to save your favorite calculations for future reference.</p>
-            </div>
-
-        <!-- Tool Card -->
-        <div class="tool-card">
-            <button type="button" class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle dark/light theme">
-                <i class="fas fa-moon" id="themeIcon"></i>
-            </button>
-            
-            <div class="tool-ribbon">
-                <span>Advanced Calculator</span>
-            </div>
-
-            <!-- Calculator Interface -->
-            <div class="calculator-interface">
-                <form id="toolForm">
-                    <!-- Input Section -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="input1">First Value</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-hashtag input-icon"></i>
-                                <input type="number" id="input1" name="input1" placeholder="Enter first value" step="any" required>
-                            </div>
-                            <div class="error-message" id="input1Error">Please enter a valid number.</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="input2">Second Value</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-hashtag input-icon"></i>
-                                <input type="number" id="input2" name="input2" placeholder="Enter second value" step="any" required>
-                            </div>
-                            <div class="error-message" id="input2Error">Please enter a valid number.</div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="operation">Operation</label>
-                        <div class="select-with-icon">
-                            <i class="fas fa-calculator input-icon"></i>
-                            <select id="operation" name="operation" required>
-                                <option value="">Select operation</option>
-                                <option value="add">Addition (+)</option>
-                                <option value="subtract">Subtraction (-)</option>
-                                <option value="multiply">Multiplication (×)</option>
-                                <option value="divide">Division (÷)</option>
-                            </select>
-                        </div>
-                        <div class="error-message" id="operationError">Please select an operation.</div>
-                    </div>
-
-                    <!-- Calculate Button -->
-                    <button type="submit" class="calculate-btn" id="calculateBtn" disabled>
-                        <i class="fas fa-calculator"></i>
-                        Calculate Result
-                    </button>
-                </form>
-            </div>
-
-            <!-- Result Section -->
-            <div class="result-section" id="resultSection">
-                <div class="result-title">
-                    <i class="fas fa-check-circle"></i>
-                    Calculation Result
-                </div>
-                <div class="result-value-container">
-                    <div class="result-value" id="resultValue">0</div>
-                </div>
-                <div class="result-description" id="resultDescription">
-                    Your calculation result will appear here
-                </div>
-                <div class="button-group">
-                    <button class="reset-btn" onclick="resetCalculator()">
-                        <i class="fas fa-redo"></i>
-                        Calculate Again
-                    </button>
-                    <button type="button" class="history-btn" id="showHistoryBtn">
-                        <i class="fas fa-history"></i>
-                        View History
-                    </button>
-                </div>
-            </div>
-            
-            <!-- History Panel -->
-            <div class="history-panel" id="historyPanel">
-                <div class="history-title">
-                    <h3><i class="fas fa-history"></i> Calculation History</h3>
-                    <div class="history-actions">
-                        <span class="history-info">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="history-info-tooltip">Click on "Reuse" to load values. Star to save favorites.</span>
-                        </span>
-                        <button type="button" class="history-clear" id="clearHistoryBtn">
-                            <i class="fas fa-trash"></i> Clear All
-                        </button>
-                    </div>
-                </div>
-                <ul class="history-list" id="historyList">
-                    <!-- History items will be added here dynamically -->
-                    <li class="history-item empty-history">No calculations yet. Try making a calculation first!</li>
-                </ul>
-            </div>
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <a href="../finance.html">Finance Tools</a>
+                <span class="breadcrumb-separator">></span>
+                <span>Debt to Income Ratio Calculator</span>
+            </nav>
         </div>
+        
+        <div class="tool-container">
+            <!-- Tool Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h1>Calculate Debt to Income Ratio - Free Online DTI Calculator</h1>
+                    <p>Calculate your debt-to-income ratio and understand your financial health with personalized recommendations</p>
+                </div>
+                <div class="card-body">
+                    <form id="dtiForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="monthlyIncome">Monthly Gross Income</label>
+                                <div class="input-wrapper">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="monthlyIncome" class="form-input" placeholder="e.g., 5000" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="monthlyDebt">Total Monthly Debt Payments</label>
+                                <div class="input-wrapper">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="monthlyDebt" class="form-input" placeholder="e.g., 1200" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-calculator"></i>
+                            Calculate DTI Ratio
+                        </button>
+                    </form>
 
-        <!-- Information Section -->
-        <div class="info-section">
-            <h2>About This Advanced Calculator Tool</h2>
-            <p>The Advanced Calculator Tool offers a more powerful version of our basic calculator with additional features designed to enhance your productivity. Unlike the simple calculator, this version includes calculation history, favorites, and theme customization to provide a more personalized experience.</p>
-            
-            <h3>Advanced Features:</h3>
-            <ul>
-                <li><strong>Dark/Light Mode</strong> - Toggle between dark and light themes for comfortable viewing in any environment</li>
-                <li><strong>Calculation History</strong> - View your previous calculations and reuse them with a single click</li>
-                <li><strong>Favorites System</strong> - Star important calculations to find them quickly later</li>
-                <li><strong>Persistent Storage</strong> - Your history and settings are saved even if you close your browser</li>
-                <li><strong>Enhanced UI</strong> - Modern interface with improved visual feedback and animations</li>
-                <li><strong>Responsive Design</strong> - Optimized for both desktop and mobile devices</li>
-            </ul>
+                    <!-- Results Section -->
+                    <div id="resultsSection" class="results-section hidden">
+                        <div class="result-card">
+                            <div class="result-header">
+                                <h3>Your DTI Result</h3>
+                                <div class="dti-percentage" id="dtiPercentage">0%</div>
+                            </div>
+                            <div class="result-status" id="resultStatus">
+                                <div class="status-indicator" id="statusIndicator"></div>
+                                <div class="status-message" id="statusMessage"></div>
+                            </div>
+                            <div class="result-details" id="resultDetails"></div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" id="recalculateBtn">
+                                <i class="fas fa-redo"></i>
+                                Recalculate
+                            </button>
+                            <button class="btn btn-secondary" id="shareBtn">
+                                <i class="fas fa-share-alt"></i>
+                                Share Result
+                            </button>
+                        </div>
+                    </div>
 
-            <h3>How to Use:</h3>
-            <ul>
-                <li>Enter your first and second values in their respective fields</li>
-                <li>Select the operation you want to perform from the dropdown menu</li>
-                <li>Click "Calculate Result" to see your answer</li>
-                <li>Toggle dark/light mode using the moon/sun icon in the top right corner</li>
-                <li>View your calculation history by clicking the "View History" button</li>
-                <li>Reuse previous calculations by clicking "Reuse" on any history item</li>
-                <li>Star your favorite calculations by clicking the star icon</li>
-                <li>Clear your history using the "Clear All" button in the history panel</li>
-            </ul>
+                    <!-- DTI Information Cards -->
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-icon excellent">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Excellent (≤20%)</h4>
+                                <p>Great financial health. You have plenty of room for additional debt if needed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon good">
+                                <i class="fas fa-thumbs-up"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Good (21-35%)</h4>
+                                <p>Manageable debt level. Most lenders consider this acceptable.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon fair">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Fair (36-42%)</h4>
+                                <p>Higher than ideal. Consider reducing debt before taking on more.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon poor">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Poor (>42%)</h4>
+                                <p>High debt burden. Focus on debt reduction strategies immediately.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Benefits of the Advanced Version:</h3>
-            <ul>
-                <li><strong>Time-Saving</strong> - Reuse previous calculations without re-entering values</li>
-                <li><strong>Better Organization</strong> - Keep track of important calculations with favorites</li>
-                <li><strong>Reduced Eye Strain</strong> - Dark mode option for comfortable use at night</li>
-                <li><strong>Improved Workflow</strong> - All your calculation history in one place</li>
-                <li><strong>Enhanced Accessibility</strong> - Optimized interface for users with different needs</li>
-                <li><strong>Greater Productivity</strong> - Focus on your work, not on redoing calculations</li>
-            </ul>
-            
-            <h3>When to Use the Advanced Calculator:</h3>
-            <p>This advanced calculator is ideal for users who perform multiple calculations in a session, need to reference previous results, or prefer a more customizable experience. If you're working on complex projects, studying, or doing financial calculations, the history and favorites features can significantly improve your efficiency.</p>
+            <!-- About the Tool Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="related-section">
+                        <h2><i class="fas fa-info-circle"></i> About the Debt to Income Ratio Tool</h2>
+                        <p class="section-description">
+                            When you need to <strong>calculate debt to income ratio</strong>, our free online tool provides instant and accurate results. 
+                            Your debt-to-income ratio (DTI) is one of the most important financial metrics lenders use to evaluate your creditworthiness. 
+                            This calculator helps you understand your financial health by comparing your monthly debt payments to your gross monthly income. 
+                            Whether you're applying for a mortgage, car loan, or personal loan, knowing how to calculate debt to income ratio gives you a clear picture of your borrowing capacity 
+                            and helps you make informed financial decisions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Use Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="related-section">
+                        <h2><i class="fas fa-play-circle"></i> How to Use This DTI Calculator</h2>
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <div class="info-icon good">
+                                    <span style="color: white; font-weight: bold;">1</span>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Enter Your Monthly Income</h4>
+                                    <p>Input your total gross monthly income before taxes and deductions. Include salary, bonuses, freelance income, and any other regular monthly earnings.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-card">
+                                <div class="info-icon fair">
+                                    <span style="color: white; font-weight: bold;">2</span>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Add Your Monthly Debt Payments</h4>
+                                    <p>Include all monthly debt obligations: credit cards, loans, mortgages, car payments, student loans, and any other recurring debt payments.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-card">
+                                <div class="info-icon excellent">
+                                    <span style="color: white; font-weight: bold;">3</span>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Get Your DTI Result</h4>
+                                    <p>Click calculate to see your debt-to-income ratio percentage, understand what it means, and get personalized recommendations for improvement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ideal DTI Table -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="related-section">
+                        <h2><i class="fas fa-table"></i> Ideal Debt to Income Ratio Examples</h2>
+                        <p class="section-description">
+                            See how different income and debt combinations affect your DTI ratio and loan eligibility.
+                        </p>
+                        
+                        <div style="overflow-x: auto; margin-top: 1.5rem;">
+                            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <thead>
+                                    <tr style="background: #f8f9fa; color: #374151;">
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Monthly Income</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Monthly Debt</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">DTI Ratio</th>
+                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Verdict</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$5,000</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$800</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #2e7d32;">16%</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #2e7d32;">Excellent - Great for any loan</td>
+                                    </tr>
+                                    <tr style="background: #f8f9fa;">
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$6,000</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,800</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #3b82f6;">30%</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #3b82f6;">Good - Acceptable for most loans</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$4,500</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,700</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #f59e0b;">38%</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #f59e0b;">Fair - May limit loan options</td>
+                                    </tr>
+                                    <tr style="background: #f8f9fa;">
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$3,500</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,600</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #c62828;">46%</td>
+                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #c62828;">Poor - Debt reduction needed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="related-section">
+                        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                        
+                        <div style="margin-top: 1.5rem;">
+                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What is a good debt to income ratio?</h4>
+                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                                    A good debt to income ratio is generally below 36%. Excellent DTI ratios are under 20%, while ratios above 43% may make it difficult to qualify for loans. 
+                                    Most lenders prefer to see DTI ratios between 28-36% for mortgage applications, though some may accept up to 43% with strong credit scores.
+                                </p>
+                            </div>
+
+                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What debt to income ratio for mortgage is acceptable?</h4>
+                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                                    For conventional mortgages, most lenders prefer a debt to income ratio for mortgage applications of 28% or less for housing expenses, 
+                                    and a total DTI (including all debts) of 36% or less. FHA loans may accept higher ratios up to 43%, while some programs allow up to 50% 
+                                    with compensating factors like high credit scores or large down payments.
+                                </p>
+                            </div>
+
+                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <h4 style="color: #374151; margin-bottom: 0.5rem;">How to calculate debt to income ratio manually?</h4>
+                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                                    To calculate your DTI ratio: (1) Add up all monthly debt payments including credit cards, loans, and mortgages, 
+                                    (2) Divide by your gross monthly income before taxes, (3) Multiply by 100 for the percentage. 
+                                    For example: $1,200 debt ÷ $4,000 income × 100 = 30% DTI ratio.
+                                </p>
+                            </div>
+
+                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What is debt to income ratio meaning for lenders?</h4>
+                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                                    Debt to income ratio meaning for lenders is a measure of your ability to manage monthly payments and repay loans. 
+                                    It shows what percentage of your income goes toward debt obligations. Lenders use DTI to assess lending risk - 
+                                    lower ratios indicate you have more room in your budget to handle additional debt payments.
+                                </p>
+                            </div>
+
+                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <h4 style="color: #374151; margin-bottom: 0.5rem;">Does debt to income ratio include rent or utilities?</h4>
+                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                                    Standard debt to income ratio calculations typically don't include rent, utilities, groceries, or other living expenses. 
+                                    DTI focuses on debt obligations like credit card payments, loan payments, and existing mortgage payments. 
+                                    However, when applying for a mortgage, lenders will separately calculate a housing ratio that includes your proposed mortgage payment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Article Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="related-section">
+                        <h2><i class="fas fa-newspaper"></i> Understanding Your Financial Health with DTI</h2>
+                        <div style="color: #374151; line-height: 1.7; font-size: 1rem;">
+                            <p>
+                                Finding the <strong>best debt to income ratio tool</strong> is crucial for anyone looking to understand their financial standing. 
+                                Our <strong>debt to income ratio calculator</strong> serves users across India, US, and globally by providing instant, accurate calculations 
+                                that help you make informed financial decisions.
+                            </p>
+                            <p>
+                                Whether you're planning to apply for a <strong>debt to income ratio for car loan</strong> or seeking the ideal 
+                                <strong>debt to income ratio for mortgage</strong> approval, understanding your DTI is the first step. 
+                                A <strong>good debt to income ratio</strong> not only improves your chances of loan approval but also ensures you can 
+                                comfortably manage your monthly payments without financial stress.
+                            </p>
+                            <p>
+                                The process of <strong>calculating debt to income ratio</strong> becomes simple with our tool - just enter your monthly income 
+                                and debt payments to get instant results. Regular monitoring helps you maintain healthy financial habits, plan for major purchases, 
+                                and work toward debt reduction goals. Start calculating your DTI today to take control of your financial future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internal Links Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="related-section">
+                        <h2><i class="fas fa-link"></i> More Financial & Planning Tools</h2>
+                        <p class="section-description">
+                            Explore our complete collection of free online calculators and tools to help manage your finances, health, and daily planning needs.
+                        </p>
+                        
+                        <div class="related-tools-grid">
+                            <a href="expense-tracker.html" class="tool-card">
+                                <i class="fas fa-receipt"></i>
+                                <span>Daily Expense Tracker</span>
+                            </a>
+                            <a href="../calculator/exam-percentage-inline.html" class="tool-card">
+                                <i class="fas fa-percentage"></i>
+                                <span>Exam Marks Percentage Calculator</span>
+                            </a>
+                            <a href="../health/calorie-deficit.html" class="tool-card">
+                                <i class="fas fa-fire"></i>
+                                <span>Calorie Deficit Finder</span>
+                            </a>
+                            <a href="../planner/goal-planner.html" class="tool-card">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Personal Goal Planner</span>
+                            </a>
+                            <a href="../calculator/cgpa-percentage-inline.html" class="tool-card">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>CGPA to Percentage</span>
+                            </a>
+                            <a href="../health/ivf-calculator.html" class="tool-card">
+                                <i class="fas fa-baby"></i>
+                                <span>IVF Due Date Calculator</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Tools Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="related-section">
+                        <h2><i class="fas fa-tools"></i> Related Financial Tools</h2>
+                        <p class="section-description">Explore other helpful tools to manage your finances and improve your financial health.</p>
+                        
+                        <div class="related-tools-grid">
+                            <a href="expense-tracker.html" class="tool-card">
+                                <i class="fas fa-receipt"></i>
+                                <span>Daily Expense Tracker</span>
+                            </a>
+                            <a href="../calculator/loan-calculator.html" class="tool-card">
+                                <i class="fas fa-home"></i>
+                                <span>Loan Calculator</span>
+                            </a>
+                            <a href="../calculator/investment-calculator.html" class="tool-card">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Investment Calculator</span>
+                            </a>
+                            <a href="../calculator/budget-planner.html" class="tool-card">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Budget Planner</span>
+                            </a>
+                            <a href="../health/calorie-deficit.html" class="tool-card">
+                                <i class="fas fa-fire"></i>
+                                <span>Calorie Deficit Calculator</span>
+                            </a>
+                            <a href="../planner/goal-planner.html" class="tool-card">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Personal Goal Planner</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -415,18 +1496,191 @@
     <!-- Overlay for sidebar -->
     <div class="overlay"></div>
 
-    <!-- JavaScript -->
-    <script src="../../js/script.js"></script>
-    <script src="js/debt-ratio.js"></script>
-    <script>
-        // Initialize UI elements after page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check that key elements exist
-            console.log("Page loaded, checking key elements");
-            console.log("Theme toggle:", !!document.getElementById('themeToggle'));
-            console.log("Calculate button:", !!document.getElementById('calculateBtn'));
-            console.log("History button:", !!document.getElementById('showHistoryBtn'));
-        });
+    <!-- HowTo Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Calculate Debt to Income Ratio",
+        "description": "Step-by-step guide to calculate your debt-to-income ratio using our free online calculator",
+        "image": "https://www.taskproper.com/apple-touch-icon.png",
+        "totalTime": "PT2M",
+        "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "0"
+        },
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Enter Your Monthly Income",
+                "text": "Input your total gross monthly income before taxes and deductions. Include salary, bonuses, freelance income, and any other regular monthly earnings.",
+                "image": "https://www.taskproper.com/apple-touch-icon.png"
+            },
+            {
+                "@type": "HowToStep", 
+                "name": "Add Your Monthly Debt Payments",
+                "text": "Include all monthly debt obligations: credit cards, loans, mortgages, car payments, student loans, and any other recurring debt payments.",
+                "image": "https://www.taskproper.com/apple-touch-icon.png"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Get Your DTI Result",
+                "text": "Click calculate to see your debt-to-income ratio percentage, understand what it means, and get personalized recommendations for improvement.",
+                "image": "https://www.taskproper.com/apple-touch-icon.png"
+            }
+        ]
+    }
     </script>
+
+    <!-- FAQ Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a good debt to income ratio?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A good debt to income ratio is generally below 36%. Excellent DTI ratios are under 20%, while ratios above 43% may make it difficult to qualify for loans. Most lenders prefer to see DTI ratios between 28-36% for mortgage applications, though some may accept up to 43% with strong credit scores."
+                }
+            },
+            {
+                "@type": "Question", 
+                "name": "What debt to income ratio for mortgage is acceptable?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For conventional mortgages, most lenders prefer a debt to income ratio for mortgage applications of 28% or less for housing expenses, and a total DTI (including all debts) of 36% or less. FHA loans may accept higher ratios up to 43%, while some programs allow up to 50% with compensating factors like high credit scores or large down payments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How to calculate debt to income ratio manually?", 
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To calculate your DTI ratio: (1) Add up all monthly debt payments including credit cards, loans, and mortgages, (2) Divide by your gross monthly income before taxes, (3) Multiply by 100 for the percentage. For example: $1,200 debt ÷ $4,000 income × 100 = 30% DTI ratio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is debt to income ratio meaning for lenders?",
+                "acceptedAnswer": {
+                    "@type": "Answer", 
+                    "text": "Debt to income ratio meaning for lenders is a measure of your ability to manage monthly payments and repay loans. It shows what percentage of your income goes toward debt obligations. Lenders use DTI to assess lending risk - lower ratios indicate you have more room in your budget to handle additional debt payments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does debt to income ratio include rent or utilities?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Standard debt to income ratio calculations typically don't include rent, utilities, groceries, or other living expenses. DTI focuses on debt obligations like credit card payments, loan payments, and existing mortgage payments. However, when applying for a mortgage, lenders will separately calculate a housing ratio that includes your proposed mortgage payment."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Full Page Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Calculate Debt to Income Ratio - Free DTI Calculator | Task Proper",
+        "description": "Calculate debt to income ratio instantly with our free online calculator. Get your DTI percentage for mortgage, car loan applications. 100% free DTI tool.",
+        "url": "https://www.taskproper.com/finance/debt-ratio.html",
+        "inLanguage": "en-US",
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://www.taskproper.com",
+            "name": "Task Proper",
+            "description": "Simple and Convenient Web Tools",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Task Proper",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.taskproper.com/apple-touch-icon.png"
+                }
+            }
+        },
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "Calculate Debt to Income Ratio Calculator",
+            "description": "Free online calculator to calculate debt to income ratio for mortgage, car loan, and financial planning purposes",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "featureList": [
+                "Calculate debt-to-income ratio instantly",
+                "Mortgage qualification assessment", 
+                "Car loan DTI evaluation",
+                "Financial health analysis",
+                "Personalized recommendations",
+                "Mobile-friendly interface"
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.taskproper.com"
+                },
+                {
+                    "@type": "ListItem", 
+                    "position": 2,
+                    "name": "Finance Tools",
+                    "item": "https://www.taskproper.com/finance.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Calculate Debt to Income Ratio"
+                }
+            ]
+        },
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "Debt to Income Ratio",
+                "description": "A financial metric comparing monthly debt payments to gross monthly income"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Mortgage Qualification",
+                "description": "Process of determining eligibility for home loans based on financial metrics"
+            },
+            {
+                "@type": "Thing",
+                "name": "Financial Planning",
+                "description": "Strategic management of personal finances and debt obligations"
+            }
+        ],
+        "keywords": [
+            "calculate debt to income ratio",
+            "DTI calculator", 
+            "debt to income ratio for mortgage",
+            "debt to income ratio for car loan",
+            "good debt to income ratio",
+            "calculating debt to income ratio",
+            "debt to income ratio meaning",
+            "financial health calculator",
+            "loan qualification calculator"
+        ]
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="js/debt-ratio.js"></script>
 </body>
 </html>
