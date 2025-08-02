@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Expense Tracker - Track Your Spending | Jay Tools</title>
+    <title>Daily Expense Tracker - Track Your Spending | Task Proper</title>
     <meta name="description" content="Track your daily expenses effortlessly with this simple and efficient online tool. Manage your personal finances, monitor spending, and stay within budget.">
     <meta name="keywords" content="daily expense tracker, budget tool, personal finance tracker, track daily expenses, spending tracker, expense management">
-    <link rel="canonical" href="https://www.jaytools.com/finance/expense-tracker.html" />
+    <link rel="canonical" href="https://www.taskproper.com/finance/expense-tracker.html" />
 
     <!-- OpenGraph Tags for Social Media -->
-    <meta property="og:title" content="Daily Expense Tracker - Track Your Spending | Jay Tools">
+    <meta property="og:title" content="Daily Expense Tracker - Track Your Spending | Task Proper">
     <meta property="og:description" content="Effortlessly track your daily expenses, manage personal finances, and stay on budget with this intuitive online tool.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.jaytools.com/finance/expense-tracker.html">
-    <meta property="og:image" content="https://www.jaytools.com/web-app-manifest-512x512.png"> <!-- Replace with a relevant image URL -->
-    <meta property="og:site_name" content="Jay Tools">
+    <meta property="og:url" content="https://www.taskproper.com/finance/expense-tracker.html">
+    <meta property="og:site_name" content="Task Proper">
 
     <!-- Favicons -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -23,9 +22,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="manifest" href="../site.webmanifest">
     <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -257,7 +254,7 @@
             color: var(--color-white);
             font-size: 0.9rem;
             padding: var(--space-sm) var(--space-md);
-            min-height: auto;
+            min-height: initial;
         }
 
         .btn-danger:hover {
@@ -531,6 +528,25 @@
             margin-top: var(--space-lg);
         }
 
+        /* Benefits List Container */
+        .benefits-list-container {
+            background: var(--color-gray-50);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-lg) 0;
+        }
+        .benefits-list {
+            margin: 0;
+            padding-left: var(--space-lg);
+            color: var(--color-gray-600);
+        }
+        .benefits-list-item {
+            margin-bottom: var(--space-sm);
+        }
+        .benefits-list-item:last-child {
+            margin-bottom: 0;
+        }
+
         .tool-card {
             background: var(--color-white);
             border: 1px solid var(--color-gray-200);
@@ -543,7 +559,9 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            min-height: 100px;
+            min-height: 120px;
+            position: relative;
+            overflow: hidden;
         }
 
         .tool-card:hover {
@@ -555,15 +573,38 @@
         }
 
         .tool-card i {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--color-primary);
             margin-bottom: var(--space-sm);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover i {
+            transform: scale(1.1);
         }
 
         .tool-card span {
             color: var(--color-gray-700);
             font-weight: 500;
             font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Category badges for tools */
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--color-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover::before {
+            transform: scaleX(1);
         }
 
         /* Empty State */
@@ -627,6 +668,37 @@
                 padding: var(--space-sm);
                 font-size: 0.85rem;
             }
+
+            /* Mobile table actions */
+            .table th:last-child,
+            .table td:last-child {
+                min-width: 80px;
+            }
+
+            /* Export/Clear button container on mobile */
+            .table-container div[style*="display: flex"] {
+                flex-direction: column;
+                align-items: stretch !important;
+                gap: var(--space-sm) !important;
+            }
+
+            .table-container div[style*="display: flex"] div {
+                justify-content: center !important;
+            }
+
+            /* Tool cards on mobile */
+            .tool-card {
+                min-height: 100px;
+                padding: var(--space-md);
+            }
+
+            .tool-card i {
+                font-size: 1.8rem;
+            }
+
+            .tool-card span {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -656,12 +728,12 @@
         {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Daily Expense Tracker - Jay Tools",
+            "name": "Daily Expense Tracker - Task Proper",
             "description": "Track your daily expenses effortlessly with this simple and efficient online tool. Manage your personal finances, monitor spending, and stay within budget.",
-            "url": "https://www.jaytools.com/finance/expense-tracker.html",
+            "url": "https://www.taskproper.com/finance/expense-tracker.html",
             "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://www.jaytools.com/search?q={search_term_string}",
+                "target": "https://www.taskproper.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
             }
         }
@@ -672,7 +744,7 @@
             "@context": "https://schema.org",
             "@type": "HowTo",
             "name": "How to Use the Daily Expense Tracker",
-            "description": "A step-by-step guide to effectively track your daily expenses using the Jay Tools Expense Tracker.",
+            "description": "A step-by-step guide to effectively track your daily expenses using the Task Proper Expense Tracker.",
             "step": [
                 {
                     "@type": "HowToStep",
@@ -752,19 +824,19 @@
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Home",
-                    "item": "https://www.jaytools.com/"
+                    "item": "https://www.taskproper.com/"
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Finance Tools",
-                    "item": "https://www.jaytools.com/finance.html"
+                    "item": "https://www.taskproper.com/finance.html"
                 },
                 {
                     "@type": "ListItem",
                     "position": 3,
                     "name": "Daily Expense Tracker",
-                    "item": "https://www.jaytools.com/finance/expense-tracker.html"
+                    "item": "https://www.taskproper.com/finance/expense-tracker.html"
                 }
             ]
         }
@@ -952,11 +1024,16 @@
 
                     <!-- Expenses Table -->
                     <div class="table-container">
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-lg); border-bottom: 1px solid var(--color-gray-200);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-lg); border-bottom: 1px solid var(--color-gray-200); flex-wrap: wrap; gap: var(--space-sm);">
                             <h3 style="margin: 0; color: var(--color-gray-800); font-size: 1.2rem;">Your Expenses</h3>
-                            <button id="clearExpensesBtn" class="btn btn-secondary" style="width: auto; min-height: auto; padding: var(--space-sm) var(--space-md); font-size: 0.9rem;">
-                                <i class="fas fa-trash-alt"></i> Clear All
-                            </button>
+                            <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+                                <button id="exportCsvBtn" class="btn btn-secondary" style="width: auto; min-height: auto; padding: var(--space-sm) var(--space-md); font-size: 0.9rem;">
+                                    <i class="fas fa-download"></i> Export CSV
+                                </button>
+                                <button id="clearExpensesBtn" class="btn btn-secondary" style="width: auto; min-height: auto; padding: var(--space-sm) var(--space-md); font-size: 0.9rem;">
+                                    <i class="fas fa-trash-alt"></i> Clear All
+                                </button>
+                            </div>
                         </div>
                         <table class="table" id="expenseTable">
                             <thead>
@@ -990,7 +1067,7 @@
                         
                         <p>Simply enter what you spent, how much, and what category it falls into—like food, transport, or entertainment. The tracker automatically calculates your daily and overall totals, so you can see exactly how much you're spending without any math headaches. Everything stays private on your device, and your data is saved even if you close the browser.</p>
                         
-                        <p>Perfect for students, professionals, or anyone who wants to take control of their finances without downloading another app. Start tracking today and watch how small changes in your daily spending can lead to big savings over time.</p>
+                        <p>Perfect for students, professionals or anyone who wants to take control of their finances without downloading another app. Unlike complicated daily expense tracker apps, our web-based solution works instantly in any browser. You can even export your data to daily expense tracker Excel format or share it with daily expense tracker Google Sheets for advanced analysis. Start tracking today and watch how small changes in your daily spending can lead to big savings over time.</p>
                         
                         <div class="feature-grid">
                             <div class="feature-item">
@@ -1061,21 +1138,21 @@
                         <div style="background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%); border: 1px solid #c8e6c9; border-radius: var(--radius-md); padding: var(--space-lg); margin-top: var(--space-lg); position: relative;">
                             <div style="position: absolute; top: var(--space-md); left: var(--space-md); font-size: 1.2rem;">💡</div>
                             <p style="margin: 0; color: var(--color-gray-700); line-height: 1.6; padding-left: var(--space-xl);"><strong style="color: var(--color-success-dark);">Pro Tip:</strong> Set today's date as default and track expenses immediately after making purchases for the most accurate financial tracking.</p>
+                        <div class="benefits-list-container">
+                            <ul class="benefits-list">
+                                <li class="benefits-list-item">Identify unnecessary spending patterns and habits</li>
+                                <li class="benefits-list-item">Create realistic budgets based on actual spending data</li>
+                                <li class="benefits-list-item">Reduce financial stress through better money awareness</li>
+                                <li class="benefits-list-item">Save money by making informed purchasing decisions</li>
+                                <li class="benefits-list-item">Achieve financial goals faster with conscious spending</li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Benefits Article -->
-            <div class="card">
-                <div class="card-body">
-                    <div class="info-card">
                         <h2>Why Every Person Needs a Daily Expense Tracker</h2>
                         <p>A daily expense tracker is more than just a budgeting tool—it's your financial awareness companion. Most people underestimate their daily spending by 20-30%, which explains why money seems to disappear so quickly.</p>
                         
                         <p>Using a daily expense tracker helps you spot spending patterns you never noticed. That morning coffee, lunch delivery, or impulse online purchase adds up faster than you think. When you track expenses daily, you become more mindful about each purchase.</p>
                         
-                        <p>The best daily expense tracker is one you'll actually use. That's why our tool focuses on simplicity—quick entry, automatic calculations, and clear totals. No complex categories or overwhelming features, just straightforward tracking that fits into your daily routine.</p>
+                        <p>The best daily expense tracker app is one you'll actually use. That's why our tool focuses on simplicity—quick entry, automatic calculations and clear totals. No complex categories or overwhelming features, just straightforward tracking that fits into your daily routine. Whether you prefer using apps or traditional daily expense tracker Excel spreadsheets, having any system is better than no system at all.</p>
                         
                         <p>Start with just one week of tracking. You'll be surprised how this simple habit transforms your relationship with money and helps you make smarter financial decisions every day.</p>
 
@@ -1154,7 +1231,7 @@
                                 <span>Calorie Deficit Calculator</span>
                             </a>
                             <a href="../planner/goal-planner.html" class="tool-card">
-                                <i class="fas fa-target"></i>
+                                <i class="fas fa-bullseye"></i>
                                 <span>Personal Goal Planner</span>
                             </a>
                             <a href="../health/protein-intake.html" class="tool-card">
@@ -1249,6 +1326,7 @@
         const dailyTotalEl = document.getElementById("dailyTotal");
         const overallTotalEl = document.getElementById("overallTotal");
         const clearBtn = document.getElementById("clearExpensesBtn");
+        const exportCsvBtn = document.getElementById("exportCsvBtn");
         const expenseDateInput = document.getElementById("expenseDate");
 
         // Set today's date as default
@@ -1256,6 +1334,61 @@
         expenseDateInput.value = today;
 
         let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+        // Format date for better UX
+        function formatDateDisplay(dateString) {
+            const date = new Date(dateString);
+            const today = new Date();
+            const yesterday = new Date(today);
+            yesterday.setDate(yesterday.getDate() - 1);
+            
+            const dateOnly = date.toISOString().split("T")[0];
+            const todayOnly = today.toISOString().split("T")[0];
+            const yesterdayOnly = yesterday.toISOString().split("T")[0];
+            
+            if (dateOnly === todayOnly) return "Today";
+            if (dateOnly === yesterdayOnly) return "Yesterday";
+            return date.toLocaleDateString();
+        }
+
+        // CSV Export Function
+        function exportToCSV() {
+            if (expenses.length === 0) {
+                alert("No expenses to export!");
+                return;
+            }
+
+            const headers = ["Date", "Description", "Category", "Amount"];
+            const csvContent = [
+                headers.join(","),
+                ...expenses.map(expense => [
+                    expense.date,
+                    `"${expense.name}"`,
+                    expense.category,
+                    expense.amount
+                ].join(","))
+            ].join("\n");
+
+            const blob = new Blob([csvContent], { type: "text/csv" });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `daily-expense-tracker-${new Date().toISOString().split("T")[0]}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            // Show success feedback
+            const originalText = exportCsvBtn.innerHTML;
+            exportCsvBtn.innerHTML = '<i class="fas fa-check"></i> Exported!';
+            exportCsvBtn.style.background = 'var(--color-success)';
+            
+            setTimeout(() => {
+                exportCsvBtn.innerHTML = originalText;
+                exportCsvBtn.style.background = '';
+            }, 2000);
+        }
 
         function updateUI() {
             expenseTable.innerHTML = "";
@@ -1279,10 +1412,10 @@
             expenses.forEach((expense, index) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
-                    <td style="font-weight: 500;">${new Date(expense.date).toLocaleDateString()}</td>
+                    <td style="font-weight: 500;">${formatDateDisplay(expense.date)}</td>
                     <td style="color: var(--color-gray-800);">${expense.name}</td>
                     <td><span style="background: var(--color-gray-100); padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; color: var(--color-gray-700);">${expense.category}</span></td>
-                    <td style="font-weight: 600; color: var(--color-primary);">$${parseFloat(expense.amount).toFixed(2)}</td>
+                    <td style="font-weight: 600; color: var(--color-primary); text-align: right;">$${parseFloat(expense.amount).toFixed(2)}</td>
                     <td><button onclick="deleteExpense(${index})" class="btn btn-danger">Delete</button></td>
                 `;
                 expenseTable.appendChild(row);
@@ -1371,6 +1504,9 @@
                 }, 1500);
             }
         });
+
+        // CSV Export Event Listener
+        exportCsvBtn.addEventListener("click", exportToCSV);
 
         // Initialize the UI
         updateUI();
