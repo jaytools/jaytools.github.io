@@ -38,51 +38,60 @@ body {
   line-height: 1.6;
   transition: background-color var(--transition), color var(--transition);
 }
-/* Breadcrumbs */
+/* Breadcrumb Styles - Matching age-difference-inline.html */
 .breadcrumb {
+    background: #f8fafc;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    font-size: 0.9rem;
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
-    padding: var(--spacing-md) 0;
-    margin-bottom: var(--spacing-lg);
-    font-size: 0.95rem;
+    align-items: center;
 }
 
 .breadcrumb a {
-    color: var(--light-text-color);
+    color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 .breadcrumb a:hover {
-    color: var(--primary-color);
+    color: var(--primary-dark);
     text-decoration: underline;
 }
 
 .breadcrumb-separator {
-    margin: 0 var(--spacing-xs);
-    color: var(--border-color);
+    margin: 0 0.5rem;
+    color: #6b7280;
+    font-weight: bold;
 }
 
 .breadcrumb span:last-child {
-    color: var(--primary-color);
+    color: var(--text-color);
     font-weight: 500;
 }
 
+/* Dark mode breadcrumb */
+body.dark-mode .breadcrumb {
+    background: var(--dark-card-background);
+    border-left-color: var(--primary-color);
+}
+
 body.dark-mode .breadcrumb a {
-    color: var(--dark-light-text-color);
+    color: var(--primary-color);
 }
 
 body.dark-mode .breadcrumb a:hover {
-    color: var(--dark-primary-color);
+    color: #60a5fa;
 }
 
 body.dark-mode .breadcrumb span:last-child {
-    color: var(--dark-primary-color);
+    color: var(--dark-text-color);
 }
 
 body.dark-mode .breadcrumb-separator {
-    color: var(--dark-border-color);
+    color: #9ca3af;
 }
 .main-content {
   padding: 2rem;
@@ -443,4 +452,308 @@ body.dark-mode .total-section {
 
 body.dark-mode .total-section h2 {
   color: var(--dark-text-color);
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+/* Large tablets and small desktops */
+@media (max-width: 992px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .tool-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .totals-wrapper {
+        gap: 20px;
+    }
+    
+    .feature-grid,
+    .related-tools-grid,
+    .how-to-steps-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .tool-title {
+        font-size: 1.5rem;
+    }
+    
+    /* Breadcrumb mobile adjustments */
+    .breadcrumb {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    
+    .breadcrumb-separator {
+        margin: 0 0.3rem;
+    }
+    
+    /* Form improvements */
+    .input-group {
+        margin-bottom: 1rem;
+    }
+    
+    .input-group input,
+    .input-group select {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        min-height: 48px; /* Better touch targets */
+    }
+    
+    .add-expense-btn {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+    
+    /* Table responsive improvements */
+    .expense-table-container {
+        margin: 0 -1rem;
+        border-radius: 0;
+    }
+    
+    #expenseTable {
+        font-size: 14px;
+    }
+    
+    #expenseTable th,
+    #expenseTable td {
+        padding: 8px 6px;
+        white-space: nowrap;
+    }
+    
+    #expenseTable th:first-child,
+    #expenseTable td:first-child {
+        padding-left: 1rem;
+    }
+    
+    #expenseTable th:last-child,
+    #expenseTable td:last-child {
+        padding-right: 1rem;
+    }
+    
+    /* Totals section mobile */
+    .totals-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .total-card {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    /* FAQ improvements */
+    .faq-item {
+        margin-bottom: 0.5rem;
+    }
+    
+    .faq-item details {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 0;
+    }
+    
+    .faq-item summary {
+        padding: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: var(--light-bg);
+        border-radius: 8px;
+        transition: background 0.2s ease;
+    }
+    
+    .faq-item summary:hover {
+        background: #e2e8f0;
+    }
+    
+    .faq-item details[open] summary {
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .faq-item p {
+        padding: 1rem;
+        margin: 0;
+        background: white;
+        border-radius: 0 0 8px 8px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 576px) {
+    .tool-title {
+        font-size: 1.3rem;
+    }
+    
+    .breadcrumb {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .breadcrumb-separator {
+        display: none;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb span {
+        display: block;
+        margin: 0.1rem 0;
+    }
+    
+    .card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-grid,
+    .related-tools-grid,
+    .how-to-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .feature-item,
+    .step-card,
+    .tool-card {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    /* Better button spacing */
+    .expense-actions {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-secondary {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Table mobile optimization */
+    #expenseTable th,
+    #expenseTable td {
+        padding: 6px 4px;
+        font-size: 12px;
+    }
+    
+    #expenseTable .btn {
+        padding: 2px 6px;
+        font-size: 11px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .main-content {
+        padding: 0.5rem;
+    }
+    
+    .breadcrumb {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        border-radius: 0;
+    }
+    
+    /* Stack table vertically on very small screens */
+    .expense-table-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+    }
+    
+    #expenseTable {
+        min-width: 500px; /* Maintain table structure */
+    }
+    
+    /* Improve touch targets */
+    .input-group input,
+    .input-group select {
+        min-height: 50px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .add-expense-btn {
+        min-height: 50px;
+        font-size: 1rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .add-expense-btn:hover {
+        transform: none; /* Remove transform on touch devices */
+    }
+    
+    .tool-card:hover {
+        transform: none;
+    }
+    
+    .total-card:hover {
+        transform: none;
+    }
+    
+    /* Larger touch targets */
+    .theme-toggle-button {
+        width: 48px;
+        height: 48px;
+    }
+    
+    #expenseTable .btn {
+        min-height: 36px;
+        min-width: 60px;
+    }
+}
+
+/* Dark mode mobile adjustments */
+@media (max-width: 768px) {
+    body.dark-mode .faq-item summary {
+        background: var(--dark-card-background);
+        color: var(--dark-text-color);
+    }
+    
+    body.dark-mode .faq-item summary:hover {
+        background: #1e293b;
+    }
+    
+    body.dark-mode .faq-item details {
+        border-color: var(--dark-border-color);
+    }
+    
+    body.dark-mode .faq-item details[open] summary {
+        border-bottom-color: var(--dark-border-color);
+    }
+    
+    body.dark-mode .faq-item p {
+        background: var(--dark-card-background);
+        color: var(--dark-text-color);
+    }
 }

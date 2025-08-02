@@ -29,14 +29,627 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
-    <link rel="stylesheet" href="css/expense-tracker.css">
+
+    <!-- Tool Specific Styles -->
+    <style>
+        :root {
+            /* Color Variables - Professional B&W Theme */
+            --color-primary: #333333;
+            --color-primary-dark: #000000;
+            --color-secondary: #555555;
+            --color-success: #2e7d32;
+            --color-success-dark: #1b5e20;
+            --color-error: #c62828;
+            --color-error-dark: #b71c1c;
+            --color-gray-50: #f8f9fa;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-500: #6b7280;
+            --color-gray-600: #4b5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+            --color-white: #ffffff;
+
+            /* Spacing Variables */
+            --space-xs: 5px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 50%;
+            
+            /* Box Shadow */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --shadow-focus: 0 0 0 3px rgba(51, 51, 51, 0.1);
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-gray-800);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Breadcrumb Styles - Matching age-difference design */
+        .breadcrumb {
+            background: var(--color-gray-50);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--color-primary);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            color: var(--color-gray-500);
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-lg);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Card Components */
+        .card {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-200);
+            overflow: hidden;
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card:hover {
+            border-color: var(--color-gray-500);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-header {
+            background: var(--color-white);
+            color: var(--color-primary);
+            padding: var(--space-xl);
+            text-align: center;
+            border-bottom: 2px solid var(--color-gray-200);
+        }
+
+        .card-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.025em;
+            color: var(--color-primary);
+        }
+
+        .card-header p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--color-gray-700);
+            margin: 0;
+        }
+
+        .card-body {
+            padding: var(--space-xl);
+        }
+
+        /* Form Components */
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            color: var(--color-gray-700);
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px var(--space-md);
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: var(--color-white);
+            box-sizing: border-box;
+            color: var(--color-gray-800);
+            min-height: 48px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-focus);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: inherit;
+            min-height: 48px;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary {
+            background: var(--color-gray-100);
+            color: var(--color-gray-700);
+            border: 2px solid var(--color-gray-200);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-gray-200);
+            transform: translateY(-1px);
+        }
+
+        .btn-danger {
+            background: var(--color-error);
+            color: var(--color-white);
+            font-size: 0.9rem;
+            padding: var(--space-sm) var(--space-md);
+            min-height: auto;
+        }
+
+        .btn-danger:hover {
+            background: var(--color-error-dark);
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin-top: var(--space-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-200);
+            background: var(--color-white);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .table th,
+        .table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .table th {
+            background: var(--color-gray-50);
+            font-weight: 600;
+            color: var(--color-gray-700);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .table tr:hover {
+            background: var(--color-gray-50);
+        }
+
+        /* Total Cards */
+        .totals-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .total-card {
+            background: var(--color-gray-50);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .total-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .total-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-gray-600);
+            margin-bottom: var(--space-xs);
+            display: block;
+        }
+
+        .total-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+        }
+
+        /* Information Cards */
+        .info-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .info-card h2 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--color-gray-200);
+            padding-bottom: var(--space-sm);
+        }
+
+        .info-card h3 {
+            color: var(--color-gray-700);
+            margin: var(--space-lg) 0 var(--space-sm) 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            color: var(--color-gray-600);
+            margin-bottom: var(--space-md);
+            line-height: 1.7;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .feature-item {
+            background: var(--color-gray-50);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .feature-item h3 {
+            color: var(--color-gray-800);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .feature-item p {
+            color: var(--color-gray-600);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* How-to Steps */
+        .how-to-use-section {
+            background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+            border: 1px solid var(--color-gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .how-to-use-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-primary);
+        }
+
+        .how-to-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .step-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-primary);
+            color: var(--color-white);
+            width: 30px;
+            height: 30px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: 3px solid var(--color-white);
+        }
+
+        .step-card h3 {
+            color: var(--color-gray-800);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: var(--space-md) 0 var(--space-sm);
+        }
+
+        .step-card p {
+            color: var(--color-gray-600);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: var(--space-lg);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .faq-item details {
+            border: none;
+        }
+
+        .faq-item summary {
+            padding: var(--space-lg);
+            font-weight: 600;
+            cursor: pointer;
+            background: var(--color-gray-50);
+            color: var(--color-gray-800);
+            transition: background 0.2s ease;
+            font-size: 1.05rem;
+        }
+
+        .faq-item summary:hover {
+            background: var(--color-gray-100);
+        }
+
+        .faq-item details[open] summary {
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .faq-item p {
+            padding: var(--space-lg);
+            margin: 0;
+            background: var(--color-white);
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+
+        /* Related Tools */
+        .related-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .tool-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 100px;
+        }
+
+        .tool-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .tool-card i {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .tool-card span {
+            color: var(--color-gray-700);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Empty State */
+        .empty-message {
+            text-align: center;
+            color: var(--color-gray-500);
+            font-style: italic;
+            padding: var(--space-xl);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: var(--space-md) var(--space-sm);
+            }
+            
+            .card-header {
+                padding: var(--space-md);
+            }
+
+            .card-header h1 {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+            
+            .card-header p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            .card-body {
+                padding: var(--space-md);
+            }
+
+            .form-row,
+            .totals-wrapper {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .feature-grid,
+            .how-to-steps-grid,
+            .related-tools-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .breadcrumb {
+                font-size: 0.8rem;
+                padding: 0.75rem 1rem;
+                margin-bottom: var(--space-md);
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .table th,
+            .table td {
+                padding: var(--space-sm);
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-header h1 {
+                font-size: 1.4rem;
+            }
+            
+            .card-header p {
+                font-size: 0.85rem;
+            }
+
+            .form-input {
+                padding: 12px var(--space-sm);
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 10px 16px;
+                min-height: 44px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
 
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -88,34 +701,42 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I add a new expense?",
+      "name": "What makes this daily expense tracker different from other apps?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Just fill in the details like expense name, amount, category and date, then click on the Add Expense button. Your entry will instantly appear in the table below."
+        "text": "Our daily expense tracker works directly in your browser without requiring downloads or sign-ups. All your data stays private on your device, and it's completely free to use. Plus, it's designed to be simple—no complicated features, just straightforward expense tracking."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I remove an expense after adding it?",
+      "name": "Can I use this daily expense tracker on my phone?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, every expense you add includes a Delete button beside it. Simply click it to remove that item from your list."
+        "text": "Absolutely! The daily expense tracker is fully mobile-friendly and works perfectly on smartphones, tablets, and computers. You can track expenses on the go and everything syncs automatically in your browser."
       }
     },
     {
       "@type": "Question",
-      "name": "Where is my expense data stored?",
+      "name": "Is this daily expense tracker suitable for business use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "All your data is saved directly in your browser using local storage. That means it stays on your device and doesn't get uploaded or shared online. Even if you close the page, your entries will still be there when you return."
+        "text": "While it's designed for personal daily expense tracking, small business owners and freelancers often use it for simple expense monitoring. However, for detailed business accounting, you might want specialized business software."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I download or export my data?",
+      "name": "How accurate is the daily expense tracker for budgeting?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Currently, there isn't a built-in export feature. But you can manually copy the table, take a screenshot or print the page to save your expense history."
+        "text": "The daily expense tracker is as accurate as the data you enter. It provides real-time calculations of your daily and overall spending, making it perfect for staying within your budget and identifying spending patterns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my data if I clear my browser cache?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The daily expense tracker stores data in your browser's local storage. If you clear your browser data or cache, your expense history will be lost. We recommend manually backing up important data by copying the table or taking screenshots."
       }
     }
   ]
@@ -259,88 +880,89 @@
     </header>
     <!-- Sidebar Menu -->
     <aside class="sidebar" aria-label="Main menu"></aside>
-        <nav aria-label="Breadcrumb">
-        <div class="breadcrumb">
-            <a href="https://www.jaytools.com/">Home</a>
-            <span class="breadcrumb-separator">›</span>
-            <a href="https://www.jaytools.com/finance.html">Finance Tools</a>
-            <span class="breadcrumb-separator">›</span>
-            <span>Daily Expense Tracker</span>
-        </div>
-        </nav>
-    <main class="main-content">
+    <!-- Main Content -->
+    <main>
         <div class="container">
-            <div class="tool-container">
-                <div class="tool-header">
-                    <h1 class="tool-title">Daily Expense Tracker</h1>
-                    <div class="theme-toggle-button-container">
-                        <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle dark/light mode">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </div>
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <a href="../finance.html">Finance Tools</a>
+                <span class="breadcrumb-separator">></span>
+                <span>Daily Expense Tracker</span>
+            </nav>
+        </div>
+        
+        <div class="tool-container">
+            <!-- Tool Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h1>Daily Expense Tracker</h1>
+                    <p>Track your daily expenses effortlessly and take control of your financial spending habits</p>
                 </div>
-
-                <div class="tool-content-wrapper">
-
-                <div class="card expense-interface">
+                <div class="card-body">
                     <form id="expenseForm">
-                        <div class="input-group">
-                            <label for="expenseName">Expense Name</label>
-                            <input type="text" id="expenseName" placeholder="e.g., Groceries" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="expenseName">Expense Name</label>
+                                <input type="text" id="expenseName" class="form-input" placeholder="e.g., Groceries, Coffee, Gas" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="expenseAmount">Amount ($)</label>
+                                <input type="number" id="expenseAmount" class="form-input" placeholder="e.g., 50.00" step="0.01" required>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="expenseAmount">Amount</label>
-                            <input type="number" id="expenseAmount" placeholder="e.g., 50.00" step="0.01" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="expenseCategory">Category</label>
+                                <select id="expenseCategory" class="form-input" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Food">Food & Dining</option>
+                                    <option value="Transport">Transportation</option>
+                                    <option value="Utilities">Utilities & Bills</option>
+                                    <option value="Entertainment">Entertainment</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="Health">Health & Medical</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="expenseDate">Date</label>
+                                <input type="date" id="expenseDate" class="form-input" required>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="expenseCategory">Category</label>
-                            <select id="expenseCategory" required>
-                                <option value="">Select Category</option>
-                                <option value="Food">Food</option>
-                                <option value="Transport">Transport</option>
-                                <option value="Utilities">Utilities</option>
-                                <option value="Entertainment">Entertainment</option>
-                                <option value="Shopping">Shopping</option>
-                                <option value="Health">Health</option>
-                                <option value="Education">Education</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="expenseDate">Date</label>
-                            <input type="date" id="expenseDate" required>
-                        </div>
-                        <button type="submit" id="addExpenseBtn" class="add-expense-btn">
-                            <i class="fas fa-plus-circle"></i> Add Expense
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i>
+                            Add Expense
                         </button>
                     </form>
-                </div>
 
-                <div class="card total-section">
-  <h2>Total Spent</h2>
-  <div class="totals-wrapper">
-    <div class="total-card">
-      <span class="total-label">Today</span>
-      <span class="total-amount" id="dailyTotal">$0.00</span>
-    </div>
-    <div class="total-card">
-      <span class="total-label">Overall</span>
-      <span class="total-amount" id="overallTotal">$0.00</span>
-    </div>
-  </div>
-</div>
-
-
-                    <div class="card expense-table-container">
-                        <h2>Your Expenses</h2>
-                        <div class="expense-actions">
-                            <button id="clearExpensesBtn" class="btn btn-secondary">Clear All Expenses</button>
+                    <!-- Totals Section -->
+                    <div class="totals-wrapper">
+                        <div class="total-card">
+                            <span class="total-label">Today's Total</span>
+                            <span class="total-amount" id="dailyTotal">$0.00</span>
                         </div>
-                        <table id="expenseTable">
+                        <div class="total-card">
+                            <span class="total-label">Overall Total</span>
+                            <span class="total-amount" id="overallTotal">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Expenses Table -->
+                    <div class="table-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-lg); border-bottom: 1px solid var(--color-gray-200);">
+                            <h3 style="margin: 0; color: var(--color-gray-800); font-size: 1.2rem;">Your Expenses</h3>
+                            <button id="clearExpensesBtn" class="btn btn-secondary" style="width: auto; min-height: auto; padding: var(--space-sm) var(--space-md); font-size: 0.9rem;">
+                                <i class="fas fa-trash-alt"></i> Clear All
+                            </button>
+                        </div>
+                        <table class="table" id="expenseTable">
                             <thead>
                                 <tr>
                                     <th>Date</th>
-                                    <th>Name</th>
+                                    <th>Description</th>
                                     <th>Category</th>
                                     <th>Amount</th>
                                     <th>Actions</th>
@@ -348,147 +970,208 @@
                             </thead>
                             <tbody>
                                 <tr id="emptyExpenses">
-                                    <td colspan="5" class="empty-message">No expenses added yet.</td>
+                                    <td colspan="5" class="empty-message">
+                                        <i class="fas fa-receipt" style="font-size: 2rem; color: var(--color-gray-300); margin-bottom: var(--space-sm); display: block;"></i>
+                                        No expenses added yet. Start tracking your spending!
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+            </div>
 
-                </div> <!-- Close tool-content-wrapper -->
-
-                <div class="info-section card about-tool">
-                    <h2>About the Daily Expense Tracker</h2>
-                    <p>This tool helps you easily track your daily spending habits. By logging your expenses, you can gain better insight into where your money goes, helping you manage your budget more effectively and achieve your financial goals.</p>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <h3>Easy Expense Entry</h3>
-                            <p>Quickly add expenses with name, amount, category, and date.</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-chart-pie"></i>
-                            <h3>Daily & Overall Totals</h3>
-                            <p>See your spending summarized for the day and overall.</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-tags"></i>
-                            <h3>Categorization</h3>
-                            <p>Organize expenses by predefined categories for better analysis.</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-hdd"></i>
-                            <h3>Local Storage</h3>
-                            <p>Your data is saved directly in your browser, ensuring privacy and persistence.</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-paint-brush"></i>
-                            <h3>Simple Interface</h3>
-                            <p>A clean and intuitive design for a seamless tracking experience.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="info-section card how-to-use">
-                    <h2>How to Use the Daily Expense Tracker</h2>
-                    <div class="how-to-steps-grid">
-                        <div class="step-card">
-                            <span class="step-number">1</span>
-                            <h3>Enter Details</h3>
-                            <p>Fill in the 'Expense Name', 'Amount', 'Category', and 'Date' fields.</p>
-                        </div>
-                        <div class="step-card">
-                            <span class="step-number">2</span>
-                            <h3>Add Expense</h3>
-                            <p>Click the 'Add Expense' button. Your expense will appear in the table below.</p>
-                        </div>
-                        <div class="step-card">
-                            <span class="step-number">3</span>
-                            <h3>Review & Manage</h3>
-                            <p>View your expenses in the table. You can delete individual entries using the 'Delete' button next to each item.</p>
-                        </div>
-                        <div class="step-card">
-                            <span class="step-number">4</span>
-                            <h3>Clear All</h3>
-                            <p>Use the 'Clear All Expenses' button to remove all recorded expenses.</p>
-                        </div>
-                        <div class="step-card">
-                            <span class="step-number">5</span>
-                            <h3>Monitor Totals</h3>
-                            <p>Your daily and overall spending totals are automatically updated at the top.</p>
+            <!-- About Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="info-card">
+                        <h2><i class="fas fa-info-circle"></i> About Daily Expense Tracker</h2>
+                        <p>Managing your money doesn't have to be complicated. Our daily expense tracker makes it super easy to see where your cash goes each day. Whether you're trying to stick to a budget, save for something special, or just want to understand your spending habits better, this tool has you covered.</p>
+                        
+                        <p>Simply enter what you spent, how much, and what category it falls into—like food, transport, or entertainment. The tracker automatically calculates your daily and overall totals, so you can see exactly how much you're spending without any math headaches. Everything stays private on your device, and your data is saved even if you close the browser.</p>
+                        
+                        <p>Perfect for students, professionals, or anyone who wants to take control of their finances without downloading another app. Start tracking today and watch how small changes in your daily spending can lead to big savings over time.</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <h3>Easy Expense Entry</h3>
+                                <p>Quickly add expenses with name, amount, category, and date in seconds.</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chart-pie"></i>
+                                <h3>Real-time Totals</h3>
+                                <p>See your daily and overall spending automatically calculated and updated.</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-tags"></i>
+                                <h3>Smart Categories</h3>
+                                <p>Organize expenses by predefined categories for better financial analysis.</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Privacy First</h3>
+                                <p>Your data stays on your device - no cloud storage, no data sharing.</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>Mobile Friendly</h3>
+                                <p>Works perfectly on all devices - track expenses anywhere, anytime.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="info-section card">
-                    <h2>Why You Should Start Tracking Your Daily Expenses</h2>
-                    <p>Ever wonder where your money disappears by the end of the week? You're not alone. Most people don't realize how much they spend on small things—like snacks, online deals, or daily coffees—until it's too late. That's why tracking your daily expenses really helps.</p><br/>
-                    <p>By writing down or logging what you spend each day, you can actually see your spending habits. It's like holding up a mirror to your wallet. You start noticing patterns—maybe you're overspending on food, subscriptions, or random stuff you don't need.</p><br/>
-                    <p>This small habit gives you better control over your money. It helps you avoid unnecessary purchases, stick to your monthly budget, and start saving for things that really matter—whether it's a trip, an emergency fund, or something big you've been planning.</p><br/>
-                    <p>You don't need to be a finance expert. Just start tracking. One step at a time. You'll be surprised how powerful this simple practice can be.</p>
+            <!-- How to Use Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="how-to-use-section">
+                        <h3><i class="fas fa-mobile-alt"></i> How to Use the Daily Expense Tracker</h3>
+                        <p style="color: var(--color-gray-600); margin-bottom: var(--space-lg);">Follow these simple steps to start tracking your daily expenses and take control of your financial habits.</p>
+                        
+                        <div class="how-to-steps-grid">
+                            <div class="step-card">
+                                <span class="step-number">1</span>
+                                <h3>Enter Details</h3>
+                                <p>Fill in the expense name, amount, select a category, and choose the date of your purchase.</p>
+                            </div>
+                            <div class="step-card">
+                                <span class="step-number">2</span>
+                                <h3>Add Expense</h3>
+                                <p>Click the "Add Expense" button to record your entry. It will appear in the table below.</p>
+                            </div>
+                            <div class="step-card">
+                                <span class="step-number">3</span>
+                                <h3>Review & Track</h3>
+                                <p>Monitor your expenses in the organized table and watch your totals update automatically.</p>
+                            </div>
+                            <div class="step-card">
+                                <span class="step-number">4</span>
+                                <h3>Manage Entries</h3>
+                                <p>Delete individual expenses or clear all entries using the action buttons when needed.</p>
+                            </div>
+                            <div class="step-card">
+                                <span class="step-number">5</span>
+                                <h3>Analyze Patterns</h3>
+                                <p>Use the daily and overall totals to understand your spending patterns and budget better.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%); border: 1px solid #c8e6c9; border-radius: var(--radius-md); padding: var(--space-lg); margin-top: var(--space-lg); position: relative;">
+                            <div style="position: absolute; top: var(--space-md); left: var(--space-md); font-size: 1.2rem;">💡</div>
+                            <p style="margin: 0; color: var(--color-gray-700); line-height: 1.6; padding-left: var(--space-xl);"><strong style="color: var(--color-success-dark);">Pro Tip:</strong> Set today's date as default and track expenses immediately after making purchases for the most accurate financial tracking.</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="info-section card faqs-section">
-    <h2>Frequently Asked Questions (FAQs)</h2>
+            <!-- Benefits Article -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="info-card">
+                        <h2>Why Every Person Needs a Daily Expense Tracker</h2>
+                        <p>A daily expense tracker is more than just a budgeting tool—it's your financial awareness companion. Most people underestimate their daily spending by 20-30%, which explains why money seems to disappear so quickly.</p>
+                        
+                        <p>Using a daily expense tracker helps you spot spending patterns you never noticed. That morning coffee, lunch delivery, or impulse online purchase adds up faster than you think. When you track expenses daily, you become more mindful about each purchase.</p>
+                        
+                        <p>The best daily expense tracker is one you'll actually use. That's why our tool focuses on simplicity—quick entry, automatic calculations, and clear totals. No complex categories or overwhelming features, just straightforward tracking that fits into your daily routine.</p>
+                        
+                        <p>Start with just one week of tracking. You'll be surprised how this simple habit transforms your relationship with money and helps you make smarter financial decisions every day.</p>
 
-    <div class="faq-item">
-        <details>
-            <summary>How do I add a new expense?</summary>
-            <p>Just fill in the details like expense name, amount, category and date, then click on the <strong>Add Expense</strong> button. Your entry will instantly appear in the table below.</p>
-        </details>
-    </div>
+                        <h3>Key Benefits of Daily Expense Tracking</h3>
+                        <div style="background: var(--color-gray-50); padding: var(--space-lg); border-radius: var(--radius-md); margin: var(--space-lg) 0;">
+                            <ul style="margin: 0; padding-left: var(--space-lg); color: var(--color-gray-600);">
+                                <li style="margin-bottom: var(--space-sm);">Identify unnecessary spending patterns and habits</li>
+                                <li style="margin-bottom: var(--space-sm);">Create realistic budgets based on actual spending data</li>
+                                <li style="margin-bottom: var(--space-sm);">Reduce financial stress through better money awareness</li>
+                                <li style="margin-bottom: var(--space-sm);">Save money by making informed purchasing decisions</li>
+                                <li>Achieve financial goals faster with conscious spending</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="faq-item">
-        <details>
-            <summary>Can I remove an expense after adding it?</summary>
-            <p>Yes, every expense you add includes a <strong>Delete</strong> button beside it. Simply click it to remove that item from your list.</p>
-        </details>
-    </div>
+            <!-- FAQ Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="info-card">
+                        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                        
+                        <div class="faq-item">
+                            <details>
+                                <summary>What makes this daily expense tracker different from other apps?</summary>
+                                <p>Our daily expense tracker works directly in your browser without requiring downloads or sign-ups. All your data stays private on your device, and it's completely free to use. Plus, it's designed to be simple—no complicated features, just straightforward expense tracking that anyone can use immediately.</p>
+                            </details>
+                        </div>
 
-    <div class="faq-item">
-        <details>
-            <summary>Where is my expense data stored?</summary>
-            <p>All your data is saved directly in your browser using local storage. That means it stays on your device and doesn't get uploaded or shared online. Even if you close the page, your entries will still be there when you return.</p>
-        </details>
-    </div>
+                        <div class="faq-item">
+                            <details>
+                                <summary>Can I use this daily expense tracker on my phone?</summary>
+                                <p>Absolutely! The daily expense tracker is fully mobile-friendly and works perfectly on smartphones, tablets, and computers. You can track expenses on the go and everything syncs automatically in your browser. The responsive design ensures optimal usability across all device sizes.</p>
+                            </details>
+                        </div>
 
-    <div class="faq-item">
-        <details>
-            <summary>Can I download or export my data?</summary>
-            <p>Currently, there isn't a built-in export feature. But you can manually copy the table, take a screenshot or print the page to save your expense history.</p>
-        </details>
-    </div>
-</div>
+                        <div class="faq-item">
+                            <details>
+                                <summary>Is this daily expense tracker suitable for business use?</summary>
+                                <p>While it's designed for personal daily expense tracking, small business owners and freelancers often use it for simple expense monitoring. However, for detailed business accounting with tax reporting and advanced features, you might want specialized business accounting software.</p>
+                            </details>
+                        </div>
 
+                        <div class="faq-item">
+                            <details>
+                                <summary>How accurate is the daily expense tracker for budgeting?</summary>
+                                <p>The daily expense tracker is as accurate as the data you enter. It provides real-time calculations of your daily and overall spending, making it perfect for staying within your budget and identifying spending patterns. The tool handles all mathematical calculations automatically with precision.</p>
+                            </details>
+                        </div>
 
-                <div class="info-section card related-tools-section">
-                    <h2>Related Tools</h2>
-                    <div class="related-tools-grid">
-                        <a href="../health/calorie-deficit.html" class="tool-card">
-                            <i class="fas fa-fire"></i>
-                            <span>Calorie Deficit Finder</span>
-                        </a>
-                        <a href="../education/study-planner.html" class="tool-card">
-                            <i class="fas fa-book"></i>
-                            <span>Study Planner</span>
-                        </a>
-                        <a href="../finance/loan-calculator.html" class="tool-card">
-                            <i class="fas fa-calculator"></i>
-                            <span>Loan Calculator</span>
-                        </a>
-                        <a href="../health/bmi-calculator.html" class="tool-card">
-                            <i class="fas fa-weight"></i>
-                            <span>BMI Calculator</span>
-                        </a>
+                        <div class="faq-item">
+                            <details>
+                                <summary>What happens to my data if I clear my browser cache?</summary>
+                                <p>The daily expense tracker stores data in your browser's local storage. If you clear your browser data or cache, your expense history will be lost. We recommend manually backing up important data by copying the table contents or taking screenshots of your expense summary before clearing browser data.</p>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Tools Section -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="info-card">
+                        <h2><i class="fas fa-tools"></i> Related Financial Tools</h2>
+                        <p style="color: var(--color-gray-600); margin-bottom: var(--space-lg);">Explore other helpful tools to manage your finances and improve your financial health.</p>
+                        
+                        <div class="related-tools-grid">
+                            <a href="debt-ratio.html" class="tool-card">
+                                <i class="fas fa-calculator"></i>
+                                <span>Debt-to-Income Ratio Calculator</span>
+                            </a>
+                            <a href="../health/calorie-deficit.html" class="tool-card">
+                                <i class="fas fa-fire"></i>
+                                <span>Calorie Deficit Calculator</span>
+                            </a>
+                            <a href="../planner/goal-planner.html" class="tool-card">
+                                <i class="fas fa-target"></i>
+                                <span>Personal Goal Planner</span>
+                            </a>
+                            <a href="../health/protein-intake.html" class="tool-card">
+                                <i class="fas fa-weight"></i>
+                                <span>Protein Intake Calculator</span>
+                            </a>
+                            <a href="../study/study-planner.html" class="tool-card">
+                                <i class="fas fa-book"></i>
+                                <span>Study Planner Tool</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -498,9 +1181,9 @@
                     <h3>Pages</h3>
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="../../index.html">Home</a></li>
-                            <li><a href="../../about.html">About</a></li>
-                            <li><a href="../../contact.html">Contact</a></li>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -510,10 +1193,10 @@
                     <h3>Legal & Info</h3>
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="../../privacy.html">Privacy Policy</a></li>
-                            <li><a href="../../terms.html">Terms of Use</a></li>
-                            <li><a href="../../disclaimer.html">Disclaimer</a></li>
-                            <li><a href="../../dmca.html">DMCA</a></li>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -558,16 +1241,19 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="../../js/script.js"></script>
-    <script src="js/expense-tracker.js"></script>
+    <script src="../js/script.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const expenseForm = document.getElementById("expenseForm");
         const expenseTable = document.getElementById("expenseTable").querySelector("tbody");
         const dailyTotalEl = document.getElementById("dailyTotal");
         const overallTotalEl = document.getElementById("overallTotal");
-        const expenseResults = document.querySelector(".expense-results-section");
         const clearBtn = document.getElementById("clearExpensesBtn");
+        const expenseDateInput = document.getElementById("expenseDate");
+
+        // Set today's date as default
+        const today = new Date().toISOString().split("T")[0];
+        expenseDateInput.value = today;
 
         let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
@@ -576,7 +1262,10 @@
 
             if (expenses.length === 0) {
                 expenseTable.innerHTML = `<tr id="emptyExpenses">
-                    <td colspan="5" class="empty-message">No expenses added yet.</td>
+                    <td colspan="5" class="empty-message">
+                        <i class="fas fa-receipt" style="font-size: 2rem; color: var(--color-gray-300); margin-bottom: var(--space-sm); display: block;"></i>
+                        No expenses added yet. Start tracking your spending!
+                    </td>
                 </tr>`;
                 dailyTotalEl.textContent = "$0.00";
                 overallTotalEl.textContent = "$0.00";
@@ -590,10 +1279,10 @@
             expenses.forEach((expense, index) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
-                    <td>${expense.date}</td>
-                    <td>${expense.name}</td>
-                    <td>${expense.category}</td>
-                    <td>$${parseFloat(expense.amount).toFixed(2)}</td>
+                    <td style="font-weight: 500;">${new Date(expense.date).toLocaleDateString()}</td>
+                    <td style="color: var(--color-gray-800);">${expense.name}</td>
+                    <td><span style="background: var(--color-gray-100); padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; color: var(--color-gray-700);">${expense.category}</span></td>
+                    <td style="font-weight: 600; color: var(--color-primary);">$${parseFloat(expense.amount).toFixed(2)}</td>
                     <td><button onclick="deleteExpense(${index})" class="btn btn-danger">Delete</button></td>
                 `;
                 expenseTable.appendChild(row);
@@ -606,17 +1295,14 @@
 
             dailyTotalEl.textContent = `$${dailyTotal.toFixed(2)}`;
             overallTotalEl.textContent = `$${overallTotal.toFixed(2)}`;
-
-            // Show results
-            expenseResults.classList.remove("hidden");
-            expenseResults.style.opacity = "1";
-            expenseResults.style.maxHeight = "1000px";
         }
 
         window.deleteExpense = function(index) {
-            expenses.splice(index, 1);
-            localStorage.setItem("expenses", JSON.stringify(expenses));
-            updateUI();
+            if (confirm("Are you sure you want to delete this expense?")) {
+                expenses.splice(index, 1);
+                localStorage.setItem("expenses", JSON.stringify(expenses));
+                updateUI();
+            }
         }
 
         expenseForm.addEventListener("submit", function (e) {
@@ -632,22 +1318,65 @@
                 return;
             }
 
+            if (parseFloat(amount) <= 0) {
+                alert("Please enter a valid amount greater than 0.");
+                return;
+            }
+
             expenses.push({ name, amount, category, date });
             localStorage.setItem("expenses", JSON.stringify(expenses));
 
+            // Reset form but keep today's date
             expenseForm.reset();
+            expenseDateInput.value = today;
+            
+            // Focus back to name field for quick entry
+            document.getElementById("expenseName").focus();
+            
             updateUI();
+
+            // Show success feedback
+            const button = document.querySelector('.btn-primary');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Added!';
+            button.style.background = 'var(--color-success)';
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = 'var(--color-primary)';
+            }, 1500);
         });
 
         clearBtn.addEventListener("click", function () {
-            if (confirm("Clear all expenses?")) {
+            if (expenses.length === 0) {
+                alert("No expenses to clear.");
+                return;
+            }
+            
+            if (confirm("Are you sure you want to clear all expenses? This action cannot be undone.")) {
                 expenses = [];
                 localStorage.removeItem("expenses");
                 updateUI();
+                
+                // Show feedback
+                const button = clearBtn;
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Cleared!';
+                button.style.background = 'var(--color-success)';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = 'var(--color-gray-100)';
+                    button.style.color = 'var(--color-gray-700)';
+                }, 1500);
             }
         });
 
+        // Initialize the UI
         updateUI();
+        
+        // Focus on the first input for better UX
+        document.getElementById("expenseName").focus();
     });
 </script>
 
