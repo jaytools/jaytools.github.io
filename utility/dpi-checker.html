@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPI Checker - Online Image DPI Checker | Task Proper</title>
+    <meta name="description" content="Free online DPI checker tool to analyze image and PDF resolution. Check screenshot DPI, JPG DPI, PNG DPI, and PDF DPI instantly. Professional image DPI checker software.">
+    <meta name="keywords" content="dpi checker online, image dpi checker online, pdf dpi checker, screenshot dpi, jpg dpi checker, picture dpi checker, dpi checker software, online image dpi checker">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Task Proper">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="DPI Checker - Online Image DPI Checker | Task Proper">
+    <meta property="og:description" content="Free online DPI checker tool to analyze image and PDF resolution. Check screenshot DPI, JPG DPI, PNG DPI instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.taskproper.com/utility/dpi-checker.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.taskproper.com/utility/dpi-checker.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/custom.css">
+    <link rel="stylesheet" href="css/dpi-checker.css">
+    
+    <!-- SEO Content Styles -->
+    <style>
+    /* Base mobile-first approach */
+    * {
+        box-sizing: border-box;
+    }
+    
+    /* Ensure proper touch targets */
+    button, .btn, input[type="file"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Improve text readability on mobile */
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    .content-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        margin: 1rem 0;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .content-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem 2rem;
+    }
+
+    .content-header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        line-height: 1.3;
+    }
+
+    .content-body {
+        padding: 2rem;
+        line-height: 1.6;
+    }
+
+    .step-list {
+        padding-left: 1rem;
+    }
+
+    .step-list li {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .step-list ul {
+        margin-top: 0.5rem;
+    }
+
+    .pro-tip {
+        background: #f8f9fa;
+        border-left: 4px solid #28a745;
+        padding: 1rem;
+        margin-top: 1.5rem;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .faq-item {
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 1rem;
+    }
+
+    .faq-item:last-child {
+        border-bottom: none;
+    }
+
+    .faq-item h3 {
+        color: #495057;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    .dpi-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        min-width: 500px; /* Ensure table doesn't get too cramped */
+    }
+
+    .dpi-table th,
+    .dpi-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+        white-space: nowrap;
+    }
+
+    .dpi-table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #495057;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .dpi-table tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    .table-note {
+        background: #e7f3ff;
+        border: 1px solid #b8daff;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .article-content {
+        line-height: 1.7;
+        font-size: 1.05rem;
+    }
+
+    .article-content p {
+        margin-bottom: 1.2rem;
+    }
+
+    .related-links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .link-card {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 1.5rem;
+        border-left: 4px solid #667eea;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .link-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .link-card i {
+        color: #667eea;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .link-card h4 {
+        margin: 0.5rem 0;
+        color: #495057;
+        line-height: 1.3;
+    }
+
+    .link-card p {
+        margin: 0;
+        line-height: 1.5;
+        color: #6c757d;
+    }
+
+    .link-card a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .link-card a:hover {
+        text-decoration: underline;
+    }
+
+    .tools-footer {
+        background: #e9ecef;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .content-header {
+            padding: 1rem 1.5rem;
+        }
+        
+        .content-body {
+            padding: 1.5rem;
+        }
+        
+        .content-header h2 {
+            font-size: 1.3rem;
+        }
+        
+        .related-links-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        /* Mobile-specific improvements */
+        .main-title {
+            font-size: 1.8rem !important;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        .main-subtitle {
+            font-size: 1rem !important;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .upload-area-centered {
+            padding: 1.5rem !important;
+            margin: 1rem 0;
+        }
+        
+        .upload-title {
+            font-size: 1.2rem !important;
+        }
+        
+        .upload-description {
+            font-size: 0.9rem !important;
+        }
+        
+        .helper-tip {
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+        
+        .tip-text {
+            font-size: 0.9rem;
+        }
+        
+        .results-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+            padding: 1rem !important;
+        }
+        
+        .result-card {
+            padding: 1rem !important;
+            margin-bottom: 1rem;
+        }
+        
+        .result-card h4 {
+            font-size: 1rem !important;
+            margin-bottom: 0.8rem;
+        }
+        
+        .info-item {
+            margin-bottom: 0.8rem;
+            flex-direction: column;
+            align-items: flex-start !important;
+            gap: 0.3rem;
+        }
+        
+        .info-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-gray-600);
+        }
+        
+        .info-value {
+            font-size: 0.9rem;
+            word-break: break-word;
+        }
+        
+        .quality-badge {
+            padding: 0.6rem 1rem !important;
+            font-size: 0.85rem !important;
+        }
+        
+        .quality-description {
+            font-size: 0.9rem !important;
+            line-height: 1.5;
+        }
+        
+        .action-buttons {
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .btn {
+            width: 100% !important;
+            padding: 0.8rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .steps-grid {
+            grid-template-columns: 1fr !important;
+        }
+        
+        .step-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+        
+        .tools-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        }
+        
+        .tool-link-card {
+            padding: 1rem !important;
+        }
+        
+        .info-content {
+            flex-direction: column;
+        }
+        
+        .info-column {
+            margin-bottom: 2rem;
+        }
+        
+        .dpi-table {
+            font-size: 0.8rem !important;
+        }
+        
+        .dpi-table th,
+        .dpi-table td {
+            padding: 0.5rem !important;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+        }
+        
+        /* Mobile preview adjustments */
+        .preview-container {
+            max-height: 200px !important;
+            overflow: hidden;
+        }
+        
+        .preview-image {
+            max-height: 180px !important;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .preview-placeholder {
+            min-height: 120px !important;
+            padding: 1rem;
+        }
+        
+        /* Card title responsive display for very small screens */
+        .card-title-full {
+            display: none;
+        }
+        
+        .card-title-short {
+            display: inline;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .content-header {
+            padding: 0.8rem 1rem;
+        }
+        
+        .content-body {
+            padding: 1rem;
+        }
+        
+        .main-title {
+            font-size: 1.5rem !important;
+        }
+        
+        .main-subtitle {
+            font-size: 0.9rem !important;
+            padding: 0.6rem 0.8rem;
+        }
+        
+        .upload-area-centered {
+            padding: 1rem !important;
+        }
+        
+        .upload-btn-main {
+            font-size: 0.9rem;
+            padding: 0.7rem 1.2rem;
+        }
+        
+        .results-grid {
+            padding: 0.8rem !important;
+        }
+        
+        .result-card {
+            padding: 0.8rem !important;
+        }
+        
+        .info-item {
+            margin-bottom: 0.6rem;
+        }
+        
+        .quality-badge {
+            padding: 0.5rem 0.8rem !important;
+            font-size: 0.8rem !important;
+        }
+        
+        .dpi-table {
+            font-size: 0.75rem !important;
+        }
+        
+        .step-number {
+            width: 30px !important;
+            height: 30px !important;
+            font-size: 1rem !important;
+        }
+        
+        .step-card h3 {
+            font-size: 1rem;
+        }
+        
+        .step-card p {
+            font-size: 0.85rem;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .main-title {
+            font-size: 1.3rem !important;
+        }
+        
+        .main-subtitle {
+            font-size: 0.85rem !important;
+        }
+        
+        .upload-title {
+            font-size: 1rem !important;
+        }
+        
+        .upload-description {
+            font-size: 0.8rem !important;
+        }
+        
+        .result-card h4 {
+            font-size: 0.9rem !important;
+        }
+        
+        .info-label,
+        .info-value {
+            font-size: 0.8rem !important;
+        }
+        
+        .quality-badge {
+            font-size: 0.75rem !important;
+        }
+        
+        .quality-description {
+            font-size: 0.8rem !important;
+        }
+        
+        /* Ensure card titles fit on very small screens */
+        .card-title-short {
+            font-size: 0.85rem;
+        }
+    }
+    </style>
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../index.html" class="brand-link">
+                    <h1 class="site-title">Task Proper</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="../tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../tools/seperate-tool/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="../about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                        <a href="../contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a href="../privacy.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="../terms.html" class="nav-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Terms of Service</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- DPI Checker Tool -->
+            <section class="tool-section">
+                <div class="tool-card">
+                    <!-- Main Tool Content - Centered Layout -->
+                    <div class="tool-content-wrapper">
+                        
+                        <!-- Title -->
+                        <h1 class="main-title">
+                            DPI Checker Tool
+                        </h1>
+                        
+                        <!-- Subheading -->
+                        <h2 class="main-subtitle">
+                            <i class="fas fa-image subtitle-icon"></i>
+                            Screenshot DPI Analysis - Upload your image or PDF file to check its DPI and resolution details
+                        </h2>
+
+                        <!-- File Upload Area -->
+                        <div class="upload-area-centered" id="uploadArea">
+                            <div class="upload-content-centered">
+                                <i class="fas fa-cloud-upload-alt upload-icon-large"></i>
+                                
+                                <h3 class="upload-title">
+                                    Drop your file here or click to browse
+                                </h3>
+                                
+                                <p class="upload-description">
+                                    Supports JPG, PNG, GIF, BMP, TIFF, PDF files (Max 50MB)
+                                </p>
+                                
+                                <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff,.pdf" hidden>
+                                
+                                <button class="btn btn-primary upload-btn-main" onclick="document.getElementById('fileInput').click()">
+                                    <i class="fas fa-upload"></i> Choose File
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Helper Text -->
+                        <div class="helper-tip">
+                            <p class="tip-text">
+                                <i class="fas fa-info-circle tip-icon"></i>
+                                <strong>Tip:</strong> For best results, ensure your images have embedded DPI metadata. Professional cameras and scanners typically include this information automatically.
+                            </p>
+                        </div>
+                        
+                        <!-- Results Section -->
+                        <div class="results-section hidden" id="resultsSection">
+                            <div class="results-header">
+                                <h3><i class="fas fa-chart-bar"></i> DPI Analysis Results</h3>
+                            </div>
+                            
+                            <div class="results-grid">
+                                <!-- File Preview -->
+                                <div class="result-card preview-card">
+                                    <h4><i class="fas fa-eye"></i> <span class="card-title-full">File Preview</span><span class="card-title-short">Preview</span></h4>
+                                    <div class="preview-container" id="previewContainer">
+                                        <!-- Preview will be inserted here -->
+                                    </div>
+                                </div>
+
+                                <!-- File Information -->
+                                <div class="result-card info-card">
+                                    <h4><i class="fas fa-info-circle"></i> <span class="card-title-full">File Information</span><span class="card-title-short">File Info</span></h4>
+                                    <div class="info-list">
+                                        <div class="info-item">
+                                            <span class="info-label">Filename</span>
+                                            <span class="info-value" id="fileName">-</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">File Size</span>
+                                            <span class="info-value" id="fileSize">-</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">File Type</span>
+                                            <span class="info-value" id="fileType">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Resolution Details -->
+                                <div class="result-card resolution-card">
+                                    <h4><i class="fas fa-ruler-combined"></i> <span class="card-title-full">Resolution Details</span><span class="card-title-short">Resolution</span></h4>
+                                    <div class="info-list">
+                                        <div class="info-item">
+                                            <span class="info-label">Dimensions</span>
+                                            <span class="info-value" id="dimensions">-</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">DPI (Horizontal)</span>
+                                            <span class="info-value dpi-value" id="dpiX">-</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">DPI (Vertical)</span>
+                                            <span class="info-value dpi-value" id="dpiY">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quality Assessment -->
+                                <div class="result-card quality-card">
+                                    <h4><i class="fas fa-medal"></i> <span class="card-title-full">Quality Assessment</span><span class="card-title-short">Quality</span></h4>
+                                    <div class="quality-indicator" id="qualityIndicator">
+                                        <div class="quality-badge" id="qualityBadge">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span>Analyzing...</span>
+                                        </div>
+                                        <p class="quality-description" id="qualityDescription">
+                                            Analyzing image quality based on DPI...
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="action-buttons">
+                                <button class="btn btn-secondary" onclick="resetTool()">
+                                    <i class="fas fa-redo"></i> Check Another File
+                                </button>
+                                <button class="btn btn-success" onclick="downloadReport()">
+                                    <i class="fas fa-download"></i> Download Report
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Use Section -->
+            <section class="how-to-section">
+                <div class="how-to-card">
+                    <div class="how-to-header">
+                        <h2><i class="fas fa-question-circle"></i> How to Use the Picture DPI Checker</h2>
+                    </div>
+                    <div class="steps-container">
+                        <div class="steps-grid">
+                            <div class="step-card">
+                                <div class="step-number">1</div>
+                                <h3>Upload File</h3>
+                                <p>Click "Choose File" or drag and drop your image or PDF file into the upload area.</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-number">2</div>
+                                <h3>Analyze DPI</h3>
+                                <p>Our online image DPI checker automatically analyzes your file and extracts resolution data.</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-number">3</div>
+                                <h3>View Results</h3>
+                                <p>Check the DPI, dimensions, file size, and quality assessment of your uploaded file.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Tools Section -->
+            <section class="related-tools-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tools"></i> Related DPI Checker Software Tools</h2>
+                    <p>Explore more image and PDF processing tools</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <a href="../converter/image-to-pdf.html" class="tool-link-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Image to PDF</h3>
+                        <p>Convert images to PDF format while maintaining quality</p>
+                    </a>
+                    
+                    <a href="../utility/image-compressor.html" class="tool-link-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <h3>Image Compressor</h3>
+                        <p>Reduce image file size without losing quality</p>
+                    </a>
+                    
+                    <a href="../converter/pixel-to-inch.html" class="tool-link-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-ruler"></i>
+                        </div>
+                        <h3>Pixel to Inch Converter</h3>
+                        <p>Convert pixels to inches based on DPI values</p>
+                    </a>
+                    
+                    <a href="../utility/image-resizer.html" class="tool-link-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h3>Image Resizer</h3>
+                        <p>Resize images while maintaining aspect ratio</p>
+                    </a>
+                    
+                    <a href="../utility/pdf-dpi-checker.html" class="tool-link-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>PDF DPI Checker</h3>
+                        <p>Specialized tool for checking PDF resolution</p>
+                    </a>
+                    
+                    <a href="../utility/jpg-dpi-checker.html" class="tool-link-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3>JPG DPI Checker</h3>
+                        <p>Dedicated JPG and JPEG DPI analysis tool</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- DPI Information Section -->
+            <section class="info-section">
+                <div class="info-card">
+                    <div class="info-header">
+                        <h2><i class="fas fa-lightbulb"></i> Understanding DPI (Dots Per Inch)</h2>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-column">
+                            <h3>What is DPI?</h3>
+                            <p>DPI (Dots Per Inch) measures the resolution of images and determines print quality. Higher DPI means more detail and better print quality.</p>
+                            
+                            <h4>Common DPI Standards:</h4>
+                            <ul>
+                                <li><strong>72 DPI:</strong> Standard for web images</li>
+                                <li><strong>150 DPI:</strong> Good for basic printing</li>
+                                <li><strong>300 DPI:</strong> Professional print quality</li>
+                                <li><strong>600+ DPI:</strong> High-quality printing</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-column">
+                            <h3>Why Check DPI?</h3>
+                            <ul>
+                                <li>Ensure proper print quality</li>
+                                <li>Optimize images for web or print</li>
+                                <li>Meet publication requirements</li>
+                                <li>Understand image resolution capabilities</li>
+                            </ul>
+                            
+                            <h4>File Format Support:</h4>
+                            <ul>
+                                <li>JPG/JPEG images</li>
+                                <li>PNG images</li>
+                                <li>GIF, BMP, TIFF</li>
+                                <li>PDF documents</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEO Content for DPI Checker Tool -->
+
+            <!-- 1. About the Tool -->
+            <section class="about-tool-section">
+                <div class="content-card">
+                    <div class="content-header">
+                        <h2><i class="fas fa-info-circle"></i> About the DPI Checker Tool</h2>
+                    </div>
+                    <div class="content-body">
+                        <p>Understanding your image resolution is crucial for both digital and print projects. Our free <strong>DPI checker online</strong> tool helps you quickly analyze the dots per inch (DPI) of any image or PDF file. Whether you're working with screenshots, photos, or documents, this <strong>picture dpi checker</strong> provides instant insights into your file's resolution quality.</p>
+                        
+                        <p>DPI (dots per inch) determines how crisp and clear your images will look when printed. While 72 DPI works fine for web display, you'll need 300 DPI or higher for professional printing. Our <strong>image dpi checker</strong> supports all popular formats including JPG, PNG, GIF, BMP, TIFF, and PDF files, making it perfect for photographers, designers, students, and anyone who needs to verify <strong>screenshot DPI</strong> or document resolution before printing.</p>
+                        
+                        <p>Best of all, this <strong>jpg dpi checker</strong> works entirely in your browser - no software installation required. Simply upload your file and get detailed resolution information in seconds, including dimensions, file size, and quality assessment.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. How to Use the DPI Checker -->
+            <section class="how-to-use-section">
+                <div class="content-card">
+                    <div class="content-header">
+                        <h2><i class="fas fa-play-circle"></i> How to Use the DPI Checker</h2>
+                    </div>
+                    <div class="content-body">
+                        <p>Follow these simple steps to check your image or PDF DPI instantly:</p>
+                        
+                        <ol class="step-list">
+                            <li><strong>Upload Your File:</strong> Click "Choose File" or drag and drop your image or PDF into the upload area. Supported formats include JPG, JPEG, PNG, GIF, BMP, TIFF, and PDF (up to 50MB).</li>
+                            
+                            <li><strong>Automatic Analysis:</strong> Our tool immediately analyzes your file's metadata to extract DPI information, dimensions, and file details.</li>
+                            
+                            <li><strong>View Results:</strong> Check the comprehensive results showing:
+                                <ul>
+                                    <li>File preview thumbnail</li>
+                                    <li>File name, size, and type</li>
+                                    <li>Image dimensions (width x height)</li>
+                                    <li>DPI values (horizontal and vertical)</li>
+                                    <li>Quality assessment and recommendations</li>
+                                </ul>
+                            </li>
+                            
+                            <li><strong>Download Report:</strong> Save a detailed PDF report of your analysis for future reference or sharing with clients.</li>
+                            
+                            <li><strong>Check Another File:</strong> Use the "Check Another File" button to analyze additional images without refreshing the page.</li>
+                        </ol>
+                        
+                        <div class="pro-tip">
+                            <p><i class="fas fa-lightbulb"></i> <strong>Pro Tip:</strong> For best results, use images from professional cameras or scanners that embed DPI metadata. If your image shows "Unknown DPI," it may not have embedded resolution information.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. FAQs -->
+            <section class="faq-section">
+                <div class="content-card">
+                    <div class="content-header">
+                        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                    </div>
+                    <div class="content-body">
+                        <div class="faq-container">
+                            
+                            <div class="faq-item">
+                                <h3>What is DPI and why does it matter?</h3>
+                                <p>DPI (Dots Per Inch) measures how many dots of ink a printer can place within a one-inch line. Higher DPI means more detail and sharper prints. For web images, 72 DPI is sufficient, but for printing photos or documents, you typically need 300 DPI or higher for professional quality results.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>Can I check DPI of screenshots from my phone or computer?</h3>
+                                <p>Yes! Our screenshot DPI checker works with any image file, including screenshots from phones, tablets, or computers. However, most screenshots are saved at 72-96 DPI since they're designed for screen viewing, not printing.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>What's the difference between DPI and PPI?</h3>
+                                <p>DPI (Dots Per Inch) refers to printer output, while PPI (Pixels Per Inch) refers to digital displays. Many people use these terms interchangeably, and our tool shows the resolution information that's most relevant for your file type and intended use.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>Why does my image show "Unknown DPI" or no DPI information?</h3>
+                                <p>Some images don't have embedded DPI metadata, especially screenshots, web images, or photos edited in certain software. This doesn't mean the image is bad quality - it just means the DPI information wasn't saved with the file.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>What DPI should I use for printing photos?</h3>
+                                <p>For high-quality photo printing, use 300 DPI. For large format prints like posters, 150-200 DPI is often sufficient since they're viewed from a distance. For basic document printing, 150 DPI works well.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>Can this tool check DPI of PDF files?</h3>
+                                <p>Absolutely! Our PDF DPI checker analyzes PDF documents and can extract resolution information from embedded images within the PDF. This is especially useful for checking if your PDF is print-ready.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>Is my uploaded file data secure and private?</h3>
+                                <p>Yes, your privacy is our priority. All file analysis happens locally in your browser - we don't upload your files to our servers. Your images and documents remain completely private and secure on your device.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Ideal DPI Table -->
+            <section class="dpi-table-section">
+                <div class="content-card">
+                    <div class="content-header">
+                        <h2><i class="fas fa-table"></i> Recommended DPI for Different Uses</h2>
+                    </div>
+                    <div class="content-body">
+                        <p>Use this handy reference table to determine the ideal DPI for your specific project:</p>
+                        
+                        <div class="table-responsive">
+                            <table class="dpi-table">
+                                <thead>
+                                    <tr>
+                                        <th>Use Case</th>
+                                        <th>Recommended DPI</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Web Display</td>
+                                        <td>72-96 DPI</td>
+                                        <td>Perfect for websites, social media, email</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Basic Document Printing</td>
+                                        <td>150 DPI</td>
+                                        <td>Good for text documents, basic graphics</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Photo Printing (4x6, 5x7)</td>
+                                        <td>300 DPI</td>
+                                        <td>Standard for high-quality photo prints</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Professional Photography</td>
+                                        <td>300-600 DPI</td>
+                                        <td>For magazines, brochures, marketing materials</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Large Format Posters</td>
+                                        <td>150-200 DPI</td>
+                                        <td>Viewed from distance, lower DPI acceptable</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fine Art Reproduction</td>
+                                        <td>600+ DPI</td>
+                                        <td>Museum-quality prints, archival purposes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Billboard/Outdoor Signage</td>
+                                        <td>25-100 DPI</td>
+                                        <td>Large viewing distance allows lower resolution</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Business Cards/Flyers</td>
+                                        <td>300 DPI</td>
+                                        <td>Close viewing requires sharp detail</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="table-note">
+                            <p><i class="fas fa-info-circle"></i> <strong>Remember:</strong> Higher DPI means larger file sizes. Balance quality needs with storage and transfer requirements for your specific project.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Short Article -->
+            <section class="article-section">
+                <div class="content-card">
+                    <div class="content-header">
+                        <h2><i class="fas fa-newspaper"></i> Why DPI Matters for Print and Digital Media</h2>
+                    </div>
+                    <div class="content-body">
+                        <div class="article-content">
+                            <p>In today's digital world, understanding DPI (dots per inch) can save you from costly printing mistakes and ensure your images look their best across all media. Whether you're a student printing assignments, a business owner creating marketing materials, or a photographer preparing portfolio prints, DPI directly impacts your final output quality.</p>
+                            
+                            <p>The key is matching DPI to your intended use. Web images only need 72 DPI because computer screens can't display higher resolutions effectively. However, printers work differently - they create images by placing tiny dots of ink on paper. More dots per inch means finer detail and smoother gradients in your printed photos.</p>
+                            
+                            <p>Many people discover DPI issues too late, when their printed photos appear pixelated or blurry. By checking your image DPI beforehand with tools like our online checker, you can resize or rescan images to meet printing requirements. This simple step ensures professional-looking results every time, whether you're printing family photos or important business documents.</p>
+                            
+                            <p>Professional tip: Always keep high-DPI originals and create lower-resolution copies for web use. This workflow gives you flexibility to print quality images while keeping your website loading fast with optimized file sizes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Internal Links -->
+            <section class="internal-links-section">
+                <div class="content-card">
+                    <div class="content-header">
+                        <h2><i class="fas fa-link"></i> Related Tools & Resources</h2>
+                    </div>
+                    <div class="content-body">
+                        <p>Enhance your image workflow with these complementary tools from our collection:</p>
+                        
+                        <div class="related-links-grid">
+                            <div class="link-card">
+                                <i class="fas fa-compress-alt"></i>
+                                <h4>Image Compressor</h4>
+                                <p>Need to reduce file size after checking DPI? Our <a href="../utility/image-compressor.html">Image Compressor Tool</a> helps you optimize images while maintaining quality - perfect for web use or email sharing.</p>
+                            </div>
+                            
+                            <div class="link-card">
+                                <i class="fas fa-ruler"></i>
+                                <h4>Pixel to Inch Converter</h4>
+                                <p>Convert between pixels and physical dimensions using our <a href="../converter/pixel-to-inch.html">Pixel to Inch Converter</a>. Essential for determining print sizes based on your image's DPI and pixel dimensions.</p>
+                            </div>
+                            
+                            <div class="link-card">
+                                <i class="fas fa-file-pdf"></i>
+                                <h4>Image to PDF Converter</h4>
+                                <p>Turn your high-DPI images into professional PDFs with our <a href="../converter/image-to-pdf.html">Image to PDF Converter</a>. Great for creating print-ready documents while preserving image quality.</p>
+                            </div>
+                            
+                            <div class="link-card">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <h4>Image Resizer</h4>
+                                <p>Need to change your image dimensions? Use our <a href="../utility/image-resizer.html">Image Resizer Tool</a> to adjust width and height while maintaining aspect ratio and DPI settings.</p>
+                            </div>
+                            
+                            <div class="link-card">
+                                <i class="fas fa-heart"></i>
+                                <h4>Take a Break!</h4>
+                                <p>Working on a big design project? Stay healthy with our <a href="../health/calorie-deficit.html">Calorie Deficit Finder</a> to maintain your energy levels while creating amazing print and digital content!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tools-footer">
+                            <p><strong>Pro Tip:</strong> Bookmark these tools for a complete image processing workflow. From checking DPI to resizing, compressing, and converting - we've got all your image needs covered in one place.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    
+    <!-- FAQ Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is DPI and why does it matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DPI (Dots Per Inch) measures how many dots of ink a printer can place within a one-inch line. Higher DPI means more detail and sharper prints. For web images, 72 DPI is sufficient, but for printing photos or documents, you typically need 300 DPI or higher for professional quality results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check DPI of screenshots from my phone or computer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Our screenshot DPI checker works with any image file, including screenshots from phones, tablets, or computers. However, most screenshots are saved at 72-96 DPI since they're designed for screen viewing, not printing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between DPI and PPI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DPI (Dots Per Inch) refers to printer output, while PPI (Pixels Per Inch) refers to digital displays. Many people use these terms interchangeably, and our tool shows the resolution information that's most relevant for your file type and intended use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my image show Unknown DPI or no DPI information?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some images don't have embedded DPI metadata, especially screenshots, web images, or photos edited in certain software. This doesn't mean the image is bad quality - it just means the DPI information wasn't saved with the file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What DPI should I use for printing photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For high-quality photo printing, use 300 DPI. For large format prints like posters, 150-200 DPI is often sufficient since they're viewed from a distance. For basic document printing, 150 DPI works well."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this tool check DPI of PDF files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Our PDF DPI checker analyzes PDF documents and can extract resolution information from embedded images within the PDF. This is especially useful for checking if your PDF is print-ready."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my uploaded file data secure and private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, your privacy is our priority. All file analysis happens locally in your browser - we don't upload your files to our servers. Your images and documents remain completely private and secure on your device."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Page Schema Markup (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["WebPage", "WebApplication"],
+      "name": "DPI Checker - Online Image DPI Checker Tool",
+      "description": "Free online DPI checker tool to analyze image and PDF resolution. Check screenshot DPI, JPG DPI, PNG DPI instantly. Perfect for print designers, students, and anyone working with image resolution.",
+      "url": "https://www.taskproper.com/utility/dpi-checker.html",
+      "keywords": "screenshot DPI, dpi checker online, pdf dpi checker, picture dpi checker, jpg dpi checker, image dpi checker, dpi checker software, online image dpi checker",
+      "author": {
+        "@type": "Person",
+        "name": "JayTools"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Task Proper",
+        "url": "https://www.taskproper.com"
+      },
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Check DPI of images and PDF files",
+        "Support for JPG, PNG, GIF, BMP, TIFF formats",
+        "Instant resolution analysis",
+        "Quality assessment and recommendations",
+        "Downloadable analysis reports",
+        "Privacy-focused local processing"
+      ],
+      "screenshot": "https://www.taskproper.com/img/dpi-checker-screenshot.jpg",
+      "softwareVersion": "1.0",
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-01-15"
+    }
+    </script>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../index.html">Home</a></li>
+                            <li><a href="../../about.html">About</a></li>
+                            <li><a href="../../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../../terms.html">Terms of Use</a></li>
+                            <li><a href="../../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Task Proper by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="js/dpi-checker.js"></script>
+</body>
+</html>

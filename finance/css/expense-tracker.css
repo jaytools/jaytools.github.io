@@ -1,0 +1,869 @@
+/* =========================
+   Daily Expense Tracker CSS
+   Professional & Attractive
+============================ */
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary-color: #64748b;
+  --accent-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #0ea5e9;
+  --text-color: #1f2937;
+  --light-text-color: #6b7280;
+  --border-color: #d1d5db;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --light-bg: #f1f5f9;
+  --shadow-color: rgba(0, 0, 0, 0.06);
+
+  --dark-background-color: #1e293b;
+  --dark-card-background: #111827;
+  --dark-text-color: #f3f4f6;
+  --dark-border-color: #374151;
+  --dark-shadow-color: rgba(255, 255, 255, 0.05);
+
+  --radius: 12px;
+  --transition: 0.3s ease;
+  --spacing-xs: 0.3rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+
+  --dark-primary-color: #000000;
+  --dark-light-text-color: #ffffff;
+}
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+}
+<<<<<<< Updated upstream
+/* Breadcrumb Styles - Matching age-difference-inline.html */
+=======
+
+/* Breadcrumbs */
+>>>>>>> Stashed changes
+.breadcrumb {
+    background: #f8fafc;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+<<<<<<< Updated upstream
+    align-items: center;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+=======
+    list-style: none;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.breadcrumb a {
+    color: #666;
+>>>>>>> Stashed changes
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+<<<<<<< Updated upstream
+    color: var(--primary-dark);
+=======
+    color: #333;
+>>>>>>> Stashed changes
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    margin: 0 0.5rem;
+<<<<<<< Updated upstream
+    color: #6b7280;
+    font-weight: bold;
+}
+
+.breadcrumb span:last-child {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Dark mode breadcrumb */
+body.dark-mode .breadcrumb {
+    background: var(--dark-card-background);
+    border-left-color: var(--primary-color);
+}
+
+body.dark-mode .breadcrumb a {
+    color: var(--primary-color);
+}
+
+body.dark-mode .breadcrumb a:hover {
+    color: #60a5fa;
+}
+
+body.dark-mode .breadcrumb span:last-child {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .breadcrumb-separator {
+    color: #9ca3af;
+=======
+    color: #ddd;
+}
+
+.breadcrumb span:last-child {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Dark Mode */
+body.dark-mode .breadcrumb a {
+    color: #ccc;
+}
+
+body.dark-mode .breadcrumb a:hover {
+    color: #eee;
+}
+
+body.dark-mode .breadcrumb span:last-child {
+    color: #eee;
+}
+
+body.dark-mode .breadcrumb-separator {
+    color: #444;
+>>>>>>> Stashed changes
+}
+
+.main-content {
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  background: var(--card-background);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tool-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.theme-toggle-button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.theme-toggle-button:hover {
+  background: var(--primary-dark);
+}
+
+.card {
+  background: var(--card-background);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px var(--shadow-color);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+.add-expense-btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.add-expense-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+/* ===== Table Styling ===== */
+.expense-table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background: #fff;
+}
+
+#expenseTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+#expenseTable th,
+#expenseTable td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+    text-align: left;
+}
+
+#expenseTable th {
+    background-color: var(--light-gray, #f5f5f5);
+    font-weight: 600;
+    color: #333;
+}
+
+#expenseTable tr:hover {
+    background-color: #f9f9f9;
+}
+
+#expenseTable td .btn {
+    padding: 4px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+#expenseTable .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+.expense-results-section {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.total-section {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  text-align: center;
+}
+h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  line-height: 1.3;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 480px) {
+  h2 {
+    padding: 0 10px;
+  }
+}
+
+
+
+.total-section h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.totals-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.total-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  min-width: 130px;
+  transition: transform 0.2s ease;
+}
+
+.total-card:hover {
+  transform: scale(1.05);
+}
+
+.total-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.total-amount {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.expense-table-container h2,
+.info-section h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expense-table th,
+.expense-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.expense-table th {
+  background: var(--light-bg);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.expense-table tr:hover {
+  background: #f1f5f9;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature-item {
+  background: var(--light-bg, #f1f5f9);
+  padding: 1rem;
+  border-radius: var(--border-radius-md, 8px);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  box-shadow: var(--box-shadow-md, 0 4px 10px rgba(0, 0, 0, 0.05));
+}
+
+.feature-item i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+body.dark-mode .feature-item {
+  background: var(--dark-card-background);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .feature-item i {
+  color: var(--dark-primary-color);
+}
+
+.related-tools-grid,
+.how-to-steps-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.feature-item,
+.step-card {
+  background: var(--light-bg);
+  color: var(--text-color);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+.tool-card {
+  background: var(--light-bg);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow var(--transition);
+}
+
+.feature-item i,
+.tool-card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform var(--transition);
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.step-number {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+/* Empty State */
+.empty-message {
+  text-align: center;
+  color: var(--light-text-color);
+  font-style: italic;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: var(--dark-background-color);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .card,
+body.dark-mode .tool-card,
+body.dark-mode .feature-item {
+  background: var(--dark-card-background);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background: #1e293b;
+  color: var(--dark-text-color);
+  border-color: var(--dark-border-color);
+}
+
+body.dark-mode .expense-table th {
+  background: #1e293b;
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .tool-card:hover {
+  box-shadow: 0 6px 12px var(--dark-shadow-color);
+}
+
+body.dark-mode .step-card {
+  background: var(--dark-card-background);
+  color: var(--dark-text-color);
+  box-shadow: 0 4px 10px var(--dark-shadow-color);
+}
+
+body.dark-mode .step-number {
+  background: var(--primary-color); /* You can use accent if preferred */
+  color: white;
+}
+
+body.dark-mode .total-section {
+  background-color: var(--dark-card-background);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .total-section h2 {
+  color: var(--dark-text-color);
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+/* Large tablets and small desktops */
+@media (max-width: 992px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .tool-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .totals-wrapper {
+        gap: 20px;
+    }
+    
+    .feature-grid,
+    .related-tools-grid,
+    .how-to-steps-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .tool-title {
+        font-size: 1.5rem;
+    }
+    
+    /* Breadcrumb mobile adjustments */
+    .breadcrumb {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    
+    .breadcrumb-separator {
+        margin: 0 0.3rem;
+    }
+    
+    /* Form improvements */
+    .input-group {
+        margin-bottom: 1rem;
+    }
+    
+    .input-group input,
+    .input-group select {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        min-height: 48px; /* Better touch targets */
+    }
+    
+    .add-expense-btn {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+    
+    /* Table responsive improvements */
+    .expense-table-container {
+        margin: 0 -1rem;
+        border-radius: 0;
+    }
+    
+    #expenseTable {
+        font-size: 14px;
+    }
+    
+    #expenseTable th,
+    #expenseTable td {
+        padding: 8px 6px;
+        white-space: nowrap;
+    }
+    
+    #expenseTable th:first-child,
+    #expenseTable td:first-child {
+        padding-left: 1rem;
+    }
+    
+    #expenseTable th:last-child,
+    #expenseTable td:last-child {
+        padding-right: 1rem;
+    }
+    
+    /* Totals section mobile */
+    .totals-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .total-card {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    /* FAQ improvements */
+    .faq-item {
+        margin-bottom: 0.5rem;
+    }
+    
+    .faq-item details {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 0;
+    }
+    
+    .faq-item summary {
+        padding: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: var(--light-bg);
+        border-radius: 8px;
+        transition: background 0.2s ease;
+    }
+    
+    .faq-item summary:hover {
+        background: #e2e8f0;
+    }
+    
+    .faq-item details[open] summary {
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .faq-item p {
+        padding: 1rem;
+        margin: 0;
+        background: white;
+        border-radius: 0 0 8px 8px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 576px) {
+    .tool-title {
+        font-size: 1.3rem;
+    }
+    
+    .breadcrumb {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .breadcrumb-separator {
+        display: none;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb span {
+        display: block;
+        margin: 0.1rem 0;
+    }
+    
+    .card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-grid,
+    .related-tools-grid,
+    .how-to-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .feature-item,
+    .step-card,
+    .tool-card {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    /* Better button spacing */
+    .expense-actions {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-secondary {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Table mobile optimization */
+    #expenseTable th,
+    #expenseTable td {
+        padding: 6px 4px;
+        font-size: 12px;
+    }
+    
+    #expenseTable .btn {
+        padding: 2px 6px;
+        font-size: 11px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .main-content {
+        padding: 0.5rem;
+    }
+    
+    .breadcrumb {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        border-radius: 0;
+    }
+    
+    /* Stack table vertically on very small screens */
+    .expense-table-container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+    }
+    
+    #expenseTable {
+        min-width: 500px; /* Maintain table structure */
+    }
+    
+    /* Improve touch targets */
+    .input-group input,
+    .input-group select {
+        min-height: 50px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .add-expense-btn {
+        min-height: 50px;
+        font-size: 1rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .add-expense-btn:hover {
+        transform: none; /* Remove transform on touch devices */
+    }
+    
+    .tool-card:hover {
+        transform: none;
+    }
+    
+    .total-card:hover {
+        transform: none;
+    }
+    
+    /* Larger touch targets */
+    .theme-toggle-button {
+        width: 48px;
+        height: 48px;
+    }
+    
+    #expenseTable .btn {
+        min-height: 36px;
+        min-width: 60px;
+    }
+}
+
+/* Dark mode mobile adjustments */
+@media (max-width: 768px) {
+    body.dark-mode .faq-item summary {
+        background: var(--dark-card-background);
+        color: var(--dark-text-color);
+    }
+    
+    body.dark-mode .faq-item summary:hover {
+        background: #1e293b;
+    }
+    
+    body.dark-mode .faq-item details {
+        border-color: var(--dark-border-color);
+    }
+    
+    body.dark-mode .faq-item details[open] summary {
+        border-bottom-color: var(--dark-border-color);
+    }
+    
+    body.dark-mode .faq-item p {
+        background: var(--dark-card-background);
+        color: var(--dark-text-color);
+    }
+}

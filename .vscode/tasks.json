@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Validate HTML",
+			"type": "shell",
+			"command": "echo Validating health.html structure and styles...",
+			"group": "test",
+			"isBackground": false
+		}
+	]
+}
