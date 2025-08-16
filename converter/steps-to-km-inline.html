@@ -1,4 +1,4 @@
-<!-- Sample Tool page for inline CSS and JS Tools-->
+﻿<!-- Sample Tool page for inline CSS and JS Tools-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -504,8 +504,8 @@
                             <option value="">Select operation</option>
                             <option value="add">Addition (+)</option>
                             <option value="subtract">Subtraction (-)</option>
-                            <option value="multiply">Multiplication (×)</option>
-                            <option value="divide">Division (÷)</option>
+                            <option value="multiply">Multiplication (Ã—)</option>
+                            <option value="divide">Division (Ã·)</option>
                         </select>
                         <div class="error-message" id="operationError">Please select an operation.</div>
                     </div>
@@ -639,7 +639,38 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="../js/script.js"></script>
+    <script src="../js/sidebar-favorites.js"></script>
+    <script>
+        // Sidebar Toggle Functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar && overlay) {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar) sidebar.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.sidebar-close');
+            const overlay = document.querySelector('.overlay');
+
+            if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+            if (menuClose) menuClose.addEventListener('click', closeSidebar);
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
     <script>
         // Tool Functionality
         const toolForm = document.getElementById('toolForm');
@@ -711,7 +742,7 @@
                     break;
                 case 'multiply':
                     result = num1 * num2;
-                    description = `${formatNum(num1)} × ${formatNum(num2)} = ${formatNum(result)}`;
+                    description = `${formatNum(num1)} Ã— ${formatNum(num2)} = ${formatNum(result)}`;
                     break;
                 case 'divide':
                     if (num2 === 0) {
@@ -722,7 +753,7 @@
                         return;
                     }
                     result = num1 / num2;
-                    description = `${formatNum(num1)} ÷ ${formatNum(num2)} = ${formatNum(result)}`;
+                    description = `${formatNum(num1)} Ã· ${formatNum(num2)} = ${formatNum(result)}`;
                     break;
                 default:
                     return;

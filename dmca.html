@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "DMCA Notice - Task Proper",
-        "description": "Task Proper DMCA Notice – Understand how we handle copyright infringement claims and how to submit a valid DMCA takedown request.",
+        "description": "Task Proper DMCA Notice â€“ Understand how we handle copyright infringement claims and how to submit a valid DMCA takedown request.",
         "url": "https://taskproper.com/dmca.html",
         "publisher": {
             "@type": "Organization",
@@ -638,7 +638,38 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-  <script src="js/script.js" defer></script>
+  <script src="js/sidebar-favorites.js"></script>
+  <script>
+        // Sidebar Toggle Functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar && overlay) {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar) sidebar.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.sidebar-close');
+            const overlay = document.querySelector('.overlay');
+
+            if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+            if (menuClose) menuClose.addEventListener('click', closeSidebar);
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
   <script src="js/icon-replacement.js" defer></script>
     <script>
         // Back to top smooth scroll

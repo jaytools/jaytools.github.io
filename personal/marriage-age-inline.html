@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -858,6 +858,7 @@
                 font-weight: 700;
                 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
                 word-wrap: break-word;
+                -webkit-hyphens: auto;
                 hyphens: auto;
             }
             
@@ -2468,7 +2469,7 @@
                 
                 <!-- Marriage & Relationship Tools -->
                 <div class="related-tools-category">
-                    <h4>💑 Marriage & Relationship Tools</h4>
+                    <h4>ðŸ’‘ Marriage & Relationship Tools</h4>
                     <div class="related-tools-grid">
                         <a href="age-difference-inline.html" class="related-tool-card">
                             <div class="related-tool-title">Age Difference Calculator</div>
@@ -2487,7 +2488,7 @@
 
                 <!-- Health & Family Planning Tools -->
                 <div class="related-tools-category">
-                    <h4>👶 Health & Family Planning Tools</h4>
+                    <h4>ðŸ‘¶ Health & Family Planning Tools</h4>
                     <div class="related-tools-grid">
                         <a href="../health/ivf-calculator.html" class="related-tool-card">
                             <div class="related-tool-title">IVF Due Date Calculator</div>
@@ -2506,7 +2507,7 @@
 
                 <!-- Life Planning Tools -->
                 <div class="related-tools-category">
-                    <h4>📅 Life Planning Tools</h4>
+                    <h4>ðŸ“… Life Planning Tools</h4>
                     <div class="related-tools-grid">
                         <a href="../planner/goal-planner.html" class="related-tool-card">
                             <div class="related-tool-title">Life Goal Planner</div>
@@ -2595,7 +2596,38 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="../js/script.js"></script>
+    <script src="../js/sidebar-favorites.js"></script>
+    <script>
+        // Sidebar Toggle Functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar && overlay) {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar) sidebar.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.sidebar-close');
+            const overlay = document.querySelector('.overlay');
+
+            if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+            if (menuClose) menuClose.addEventListener('click', closeSidebar);
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
     <script>
         // Marriage Age Calculator Functionality
         const marriageForm = document.getElementById('marriageForm');
