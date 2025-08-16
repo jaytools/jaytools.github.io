@@ -48,8 +48,39 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+}
+
+/* Default Light Mode Styles */
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure all main elements have light defaults */
+.card {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #dee2e6;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    color: #333333;
+}
+
+.form-input,
+.form-select {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #ced4da;
+}
+
+.form-section {
+    background-color: #f8f9fa;
+    color: #333333;
 }
 
 /* Enhanced Mobile Optimizations */
@@ -726,6 +757,12 @@
         font-size: 1.5rem;
     }
     
+    .tool-dark-mode-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
     .card-body {
         padding: 1.25rem;
     }
@@ -810,13 +847,6 @@
         font-size: 1.35rem;
     }
     
-    .tool-dark-mode-toggle {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-        align-self: flex-end;
-    }
-    
     .card-body {
         padding: 1rem;
     }
@@ -893,9 +923,15 @@
 }
 
 /* Dark Mode Support */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
 body.dark-mode .card {
-    background-color: #2a2a2a;
+    background-color: #2d2d2d;
     border-color: #444;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 body.dark-mode .card-header {
@@ -904,7 +940,7 @@ body.dark-mode .card-header {
 }
 
 body.dark-mode .card-header h1 {
-    color: #ddd;
+    color: #e0e0e0;
 }
 
 body.dark-mode .card-header h1 i {
@@ -928,7 +964,7 @@ body.dark-mode .form-section {
 }
 
 body.dark-mode .section-heading {
-    color: #ddd;
+    color: #e0e0e0;
 }
 
 body.dark-mode .section-heading i {
@@ -939,13 +975,15 @@ body.dark-mode .form-label {
     color: #ccc;
 }
 
-body.dark-mode .form-input {
-    background-color: #333;
+body.dark-mode .form-input,
+body.dark-mode .form-select {
+    background-color: #3a3a3a;
     border-color: #555;
-    color: #ddd;
+    color: #e0e0e0;
 }
 
-body.dark-mode .form-input:focus {
+body.dark-mode .form-input:focus,
+body.dark-mode .form-select:focus {
     border-color: #777;
     box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
 }
@@ -955,11 +993,22 @@ body.dark-mode .help-text {
 }
 
 body.dark-mode .btn-calculate {
-    background-color: #555;
+    background-color: #0056b3;
+    border-color: #004085;
 }
 
 body.dark-mode .btn-calculate:hover {
-    background-color: #666;
+    background-color: #004085;
+}
+
+body.dark-mode .reset-btn {
+    background-color: #444;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body.dark-mode .reset-btn:hover {
+    background-color: #555;
 }
 
 body.dark-mode .results-section {
@@ -968,17 +1017,18 @@ body.dark-mode .results-section {
 }
 
 body.dark-mode .results-title {
-    color: #ddd;
+    color: #e0e0e0;
 }
 
 body.dark-mode .results-card,
 body.dark-mode .results-details {
     background-color: #333;
+    border-color: #444;
 }
 
 body.dark-mode .result-label,
 body.dark-mode .result-value {
-    color: #ddd;
+    color: #e0e0e0;
 }
 
 body.dark-mode .info-section {
@@ -988,7 +1038,7 @@ body.dark-mode .info-section {
 
 body.dark-mode .info-section h2,
 body.dark-mode .info-section h3 {
-    color: #ddd;
+    color: #e0e0e0;
 }
 
 body.dark-mode .info-section p,
@@ -1006,7 +1056,7 @@ body.dark-mode .related-tool-card {
 body.dark-mode .feature-item h3,
 body.dark-mode .step-content h3,
 body.dark-mode .related-tool-card h3 {
-    color: #ddd;
+    color: #e0e0e0;
 }
 
 body.dark-mode .feature-item p,
@@ -1027,7 +1077,7 @@ body.dark-mode .faq-item {
 
 body.dark-mode .faq-question {
     background-color: #333;
-    color: #ddd;
+    color: #e0e0e0;
 }
 
 body.dark-mode .faq-answer {
@@ -1039,23 +1089,13 @@ body.dark-mode .faq-answer li {
     color: #bbb;
 }
 
-body.dark-mode .reset-btn {
-    background-color: #444;
-    color: #ddd;
-    border-color: #555;
-}
-
-body.dark-mode .reset-btn:hover {
-    background-color: #555;
-}
-
 body.dark-mode .suggestions-box {
     background-color: #333;
     border-color: #555;
 }
 
 body.dark-mode .suggestion-item {
-    color: #ddd;
+    color: #e0e0e0;
     border-color: #444;
 }
 

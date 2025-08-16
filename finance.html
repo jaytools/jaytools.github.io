@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Calculators - Task Proper | Free Finance & Investment Tools</title>
-    <meta name="description" content="Access free online finance and investment calculators for tracking debt, managing expenses, calculating ratios, and more with Task Proper.">
-    <meta name="keywords" content="finance calculators, investment tools, debt ratio, expense tracker, financial planning, Task Proper">
-    <meta name="robots" content="index, follow">
+    <title>Free Finance Calculators - Debt Ratio, Expense Tracker & Budget Tools | Task Proper</title>
+    <meta name="description" content="Free online finance calculators for debt-to-income ratio, expense tracking, and budget planning. Get instant financial insights with tools trusted by students and professionals. No signup required.">
+    <meta name="keywords" content="finance calculators, debt to income ratio calculator, expense tracker, budget planning tools, free financial calculators, debt ratio calculator, personal finance tools">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="Jay Prajapati">
     <meta name="category" content="Finance">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Finance Calculators - Task Proper | Free Finance & Investment Tools">
-    <meta property="og:description" content="Access free online finance and investment calculators for tracking debt, managing expenses, calculating ratios, and more with Task Proper.">
+    <meta property="og:title" content="Free Finance Calculators - Debt Ratio, Expense Tracker & Budget Tools | Task Proper">
+    <meta property="og:description" content="Free online finance calculators for debt-to-income ratio, expense tracking, and budget planning. Get instant financial insights with tools trusted by students and professionals.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://taskproper.com/finance.html">
+    <meta property="og:site_name" content="Task Proper">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Finance Calculators - Task Proper">
+    <meta name="twitter:description" content="Debt-to-income calculator, expense tracker, and budget planning tools. Free financial calculators for smart money management.">
+    <meta name="twitter:site" content="@taskproper">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://taskproper.com/finance.html">
@@ -41,6 +49,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/finance-page.css">
+    <link rel="stylesheet" href="css/favorite-star.css">
 
     <!-- Accessibility: Focus Outline for keyboard navigation -->
     <style>
@@ -48,6 +57,185 @@
         :focus {
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .faq-container {
+            max-width: 100%;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            background: #ffffff;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #343a40;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .faq-toggle {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #6c757d;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        /* Benefits List Styling */
+        .tools-benefits {
+            margin: 2.5rem 0;
+            padding: 2rem 0;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .benefits-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefits-list strong {
+            color: #343a40;
+            font-weight: 600;
+        }
+
+        /* Related Categories Styling */
+        .related-categories {
+            margin: 3rem 0 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+
+        .category-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .category-card h4 {
+            margin: 0 0 1rem 0;
+            color: #343a40;
+            font-size: 1.1rem;
+        }
+
+        .category-card h4 i {
+            margin-right: 0.5rem;
+            color: #6c757d;
+        }
+
+        .category-card p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-question {
+                padding: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 0 1rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 1rem;
+            }
         }
     </style>
     
@@ -81,6 +269,56 @@
                 }
             ]
         }
+    }
+    </script>
+
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are these finance calculators actually accurate for real-world budgeting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Our debt-to-income calculator uses the same formulas that banks and credit unions use when evaluating loan applications. The expense tracker follows standard accounting principles, and we've tested these tools against professional financial software. They're designed for everyday people making real financial decisions, not just theoretical calculations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's a healthy debt-to-income ratio, and why should I care?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most financial experts recommend keeping your debt-to-income ratio below 36%, with no more than 28% going to housing costs. Our calculator shows you exactly where you stand and what it means for your financial health. This ratio affects your ability to get loans, credit cards, and even apartment rentals – it's basically your financial report card."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can the expense tracker really help me save money, or is it just bookkeeping?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It's way more than bookkeeping. Most people are shocked when they see where their money actually goes. That daily coffee habit might cost $150 per month, or those subscription services you forgot about could be eating $50 monthly. The tracker helps you spot these patterns and make informed decisions about what expenses are truly worth it to you."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you store my financial information when I use these calculators?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, we don't store anything. All calculations happen right in your browser, and nothing gets sent to our servers. Your financial information stays completely private on your device. You can even use these tools offline once the page loads – we believe your money matters should stay between you and your calculator."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are these tools suitable for someone just starting to manage their finances?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Definitely. We built these specifically for people who find traditional financial planning overwhelming. Each tool includes clear explanations of what the numbers mean and why they matter. You don't need an accounting degree – just the desire to understand and improve your financial situation. Start with the expense tracker to see where your money goes, then move to the debt calculator when you're ready."
+                }
+            }
+        ]
     }
     </script>
     
@@ -235,26 +473,120 @@
         <section class="category-info">
             <div class="container">
                 <h2>About Our Finance Tools</h2>
-                <p>Manage your financial health with our comprehensive suite of finance calculators. Designed for accuracy and ease of use, these tools help you track debt, manage expenses, calculate ratios, and make informed investment decisions.</p>
+                <p>Taking control of your finances doesn't have to be overwhelming. Our carefully designed finance calculators help you understand where your money goes and how to make it work better for you. Whether you're a college student trying to manage debt, a young professional planning your budget, or someone looking to get serious about expense tracking, these tools translate complex financial concepts into simple, actionable insights. Built by people who understand real financial challenges, each calculator focuses on practical scenarios you actually face – like figuring out if that student loan payment fits your budget or tracking where your paycheck disappears each month.</p>
+                
+                <!-- How These Tools Help -->
+                <div class="tools-benefits">
+                    <h3>How These Tools Can Help You</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Smart Debt Management:</strong> Calculate your debt-to-income ratio to understand if you're borrowing responsibly and get a clear picture of your financial health before making major purchases.</li>
+                        <li><strong>Real-Time Expense Tracking:</strong> Monitor daily spending patterns and identify where small purchases add up to big budget leaks, helping you stay on track with your financial goals.</li>
+                        <li><strong>Budget Planning Made Simple:</strong> Use our debt ratio calculator to determine how much of your income should go toward debt payments, ensuring you maintain a healthy financial balance.</li>
+                        <li><strong>Financial Decision Support:</strong> Get instant calculations that help you evaluate loan applications, credit decisions, and major purchases with confidence and clarity.</li>
+                    </ul>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Are these finance calculators actually accurate for real-world budgeting?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely. Our debt-to-income calculator uses the same formulas that banks and credit unions use when evaluating loan applications. The expense tracker follows standard accounting principles, and we've tested these tools against professional financial software. They're designed for everyday people making real financial decisions, not just theoretical calculations.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>What's a healthy debt-to-income ratio, and why should I care?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Most financial experts recommend keeping your debt-to-income ratio below 36%, with no more than 28% going to housing costs. Our calculator shows you exactly where you stand and what it means for your financial health. This ratio affects your ability to get loans, credit cards, and even apartment rentals – it's basically your financial report card.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Can the expense tracker really help me save money, or is it just bookkeeping?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>It's way more than bookkeeping. Most people are shocked when they see where their money actually goes. That daily coffee habit might cost $150 per month, or those subscription services you forgot about could be eating $50 monthly. The tracker helps you spot these patterns and make informed decisions about what expenses are truly worth it to you.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Do you store my financial information when I use these calculators?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No, we don't store anything. All calculations happen right in your browser, and nothing gets sent to our servers. Your financial information stays completely private on your device. You can even use these tools offline once the page loads – we believe your money matters should stay between you and your calculator.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Are these tools suitable for someone just starting to manage their finances?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Definitely. We built these specifically for people who find traditional financial planning overwhelming. Each tool includes clear explanations of what the numbers mean and why they matter. You don't need an accounting degree – just the desire to understand and improve your financial situation. Start with the expense tracker to see where your money goes, then move to the debt calculator when you're ready.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Categories -->
+                <div class="related-categories">
+                    <h3>Explore Related Tools</h3>
+                    <div class="categories-grid">
+                        <div class="category-card">
+                            <a href="health.html">
+                                <h4><i class="fas fa-heart"></i> Health Tools</h4>
+                                <p>Calculate BMI, track calories, and plan pregnancy milestones with tools designed for real health decisions.</p>
+                            </a>
+                        </div>
+
+                        <div class="category-card">
+                            <a href="personal.html">
+                                <h4><i class="fas fa-user"></i> Personal Tools</h4>
+                                <p>Age calculators, biodata creators, and relationship tools that help with life's personal milestones.</p>
+                            </a>
+                        </div>
+
+                        <div class="category-card">
+                            <a href="utility.html">
+                                <h4><i class="fas fa-tools"></i> Utility Tools</h4>
+                                <p>DPI checkers, typing tests, and productivity tools for everyday tasks and technical needs.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Features Grid -->
                 <div class="features-grid">
                     <div class="feature-card">
                         <span class="icon-calculator" aria-hidden="true"></span>
                         <h3>Simple & Accurate</h3>
-                        <p>All calculations are based on scientific formulas with clear, easy-to-understand results.</p>
+                        <p>All calculations are based on proven financial formulas with clear, easy-to-understand results.</p>
                     </div>
                     
                     <div class="feature-card">
                         <span class="icon-mobile-alt" aria-hidden="true"></span>
                         <h3>Mobile Friendly</h3>
-                        <p>Use our tools on any device – perfect for checking health metrics on the go.</p>
+                        <p>Use our tools on any device – perfect for checking your finances on the go.</p>
                     </div>
                     
                     <div class="feature-card">
                         <span class="icon-lock" aria-hidden="true"></span>
                         <h3>Privacy First</h3>
-                        <p>All calculations are done in your browser – no personal health data is ever stored or shared.</p>
+                        <p>All calculations are done in your browser – no personal financial data is ever stored or shared.</p>
                     </div>
                 </div>
             </div>
@@ -608,7 +940,35 @@
             loadFinanceTools();
             window.scrollTo({ top: document.querySelector('.main-content').offsetTop, behavior: 'smooth' });
         }
+
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
     </script>
+
     <script src="/js/icon-replacement.js"></script>
 </body>
 </html>

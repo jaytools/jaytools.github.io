@@ -16,7 +16,7 @@
     <meta property="og:image" content="https://www.taskproper.com/images/tools/food-calories-preview.png">
     <meta property="og:url" content="https://www.taskproper.com/health/food-calories.html">
     <meta property="og:site_name" content="Task Proper">
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="light">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Calculate Calories in Food - Free Food Calorie Checker">
@@ -39,6 +39,15 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="css/food-calories.css">
+
+    <!-- Ensure Light Mode Default -->
+    <script>
+        // Immediately ensure light mode on page load
+        document.documentElement.style.setProperty('color-scheme', 'light');
+        if (localStorage.getItem('darkMode') !== 'true') {
+            localStorage.setItem('darkMode', 'false');
+        }
+    </script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">

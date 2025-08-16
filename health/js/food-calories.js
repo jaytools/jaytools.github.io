@@ -118,12 +118,23 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedFood = null;
     let recentSearches = JSON.parse(localStorage.getItem('recentFoodSearches')) || [];
 
-    // Enhanced dark mode functionality
+    // Dark mode functionality with default light mode
     function initializeDarkMode() {
+        // Force remove dark mode class first to ensure clean state
+        document.body.classList.remove('dark-mode');
+        
+        // Only apply dark mode if explicitly saved as true by user
         const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        
         if (isDarkMode) {
             document.body.classList.add('dark-mode');
             updateDarkModeIcon(true);
+        } else {
+            // Explicitly ensure light mode (default)
+            document.body.classList.remove('dark-mode');
+            updateDarkModeIcon(false);
+            // Clear any stored dark mode preference that might be false or null
+            localStorage.setItem('darkMode', 'false');
         }
     }
 
@@ -131,8 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const icon = darkModeToggle.querySelector('i');
         if (isDark) {
             icon.className = 'fas fa-sun';
+            darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
         } else {
             icon.className = 'fas fa-moon';
+            darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
         }
     }
 
@@ -482,6 +495,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the application
     function init() {
+        // Initialize dark mode with default light mode
         initializeDarkMode();
         
         // Set default values
