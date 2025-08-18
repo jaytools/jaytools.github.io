@@ -33,6 +33,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/expense-tracker-fixed.css">
 
     <!-- Tool Specific Styles -->
     <style>
@@ -527,6 +528,10 @@
             gap: var(--space-md);
             margin-top: var(--space-lg);
         }
+        .related-tools-description {
+            color: var(--color-gray-600);
+            margin-bottom: var(--space-lg);
+        }
 
         /* Benefits List Container */
         .benefits-list-container {
@@ -720,6 +725,21 @@
                 min-height: 44px;
                 font-size: 0.95rem;
             }
+        }
+        .pro-tip-icon {
+            position: absolute;
+            top: var(--space-md);
+            left: var(--space-md);
+            font-size: 1.2rem;
+        }
+        .pro-tip-text {
+            margin: 0;
+            color: var(--color-gray-700);
+            line-height: 1.6;
+            padding-left: var(--space-xl);
+        }
+        .pro-tip-strong {
+            color: var(--color-success-dark);
         }
     </style>
 
@@ -1024,13 +1044,13 @@
 
                     <!-- Expenses Table -->
                     <div class="table-container">
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-lg); border-bottom: 1px solid var(--color-gray-200); flex-wrap: wrap; gap: var(--space-sm);">
-                            <h3 style="margin: 0; color: var(--color-gray-800); font-size: 1.2rem;">Your Expenses</h3>
-                            <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
-                                <button id="exportCsvBtn" class="btn btn-secondary" style="width: auto; min-height: auto; padding: var(--space-sm) var(--space-md); font-size: 0.9rem;">
+                        <div class="expense-header">
+                            <h3 class="expense-header h3">Your Expenses</h3>
+                            <div class="expense-actions">
+                                <button id="exportCsvBtn" class="btn btn-secondary expense-btn-small">
                                     <i class="fas fa-download"></i> Export CSV
                                 </button>
-                                <button id="clearExpensesBtn" class="btn btn-secondary" style="width: auto; min-height: auto; padding: var(--space-sm) var(--space-md); font-size: 0.9rem;">
+                                <button id="clearExpensesBtn" class="btn btn-secondary expense-btn-small">
                                     <i class="fas fa-trash-alt"></i> Clear All
                                 </button>
                             </div>
@@ -1048,7 +1068,7 @@
                             <tbody>
                                 <tr id="emptyExpenses">
                                     <td colspan="5" class="empty-message">
-                                        <i class="fas fa-receipt" style="font-size: 2rem; color: var(--color-gray-300); margin-bottom: var(--space-sm); display: block;"></i>
+                                        <i class="fas fa-receipt empty-state-icon"></i>
                                         No expenses added yet. Start tracking your spending!
                                     </td>
                                 </tr>
@@ -1105,7 +1125,7 @@
                 <div class="card-body">
                     <div class="how-to-use-section">
                         <h3><i class="fas fa-mobile-alt"></i> How to Use the Daily Expense Tracker</h3>
-                        <p style="color: var(--color-gray-600); margin-bottom: var(--space-lg);">Follow these simple steps to start tracking your daily expenses and take control of your financial habits.</p>
+                        <p class="section-description">Follow these simple steps to start tracking your daily expenses and take control of your financial habits.</p>
                         
                         <div class="how-to-steps-grid">
                             <div class="step-card">
@@ -1128,16 +1148,16 @@
                                 <h3>Manage Entries</h3>
                                 <p>Delete individual expenses or clear all entries using the action buttons when needed.</p>
                             </div>
-                            <div class="step-card">
+                            <p class="pro-tip-text"><strong class="pro-tip-strong">Pro Tip:</strong> Set today's date as default and track expenses immediately after making purchases for the most accurate financial tracking.</p>
                                 <span class="step-number">5</span>
-                                <h3>Analyze Patterns</h3>
+                            <div class="pro-tip-icon">💡</div>
                                 <p>Use the daily and overall totals to understand your spending patterns and budget better.</p>
                             </div>
                         </div>
                         
-                        <div style="background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%); border: 1px solid #c8e6c9; border-radius: var(--radius-md); padding: var(--space-lg); margin-top: var(--space-lg); position: relative;">
-                            <div style="position: absolute; top: var(--space-md); left: var(--space-md); font-size: 1.2rem;">ðŸ’¡</div>
-                            <p style="margin: 0; color: var(--color-gray-700); line-height: 1.6; padding-left: var(--space-xl);"><strong style="color: var(--color-success-dark);">Pro Tip:</strong> Set today's date as default and track expenses immediately after making purchases for the most accurate financial tracking.</p>
+                        <div class="pro-tip-box">
+                            <div class="pro-tip-icon">💡</div>
+                            <p class="pro-tip-text"><strong class="pro-tip-strong">Pro Tip:</strong> Set today's date as default and track expenses immediately after making purchases for the most accurate financial tracking.</p>
                         <div class="benefits-list-container">
                             <ul class="benefits-list">
                                 <li class="benefits-list-item">Identify unnecessary spending patterns and habits</li>
@@ -1157,13 +1177,13 @@
                         <p>Start with just one week of tracking. You'll be surprised how this simple habit transforms your relationship with money and helps you make smarter financial decisions every day.</p>
 
                         <h3>Key Benefits of Daily Expense Tracking</h3>
-                        <div style="background: var(--color-gray-50); padding: var(--space-lg); border-radius: var(--radius-md); margin: var(--space-lg) 0;">
-                            <ul style="margin: 0; padding-left: var(--space-lg); color: var(--color-gray-600);">
-                                <li style="margin-bottom: var(--space-sm);">Identify unnecessary spending patterns and habits</li>
-                                <li style="margin-bottom: var(--space-sm);">Create realistic budgets based on actual spending data</li>
-                                <li style="margin-bottom: var(--space-sm);">Reduce financial stress through better money awareness</li>
-                                <li style="margin-bottom: var(--space-sm);">Save money by making informed purchasing decisions</li>
-                                <li>Achieve financial goals faster with conscious spending</li>
+                        <div class="benefits-list-container">
+                            <ul class="benefits-list">
+                                <li class="benefits-list-item">Identify unnecessary spending patterns and habits</li>
+                                <li class="benefits-list-item">Create realistic budgets based on actual spending data</li>
+                                <li class="benefits-list-item">Reduce financial stress through better money awareness</li>
+                                <li class="benefits-list-item">Save money by making informed purchasing decisions</li>
+                                <li class="benefits-list-item">Achieve financial goals faster with conscious spending</li>
                             </ul>
                         </div>
                     </div>
@@ -1215,11 +1235,11 @@
             </div>
 
             <!-- Related Tools Section -->
-            <div class="card">
+                        <p class="related-tools-description">Explore other helpful tools to manage your finances and improve your financial health.</p>
                 <div class="card-body">
                     <div class="info-card">
                         <h2><i class="fas fa-tools"></i> Related Financial Tools</h2>
-                        <p style="color: var(--color-gray-600); margin-bottom: var(--space-lg);">Explore other helpful tools to manage your finances and improve your financial health.</p>
+                        <p class="related-tools-description">Explore other helpful tools to manage your finances and improve your financial health.</p>
                         
                         <div class="related-tools-grid">
                             <a href="debt-ratio.html" class="tool-card">

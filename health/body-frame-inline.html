@@ -1779,10 +1779,6 @@
                 scroll-behavior: smooth;
             }
             
-            body {
-                -webkit-overflow-scrolling: touch;
-            }
-            
             /* Better spacing between sections on mobile */
             .info-section + .info-section {
                 margin-top: 1.5rem;
@@ -2138,6 +2134,36 @@
                 padding: 0.6rem 0.75rem;
                 font-size: 0.85rem;
             }
+        }
+
+        /* Pro Tip Box Styles */
+        .pro-tip-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .pro-tip-title {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .pro-tip-content {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .pro-tip-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .pro-tip-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -2787,9 +2813,9 @@
                     </a>
                 </div>
                 
-                <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
-                    <h4 style="margin-bottom: 1rem; color: #333;">ðŸ’¡ Pro Tip for Task Proper Users</h4>
-                    <p style="margin: 0; color: #666; line-height: 1.6;">Use multiple health calculators together for comprehensive health planning. Start with body frame size, then use our calorie and protein calculators to create a personalized nutrition plan that works for YOUR unique body structure. Bookmark our <a href="../health.html" style="color: #007bff; text-decoration: none; font-weight: 500;">complete health tools collection</a> for easy access!</p>
+                <div class="pro-tip-box">
+                    <h4 class="pro-tip-title">ðŸ’¡ Pro Tip for Task Proper Users</h4>
+                    <p class="pro-tip-content">Use multiple health calculators together for comprehensive health planning. Start with body frame size, then use our calorie and protein calculators to create a personalized nutrition plan that works for YOUR unique body structure. Bookmark our <a href="../health.html" class="pro-tip-link">complete health tools collection</a> for easy access!</p>
                 </div>
             </section>
         </div>

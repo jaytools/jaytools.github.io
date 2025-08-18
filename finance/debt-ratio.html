@@ -36,6 +36,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/debt-ratio.css">
 
     <!-- Tool Specific Styles -->
     <style>
@@ -1184,7 +1185,7 @@
                         <div class="info-cards">
                             <div class="info-card">
                                 <div class="info-icon good">
-                                    <span style="color: white; font-weight: bold;">1</span>
+                                    <span class="step-number">1</span>
                                 </div>
                                 <div class="info-content">
                                     <h4>Enter Your Monthly Income</h4>
@@ -1194,7 +1195,7 @@
                             
                             <div class="info-card">
                                 <div class="info-icon fair">
-                                    <span style="color: white; font-weight: bold;">2</span>
+                                    <span class="step-number">2</span>
                                 </div>
                                 <div class="info-content">
                                     <h4>Add Your Monthly Debt Payments</h4>
@@ -1204,7 +1205,7 @@
                             
                             <div class="info-card">
                                 <div class="info-icon excellent">
-                                    <span style="color: white; font-weight: bold;">3</span>
+                                    <span class="step-number">3</span>
                                 </div>
                                 <div class="info-content">
                                     <h4>Get Your DTI Result</h4>
@@ -1225,40 +1226,40 @@
                             See how different income and debt combinations affect your DTI ratio and loan eligibility.
                         </p>
                         
-                        <div style="overflow-x: auto; margin-top: 1.5rem;">
-                            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <div class="data-table-container">
+                            <table class="data-table">
                                 <thead>
-                                    <tr style="background: #f8f9fa; color: #374151;">
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Monthly Income</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Monthly Debt</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">DTI Ratio</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Verdict</th>
+                                    <tr class="data-table-header">
+                                        <th class="data-table-header-cell">Monthly Income</th>
+                                        <th class="data-table-header-cell">Monthly Debt</th>
+                                        <th class="data-table-header-cell">DTI Ratio</th>
+                                        <th class="data-table-header-cell">Verdict</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$5,000</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$800</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #2e7d32;">16%</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #2e7d32;">Excellent - Great for any loan</td>
+                                        <td class="data-table-cell">$5,000</td>
+                                        <td class="data-table-cell">$800</td>
+                                        <td class="data-table-cell-excellent">16%</td>
+                                        <td class="data-table-text-excellent">Excellent - Great for any loan</td>
                                     </tr>
-                                    <tr style="background: #f8f9fa;">
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$6,000</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,800</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #3b82f6;">30%</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #3b82f6;">Good - Acceptable for most loans</td>
+                                    <tr class="data-table-row-alt">
+                                        <td class="data-table-cell">$6,000</td>
+                                        <td class="data-table-cell">$1,800</td>
+                                        <td class="data-table-cell-good">30%</td>
+                                        <td class="data-table-text-good">Good - Acceptable for most loans</td>
                                     </tr>
                                     <tr>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$4,500</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,700</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #f59e0b;">38%</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #f59e0b;">Fair - May limit loan options</td>
+                                        <td class="data-table-cell">$4,500</td>
+                                        <td class="data-table-cell">$1,700</td>
+                                        <td class="data-table-cell-fair">38%</td>
+                                        <td class="data-table-text-fair">Fair - May limit loan options</td>
                                     </tr>
-                                    <tr style="background: #f8f9fa;">
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$3,500</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,600</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #c62828;">46%</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #c62828;">Poor - Debt reduction needed</td>
+                                    <tr class="data-table-row-alt">
+                                        <td class="data-table-cell">$3,500</td>
+                                        <td class="data-table-cell">$1,600</td>
+                                        <td class="data-table-cell-poor">46%</td>
+                                        <td class="data-table-text-poor">Poor - Debt reduction needed</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1273,45 +1274,45 @@
                     <div class="related-section">
                         <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
                         
-                        <div style="margin-top: 1.5rem;">
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What is a good debt to income ratio?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                        <div class="faq-section">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">What is a good debt to income ratio?</h4>
+                                <p class="faq-text">
                                     A good debt to income ratio is generally below 36%. Excellent DTI ratios are under 20%, while ratios above 43% may make it difficult to qualify for loans. 
                                     Most lenders prefer to see DTI ratios between 28-36% for mortgage applications, though some may accept up to 43% with strong credit scores.
                                 </p>
                             </div>
 
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What debt to income ratio for mortgage is acceptable?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">What debt to income ratio for mortgage is acceptable?</h4>
+                                <p class="faq-text">
                                     For conventional mortgages, most lenders prefer a debt to income ratio for mortgage applications of 28% or less for housing expenses, 
                                     and a total DTI (including all debts) of 36% or less. FHA loans may accept higher ratios up to 43%, while some programs allow up to 50% 
                                     with compensating factors like high credit scores or large down payments.
                                 </p>
                             </div>
 
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">How to calculate debt to income ratio manually?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">How to calculate debt to income ratio manually?</h4>
+                                <p class="faq-text">
                                     To calculate your DTI ratio: (1) Add up all monthly debt payments including credit cards, loans, and mortgages, 
                                     (2) Divide by your gross monthly income before taxes, (3) Multiply by 100 for the percentage. 
-                                    For example: $1,200 debt Ã· $4,000 income Ã— 100 = 30% DTI ratio.
+                                    For example: $1,200 debt ÷ $4,000 income × 100 = 30% DTI ratio.
                                 </p>
                             </div>
 
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What is debt to income ratio meaning for lenders?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">What is debt to income ratio meaning for lenders?</h4>
+                                <p class="faq-text">
                                     Debt to income ratio meaning for lenders is a measure of your ability to manage monthly payments and repay loans. 
                                     It shows what percentage of your income goes toward debt obligations. Lenders use DTI to assess lending risk - 
                                     lower ratios indicate you have more room in your budget to handle additional debt payments.
                                 </p>
                             </div>
 
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">Does debt to income ratio include rent or utilities?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">Does debt to income ratio include rent or utilities?</h4>
+                                <p class="faq-text">
                                     Standard debt to income ratio calculations typically don't include rent, utilities, groceries, or other living expenses. 
                                     DTI focuses on debt obligations like credit card payments, loan payments, and existing mortgage payments. 
                                     However, when applying for a mortgage, lenders will separately calculate a housing ratio that includes your proposed mortgage payment.
@@ -1327,7 +1328,7 @@
                 <div class="card-body">
                     <div class="related-section">
                         <h2><i class="fas fa-newspaper"></i> Understanding Your Financial Health with DTI</h2>
-                        <div style="color: #374151; line-height: 1.7; font-size: 1rem;">
+                        <div class="content-text">
                             <p>
                                 Finding the <strong>best debt to income ratio tool</strong> is crucial for anyone looking to understand their financial standing. 
                                 Our <strong>debt to income ratio calculator</strong> serves users across India, US, and globally by providing instant, accurate calculations 

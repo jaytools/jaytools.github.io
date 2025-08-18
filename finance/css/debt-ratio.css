@@ -1,0 +1,124 @@
+/* Debt Ratio Calculator Specific Styles */
+
+/* Step Numbers */
+.step-number {
+    color: white;
+    font-weight: bold;
+}
+
+/* Tables and Data Presentation */
+.data-table-container {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.data-table-header {
+    background: #f8f9fa;
+    color: #374151;
+}
+
+.data-table-header-cell {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.data-table-row-alt {
+    background: #f8f9fa;
+}
+
+.data-table-cell {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.data-table-cell-excellent {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.data-table-cell-good {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.data-table-cell-fair {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    color: #f59e0b;
+}
+
+.data-table-cell-poor {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    color: #c62828;
+}
+
+.data-table-text-excellent {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #2e7d32;
+}
+
+.data-table-text-good {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #3b82f6;
+}
+
+.data-table-text-fair {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #f59e0b;
+}
+
+.data-table-text-poor {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #c62828;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 1.5rem;
+}
+
+.faq-card {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.faq-title {
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.faq-text {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Content Text */
+.content-text {
+    color: #374151;
+    line-height: 1.7;
+    font-size: 1rem;
+}
