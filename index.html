@@ -9,6 +9,8 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Jay Prajapati">
     <meta name="google-site-verification" content="Jtzh2Fz6HEgUsb1J2Y_FIyaS4aqLDLoKQ1K9HJcCkl4" />
+    <meta name="language" content="en">
+    <meta name="distribution" content="global">
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Task Proper - Simple and Convenient Web Tools">
@@ -25,6 +27,40 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.taskproper.com/">
+
+    <!-- URL Redirect Handler -->
+    <script>
+    (function() {
+        var currentUrl = window.location.href;
+        var protocol = window.location.protocol;
+        var host = window.location.host;
+        var pathname = window.location.pathname;
+        
+        // Check if we need to redirect
+        var needsRedirect = false;
+        var redirectUrl = 'https://www.taskproper.com/';
+        
+        // Force HTTPS
+        if (protocol === 'http:') {
+            needsRedirect = true;
+        }
+        
+        // Force www subdomain
+        if (host === 'taskproper.com') {
+            needsRedirect = true;
+        }
+        
+        // Handle index.html redirect
+        if (pathname === '/index.html') {
+            needsRedirect = true;
+        }
+        
+        // Redirect if needed
+        if (needsRedirect && currentUrl !== redirectUrl) {
+            window.location.replace(redirectUrl);
+        }
+    })();
+    </script>
 
     <!-- Fonts and CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,11 +173,6 @@
         "datePublished": "2023-01-01",
         "dateModified": "2025-07-05",
         "inLanguage": "en-US",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.taskproper.com?search={search_term_string}",
-            "query-input": "required name=search_term_string"
-        },
         "author": {
             "@type": "Person",
             "name": "Jay Prajapati",
@@ -225,7 +256,7 @@
             {
                 "@type": "SiteNavigationElement",
                 "name": "Home",
-                "url": "https://www.taskproper.com/"
+                "url": "https://www.taskproper.com"
             },
             {
                 "@type": "SiteNavigationElement",
@@ -281,7 +312,7 @@
     <nav class="navbar" aria-label="Main navigation">
         <!-- Left side: Logo and subtitle -->
         <div class="navbar-brand">
-            <a href="/" class="brand-link">
+            <a href="https://www.taskproper.com" class="brand-link">
                 <h1 class="site-title">Task Proper</h1>
                 <p class="site-subtitle">Simple and Convenient Web Tools</p>
             </a>
