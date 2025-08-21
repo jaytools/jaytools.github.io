@@ -200,3 +200,33 @@ window.SidebarFavorites = {
     toggleFavorite,
     updateFavorites
 };
+
+ // Sidebar Toggle Functionality
+ function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    if (sidebar && overlay) {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+function closeSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    if (sidebar) sidebar.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Add event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuClose = document.querySelector('.sidebar-close');
+    const overlay = document.querySelector('.overlay');
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+    if (menuClose) menuClose.addEventListener('click', closeSidebar);
+    if (overlay) overlay.addEventListener('click', closeSidebar);
+});
