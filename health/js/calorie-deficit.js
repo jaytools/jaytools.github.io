@@ -3,7 +3,6 @@ const DOM = {};
 
 // Function to initialize DOM elements
 function initializeDOMElements() {
-    console.log('Initializing DOM elements');
     const elements = {
         toolForm: 'toolForm',
         age: 'age',
@@ -34,7 +33,6 @@ function initializeDOMElements() {
         } else {
             DOM[key] = document.getElementById(value);
         }
-        console.log(`${key}: ${DOM[key] ? 'found' : 'not found'}`);
     }
 }
 
@@ -46,46 +44,35 @@ const FAT_CALORIES = 9;
 
 // Initialize
 function init() {
-    console.log('Starting initialization');
     try {
         initializeDOMElements();
         
         // Ensure result section exists and is properly hidden
         if (DOM.resultSection) {
-            console.log('Result section found, hiding it');
             DOM.resultSection.style.display = 'none';
             DOM.resultSection.classList.remove('visible');
-        } else {
-            console.error('Result section not found during initialization');
         }
         
         resetForm();
         addEventListeners();
-        console.log('Calculator initialized successfully');
     } catch (error) {
-        console.error('Error during initialization:', error);
+        // Silent error handling
     }
 }
 
 // Hide result section
 function hideResultSection() {
-    console.log('Hiding result section');
     if (DOM.resultSection) {
         DOM.resultSection.classList.remove('visible');
-        console.log('Result section hidden');
-    } else {
-        console.error('Result section element not found');
     }
 }
 
 // Reset form
 function resetForm(e) {
     if (e) e.preventDefault();
-    console.log('Resetting form');
     try {
         if (DOM.toolForm) {
             DOM.toolForm.reset();
-            console.log('Form reset');
         }
 
         if (DOM.resultSection) {
@@ -95,10 +82,7 @@ function resetForm(e) {
             // Wait for the transition to complete before hiding
             setTimeout(() => {
                 DOM.resultSection.style.display = 'none';
-                console.log('Result section hidden');
             }, 300); // Match the transition duration from CSS
-        } else {
-            console.error('Result section not found during reset');
         }
 
         // Clear error messages
@@ -106,84 +90,60 @@ function resetForm(e) {
             error.style.display = 'none';
         });
     } catch (error) {
-        console.error('Error resetting form:', error);
+        // Silent error handling
     }
 }
 
 // Add event listeners
 function addEventListeners() {
-    console.log('Setting up event listeners');
     
     if (DOM.toolForm) {
         DOM.toolForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            console.log('Form submitted');
             handleCalculate(e);
         });
-        console.log('Form submit listener added');
-    } else {
-        console.error('Tool form not found');
     }
     
     if (DOM.calculateBtn) {
         DOM.calculateBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('Calculate button clicked');
             handleCalculate(e);
         });
-        console.log('Calculate button listener added');
-    } else {
-        console.error('Calculate button not found');
     }
     
     if (DOM.resetBtn) {
         DOM.resetBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('Reset button clicked');
             resetForm();
         });
-        console.log('Reset button listener added');
-    } else {
-        console.error('Reset button not found');
     }
     
     if (DOM.shareBtn) {
         DOM.shareBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('Share button clicked');
             shareResult();
         });
-        console.log('Share button listener added');
-    } else {
-        console.error('Share button not found');
     }
 }
 
 // Handle form submission and calculation
 function handleCalculate(e) {
     e.preventDefault();
-    console.log('Handle calculate called');
     
     try {
         const formData = getFormData();
-        console.log('Form data:', formData);
         
         if (validateForm(formData)) {
-            console.log('Form validation passed');
             const results = calculateResults(formData);
-            console.log('Calculation results:', results);
             displayResults(results);
-        } else {
-            console.error('Form validation failed');
         }
     } catch (error) {
-        console.error('Error in handleCalculate:', error);
+        // Silent error handling
     }
 }
 
 // Get form data
 function getFormData() {
-    console.log('Getting form data');
     try {
         const formData = {
             age: parseInt(DOM.age?.value),
@@ -194,17 +154,14 @@ function getFormData() {
             deficitType: DOM.deficitType?.value
         };
         
-        console.log('Form data collected:', formData);
-        return formData;
+            return formData;
     } catch (error) {
-        console.error('Error getting form data:', error);
         return {};
     }
 }
 
 // Validate form data
 function validateForm(data) {
-    console.log('Validating form data:', data);
     let isValid = true;
     
     try {
@@ -264,18 +221,8 @@ function validateForm(data) {
             if (deficitError) deficitError.style.display = 'none';
         }
 
-        console.log('Form validation result:', isValid);
-        console.log('Validation details:', {
-            age: data.age,
-            gender: data.gender,
-            height: data.height,
-            weight: data.weight,
-            activityLevel: data.activityLevel,
-            deficitType: data.deficitType
-        });
         return isValid;
     } catch (error) {
-        console.error('Error in form validation:', error);
         return false;
     }
 }
@@ -329,7 +276,6 @@ function calculateResults(data) {
 
 // Display results
 function displayResults(results) {
-    console.log('Displaying results:', results);
     
     try {
         // Update result values
@@ -349,7 +295,6 @@ function displayResults(results) {
         
         // Show result section with animation
         if (DOM.resultSection) {
-            console.log('Showing result section');
             // First set display to block
             DOM.resultSection.style.display = 'block';
             // Force a reflow
@@ -358,12 +303,9 @@ function displayResults(results) {
             requestAnimationFrame(() => {
                 DOM.resultSection.classList.add('visible');
             });
-            console.log('Result section should now be visible');
-        } else {
-            console.error('Result section element not found');
         }
     } catch (error) {
-        console.error('Error displaying results:', error);
+        // Silent error handling
     }
 }
 
@@ -406,7 +348,6 @@ function shareResult(e) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded');
     init();
     setupFAQToggle();
 });
