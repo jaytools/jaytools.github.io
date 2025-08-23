@@ -26,9 +26,16 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <!-- Web manifest - only load when served from HTTP/HTTPS -->
+    <script>
+        if (window.location.protocol !== 'file:') {
+            const manifestLink = document.createElement('link');
+            manifestLink.rel = 'manifest';
+            manifestLink.href = '../site.webmanifest';
+            document.head.appendChild(manifestLink);
+        }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,7 +126,7 @@
                         "name": "How do I calculate calories burned walking accurately?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "To calculate calories burned walking accurately, you need three key pieces of information: your body weight, walking duration, and walking speed. Our calculator uses the scientifically-proven MET formula: Calories = MET value Ã— weight (kg) Ã— time (hours). Different walking speeds have different MET values - from 2.0 for slow walking to 6.0 for very fast walking."
+                            "text": "To calculate calories burned walking accurately, you need three key pieces of information: your body weight, walking duration, and walking speed. Our calculator uses the scientifically-proven MET formula: Calories = MET value × weight (kg) × time (hours). Different walking speeds have different MET values - from 2.0 for slow walking to 6.0 for very fast walking."
                         }
                     },
                     {
@@ -255,7 +262,11 @@
         <!-- Breadcrumb Navigation -->
         <div class="container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
-                <a href="../index.html">Home</a> / <a href="../health.html">Health Tools</a> / <span>Calories Burned Walking</span>
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="../health.html">Health Tools</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Calories Burned Walking</span>
             </nav>
         </div>
         
@@ -271,38 +282,36 @@
                 }
                 /* Breadcrumbs */
 .breadcrumb {
-    background-color: #f8f9fa;
-    border-left: 4px solid #343a40;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
-    list-style: none;
+    background: #f8f9fa;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #333333;
+    font-size: 0.9rem;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    font-size: 0.95rem;
-    border-radius: 0.25rem;
 }
 
-.breadcrumb-item a {
-    color: #343a40; /* Dark gray for a black-like appearance */
+.breadcrumb a {
+    color: #333333;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
+    font-weight: 500;
 }
 
-.breadcrumb-item.active {
-    color: #6c757d;
-}
-
-.breadcrumb-item a:hover {
-    color: #000000; /* Black on hover */
+.breadcrumb a:hover {
+    color: #000000;
     text-decoration: underline;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
-    content: "/";
-    display: inline-block;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    color: #6c757d;
+.breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: #666666;
+}
+
+.breadcrumb span:last-child {
+    color: #666666;
+    font-weight: normal;
 }
                 
                 /* Desktop optimizations */
@@ -348,18 +357,6 @@
                     line-height: 1.6;
                 }
                 
-                /* Dark mode styles */
-                body.dark-mode .tool-header {
-                    background-color: #2d2d2d;
-                }
-                
-                body.dark-mode .tool-header h1 {
-                    color: #f0f0f0;
-                }
-                
-                body.dark-mode .tool-header p {
-                    color: #d0d0d0;
-                }
                 
                 @media (max-width: 768px) {
                     .tool-header h1 {
@@ -376,9 +373,6 @@
             <div class="card desktop-optimized-card">
                 <div class="card-header">
                     <h2><i class="fas fa-fire"></i> Calories Burned Walking Calculator</h2>
-                    <button id="darkModeToggle" class="tool-dark-mode-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
                 </div>
 
             <div class="card-body desktop-card-body">
@@ -4119,13 +4113,15 @@
             <!-- Information Sections -->
             <div class="info-section" id="about-tool">
                 <h2>About the Calories Burned Walking Calculator</h2>
-                <p>Ever wondered exactly how many calories you're torching during your daily walks? Whether you're trying to figure out calories burned walking 5 km or just curious about your morning stroll around the block, tracking calories by hand is honestly a pain. You'd need to memorize complex formulas, constantly check charts, and do math while you're trying to enjoy your walk â€“ not exactly fun!</p>
+                <p>Ever wondered exactly how many calories you're torching during your daily walks? Whether you're trying to figure out calories burned walking 5 km or just curious about your morning stroll around the block, tracking calories by hand is honestly a pain. You'd need to memorize complex formulas, constantly check charts, and do math while you're trying to enjoy your walk — not exactly fun!</p>
                 
-                <p>That's where our walking calories calculator comes in handy. Just plug in your weight, how long you walked, and your pace, and boom â€“ instant results! No more guessing whether that 30-minute walk actually made a dent in your fitness goals. Plus, it's perfect for those "how many calories burned walking 10000 steps" moments when your fitness tracker leaves you hanging without the full picture.</p>
+                <p>That's where our walking calories calculator comes in handy. Just plug in your weight, how long you walked, and your pace, and boom — instant results! No more guessing whether that 30-minute walk actually made a dent in your fitness goals. Plus, it's perfect for those "how many calories burned walking 10000 steps" moments when your fitness tracker leaves you hanging without the full picture.</p>
                 
                 <h3>How It Works (The Science Made Simple)</h3>
-                <p>Our calculator uses proven MET (Metabolic Equivalent of Task) values â€“ basically scientific numbers that show how much energy different activities burn. Here's the magic formula:</p>
-                <p><strong>Calories Burned = MET Ã— Your Weight (kg) Ã— Time (hours)</strong></p>
+                <p>Our calculator uses proven MET (Metabolic Equivalent of Task) values — basically scientific numbers that show how much energy different activities burn. Here's the magic formula:</p>
+
+                <p><strong>Calories Burned = MET × Your Weight (kg) × Time (hours)</strong></p>
+
                 <p>Different walking speeds have different MET values:</p>
                 <ul>
                     <li>Leisurely stroll (< 3.2 km/h): MET = 2.0</li>
@@ -4140,11 +4136,11 @@
 
             <div class="info-section" id="how-to-use">
                 <h2>How to Calculate Calories Burned Walking (Step-by-Step)</h2>
-                <p>Using our calculator is super straightforward â€“ no fitness degree required! Here's how to get accurate results in just a few clicks:</p>
+                <p>Using our calculator is super straightforward — no fitness degree required! Here's how to get accurate results in just a few clicks:</p>
                 
                 <ol>
                     <li><strong>Enter Your Weight</strong><br>
-                        Type in your current weight in kilograms. Don't have it in kg? No worries â€“ just divide your weight in pounds by 2.2. This is crucial because heavier people naturally burn more calories doing the same activity.
+                        Type in your current weight in kilograms. Don't have it in kg? No worries — just divide your weight in pounds by 2.2. This is crucial because heavier people naturally burn more calories doing the same activity.
                     </li>
                     
                     <li><strong>Set Your Walking Duration</strong><br>
@@ -4198,7 +4194,7 @@
             
             <div class="info-section" id="benefits-walking">
                 <h2>Why Track Your Walking Calories? (Spoiler: It's Life-Changing)</h2>
-                <p>Tracking calories burned walking isn't just about numbers â€“ it's about understanding how your daily movement adds up to real health benefits. Here's why it matters:</p>
+                <p>Tracking calories burned walking isn't just about numbers — it's about understanding how your daily movement adds up to real health benefits. Here's why it matters:</p>
                 
                 <h3>Weight Management Made Simple</h3>
                 <p>Want to lose weight? It's all about creating a calorie deficit. Knowing exactly how many calories you burn walking helps you:</p>
@@ -4289,17 +4285,12 @@
                 <p>Here's the breakdown by weight and speed:</p>
                 <ul>
                     <li><strong>60kg person:</strong> 150-270 calories for 5km</li>
-                    <li><strong>70kg person:</strong> 175-315 calories for 5km</li>
-                    <li><strong>80kg person:</strong> 200-360 calories for 5km</li>
-                    <li><strong>90kg person:</strong> 225-405 calories for 5km</li>
-                </ul>
-                
-                <p>The beauty of a 5km walk is that it's achievable for most people â€“ usually taking 45-75 minutes depending on your pace. Plus, it's long enough to really feel accomplished but not so long that it becomes overwhelming. Whether you're walking for weight loss, stress relief, or just because it feels good, those calories add up over time. And if you're someone who likes tracking everything, use our calculator above to get your exact numbers based on your personal stats!</p>
             </div>
 
             <div class="info-section" id="article">
                 <h2>Benefits of Walking for Health and Weight Loss</h2>
                 <p>Walking is often overlooked as a form of exercise, but it offers numerous health benefits:</p>
+
                 
                 <h3>Physical Health Benefits</h3>
                 <ul>
@@ -4350,7 +4341,7 @@
                 <div class="faq-item">
                     <div class="faq-question">How do I calculate calories burned walking accurately?</div>
                     <div class="faq-answer">
-                        <p>To calculate calories burned walking accurately, you need three key pieces of information: your body weight, walking duration, and walking speed. Our calculator uses the scientifically-proven MET formula: Calories = MET value Ã— weight (kg) Ã— time (hours). Different walking speeds have different MET values - from 2.0 for slow walking to 6.0 for very fast walking. Simply enter your details in our calculator for instant, accurate results!</p>
+                        <p>To calculate calories burned walking accurately, you need three key pieces of information: your body weight, walking duration, and walking speed. Our calculator uses the scientifically-proven MET formula: Calories = MET value × weight (kg) × time (hours). Different walking speeds have different MET values - from 2.0 for slow walking to 6.0 for very fast walking. Simply enter your details in our calculator for instant, accurate results!</p>
                     </div>
                 </div>
                 
@@ -4854,16 +4845,16 @@
                 shareBtn.addEventListener('click', function() {
                     const results = {
                         totalCalories: document.getElementById('totalCalories').textContent,
-                        distance: document.getElementById('totalDistance').textContent,
+                        distance: document.getElementById('distance').textContent,
                         caloriesPerHour: document.getElementById('caloriesPerHour').textContent,
                         caloriesPerKm: document.getElementById('caloriesPerKm').textContent
                     };
                     
-                    const shareText = `I just calculated my walking calories! ðŸš¶â€â™€ï¸\n` +
-                                    `ðŸ”¥ ${results.totalCalories} calories burned\n` +
-                                    `ðŸ“ ${results.distance} km covered\n` +
-                                    `â±ï¸ ${results.caloriesPerHour} cal/hr\n` +
-                                    `ðŸ“ ${results.caloriesPerKm} cal/km\n\n` +
+                    const shareText = `I just calculated my walking calories! 🚶‍♀️\n` +
+                                    `🔥 ${results.totalCalories} calories burned\n` +
+                                    `📏 ${results.distance} km covered\n` +
+                                    `⏱️ ${results.caloriesPerHour} cal/hr\n` +
+                                    `📍 ${results.caloriesPerKm} cal/km\n\n` +
                                     `Calculate yours at: ${window.location.href}`;
                     
                     if (navigator.share) {
