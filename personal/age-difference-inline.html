@@ -1990,12 +1990,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             // UI Element References
             const elements = {
-                
                 // Calculator Elements
                 form: document.getElementById('ageDiffForm'),
                 resultSection: document.getElementById('result'),
                 dob1Input: document.getElementById('dob1'),
-                dob2Input: document.getElementById('dob2')
+                dob2Input: document.getElementById('dob2'),
+                
+                // Mobile Menu Elements
+                menuToggle: document.querySelector('.menu-toggle'),
+                sidebar: document.querySelector('.sidebar'),
+                sidebarClose: document.querySelector('.sidebar-close'),
+                overlay: document.querySelector('.overlay'),
+                searchToggle: document.querySelector('.search-toggle'),
+                mobileSearchContainer: document.querySelector('.mobile-search-container'),
+                mobileSearchClose: document.querySelector('.mobile-search-close')
             };
 
             // Initialize Mobile Menu Functionality
@@ -2013,12 +2021,14 @@
              * Initialize mobile menu functionality
              */
             function initMobileMenu() {
-                // Toggle menu
-                elements.menuToggle.addEventListener('click', function() {
-                    elements.sidebar.classList.add('active');
-                    elements.overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
+                // Check if elements exist before adding listeners
+                if (elements.menuToggle) {
+                    elements.menuToggle.addEventListener('click', function() {
+                        if (elements.sidebar) elements.sidebar.classList.add('active');
+                        if (elements.overlay) elements.overlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                }
                 
                 // Close menu
                 if (elements.sidebarClose) {
@@ -2026,15 +2036,20 @@
                 }
                 
                 // Close when clicking overlay
-                elements.overlay.addEventListener('click', closeOverlays);
+                if (elements.overlay) {
+                    elements.overlay.addEventListener('click', closeOverlays);
+                }
                 
                 // Toggle search on mobile
                 if (elements.searchToggle) {
                     elements.searchToggle.addEventListener('click', function() {
-                        elements.mobileSearchContainer.classList.add('active');
-                        elements.overlay.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                        elements.mobileSearchContainer.querySelector('input').focus();
+                        if (elements.mobileSearchContainer) {
+                            elements.mobileSearchContainer.classList.add('active');
+                            elements.overlay.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+                            const searchInput = elements.mobileSearchContainer.querySelector('input');
+                            if (searchInput) searchInput.focus();
+                        }
                     });
                 }
                 
@@ -2045,11 +2060,11 @@
                 
                 // Helper function to close all overlays
                 function closeOverlays() {
-                    elements.sidebar.classList.remove('active');
+                    if (elements.sidebar) elements.sidebar.classList.remove('active');
                     if (elements.mobileSearchContainer) {
                         elements.mobileSearchContainer.classList.remove('active');
                     }
-                    elements.overlay.classList.remove('active');
+                    if (elements.overlay) elements.overlay.classList.remove('active');
                     document.body.style.overflow = '';
                 }
             }
@@ -2099,7 +2114,7 @@
                 const youngerPerson = date1 < date2 ? 'Person 2' : 'Person 1';
                 
                 // Display results
-                displayResults(ageDiff, totalDays, olderPerson, youngerPerson, date1, date2);
+                enhancedDisplayResults(ageDiff, totalDays, olderPerson, youngerPerson, date1, date2);
             }
             
             /**
@@ -2243,29 +2258,135 @@
                 }, 50);
             }
             
-            /**
-             * Adjust results layout based on screen size
-             */
-            function adjustResultsLayout() {
-                const width = window.innerWidth;
-                const resultSection = elements.resultSection;
+            // Global variables for the new features
+            let dateData = {
+                date1: null,
+                date2: null,
+                ageDiff: null,
+                olderPerson: '',
+                youngerPerson: ''
+            };
+            
+            // Store the original displayResults function
+            const originalDisplayResults = displayResults;
+            
+            // Override displayResults to add new features
+            function enhancedDisplayResults(ageDiff, totalDays, olderPerson, youngerPerson, date1, date2) {
+                // Store data for other features
+                dateData = {
+                    date1: date1,
+                    date2: date2,
+                    ageDiff: ageDiff,
+                    olderPerson: olderPerson,
+                    youngerPerson: youngerPerson,
+                    totalDays: totalDays
+                };
                 
-                if (width >= 769) {
-                    // Desktop optimizations
-                    if (resultSection.classList.contains('show')) {
-                        resultSection.style.maxWidth = '800px';
-                    }
-                } else {
-                    // Mobile optimizations
-                    resultSection.style.maxWidth = '100%';
+                // Call the original display function
+                displayResults(ageDiff, totalDays, olderPerson, youngerPerson, date1, date2);
+                
+                // Generate timeline data
+                generateTimeline(date1, date2, ageDiff);
+                
+                // Set default reminder date (1 year from calculation date)
+                const nextYear = new Date();
+                nextYear.setFullYear(nextYear.getFullYear() + 1);
+                const reminderDateInput = document.getElementById('reminderDate');
+                if (reminderDateInput) {
+                    reminderDateInput.valueAsDate = nextYear;
                 }
             }
             
-            // Listen for window resize events
-            window.addEventListener('resize', adjustResultsLayout);
+            /**
+             * 📅 Timeline Feature
+             * Creates a visual timeline of significant events based on birth dates
+             */
+            function generateTimeline(date1, date2, ageDiff) {
+                const timeline = document.getElementById('timeline');
+                if (!timeline) return;
+                
+                timeline.innerHTML = ''; // Clear existing items
+                
+                const earlierDate = date1 < date2 ? date1 : date2;
+                const laterDate = date1 < date2 ? date2 : date1;
+                const person1Name = date1 < date2 ? 'Person 1' : 'Person 2';
+                const person2Name = date1 < date2 ? 'Person 2' : 'Person 1';
+                
+                // Add birth events
+                addTimelineItem(timeline, formatDate(earlierDate), person1Name + ' was born');
+                addTimelineItem(timeline, formatDate(laterDate), person2Name + ' was born');
+                
+                // Calculate milestone dates
+                
+                // When younger person reaches half the age of older person
+                const halfAgeYears = Math.floor(ageDiff.years / 2);
+                if (halfAgeYears > 0) {
+                    const halfAgeDate = new Date(laterDate);
+                    halfAgeDate.setFullYear(halfAgeDate.getFullYear() + halfAgeYears);
+                    addTimelineItem(timeline, formatDate(halfAgeDate), 
+                        person2Name + ' is half the age of ' + person1Name);
+                }
+                
+                // Add today as final entry
+                const today = new Date();
+                addTimelineItem(timeline, formatDate(today), 'Today');
+                
+                // Sort timeline items by date
+                sortTimelineItems(timeline);
+            }
             
-            // Call once on load
-            adjustResultsLayout();
+            function addTimelineItem(timeline, date, event) {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+                
+                const dateObj = new Date(date);
+                
+                item.innerHTML = `
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">${date}</div>
+                    <div class="timeline-event">${event}</div>
+                `;
+                
+                // Store date in data attribute for sorting
+                item.dataset.date = dateObj.getTime();
+                
+                timeline.appendChild(item);
+                
+                return item;
+            }
+            
+            function sortTimelineItems(timeline) {
+                const items = Array.from(timeline.children);
+                items.sort((a, b) => parseFloat(a.dataset.date) - parseFloat(b.dataset.date));
+                
+                // Reappend in sorted order
+                items.forEach(item => {
+                    timeline.appendChild(item);
+                });
+            }
+            
+            /**
+             * Reverse Timer: Calculate catch-up age
+             * Calculate when the younger person will reach the current age of the older person
+             */
+            function calculateCatchUpDate() {
+                if (!dateData.date1 || !dateData.date2) return null;
+                
+                const olderDate = dateData.olderPerson === 'Person 1' ? dateData.date1 : dateData.date2;
+                const youngerDate = dateData.olderPerson === 'Person 1' ? dateData.date2 : dateData.date1;
+                
+                // Calculate age difference in milliseconds
+                const ageDiffMs = youngerDate.getTime() - olderDate.getTime();
+                
+                // Create a new date when younger person will be the current age of older person
+                const today = new Date();
+                const olderCurrentAge = today.getTime() - olderDate.getTime();
+                
+                // Younger person will reach this age on:
+                const catchUpDate = new Date(youngerDate.getTime() + olderCurrentAge);
+                
+                return catchUpDate;
+            }
             
             /**
              * Reset calculator to initial state
@@ -2295,7 +2416,7 @@
                 const summary = document.getElementById('summary').innerText;
                 
                 // Create share text
-                const shareText = `I found an age difference of ${ageDifference} ${summary} using Task Proper's Age Difference Calculator!`;
+                const shareText = `I found an age difference of ${ageDifference}. ${summary} Check out this Age Difference Calculator!`;
                 const shareUrl = window.location.href;
                 
                 // Try to use Web Share API if available
@@ -2340,6 +2461,7 @@
              */
             function showShareFeedback(message) {
                 const feedback = document.getElementById('shareFeedback');
+                if (!feedback) return;
                 
                 // Reset first (in case there's a previous message)
                 feedback.classList.remove('show');
@@ -2354,44 +2476,6 @@
                         feedback.classList.remove('show');
                     }, 3000);
                 }, 50);
-            }
-            
-            /**
-             * NEW FEATURE FUNCTIONS
-             */
-            
-            // Global variables for the new features
-            let dateData = {
-                date1: null,
-                date2: null,
-                ageDiff: null,
-                olderPerson: '',
-                youngerPerson: ''
-            };
-            
-            // Add data to the original displayResults function
-            const originalDisplayResults = displayResults;
-            displayResults = function(ageDiff, totalDays, olderPerson, youngerPerson, date1, date2) {
-                // Store data for other features
-                dateData = {
-                    date1: date1,
-                    date2: date2,
-                    ageDiff: ageDiff,
-                    olderPerson: olderPerson,
-                    youngerPerson: youngerPerson,
-                    totalDays: totalDays
-                };
-                
-                // Call the original display function
-                originalDisplayResults(ageDiff, totalDays, olderPerson, youngerPerson, date1, date2);
-                
-                // Generate timeline data
-                generateTimeline(date1, date2, ageDiff);
-                
-                // Set default reminder date (1 year from calculation date)
-                const nextYear = new Date();
-                nextYear.setFullYear(nextYear.getFullYear() + 1);
-                document.getElementById('reminderDate').valueAsDate = nextYear;
             }
             
             /**
@@ -2421,23 +2505,23 @@
                     const now = new Date().toISOString().replace(/[-:]/g, '').split('.')[0];
                     
                     const iCalData = 
-                        "BEGIN:VCALENDAR\\n" +
-                        "VERSION:2.0\\n" +
+                        "BEGIN:VCALENDAR\n" +
+                        "VERSION:2.0\n" +
                         "PRODID:-//Task Proper//Age Difference Calculator//EN\n" +
-                        "CALSCALE:GREGORIAN\\n" +
-                        "BEGIN:VEVENT\\n" +
-                        "DTSTART;VALUE=DATE:" + dtStart + "\\n" +
-                        "DTEND;VALUE=DATE:" + dtEnd + "\\n" +
-                        "DTSTAMP:" + now + "Z\\n" +
-                        "CREATED:" + now + "Z\\n" +
-                        "DESCRIPTION:Age Difference: " + ageDiffText + "\\n" +
-                        "LAST-MODIFIED:" + now + "Z\\n" +
-                        "LOCATION:\\n" +
-                        "SEQUENCE:0\\n" +
-                        "STATUS:CONFIRMED\\n" +
-                        "SUMMARY:Age Difference Anniversary\\n" +
-                        "TRANSP:TRANSPARENT\\n" +
-                        "END:VEVENT\\n" +
+                        "CALSCALE:GREGORIAN\n" +
+                        "BEGIN:VEVENT\n" +
+                        "DTSTART;VALUE=DATE:" + dtStart + "\n" +
+                        "DTEND;VALUE=DATE:" + dtEnd + "\n" +
+                        "DTSTAMP:" + now + "Z\n" +
+                        "CREATED:" + now + "Z\n" +
+                        "DESCRIPTION:Age Difference: " + ageDiffText + "\n" +
+                        "LAST-MODIFIED:" + now + "Z\n" +
+                        "LOCATION:\n" +
+                        "SEQUENCE:0\n" +
+                        "STATUS:CONFIRMED\n" +
+                        "SUMMARY:Age Difference Anniversary\n" +
+                        "TRANSP:TRANSPARENT\n" +
+                        "END:VEVENT\n" +
                         "END:VCALENDAR";
 
                     const blob = new Blob([iCalData], { type: 'text/calendar;charset=utf-8' });
@@ -2457,6 +2541,7 @@
             
             function showReminderFeedback(message) {
                 const feedback = document.getElementById('reminderFeedback');
+                if (!feedback) return;
                 
                 // Reset first (in case there's a previous message)
                 feedback.classList.remove('show');
@@ -2474,143 +2559,12 @@
             }
             
             /**
-             * 📅 Timeline Feature
-             * Creates a visual timeline of significant events based on birth dates
-             */
-            function generateTimeline(date1, date2, ageDiff) {
-                const timeline = document.getElementById('timeline');
-                timeline.innerHTML = ''; // Clear existing items
-                
-                const earlierDate = date1 < date2 ? date1 : date2;
-                const laterDate = date1 <
-                // Small timeout to ensure transition states don't conflict
-                setTimeout(() => {
-                    feedback.textContent = message;
-                    feedback.classList.add('show');
-                    
-                    // Hide after showing for 3 seconds
-                    setTimeout(() => {
-                        feedback.classList.remove('show');
-                    }, 3000);
-                }, 50);
-            }
-            
-            /**
-             * 📅 Timeline Feature
-             * Creates a visual timeline of significant events based on birth dates
-             */
-            function generateTimeline(date1, date2, ageDiff) {
-                const timeline = document.getElementById('timeline');
-                timeline.innerHTML = ''; // Clear existing items
-                
-                const earlierDate = date1 < date2 ? date1 : date2;
-                const laterDate = date1 < date2 ? date2 : date1;
-                const person1Name = date1 < date2 ? 'Person 1' : 'Person 2';
-                const person2Name = date1 < date2 ? 'Person 2' : 'Person 1';
-                
-                // Add birth events
-                addTimelineItem(timeline, formatDate(earlierDate), person1Name + ' was born');
-                addTimelineItem(timeline, formatDate(laterDate), person2Name + ' was born');
-                
-                // Calculate milestone dates
-                
-                // When younger person reaches half the age of older person
-                const halfAgeYears = Math.floor(ageDiff.years / 2);
-                if (halfAgeYears > 0) {
-                    const halfAgeDate = new Date(laterDate);
-                    halfAgeDate.setFullYear(halfAgeDate.getFullYear() + halfAgeYears);
-                    addTimelineItem(timeline, formatDate(halfAgeDate), 
-                        person2Name + ' is half the age of ' + person1Name);
-                }
-                
-                // When age difference becomes less than 25% relatively
-                const quarterLifeYears = Math.floor(ageDiff.years * 3);
-                if (quarterLifeYears > 0) {
-                    const quarterLifeDate = new Date(laterDate);
-                    quarterLifeDate.setFullYear(quarterLifeDate.getFullYear() + quarterLifeYears);
-                    addTimelineItem(timeline, formatDate(quarterLifeDate), 
-                        'Age difference now feels smaller (less than 25%)');
-                }
-                
-                // Add specific milestone years
-                const milestones = [18, 21, 30, 40, 50, 65, 80, 90, 100];
-                
-                milestones.forEach(age => {
-                    // For first person
-                    const milestone1Date = new Date(earlierDate);
-                    milestone1Date.setFullYear(milestone1Date.getFullYear() + age);
-                    if (milestone1Date <= new Date()) { // Only add past milestones
-                        addTimelineItem(timeline, formatDate(milestone1Date), 
-                            person1Name + ' turns ' + age + ' years old');
-                    }
-                    
-                    // For second person
-                    const milestone2Date = new Date(laterDate);
-                    milestone2Date.setFullYear(milestone2Date.getFullYear() + age);
-                    if (milestone2Date <= new Date()) { // Only add past milestones
-                        addTimelineItem(timeline, formatDate(milestone2Date), 
-                            person2Name + ' turns ' + age + ' years old');
-                    }
-                });
-                
-                // Add today as final entry if not already present
-                const today = new Date();
-                addTimelineItem(timeline, formatDate(today), 'Today');
-                
-                // If we have few items, add some hypothetical future milestones
-                if (timeline.children.length < 4) {
-                    const futureYear = new Date();
-                    futureYear.setFullYear(futureYear.getFullYear() + 5);
-                    addTimelineItem(timeline, formatDate(futureYear), 'Future milestone (+5 years)');
-                }
-                
-                // Sort timeline items by date
-                sortTimelineItems(timeline);
-            }
-            
-            function addTimelineItem(timeline, date, event) {
-                const item = document.createElement('div');
-                item.className = 'timeline-item';
-                
-                const dateObj = new Date(date);
-                
-                item.innerHTML = `
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">${date}</div>
-                    <div class="timeline-event">${event}</div>
-                `;
-                
-                // Store date in data attribute for sorting
-                item.dataset.date = dateObj.getTime();
-                
-                timeline.appendChild(item);
-                
-                return item;
-            }
-            
-            function sortTimelineItems(timeline) {
-                const items = Array.from(timeline.children);
-                items.sort((a, b) => parseFloat(a.dataset.date) - parseFloat(b.dataset.date));
-                
-                // Reappend in sorted order
-                items.forEach(item => {
-                    timeline.appendChild(item);
-                });
-            }
-            
-            /**
              * 📤 Export Features
-             * Allows users to export results in various formats
              */
             
             // Export to PDF
             window.exportToPDF = function() {
                 try {
-                    // Use html2canvas and jsPDF to create PDF
-                    // For now, we'll just create a simple text-based PDF
-                    // In a production environment, you'd want to add these libraries and use them properly
-                    
-                    // Create a simple fallback
                     const ageDiffText = document.getElementById('ageDifference').innerText;
                     const summaryText = document.getElementById('summary').innerText;
                     const person1Text = document.getElementById('person1Details').innerText;
@@ -2618,12 +2572,12 @@
                     const totalDaysText = document.getElementById('totalDays').innerText;
                     
                     const content = 
-                        "Age Difference Calculation\\n\\n" +
-                        "Result: " + ageDiffText + "\\n" +
-                        "Summary: " + summaryText + "\\n\\n" +
-                        "Person 1: " + person1Text + "\\n" +
-                        "Person 2: " + person2Text + "\\n\\n" +
-                        "Total Days: " + totalDaysText + "\\n\\n" +
+                        "Age Difference Calculation\n\n" +
+                        "Result: " + ageDiffText + "\n" +
+                        "Summary: " + summaryText + "\n\n" +
+                        "Person 1: " + person1Text + "\n" +
+                        "Person 2: " + person2Text + "\n\n" +
+                        "Total Days: " + totalDaysText + "\n\n" +
                         "Generated by Task Proper - Age Difference Calculator\n" +
                         "https://www.taskproper.com/personal/age-difference-inline.html";
                     
@@ -2635,7 +2589,7 @@
                     link.click();
                     document.body.removeChild(link);
                     
-                    showShareFeedback('Results saved as text file! (PDF export requires premium)');
+                    showShareFeedback('Results saved as text file!');
                 } catch (e) {
                     console.error('Error exporting to PDF:', e);
                     showShareFeedback('Failed to export. Please try again.');
@@ -2644,44 +2598,8 @@
             
             // Export as Image
             window.exportAsImage = function() {
-                try {
-                    // In a production environment, you would use html2canvas to capture the result section
-                    // For now, we'll demonstrate the concept by showing a notification
-                    showShareFeedback('Creating image... (Premium feature coming soon!)');
-                    
-                    // Simulate processing time
-                    setTimeout(() => {
-                        showShareFeedback('Image export requires premium version!');
-                    }, 1500);
-                    
-                } catch (e) {
-                    console.error('Error exporting as image:', e);
-                    showShareFeedback('Failed to export. Please try again.');
-                }
+                showShareFeedback('Image export feature coming soon!');
             };
-            
-            /**
-             * Reverse Timer: Calculate catch-up age
-             * Calculate when the younger person will reach the current age of the older person
-             */
-            function calculateCatchUpDate() {
-                if (!dateData.date1 || !dateData.date2) return null;
-                
-                const olderDate = dateData.olderPerson === 'Person 1' ? dateData.date1 : dateData.date2;
-                const youngerDate = dateData.olderPerson === 'Person 1' ? dateData.date2 : dateData.date1;
-                
-                // Calculate age difference in milliseconds
-                const ageDiffMs = youngerDate.getTime() - olderDate.getTime();
-                
-                // Create a new date when younger person will be the current age of older person
-                const today = new Date();
-                const olderCurrentAge = today.getTime() - olderDate.getTime();
-                
-                // Younger person will reach this age on:
-                const catchUpDate = new Date(youngerDate.getTime() + olderCurrentAge);
-                
-                return catchUpDate;
-            }
         });
     </script>
 </body>
