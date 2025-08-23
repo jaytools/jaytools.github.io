@@ -209,54 +209,70 @@ function validateForm(data) {
     
     try {
         // Age validation
+        const ageError = document.getElementById('ageError');
         if (!data.age || isNaN(data.age) || data.age < 15 || data.age > 80) {
-            document.getElementById('ageError').style.display = 'block';
+            if (ageError) ageError.style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('ageError').style.display = 'none';
+            if (ageError) ageError.style.display = 'none';
         }
 
         // Gender validation
+        const genderError = document.getElementById('genderError');
         if (!data.gender) {
-            document.getElementById('genderError').style.display = 'block';
+            if (genderError) genderError.style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('genderError').style.display = 'none';
+            if (genderError) genderError.style.display = 'none';
         }
 
         // Height validation
+        const heightError = document.getElementById('heightError');
         if (!data.height || isNaN(data.height) || data.height < 130 || data.height > 230) {
-            document.getElementById('heightError').style.display = 'block';
+            if (heightError) heightError.style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('heightError').style.display = 'none';
+            if (heightError) heightError.style.display = 'none';
         }
 
         // Weight validation
-        if (!data.weight || isNaN(data.weight) || data.weight < 40 || data.weight > 160) {
-            document.getElementById('weightError').style.display = 'block';
+        const weightError = document.getElementById('weightError');
+        if (!data.weight || isNaN(data.weight) || data.weight < 30 || data.weight > 200) {
+            if (weightError) weightError.style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('weightError').style.display = 'none';
+            if (weightError) weightError.style.display = 'none';
         }
 
         // Activity level validation
         if (!data.activityLevel) {
-            document.getElementById('activityLevelError').style.display = 'block';
+            const activityError = document.getElementById('activity-error');
+            if (activityError) activityError.style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('activityLevelError').style.display = 'none';
+            const activityError = document.getElementById('activity-error');
+            if (activityError) activityError.style.display = 'none';
         }
 
         // Deficit type validation
         if (!data.deficitType) {
-            document.getElementById('deficitTypeError').style.display = 'block';
+            const deficitError = document.getElementById('deficit-error');
+            if (deficitError) deficitError.style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById('deficitTypeError').style.display = 'none';
+            const deficitError = document.getElementById('deficit-error');
+            if (deficitError) deficitError.style.display = 'none';
         }
 
         console.log('Form validation result:', isValid);
+        console.log('Validation details:', {
+            age: data.age,
+            gender: data.gender,
+            height: data.height,
+            weight: data.weight,
+            activityLevel: data.activityLevel,
+            deficitType: data.deficitType
+        });
         return isValid;
     } catch (error) {
         console.error('Error in form validation:', error);

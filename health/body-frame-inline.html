@@ -21,7 +21,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     
@@ -2403,6 +2402,12 @@
         // Dark Mode Functionality
         function initDarkMode() {
             const darkModeToggle = document.getElementById('darkModeToggle');
+            
+            // Check if dark mode toggle exists before trying to use it
+            if (!darkModeToggle) {
+                console.log('Dark mode toggle not found, skipping dark mode initialization');
+                return;
+            }
             
             // Set default to light mode
             document.body.classList.remove("dark-mode");
