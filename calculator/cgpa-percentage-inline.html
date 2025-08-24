@@ -19,9 +19,9 @@
     <link rel="canonical" href="https://www.taskproper.com/calculator/cgpa-percentage-inline.html">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     
@@ -30,8 +30,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
@@ -1182,11 +1180,11 @@
             background: rgba(255,255,255,0.2);
         }
 
-        .faq-question i {
+        .faq-question svg {
             transition: transform 0.3s ease;
         }
 
-        .faq-question.active i {
+        .faq-question.active svg {
             transform: rotate(180deg);
         }
 
@@ -1605,9 +1603,8 @@
         }
 
         .benefits-list li::before {
-            content: '\f00c'; /* Font Awesome check icon */
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
+            content: '✓'; /* Unicode check mark */
+            font-weight: bold;
             color: #28a745;
             position: absolute;
             left: 0;
@@ -1834,42 +1831,468 @@
             }
         }
 
-        /* Additional desktop enhancements */
-        @media (min-width: 1200px) {
-            /* Enhanced spacing for large screens */
+        /* FAQ Section Styling */
+        .faq-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+
+        .faq-section h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-color: #007bff;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #495057;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+            color: #007bff;
+        }
+
+        .faq-question span {
+            flex: 1;
+            margin-right: 1rem;
+        }
+
+        .faq-question svg {
+            color: #6c757d;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question {
+            background: #e3f2fd;
+            color: #1565c0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+            color: #1565c0;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 1.5rem;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: #6c757d;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Mobile First Responsive Design */
+        @media (max-width: 480px) {
             .tool-container {
-                padding: var(--space-2xl);
+                padding: 1rem;
+                margin: 0;
             }
             
             .card {
-                transition: all 0.3s ease;
+                margin: 0.5rem 0;
+                border-radius: 8px;
+            }
+            
+            .card-header h1 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+            
+            .card-header p {
+                font-size: 0.9rem;
+            }
+            
+            .form-layout-desktop {
+                display: block;
+            }
+            
+            .form-sidebar {
+                margin-top: 1.5rem;
+                padding: 1rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+            
+            .form-input, .form-select {
+                font-size: 16px; /* Prevents zoom on iOS */
+                padding: 0.75rem;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .result-section {
+                margin-top: 1.5rem;
+                padding: 1rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+                text-align: center;
+            }
+            
+            .conversion-table {
+                font-size: 0.8rem;
+            }
+            
+            .conversion-table th,
+            .conversion-table td {
+                padding: 0.5rem 0.25rem;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .related-item {
+                padding: 1rem;
+            }
+            
+            .faq-section {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .faq-question {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .faq-answer {
+                padding: 0 1rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 1rem;
+            }
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .tool-container {
+                padding: 1.5rem;
+            }
+            
+            .card-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .form-layout-desktop {
+                display: block;
+            }
+            
+            .form-sidebar {
+                margin-top: 2rem;
+                padding: 1.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .conversion-table {
+                font-size: 0.9rem;
+            }
+            
+            .faq-section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Desktop Small */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .tool-container {
+                padding: 2rem;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+            
+            .form-layout-desktop {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 2rem;
+                align-items: start;
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Desktop Medium */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .tool-container {
+                padding: 2.5rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .card {
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                border-radius: 12px;
+            }
+            
+            .form-layout-desktop {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 3rem;
+                align-items: start;
+            }
+            
+            .form-sidebar {
+                position: sticky;
+                top: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            
+            .conversion-table {
+                font-size: 1rem;
+                margin: 2rem auto;
+                max-width: 600px;
+            }
+            
+            .faq-section {
+                max-width: 800px;
+                margin: 3rem auto;
+            }
+            
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+            }
+        }
+
+        /* Desktop Large */
+        @media (min-width: 1441px) {
+            .tool-container {
+                padding: 3rem;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            
+            .card {
+                box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+                border-radius: 16px;
             }
             
             .card:hover {
-                box-shadow: var(--shadow-lg);
-                transform: translateY(-2px);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 40px rgba(0,0,0,0.15);
             }
             
-            /* Better form spacing on desktop */
+            .card-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-layout-desktop {
+                display: grid;
+                grid-template-columns: 2.5fr 1fr;
+                gap: 4rem;
+                align-items: start;
+            }
+            
             .form-group {
-                margin-bottom: var(--space-xl);
+                margin-bottom: 2rem;
             }
             
-            /* Enhanced button interactions */
-            .btn:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            .form-input, .form-select {
+                padding: 1rem 1.25rem;
+                font-size: 1.1rem;
             }
             
-            /* Better results spacing */
-            .result-display {
-                padding: var(--space-2xl);
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
             }
             
-            /* Enhanced features grid for very large screens */
-            .features-grid {
-                grid-template-columns: repeat(5, 1fr);
-                gap: var(--space-xl);
+            .feature-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2.5rem;
+            }
+            
+            .feature-card {
+                padding: 2.5rem;
+                border-radius: 12px;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+            
+            .conversion-table {
+                font-size: 1.1rem;
+                max-width: 700px;
+                margin: 3rem auto;
+            }
+            
+            .faq-section {
+                max-width: 900px;
+                margin: 4rem auto;
+                padding: 3rem;
+            }
+            
+            .faq-question {
+                padding: 1.5rem 2rem;
+                font-size: 1.1rem;
+            }
+            
+            .faq-answer {
+                padding: 0 2rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 2rem;
+            }
+        }
+
+        /* Ultra-wide Desktop */
+        @media (min-width: 1920px) {
+            .tool-container {
+                max-width: 1600px;
+                padding: 4rem;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3rem;
+            }
+        }
+
+        /* High DPI Displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .card {
+                border-width: 0.5px;
+            }
+            
+            .form-input, .form-select {
+                border-width: 0.5px;
+            }
+        }
+
+        /* Landscape Mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .card-header {
+                padding: 1rem 1.5rem;
+            }
+            
+            .card-header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .form-layout-desktop {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            
+            .faq-section {
+                padding: 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .sidebar, .navbar, .mobile-search-container, .site-footer {
+                display: none !important;
+            }
+            
+            .tool-container {
+                padding: 0;
+                max-width: none;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            
+            .faq-answer {
+                max-height: none !important;
+                padding: 1rem !important;
+            }
+            
+            .related-tools {
+                display: none;
             }
         }
     </style>
@@ -1893,19 +2316,27 @@
                     <div class="search-container">
                         <input type="text" class="search-input" placeholder="Search tools...">
                         <button class="search-button" aria-label="Search tools">
-                            <i class="fas fa-search"></i>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                            </svg>
                         </button>
                     </div>
                     <!-- Mobile Search Toggle -->
                     <button class="search-toggle" aria-label="Toggle search">
-                        <i class="fas fa-search"></i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                        </svg>
                     </button>
                 </div>
                 <button class="menu-toggle" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+                    </svg>
                 </button>
-                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                 </a>
             </div>
         </nav>
@@ -1915,7 +2346,9 @@
             <div class="mobile-search-wrapper">
                 <input type="text" class="mobile-search-input" placeholder="Search tools...">
                 <button class="mobile-search-close" aria-label="Close search">
-                    <i class="fas fa-times"></i>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                    </svg>
                 </button>
             </div>
             <div class="search-results">
@@ -1929,20 +2362,22 @@
         <div class="sidebar-header">
             <h2>Menu</h2>
             <button class="sidebar-close" aria-label="Close menu">
-                <i class="fas fa-times"></i>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                </svg>
             </button>
         </div>
 
         <div class="sidebar-content">
             <section class="sidebar-section">
-                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/></svg> Favorites</h3>
                 <div class="favorites-container">
                     <p class="no-favorites">No favorite tools yet.</p>
                 </div>
             </section>
 
             <section class="sidebar-section">
-                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;"><path d="M17.66 11.2C17.43 10.9 17.15 10.64 16.89 10.38C16.22 9.78 15.46 9.35 14.82 8.72C13.33 7.26 13 4.85 13.95 3C13 3.23 12.17 3.75 11.46 4.32C8.87 6.4 7.85 10.07 9.07 14.22C9.11 14.32 9.15 14.42 9.15 14.55C9.15 14.72 9.06 14.86 8.94 14.97C8.81 15.08 8.67 15.16 8.5 15.16C8.22 15.16 7.97 14.96 7.82 14.63C7.67 14.28 7.62 13.88 7.62 13.47C7.62 10.34 9.26 7.61 11.84 6.12C12.25 5.9 12.68 5.72 13.12 5.58C13.3 5.52 13.5 5.47 13.7 5.44C13.75 5.43 13.8 5.42 13.85 5.42C13.87 5.42 13.9 5.42 13.92 5.42C14.69 5.42 15.42 5.78 15.97 6.35C16.5 6.91 16.83 7.66 16.83 8.42C16.83 9.5 16.36 10.5 15.55 11.2C15.22 11.5 14.86 11.75 14.5 12C14.97 12.33 15.4 12.73 15.77 13.18C16.13 13.62 16.42 14.1 16.64 14.6C16.85 15.09 16.98 15.61 16.98 16.14C16.98 17.2 16.64 18.2 16 19.04C15.36 19.87 14.46 20.5 13.42 20.84C12.38 21.18 11.25 21.2 10.2 20.9C9.15 20.6 8.2 19.99 7.5 19.15C6.8 18.31 6.38 17.28 6.3 16.2C6.22 15.12 6.5 14.04 7.08 13.12C7.66 12.2 8.5 11.47 9.5 11.03C9.8 10.9 10.12 10.8 10.45 10.73C10.78 10.66 11.12 10.62 11.46 10.62C12.5 10.62 13.5 11 14.27 11.68C14.65 12.02 14.97 12.42 15.2 12.87C15.43 13.32 15.55 13.81 15.55 14.3C15.55 14.5 15.5 14.7 15.4 14.87C15.3 15.04 15.15 15.18 14.97 15.27C14.79 15.36 14.58 15.4 14.37 15.4C14.16 15.4 13.95 15.36 13.77 15.27C13.59 15.18 13.44 15.04 13.34 14.87C13.24 14.7 13.19 14.5 13.19 14.3C13.19 14.1 13.24 13.9 13.34 13.73C13.44 13.56 13.59 13.42 13.77 13.33C13.95 13.24 14.16 13.2 14.37 13.2C14.58 13.2 14.79 13.24 14.97 13.33C15.15 13.42 15.3 13.56 15.4 13.73C15.5 13.9 15.55 14.1 15.55 14.3C15.55 13.81 15.43 13.32 15.2 12.87C14.97 12.42 14.65 12.02 14.27 11.68C13.5 11 12.5 10.62 11.46 10.62C11.12 10.62 10.78 10.66 10.45 10.73C10.12 10.8 9.8 10.9 9.5 11.03C8.5 11.47 7.66 12.2 7.08 13.12C6.5 14.04 6.22 15.12 6.3 16.2C6.38 17.28 6.8 18.31 7.5 19.15C8.2 19.99 9.15 20.6 10.2 20.9C11.25 21.2 12.38 21.18 13.42 20.84C14.46 20.5 15.36 19.87 16 19.04C16.64 18.2 16.98 17.2 16.98 16.14C16.98 15.61 16.85 15.09 16.64 14.6C16.42 14.1 16.13 13.62 15.77 13.18C15.4 12.73 14.97 12.33 14.5 12C14.86 11.75 15.22 11.5 15.55 11.2C16.36 10.5 16.83 9.5 16.83 8.42C16.83 7.66 16.5 6.91 15.97 6.35C15.42 5.78 14.69 5.42 13.92 5.42C13.9 5.42 13.87 5.42 13.85 5.42C13.8 5.42 13.75 5.43 13.7 5.44C13.5 5.47 13.3 5.52 13.12 5.58C12.68 5.72 12.25 5.9 11.84 6.12C9.26 7.61 7.62 10.34 7.62 13.47C7.62 13.88 7.67 14.28 7.82 14.63C7.97 14.96 8.22 15.16 8.5 15.16C8.67 15.16 8.81 15.08 8.94 14.97C9.06 14.86 9.15 14.72 9.15 14.55C9.15 14.42 9.11 14.32 9.07 14.22C7.85 10.07 8.87 6.4 11.46 4.32C12.17 3.75 13 3.23 13.95 3C13 4.85 13.33 7.26 14.82 8.72C15.46 9.35 16.22 9.78 16.89 10.38C17.15 10.64 17.43 10.9 17.66 11.2Z"/></svg> Popular Tools</h3>
                 <ul class="popular-tools">
                     <li><a href="../tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
                     <li><a href="../tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
@@ -1951,27 +2386,37 @@
             </section>
 
             <section class="sidebar-section">
-                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;"><path d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.78 12.45,22 13,22C13.55,22 14.05,21.78 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.45 21.78,11.95 21.41,11.58Z"/></svg> Categories</h3>
                 <div class="sidebar-tags-nav">
                     <div class="sidebar-tags-scroll">
                         <a href="../index.html" class="nav-link">
-                            <i class="fas fa-home"></i>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/>
+                            </svg>
                             <span>Home</span>
                         </a>
                         <a href="../about.html" class="nav-link">
-                            <i class="fas fa-info-circle"></i>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                            </svg>
                             <span>About</span>
                         </a>
                         <a href="../contact.html" class="nav-link">
-                            <i class="fas fa-envelope"></i>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                            </svg>
                             <span>Contact</span>
                         </a>
                         <a href="../privacy.html" class="nav-link">
-                            <i class="fas fa-shield-alt"></i>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.4 16,13V16C16,17.4 15.4,18 14.8,18H9.2C8.6,18 8,17.4 8,16V13C8,12.4 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                            </svg>
                             <span>Privacy Policy</span>
                         </a>
                         <a href="../terms.html" class="nav-link">
-                            <i class="fas fa-file-contract"></i>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z"/>
+                            </svg>
                             <span>Terms of Service</span>
                         </a>
                     </div>
@@ -1995,7 +2440,7 @@
         
         <div class="tool-container">
             <!-- Tool Card -->
-            <div class="card">
+            <div class="card desktop-optimized-card">
                 <div class="card-header">
                     <h1>CGPA to Percentage Calculator</h1>
                     <p>Convert your CGPA to percentage instantly with accurate formulas for all major universities and grading systems</p>
@@ -2007,7 +2452,9 @@
                                 <!-- Input Section -->
                                 <div class="form-group">
                                     <label class="form-label" for="gradingScale">
-                                        <i class="fas fa-chart-bar"></i> Select Grading Scale
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                            <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z"/>
+                                        </svg> Select Grading Scale
                                     </label>
                                     <select id="gradingScale" name="gradingScale" class="form-select" required>
                                         <option value="">Select a scale</option>
@@ -2019,7 +2466,9 @@
 
                                 <div class="form-group hidden" id="boardUniversityGroup">
                                     <label class="form-label" for="boardUniversity">
-                                        <i class="fas fa-university"></i> Select Board/University
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                            <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                                        </svg> Select Board/University
                                     </label>
                                     <select id="boardUniversity" name="boardUniversity" class="form-select" required>
                                         <!-- Options will be populated by JavaScript -->
@@ -2029,21 +2478,25 @@
 
                                 <div class="form-group">
                                     <label class="form-label" for="cgpaInput">
-                                        <i class="fas fa-calculator"></i> Enter CGPA (e.g., 8.50)
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                            <path d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z"/>
+                                        </svg> Enter CGPA (e.g., 8.50)
                                     </label>
                                     <input type="number" id="cgpaInput" name="cgpaInput" class="form-input" placeholder="Enter CGPA (0-10.0)" step="0.01" min="0" max="10" required>
                                     <div class="error-message" id="cgpaInputError">Please enter a valid CGPA.</div>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary" id="calculateBtn" disabled>
-                                    <i class="fas fa-calculator"></i>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                        <path d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z"/>
+                                    </svg>
                                     Calculate Percentage
                                 </button>
                             </form>
                         </div>
 
                         <div class="form-sidebar">
-                            <h3><i class="fas fa-info-circle"></i> Quick Info</h3>
+                            <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;"><path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/></svg> Quick Info</h3>
                             <p>Get instant and accurate CGPA to percentage conversion for all major universities.</p>
                             <ul class="quick-info">
                                 <li>Supports 10-point and 4-point scales</li>
@@ -2059,7 +2512,9 @@
                     <div class="result-section" id="resultSection">
                         <div class="result-header">
                             <div class="result-title">
-                                <i class="fas fa-check-circle"></i>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                                </svg>
                                 Calculated Percentage
                             </div>
                             <div class="result-value" id="percentageResult">0.00%</div>
@@ -2072,7 +2527,9 @@
                         
                         <div class="reset-btn-center">
                             <button type="button" class="btn btn-secondary reset-btn" onclick="resetCalculator()">
-                                <i class="fas fa-redo"></i>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                    <path d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z"/>
+                                </svg>
                                 Calculate Again
                             </button>
                         </div>
@@ -2080,9 +2537,53 @@
                 </div>
             </div>
 
-            <!-- How to Use Section -->
+            <!-- Section 2: About Section -->
+            <div class="info-section">
+                <h2 class="section-title">About the CGPA to Percentage Calculator</h2>
+                <p class="section-intro">
+                    Struggling to convert your CGPA to percentage for job applications or further studies? You're not alone! Our free CGPA to percentage calculator makes this conversion super easy and accurate. Whether you're from VTU, KTU, CBSE, or any engineering college, we've got the right formula for your institution.
+                </p>
+                <p class="section-intro">
+                    This tool supports both 10-point and 4-point grading systems, so whether you're a student in India or abroad, you'll get precise results. The best part? It's completely free and works instantly on any device. No more manual calculations or confusion about which formula to use – just enter your CGPA and get your percentage in seconds!
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                        </svg>
+                        <h3>Multiple Universities</h3>
+                        <p>Supports VTU, KTU, CBSE, UGC, AICTE, and other major educational boards with their specific formulas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z"/>
+                        </svg>
+                        <h3>Instant Results</h3>
+                        <p>Get your percentage conversion immediately with live preview as you type your CGPA.</p>
+                    </div>
+                    <div class="feature-card">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.11 5.89,23 7,23H17C18.11,23 19,22.11 19,21V3C19,1.89 18.11,1 17,1Z"/>
+                        </svg>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works perfectly on phones, tablets, and computers. Calculate anywhere, anytime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z"/>
+                        </svg>
+                        <h3>Grade Visualization</h3>
+                        <p>See your grade range with color-coded performance indicators for better understanding.</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Section 3: How to Use Section -->
             <div class="how-to-use-section">
-                <h3>How to Use the CGPA to Percentage Calculator</h3>
+                <h2>How to Use the CGPA to Percentage Calculator</h2>
                 <ol class="how-to-steps">
                     <li>
                         <strong>Select Grading Scale</strong>
@@ -2106,76 +2607,9 @@
                 </div>
             </div>
 
-            <!-- Information Section -->
-            <div class="info-section">
-                <h2 class="section-title">About the CGPA to Percentage Calculator</h2>
-                <p class="section-intro">
-                    Struggling to convert your CGPA to percentage for job applications or further studies? You're not alone! Our free CGPA to percentage calculator makes this conversion super easy and accurate. Whether you're from VTU, KTU, CBSE, or any engineering college, we've got the right formula for your institution.
-                </p>
-                <p class="section-intro">
-                    This tool supports both 10-point and 4-point grading systems, so whether you're a student in India or abroad, you'll get precise results. The best part? It's completely free and works instantly on any device. No more manual calculations or confusion about which formula to use – just enter your CGPA and get your percentage in seconds!
-                </p>
-                
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Multiple Universities</h3>
-                        <p>Supports VTU, KTU, CBSE, UGC, AICTE, and other major educational boards with their specific formulas.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-calculator"></i>
-                        <h3>Instant Results</h3>
-                        <p>Get your percentage conversion immediately with live preview as you type your CGPA.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Mobile Friendly</h3>
-                        <p>Works perfectly on phones, tablets, and computers. Calculate anywhere, anytime.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-chart-bar"></i>
-                        <h3>Grade Visualization</h3>
-                        <p>See your grade range with color-coded performance indicators for better understanding.</p>
-                    </div>
-                </div>
-
-                <div class="guide-section">
-                    <h3 class="guide-title">How to Use This CGPA to Percentage Calculator</h3>
-                    <div class="guide-steps">
-                        <div class="step">
-                            <span class="step-number">1</span>
-                            <div class="step-content">
-                                <h4>Choose Your Scale</h4>
-                                <p>Select whether your CGPA is on a 10-point scale (most Indian universities) or 4-point scale (US/some Indian universities).</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <span class="step-number">2</span>
-                            <div class="step-content">
-                                <h4>Pick Your University</h4>
-                                <p>Select your institution (VTU, KTU, CBSE, etc.) to apply the correct conversion formula.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <span class="step-number">3</span>
-                            <div class="step-content">
-                                <h4>Enter Your CGPA</h4>
-                                <p>Type in your CGPA (like 8.5 or 3.2) and watch the percentage calculate automatically.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <span class="step-number">4</span>
-                            <div class="step-content">
-                                <h4>Get Your Results</h4>
-                                <p>View your percentage along with the formula used and grade category for easy reference.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CGPA to Percentage Conversion Table -->
-                <div class="technical-section">
-                    <h3>CGPA to Percentage Conversion Table</h3>
+            <!-- Section 4: CGPA to Percentage Conversion Table -->
+            <div class="technical-section">
+                <h2>CGPA to Percentage Conversion Table</h2>
                     <p>Here's a quick reference table showing common CGPA values and their percentage equivalents using the standard CGPA × 9.5 formula (CBSE method):</p>
                     
                     <table class="conversion-table">
@@ -2222,8 +2656,11 @@
                     <p><small><strong>Note:</strong> Different universities use different formulas. VTU uses (CGPA × 10) - 7.75, while KTU uses (CGPA × 10) - 5. Always check with your institution for their specific method.</small></p>
                 </div>
 
-                <div class="article-section">
-                    <h2>Why CGPA to Percentage Conversion Matters in Real Life</h2>
+            </div>
+
+            <!-- Section 5: Why CGPA to Percentage Conversion Matters -->
+            <div class="article-section">
+                <h2>Why CGPA to Percentage Conversion Matters in Real Life</h2>
                     <p>
                         When you're applying for jobs, higher studies, or competitive exams, you'll often find forms asking for your percentage instead of CGPA. This is because many HR departments and admission committees are more familiar with the traditional percentage system. Having an accurate conversion ready saves you time and ensures you don't undervalue or overstate your academic performance.
                     </p>
@@ -2233,19 +2670,18 @@
                     <p>
                         Remember, while conversion formulas provide good estimates, it's always wise to check with your university's academic office for official transcripts when needed for critical applications.
                     </p>
-                </div>
             </div>
-        </div>
-    </main>
 
-            <!-- FAQ Section -->
+            <!-- Section 6: FAQ Section -->
             <div class="faq-section">
-                <h2>Frequently Asked Questions About CGPA to Percentage Conversion</h2>
+                <h2>Frequently Asked Questions</h2>
                 
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>How do I convert CGPA to percentage for engineering students?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transition: transform 0.3s ease;">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
                         <p>Engineering students can convert CGPA to percentage using their university's specific formula. For most engineering colleges, the formula is CGPA × 9.5 (AICTE standard). However, VTU uses (CGPA × 10) - 7.75, while some other universities have their own methods. Always check with your college's academic office for the official formula.</p>
@@ -2255,7 +2691,9 @@
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>What's the VTU CGPA to percentage formula?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transition: transform 0.3s ease;">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
                         <p>VTU (Visvesvaraya Technological University) uses the formula: Percentage = (CGPA × 10) - 7.75. So if your CGPA is 8.0, your percentage would be (8.0 × 10) - 7.75 = 72.25%. This is the official VTU conversion method used for all their affiliated engineering colleges.</p>
@@ -2265,7 +2703,9 @@
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>How does KTU calculate percentage from CGPA?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transition: transform 0.3s ease;">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
                         <p>KTU (APJ Abdul Kalam Technological University) follows the formula: Percentage = (CGPA × 10) - 5. For example, if your CGPA is 7.5, your percentage would be (7.5 × 10) - 5 = 70%. This formula is specifically designed for KTU's grading system in Kerala.</p>
@@ -2275,7 +2715,9 @@
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>Can I convert 4-point CGPA to percentage?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transition: transform 0.3s ease;">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
                         <p>Yes! For 4-point scale CGPA (common in US universities and some Indian institutions), the formula is: Percentage = (CGPA ÷ 4) × 100. So a 3.5 CGPA on a 4-point scale equals (3.5 ÷ 4) × 100 = 87.5%. Some universities may use slightly different conversion methods, so check with your institution.</p>
@@ -2285,7 +2727,9 @@
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>Which CGPA to percentage formula should I use for job applications?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transition: transform 0.3s ease;">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
                         <p>For job applications, use your university's official conversion formula. Most companies accept the standard CGPA × 9.5 formula (CBSE/AICTE method), but if you're from VTU, KTU, or other specific universities, use their formulas for accuracy. When in doubt, mention both your CGPA and the formula used in your application.</p>
@@ -2295,7 +2739,9 @@
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>Is there a difference between semester-wise and overall CGPA conversion?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transition: transform 0.3s ease;">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
                         <p>The conversion formula remains the same whether you're converting semester CGPA or overall CGPA to percentage. However, for official purposes like placements or higher studies, overall CGPA (cumulative of all semesters) is typically required. Make sure you're using your final cumulative CGPA, not just one semester's performance.</p>
@@ -2305,10 +2751,12 @@
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFAQ(this)">
                         <span>Why do different universities have different CGPA conversion formulas?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transition: transform 0.3s ease;">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Universities design their grading systems based on their assessment philosophy and standards. While CBSE standardized the CGPA × 9.5 formula, autonomous universities like VTU and KTU created their own formulas to better reflect their grading distribution. This ensures that the percentage conversion accurately represents student performance within that specific university's context.</p>
+                        <p>Different universities have different CGPA conversion formulas because each institution designs its grading system based on their academic standards and regional requirements. For example, VTU uses a formula that accounts for their specific grade distribution, while CBSE follows a more standardized approach. This ensures that the conversion accurately reflects each university's grading philosophy.</p>
                     </div>
                 </div>
             </div>
@@ -2320,48 +2768,52 @@
                 
                 <div class="related-grid">
                     <a href="../converter.html#gpa-percentage" class="related-item">
-                        <i class="fas fa-chart-bar"></i>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z"/>
+                        </svg>
                         <h3>GPA to Percentage</h3>
                         <p>Convert GPA to percentage with multiple scale support</p>
                     </a>
                     <a href="../converter.html#exam-percentage" class="related-item">
-                        <i class="fas fa-percent"></i>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.5,3.5C18.88,3.5 20,4.62 20,6C20,7.38 18.88,8.5 17.5,8.5C16.12,8.5 15,7.38 15,6C15,4.62 16.12,3.5 17.5,3.5M6.5,15.5C7.88,15.5 9,16.62 9,18C9,19.38 7.88,20.5 6.5,20.5C5.12,20.5 4,19.38 4,18C4,16.62 5.12,15.5 6.5,15.5M19.07,4.93L4.93,19.07L3.5,17.64L17.64,3.5L19.07,4.93Z"/>
+                        </svg>
                         <h3>Exam Percentage Calculator</h3>
                         <p>Calculate exam percentage from marks obtained and total marks</p>
                     </a>
                     <a href="../study.html#study-planner" class="related-item">
-                        <i class="fas fa-book"></i>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5.07 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.68 6.5,20.68C8.45,20.68 10.55,20.81 12,21.5C13.35,20.81 15.8,20.68 17.5,20.68C19.15,20.68 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.66 22.5,21.66C22.75,21.66 23,21.41 23,21.16V6.5C22.4,6.05 21.75,5.75 21,5.5V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,18.81 12,19.5V8C10.55,7.31 8.45,7.18 6.5,7.18C5.05,7.18 3.1,7.44 1.75,8.09C1.65,8.14 1.6,8.09 1.5,8.09C1.25,8.09 1,7.84 1,7.59V6.81C2.45,5.96 4.55,5.07 6.5,5Z"/>
+                        </svg>
                         <h3>Study Planner</h3>
                         <p>Plan your study schedule effectively for better grades</p>
                     </a>
                     <a href="../study.html#typing-speed" class="related-item">
-                        <i class="fas fa-keyboard"></i>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19,10H17V8H19M19,13H17V11H19M16,10H14V8H16M16,13H14V11H16M16,17H8V15H16M7,10H5V8H7M7,13H5V11H7M8,11H10V13H8M8,8H10V10H8M11,11H13V13H11M11,8H13V10H11M20,5H4C2.89,5 2,5.89 2,7V17C2,18.11 2.89,19 4,19H20C21.11,19 22,18.11 22,17V7C22,5.89 21.11,5 20,5Z"/>
+                        </svg>
                         <h3>Typing Speed Test</h3>
                         <p>Improve your typing skills for better productivity</p>
                     </a>
                     <a href="../planner.html#goal-planner" class="related-item">
-                        <i class="fas fa-target"></i>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z"/>
+                        </svg>
                         <h3>Goal Planner</h3>
                         <p>Set and track your academic and career goals</p>
                     </a>
                     <a href="../health.html#bmi-calculator" class="related-item">
-                        <i class="fas fa-heartbeat"></i>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21,8.5C21,5.5 18.5,3 15.5,3C14.3,3 13.2,3.5 12.4,4.3L12,4.7L11.6,4.3C10.8,3.5 9.7,3 8.5,3C5.5,3 3,5.5 3,8.5C3,10.1 3.7,11.5 4.8,12.5L12,19.7L19.2,12.5C20.3,11.5 21,10.1 21,8.5M16,9H13.5V11.5H11.5V9H9V7H11.5V4.5H13.5V7H16V9Z"/>
+                        </svg>
                         <h3>Health Calculators</h3>
                         <p>BMI, calorie, and fitness calculators for healthy living</p>
                     </a>
                 </div>
             </div>
 
-            <!-- Internal Tool Links Section -->
-            <div class="internal-links-section">
-                <h2>Explore More Tools</h2>
-                <ul>
-                    <li><a href="../calculator/exam-percentage-inline.html">Exam Percentage Calculator</a></li>
-                    <li><a href="../calculator/gpa-percentage-inline.html">GPA to Percentage Calculator</a></li>
-                    <li><a href="../health/calorie-deficit.html">Calorie Deficit Calculator</a></li>
-                    <li><a href="../converter/height-converter-inline.html">Height Converter</a></li>
-                </ul>
-            </div>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -2398,23 +2850,31 @@
                     <nav class="footer-nav">
                         <ul class="social-links">
                             <li>
-                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
                                 </a>
                             </li>
                             <li>
-                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
                                 </a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
                                 </a>
                             </li>
                         </ul>
