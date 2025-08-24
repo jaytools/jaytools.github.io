@@ -1,20 +1,4 @@
 User-agent: *
 Allow: /
 
-# Disallow crawling of index.html variant to prevent duplicate content
-Disallow: /index.html
-
-# Sitemap locations
-Sitemap: https://www.taskproper.com/sitemap-index.xml
 Sitemap: https://www.taskproper.com/sitemap.xml
-Sitemap: https://www.taskproper.com/sitemap-calculator.xml
-Sitemap: https://www.taskproper.com/sitemap-converter.xml
-Sitemap: https://www.taskproper.com/sitemap-finance.xml
-Sitemap: https://www.taskproper.com/sitemap-health.xml
-Sitemap: https://www.taskproper.com/sitemap-personal.xml
-Sitemap: https://www.taskproper.com/sitemap-planner.xml
-Sitemap: https://www.taskproper.com/sitemap-study.xml
-Sitemap: https://www.taskproper.com/sitemap-utility.xml
-
-# Preferred domain (www)
-Host: www.taskproper.com

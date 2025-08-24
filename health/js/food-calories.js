@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultBox = document.getElementById('resultBox');
     const resultMessage = document.getElementById('resultMessage');
     const suggestionsBox = document.getElementById('suggestionsBox');
-    const darkModeToggle = document.getElementById('darkModeToggle');
 
     // Enhanced food database with more Indian and international foods
     const foodData = [
@@ -118,48 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedFood = null;
     let recentSearches = JSON.parse(localStorage.getItem('recentFoodSearches')) || [];
 
-    // Dark mode functionality with default light mode
-    function initializeDarkMode() {
-        // Force remove dark mode class first to ensure clean state
-        document.body.classList.remove('dark-mode');
-        
-        // Only apply dark mode if explicitly saved as true by user
-        const isDarkMode = localStorage.getItem('darkMode') === 'true';
-        
-        if (isDarkMode) {
-            document.body.classList.add('dark-mode');
-            updateDarkModeIcon(true);
-        } else {
-            // Explicitly ensure light mode (default)
-            document.body.classList.remove('dark-mode');
-            updateDarkModeIcon(false);
-            // Clear any stored dark mode preference that might be false or null
-            localStorage.setItem('darkMode', 'false');
-        }
-    }
-
-    function updateDarkModeIcon(isDark) {
-        const icon = darkModeToggle.querySelector('i');
-        if (isDark) {
-            icon.className = 'fas fa-sun';
-            darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
-        } else {
-            icon.className = 'fas fa-moon';
-            darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
-        }
-    }
-
-    function toggleDarkMode() {
-        const isDarkMode = document.body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', isDarkMode);
-        updateDarkModeIcon(isDarkMode);
-        
-        // Add smooth transition effect
-        document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-        setTimeout(() => {
-            document.body.style.transition = '';
-        }, 300);
-    }
 
     // Enhanced error handling
     function clearErrors() {
@@ -495,8 +452,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the application
     function init() {
-        // Initialize dark mode with default light mode
-        initializeDarkMode();
         
         // Set default values
         servingsInput.value = '1';
@@ -509,9 +464,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event listeners
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', toggleDarkMode);
-    }
 
     if (foodNameInput) {
         foodNameInput.addEventListener('input', handleFoodNameInput);

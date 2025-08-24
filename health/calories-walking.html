@@ -263,9 +263,9 @@
         <div class="container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="../index.html">Home</a>
-                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-separator">></span>
                 <a href="../health.html">Health Tools</a>
-                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-separator">></span>
                 <span>Calories Burned Walking</span>
             </nav>
         </div>
@@ -280,12 +280,12 @@
                     box-sizing: border-box;
                     padding: 0 20px;
                 }
-                /* Breadcrumbs */
+                /* Breadcrumb Styles */
 .breadcrumb {
-    background: #f8f9fa;
+    background: var(--color-gray-50, #f8f9fa);
     padding: 1rem 2rem;
     margin-bottom: 2rem;
-    border-left: 4px solid #333333;
+    border-left: 4px solid var(--color-primary, #007bff);
     font-size: 0.9rem;
     display: flex;
     align-items: center;
@@ -293,25 +293,34 @@
 }
 
 .breadcrumb a {
-    color: #333333;
+    color: var(--color-primary, #007bff);
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
 }
 
 .breadcrumb a:hover {
-    color: #000000;
+    color: var(--color-primary-dark, #0056b3);
     text-decoration: underline;
 }
 
 .breadcrumb-separator {
     margin: 0 0.5rem;
-    color: #666666;
+    color: var(--color-gray-500, #666666);
 }
 
 .breadcrumb span:last-child {
-    color: #666666;
+    color: var(--color-gray-600, #666666);
     font-weight: normal;
+}
+
+/* Breadcrumb responsive fixes */
+@media (max-width: 768px) {
+    .breadcrumb {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        padding: 0.75rem 1rem;
+    }
 }
                 
                 /* Desktop optimizations */
@@ -2063,126 +2072,284 @@
                 background: #333;
             }
             
-            /* Mobile-friendly container styles */
-            @media (max-width: 576px) {
+            /* Enhanced Mobile Responsiveness */
+            @media (max-width: 768px) {
                 .container {
                     padding: 0 15px;
                 }
                 
-                .form-row {
+                .main-container {
+                    padding: 0 10px;
+                }
+                
+                .card {
+                    margin-bottom: 1rem;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                }
+                
+                .card-header h2 {
+                    font-size: 1.4rem;
+                    text-align: center;
+                }
+                
+                .card-body {
+                    padding: 1.5rem 1rem;
+                }
+                
+                /* Hide desktop quick info on mobile */
+                .desktop-info-column {
+                    display: none;
+                }
+                
+                /* Stack form sections vertically on mobile */
+                .desktop-form-container {
+                    display: block;
+                }
+                
+                .form-section {
+                    padding: 1.25rem !important;
+                    margin-bottom: 1rem !important;
+                    border-radius: 10px;
+                }
+                
+                .section-heading {
+                    font-size: 1.2rem;
+                    margin-bottom: 1rem;
+                    text-align: center;
+                }
+                
+                /* Mobile form layout */
+                .personal-info-row,
+                .walking-details-row,
+                .mobile-form-row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                
+                .form-group {
                     margin-bottom: 0;
+                }
+                
+                /* Mobile input styling */
+                input.form-input,
+                select.form-input {
+                    height: 48px;
+                    font-size: 16px; /* Prevent iOS zoom */
+                    padding: 12px 45px 12px 15px;
+                    border-radius: 8px;
+                    border: 2px solid #e1e5e9;
+                    transition: all 0.3s ease;
+                }
+                
+                input.form-input:focus,
+                select.form-input:focus {
+                    border-color: var(--color-primary, #007bff);
+                    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+                }
+                
+                .input-with-icon {
+                    position: relative;
+                }
+                
+                .input-icon {
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #6c757d;
+                    z-index: 2;
+                }
+                
+                /* Mobile button styling */
+                .btn-calculate {
+                    height: 52px;
+                    margin-top: 1.5rem;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    width: 100%;
+                    border-radius: 10px;
+                    touch-action: manipulation;
+                    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+                    transition: all 0.3s ease;
+                }
+                
+                .btn-calculate:active {
+                    transform: translateY(1px);
+                }
+                
+                /* Mobile results section */
+                .results-section {
+                    margin-top: 1.5rem;
+                    padding: 1.5rem;
+                    border-radius: 12px;
+                    background: #f8f9fa;
+                }
+                
+                .results-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+                
+                .result-item {
+                    padding: 1rem;
+                    background: white;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+                
+                .result-icon {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: var(--color-primary, #007bff);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 1.2rem;
+                }
+                
+                .result-content {
+                    flex: 1;
+                }
+                
+                .result-label {
+                    display: block;
+                    font-size: 0.9rem;
+                    color: #6c757d;
+                    margin-bottom: 0.25rem;
+                }
+                
+                .result-value {
+                    display: block;
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #333;
+                }
+                
+                .highlight-value {
+                    color: var(--color-primary, #007bff);
+                }
+                
+                /* Mobile action buttons */
+                .action-buttons {
+                    display: flex;
+                    gap: 0.75rem;
+                    margin-top: 1.5rem;
+                    flex-wrap: wrap;
+                }
+                
+                .reset-btn,
+                .share-btn,
+                .history-btn {
+                    flex: 1;
+                    min-height: 44px;
+                    padding: 0.75rem 1rem;
+                    border-radius: 8px;
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    touch-action: manipulation;
+                }
+                
+                /* Mobile history panel */
+                .history-panel {
+                    margin-top: 1.5rem;
+                    padding: 1.25rem;
+                    background: #f8f9fa;
+                    border-radius: 12px;
+                }
+                
+                .history-title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    flex-wrap: wrap;
+                    gap: 0.75rem;
+                }
+                
+                .history-title h3 {
+                    font-size: 1.1rem;
+                    margin: 0;
+                }
+                
+                .history-clear {
+                    padding: 0.5rem 1rem;
+                    font-size: 0.9rem;
+                    border-radius: 6px;
+                    min-height: 36px;
+                }
+                
+                /* Mobile form labels and help text */
+                .form-label {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                    color: #333;
+                }
+                
+                .help-text {
+                    font-size: 0.85rem;
+                    color: #6c757d;
+                    margin-top: 0.25rem;
+                    line-height: 1.4;
+                }
+                
+                .error-message {
+                    font-size: 0.8rem;
+                    color: #dc3545;
+                    margin-top: 0.25rem;
+                }
+            }
+            
+            /* Extra small mobile devices */
+            @media (max-width: 480px) {
+                .main-container {
+                    padding: 0 5px;
+                }
+                
+                .card-body {
+                    padding: 1rem 0.75rem;
                 }
                 
                 .form-section {
                     padding: 1rem !important;
-                    margin-bottom: 0.75rem !important;
-                }
-                
-                .form-group {
-                    margin-bottom: 0.75rem;
                 }
                 
                 .section-heading {
-                    margin-bottom: 0.75rem;
                     font-size: 1.1rem;
                 }
                 
-                .input-with-icon {
-                    margin-bottom: 0.25rem;
+                input.form-input,
+                select.form-input {
+                    height: 44px;
+                    font-size: 16px;
+                    padding: 10px 40px 10px 12px;
                 }
                 
-                .card-body {
-                    padding: 1rem;
-                }
-                
-                input.form-input {
-                    height: 44px; /* Better touch target */
-                    font-size: 16px; /* Prevent iOS zoom */
-                }
-                
-                .help-text {
-                    margin-bottom: 0;
-                    font-size: 0.85rem;
-                    line-height: 1.4;
-                }
-                
-                .mobile-optimized-form .form-group {
-                    margin-bottom: 0.75rem;
-                }
-                
-                .mobile-optimized-form .error-message {
-                    font-size: 0.8rem;
-                    margin-top: 0.25rem;
-                }
-                
-                .mobile-form-row .form-group:first-child {
-                    margin-bottom: 1rem;
-                }
-                
-                /* Fix spacing between input fields on mobile */
-                .mobile-optimized-form .form-section {
-                    padding-bottom: 1rem !important;
-                }
-                
-                .mobile-optimized-form .form-input {
-                    margin-bottom: 0;
-                }
-                
-                /* Specific fixes for Personal Information section on mobile */
-                .personal-info-row {
-                    display: flex;
-                    flex-direction: column;
-                }
-                
-                .personal-info-row .form-group {
-                    margin-bottom: 1rem;
-                    padding-bottom: 0;
-                }
-                
-                /* Specific fixes for Walking Details section on mobile */
-                .mobile-form-row {
-                    display: flex;
-                    flex-direction: column;
-                }
-                
-                .mobile-form-row .form-group {
-                    margin-bottom: 1rem;
-                    padding-bottom: 0;
-                }
-                
-                /* Ensure no horizontal padding inside input fields */
-                .mobile-optimized-form input[type="number"],
-                .mobile-optimized-form select {
-                    -webkit-appearance: none;
-                    appearance: none;
-                    margin: 0;
-                    box-sizing: border-box;
-                    font-size: 16px; /* Prevent iOS zoom on focus */
-                    padding: 12px 45px 12px 15px;
-                }
-                
-                /* Mobile specific button styles */
                 .btn-calculate {
-                    height: 48px; /* Better touch target */
-                    margin-top: 1.5rem;
+                    height: 48px;
                     font-size: 1rem;
+                }
+                
+                .result-value {
+                    font-size: 1.2rem;
+                }
+                
+                .action-buttons {
+                    flex-direction: column;
+                }
+                
+                .reset-btn,
+                .share-btn,
+                .history-btn {
                     width: 100%;
-                    border-radius: 8px;
-                    touch-action: manipulation; /* Improve touch responsiveness */
-                }
-                
-                /* Improve touch targets for mobile */
-                .history-reuse, .history-favorite {
-                    min-height: 44px;
-                    min-width: 44px;
-                    padding: 8px 12px;
-                }
-                
-                /* Better spacing for mobile forms */
-                .form-label {
-                    margin-bottom: 0.5rem;
-                    font-weight: 600;
-                    font-size: 0.95rem;
                 }
             }
 
