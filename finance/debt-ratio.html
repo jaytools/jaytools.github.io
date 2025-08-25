@@ -24,7 +24,7 @@
     <!-- Favicons -->
     <link rel="icon" href="../favicon-32x32.png" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -956,7 +956,7 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools...">
                         <button class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
@@ -980,7 +980,7 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
                 <button class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1125,7 +1125,7 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <div class="info-content">
-                                <h4>Excellent (â‰¤20%)</h4>
+                                <h4>Excellent (≤20%)</h4>
                                 <p>Great financial health. You have plenty of room for additional debt if needed.</p>
                             </div>
                         </div>
@@ -1391,42 +1391,6 @@
                 </div>
             </div>
 
-            <!-- Related Tools Section -->
-            <div class="card">
-                <div class="card-body">
-                    <div class="related-section">
-                        <h2><i class="fas fa-tools"></i> Related Financial Tools</h2>
-                        <p class="section-description">Explore other helpful tools to manage your finances and improve your financial health.</p>
-                        
-                        <div class="related-tools-grid">
-                            <a href="expense-tracker.html" class="tool-card">
-                                <i class="fas fa-receipt"></i>
-                                <span>Daily Expense Tracker</span>
-                            </a>
-                            <a href="../calculator/loan-calculator.html" class="tool-card">
-                                <i class="fas fa-home"></i>
-                                <span>Loan Calculator</span>
-                            </a>
-                            <a href="../calculator/investment-calculator.html" class="tool-card">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Investment Calculator</span>
-                            </a>
-                            <a href="../calculator/budget-planner.html" class="tool-card">
-                                <i class="fas fa-piggy-bank"></i>
-                                <span>Budget Planner</span>
-                            </a>
-                            <a href="../health/calorie-deficit.html" class="tool-card">
-                                <i class="fas fa-fire"></i>
-                                <span>Calorie Deficit Calculator</span>
-                            </a>
-                            <a href="../planner/goal-planner.html" class="tool-card">
-                                <i class="fas fa-bullseye"></i>
-                                <span>Personal Goal Planner</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
