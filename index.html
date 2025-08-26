@@ -303,6 +303,48 @@
     }
     </script>
 
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is TaskProper.com legit or a scam?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "TaskProper.com is completely legitimate. We're a free tools website created by web developer Jay Prajapati that offers calculators and converters without any payment requirements or earning schemes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does TaskProper.com pay for doing tasks?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, TaskProper.com does not pay users for completing tasks. We are not a task-based earning platform but simply a collection of free online calculators and tools for everyday use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is TaskProper.com free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, every tool and calculator on TaskProper.com is completely free to use. There are no subscription fees, premium features, or hidden costs of any kind."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who founded TaskProper.com?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "TaskProper.com was founded by Jay Prajapati, a web developer who created this platform to provide helpful calculation tools to students, professionals, and everyday users. The website operates as a free community service."
+                }
+            }
+        ]
+    }
+    </script>
+
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJZF69M"
@@ -467,6 +509,479 @@
         </div>
     </section>
 
+    <!-- Legitimacy Section -->
+    <section class="legitimacy-section">
+        <style>
+            .legitimacy-section {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                color: #ffffff;
+                padding: 4rem 0;
+                margin: 3rem 0;
+            }
+            
+            .legitimacy-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            
+            .legitimacy-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+            
+            .legitimacy-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                background: linear-gradient(135deg, #22c55e, #60a5fa);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            
+            .legitimacy-intro {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                color: #e5e5e5;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .legitimacy-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                margin-bottom: 3rem;
+            }
+            
+            .legitimacy-card {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 16px;
+                padding: 2rem;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .legitimacy-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            }
+            
+            .legitimacy-card h3 {
+                color: #22c55e;
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+            
+            .legitimacy-card p {
+                line-height: 1.6;
+                color: #d1d5db;
+                margin-bottom: 1rem;
+            }
+            
+            .legitimacy-card ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .legitimacy-card li {
+                padding: 0.5rem 0;
+                color: #d1d5db;
+                position: relative;
+                padding-left: 1.5rem;
+            }
+            
+            .legitimacy-card li:before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: #22c55e;
+                font-weight: bold;
+            }
+            
+            .trust-badges {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin: 2rem 0;
+                flex-wrap: wrap;
+            }
+            
+            .trust-badge {
+                background: rgba(34, 197, 94, 0.1);
+                border: 2px solid #22c55e;
+                border-radius: 12px;
+                padding: 1rem 1.5rem;
+                text-align: center;
+                min-width: 150px;
+            }
+            
+            .trust-badge-number {
+                display: block;
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: #22c55e;
+            }
+            
+            .trust-badge-label {
+                display: block;
+                font-size: 0.9rem;
+                color: #d1d5db;
+                margin-top: 0.25rem;
+            }
+            
+            .legitimacy-faq {
+                margin-top: 3rem;
+            }
+            
+            .legitimacy-faq h3 {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 2rem;
+                color: #60a5fa;
+            }
+            
+            .faq-grid {
+                display: grid;
+                gap: 1.5rem;
+            }
+            
+            .faq-card {
+                background: rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                padding: 0;
+                border-left: 4px solid #60a5fa;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                overflow: hidden;
+            }
+            
+            .faq-card:hover {
+                background: rgba(255, 255, 255, 0.12);
+                transform: translateX(5px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+            
+            .faq-card .faq-question-btn {
+                width: 100%;
+                background: transparent;
+                border: none;
+                color: #ffffff;
+                font-weight: 600;
+                font-size: 1.1rem;
+                text-align: left;
+                padding: 1.5rem;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background-color 0.3s ease;
+            }
+            
+            .faq-card .faq-question-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            
+            .faq-card .faq-icon {
+                font-size: 1.2rem;
+                transition: transform 0.3s ease;
+                color: #60a5fa;
+            }
+            
+            .faq-card .faq-question-btn[aria-expanded="true"] .faq-icon {
+                transform: rotate(45deg);
+            }
+            
+            .faq-card .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+                background: rgba(0, 0, 0, 0.2);
+                color: #e5e7eb;
+                line-height: 1.6;
+            }
+            
+            .faq-card .faq-answer.active {
+                max-height: 300px;
+                padding: 1.5rem;
+            }
+            
+            .disclaimer-box {
+                background: rgba(96, 165, 250, 0.1);
+                border: 1px solid #60a5fa;
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin-top: 2rem;
+                text-align: center;
+            }
+            
+            .disclaimer-box p {
+                color: #d1d5db;
+                font-size: 0.9rem;
+                margin: 0;
+                font-style: italic;
+            }
+            
+            @media (max-width: 768px) {
+                .legitimacy-title {
+                    font-size: 2rem;
+                }
+                
+                .legitimacy-content {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+                
+                .trust-badges {
+                    gap: 1rem;
+                }
+                
+                .trust-badge {
+                    min-width: 120px;
+                    padding: 0.75rem 1rem;
+                }
+                
+                .legitimacy-container {
+                    padding: 0 1rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .legitimacy-section {
+                    padding: 2rem 0;
+                }
+                
+                .legitimacy-title {
+                    font-size: 1.75rem;
+                }
+                
+                .legitimacy-intro {
+                    font-size: 1rem;
+                }
+                
+                .legitimacy-card {
+                    padding: 1.5rem;
+                }
+                
+                .faq-grid {
+                    gap: 1rem;
+                }
+                
+                .faq-card {
+                    padding: 1rem;
+                }
+                
+                .faq-question {
+                    font-size: 1rem;
+                }
+            }
+            
+            /* Fix for main FAQ section visibility */
+            .faq-section .faq-question {
+                color: #2c3e50 !important;
+                background: transparent;
+                border: none;
+                text-align: left;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                font-size: 1.1rem;
+                font-weight: 600;
+                padding: 1.5rem;
+                transition: background-color 0.3s ease;
+            }
+            
+            .faq-section .faq-question:hover {
+                background-color: #f8f9fa !important;
+            }
+            
+            .faq-section .faq-answer {
+                max-height: 0 !important;
+                overflow: hidden !important;
+                transition: max-height 0.3s ease, padding 0.3s ease !important;
+                background: #f8f9fa !important;
+            }
+            
+            .faq-section .faq-answer.active {
+                max-height: 300px !important;
+                padding: 0 1.5rem 1.5rem !important;
+            }
+            
+            .faq-section .faq-answer p {
+                color: #666 !important;
+                line-height: 1.6;
+                margin: 0;
+            }
+            
+            .faq-section .faq-item {
+                background: white;
+                border-radius: 12px;
+                margin-bottom: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+            
+            .faq-section .faq-icon {
+                font-size: 1.5rem;
+                font-weight: 300;
+                transition: transform 0.3s ease;
+                color: #2c3e50;
+            }
+            
+            .faq-section .faq-question[aria-expanded="true"] .faq-icon {
+                transform: rotate(45deg);
+            }
+            
+            @media (max-width: 768px) {
+                .faq-section .faq-question {
+                    font-size: 1rem;
+                    padding: 1rem;
+                }
+                
+                .faq-section .faq-answer.active {
+                    padding: 0 1rem 1rem !important;
+                }
+            }
+            
+            /* Override external CSS completely with higher specificity */
+            .faq-section .faq-container .faq-item .faq-answer {
+                max-height: 0 !important;
+                overflow: hidden !important;
+                transition: max-height 0.4s ease, padding 0.4s ease !important;
+                background: #f8f9fa !important;
+                display: block !important;
+                visibility: visible !important;
+                padding: 0 !important;
+            }
+            
+            .faq-section .faq-container .faq-item .faq-answer.active {
+                max-height: 500px !important;
+                padding: 0 1.5rem 1.5rem !important;
+                opacity: 1 !important;
+            }
+            
+            .faq-section .faq-container .faq-item .faq-answer p {
+                color: #666 !important;
+                line-height: 1.6 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        </style>
+        
+        <div class="legitimacy-container">
+            <div class="legitimacy-header">
+                <h2 class="legitimacy-title">Is TaskProper.com Legit or Scam?</h2>
+                <p class="legitimacy-intro">
+                    Look, I get it. You're probably wondering if TaskProper.com is another one of those sketchy "earn money online" sites. 
+                    The short answer? Nope. We're just a bunch of free calculators that actually work. No tricks, no payments, no weird schemes.
+                </p>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span class="trust-badge-number">100%</span>
+                    <span class="trust-badge-label">Free Tools</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-number">0</span>
+                    <span class="trust-badge-label">Hidden Fees</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-number">50+</span>
+                    <span class="trust-badge-label">Available Tools</span>
+                </div>
+            </div>
+            
+            <div class="legitimacy-content">
+                <div class="legitimacy-card">
+                    <h3>Here's the Deal</h3>
+                    <p>We're not trying to make you rich or ask for your credit card. TaskProper is just a simple website where you can:</p>
+                    <ul>
+                        <li>Calculate your CGPA without downloading anything</li>
+                        <li>Convert units when you're cooking or studying</li>
+                        <li>Figure out percentages for your grades</li>
+                        <li>Use tools that actually work on your phone</li>
+                        <li>Get results instantly without signing up</li>
+                    </ul>
+                </div>
+                
+                <div class="legitimacy-card">
+                    <h3>Your Privacy is Safe</h3>
+                    <p>Nobody likes websites that spy on them. That's why we keep things simple:</p>
+                    <ul>
+                        <li>Everything happens right in your browser</li>
+                        <li>We don't save your numbers or personal info</li>
+                        <li>No annoying pop-ups asking for your email</li>
+                        <li>Works great on phones, tablets, whatever you use</li>
+                        <li>Built by Jay, a regular web developer who needed these tools too</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="legitimacy-faq">
+                <h3>Common Questions About TaskProper.com</h3>
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <button class="faq-question-btn" aria-expanded="false">
+                            <span>Is TaskProper.com legit?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes, TaskProper.com is completely legitimate. We're a free tools website created by web developer Jay Prajapati. 
+                            We don't ask for payments, personal information, or promise any earnings. Our tools are simple calculators 
+                            that work directly in your browser.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <button class="faq-question-btn" aria-expanded="false">
+                            <span>Does TaskProper.com pay for tasks?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            No, TaskProper.com does not pay users for completing tasks. We are not a task-based earning platform. 
+                            We're simply a collection of free online calculators and tools. There are no earning opportunities, 
+                            payments, or task completion systems on our website.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <button class="faq-question-btn" aria-expanded="false">
+                            <span>Is it free to use TaskProper.com?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Absolutely! Every single tool and calculator on TaskProper.com is completely free to use. 
+                            There are no premium features, subscription fees, or hidden costs. You can access all our tools 
+                            immediately without creating an account or providing payment information.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <button class="faq-question-btn" aria-expanded="false">
+                            <span>How does TaskProper.com make money if it's free?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            TaskProper.com operates as a free service for users. We may display minimal, non-intrusive advertisements 
+                            to cover basic hosting costs, but our primary goal is providing helpful tools to the community. 
+                            We believe useful calculators should be accessible to everyone.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="disclaimer-box">
+                <p>This information is based on publicly available details as of 2025. Always verify on the official site for latest updates.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- About Us Section -->
     <section class="about-section">
         <div class="container">
@@ -496,42 +1011,364 @@
         </div>
     </section>
 
+    <!-- Explore Tools Section -->
+    <section class="explore-tools-section">
+        <style>
+            .explore-tools-section {
+                padding: 4rem 1rem;
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                margin: 2rem 0;
+            }
+            
+            .explore-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            
+            .explore-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #2c3e50;
+                margin-bottom: 1rem;
+            }
+            
+            .explore-subtitle {
+                font-size: 1.2rem;
+                color: #6c757d;
+                margin-bottom: 3rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.6;
+            }
+            
+            .tools-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+            
+            .tool-category {
+                background: #fff;
+                border-radius: 16px;
+                padding: 2rem 1.5rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                transition: all 0.3s ease;
+                text-decoration: none;
+                color: inherit;
+                display: block;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .tool-category::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, #22c55e, #60a5fa);
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+            
+            .tool-category:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            }
+            
+            .tool-category:hover::before {
+                transform: scaleX(1);
+            }
+            
+            .category-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                margin: 0 auto 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8rem;
+                color: #fff;
+                font-weight: 600;
+            }
+            
+            .calculators .category-icon { background: linear-gradient(135deg, #22c55e, #16a34a); }
+            .converters .category-icon { background: linear-gradient(135deg, #60a5fa, #3b82f6); }
+            .finance .category-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+            .health .category-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+            .personal .category-icon { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+            .planner .category-icon { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+            .study .category-icon { background: linear-gradient(135deg, #ec4899, #db2777); }
+            .utility .category-icon { background: linear-gradient(135deg, #6b7280, #4b5563); }
+            
+            .category-title {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 0.8rem;
+            }
+            
+            .category-description {
+                color: #6c757d;
+                line-height: 1.6;
+                font-size: 0.95rem;
+            }
+            
+            @media (max-width: 768px) {
+                .explore-tools-section {
+                    padding: 3rem 1rem;
+                }
+                
+                .explore-title {
+                    font-size: 2rem;
+                }
+                
+                .explore-subtitle {
+                    font-size: 1.1rem;
+                    margin-bottom: 2rem;
+                }
+                
+                .tools-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+                
+                .tool-category {
+                    padding: 1.5rem 1rem;
+                }
+                
+                .category-icon {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        </style>
+        
+        <div class="explore-container">
+            <h2 class="explore-title">Explore Tools</h2>
+            <p class="explore-subtitle">
+                Find the perfect calculator or tool for whatever you need to figure out. 
+                We've organized everything into simple categories so you can get to your answer fast.
+            </p>
+            
+            <div class="tools-grid">
+                <a href="calculator.html" class="tool-category calculators">
+                    <div class="category-icon">📊</div>
+                    <h3 class="category-title">Calculators</h3>
+                    <p class="category-description">
+                        CGPA, GPA, percentages, and academic calculations. Perfect for students who need quick grade conversions.
+                    </p>
+                </a>
+                
+                <a href="converter.html" class="tool-category converters">
+                    <div class="category-icon">🔄</div>
+                    <h3 class="category-title">Converters</h3>
+                    <p class="category-description">
+                        Height, weight, distance, and unit conversions. Great when you're cooking or working with different measurements.
+                    </p>
+                </a>
+                
+                <a href="finance.html" class="tool-category finance">
+                    <div class="category-icon">💰</div>
+                    <h3 class="category-title">Finance</h3>
+                    <p class="category-description">
+                        Budget trackers, debt calculators, and expense tools. Keep your money organized without the headache.
+                    </p>
+                </a>
+                
+                <a href="health.html" class="tool-category health">
+                    <div class="category-icon">❤️</div>
+                    <h3 class="category-title">Health</h3>
+                    <p class="category-description">
+                        BMI, calorie counters, and fitness calculators. Simple tools to help you stay on top of your health goals.
+                    </p>
+                </a>
+                
+                <a href="personal.html" class="tool-category personal">
+                    <div class="category-icon">👤</div>
+                    <h3 class="category-title">Personal</h3>
+                    <p class="category-description">
+                        Age calculators, biodata generators, and personal planning tools. Handy stuff for everyday life situations.
+                    </p>
+                </a>
+                
+                <a href="planner.html" class="tool-category planner">
+                    <div class="category-icon">📅</div>
+                    <h3 class="category-title">Planner</h3>
+                    <p class="category-description">
+                        Goal trackers, productivity timers, and planning tools. Get organized and actually stick to your plans.
+                    </p>
+                </a>
+                
+                <a href="study.html" class="tool-category study">
+                    <div class="category-icon">📚</div>
+                    <h3 class="category-title">Study</h3>
+                    <p class="category-description">
+                        Study planners, typing tests, and learning tools. Everything you need to make studying a bit less painful.
+                    </p>
+                </a>
+                
+                <a href="utility.html" class="tool-category utility">
+                    <div class="category-icon">🔧</div>
+                    <h3 class="category-title">Utility</h3>
+                    <p class="category-description">
+                        DPI checkers and other handy utilities. Random tools that come in surprisingly useful when you need them.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section class="performance-section">
+        <style>
+            .performance-section {
+                padding: 3rem 1rem;
+                background: #f8f9fa;
+                margin: 2rem 0;
+            }
+            
+            .performance-container {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            
+            .performance-title {
+                font-size: 2rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 1rem;
+            }
+            
+            .performance-description {
+                font-size: 1.1rem;
+                color: #555;
+                line-height: 1.6;
+                margin-bottom: 2rem;
+            }
+            
+            .performance-features {
+                display: grid;
+                gap: 1rem;
+                max-width: 600px;
+                margin: 0 auto;
+                text-align: left;
+            }
+            
+            .performance-item {
+                background: #fff;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .performance-icon {
+                width: 12px;
+                height: 12px;
+                background: #22c55e;
+                border-radius: 50%;
+                flex-shrink: 0;
+            }
+            
+            .performance-text {
+                color: #333;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            @media (max-width: 768px) {
+                .performance-section {
+                    padding: 2rem 1rem;
+                }
+                
+                .performance-title {
+                    font-size: 1.75rem;
+                }
+                
+                .performance-description {
+                    font-size: 1rem;
+                }
+                
+                .performance-item {
+                    padding: 0.75rem 1rem;
+                }
+            }
+        </style>
+        
+        <div class="performance-container">
+            <h2 class="performance-title">Performance Matters</h2>
+            <p class="performance-description">
+                Nobody likes waiting for websites to load. That's why our tools are built to be super fast – 
+                you click calculate and boom, you get your answer. No spinning wheels or "please wait" messages.
+            </p>
+            
+            <div class="performance-features">
+                <div class="performance-item">
+                    <div class="performance-icon"></div>
+                    <div class="performance-text">Works instantly whether you're on your phone, tablet, or computer</div>
+                </div>
+                
+                <div class="performance-item">
+                    <div class="performance-icon"></div>
+                    <div class="performance-text">Clean code that doesn't bog down your device or eat up data</div>
+                </div>
+                
+                <div class="performance-item">
+                    <div class="performance-icon"></div>
+                    <div class="performance-text">Just the essentials – no bloated features you'll never use</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How to Use Section -->
     <section class="how-to-use-section">
         <div class="container">
             <h2>How to Use Our Tools</h2>
-            <p class="section-intro">Getting started with our calculators and tools is incredibly simple. Just follow these easy steps:</p>
+            <p class="section-intro">Using our calculators is pretty straightforward. Here's how it works:</p>
             
             <div class="steps-container">
                 <div class="step-item">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Choose Your Tool</h3>
-                        <p>Browse through our categories or use the search bar to find the calculator or tool you need. We have everything from CGPA calculators to health trackers.</p>
+                        <h3>Pick What You Need</h3>
+                        <p>Just look around and click on whatever calculator you need. Got a CGPA to figure out? We've got that. Need to convert something? That too.</p>
                     </div>
                 </div>
                 
                 <div class="step-item">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Enter Your Data</h3>
-                        <p>Simply fill in the required fields with your information. Our forms are designed to be intuitive – you'll know exactly what to enter where.</p>
+                        <h3>Type in Your Numbers</h3>
+                        <p>Fill in the boxes with your info. Don't worry about messing up – the forms are pretty obvious about what goes where.</p>
                     </div>
                 </div>
                 
                 <div class="step-item">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Get Instant Results</h3>
-                        <p>Click calculate and get your results immediately. Most tools also provide explanations and additional insights to help you understand the calculations.</p>
+                        <h3>Hit Calculate</h3>
+                        <p>Press the button and you're done. Most tools will also explain how they got the answer, so you're not left wondering.</p>
                     </div>
                 </div>
                 
                 <div class="step-item">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Save or Share</h3>
-                        <p>Bookmark your favorite tools for quick access, or share results with friends and colleagues. Everything works seamlessly across all devices.</p>
+                        <h3>Bookmark for Later</h3>
+                        <p>Found a tool you'll use again? Just bookmark it. Want to show someone your results? The link works perfectly for sharing.</p>
                     </div>
                 </div>
             </div>
@@ -549,7 +1386,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes, absolutely! Every single calculator and tool on Task Proper is 100% free to use. There are no hidden fees, premium subscriptions, or limitations. We believe everyone should have access to reliable calculation tools without any cost barriers.</p>
+                        <p>Yep, everything's free. No "premium" version, no "unlock more features for $9.99" nonsense. We just made these tools because we needed them ourselves, and figured others might too.</p>
                     </div>
                 </div>
                 
@@ -559,7 +1396,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Our calculators use industry-standard formulas and are thoroughly tested for accuracy. We regularly review and update our algorithms to ensure precise results. However, for critical decisions, we always recommend consulting with relevant professionals.</p>
+                        <p>We use the same math formulas you'd find in textbooks, so they're pretty solid. That said, if you're making a big life decision based on a calculation, maybe double-check with a professional first.</p>
                     </div>
                 </div>
                 
@@ -569,7 +1406,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>No, we prioritize your privacy. All calculations are performed directly in your browser, and we don't store any of your input data or results on our servers. Your information stays completely private and secure.</p>
+                        <p>Nope, we don't save anything. All the math happens right in your browser, so your numbers never leave your device. We literally can't see what you're calculating.</p>
                     </div>
                 </div>
                 
@@ -579,7 +1416,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolutely! All our tools are fully responsive and optimized for mobile devices. Whether you're using a smartphone, tablet, or desktop computer, you'll get the same great experience with easy-to-use interfaces.</p>
+                        <p>Yeah, they work great on phones. I actually use them on my phone all the time when I'm out and need to calculate something quickly. No pinching or zooming required.</p>
                     </div>
                 </div>
                 
@@ -589,7 +1426,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Not at all! You can use any of our calculators and tools immediately without signing up or creating an account. Just visit the tool you need and start calculating right away.</p>
+                        <p>Nope, just click and use. No "sign up for our newsletter" or "create your free account" stuff. That's annoying and we don't do it.</p>
                     </div>
                 </div>
                 
@@ -599,7 +1436,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>We're constantly adding new tools based on user feedback! If you need a specific calculator that we don't have yet, please reach out to us through our contact page. We love hearing suggestions and often build new tools based on user requests.</p>
+                        <p>Just let us know what you need! We're always building new stuff, especially when people ask for it. Most of our tools actually came from someone saying "hey, do you have a calculator for this?"</p>
                     </div>
                 </div>
             </div>
@@ -685,5 +1522,125 @@
     <!-- Load icon replacement script to optimize FontAwesome usage -->
     <script src="js/icon-replacement.js" defer></script>
     <script src="js/favorite-star.js" defer></script>
+    
+    <!-- FAQ Functionality Script - Complete Override -->
+    <script>
+    // Wait for all scripts to load, then override
+    setTimeout(function() {
+        console.log('FAQ override script loaded');
+        
+        // Handle legitimacy section FAQ (dark theme)
+        const legitimacySection = document.querySelector('.legitimacy-section');
+        if (legitimacySection) {
+            const faqButtons = legitimacySection.querySelectorAll('.faq-question-btn');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const faqCard = this.closest('.faq-card');
+                    const faqAnswer = faqCard.querySelector('.faq-answer');
+                    const faqIcon = this.querySelector('.faq-icon');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all other FAQ items in legitimacy section
+                    const allFaqCards = legitimacySection.querySelectorAll('.faq-card');
+                    allFaqCards.forEach(card => {
+                        if (card !== faqCard) {
+                            const otherButton = card.querySelector('.faq-question-btn');
+                            const otherAnswer = card.querySelector('.faq-answer');
+                            const otherIcon = otherButton.querySelector('.faq-icon');
+                            
+                            otherButton.setAttribute('aria-expanded', 'false');
+                            otherAnswer.classList.remove('active');
+                            if (otherIcon) otherIcon.textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current FAQ item
+                    if (isExpanded) {
+                        this.setAttribute('aria-expanded', 'false');
+                        faqAnswer.classList.remove('active');
+                        if (faqIcon) faqIcon.textContent = '+';
+                    } else {
+                        this.setAttribute('aria-expanded', 'true');
+                        faqAnswer.classList.add('active');
+                        if (faqIcon) faqIcon.textContent = '−';
+                    }
+                });
+            });
+        }
+        
+        // Handle main FAQ section with complete DOM replacement
+        const faqSection = document.querySelector('.faq-section');
+        if (faqSection) {
+            const faqItems = faqSection.querySelectorAll('.faq-item');
+            console.log('Found FAQ items:', faqItems.length);
+            
+            faqItems.forEach((item, index) => {
+                const button = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = button.querySelector('.faq-icon');
+                
+                // Create unique ID for this FAQ
+                const faqId = 'faq-' + index;
+                item.setAttribute('data-faq-id', faqId);
+                
+                // Remove all existing event listeners by cloning
+                const newButton = button.cloneNode(true);
+                button.parentNode.replaceChild(newButton, button);
+                
+                // Add new event listener to cloned button
+                const finalButton = item.querySelector('.faq-question');
+                const finalIcon = finalButton.querySelector('.faq-icon');
+                
+                finalButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isOpen = answer.classList.contains('active');
+                    console.log('FAQ clicked, currently open:', isOpen);
+                    
+                    // Close all other FAQs
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherAnswer = otherItem.querySelector('.faq-answer');
+                            const otherButton = otherItem.querySelector('.faq-question');
+                            const otherIcon = otherButton.querySelector('.faq-icon');
+                            
+                            otherAnswer.classList.remove('active');
+                            otherAnswer.style.maxHeight = '0px';
+                            otherAnswer.style.padding = '0';
+                            otherButton.setAttribute('aria-expanded', 'false');
+                            if (otherIcon) otherIcon.textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current FAQ
+                    if (isOpen) {
+                        // Close
+                        answer.classList.remove('active');
+                        answer.style.maxHeight = '0px';
+                        answer.style.padding = '0';
+                        finalButton.setAttribute('aria-expanded', 'false');
+                        if (finalIcon) finalIcon.textContent = '+';
+                        console.log('Closed FAQ');
+                    } else {
+                        // Open
+                        answer.classList.add('active');
+                        answer.style.maxHeight = '1000px';
+                        answer.style.padding = '0 1.5rem 1.5rem';
+                        answer.style.background = '#f8f9fa';
+                        answer.style.display = 'block';
+                        answer.style.visibility = 'visible';
+                        answer.style.opacity = '1';
+                        answer.style.transition = 'max-height 0.4s ease, padding 0.4s ease';
+                        finalButton.setAttribute('aria-expanded', 'true');
+                        if (finalIcon) finalIcon.textContent = '−';
+                        console.log('Opened FAQ');
+                    }
+                });
+            });
+        }
+    }, 500); // Delay to ensure all other scripts load first
+    </script>
 </body>
 </html>
