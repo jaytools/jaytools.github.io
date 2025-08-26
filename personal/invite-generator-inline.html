@@ -182,8 +182,31 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #2c3e50;
-            font-size: 1rem;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        legend {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: inherit;
         }
 
         .form-group input,
@@ -758,9 +781,13 @@
                 gap: 1rem;
             }
 
+            .form-section {
+                order: 1;
+            }
+
             .preview-section {
                 position: static;
-                order: -1;
+                order: 2;
             }
 
             .tool-header {
@@ -910,7 +937,8 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <label for="desktop-search" class="sr-only">Search tools</label>
+                        <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools...">
                         <button class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
@@ -934,7 +962,8 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <label for="mobile-search" class="sr-only">Search tools</label>
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
                 <button class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1019,57 +1048,64 @@
                     
                     <!-- Template Selection -->
                     <div class="form-group">
-                        <label>Choose Template</label>
-                        <div class="template-selector">
-                            <div class="template-option template-1 active" data-template="1">
-                                Birthday
+                        <fieldset>
+                            <legend>Choose Template</legend>
+                            <div class="template-selector">
+                                <label class="template-option template-1 active" data-template="1">
+                                    <input type="radio" name="template" value="1" checked class="sr-only">
+                                    Birthday
+                                </label>
+                                <label class="template-option template-2" data-template="2">
+                                    <input type="radio" name="template" value="2" class="sr-only">
+                                    Wedding
+                                </label>
+                                <label class="template-option template-3" data-template="3">
+                                    <input type="radio" name="template" value="3" class="sr-only">
+                                    Party
+                                </label>
+                                <label class="template-option template-4" data-template="4">
+                                    <input type="radio" name="template" value="4" class="sr-only">
+                                    Formal
+                                </label>
+                                <label class="template-option template-5" data-template="5">
+                                    <input type="radio" name="template" value="5" class="sr-only">
+                                    Celebration
+                                </label>
                             </div>
-                            <div class="template-option template-2" data-template="2">
-                                Wedding
-                            </div>
-                            <div class="template-option template-3" data-template="3">
-                                Party
-                            </div>
-                            <div class="template-option template-4" data-template="4">
-                                Event
-                            </div>
-                            <div class="template-option template-5" data-template="5">
-                                Celebration
-                            </div>
-                        </div>
+                        </fieldset>
                     </div>
 
                     <!-- Event Details -->
                     <div class="form-group">
                         <label for="eventTitle">Event Title</label>
-                        <input type="text" id="eventTitle" placeholder="e.g., Sarah's Birthday Party" maxlength="50">
+                        <input type="text" id="eventTitle" name="eventTitle" placeholder="e.g., Sarah's Birthday Party" maxlength="50">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="eventDate">Date</label>
-                            <input type="date" id="eventDate">
+                            <input type="date" id="eventDate" name="eventDate">
                         </div>
                         <div class="form-group">
                             <label for="eventTime">Time</label>
-                            <input type="time" id="eventTime">
+                            <input type="time" id="eventTime" name="eventTime">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="eventLocation">Location</label>
-                        <input type="text" id="eventLocation" placeholder="e.g., 123 Main Street, City" maxlength="100">
+                        <input type="text" id="eventLocation" name="eventLocation" placeholder="e.g., 123 Main Street, City" maxlength="100">
                     </div>
 
                     <div class="form-group">
                         <label for="eventMessage">Personal Message</label>
-                        <textarea id="eventMessage" rows="3" placeholder="Join us for a special celebration..." maxlength="200"></textarea>
+                        <textarea id="eventMessage" name="eventMessage" rows="3" placeholder="Join us for a special celebration..." maxlength="200"></textarea>
                     </div>
 
                     <!-- Font Customization -->
                     <div class="form-group">
                         <label for="fontFamily">Font Style</label>
-                        <select id="fontFamily">
+                        <select id="fontFamily" name="fontFamily">
                             <option value="Roboto">Roboto (Default)</option>
                             <option value="Georgia">Georgia (Elegant)</option>
                             <option value="Arial">Arial (Clean)</option>
@@ -1080,24 +1116,26 @@
 
                     <!-- Color Customization -->
                     <div class="form-group">
-                        <label>Color Theme</label>
-                        <div class="color-picker-group">
-                            <div class="color-input">
-                                <input type="color" id="titleColor" value="#ffffff">
-                                <label for="titleColor">Title</label>
+                        <fieldset>
+                            <legend>Color Theme</legend>
+                            <div class="color-picker-group">
+                                <div class="color-input">
+                                    <input type="color" id="titleColor" name="titleColor" value="#ffffff">
+                                    <label for="titleColor">Title</label>
+                                </div>
+                                <div class="color-input">
+                                    <input type="color" id="textColor" name="textColor" value="#ffffff">
+                                    <label for="textColor">Text</label>
+                                </div>
                             </div>
-                            <div class="color-input">
-                                <input type="color" id="textColor" value="#ffffff">
-                                <label for="textColor">Text</label>
-                            </div>
-                        </div>
+                        </fieldset>
                     </div>
 
                     <!-- Background Image Upload -->
                     <div class="form-group">
                         <label for="backgroundImage">Background Image (Optional)</label>
                         <div class="file-upload">
-                            <input type="file" id="backgroundImage" accept="image/*" title="Upload a background image for your invitation">
+                            <input type="file" id="backgroundImage" name="backgroundImage" accept="image/*" title="Upload a background image for your invitation">
                             <div class="file-upload-label">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <span>Click to upload image</span>

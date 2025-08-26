@@ -66,7 +66,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Load reliable web-safe fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Lato:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Lato:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Lato:wght@400;500;600;700&display=swap"></noscript>
     <link rel="preload" href="css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/custom.css"></noscript>
@@ -90,8 +90,7 @@
       :focus {
   outline: 2px solid rgba(0,122,204,0.5);
   outline-offset: 2px;
-  box-shadow: 0 0 0 2px r
-  gba(0,122,204,0.2);
+  box-shadow: 0 0 0 2px rgba(0,122,204,0.2);
 }
 .breadcrumb {
             background: #f8f9fa;
@@ -1523,12 +1522,9 @@
     <script src="js/icon-replacement.js" defer></script>
     <script src="js/favorite-star.js" defer></script>
     
-    <!-- FAQ Functionality Script - Complete Override -->
+    <!-- FAQ Functionality Script -->
     <script>
-    // Wait for all scripts to load, then override
-    setTimeout(function() {
-        console.log('FAQ override script loaded');
-        
+    document.addEventListener('DOMContentLoaded', function() {
         // Handle legitimacy section FAQ (dark theme)
         const legitimacySection = document.querySelector('.legitimacy-section');
         if (legitimacySection) {
@@ -1569,35 +1565,19 @@
             });
         }
         
-        // Handle main FAQ section with complete DOM replacement
+        // Handle main FAQ section
         const faqSection = document.querySelector('.faq-section');
         if (faqSection) {
             const faqItems = faqSection.querySelectorAll('.faq-item');
-            console.log('Found FAQ items:', faqItems.length);
             
-            faqItems.forEach((item, index) => {
+            faqItems.forEach(item => {
                 const button = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer');
                 const icon = button.querySelector('.faq-icon');
                 
-                // Create unique ID for this FAQ
-                const faqId = 'faq-' + index;
-                item.setAttribute('data-faq-id', faqId);
-                
-                // Remove all existing event listeners by cloning
-                const newButton = button.cloneNode(true);
-                button.parentNode.replaceChild(newButton, button);
-                
-                // Add new event listener to cloned button
-                const finalButton = item.querySelector('.faq-question');
-                const finalIcon = finalButton.querySelector('.faq-icon');
-                
-                finalButton.addEventListener('click', function(e) {
+                button.addEventListener('click', function(e) {
                     e.preventDefault();
-                    e.stopPropagation();
-                    
                     const isOpen = answer.classList.contains('active');
-                    console.log('FAQ clicked, currently open:', isOpen);
                     
                     // Close all other FAQs
                     faqItems.forEach(otherItem => {
@@ -1607,8 +1587,6 @@
                             const otherIcon = otherButton.querySelector('.faq-icon');
                             
                             otherAnswer.classList.remove('active');
-                            otherAnswer.style.maxHeight = '0px';
-                            otherAnswer.style.padding = '0';
                             otherButton.setAttribute('aria-expanded', 'false');
                             if (otherIcon) otherIcon.textContent = '+';
                         }
@@ -1616,31 +1594,18 @@
                     
                     // Toggle current FAQ
                     if (isOpen) {
-                        // Close
                         answer.classList.remove('active');
-                        answer.style.maxHeight = '0px';
-                        answer.style.padding = '0';
-                        finalButton.setAttribute('aria-expanded', 'false');
-                        if (finalIcon) finalIcon.textContent = '+';
-                        console.log('Closed FAQ');
+                        button.setAttribute('aria-expanded', 'false');
+                        if (icon) icon.textContent = '+';
                     } else {
-                        // Open
                         answer.classList.add('active');
-                        answer.style.maxHeight = '1000px';
-                        answer.style.padding = '0 1.5rem 1.5rem';
-                        answer.style.background = '#f8f9fa';
-                        answer.style.display = 'block';
-                        answer.style.visibility = 'visible';
-                        answer.style.opacity = '1';
-                        answer.style.transition = 'max-height 0.4s ease, padding 0.4s ease';
-                        finalButton.setAttribute('aria-expanded', 'true');
-                        if (finalIcon) finalIcon.textContent = '−';
-                        console.log('Opened FAQ');
+                        button.setAttribute('aria-expanded', 'true');
+                        if (icon) icon.textContent = '−';
                     }
                 });
             });
         }
-    }, 500); // Delay to ensure all other scripts load first
+    });
     </script>
 </body>
 </html>
