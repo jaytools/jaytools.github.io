@@ -11,6 +11,11 @@ RewriteRule ^(.*)$ https://www.taskproper.com/$1 [R=301,L]
 RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
 RewriteRule ^index\.html$ https://www.taskproper.com/ [R=301,L]
 
+# Fix 404 errors - Redirect old tool URLs to correct locations
+RewriteRule ^tools/body-frame-inline\.html$ /health/body-frame-inline.html [R=301,L]
+RewriteRule ^tools/seperate-tool/ivf-calculator\.html$ /health/ivf-calculator.html [R=301,L]
+RewriteRule ^tools/cgpa-percentage-inline\.html$ /calculator/cgpa-percentage-inline.html [R=301,L]
+
 # Force trailing slash removal for most pages except directories
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} /$
