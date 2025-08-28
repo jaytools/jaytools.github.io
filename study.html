@@ -801,15 +801,8 @@
                 });
             }
 
-            // Load study tools immediately if the tools array is available
-            if (window.tools && Array.isArray(window.tools)) {
-                loadStudyTools();
-            } else {
-                // Load tools with a small delay to ensure script.js is loaded
-                setTimeout(() => {
-                    loadStudyTools();
-                }, 100);
-            }
+            // Load study tools
+            loadStudyTools();
         });
 
         /**
@@ -974,20 +967,12 @@
             }
             
             // Get tools data
-            if (!window.tools || !Array.isArray(window.tools)) {
-                console.error("Tools array not available");
-                
-                // Fallback to direct data if tools not loaded from script.js
-                const fallbackTools = [
-                    { name: 'Study Planner', url: 'study/study-planner.html', tags: ['study'] },
-                    { name: 'Typing Speed Test', url: 'study/typing-speed.html', tags: ['study'] }
-                ];
-                processStudyTools(fallbackTools, studyGrid, paginationContainer);
-                return;
-            }
-            
-            // Process with the tools from window.tools
-            processStudyTools(window.tools, studyGrid, paginationContainer);
+            // Use direct tools data
+            const studyTools = [
+                { name: 'Study Planner', url: 'study/study-planner.html', tags: ['study'] },
+                { name: 'Typing Speed Test', url: 'study/typing-speed.html', tags: ['study'] }
+            ];
+            processStudyTools(studyTools, studyGrid, paginationContainer);
         }
         
         /**

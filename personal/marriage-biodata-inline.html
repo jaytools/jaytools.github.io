@@ -2048,12 +2048,9 @@
     <!-- JavaScript -->
     <script src="../js/sidebar-favorites.js"></script>
     <script>
-        // Prevent script.js errors and console warnings
+        // Error handling for any script issues
         window.addEventListener('error', function(e) {
-            if (e.filename && e.filename.includes('script.js')) {
-                e.preventDefault();
-                return true;
-            }
+            console.warn('Script error handled:', e.message);
         });
 
         // Sidebar Toggle Functionality

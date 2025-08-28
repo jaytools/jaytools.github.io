@@ -848,15 +848,8 @@
                 });
             }
 
-            // Load personal tools immediately if the tools array is available
-            if (window.tools && Array.isArray(window.tools)) {
-                loadPersonalTools();
-            } else {
-                // Load tools with a small delay to ensure script.js is loaded
-                setTimeout(() => {
-                    loadPersonalTools();
-                }, 100);
-            }
+            // Load personal tools
+            loadPersonalTools();
         });
 
         /**
@@ -1011,25 +1004,14 @@
                 return;
             }
             
-            // Get tools data
-            if (!window.tools || !Array.isArray(window.tools)) {
-                console.error("Tools array not available");
-                
-                // Fallback to direct data if tools not loaded from script.js
-                const fallbackTools = [
-                    { name: 'Age Difference Calculator', url: 'personal/age-difference-inline.html', tags: ['calculator', 'personal'] },
-                    { name: 'Marriage Age Calculator', url: 'personal/marriage-age-inline.html', tags: ['calculator', 'personal'] },
-                    { name: 'Daily Expense Tracker', url: 'finance/expense-tracker.html', tags: ['finance', 'personal'] },
-                    { name: 'Marriage Biodata', url: 'personal/marriage-biodata-inline.html', tags: ['utility', 'personal'] },
-                    { name: 'Invite Generator', url: 'personal/invite-generator-inline.html', tags: ['utility', 'personal'] },
-                    { name: 'IVF Due Date Calculator', url: 'health/ivf-calculator.html', tags: ['health', 'personal'] }
-                ];
-                processPersonalTools(fallbackTools, personalGrid, paginationContainer);
-                return;
-            }
-            
-            // Process with the tools from window.tools
-            processPersonalTools(window.tools, personalGrid, paginationContainer);
+            // Use direct tools data
+            const personalTools = [
+                { name: 'Age Difference Calculator', url: 'personal/age-difference-inline.html', tags: ['calculator', 'personal'] },
+                { name: 'Marriage Age Calculator', url: 'personal/marriage-age-inline.html', tags: ['calculator', 'personal'] },
+                { name: 'Marriage Biodata', url: 'personal/marriage-biodata-inline.html', tags: ['utility', 'personal'] },
+                { name: 'Invite Generator', url: 'personal/invite-generator-inline.html', tags: ['utility', 'personal'] }
+            ];
+            processPersonalTools(personalTools, personalGrid, paginationContainer);
         }
         
         /**

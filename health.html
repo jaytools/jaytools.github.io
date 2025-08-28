@@ -1354,15 +1354,8 @@
                 });
             });
 
-            // Load health tools immediately if the tools array is available
-            if (window.tools && Array.isArray(window.tools)) {
-                loadHealthTools();
-            } else {
-                // Load tools with a small delay to ensure script.js is loaded
-                setTimeout(() => {
-                    loadHealthTools();
-                }, 100);
-            }
+            // Load health tools
+            loadHealthTools();
         });
 
         /**
@@ -1548,30 +1541,15 @@
             console.log("Health grid found:", healthGrid);
             
             // Get tools data
-            if (!window.tools || !Array.isArray(window.tools)) {
-                console.log("Using fallback tools data");
-                
-                // Fallback to direct data if tools not loaded from script.js
-                // This is more robust than calling an undefined getToolsData() function
-                const fallbackTools = [
-                    { name: 'IVF Due Date Calculator', url: 'health/ivf-calculator.html', tags: ['health', 'pregnancy', 'calculator'] },
-                    { name: 'Pregnancy Weight Gain Calculator', url: 'health/pregnancy-weight.html', tags: ['calculator', 'health', 'pregnancy'] },
-                    { name: 'Steps to KM Converter', url: 'converter/steps-to-km-inline.html', tags: ['converter', 'health', 'fitness'] },
-                    { name: 'Calories Burned Walking', url: 'health/calories-walking.html', tags: ['calculator', 'health', 'fitness'] },
-                    { name: 'Height Conversion Tool', url: 'converter/height-converter-inline.html', tags: ['converter', 'health', 'measurement'] },
-                    { name: 'Calorie Deficit Finder', url: 'health/calorie-deficit.html', tags: ['health', 'calculator', 'fitness'] },
-                    { name: 'Body Frame Size Calculator', url: 'health/body-frame-inline.html', tags: ['calculator', 'health', 'body'] },
-                    { name: 'Calories in Food Checker', url: 'health/food-calories.html', tags: ['health', 'calculator', 'nutrition'] },
-                    { name: 'Protein Intake Calculator', url: 'health/protein-intake.html', tags: ['health', 'calculator', 'nutrition'] }
-                ];
-                console.log("Fallback tools:", fallbackTools);
-                processHealthTools(fallbackTools, healthGrid, paginationContainer);
-                return;
-            }
-            
-            console.log("Using window.tools:", window.tools.length, "tools found");
-            // Process with the tools from window.tools
-            processHealthTools(window.tools, healthGrid, paginationContainer);
+            const healthTools = [
+                { name: 'IVF Due Date Calculator', url: 'health/ivf-calculator.html', tags: ['health', 'pregnancy', 'calculator'] },
+                { name: 'Pregnancy Weight Gain Calculator', url: 'health/pregnancy-weight.html', tags: ['calculator', 'health'] },
+                { name: 'Calories Burned Walking', url: 'health/calories-walking.html', tags: ['calculator', 'health'] },
+                { name: 'Calorie Deficit Finder', url: 'health/calorie-deficit.html', tags: ['health', 'calculator'] },
+                { name: 'Body Frame Size Calculator', url: 'health/body-frame-inline.html', tags: ['calculator', 'health'] },
+                { name: 'Calories in Food Checker', url: 'health/food-calories.html', tags: ['health', 'calculator'] }
+            ];
+            processHealthTools(healthTools, healthGrid, paginationContainer);
         }
         
         /**

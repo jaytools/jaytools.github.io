@@ -1045,10 +1045,8 @@
                 });
             }
 
-            // Wait a moment to ensure script.js has initialized
-            setTimeout(() => {
-                loadConverterTools();
-            }, 100);
+            // Load converter tools
+            loadConverterTools();
         });
 
         function getToolsData() {

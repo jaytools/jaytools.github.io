@@ -742,15 +742,8 @@
                 });
             }
 
-            // Load health tools immediately if the tools array is available
-            if (window.tools && Array.isArray(window.tools)) {
-                loadFinanceTools();
-            } else {
-                // Load tools with a small delay to ensure script.js is loaded
-                setTimeout(() => {
-                    loadFinanceTools();
-                }, 100);
-            }
+            // Load finance tools
+            loadFinanceTools();
         });
 
         /**
@@ -905,23 +898,12 @@
                 return;
             }
             
-            // Get tools data
-            if (!window.tools || !Array.isArray(window.tools)) {
-                console.error("Tools array not available");
-                
-                // Fallback to direct data if tools not loaded from script.js
-                // This is more robust than calling an undefined getToolsData() function
-                const fallbackTools = [
-                    { name: 'Debt-to-Income Ratio Calculator', url: 'finance/debt-ratio.html', tags: ['finance'] },
-                    { name: 'Expense Tracker', url: 'finance/expense-tracker.html', tags: ['finance'] },
-                    { name: 'Debt Ratio Calculator', url: 'finance/debt-ratio.html', tags: ['finance'] }
-                ];
-                processFinanceTools(fallbackTools, financeGrid, paginationContainer);
-                return;
-            }
-            
-            // Process with the tools from window.tools
-            processFinanceTools(window.tools, financeGrid, paginationContainer);
+            // Use direct tools data
+            const financeTools = [
+                { name: 'Debt-to-Income Ratio Calculator', url: 'finance/debt-ratio.html', tags: ['finance'] },
+                { name: 'Expense Tracker', url: 'finance/expense-tracker.html', tags: ['finance'] }
+            ];
+            processFinanceTools(financeTools, financeGrid, paginationContainer);
         }
         
         /**

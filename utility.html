@@ -1477,15 +1477,8 @@
                 });
             }
 
-            // Load utility tools immediately if the tools array is available
-            if (window.tools && Array.isArray(window.tools)) {
-                loadUtilityTools();
-            } else {
-                // Load tools with a small delay to ensure script.js is loaded
-                setTimeout(() => {
-                    loadUtilityTools();
-                }, 100);
-            }
+            // Load utility tools
+            loadUtilityTools();
         });
 
         /**
