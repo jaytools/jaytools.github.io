@@ -1,0 +1,43 @@
+{
+  "name": "taskproper-website",
+  "version": "1.0.0",
+  "description": "Task Proper - Free Online Calculators & Web Tools for Students, Professionals and Daily Use",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "build": "echo 'Static site - no build process needed'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "calculators",
+    "converters",
+    "tools",
+    "utilities",
+    "cgpa",
+    "percentage",
+    "gpa",
+    "health",
+    "finance",
+    "productivity",
+    "static-site"
+  ],
+  "author": "Jay Prajapati",
+  "license": "MIT",
+  "homepage": "https://www.taskproper.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaytools/jaytools.github.io"
+  },
+  "bugs": {
+    "url": "https://github.com/jaytools/jaytools.github.io/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Health Category Landing Page -->
+  <url>
+    <loc>https://www.taskproper.com/health.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Body Frame Calculator -->
+  <url>
+    <loc>https://www.taskproper.com/health/body-frame-inline.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Calorie Deficit Calculator -->
+  <url>
+    <loc>https://www.taskproper.com/health/calorie-deficit.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Calories Burned Walking Calculator -->
+  <url>
+    <loc>https://www.taskproper.com/health/calories-walking.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Food Calories Calculator -->
+  <url>
+    <loc>https://www.taskproper.com/health/food-calories.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- IVF Calculator -->
+  <url>
+    <loc>https://www.taskproper.com/health/ivf-calculator.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Pregnancy Weight Gain Calculator -->
+  <url>
+    <loc>https://www.taskproper.com/health/pregnancy-weight.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Protein Intake Calculator -->
+  <url>
+    <loc>https://www.taskproper.com/health/protein-intake.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

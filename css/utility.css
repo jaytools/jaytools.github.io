@@ -1,0 +1,620 @@
+/* CSS Variables */
+:root {
+    /* Color Variables */
+    --favorite-color: #f1c40f; /* Yellow color for favorite star */
+    --icon-color: #cbd5e1; /* Default icon color */
+    --hover-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --border-radius: 8px;
+    --border-radius-small: 4px;
+    --primary-color: #3498db;
+    --text-primary: #2c3e50;
+    --text-secondary: #64748b;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --border-color: #e2e8f0;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    background: var(--bg-secondary);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    margin: 1rem auto 2rem;
+    max-width: 1200px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.breadcrumb a:hover {
+    color: #2980b9;
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.breadcrumb span:last-child {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.breadcrumb::before {
+    content: "🏠";
+    margin-right: 0.5rem;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+}
+
+.back-to-top i {
+    font-size: 1.2rem;
+}
+
+/* Heading Fixes */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.category-header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), #2980b9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin: 2rem 0 1.5rem;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+/* FAQ Section Improvements */
+.faq-section {
+    margin: 3rem 0;
+}
+
+.faq-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f1f5f9;
+}
+
+.faq-question::after {
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: var(--bg-primary);
+}
+
+.faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Utility Page Specific Styles */
+.utility-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.utility-tool-card {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.utility-tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #2980b9);
+}
+
+.utility-tool-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--hover-box-shadow);
+    transform: translateY(-2px);
+}
+
+.utility-tool-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.utility-tool-card h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.utility-tool-card h3 a:hover {
+    color: var(--primary-color);
+}
+
+.utility-tool-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.utility-tool-card .tool-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Container and Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.category-info {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+}
+
+.category-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.category-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Additional styles for new content sections */
+.tools-list-section {
+    margin: 2rem 0;
+}
+
+.tool-description-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.tool-description-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.tool-description-card:hover {
+    border-color: #3498db;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.tool-description-card h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tool-description-card h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.tool-description-card h3 a:hover {
+    color: #3498db;
+}
+
+.tool-description-card p {
+    margin: 0;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+.faq-section {
+    margin: 2rem 0;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.faq-item p {
+    margin: 0;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+.related-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.category-link-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid #3498db;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.category-link-card:hover {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.category-link-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.category-link-card h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.category-link-card h3 a:hover {
+    color: #3498db;
+}
+
+.category-link-card h3 a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.category-link-card p {
+    margin: 0;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding: 0.75rem 1rem;
+        margin: 0.5rem auto 1.5rem;
+        font-size: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .breadcrumb::before {
+        display: none;
+    }
+    
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .category-header h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 1rem;
+    }
+    
+    .tool-description-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .related-categories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .tool-description-card,
+    .faq-item,
+    .category-link-card {
+        padding: 1rem;
+    }
+    
+    .faq-question {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 1rem;
+    }
+    
+    .category-info .container {
+        padding: 0 1rem;
+    }
+    
+    .category-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .category-info p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .feature-card {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .feature-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrumb {
+        padding: 0.5rem 0.75rem;
+        margin: 0.25rem auto 1rem;
+        font-size: 0.75rem;
+    }
+    
+    .back-to-top {
+        bottom: 0.75rem;
+        right: 0.75rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .category-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        margin: 1rem 0 0.75rem;
+    }
+    
+    .category-info .container {
+        padding: 0 0.75rem;
+    }
+    
+    .category-info h2 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .tool-description-card,
+    .faq-item,
+    .category-link-card {
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+    
+    .faq-question {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0.75rem;
+    }
+    
+    .tool-description-card h3,
+    .faq-item h3,
+    .category-link-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .tool-description-card p,
+    .faq-item p,
+    .category-link-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .feature-card {
+        padding: 0.75rem;
+    }
+    
+    .feature-card i {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 0.95rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .breadcrumb {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.7rem;
+        margin: 0.25rem auto 0.75rem;
+    }
+    
+    .back-to-top {
+        width: 35px;
+        height: 35px;
+        bottom: 0.5rem;
+        right: 0.5rem;
+    }
+    
+    .back-to-top i {
+        font-size: 1rem;
+    }
+    
+    .category-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .faq-question {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .tool-description-card,
+    .faq-item,
+    .category-link-card {
+        padding: 0.6rem;
+    }
+}
