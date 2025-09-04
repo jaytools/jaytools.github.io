@@ -1,7 +1,7 @@
 {
   "name": "Task Proper - Free Online Tools",
   "short_name": "Task Proper",
-  "description": "50+ free online calculators, converters and tools for students, professionals and daily use",
+  "description": "20+ free online calculators, converters and tools for students, professionals and daily use",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
