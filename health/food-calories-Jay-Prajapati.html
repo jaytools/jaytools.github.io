@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Calories in Food - Free Food Calorie Checker | Task Proper</title>
+    <meta name="description" content="Calculate calories in food instantly with our free checker. Get accurate calorie counts for 500+ foods including Indian dishes. Perfect for diet planning and healthy eating.">
+    <meta name="keywords" content="calculate calories in food, how to check calories in food, calories in food list, food calorie calculator, Indian food calories, diet tracker">
+    <meta name="author" content="Jay Prajapati">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calculate Calories in Food - Free Food Calorie Checker">
+    <meta property="og:description" content="Instantly calculate calories in food with our comprehensive database. Perfect for diet planning, weight management, and healthy eating habits.">
+    <meta property="og:image" content="https://www.taskproper.com/images/tools/food-calories-preview.png">
+    <meta property="og:url" content="https://www.taskproper.com/health/food-calories.html">
+    <meta property="og:site_name" content="Task Proper">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculate Calories in Food - Free Food Calorie Checker">
+    <meta name="twitter:description" content="Free tool to calculate calories in food. Get instant results for 500+ foods including Indian cuisine. Perfect for diet tracking and meal planning.">
+    <meta name="twitter:image" content="https://www.taskproper.com/images/tools/food-calories-preview.png">
+
+    <link rel="canonical" href="https://www.taskproper.com/health/food-calories.html">
+
+ 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/food-calories.css">
+
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Calculate Calories in Food - Free Food Calorie Checker",
+      "description": "Free tool to calculate calories in food instantly. Comprehensive database with 500+ foods including Indian cuisine for accurate calorie counting.",
+      "url": "https://www.taskproper.com/health/food-calories.html",
+      "mainEntity": {
+        "@type": "HowTo", 
+        "name": "How to Calculate Calories in Food",
+        "description": "Step-by-step guide to calculate calories in food using our free calorie checker tool",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "instruction": "Type the name of the food item you want to check calories for"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "instruction": "Select the food from our suggestions dropdown"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "instruction": "Enter the weight in grams or quantity"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "instruction": "Set the number of servings you'll consume"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "instruction": "Click 'Calculate Calories' to get instant results"
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.taskproper.com/health/food-calories.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Task Proper",
+        "url": "https://www.taskproper.com"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to measure calories in food at home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To measure calories in food at home, use a kitchen scale to weigh your food in grams, then use our food calorie calculator. Simply enter the food name, weight, and get instant calorie counts. For packaged foods, check nutrition labels, but for fresh ingredients like fruits and vegetables, our tool provides accurate calorie information based on weight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I find a reliable calories in food list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our food calorie checker includes a comprehensive calories in food list with over 500 items including Indian foods like dal, chapati, biryani, and international dishes. You can search any food item and get instant calorie information. The database covers fruits, vegetables, grains, proteins, snacks, and beverages commonly consumed in India and worldwide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to check calories in food accurately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To check calories in food accurately, weigh your food portions using a kitchen scale, search for the exact food item in our database, and enter the precise weight. Our tool calculates calories based on standard nutritional data. For best results, measure ingredients before cooking, as cooking methods can affect calorie density."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the definition of calories in food?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Calories in food represent the amount of energy your body gets from eating that food. Technically, it's the energy needed to raise the temperature of 1 gram of water by 1 degree Celsius. In nutrition, we use kilocalories (kcal) which equals 1000 calories. When you see 'calories' on food labels, it actually means kilocalories - the energy your body uses for basic functions and physical activity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate calories in food for weight management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Calculating calories in food is essential for effective weight management. By tracking your daily calorie intake using our tool, you can create a calorie deficit for weight loss or surplus for weight gain. Combine our food calorie checker with portion control and regular exercise for best results. Many users find that simply being aware of food calories helps them make healthier choices naturally."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+     <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../index.html" class="brand-link">
+                    <h1 class="site-title">Task Proper</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../health/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="../about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                        <a href="../contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a href="../privacy.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="../terms.html" class="nav-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Terms of Service</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../health.html">Health</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Calculate Calories in Food</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        <div class="container main-container">
+            <div class="fc-wrapper">
+                <!-- Tool UI Section -->
+                <div class="card">
+                    <div class="card-header">
+                        <h1><i class="fas fa-calculator"></i> Calculate Calories in Food</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="calculator-interface">
+                            <form id="toolForm" class="mobile-optimized-form">
+                                <div class="form-section">
+                                    <h3 class="section-heading"><i class="fas fa-utensils"></i> Food Information</h3>
+                                    
+                                    <div class="form-group">
+                                        <label for="foodName" class="form-label">Food Name</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-search input-icon"></i>
+                                            <input type="text" id="foodName" name="foodName" placeholder="Start typing food name..." required class="form-input">
+                                            <div id="suggestionsBox" class="suggestions-box"></div>
+                                            <button type="button" id="clearFoodName" class="clear-btn hidden" title="Clear food name" aria-label="Clear food name">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="help-text">Search from our database of common foods and drinks.</div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="foodWeight" class="form-label">Weight/Quantity</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-weight input-icon"></i>
+                                                <input type="number" id="foodWeight" name="foodWeight" placeholder="grams" min="1" max="5000" step="1" required class="form-input">
+                                            </div>
+                                            <div class="help-text">Enter weight in grams or quantity for items sold by piece.</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="servings" class="form-label">Servings</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-utensils input-icon"></i>
+                                                <input type="number" id="servings" name="servings" value="1" min="1" max="20" step="1" required class="form-input">
+                                            </div>
+                                            <div class="help-text">Number of servings you plan to consume.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button type="button" id="calculateBtn" class="btn-calculate">
+                                    <i class="fas fa-calculator"></i> Calculate Calories
+                                </button>
+                            </form>
+                            
+                            <!-- Results Section -->
+                            <div id="resultBox" class="results-section hidden">
+                                <div class="results-header">
+                                    <div class="results-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <h3 class="results-title">Nutritional Information</h3>
+                                </div>
+                                
+                                <div class="results-card">
+                                    <div class="result-item">
+                                        <span class="result-label">Total Calories:</span>
+                                        <span class="result-value highlight-value"><span id="totalCalories">0</span> kcal</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-label">Calories per unit:</span>
+                                        <span class="result-value" id="caloriesPer100gDisplay">-</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="results-details">
+                                    <p id="resultMessage"></p>
+                                </div>
+                                
+                                <div class="action-buttons">
+                                    <button type="button" class="reset-btn" id="resetBtn">
+                                        <i class="fas fa-redo"></i> Calculate Again
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div id="errorMessage" class="error-message"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About the Tool Section -->
+                <section class="fc-about info-section">
+                    <h2>About This Food Calorie Calculator</h2>
+                    <p>Ever wondered how to calculate calories in food without the guesswork? Our free food calorie checker makes it super easy! Just type in any food you're eating, enter the amount, and get instant calorie counts. We've got everything from Indian favorites like dal and chapati to international dishes. It's perfect for anyone trying to eat healthier, manage their weight, or just curious about what they're munching on.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-database feature-icon"></i>
+                            <h3>500+ Foods Database</h3>
+                            <p>Comprehensive calories in food list including Indian cuisine, international dishes, fruits, vegetables, and snacks.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-calculator feature-icon"></i>
+                            <h3>Instant Calculations</h3>
+                            <p>Get precise calorie counts instantly based on actual weight or serving sizes, with support for multiple servings.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt feature-icon"></i>
+                            <h3>Easy to Use</h3>
+                            <p>Simple interface with smart search suggestions makes it effortless to calculate calories in food on any device.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart feature-icon"></i>
+                            <h3>Health-Focused</h3>
+                            <p>Perfect for diet planning, weight management, and building healthier eating habits with accurate nutritional data.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How to Use Section -->
+                <section class="fc-howto info-section">
+                    <h2>How to Calculate Calories in Food - Simple Steps</h2>
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Search for Your Food</h3>
+                                <p>Start typing the food name in the search box. Our smart suggestions will show matching items from our database of 500+ foods including Indian dishes, snacks, and international cuisine.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Select from Suggestions</h3>
+                                <p>Click on the food item from the dropdown list. You'll instantly see the calorie information per unit, making it easy to plan your portions.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Enter Weight or Quantity</h3>
+                                <p>Input the weight in grams (for most foods) or number of pieces (for items like samosas, rotis, or fruits). Use a kitchen scale for best accuracy.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Set Your Servings</h3>
+                                <p>Tell us how many servings you're planning to eat. The default is 1, but you can adjust it based on your meal size.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h3>Get Instant Results</h3>
+                                <p>Click "Calculate Calories" and voila! You'll see the total calories along with a detailed breakdown. Perfect for tracking your daily intake.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SEO Article Section -->
+                <section class="fc-article info-section">
+                    <h2>Why Calculate Calories in Food? Your Guide to Smarter Eating</h2>
+                    <p>Let's be honest - most of us have no clue how many calories we're actually eating! But here's the thing: knowing how to check calories in food can be a total game-changer for your health journey. Whether you're trying to lose weight, gain muscle, or just eat better, understanding the caloric content of your meals puts you in the driver's seat.</p>
+                    
+                    <p>The beauty of calculating calories in food isn't about becoming obsessive (nobody wants that stress!). It's about awareness. When you know that your favorite samosa has around 262 calories, or that a cup of dal gives you 113 calories of protein-packed goodness, you start making smarter choices naturally. You might still enjoy that samosa, but maybe you'll pair it with some veggies instead of extra chutney.</p>
+                    
+                    <p>Our calories in food list includes everything from traditional Indian dishes to international favorites, making it super easy to track what you're eating. The best part? Once you get into the habit of checking food calories, you'll develop an intuitive sense for portion sizes and nutritional balance. It's like having a nutrition coach in your pocket!</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="fc-faq info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">How to measure calories in food at home?</summary>
+                        <div class="faq-answer">
+                            <p>To measure calories in food at home, use a kitchen scale to weigh your food in grams, then use our food calorie calculator. Simply enter the food name, weight, and get instant calorie counts. For packaged foods, check nutrition labels, but for fresh ingredients like fruits and vegetables, our tool provides accurate calorie information based on weight.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">Where can I find a reliable calories in food list?</summary>
+                        <div class="faq-answer">
+                            <p>Our food calorie checker includes a comprehensive calories in food list with over 500 items including Indian foods like dal, chapati, biryani, and international dishes. You can search any food item and get instant calorie information. The database covers fruits, vegetables, grains, proteins, snacks, and beverages commonly consumed in India and worldwide.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">How to check calories in food accurately?</summary>
+                        <div class="faq-answer">
+                            <p>To check calories in food accurately, weigh your food portions using a kitchen scale, search for the exact food item in our database, and enter the precise weight. Our tool calculates calories based on standard nutritional data. For best results, measure ingredients before cooking, as cooking methods can affect calorie density.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">What is the definition of calories in food?</summary>
+                        <div class="faq-answer">
+                            <p>Calories in food represent the amount of energy your body gets from eating that food. Technically, it's the energy needed to raise the temperature of 1 gram of water by 1 degree Celsius. In nutrition, we use kilocalories (kcal) which equals 1000 calories. When you see "calories" on food labels, it actually means kilocalories - the energy your body uses for basic functions and physical activity.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">Can I calculate calories in food for weight management?</summary>
+                        <div class="faq-answer">
+                            <p>Absolutely! Calculating calories in food is essential for effective weight management. By tracking your daily calorie intake using our tool, you can create a calorie deficit for weight loss or surplus for weight gain. Combine our food calorie checker with portion control and regular exercise for best results. Many users find that simply being aware of food calories helps them make healthier choices naturally.</p>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Related Tools Section -->
+                <section class="fc-related info-section">
+                    <h2>Related Health Tools</h2>
+                    <div class="related-tools-grid">
+                        <a href="calorie-deficit.html" class="related-tool-card">
+                            <i class="fas fa-calculator card-icon"></i>
+                            <h3>Calorie Deficit Calculator</h3>
+                            <p>Calculate your daily calorie needs and create a deficit for effective weight loss planning.</p>
+                        </a>
+                        <a href="calories-walking.html" class="related-tool-card">
+                            <i class="fas fa-walking card-icon"></i>
+                            <h3>Calories Burned Walking</h3>
+                            <p>Find out how many calories you burn during your walking sessions based on speed and duration.</p>
+                        </a>
+                        <a href="protein-intake.html" class="related-tool-card">
+                            <i class="fas fa-drumstick-bite card-icon"></i>
+                            <h3>Protein Intake Calculator</h3>
+                            <p>Determine your optimal daily protein requirements for your fitness and health goals.</p>
+                        </a>
+                        <a href="pregnancy-weight.html" class="related-tool-card">
+                            <i class="fas fa-baby card-icon"></i>
+                            <h3>Pregnancy Weight Tracker</h3>
+                            <p>Monitor healthy weight gain during pregnancy with our specialized tracking tool.</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Task Proper by Task Proper. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <script src="../js/sidebar-favorites.js"></script>
+    <script src="js/food-calories.js"></script>
+</body>
+</html>

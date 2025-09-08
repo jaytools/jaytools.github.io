@@ -1,0 +1,560 @@
+// Constants
+const ITEMS_PER_PAGE = 6;
+
+// Tool Data
+const tools = [
+    { 
+        name: 'CGPA to Percentage Calculator',
+        url: 'calculator/cgpa-percentage-inline.html',
+        tags: ['calculator', 'study']
+    },
+    { 
+        name: 'IVF Due Date Calculator',
+        url: 'health/ivf-calculator.html',
+        tags: ['health', 'personal']
+    },
+    { 
+        name: 'Pregnancy Weight Gain Calculator',
+        url: 'health/pregnancy-weight.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Steps to KM Converter',
+        url: 'converter/steps-to-km-inline.html',
+        tags: ['converter', 'health']
+    },
+    { 
+        name: 'Typing Speed Test Paragraph',
+        url: 'study/typing-speed.html',
+        tags: ['study', 'utility']
+    },
+    { 
+        name: 'Calories Burned Walking',
+        url: 'health/calories-walking.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Height Conversion Tool',
+        url: 'converter/height-converter-inline.html',
+        tags: ['converter', 'health']
+    },
+    { 
+        name: 'Calorie Deficit Finder',
+        url: 'health/calorie-deficit.html',
+        tags: ['health', 'calculator']
+    },
+    { 
+        name: 'Body Frame Size Calculator',
+        url: 'health/body-frame-inline.html',
+        tags: ['calculator', 'health']
+    },
+    { 
+        name: 'Exam Marks Percentage Calculator',
+        url: 'calculator/exam-percentage-inline.html',
+        tags: ['calculator', 'study']
+    },
+    { 
+        name: 'Debt to Income Ratio Tool',
+        url: 'finance/debt-ratio.html',
+        tags: ['calculator', 'finance']
+    },
+    { 
+        name: 'Age Difference Calculator',
+        url: 'personal/age-difference-inline.html',
+        tags: ['calculator', 'personal']
+    },
+    { 
+        name: 'DPI Checker',
+        url: 'utility/dpi-checker.html',
+        tags: ['utility', 'design']
+    },
+    { 
+        name: 'Study Planner',
+        url: 'study/study-planner.html',
+        tags: ['planner', 'study']
+    },
+    { 
+        name: 'Marriage Age Calculator',
+        url: 'personal/marriage-age-inline.html',
+        tags: ['calculator', 'personal']
+    },
+    { 
+        name: 'Calories in Food Checker',
+        url: 'health/food-calories.html',
+        tags: ['health', 'calculator']
+    },
+    { 
+        name: 'Pomodoro Calculator',
+        url: 'planner/pomodoro.html',
+        tags: ['utility', 'study']
+    },
+    { 
+        name: 'Daily Expense Tracker',
+        url: 'finance/expense-tracker.html',
+        tags: ['finance', 'personal']
+    },
+    { 
+        name: 'GPA to Percentage Calculator',
+        url: 'calculator/gpa-percentage-inline.html',
+        tags: ['calculator', 'study']
+    },
+    { 
+        name: 'Marriage Biodata',
+        url: 'personal/marriage-biodata-inline.html',
+        tags: ['utility', 'personal']
+    },
+    { 
+        name: 'Invite Generator',
+        url: 'personal/invite-generator-inline.html',
+        tags: ['utility', 'personal']
+    }
+];
+
+// State
+let currentPage = 1;
+let currentTag = 'all';
+let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+// DOM Elements
+const sidebar = document.querySelector('.sidebar');
+const menuToggle = document.querySelector('.menu-toggle');
+const menuClose = document.querySelector('.sidebar-close');
+const overlay = document.querySelector('.overlay');
+const toolsGrid = document.querySelector('.tools-grid');
+const searchInput = document.querySelector('.search-input');
+const favoritesList = document.querySelector('.favorites-container');
+const tagsNav = document.querySelector('.tags-nav');
+
+// Mobile search elements
+const searchToggle = document.querySelector('.search-toggle');
+const mobileSearchContainer = document.querySelector('.mobile-search-container');
+const mobileSearchInput = document.querySelector('.mobile-search-input');
+const mobileSearchClose = document.querySelector('.mobile-search-close');
+const searchResults = document.querySelector('.search-results');
+
+// Event Listeners
+menuToggle?.addEventListener('click', toggleSidebar);
+menuClose?.addEventListener('click', closeSidebar);
+overlay?.addEventListener('click', closeSidebar);
+searchInput?.addEventListener('input', handleSearch);
+
+// Desktop search focus/blur events for tool pages
+searchInput?.addEventListener('focus', function() {
+    // If we're on a tool page and there's a query, show results
+    if (!document.querySelector('.tools-grid') && this.value.trim()) {
+        const query = this.value.toLowerCase().trim();
+        const matchedTools = tools.filter(tool => 
+            tool.name.toLowerCase().includes(query) ||
+            tool.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+        renderSearchResults(matchedTools, query);
+    }
+});
+
+searchInput?.addEventListener('blur', function() {
+    // Give time for click events to register before hiding results
+    setTimeout(() => {
+        const resultsContainer = document.querySelector('.search-results');
+        const desktopResultsContainer = document.querySelector('.desktop-search-results');
+        
+        if (resultsContainer) {
+            resultsContainer.classList.remove('active');
+            resultsContainer.classList.remove('show');
+        }
+        
+        if (desktopResultsContainer) {
+            desktopResultsContainer.classList.remove('active');
+            desktopResultsContainer.classList.remove('show');
+        }
+    }, 200);
+});
+
+// Hide search results when clicking outside (for desktop search on tool pages)
+document.addEventListener('click', function(e) {
+    if (!document.querySelector('.tools-grid')) { // Only on tool pages
+        const searchContainer = document.querySelector('.search-container');
+        const searchWrapper = document.querySelector('.search-wrapper');
+        const desktopResults = document.querySelector('.desktop-search-results');
+        
+        if (desktopResults && !searchWrapper?.contains(e.target)) {
+            desktopResults.classList.remove('show');
+            desktopResults.classList.remove('active');
+        }
+        
+        // Also hide mobile search results if clicking outside
+        if (searchResults && !searchContainer?.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.classList.remove('show');
+            searchResults.classList.remove('active');
+        }
+    }
+});
+
+// Mobile search event listeners
+searchToggle?.addEventListener('click', openMobileSearch);
+mobileSearchClose?.addEventListener('click', closeMobileSearch);
+mobileSearchInput?.addEventListener('input', handleMobileSearch);
+
+// Close mobile search when clicking outside
+mobileSearchContainer?.addEventListener('click', (e) => {
+    if (e.target === mobileSearchContainer) {
+        closeMobileSearch();
+    }
+});
+
+// Functions
+function toggleSidebar() {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+}
+
+function closeSidebar() {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function createToolCard(tool) {
+    const template = document.querySelector('#tool-card-template');
+    const card = template.content.cloneNode(true);
+    
+    const title = card.querySelector('.tool-title');
+    const link = card.querySelector('.tool-link');
+    const favoriteBtn = card.querySelector('.favorite-button');
+    
+    title.textContent = tool.name;
+    link.href = tool.url;
+    favoriteBtn.classList.toggle('active', favorites.includes(tool.name));
+    favoriteBtn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFavorite(tool.name);
+    };
+    
+    return card;
+}
+
+function renderTools(toolsList = tools) {
+    const start = currentTag === 'all' ? (currentPage - 1) * ITEMS_PER_PAGE : 0;
+    const end = currentTag === 'all' ? start + ITEMS_PER_PAGE : toolsList.length;
+    
+    // Sort tools: favorites first, then alphabetically
+    const sortedTools = [...toolsList].sort((a, b) => {
+        const aFav = favorites.includes(a.name);
+        const bFav = favorites.includes(b.name);
+        if (aFav !== bFav) return bFav - aFav;
+        return a.name.localeCompare(b.name);
+    });
+
+    const displayedTools = sortedTools.slice(start, end);
+    
+    toolsGrid.innerHTML = '';
+    displayedTools.forEach(tool => {
+        toolsGrid.appendChild(createToolCard(tool));
+    });
+
+    if (currentTag === 'all') {
+        renderPagination(toolsList.length);
+    } else {
+        document.querySelector('.pagination').style.display = 'none';
+    }
+}
+
+function renderPagination(totalItems) {
+    const pagination = document.querySelector('.pagination');
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+    if (totalPages <= 1) {
+        pagination.style.display = 'none';
+        return;
+    }
+
+    pagination.style.display = 'flex';
+    let html = '';
+
+    if (currentPage > 1) {
+        html += `<button class="pagination-btn" onclick="changePage(${currentPage - 1})">Previous</button>`;
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+        html += `
+            <button class="pagination-btn ${i === currentPage ? 'active' : ''}" 
+                    onclick="changePage(${i})">${i}</button>
+        `;
+    }
+
+    if (currentPage < totalPages) {
+        html += `<button class="pagination-btn" onclick="changePage(${currentPage + 1})">Next</button>`;
+    }
+
+    pagination.innerHTML = html;
+}
+
+function changePage(page) {
+    currentPage = page;
+    renderTools(filterTools());
+    window.scrollTo({ top: toolsGrid.offsetTop - 100, behavior: 'smooth' });
+}
+
+function filterTools() {
+    if (currentTag === 'all') return tools;
+    return tools.filter(tool => tool.tags.includes(currentTag));
+}
+
+function handleTagClick(tag) {
+    currentTag = tag;
+    currentPage = 1;
+    
+    document.querySelectorAll('.tag-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tag === tag);
+    });
+    
+    renderTools(filterTools());
+}
+
+function toggleFavorite(toolName) {
+    const index = favorites.indexOf(toolName);
+    if (index === -1) {
+        favorites.push(toolName);
+    } else {
+        favorites.splice(index, 1);
+    }
+    
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    updateFavorites();
+    renderTools(filterTools());
+}
+
+function updateFavorites() {
+    if (favorites.length === 0) {
+        favoritesList.innerHTML = '<p class="no-favorites">No favorite tools yet.</p>';
+        return;
+    }
+
+    const favTools = tools.filter(tool => favorites.includes(tool.name));
+    favoritesList.innerHTML = `
+        <ul class="favorites-list">
+            ${favTools.map(tool => `
+                <li><a href="${tool.url}">${tool.name}</a></li>
+            `).join('')}
+        </ul>
+    `;
+}
+
+function handleSearch(e) {
+    const query = e.target.value.toLowerCase().trim();
+    
+    // Check if we're on a tool page (no tools-grid element)
+    const toolsGrid = document.querySelector('.tools-grid');
+    
+    if (!toolsGrid) {
+        // We're on a tool page, use search results display
+        if (query.length === 0) {
+            // Hide all search results containers
+            const resultsContainers = document.querySelectorAll('.search-results, .desktop-search-results');
+            resultsContainers.forEach(container => {
+                if (container) {
+                    container.classList.remove('show');
+                    container.classList.remove('active');
+                }
+            });
+            return;
+        }
+        
+        const matchedTools = tools.filter(tool => 
+            tool.name.toLowerCase().includes(query) ||
+            tool.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+        renderSearchResults(matchedTools, query);
+    } else {
+        // We're on the homepage, use normal grid rendering
+        const matchedTools = tools.filter(tool => 
+            tool.name.toLowerCase().includes(query) ||
+            tool.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+        renderTools(matchedTools);
+    }
+}
+
+// Mobile search functions
+function openMobileSearch() {
+    mobileSearchContainer?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // Focus on search input after animation
+    setTimeout(() => {
+        mobileSearchInput?.focus();
+    }, 100);
+}
+
+function closeMobileSearch() {
+    mobileSearchContainer?.classList.remove('active');
+    if (searchResults) {
+        searchResults.classList.remove('show');
+        searchResults.classList.remove('active');
+    }
+    document.body.style.overflow = '';
+    mobileSearchInput.value = '';
+}
+
+function handleMobileSearch(e) {
+    const query = e.target.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+        if (searchResults) {
+            searchResults.classList.remove('show');
+            searchResults.classList.remove('active');
+        }
+        return;
+    }
+
+    const matchedTools = tools.filter(tool => 
+        tool.name.toLowerCase().includes(query) ||
+        tool.tags.some(tag => tag.toLowerCase().includes(query))
+    );
+    
+    renderSearchResults(matchedTools, query);
+}
+
+function renderSearchResults(matchedTools, query) {
+    if (!searchResults && !document.querySelector('.search-wrapper')) return;
+    
+    // For desktop search on tool pages, create or use a desktop search results container
+    let resultsContainer = searchResults;
+    const isToolPage = !document.querySelector('.tools-grid');
+    const isDesktopSearch = window.innerWidth >= 768 && !mobileSearchContainer?.classList.contains('active');
+    
+    if (isToolPage && isDesktopSearch) {
+        // Check if desktop search results container exists
+        let desktopResults = document.querySelector('.desktop-search-results');
+        if (!desktopResults) {
+            // Create desktop search results container
+            desktopResults = document.createElement('div');
+            desktopResults.className = 'search-results desktop-search-results';
+            const searchWrapper = document.querySelector('.search-wrapper');
+            if (searchWrapper) {
+                searchWrapper.appendChild(desktopResults);
+            }
+        }
+        resultsContainer = desktopResults;
+    }
+    
+    if (!resultsContainer) return;
+    
+    if (matchedTools.length === 0) {
+        resultsContainer.innerHTML = `
+            <div class="no-results">
+                <i class="fas fa-search"></i>
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+        `;
+    } else {
+        const resultsHTML = `
+            <div class="search-results-header">
+                <h3>Found ${matchedTools.length} tool${matchedTools.length !== 1 ? 's' : ''}</h3>
+            </div>
+            <ul class="search-results-list">
+                ${matchedTools.map(tool => `
+                    <li class="search-result-item">
+                        <a href="${tool.url}" class="search-result-link">
+                            <h4 class="search-result-title">${highlightSearchTerm(tool.name, query)}</h4>
+                            <p class="search-result-tags">
+                                ${tool.tags.map(tag => `<span class="search-result-tag">${tag}</span>`).join('')}
+                            </p>
+                        </a>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+        resultsContainer.innerHTML = resultsHTML;
+    }
+    
+    // Make sure both classes are added for proper display
+    resultsContainer.classList.add('show');
+    resultsContainer.classList.add('active');
+}
+
+function highlightSearchTerm(text, searchTerm) {
+    if (!searchTerm) return text;
+    
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+}
+
+// Handle escape key to close mobile search
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileSearchContainer?.classList.contains('active')) {
+        closeMobileSearch();
+    }
+});
+
+// Category scroll functionality
+const scrollLeft = document.querySelector('.scroll-left');
+const scrollRight = document.querySelector('.scroll-right');
+const tagsScroll = document.querySelector('.tags-scroll');
+
+scrollLeft?.addEventListener('click', () => {
+    tagsScroll.scrollBy({
+        left: -200,
+        behavior: 'smooth'
+    });
+});
+
+scrollRight?.addEventListener('click', () => {
+    tagsScroll.scrollBy({
+        left: 200,
+        behavior: 'smooth'
+    });
+});
+
+// Hide/show scroll buttons based on scroll position
+const updateScrollButtons = () => {
+    if (!scrollLeft || !scrollRight || !tagsScroll) return;
+    
+    const { scrollLeft: position, scrollWidth, clientWidth } = tagsScroll;
+    
+    scrollLeft.style.opacity = position > 0 ? '1' : '0';
+    scrollRight.style.opacity = position < scrollWidth - clientWidth ? '1' : '0';
+};
+
+tagsScroll?.addEventListener('scroll', updateScrollButtons);
+window.addEventListener('resize', updateScrollButtons);
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    updateFavorites();
+    renderTools();
+
+    // Add click handlers to tag buttons
+    document.querySelectorAll('.tag-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleTagClick(btn.dataset.tag));
+    });
+
+    // Initial update
+    updateScrollButtons();
+    
+    // Verify search functionality is working properly
+    verifySearchFunctionality();
+});
+
+// Function to verify search functionality is working properly
+function verifySearchFunctionality() {
+    // Ensure desktop search results container exists for tool pages
+    if (!document.querySelector('.tools-grid')) { // We're on a tool page
+        const searchWrapper = document.querySelector('.search-wrapper');
+        if (searchWrapper && !document.querySelector('.desktop-search-results')) {
+            const desktopResults = document.createElement('div');
+            desktopResults.className = 'search-results desktop-search-results';
+            searchWrapper.appendChild(desktopResults);
+        }
+    }
+    
+    // Add missing classes to any search results containers if needed
+    const allSearchContainers = document.querySelectorAll('.search-results');
+    allSearchContainers.forEach(container => {
+        if (!container.classList.contains('show') && !container.classList.contains('active')) {
+            // Make sure container is initially hidden
+            container.style.display = 'none';
+        }
+    });
+}

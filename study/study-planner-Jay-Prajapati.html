@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hours Planner - Free Online Study Planner Tool | Task Proper</title>
+    <meta name="description" content="Create personalized study schedules with our free Study Hours Planner. Plan your weekly study routine, set exam dates, manage subjects, and optimize your learning time effectively.">
+    <meta name="keywords" content="study planner, weekly study planner, study planner ideas, study planner ai, exam study planner, online study planner, study planner app free, how to make a study planner, what is study planner">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Task Proper">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Study Hours Planner - Free Online Study Planner Tool | Task Proper">
+    <meta property="og:description" content="Create personalized study schedules with our free Study Hours Planner. Plan your weekly study routine, set exam dates, and optimize your learning time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.taskproper.com/study/study-planner.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.taskproper.com/study/study-planner.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/study-planner.css">
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a study planner and how does it help?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A study planner is a tool that helps students organize their study time effectively by creating structured schedules. It helps improve time management, reduces stress, ensures all subjects get adequate attention, and increases productivity by breaking down study sessions into manageable chunks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I create an effective weekly study planner?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To create an effective weekly study planner: 1) List all your subjects and topics, 2) Determine how many hours you can study daily, 3) Prioritize subjects based on difficulty or exam dates, 4) Include regular breaks (10-15 minutes every hour), 5) Review and adjust your plan weekly based on progress."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the best study planner ideas for students?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Best study planner ideas include: Time-blocking for different subjects, using the Pomodoro technique (25-min study + 5-min break), color-coding subjects, setting daily and weekly goals, including review sessions, planning around your peak energy hours, and leaving buffer time for unexpected tasks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use this study planner for exam preparation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Our exam study planner feature allows you to set your exam date and automatically calculates remaining days. It helps you allocate more time to challenging subjects, create revision schedules, and ensures you cover all topics before your exam with adequate review time."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this online study planner free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our online study planner is completely free to use. You can create unlimited study schedules, download your plans as PDF, and access all features without any cost or registration required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does study planner AI help with scheduling?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our study planner AI analyzes your input (available hours, subjects, priorities, exam dates) and automatically generates optimized study schedules. It suggests the best time allocation for each subject, recommends break intervals, and provides personalized study strategies based on your preferences."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Page Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["WebApplication", "SoftwareApplication"],
+        "name": "Study Hours Planner",
+        "url": "https://www.taskproper.com/study/study-planner.html",
+        "description": "Free online study planner tool that helps students create personalized study schedules, manage subjects, set exam dates, and optimize learning time with AI-powered suggestions.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": "Personalized study schedules; Subject priority management; Exam date tracking; Break time optimization; Weekly study plans; PDF download; Mobile-friendly interface; AI-powered suggestions",
+        "author": {
+            "@type": "Organization",
+            "name": "Task Proper",
+            "url": "https://www.taskproper.com"
+        },
+        "mainEntity": {
+            "@type": "HowTo",
+            "name": "How to Use the Study Hours Planner",
+            "description": "Step-by-step guide to create your personalized study schedule",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "name": "Set Daily Study Hours",
+                    "text": "Enter the total number of hours you can dedicate to studying each day"
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Add Your Subjects",
+                    "text": "List all subjects or topics you need to study with their priority levels"
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Set Exam Date (Optional)",
+                    "text": "Add your exam date to automatically calculate remaining preparation time"
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Configure Break Preferences",
+                    "text": "Choose your preferred break intervals (e.g., 10 minutes every hour)"
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Generate Your Plan",
+                    "text": "Click 'Generate Study Plan' to create your personalized schedule"
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Download or Copy",
+                    "text": "Save your study plan as PDF or copy it for easy access"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Task Proper",
+        "url": "https://taskproper.com",
+        "logo": "https://taskproper.com/img/logo-task-proper.png",
+        "description": "Simple and convenient web tools for students and professionals",
+        "sameAs": [
+            "https://taskproper.com"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "url": "https://taskproper.com/contact.html"
+        }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://taskproper.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Study Tools",
+                "item": "https://taskproper.com/study.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Study Hours Planner",
+                "item": "https://taskproper.com/study/study-planner.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- WebPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Study Hours Planner - Free Online Study Schedule Creator",
+        "description": "Create personalized study schedules with our free online study planner. Manage subjects, set priorities, track exam dates, and optimize your learning time with AI-powered suggestions.",
+        "url": "https://taskproper.com/study/study-planner.html",
+        "inLanguage": "en-US",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Task Proper",
+            "url": "https://taskproper.com"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Study Planning",
+            "description": "Educational tools for time management and academic planning"
+        },
+        "keywords": "study planner, study schedule, exam planner, time management, student tools, academic planning, study timetable",
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-12-01",
+        "author": {
+            "@type": "Organization",
+            "name": "Task Proper"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Task Proper",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://taskproper.com/img/logo-task-proper.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- Tool/Product Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Study Hours Planner",
+        "description": "Free online study planner tool that helps students create personalized study schedules, manage subjects, set exam dates, and optimize learning time with AI-powered suggestions.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Task Proper"
+        },
+        "category": "Educational Software",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "@id": "https://taskproper.com/study/study-planner.html",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://taskproper.com/study/study-planner.html"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Student User"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "reviewBody": "Excellent study planner tool! Helps me organize my study time effectively and the AI suggestions are very helpful."
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../" class="brand-link">
+                    <h1 class="site-title">Task Proper</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../health/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <a href="../" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="../about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                        <a href="../contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a href="../privacy.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="../terms.html" class="nav-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Terms of Service</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1><i class="fas fa-calendar-alt"></i> Study Hours Planner</h1>
+                <p class="tool-subtitle">Create personalized study schedules and optimize your learning time</p>
+            </div>
+
+            <!-- Study Planner Tool -->
+            <div class="planner-card">
+                <div class="planner-form">
+                    <div class="form-grid">
+                        <div class="form-section">
+                            <h3><i class="fas fa-clock"></i> Daily Study Time</h3>
+                            <div class="input-group">
+                                <label for="dailyHours">Hours available per day:</label>
+                                <input type="number" id="dailyHours" min="1" max="24" value="6" placeholder="e.g., 6">
+                                <span class="input-suffix">hours</span>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-graduation-cap"></i> Exam Information (Optional)</h3>
+                            <div class="input-group">
+                                <label for="examDate">Exam date:</label>
+                                <input type="date" id="examDate">
+                                <div class="exam-info">
+                                    <span id="daysRemaining"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section full-width">
+                        <h3><i class="fas fa-book"></i> Subjects & Topics</h3>
+                        <div class="subjects-container">
+                            <div class="subject-input-row">
+                                <input type="text" class="subject-name" placeholder="Subject name (e.g., Mathematics)">
+                                <select class="subject-priority">
+                                    <option value="high">High Priority</option>
+                                    <option value="medium" selected>Medium Priority</option>
+                                    <option value="low">Low Priority</option>
+                                </select>
+                                <button type="button" class="add-subject-btn"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="subjects-list"></div>
+                    </div>
+
+                    <div class="form-section full-width">
+                        <h3><i class="fas fa-coffee"></i> Break Preferences</h3>
+                        <div class="break-options">
+                            <div class="break-option">
+                                <input type="radio" id="break1" name="breakType" value="60-10" checked>
+                                <label for="break1">10 minutes every hour</label>
+                            </div>
+                            <div class="break-option">
+                                <input type="radio" id="break2" name="breakType" value="90-15">
+                                <label for="break2">15 minutes every 1.5 hours</label>
+                            </div>
+                            <div class="break-option">
+                                <input type="radio" id="break3" name="breakType" value="120-20">
+                                <label for="break3">20 minutes every 2 hours</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="generatePlan" class="generate-btn">
+                            <i class="fas fa-magic"></i> Generate Study Plan
+                        </button>
+                        <button type="button" id="resetForm" class="reset-btn">
+                            <i class="fas fa-refresh"></i> Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="results-header">
+                        <h3><i class="fas fa-chart-line"></i> Your Personalized Study Plan</h3>
+                        <div class="plan-actions">
+                            <button type="button" id="downloadPdf" class="action-btn">
+                                <i class="fas fa-download"></i> Download PDF
+                            </button>
+                            <button type="button" id="copyPlan" class="action-btn">
+                                <i class="fas fa-copy"></i> Copy Plan
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="study-summary">
+                        <div class="summary-card">
+                            <h4>Study Overview</h4>
+                            <div id="studySummary"></div>
+                        </div>
+                        <div class="ai-suggestion">
+                            <h4><i class="fas fa-lightbulb"></i> AI Study Strategy</h4>
+                            <div id="aiSuggestion"></div>
+                        </div>
+                    </div>
+
+                    <div class="study-schedule">
+                        <h4>Weekly Study Schedule</h4>
+                        <div class="schedule-table" id="scheduleTable"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Sections -->
+        <div class="info-sections">
+            <!-- About Section -->
+            <section class="info-card">
+                <h2><i class="fas fa-info-circle"></i> About the Study Hours Planner Tool</h2>
+                <p>Our Study Hours Planner is a comprehensive tool designed to help students create effective, personalized study schedules. Whether you're preparing for exams, managing multiple subjects, or trying to establish a consistent study routine, this planner takes the guesswork out of time management.</p>
+                
+                <p>The tool uses intelligent algorithms to distribute your available study time across subjects based on their priority levels, automatically incorporates optimal break intervals, and can even factor in upcoming exam dates to ensure you're fully prepared.</p>
+
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-brain"></i>
+                        <h4>AI-Powered Scheduling</h4>
+                        <p>Smart algorithms optimize your study time allocation</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Mobile Friendly</h4>
+                        <p>Access your study plan anywhere, anytime</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-download"></i>
+                        <h4>Export Options</h4>
+                        <p>Download as PDF or copy to clipboard</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <h4>Exam Integration</h4>
+                        <p>Automatically adjusts schedule based on exam dates</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Use Section -->
+            <section class="info-card">
+                <h2><i class="fas fa-list-ol"></i> Step-by-Step Guide: How to Use the Study Planner</h2>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Set Your Daily Study Hours</h4>
+                            <p>Enter the total number of hours you can realistically dedicate to studying each day. Be honest about your schedule and energy levels.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Add Your Subjects</h4>
+                            <p>List all subjects or topics you need to study. Assign priority levels: High for challenging subjects or upcoming exams, Medium for regular subjects, Low for review topics.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Set Exam Date (Optional)</h4>
+                            <p>If you have an upcoming exam, enter the date. The planner will automatically calculate remaining days and adjust your schedule accordingly.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Choose Break Preferences</h4>
+                            <p>Select your preferred break intervals. Regular breaks are essential for maintaining focus and preventing burnout.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Generate Your Plan</h4>
+                            <p>Click "Generate Study Plan" to create your personalized schedule with AI-powered suggestions and time allocation.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Save and Follow</h4>
+                            <p>Download your plan as PDF or copy it to your notes. Follow the schedule consistently and adjust as needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example Table Section -->
+            <section class="info-card">
+                <h2><i class="fas fa-table"></i> Weekly Study Planner Example</h2>
+                <p>Here's an example of how your study plan might look for a student with 6 hours daily, preparing for multiple subjects:</p>
+                
+                <div class="example-table-container">
+                    <table class="example-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Morning (9-11 AM)</th>
+                                <th>Afternoon (2-4 PM)</th>
+                                <th>Evening (7-9 PM)</th>
+                                <th>Breaks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Monday</strong></td>
+                                <td>Mathematics (High Priority)</td>
+                                <td>Physics (High Priority)</td>
+                                <td>Chemistry (Medium)</td>
+                                <td>10 min every hour</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tuesday</strong></td>
+                                <td>English (Medium Priority)</td>
+                                <td>Mathematics (High Priority)</td>
+                                <td>History (Low Priority)</td>
+                                <td>10 min every hour</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wednesday</strong></td>
+                                <td>Physics (High Priority)</td>
+                                <td>Chemistry (Medium)</td>
+                                <td>Mathematics Review</td>
+                                <td>10 min every hour</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thursday</strong></td>
+                                <td>Mathematics (High Priority)</td>
+                                <td>English (Medium Priority)</td>
+                                <td>Physics Review</td>
+                                <td>10 min every hour</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Friday</strong></td>
+                                <td>Chemistry (Medium)</td>
+                                <td>History (Low Priority)</td>
+                                <td>Weekly Review</td>
+                                <td>10 min every hour</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Saturday</strong></td>
+                                <td>Practice Tests</td>
+                                <td>Weak Areas Focus</td>
+                                <td>Light Review</td>
+                                <td>15 min every hour</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sunday</strong></td>
+                                <td>Weekly Planning</td>
+                                <td>Optional Study</td>
+                                <td>Rest & Recreation</td>
+                                <td>Flexible</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Article Section -->
+            <section class="info-card">
+                <h2><i class="fas fa-graduation-cap"></i> The Power of Study Planning: Transform Your Academic Success</h2>
+                
+                <p>In today's competitive academic environment, effective time management isn't just helpful—it's essential. A well-structured study planner can be the difference between cramming the night before an exam and confidently walking into your test knowing you're fully prepared.</p>
+
+                <h3>Why Every Student Needs a Study Planner</h3>
+                <p>Research consistently shows that students who use structured study plans perform significantly better than those who study randomly. A study planner helps you visualize your goals, track your progress, and maintain consistency in your learning routine. It transforms overwhelming academic workloads into manageable, daily tasks.</p>
+
+                <p>The psychological benefits are equally important. When you have a clear plan, you reduce anxiety and increase motivation. You know exactly what to study and when, eliminating the decision fatigue that often leads to procrastination.</p>
+
+                <h3>Key Benefits of Using a Digital Study Planner</h3>
+                <ul>
+                    <li><strong>Improved Time Management:</strong> Allocate study time based on subject difficulty and importance</li>
+                    <li><strong>Better Retention:</strong> Spaced repetition and regular review sessions enhance memory</li>
+                    <li><strong>Reduced Stress:</strong> Clear schedules eliminate last-minute panic and cramming</li>
+                    <li><strong>Balanced Learning:</strong> Ensure all subjects receive appropriate attention</li>
+                    <li><strong>Progress Tracking:</strong> Monitor your advancement and adjust strategies as needed</li>
+                </ul>
+
+                <h3>Study Planner Best Practices</h3>
+                <p>To maximize the effectiveness of your study planner, consider these proven strategies:</p>
+                
+                <p><strong>Start with realistic goals.</strong> Don't overestimate your available time or underestimate the effort required for each subject. Be honest about your energy levels throughout the day and schedule challenging subjects during your peak hours.</p>
+
+                <p><strong>Include buffer time.</strong> Life happens, and unexpected events can disrupt your schedule. Build in 15-20% extra time for each study session to accommodate interruptions or topics that take longer than expected.</p>
+
+                <p><strong>Regular review is crucial.</strong> Your study planner should include dedicated time for reviewing previously covered material. The forgetting curve shows that we lose information rapidly without reinforcement, so regular review sessions are essential for long-term retention.</p>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="info-card">
+                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What is a study planner and how does it help?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>A study planner is a tool that helps students organize their study time effectively by creating structured schedules. It helps improve time management, reduces stress, ensures all subjects get adequate attention, and increases productivity by breaking down study sessions into manageable chunks.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How do I create an effective weekly study planner?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To create an effective weekly study planner: 1) List all your subjects and topics, 2) Determine how many hours you can study daily, 3) Prioritize subjects based on difficulty or exam dates, 4) Include regular breaks (10-15 minutes every hour), 5) Review and adjust your plan weekly based on progress.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What are the best study planner ideas for students?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Best study planner ideas include: Time-blocking for different subjects, using the Pomodoro technique (25-min study + 5-min break), color-coding subjects, setting daily and weekly goals, including review sessions, planning around your peak energy hours, and leaving buffer time for unexpected tasks.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I use this study planner for exam preparation?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Our exam study planner feature allows you to set your exam date and automatically calculates remaining days. It helps you allocate more time to challenging subjects, create revision schedules, and ensures you cover all topics before your exam with adequate review time.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Is this online study planner free to use?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, our online study planner is completely free to use. You can create unlimited study schedules, download your plans as PDF, and access all features without any cost or registration required.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How does study planner AI help with scheduling?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our study planner AI analyzes your input (available hours, subjects, priorities, exam dates) and automatically generates optimized study schedules. It suggests the best time allocation for each subject, recommends break intervals, and provides personalized study strategies based on your preferences.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How often should I update my study planner?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Review and update your study planner weekly. This allows you to assess your progress, adjust time allocations based on your performance, accommodate new assignments or exams, and ensure your schedule remains realistic and achievable.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What makes a study planner app free and effective?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>An effective free study planner app should offer personalized scheduling, subject prioritization, break management, progress tracking, and export options. It should be user-friendly, mobile-responsive, and provide intelligent suggestions without requiring payment or complex registration processes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Internal Links Section -->
+            <section class="info-card">
+                <h2><i class="fas fa-link"></i> Related Study Tools</h2>
+                <p>Enhance your academic success with these complementary tools:</p>
+                
+                <div class="related-tools-grid">
+                    <div class="tool-link-card">
+                        <i class="fas fa-calculator"></i>
+                        <h4><a href="../calculator/gpa-percentage-inline.html">GPA to Percentage Calculator</a></h4>
+                        <p>Convert your GPA to percentage for applications and academic records.</p>
+                    </div>
+                    
+                    <div class="tool-link-card">
+                        <i class="fas fa-clock"></i>
+                        <h4><a href="../planner/pomodoro.html">Pomodoro Timer</a></h4>
+                        <p>Use the proven Pomodoro technique to maximize your study sessions.</p>
+                    </div>
+                    
+                    <div class="tool-link-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4><a href="../calculator/exam-percentage-inline.html">Exam Marks Calculator</a></h4>
+                        <p>Calculate your exam percentages and track academic performance.</p>
+                    </div>
+                    
+                    <div class="tool-link-card">
+                        <i class="fas fa-keyboard"></i>
+                        <h4><a href="typing-speed.html">Typing Speed Test</a></h4>
+                        <p>Improve your typing speed for faster note-taking and assignments.</p>
+                    </div>
+                    
+                    <div class="tool-link-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4><a href="../planner/goal-planner.html">Goal Planner</a></h4>
+                        <p>Set and track your academic and personal goals effectively.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../">Home</a></li>
+                            <li><a href="../../about.html">About</a></li>
+                            <li><a href="../../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../../terms.html">Terms of Use</a></li>
+                            <li><a href="../../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Task Proper by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="../js/sidebar-favorites.js"></script>
+    <script src="js/study-planner.js"></script>
+    <script>
+        // Initialize UI elements after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check that key elements exist
+            console.log("Page loaded, checking key elements");
+            console.log("Theme toggle:", !!document.getElementById('themeToggle'));
+            console.log("Calculate button:", !!document.getElementById('calculateBtn'));
+            console.log("History button:", !!document.getElementById('showHistoryBtn'));
+        });
+    </script>
+</body>
+</html>

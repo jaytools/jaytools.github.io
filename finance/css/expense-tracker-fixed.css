@@ -1,0 +1,142 @@
+/* =========================
+   Daily Expense Tracker CSS
+   Professional & Attractive
+============================ */
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary-color: #64748b;
+  --accent-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #0ea5e9;
+  --text-color: #1f2937;
+  --light-text-color: #6b7280;
+  --border-color: #d1d5db;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --light-bg: #f1f5f9;
+  --shadow-color: rgba(0, 0, 0, 0.06);
+
+  --dark-background-color: #1e293b;
+  --dark-card-background: #111827;
+  --dark-text-color: #f3f4f6;
+  --dark-border-color: #374151;
+  --dark-shadow-color: rgba(255, 255, 255, 0.05);
+
+  --radius: 12px;
+  --transition: 0.3s ease;
+  --spacing-xs: 0.3rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  --dark-primary-color: #000000;
+  --dark-light-text-color: #ffffff;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+}
+
+/* Fix for inline styles - Expense Tracker Specific */
+.expense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.expense-header h3 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.expense-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.expense-btn-small {
+    width: auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+.empty-state-icon {
+    font-size: 2rem;
+    color: var(--light-text-color);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.section-description {
+    color: var(--light-text-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.pro-tip-box {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%);
+    border: 1px solid #c8e6c9;
+    border-radius: var(--radius);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    position: relative;
+}
+
+.pro-tip-emoji {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    font-size: 1.2rem;
+}
+
+.pro-tip-text {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-left: var(--spacing-xl);
+}
+
+.pro-tip-strong {
+    color: var(--accent-color);
+}
+
+.benefits-box {
+    background: var(--light-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+    margin: var(--spacing-lg) 0;
+}
+
+.benefits-list {
+    margin: 0;
+    padding-left: var(--spacing-lg);
+    color: var(--light-text-color);
+}
+
+.benefits-item {
+    margin-bottom: var(--spacing-sm);
+}
+
+.tools-description {
+    color: var(--light-text-color);
+    margin-bottom: var(--spacing-lg);
+}

@@ -1,0 +1,1547 @@
+<!-- Sample Tool page for inline CSS and JS Tools-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA to Percentage Calculator | Convert GPA to Percentage Instantly</title>
+    <meta name="description" content="Free GPA to percentage calculator for students. Convert your GPA to percentage quickly for SSC, college admissions, and academic requirements. Easy and accurate!">
+    <meta name="keywords" content="gpa to percentage calculator, convert gpa to percentage, ssc gpa to percentage calculator, gpa percentage converter, college gpa to percentage">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Task Proper">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="GPA to Percentage Calculator | Convert GPA to Percentage Instantly">
+    <meta property="og:description" content="Free GPA to percentage calculator for students. Convert your GPA to percentage quickly for SSC, college admissions, and academic requirements.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taskproper.com/calculator/gpa-percentage-inline.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://taskproper.com/calculator/gpa-percentage-inline.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "GPA to Percentage Calculator",
+        "url": "https://taskproper.com/calculator/gpa-percentage-inline.html",
+        "description": "Free online GPA to percentage calculator that helps students convert their Grade Point Average to percentage format. Perfect for SSC boards, college applications, and academic requirements.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "keywords": ["gpa to percentage calculator", "convert gpa to percentage", "ssc gpa calculator", "grade point average converter"],
+        "creator": {
+            "@type": "Organization",
+            "name": "JayTools",
+            "url": "https://taskproper.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": "Basic arithmetic operations; Simple and intuitive interface; Mobile-friendly responsive design; Real-time input validation; Error handling",
+        "screenshot": "https://taskproper.com/img/tools/sample-tool-screenshot.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Jay Prajapati",
+            "url": "https://taskproper.com"
+        },
+        "mainEntity": {
+            "@type": "HowTo",
+            "name": "How to Use the Sample Tool Calculator",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your first value in the input field"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Enter your second value in the second input field"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Select the operation you want to perform"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Click 'Calculate Result' to see the answer"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Tool Specific Styles -->
+    <style>
+        /* Base mobile-first approach */
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Tool Container Styles */
+        .tool-container {
+            max-width: 800px;
+            margin: 1rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tool-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e1e8ed;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: #fafbfc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .calculate-btn {
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .calculate-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .calculate-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .result-section {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
+            border: 2px solid #27ae60;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            display: none;
+            text-align: center;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            box-sizing: border-box;
+        }
+
+        .result-section.show {
+            display: block;
+            max-height: 300px;
+            opacity: 1;
+            padding: 1.5rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .result-description {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.5);
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .reset-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .reset-btn:hover {
+            background: #c0392b;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .info-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .info-section h2 i {
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .info-section ul {
+            color: #666;
+            padding-left: 2rem;
+        }
+
+        .info-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Conversion Table Styles */
+        .conversion-table {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .conversion-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .conversion-table th,
+        .conversion-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .conversion-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .conversion-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* FAQ Styles */
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .faq-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Related Tools Styles */
+        .related-tools {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tool-link {
+            padding: 1rem;
+            background: white;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tool-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .tool-link h4 {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .tool-link h4 a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .tool-link h4 a:hover {
+            text-decoration: underline;
+        }
+
+        .tool-link p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Error styles */
+        .error {
+            border-color: #e74c3c !important;
+            background-color: #fdf2f2 !important;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 0 0.75rem;
+                margin: 0.5rem auto;
+            }
+
+            .tool-header {
+                padding: 1.25rem 1rem;
+                margin-bottom: 1rem;
+                border-radius: 8px;
+            }
+
+            .tool-header h1 {
+                font-size: 1.75rem;
+                line-height: 1.2;
+                margin-bottom: 0.75rem;
+            }
+
+            .tool-card {
+                padding: 1.25rem;
+                margin-bottom: 1.25rem;
+                border-radius: 8px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+
+            .form-group input,
+            .form-group select {
+                padding: 1rem;
+                font-size: 1.1rem;
+                border-radius: 6px;
+                min-height: 48px; /* Better touch targets */
+            }
+
+            .form-group label {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+                font-weight: 600;
+            }
+
+            .calculate-btn {
+                padding: 1.125rem 1.5rem;
+                font-size: 1.1rem;
+                border-radius: 6px;
+                min-height: 52px;
+            }
+
+            .result-section {
+                padding: 1.25rem;
+                margin-top: 1.25rem;
+                border-radius: 6px;
+            }
+
+            .result-value {
+                font-size: 2rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .conversion-table {
+                overflow-x: auto;
+            }
+
+            .conversion-table table {
+                min-width: 300px;
+                font-size: 0.9rem;
+            }
+
+            .conversion-table th,
+            .conversion-table td {
+                padding: 0.5rem 0.75rem;
+                white-space: nowrap;
+            }
+
+            .faq-item {
+                padding: 1rem 0.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .faq-item h3 {
+                font-size: 1rem;
+                line-height: 1.3;
+                margin-bottom: 0.75rem;
+            }
+
+            .info-section {
+                padding: 1rem 0.75rem;
+            }
+
+            .info-section h2 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+                line-height: 1.4;
+                display: flex;
+                align-items: flex-start;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+            }
+
+            .info-section h2 i {
+                margin-top: 0.1rem;
+                flex-shrink: 0;
+            }
+
+            .related-tools {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-link {
+                padding: 1rem;
+            }
+        }
+
+        /* Extra small devices (phones in portrait) */
+        @media (max-width: 480px) {
+            .tool-container {
+                padding: 0 0.5rem;
+                margin: 0.25rem auto;
+            }
+
+            .tool-header {
+                padding: 1rem 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .tool-header h1 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+
+            .tool-card {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .form-group input,
+            .form-group select {
+                padding: 0.875rem;
+                font-size: 1rem;
+            }
+
+            .calculate-btn {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .conversion-table th,
+            .conversion-table td {
+                padding: 0.4rem 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .info-section {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .info-section h2 {
+                font-size: 1.1rem;
+                line-height: 1.3;
+                display: flex;
+                align-items: flex-start;
+                gap: 0.4rem;
+                flex-wrap: wrap;
+            }
+
+            .info-section h2 i {
+                margin-top: 0.05rem;
+                font-size: 0.9rem;
+            }
+
+            .faq-item {
+                padding: 0.875rem;
+            }
+        }
+
+        /* Very small devices */
+        @media (max-width: 360px) {
+            .tool-header h1 {
+                font-size: 1.4rem;
+            }
+
+            .tool-card {
+                padding: 0.875rem;
+            }
+
+            .form-group input,
+            .form-group select {
+                padding: 0.75rem;
+                font-size: 0.95rem;
+            }
+
+            .calculate-btn {
+                padding: 0.875rem;
+                font-size: 0.95rem;
+            }
+
+            .info-section h2 {
+                font-size: 1rem;
+                line-height: 1.2;
+                display: flex;
+                align-items: flex-start;
+                gap: 0.3rem;
+                flex-wrap: wrap;
+            }
+
+            .info-section h2 i {
+                margin-top: 0.05rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (pointer: coarse) {
+            .form-group input,
+            .form-group select,
+            .calculate-btn {
+                min-height: 48px;
+            }
+
+            .calculate-btn:active {
+                transform: translateY(0);
+                background: #1f5f8b;
+            }
+        }
+
+        /* Ultra small screens */
+        @media (max-width: 320px) {
+            .tool-header p {
+                font-size: 1.1rem;
+            }
+
+            .tool-card {
+                padding: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .result-value {
+                font-size: 2rem;
+            }
+
+            .info-section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Additional Mobile Performance & UX Enhancements */
+        
+        /* Prevent zoom on form inputs on iOS */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            .form-group input,
+            .form-group select {
+                font-size: 16px;
+            }
+        }
+
+        /* Improve tap targets for accessibility */
+        .faq-item h3 {
+            cursor: pointer;
+            padding: 0.5rem 0;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .faq-item h3:hover {
+            color: #667eea;
+        }
+
+        /* Better focus states for keyboard navigation */
+        .form-group input:focus,
+        .form-group select:focus,
+        .calculate-btn:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* Smooth scrolling for better mobile experience */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading state for calculate button */
+        .calculate-btn.loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .calculate-btn.loading::after {
+            content: "";
+            margin-left: 0.5rem;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Improve table responsiveness */
+        .conversion-table {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .conversion-table::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .conversion-table::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .conversion-table::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        .conversion-table::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Breadcrumb Navigation Styles */
+        .breadcrumb-nav {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 0.75rem 0;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: "›";
+            margin-left: 0.5rem;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .breadcrumb-item a {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #667eea;
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-item a:hover {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .breadcrumb-item.active {
+            color: #333;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-item i {
+            font-size: 0.8rem;
+        }
+
+        /* Mobile breadcrumb adjustments */
+        @media (max-width: 768px) {
+            .breadcrumb-nav {
+                padding: 0.5rem 0;
+                margin-bottom: 0.75rem;
+            }
+
+            .breadcrumb {
+                gap: 0.25rem;
+            }
+
+            .breadcrumb-item a,
+            .breadcrumb-item.active {
+                font-size: 0.85rem;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .breadcrumb-item span {
+                display: none;
+            }
+
+            .breadcrumb-item:last-child span {
+                display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../index.html" class="brand-link">
+                    <h1 class="site-title">Task Proper</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" id="search-input" name="search-input" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" id="mobile-search-input" name="mobile-search-input" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../health/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="../about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                        <a href="../contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a href="../privacy.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="../terms.html" class="nav-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Terms of Service</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <div class="tool-container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="../calculator.html">
+                            <i class="fas fa-calculator"></i>
+                            <span>Calculators</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <i class="fas fa-percentage"></i>
+                        <span>GPA to Percentage Calculator</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Tool Header -->
+            <div class="tool-header">
+                <h1>GPA to Percentage Calculator</h1>
+            </div>
+
+            <!-- Tool Card -->
+            <div class="tool-card">
+                <form id="gpaForm">
+                    <!-- Input Section -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gpaInput">Your GPA</label>
+                            <input type="number" id="gpaInput" name="gpaInput" placeholder="Enter your GPA (e.g., 3.75)" step="0.01" min="0" max="4" required>
+                            <div class="error-message" id="gpaInputError">Please enter a valid GPA between 0 and 4.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="scaleSelect">GPA Scale</label>
+                            <select id="scaleSelect" name="scaleSelect" required>
+                                <option value="4">4.0 Scale (Most Common)</option>
+                                <option value="5">5.0 Scale</option>
+                                <option value="10">10.0 Scale</option>
+                            </select>
+                            <div class="error-message" id="scaleSelectError">Please select your GPA scale.</div>
+                        </div>
+                    </div>
+                    <!-- Calculate Button -->
+                    <button type="submit" class="calculate-btn" id="calculateBtn">
+                        <i class="fas fa-calculator"></i>
+                        Convert to Percentage
+                    </button>
+                    
+                    <!-- Result Section -->
+                    <div class="result-section" id="resultSection">
+                        <div class="result-title">
+                            <i class="fas fa-check-circle"></i>
+                            Calculation Result
+                        </div>
+                        <div class="result-value" id="resultValue">0</div>
+                        <div class="result-description" id="resultDescription">
+                            Your calculation result will appear here
+                        </div>
+                        <button type="button" class="reset-btn" onclick="resetCalculator()">
+                            <i class="fas fa-redo"></i>
+                            Calculate Again
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Information Section -->
+            <!-- About the Tool -->
+            <div class="info-section">
+                <h2><i class="fas fa-info-circle"></i> About This GPA to Percentage Calculator</h2>
+                <p>Ever been confused about converting your GPA to percentage? I totally get it! Whether you're filling out college applications or just want to understand what your 3.2 GPA actually means in percentage terms, this calculator is here to help. It's super straightforward - just punch in your GPA, pick your scale, and boom! You'll get your percentage instantly. I built this especially for students dealing with different grading systems, SSC boards, and those tricky admission forms that ask for percentages when all you have is a GPA.</p>
+            </div>
+
+            <!-- How to Use -->
+            <div class="info-section">
+                <h2><i class="fas fa-list-ol"></i> How to Use This Calculator (It's Really Easy!)</h2>
+                <ol>
+                    <li><strong>Put in your GPA:</strong> Just type whatever GPA you have - could be 3.75, 2.8, or any number really.</li>
+                    <li><strong>Pick your scale:</strong> Most people use 4.0, but some schools do 5.0 or even 10.0. Just choose what matches your transcript.</li>
+                    <li><strong>Hit that button:</strong> Click "Convert to Percentage" and watch the magic happen!</li>
+                    <li><strong>See your results:</strong> Your percentage will pop up along with what grade that means.</li>
+                    <li><strong>Try again if needed:</strong> Want to check different GPAs? Go ahead and calculate as many as you want!</li>
+                </ol>
+            </div>
+
+            <!-- Conversion Table -->
+            <div class="info-section">
+                <h2><i class="fas fa-table"></i> Quick Reference: GPA to Percentage</h2>
+                <p>Need a quick lookup? Here are some common GPA conversions using the standard 4.0 scale. Super handy when you just want to eyeball where you stand!</p>
+                
+                <div class="conversion-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>GPA (4.0 Scale)</th>
+                                <th>Percentage</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>4.0</td><td>100%</td><td>A+</td></tr>
+                            <tr><td>3.9</td><td>97.5%</td><td>A+</td></tr>
+                            <tr><td>3.7</td><td>92.5%</td><td>A</td></tr>
+                            <tr><td>3.5</td><td>87.5%</td><td>B+</td></tr>
+                            <tr><td>3.3</td><td>82.5%</td><td>B+</td></tr>
+                            <tr><td>3.0</td><td>75%</td><td>B</td></tr>
+                            <tr><td>2.7</td><td>67.5%</td><td>B-</td></tr>
+                            <tr><td>2.5</td><td>62.5%</td><td>C+</td></tr>
+                            <tr><td>2.0</td><td>50%</td><td>C</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FAQs -->
+            <div class="info-section">
+                <h2><i class="fas fa-question-circle"></i> Questions You Might Have</h2>
+                
+                <div class="faq-item">
+                    <h3>How do I figure out my percentage for SSC boards?</h3>
+                    <p>Good question! Most SSC schools work with either a 4.0 or 10.0 scale. Just pop your GPA into the calculator and pick the right scale. If you're on a 4.0 scale, your GPA gets multiplied by 25 to get the percentage. On a 10.0 scale? Just multiply by 10. Pretty simple once you know the trick!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's the actual math behind this conversion?</h3>
+                    <p>Nothing too fancy! It's just: Percentage = (Your GPA ÷ Max possible GPA) × 100. So if you have a 3.5 on a 4.0 scale, that's (3.5 ÷ 4) × 100 = 87.5%. The calculator does this math instantly so you don't have to!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Will every university accept this percentage conversion?</h3>
+                    <p>Here's the thing - while this gives you the standard conversion, some universities have their own special formulas. For anything official like applications or scholarships, I'd double-check with the specific school. Better safe than sorry, right?</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I go backwards - percentage to GPA?</h3>
+                    <p>This calculator only does GPA to percentage, but going backwards is easy! Just divide your percentage by 25 (for 4.0 scale) or by 10 (for 10.0 scale). Maybe I'll add a reverse calculator later if people want it!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Which scale should I pick for Indian schools?</h3>
+                    <p>Great question! CBSE usually goes with the 10.0 scale, while lots of private colleges stick to 4.0. When in doubt, check your transcript or just ask someone at your school. They'll know for sure!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do I have to pay for this or sign up?</h3>
+                    <p>Nope, not a penny! And no annoying sign-ups either. Use it as much as you want, whenever you want. I made this to help students out, not to make money off you!</p>
+                </div>
+            </div>
+
+            <!-- Article Section -->
+            <div class="info-section">
+                <h2><i class="fas fa-graduation-cap"></i> Why You Need to Know About GPA to Percentage Conversion</h2>
+                <p>Let me tell you why this stuff actually matters. If you're like most students, you've probably hit that moment where a form asks for your percentage but all you have is a GPA. It's frustrating, right? This happens all the time - college applications, job applications, scholarship forms. They all seem to want different formats!</p>
+                
+                <p>Here's the deal: colleges love using GPA because it's clean and standardized. But high schools? They're still big on percentages. And if you're in India dealing with SSC boards, you'll definitely run into percentage requirements. That's where knowing how to convert becomes super helpful.</p>
+                
+                <p>The tricky part is that not everyone uses the same scale. Americans mostly stick to 4.0, some fancy schools do 5.0 for advanced classes, and in India you'll see 10.0 scales everywhere (thanks, CBSE!). The good news? The math stays the same - it's just division and multiplication.</p>
+                
+                <p>One thing I always tell students: while this calculator gives you the standard conversion, double-check with your specific school for anything official. Some places have their own quirky rules or rounding methods. Better to ask and be sure than to guess and be wrong on something important!</p>
+            </div>
+
+            <!-- Internal Links -->
+            <div class="info-section">
+                <h2><i class="fas fa-link"></i> Other Tools You Might Like</h2>
+                <p>Since you're here, you might find these other calculators useful too:</p>
+                
+                <div class="related-tools">
+                    <div class="tool-link">
+                        <h4><a href="exam-percentage-inline.html">Exam Marks Percentage Calculator</a></h4>
+                        <p>Got raw exam marks and need the percentage? This tool does the math for you instantly.</p>
+                    </div>
+                    
+                    <div class="tool-link">
+                        <h4><a href="cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></h4>
+                        <p>Convert your cumulative GPA to percentage - super handy for job applications and university transfers.</p>
+                    </div>
+                    
+                    <div class="tool-link">
+                        <h4><a href="../study/study-planner.html">Study Planner Tool</a></h4>
+                        <p>Need help organizing your study time? This planner makes it easy to stay on track with your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Schema -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How do I figure out my percentage for SSC boards?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Most SSC schools work with either a 4.0 or 10.0 scale. Just enter your GPA in the calculator and pick the right scale. If you're on a 4.0 scale, your GPA gets multiplied by 25 to get the percentage. On a 10.0 scale, just multiply by 10."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What's the actual math behind this conversion?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "It's simple: Percentage = (Your GPA ÷ Max possible GPA) × 100. So if you have a 3.5 on a 4.0 scale, that's (3.5 ÷ 4) × 100 = 87.5%. The calculator does this math instantly for you."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will every university accept this percentage conversion?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "While this gives you the standard conversion, some universities have their own special formulas. For anything official like applications or scholarships, double-check with the specific school to be sure."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I go backwards - percentage to GPA?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "This calculator only does GPA to percentage, but going backwards is easy! Just divide your percentage by 25 (for 4.0 scale) or by 10 (for 10.0 scale)."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Which scale should I pick for Indian schools?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "CBSE usually goes with the 10.0 scale, while lots of private colleges stick to 4.0. When in doubt, check your transcript or ask someone at your school."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I have to pay for this or sign up?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Nope, not a penny! And no annoying sign-ups either. Use it as much as you want, whenever you want. It's completely free to help students out."
+                    }
+                }
+            ]
+        }
+        </script>
+
+        <!-- Additional Schema for WebApplication -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "GPA to Percentage Calculator",
+            "description": "Free online tool to convert Grade Point Average (GPA) to percentage format. Supports 4.0, 5.0, and 10.0 GPA scales for accurate academic conversion.",
+            "url": "https://taskproper.com/calculator/gpa-percentage-inline.html",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web Browser",
+            "keywords": ["gpa to percentage calculator", "convert gpa to percentage", "ssc gpa calculator", "gpa percentage converter"],
+            "creator": {
+                "@type": "Organization",
+                "name": "JayTools",
+                "url": "https://taskproper.com"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "featureList": [
+                "Convert GPA to percentage on multiple scales",
+                "Support for 4.0, 5.0, and 10.0 GPA systems",
+                "Instant accurate calculations",
+                "Mobile-friendly responsive design",
+                "Free unlimited usage",
+                "No registration required"
+            ]
+        }
+        </script>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Task Proper by Task Proper. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="../js/sidebar-favorites.js"></script>
+    <script>
+        // Sidebar Toggle Functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar && overlay) {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar) sidebar.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.sidebar-close');
+            const overlay = document.querySelector('.overlay');
+
+            if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+            if (menuClose) menuClose.addEventListener('click', closeSidebar);
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
+    <script>
+        // GPA to Percentage Calculator Functionality
+        const gpaForm = document.getElementById('gpaForm');
+        const resultSection = document.getElementById('resultSection');
+        const resultValue = document.getElementById('resultValue');
+        const resultDescription = document.getElementById('resultDescription');
+
+        // GPA validation
+        function validateGPA(input, errorElement) {
+            const value = parseFloat(input.value);
+            const scale = parseFloat(document.getElementById('scaleSelect').value);
+            
+            if (!input.value.trim() || isNaN(value)) {
+                input.classList.add('error');
+                errorElement.textContent = 'Please enter a valid GPA.';
+                errorElement.style.display = 'block';
+                return false;
+            }
+            
+            if (value < 0 || value > scale) {
+                input.classList.add('error');
+                errorElement.textContent = `GPA must be between 0 and ${scale}.`;
+                errorElement.style.display = 'block';
+                return false;
+            }
+            
+            input.classList.remove('error');
+            errorElement.style.display = 'none';
+            return true;
+        }
+
+        function validateScale(select, errorElement) {
+            if (!select.value) {
+                select.classList.add('error');
+                errorElement.textContent = 'Please select your GPA scale.';
+                errorElement.style.display = 'block';
+                return false;
+            }
+            
+            select.classList.remove('error');
+            errorElement.style.display = 'none';
+            return true;
+        }
+
+        // Convert GPA to Percentage
+        function convertGPAToPercentage() {
+            const gpaInput = document.getElementById('gpaInput');
+            const scaleSelect = document.getElementById('scaleSelect');
+            const gpaError = document.getElementById('gpaInputError');
+            const scaleError = document.getElementById('scaleSelectError');
+
+            // Validation
+            let isValid = true;
+            isValid &= validateScale(scaleSelect, scaleError);
+            isValid &= validateGPA(gpaInput, gpaError);
+
+            if (!isValid) return;
+
+            const gpa = parseFloat(gpaInput.value);
+            const scale = parseFloat(scaleSelect.value);
+
+            // Convert GPA to percentage
+            const percentage = (gpa / scale) * 100;
+
+            // Determine grade based on percentage
+            let grade = '';
+            if (percentage >= 97) grade = 'A+';
+            else if (percentage >= 93) grade = 'A';
+            else if (percentage >= 90) grade = 'A-';
+            else if (percentage >= 87) grade = 'B+';
+            else if (percentage >= 83) grade = 'B';
+            else if (percentage >= 80) grade = 'B-';
+            else if (percentage >= 77) grade = 'C+';
+            else if (percentage >= 73) grade = 'C';
+            else if (percentage >= 70) grade = 'C-';
+            else if (percentage >= 67) grade = 'D+';
+            else if (percentage >= 65) grade = 'D';
+            else grade = 'F';
+
+            // Performance message
+            let performanceMsg = '';
+            if (percentage >= 90) performanceMsg = 'Excellent performance! 🌟';
+            else if (percentage >= 80) performanceMsg = 'Very good work! 👍';
+            else if (percentage >= 70) performanceMsg = 'Good job! 😊';
+            else if (percentage >= 60) performanceMsg = 'Average performance. Keep improving! 📚';
+            else performanceMsg = 'Needs improvement. You can do better! 💪';
+
+            // Display result
+            resultValue.textContent = `${percentage.toFixed(2)}%`;
+            resultDescription.innerHTML = `
+                <strong>GPA ${gpa} on ${scale}.0 scale</strong> converts to <strong>${percentage.toFixed(2)}%</strong><br>
+                <span style="color: #667eea; font-weight: 600;">Grade: ${grade}</span><br>
+                <span style="color: #666;">${performanceMsg}</span>
+            `;
+            resultSection.classList.add('show');
+        }
+
+        // Reset function
+        function resetCalculator() {
+            gpaForm.reset();
+            resultSection.classList.remove('show');
+            
+            // Clear error states
+            document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+            
+            // Re-focus on GPA input
+            document.getElementById('gpaInput').focus();
+        }
+
+        // Form submission
+        gpaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            convertGPAToPercentage();
+        });
+
+        // Real-time validation
+        document.getElementById('gpaInput').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                validateGPA(this, document.getElementById('gpaInputError'));
+            }
+        });
+
+        document.getElementById('gpaInput').addEventListener('blur', function() {
+            validateGPA(this, document.getElementById('gpaInputError'));
+        });
+
+        document.getElementById('scaleSelect').addEventListener('change', function() {
+            validateScale(this, document.getElementById('scaleSelectError'));
+            // Re-validate GPA when scale changes
+            const gpaInput = document.getElementById('gpaInput');
+            if (gpaInput.value.trim() !== '') {
+                validateGPA(gpaInput, document.getElementById('gpaInputError'));
+            }
+        });
+
+        // Clear error on focus
+        document.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.classList.remove('error');
+                const errorElement = document.getElementById(this.id + 'Error');
+                if (errorElement) errorElement.style.display = 'none';
+            });
+        });
+
+        // Add Calculate Again button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add the "Calculate Again" button after result is shown
+            const addCalculateAgainButton = () => {
+                if (!document.getElementById('calculateAgainBtn')) {
+                    const button = document.createElement('button');
+                    button.id = 'calculateAgainBtn';
+                    button.className = 'calculate-btn secondary';
+                    button.innerHTML = '<i class="fas fa-redo"></i> Calculate Again';
+                    button.onclick = resetCalculator;
+                    button.style.marginTop = '1rem';
+                    button.style.background = '#6c757d';
+                    resultSection.appendChild(button);
+                }
+            };
+
+            // Monitor result section visibility
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        if (resultSection.classList.contains('show')) {
+                            addCalculateAgainButton();
+                        }
+                    }
+                });
+            });
+
+            observer.observe(resultSection, { attributes: true });
+        });
+    </script>
+</body>
+</html>

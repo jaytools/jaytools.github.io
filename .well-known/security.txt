@@ -1,0 +1,27 @@
+Contact: https://www.taskproper.com/contact.html
+Contact: mailto:starofficial202503@gmail.com
+Expires: 2026-09-01T12:00:00.000Z
+Encryption: https://www.taskproper.com/.well-known/pgp-key.txt
+Acknowledgments: https://www.taskproper.com/security-acknowledgments.html
+Policy: https://www.taskproper.com/security-policy.html
+Hiring: https://www.taskproper.com/careers.html
+
+# Security Policy for TaskProper.com
+# 
+# We take security seriously and appreciate responsible disclosure.
+# Please report security vulnerabilities through our contact form
+# or email starofficial202503@gmail.com
+#
+# Do NOT test for vulnerabilities on our production systems
+# without prior written permission.
+#
+# Scope: www.taskproper.com and all subdomains
+# Out of scope: Social engineering, physical attacks, DoS attacks
+#
+# We commit to:
+# - Acknowledge receipt within 48 hours
+# - Provide regular updates on investigation progress  
+# - Credit researchers (with permission) for valid findings
+# - Fix critical vulnerabilities within 30 days
+#
+# Thank you for helping keep TaskProper.com secure!

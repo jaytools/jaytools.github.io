@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Calculators - Task Proper | Free Finance & Investment Tools</title>
+    <meta name="description" content="Access free online finance and investment calculators for tracking debt, managing expenses, calculating ratios, and more with Task Proper.">
+    <meta name="keywords" content="finance calculators, investment tools, debt ratio, expense tracker, financial planning, Task Proper">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jay Prajapati">
+    <meta name="category" content="Finance">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Finance Calculators - Task Proper | Free Finance & Investment Tools">
+    <meta property="og:description" content="Access free online finance and investment calculators for tracking debt, managing expenses, calculating ratios, and more with Task Proper.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taskproper.com/finance.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://taskproper.com/finance.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Preload and then load icon-svg.css for optimized SVG icons -->
+    <link rel="preload" href="css/icon-svg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/icon-svg.css"></noscript>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/finance-page.css">
+
+    <!-- Accessibility: Focus Outline for keyboard navigation -->
+    <style>
+        /* Universal focus outline for accessibility */
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Finance Calculators - Task Proper",
+        "description": "Access free online finance and investment calculators for tracking debt, managing expenses, calculating ratios, and more.",
+        "url": "https://taskproper.com/finance.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Task Proper",
+            "url": "https://taskproper.com"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://taskproper.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Finance",
+                    "item": "https://taskproper.com/finance.html"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Custom CSS is already included earlier in the head -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="/" class="brand-link">
+                    <h1 class="site-title">Task Proper</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <span class="icon-search" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                 <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Instagram profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1-27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <span class="icon-times" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><span class="icon-star" aria-hidden="true"></span> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><span class="icon-fire" aria-hidden="true"></span> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="health/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <a href="/" class="nav-link">
+                            <span class="icon-home" aria-hidden="true"></span>
+                            <span>Home</span>
+                        </a>
+                        <a href="about.html" class="nav-link">
+                            <span class="icon-info-circle" aria-hidden="true"></span>
+                            <span>About</span>
+                        </a>
+                        <a href="contact.html" class="nav-link">
+                            <span class="icon-envelope" aria-hidden="true"></span>
+                            <span>Contact</span>
+                        </a>
+                        <a href="privacy.html" class="nav-link">
+                            <span class="icon-shield-alt" aria-hidden="true"></span>
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="terms.html" class="nav-link">
+                            <span class="icon-file-contract" aria-hidden="true"></span>
+                            <span>Terms of Service</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        <!-- Breadcrumb Navigation -->
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li>
+                        <a href="/"><i class="fas fa-home"></i> Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                    </li>
+                    <li>
+                        <span><span class="icon-dollar-sign" aria-hidden="true"></span> Finance</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Category Header -->
+        <section class="category-header">
+            <div class="container">
+                <h1 class="text-center"><i class="fas fa-dollar-sign"></i> Finance Calculators</h1>
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <div class="container">
+            <div class="tools-container">
+                <!-- Health Tools Grid - Will be populated by JavaScript -->
+                <div class="tools-grid" id="finance-tools-grid">
+                    <!-- Tools will be loaded dynamically via JavaScript -->
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination" id="finance-pagination">
+                    <!-- Pagination will be added by JavaScript if needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Info Section -->
+        <section class="category-info">
+            <div class="container">
+                <h2>About Our Finance Tools</h2>
+                <p>Manage your financial health with our comprehensive suite of finance calculators. Designed for accuracy and ease of use, these tools help you track debt, manage expenses, calculate ratios, and make informed investment decisions.</p>
+                
+                <!-- Features Grid -->
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="icon-calculator" aria-hidden="true"></span>
+                        <h3>Simple & Accurate</h3>
+                        <p>All calculations are based on scientific formulas with clear, easy-to-understand results.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="icon-mobile-alt" aria-hidden="true"></span>
+                        <h3>Mobile Friendly</h3>
+                        <p>Use our tools on any device – perfect for checking health metrics on the go.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="icon-lock" aria-hidden="true"></span>
+                        <h3>Privacy First</h3>
+                        <p>All calculations are done in your browser – no personal health data is ever stored or shared.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Back to Top -->
+        <div class="back-to-top">
+            <a href="#top" aria-label="Back to top of page">
+                <span class="icon-arrow-up" aria-hidden="true"></span>
+                Back to Top
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- Pages -->
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/taskproper" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Task Proper by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        // Constants for finance page
+        const FINANCE_ITEMS_PER_PAGE = 12; // Show more tools per page
+        let currentFinancePage = 1;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
+            const backToTopLink = document.querySelector('.back-to-top a');
+            
+            // Show/hide back to top button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            if (backToTopLink) {
+                backToTopLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Load health tools immediately if the tools array is available
+            if (window.tools && Array.isArray(window.tools)) {
+                loadFinanceTools();
+            } else {
+                // Load tools with a small delay to ensure script.js is loaded
+                setTimeout(() => {
+                    loadFinanceTools();
+                }, 100);
+            }
+        });
+
+        /**
+         * Process and display finance tools on the page
+         * @param {Array} toolsData - Array of tool objects
+         * @param {HTMLElement} toolsGrid - DOM element to display tools
+         * @param {HTMLElement} paginationContainer - DOM element for pagination
+         */
+        function processFinanceTools(toolsData, toolsGrid, paginationContainer) {
+            // Filter to just finance tools
+            const financeTools = toolsData.filter(tool => 
+                tool.tags && tool.tags.includes('finance')
+            );
+
+            if (financeTools.length === 0) {
+                toolsGrid.innerHTML = '<p class="no-tools">No finance tools found.</p>';
+                return;
+            }
+
+            // Sort: favorites first, then alphabetically
+            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            const sortedTools = [...financeTools].sort((a, b) => {
+                const aFav = favorites.includes(a.name);
+                const bFav = favorites.includes(b.name);
+                if (aFav !== bFav) return bFav - aFav;
+                return a.name.localeCompare(b.name);
+            });
+
+            // Pagination
+            const startIndex = (currentFinancePage - 1) * FINANCE_ITEMS_PER_PAGE;
+            const endIndex = startIndex + FINANCE_ITEMS_PER_PAGE;
+            const displayedTools = sortedTools.slice(startIndex, endIndex);
+            
+            // Clear grid
+            toolsGrid.innerHTML = '';
+            
+            // Create and add tool cards
+            displayedTools.forEach(tool => {
+                // Create tool card element
+                const toolCard = createToolCard(tool, favorites);
+                toolsGrid.appendChild(toolCard);
+            });
+            
+            // Render pagination
+            renderFinancePagination(sortedTools.length, paginationContainer);
+        }
+
+        /**
+         * Create a tool card element
+         * @param {Object} tool - Tool data object
+         * @param {Array} favorites - Array of favorited tool names
+         * @returns {HTMLElement} - The created tool card element
+         */
+        function createToolCard(tool, favorites) {
+            const toolCard = document.createElement('a');
+            toolCard.href = tool.url;
+            toolCard.className = 'tool-link';
+            
+            toolCard.innerHTML = `
+                <article class="tool-card">
+                    <button class="favorite-btn" aria-label="Toggle favorite">
+                        <span class="icon-star" aria-hidden="true"></span>
+                    </button>
+                    <h3 class="tool-title">${tool.name}</h3>
+                </article>
+            `;
+
+            // Set up the favorite button
+            const favoriteBtn = toolCard.querySelector('.favorite-btn');
+            
+            if (favorites.includes(tool.name)) {
+                favoriteBtn.classList.add('active');
+            }
+
+            favoriteBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                toggleFavorite(tool.name, favoriteBtn);
+            });
+            
+            return toolCard;
+        }
+
+        /**
+         * Toggle a tool's favorite status
+         * @param {string} toolName - Name of the tool
+         * @param {HTMLElement} buttonElement - Button element to update
+         */
+        function toggleFavorite(toolName, buttonElement) {
+            // Toggle favorite with animation
+            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            const index = favorites.indexOf(toolName);
+
+            if (index === -1) {
+                favorites.push(toolName);
+                buttonElement.classList.add('active');
+                buttonElement.classList.add('favorite-animation');
+            } else {
+                favorites.splice(index, 1);
+                buttonElement.classList.remove('active');
+            }
+
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            
+            // Update sidebar favorites if present
+            updateSidebarFavorites();
+            
+            // Remove animation class after animation completes
+            setTimeout(() => {
+                buttonElement.classList.remove('favorite-animation');
+            }, 500);
+        }
+
+        /**
+         * Update the sidebar favorites section if it exists
+         */
+        function updateSidebarFavorites() {
+            const favoritesList = document.querySelector('.favorites-container');
+            if (favoritesList) {
+                const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+                if (favorites.length === 0) {
+                    favoritesList.innerHTML = '<p class="no-favorites">No favorite tools yet.</p>';
+                    return;
+                }
+                
+                // Find favorite tools
+                const favTools = window.tools.filter(tool => favorites.includes(tool.name));
+                
+                // Create links for favorites
+                favoritesList.innerHTML = '';
+                favTools.forEach(tool => {
+                    const link = document.createElement('a');
+                    link.href = tool.url;
+                    link.textContent = tool.name;
+                    favoritesList.appendChild(link);
+                });
+            }
+        }
+
+        /**
+         * Load finance tools onto the page
+         */
+        function loadFinanceTools() {
+            // Get the finance tools grid
+            const financeGrid = document.getElementById('finance-tools-grid');
+            const paginationContainer = document.getElementById('finance-pagination');
+            
+            // Check if elements exist
+            if (!financeGrid) {
+                console.error("Finance grid not found");
+                return;
+            }
+            
+            // Get tools data
+            if (!window.tools || !Array.isArray(window.tools)) {
+                console.error("Tools array not available");
+                
+                // Fallback to direct data if tools not loaded from script.js
+                // This is more robust than calling an undefined getToolsData() function
+                const fallbackTools = [
+                    { name: 'Debt-to-Income Ratio Calculator', url: 'finance/debt-ratio.html', tags: ['finance'] },
+                    { name: 'Expense Tracker', url: 'finance/expense-tracker.html', tags: ['finance'] },
+                    { name: 'Debt Ratio Calculator', url: 'finance/debt-ratio.html', tags: ['finance'] }
+                ];
+                processFinanceTools(fallbackTools, financeGrid, paginationContainer);
+                return;
+            }
+            
+            // Process with the tools from window.tools
+            processFinanceTools(window.tools, financeGrid, paginationContainer);
+        }
+        
+        /**
+         * Render pagination controls for finance tools
+         * @param {number} totalTools - Total number of finance tools
+         * @param {HTMLElement} paginationContainer - DOM element for pagination
+         */
+        function renderFinancePagination(totalTools, paginationContainer) {
+            const totalPages = Math.ceil(totalTools / FINANCE_ITEMS_PER_PAGE);
+            paginationContainer.innerHTML = ''; // Clear previous pagination
+
+            if (totalPages <= 1) return; // No pagination needed for 1 or less pages
+
+            const ul = document.createElement('ul');
+            ul.className = 'pagination';
+
+            // Previous button
+            const prevLi = document.createElement('li');
+            prevLi.className = `page-item ${currentFinancePage === 1 ? 'disabled' : ''}`;
+            prevLi.innerHTML = `<a class="page-link" href="#" data-page="${currentFinancePage - 1}">Previous</a>`;
+            ul.appendChild(prevLi);
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.className = `page-item ${i === currentFinancePage ? 'active' : ''}`;
+                li.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+                ul.appendChild(li);
+            }
+
+            // Next button
+            const nextLi = document.createElement('li');
+            nextLi.className = `page-item ${currentFinancePage === totalPages ? 'disabled' : ''}`;
+            nextLi.innerHTML = `<a class="page-link" href="#" data-page="${currentFinancePage + 1}">Next</a>`;
+            ul.appendChild(nextLi);
+
+            paginationContainer.appendChild(ul);
+
+            // Add event listeners to pagination links
+            paginationContainer.querySelectorAll('.page-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = parseInt(this.dataset.page);
+                    if (page > 0 && page <= totalPages) {
+                        currentFinancePage = page;
+                        loadFinanceTools();
+                    }
+                });
+            });
+        }
+        
+        /**
+         * Change the current page for finance tools and reload them
+         * @param {number} page - The page number to navigate to
+         */
+        function changeFinancePage(page) {
+            currentFinancePage = page;
+            loadFinanceTools();
+            window.scrollTo({ top: document.querySelector('.main-content').offsetTop, behavior: 'smooth' });
+        }
+    </script>
+    <script src="/js/icon-replacement.js"></script>
+</body>
+</html>

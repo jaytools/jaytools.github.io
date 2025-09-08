@@ -1,0 +1,42 @@
+/* TEAM */
+Developer: Task Proper
+Contact: starofficial202503@gmail.com
+Website: https://www.taskproper.com
+GitHub: https://github.com/taskproper
+Location: India
+
+/* SITE */
+Last update: 2025-07-02
+Language: English
+Doctype: HTML5
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Responsive Design, SEO Optimized, Accessibility Ready
+IDE: Visual Studio Code
+IDE: Visual Studio Code
+Standards: HTML5, CSS3, JavaScript
+Libraries/Frameworks: Bootstrap, Font Awesome
+Source Control: Git, GitHub
+
+/* TECHNOLOGIES USED */
+- HTML5
+- CSS3 (Flexbox, Grid, Animations)
+- JavaScript (Vanilla)
+- Responsive Design
+- Progressive Web App (PWA)
+- Local Storage
+- Chart.js (Data Visualization)
+
+/* SITE FEATURES */
+- Fully Responsive Design
+- Dark Mode Support
+- Accessibility (A11y)
+- Mobile-First Design
+- Cross-Browser Compatibility
+- Hosted on GitHub Pages
+
+/* CREDITS & THANKS */
+- Open Source Community (for tools, inspiration)
+- Font Awesome (icons)
+- Google Fonts (typography)
+- Chart.js (charts & graphs)
+- GitHub Pages (free hosting)
