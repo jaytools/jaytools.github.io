@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Calculators - Task Proper | Free Health & Fitness Tools</title>
-    <meta name="description" content="Access free online health and fitness calculators for tracking calories, calculating protein intake, BMI, pregnancy weight, and more with Task Proper.">
-    <meta name="keywords" content="health calculators, fitness tools, calorie calculator, protein intake calculator, BMI, pregnancy weight calculator, Task Proper">
+    <title>Free Health & Wellness Calculators | Smart Tools for Better Living - Task Proper</title>
+    <meta name="description" content="Discover powerful health calculators for weight management, nutrition tracking, fitness goals, and pregnancy planning. Get instant, accurate results with our free wellness tools designed for everyday health decisions.">
+    <meta name="keywords" content="health calculators, wellness tools, calorie calculator, protein tracker, pregnancy calculator, fitness tools, body frame calculator, nutrition planner, health tracker">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Task Proper">
     <meta name="category" content="Health">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Health Calculators - Task Proper | Free Health & Fitness Tools">
-    <meta property="og:description" content="Access free online health and fitness calculators for tracking calories, calculating protein intake, BMI, pregnancy weight, and more with Task Proper.">
+    <meta property="og:title" content="Free Health & Wellness Calculators | Smart Tools for Better Living - Task Proper">
+    <meta property="og:description" content="Discover powerful health calculators for weight management, nutrition tracking, fitness goals, and pregnancy planning. Get instant, accurate results with our free wellness tools.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://taskproper.com/health.html">
+    <meta property="og:url" content="https://www.taskproper.com/health.html">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://taskproper.com/health.html">
+    <link rel="canonical" href="https://www.taskproper.com/health.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     
@@ -49,6 +49,703 @@
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
+
+        /* Category Header Styling */
+        .category-header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding: 0 1rem;
+        }
+
+        .intro-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4a5568;
+            text-align: left;
+        }
+
+        /* About Us Section */
+        .about-us-section {
+            padding: 4rem 0;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .about-us-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            font-size: 2.25rem;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Tools Overview Section */
+        .tools-overview {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .tools-overview h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            font-size: 2.25rem;
+        }
+
+        .tools-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tool-item {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid #3182ce;
+        }
+
+        .tool-item h3 {
+            color: #2d3748;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tool-item h3 i {
+            color: #3182ce;
+            font-size: 1.1rem;
+        }
+
+        .tool-item p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 4rem 0;
+            background: #f7fafc;
+        }
+
+        .benefits-section h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+            font-size: 2.25rem;
+        }
+
+        .benefits-section > .container > p {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #3182ce;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-card p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .tips-section h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+            font-size: 2.25rem;
+        }
+
+        .tips-section > .container > p {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tip-card {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 2rem;
+            border-top: 4px solid #38b2ac;
+        }
+
+        .tip-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tip-card h3 i {
+            color: #38b2ac;
+            font-size: 1.1rem;
+        }
+
+        .tip-card p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 0;
+            background: #f7fafc;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            font-size: 2.25rem;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f7fafc;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: #3182ce;
+        }
+
+        .faq-question[aria-expanded="true"] i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 400px; /* Increased for longer mobile text */
+        }
+
+        .faq-answer p {
+            margin: 0;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2.25rem;
+        }
+
+        .cta-section > .container > p {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .cta-actions {
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button.primary {
+            background: #fff;
+            color: #667eea;
+        }
+
+        .cta-button.primary:hover {
+            background: #f7fafc;
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .cta-button.secondary:hover {
+            background: #fff;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .sharing-section p {
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Tools Grid Styling */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tool-link {
+            text-decoration: none;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .tool-card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            height: 100%;
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .tool-link:hover .tool-card {
+            border-color: #3182ce;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Favorite Button Styling */
+        .favorite-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: none;
+            border: none;
+            color: #64748b; /* Darker gray for better visibility */
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.2s ease;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .favorite-btn:hover {
+            transform: scale(1.1);
+            background: rgba(241, 196, 15, 0.1);
+            color: #f39c12; /* Orange on hover */
+        }
+
+        .favorite-btn.active {
+            color: #f1c40f !important; /* Gold for active state with !important */
+        }
+
+        .favorite-btn.active:hover {
+            color: #f39c12 !important; /* Slightly darker gold on hover */
+        }
+
+        .favorite-btn i {
+            pointer-events: none; /* Ensure icon doesn't interfere with click events */
+            font-style: normal; /* For unicode fallback */
+            line-height: 1;
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            text-align: center;
+        }
+
+        /* Only show fallback star if Font Awesome class exists but no content is rendered */
+        .favorite-btn i.fas.fa-star:empty:before {
+            content: "★";
+            font-family: serif;
+            font-size: 1.2rem;
+            display: inline-block;
+        }
+
+        .favorite-btn.favorite-animation {
+            animation: favoriteAnimation 0.5s ease;
+        }
+
+        @keyframes favoriteAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        /* Pagination Styling */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .pagination-btn {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .pagination-btn:hover {
+            background: #f7fafc;
+            border-color: #3182ce;
+        }
+
+        .pagination-btn.active {
+            background: #3182ce;
+            color: #fff;
+            border-color: #3182ce;
+        }
+
+        .pagination-ellipsis {
+            padding: 0.5rem;
+            color: #a0aec0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .category-header {
+                padding: 2rem 0 1.5rem;
+            }
+
+            .intro-content p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .about-us-section {
+                padding: 3rem 0;
+            }
+
+            .about-us-section h2 {
+                font-size: 1.875rem;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .tools-list {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .tool-item {
+                padding: 1.25rem;
+            }
+
+            .benefits-grid, .tips-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .benefit-card, .tip-card {
+                padding: 1.5rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 1.25rem;
+            }
+
+            .faq-answer {
+                padding: 0 1.25rem;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 1.25rem 1.25rem;
+                max-height: 500px; /* Even more space for mobile text wrapping */
+            }
+
+            .faq-section {
+                padding: 3rem 0;
+            }
+
+            .faq-section h2 {
+                font-size: 1.875rem;
+                margin-bottom: 2rem;
+                padding: 0 1rem;
+            }
+
+            .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .tool-card {
+                min-height: 100px;
+                padding: 1.25rem;
+            }
+
+            .tool-title {
+                font-size: 1rem;
+            }
+
+            .favorite-btn {
+                top: 0.5rem;
+                right: 0.5rem;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+
+            .favorite-btn i {
+                font-size: 1rem;
+            }
+
+            .tools-overview h2,
+            .benefits-section h2,
+            .tips-section h2,
+            .faq-section h2,
+            .about-us-section h2 {
+                font-size: 1.875rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tools-overview,
+            .benefits-section,
+            .tips-section,
+            .faq-section,
+            .cta-section,
+            .about-us-section {
+                padding: 3rem 0;
+            }
+
+            .intro-content p,
+            .about-content p {
+                font-size: 0.95rem;
+            }
+
+            .tool-item h3,
+            .tip-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .benefit-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .tool-card {
+                min-height: 90px;
+                padding: 1rem;
+            }
+
+            .tool-title {
+                font-size: 0.95rem;
+                line-height: 1.3;
+            }
+
+            .favorite-btn {
+                top: 0.5rem;
+                right: 0.5rem;
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+
+            .favorite-btn i {
+                font-size: 0.9rem;
+            }
+
+            /* Enhanced FAQ mobile styles */
+            .faq-question {
+                font-size: 0.95rem;
+                padding: 1rem;
+                line-height: 1.4;
+            }
+
+            .faq-answer {
+                padding: 0 1rem;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 1rem 1rem;
+                max-height: 600px; /* Extra space for small screens */
+            }
+
+            .faq-section {
+                padding: 2.5rem 0;
+            }
+
+            .faq-section h2 {
+                font-size: 1.625rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .faq-item {
+                margin-bottom: 0.75rem;
+                border-radius: 6px;
+            }
+        }
     </style>
     
     <!-- Schema.org JSON-LD for SEO -->
@@ -56,8 +753,8 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Health Calculators - Task Proper",
-        "description": "Access free online health and fitness calculators for tracking calories, calculating protein intake, BMI, pregnancy weight, and more.",
+        "name": "Free Health & Wellness Calculators - Task Proper",
+        "description": "Discover powerful health calculators for weight management, nutrition tracking, fitness goals, and pregnancy planning. Get instant, accurate results with our free wellness tools.",
         "url": "https://taskproper.com/health.html",
         "publisher": {
             "@type": "Organization",
@@ -76,11 +773,69 @@
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Health",
+                    "name": "Health Tools",
                     "item": "https://taskproper.com/health.html"
                 }
             ]
         }
+    }
+    </script>
+
+    <!-- FAQ Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are these health calculators actually accurate, or should I just visit my doctor instead?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Great question! Our calculators use the exact same medical formulas and scientific equations that doctors and nutritionists rely on in their practices. They're incredibly accurate for general health planning and everyday decisions. However, they can't replace the personalized insight your doctor provides based on your unique medical history, current health conditions, or specific circumstances. Think of our tools as your reliable starting point - perfect for daily tracking and goal-setting, but always worth discussing with your healthcare provider when making major health changes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "I have diabetes/high blood pressure/thyroid issues - can I still trust these calculators?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely, but with some important caveats. These tools provide excellent baseline calculations that work for most people, but chronic conditions like diabetes, heart disease, thyroid disorders, or metabolic syndrome can affect how your body processes calories, protein, and nutrients. The numbers our calculators give you are still valuable - just think of them as your starting point for conversations with your healthcare team. Your doctor can help you adjust these recommendations based on your medications, treatment plan, and individual response to diet and exercise."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do these work for teenagers, seniors, or just \"average\" adults?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most of our calculators are designed for healthy adults (roughly ages 18-65) because that's where the medical research is most comprehensive. However, many can still be useful for older teens and active seniors - just remember that growing teenagers have different nutritional needs, and metabolism naturally changes as we age. Our pregnancy-specific tools are carefully tailored for expecting mothers using current obstetric guidelines. If you're outside the typical adult range or have specific concerns about age-related factors, it's worth double-checking our results with your healthcare provider."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I actually recalculate - daily, weekly, or when I remember?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This really depends on what you're tracking and how quickly things are changing in your life! For weight management goals, recalculating every 2-4 weeks makes sense as your body composition changes. If you're pregnant, weekly calculations help you stay on track with healthy weight gain recommendations. Daily tools like our walking calorie calculator are perfect for everyday use whenever you're curious about your activity. Things like body frame size? Once is usually enough since your bone structure isn't changing. The key is finding a rhythm that keeps you informed without becoming obsessive about the numbers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens to my personal information when I use these calculators?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Here's something you'll love: absolutely nothing happens to your information because we never see it in the first place! All our calculations happen right in your browser on your device. We don't collect, store, track, or transmit any of your personal health data to our servers or anyone else's. No account required, no data mining, no selling your information to advertisers. Your weight, measurements, health goals, and results stay completely private to you. This approach means you can explore your health metrics freely without any privacy concerns or unwanted marketing emails."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use these tools on my phone, or do I need a computer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All of our health calculators work beautifully on smartphones, tablets, and computers! We designed them with mobile users in mind since many people want to check their health metrics on the go - whether you're at the gym, grocery shopping, or meal planning. The interfaces automatically adjust to your screen size, and all the buttons and input fields are optimized for touch. No app downloads required, no special software needed. Just open your mobile browser, bookmark this page, and you'll have instant access to all these tools whenever you need them."
+                }
+            }
+        ]
     }
     </script>
     
@@ -213,7 +968,9 @@
         <!-- Category Header -->
         <section class="category-header">
             <div class="container">
-                <h1 class="text-center"><i class="fas fa-heartbeat"></i> Health Calculators</h1>
+                <h1 class="text-center"><i class="fas fa-heartbeat"></i> Your Complete Health & Wellness Toolkit</h1>
+                
+                
             </div>
         </section>
 
@@ -232,30 +989,200 @@
             </div>
         </div>
 
-        <!-- Category Info Section -->
-        <section class="category-info">
+        <!-- About Us Section -->
+        <section class="about-us-section">
             <div class="container">
-                <h2>About Our Health Tools</h2>
-                <p>Track your wellness journey with our comprehensive suite of health calculators. Designed for accuracy and ease of use, these tools help you monitor nutrition, fitness progress, and important health metrics.</p>
+                <h2>About Our Health & Wellness Mission</h2>
+                <div class="about-content">
+                    <p>At Task Proper, we believe that everyone deserves access to reliable health information and practical tools for better living. Our team of developers and health enthusiasts has carefully crafted each calculator using scientifically-backed formulas and medical guidelines trusted by healthcare professionals worldwide. We understand that navigating health decisions can feel overwhelming, which is why we've simplified complex calculations into user-friendly tools that anyone can use with confidence.</p>
+                    
+                    <p>Your privacy and security are paramount to us. Unlike many health platforms, we don't collect, store, or share any of your personal health data. All calculations happen directly in your browser, ensuring your sensitive information stays completely private. This commitment to privacy means you can explore your health metrics freely without worrying about data breaches or unwanted marketing.</p>
+                    
+                    <p>We continuously update our tools based on the latest medical research and user feedback to ensure accuracy and relevance. Whether you're a fitness enthusiast tracking macros, an expectant parent monitoring healthy weight gain, or someone simply wanting to make more informed lifestyle choices, our tools are designed to support your journey toward better health and wellness.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- List of Tools Section -->
+        <section class="tools-overview">
+            <div class="container">
+                <h2>Your Health Toolkit at a Glance</h2>
+                <div class="tools-list">
+                    <div class="tool-item">
+                        <h3><i class="fas fa-ruler-combined"></i> Body Frame Size Calculator</h3>
+                        <p>Discover your body frame type through simple wrist and elbow measurements, helping you set realistic weight and fitness goals tailored to your natural build.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <h3><i class="fas fa-fire"></i> Calorie Deficit Finder</h3>
+                        <p>Calculate the perfect daily calorie target for sustainable weight loss, taking into account your lifestyle, activity level, and realistic timeline for reaching your goals.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <h3><i class="fas fa-walking"></i> Calories Burned Walking</h3>
+                        <p>Track exactly how many calories you're burning during walks based on your weight, pace, and terrain to maximize your fitness efforts and reach activity goals.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <h3><i class="fas fa-apple-alt"></i> Calories in Food Checker</h3>
+                        <p>Make informed eating choices by quickly looking up nutritional information for thousands of foods, helping you stay on track with your dietary goals.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <h3><i class="fas fa-arrows-alt-v"></i> Height Conversion Tool</h3>
+                        <p>Seamlessly convert height measurements between feet/inches, centimeters, and meters for medical records, fitness tracking, or international travel needs.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <h3><i class="fas fa-baby"></i> IVF Due Date Calculator</h3>
+                        <p>Plan your pregnancy journey with confidence by calculating accurate due dates for IVF pregnancies based on your specific transfer details and embryo development stage.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <h3><i class="fas fa-weight"></i> Pregnancy Weight Gain Calculator</h3>
+                        <p>Monitor healthy pregnancy weight gain week by week, ensuring you and your baby stay on track throughout each trimester with medically-backed guidelines.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <h3><i class="fas fa-drumstick-bite"></i> Protein Intake Calculator</h3>
+                        <p>Optimize your nutrition by determining your exact daily protein needs based on your weight, activity level, and specific fitness or health objectives.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <h3><i class="fas fa-shoe-prints"></i> Steps to KM Converter</h3>
+                        <p>Transform your daily step count into meaningful distance measurements, helping you set and achieve walking goals while tracking your overall activity progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Why Smart Health Tracking Changes Everything</h2>
+                <p>Gone are the days of guessing your way through health decisions. These calculators turn complex nutritional science and medical guidelines into clear, actionable numbers that actually make sense in your daily life.</p>
                 
-                <!-- Features Grid -->
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <span class="icon-calculator" aria-hidden="true"></span>
-                        <h3>Simple & Accurate</h3>
-                        <p>All calculations are based on scientific formulas with clear, easy-to-understand results.</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-target"></i>
+                        <h3>Set Realistic Goals</h3>
+                        <p>Stop setting yourself up for failure with unrealistic expectations. Our tools help you create achievable targets based on your actual body type, lifestyle, and circumstances.</p>
                     </div>
                     
-                    <div class="feature-card">
-                        <span class="icon-mobile-alt" aria-hidden="true"></span>
-                        <h3>Mobile Friendly</h3>
-                        <p>Use our tools on any device – perfect for checking health metrics on the go.</p>
+                    <div class="benefit-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Track Real Progress</h3>
+                        <p>See meaningful changes over time with accurate measurements that reflect your true health improvements, not just random numbers on a scale.</p>
                     </div>
                     
-                    <div class="feature-card">
-                        <span class="icon-lock" aria-hidden="true"></span>
-                        <h3>Privacy First</h3>
-                        <p>All calculations are done in your browser – no personal health data is ever stored or shared.</p>
+                    <div class="benefit-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Make Informed Decisions</h3>
+                        <p>Replace guesswork with knowledge. Know exactly how many calories you need, how much protein supports your goals, and what healthy progress looks like.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Save Time & Energy</h3>
+                        <p>Get instant results without lengthy research or complicated formulas. Spend less time calculating and more time taking action toward your health goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="tips-section">
+            <div class="container">
+                <h2>Getting the Most From Your Health Tools</h2>
+                <p>These calculators are powerful, but like any tool, they work best when used correctly. Here's how to maximize their effectiveness:</p>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3><i class="fas fa-bullseye"></i> Be Accurate With Measurements</h3>
+                        <p>Take measurements at the same time of day, preferably in the morning. Use a reliable scale and measuring tape, and be honest about your activity levels for the most useful results.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3><i class="fas fa-user-md"></i> Consult Healthcare Professionals</h3>
+                        <p>While our tools provide valuable insights, they're meant to complement, not replace, professional medical advice. Always discuss significant health changes with your doctor or nutritionist.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3><i class="fas fa-sync-alt"></i> Use Multiple Tools Together</h3>
+                        <p>Combine calculators for a complete picture. Use the calorie deficit finder with the protein calculator and walking tracker to create a comprehensive wellness strategy.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3><i class="fas fa-calendar-check"></i> Track Changes Over Time</h3>
+                        <p>Health is a journey, not a destination. Use these tools regularly to monitor progress and adjust your approach as your body and goals evolve.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Your Most Common Health Calculator Questions Answered</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                            <span>Are these health calculators actually accurate, or should I just visit my doctor instead?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+                            <p>Great question! Our calculators use the exact same medical formulas and scientific equations that doctors and nutritionists rely on in their practices. They're incredibly accurate for general health planning and everyday decisions. However, they can't replace the personalized insight your doctor provides based on your unique medical history, current health conditions, or specific circumstances. Think of our tools as your reliable starting point - perfect for daily tracking and goal-setting, but always worth discussing with your healthcare provider when making major health changes.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                            <span>I have diabetes/high blood pressure/thyroid issues - can I still trust these calculators?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+                            <p>Absolutely, but with some important caveats. These tools provide excellent baseline calculations that work for most people, but chronic conditions like diabetes, heart disease, thyroid disorders, or metabolic syndrome can affect how your body processes calories, protein, and nutrients. The numbers our calculators give you are still valuable - just think of them as your starting point for conversations with your healthcare team. Your doctor can help you adjust these recommendations based on your medications, treatment plan, and individual response to diet and exercise.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                            <span>Do these work for teenagers, seniors, or just "average" adults?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+                            <p>Most of our calculators are designed for healthy adults (roughly ages 18-65) because that's where the medical research is most comprehensive. However, many can still be useful for older teens and active seniors - just remember that growing teenagers have different nutritional needs, and metabolism naturally changes as we age. Our pregnancy-specific tools are carefully tailored for expecting mothers using current obstetric guidelines. If you're outside the typical adult range or have specific concerns about age-related factors, it's worth double-checking our results with your healthcare provider.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                            <span>How often should I actually recalculate - daily, weekly, or when I remember?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+                            <p>This really depends on what you're tracking and how quickly things are changing in your life! For weight management goals, recalculating every 2-4 weeks makes sense as your body composition changes. If you're pregnant, weekly calculations help you stay on track with healthy weight gain recommendations. Daily tools like our walking calorie calculator are perfect for everyday use whenever you're curious about your activity. Things like body frame size? Once is usually enough since your bone structure isn't changing. The key is finding a rhythm that keeps you informed without becoming obsessive about the numbers.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                            <span>What happens to my personal information when I use these calculators?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+                            <p>Here's something you'll love: absolutely nothing happens to your information because we never see it in the first place! All our calculations happen right in your browser on your device. We don't collect, store, track, or transmit any of your personal health data to our servers or anyone else's. No account required, no data mining, no selling your information to advertisers. Your weight, measurements, health goals, and results stay completely private to you. This approach means you can explore your health metrics freely without any privacy concerns or unwanted marketing emails.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                            <span>Can I use these tools on my phone, or do I need a computer?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
+                            <p>All of our health calculators work beautifully on smartphones, tablets, and computers! We designed them with mobile users in mind since many people want to check their health metrics on the go - whether you're at the gym, grocery shopping, or meal planning. The interfaces automatically adjust to your screen size, and all the buttons and input fields are optimized for touch. No app downloads required, no special software needed. Just open your mobile browser, bookmark this page, and you'll have instant access to all these tools whenever you need them.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -306,22 +1233,30 @@
                         <ul class="social-links">
                             <li>
                                 <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
                                 </a>
                             </li>
                         </ul>
@@ -339,13 +1274,47 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="js/sidebar-favorites.js"></script>
+    <script>
+        // Sidebar Toggle Functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar && overlay) {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar) sidebar.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.sidebar-close');
+            const overlay = document.querySelector('.overlay');
+
+            if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+            if (menuClose) menuClose.addEventListener('click', closeSidebar);
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
     <script>
         // Constants for health page
         const HEALTH_ITEMS_PER_PAGE = 12; // Show more tools per page
         let currentHealthPage = 1;
         
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize FAQ functionality
+            initializeFAQ();
+            
             // Back to top button functionality
             const backToTopButton = document.querySelector('.back-to-top');
             const backToTopLink = document.querySelector('.back-to-top a');
@@ -369,16 +1338,51 @@
                 });
             }
 
-            // Load health tools immediately if the tools array is available
-            if (window.tools && Array.isArray(window.tools)) {
-                loadHealthTools();
-            } else {
-                // Load tools with a small delay to ensure script.js is loaded
-                setTimeout(() => {
-                    loadHealthTools();
-                }, 100);
-            }
+            // Smooth scroll for CTA buttons
+            const ctaButtons = document.querySelectorAll('a[href^="#"]');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Load health tools
+            loadHealthTools();
         });
+
+        /**
+         * Initialize FAQ accordion functionality
+         */
+        function initializeFAQ() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        }
 
         /**
          * Process and display health tools on the page
@@ -438,8 +1442,8 @@
             
             toolCard.innerHTML = `
                 <article class="tool-card">
-                    <button class="favorite-btn" aria-label="Toggle favorite">
-                        <span class="icon-star" aria-hidden="true"></span>
+                    <button class="favorite-btn" aria-label="Toggle favorite for ${tool.name}">
+                        <i class="fas fa-star" aria-hidden="true"></i>
                     </button>
                     <h3 class="tool-title">${tool.name}</h3>
                 </article>
@@ -522,6 +1526,8 @@
          * Load health tools onto the page
          */
         function loadHealthTools() {
+            console.log("Loading health tools...");
+            
             // Get the health tools grid
             const healthGrid = document.getElementById('health-tools-grid');
             const paginationContainer = document.getElementById('health-pagination');
@@ -532,29 +1538,18 @@
                 return;
             }
             
-            // Get tools data
-            if (!window.tools || !Array.isArray(window.tools)) {
-                console.error("Tools array not available");
-                
-                // Fallback to direct data if tools not loaded from script.js
-                // This is more robust than calling an undefined getToolsData() function
-                const fallbackTools = [
-                    { name: 'IVF Due Date Calculator', url: 'health/ivf-calculator.html', tags: ['health'] },
-                    { name: 'Pregnancy Weight Gain Calculator', url: 'health/pregnancy-weight.html', tags: ['calculator', 'health'] },
-                    { name: 'Steps to KM Converter', url: 'converter/steps-to-km-inline.html', tags: ['converter', 'health'] },
-                    { name: 'Calories Burned Walking', url: 'health/calories-walking.html', tags: ['calculator', 'health'] },
-                    { name: 'Height Conversion Tool', url: 'converter/height-converter-inline.html', tags: ['converter', 'health'] },
-                    { name: 'Calorie Deficit Finder', url: 'health/calorie-deficit.html', tags: ['health', 'calculator'] },
-                    { name: 'Body Frame Size Calculator', url: 'health/body-frame-inline.html', tags: ['calculator', 'health'] },
-                    { name: 'Calories in Food Checker', url: 'health/food-calories.html', tags: ['health', 'calculator'] },
-                    { name: 'Protein Intake Calculator', url: 'health/protein-intake.html', tags: ['health', 'calculator'] }
-                ];
-                processHealthTools(fallbackTools, healthGrid, paginationContainer);
-                return;
-            }
+            console.log("Health grid found:", healthGrid);
             
-            // Process with the tools from window.tools
-            processHealthTools(window.tools, healthGrid, paginationContainer);
+            // Get tools data
+            const healthTools = [
+                { name: 'IVF Due Date Calculator', url: 'health/ivf-calculator.html', tags: ['health', 'pregnancy', 'calculator'] },
+                { name: 'Pregnancy Weight Gain Calculator', url: 'health/pregnancy-weight.html', tags: ['calculator', 'health'] },
+                { name: 'Calories Burned Walking', url: 'health/calories-walking.html', tags: ['calculator', 'health'] },
+                { name: 'Calorie Deficit Finder', url: 'health/calorie-deficit.html', tags: ['health', 'calculator'] },
+                { name: 'Body Frame Size Calculator', url: 'health/body-frame-inline.html', tags: ['calculator', 'health'] },
+                { name: 'Calories in Food Checker', url: 'health/food-calories.html', tags: ['health', 'calculator'] }
+            ];
+            processHealthTools(healthTools, healthGrid, paginationContainer);
         }
         
         /**
@@ -635,6 +1630,6 @@
             window.scrollTo({ top: document.querySelector('.category-header').offsetTop, behavior: 'smooth' });
         }
     </script>
-    <script src="/js/icon-replacement.js"></script>
+    <script src="js/icon-replacement.js"></script>
 </body>
 </html>

@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Calculators - Task Proper | Free Finance & Investment Tools</title>
-    <meta name="description" content="Access free online finance and investment calculators for tracking debt, managing expenses, calculating ratios, and more with Task Proper.">
-    <meta name="keywords" content="finance calculators, investment tools, debt ratio, expense tracker, financial planning, Task Proper">
-    <meta name="robots" content="index, follow">
+    <title>Free Finance Calculators - Debt Ratio, Expense Tracker & Budget Tools | Task Proper</title>
+    <meta name="description" content="Free online finance calculators for debt-to-income ratio, expense tracking, and budget planning. Get instant financial insights with tools trusted by students and professionals. No signup required.">
+    <meta name="keywords" content="finance calculators, debt to income ratio calculator, expense tracker, budget planning tools, free financial calculators, debt ratio calculator, personal finance tools">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="Jay Prajapati">
     <meta name="category" content="Finance">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Finance Calculators - Task Proper | Free Finance & Investment Tools">
-    <meta property="og:description" content="Access free online finance and investment calculators for tracking debt, managing expenses, calculating ratios, and more with Task Proper.">
+    <meta property="og:title" content="Free Finance Calculators - Debt Ratio, Expense Tracker & Budget Tools | Task Proper">
+    <meta property="og:description" content="Free online finance calculators for debt-to-income ratio, expense tracking, and budget planning. Get instant financial insights with tools trusted by students and professionals.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://taskproper.com/finance.html">
+    <meta property="og:url" content="https://www.taskproper.com/finance.html">
+    <meta property="og:site_name" content="Task Proper">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Finance Calculators - Task Proper">
+    <meta name="twitter:description" content="Debt-to-income calculator, expense tracker, and budget planning tools. Free financial calculators for smart money management.">
+    <meta name="twitter:site" content="@taskproper">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://taskproper.com/finance.html">
+    <link rel="canonical" href="https://www.taskproper.com/finance.html">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     
@@ -41,6 +52,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/finance-page.css">
+    <link rel="stylesheet" href="css/favorite-star.css">
 
     <!-- Accessibility: Focus Outline for keyboard navigation -->
     <style>
@@ -48,6 +60,185 @@
         :focus {
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .faq-container {
+            max-width: 100%;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            background: #ffffff;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #343a40;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .faq-toggle {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #6c757d;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        /* Benefits List Styling */
+        .tools-benefits {
+            margin: 2.5rem 0;
+            padding: 2rem 0;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .benefits-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefits-list strong {
+            color: #343a40;
+            font-weight: 600;
+        }
+
+        /* Related Categories Styling */
+        .related-categories {
+            margin: 3rem 0 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+
+        .category-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .category-card h4 {
+            margin: 0 0 1rem 0;
+            color: #343a40;
+            font-size: 1.1rem;
+        }
+
+        .category-card h4 i {
+            margin-right: 0.5rem;
+            color: #6c757d;
+        }
+
+        .category-card p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-question {
+                padding: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 0 1rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 1rem;
+            }
         }
     </style>
     
@@ -58,11 +249,11 @@
         "@type": "WebPage",
         "name": "Finance Calculators - Task Proper",
         "description": "Access free online finance and investment calculators for tracking debt, managing expenses, calculating ratios, and more.",
-        "url": "https://taskproper.com/finance.html",
+        "url": "https://www.taskproper.com/finance.html",
         "publisher": {
             "@type": "Organization",
             "name": "Task Proper",
-            "url": "https://taskproper.com"
+            "url": "https://www.taskproper.com"
         },
         "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -71,16 +262,66 @@
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Home",
-                    "item": "https://taskproper.com/"
+                    "item": "https://www.taskproper.com/"
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Finance",
-                    "item": "https://taskproper.com/finance.html"
+                    "item": "https://www.taskproper.com/finance.html"
                 }
             ]
         }
+    }
+    </script>
+
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are these finance calculators actually accurate for real-world budgeting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Our debt-to-income calculator uses the same formulas that banks and credit unions use when evaluating loan applications. The expense tracker follows standard accounting principles, and we've tested these tools against professional financial software. They're designed for everyday people making real financial decisions, not just theoretical calculations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's a healthy debt-to-income ratio, and why should I care?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most financial experts recommend keeping your debt-to-income ratio below 36%, with no more than 28% going to housing costs. Our calculator shows you exactly where you stand and what it means for your financial health. This ratio affects your ability to get loans, credit cards, and even apartment rentals — it's basically your financial report card."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can the expense tracker really help me save money, or is it just bookkeeping?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It's way more than bookkeeping. Most people are shocked when they see where their money actually goes. That daily coffee habit might cost $150 per month, or those subscription services you forgot about could be eating $50 monthly. The tracker helps you spot these patterns and make informed decisions about what expenses are truly worth it to you."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you store my financial information when I use these calculators?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, we don't store anything. All calculations happen right in your browser, and nothing gets sent to our servers. Your financial information stays completely private on your device. You can even use these tools offline once the page loads — we believe your money matters should stay between you and your calculator."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are these tools suitable for someone just starting to manage their finances?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Definitely. We built these specifically for people who find traditional financial planning overwhelming. Each tool includes clear explanations of what the numbers mean and why they matter. You don't need an accounting degree — just the desire to understand and improve your financial situation. Start with the expense tracker to see where your money goes, then move to the debt calculator when you're ready."
+                }
+            }
+        ]
     }
     </script>
     
@@ -92,7 +333,7 @@
         <nav class="navbar">
             <!-- Left side: Logo and subtitle -->
             <div class="navbar-brand">
-                <a href="/" class="brand-link">
+                <a href="https://www.taskproper.com" class="brand-link">
                     <h1 class="site-title">Task Proper</h1>
                     <p class="site-subtitle">Simple and Convenient Web Tools</p>
                 </a>
@@ -116,7 +357,7 @@
                 <button class="menu-toggle" aria-label="Toggle menu">
                         <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
-                 <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Instagram profile">
+                 <a href="https://www.instagram.com/taskproper/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram profile">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1-27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
                 </a>
             </div>
@@ -235,26 +476,127 @@
         <section class="category-info">
             <div class="container">
                 <h2>About Our Finance Tools</h2>
-                <p>Manage your financial health with our comprehensive suite of finance calculators. Designed for accuracy and ease of use, these tools help you track debt, manage expenses, calculate ratios, and make informed investment decisions.</p>
+                <p>Taking control of your finances doesn't have to be overwhelming. Our carefully designed finance calculators help you understand where your money goes and how to make it work better for you. Whether you're a college student trying to manage debt, a young professional planning your budget, or someone looking to get serious about expense tracking, these tools translate complex financial concepts into simple, actionable insights. Built by people who understand real financial challenges, each calculator focuses on practical scenarios you actually face â€“ like figuring out if that student loan payment fits your budget or tracking where your paycheck disappears each month.</p>
+                
+                <!-- How These Tools Help -->
+                <div class="tools-benefits">
+                    <h3>How These Tools Can Help You</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Smart Debt Management:</strong> Calculate your debt-to-income ratio to understand if you're borrowing responsibly and get a clear picture of your financial health before making major purchases.</li>
+                        <li><strong>Real-Time Expense Tracking:</strong> Monitor daily spending patterns and identify where small purchases add up to big budget leaks, helping you stay on track with your financial goals.</li>
+                        <li><strong>Budget Planning Made Simple:</strong> Use our debt ratio calculator to determine how much of your income should go toward debt payments, ensuring you maintain a healthy financial balance.</li>
+                        <li><strong>Financial Decision Support:</strong> Get instant calculations that help you evaluate loan applications, credit decisions, and major purchases with confidence and clarity.</li>
+                    </ul>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Are these finance calculators actually accurate for real-world budgeting?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely. Our debt-to-income calculator uses the same formulas that banks and credit unions use when evaluating loan applications. The expense tracker follows standard accounting principles, and we've tested these tools against professional financial software. They're designed for everyday people making real financial decisions, not just theoretical calculations.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>What's a healthy debt-to-income ratio, and why should I care?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Most financial experts recommend keeping your debt-to-income ratio below 36%, with no more than 28% going to housing costs. Our calculator shows you exactly where you stand and what it means for your financial health. This ratio affects your ability to get loans, credit cards, and even apartment rentals â€“ it's basically your financial report card.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Can the expense tracker really help me save money, or is it just bookkeeping?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>It's way more than bookkeeping. Most people are shocked when they see where their money actually goes. That daily coffee habit might cost $150 per month, or those subscription services you forgot about could be eating $50 monthly. The tracker helps you spot these patterns and make informed decisions about what expenses are truly worth it to you.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Do you store my financial information when I use these calculators?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No, we don't store anything. All calculations happen right in your browser, and nothing gets sent to our servers. Your financial information stays completely private on your device. You can even use these tools offline once the page loads â€“ we believe your money matters should stay between you and your calculator.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Are these tools suitable for someone just starting to manage their finances?</h4>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Definitely. We built these specifically for people who find traditional financial planning overwhelming. Each tool includes clear explanations of what the numbers mean and why they matter. You don't need an accounting degree â€“ just the desire to understand and improve your financial situation. Start with the expense tracker to see where your money goes, then move to the debt calculator when you're ready.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Categories -->
+                <div class="related-categories">
+                    <h3>Explore Related Tools</h3>
+                    <div class="categories-grid">
+                        <div class="category-card">
+                            <a href="health.html">
+                                <h4><i class="fas fa-heart"></i> Health Tools</h4>
+                                <p>Calculate BMI, track calories, and plan pregnancy milestones with tools designed for real health decisions.</p>
+                            </a>
+                        </div>
+
+                        <div class="category-card">
+                            <a href="personal.html">
+                                <h4><i class="fas fa-user"></i> Personal Tools</h4>
+                                <p>Age calculators, biodata creators, and relationship tools that help with life's personal milestones.</p>
+                            </a>
+                        </div>
+
+                        <div class="category-card">
+                            <a href="utility.html">
+                                <h4><i class="fas fa-tools"></i> Utility Tools</h4>
+                                <p>DPI checkers, typing tests, and productivity tools for everyday tasks and technical needs.</p>
+                            </a>
+                        </div>
+
+                        <div class="category-card">
+                            <a href="game.html">
+                                <h4><i class="fas fa-gamepad"></i> Game Tools</h4>
+                                <p>Brain training games and memory exercises for improving concentration and cognitive skills.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Features Grid -->
                 <div class="features-grid">
                     <div class="feature-card">
                         <span class="icon-calculator" aria-hidden="true"></span>
                         <h3>Simple & Accurate</h3>
-                        <p>All calculations are based on scientific formulas with clear, easy-to-understand results.</p>
+                        <p>All calculations are based on proven financial formulas with clear, easy-to-understand results.</p>
                     </div>
                     
                     <div class="feature-card">
                         <span class="icon-mobile-alt" aria-hidden="true"></span>
                         <h3>Mobile Friendly</h3>
-                        <p>Use our tools on any device – perfect for checking health metrics on the go.</p>
+                        <p>Use our tools on any device â€“ perfect for checking your finances on the go.</p>
                     </div>
                     
                     <div class="feature-card">
                         <span class="icon-lock" aria-hidden="true"></span>
                         <h3>Privacy First</h3>
-                        <p>All calculations are done in your browser – no personal health data is ever stored or shared.</p>
+                        <p>All calculations are done in your browser â€“ no personal financial data is ever stored or shared.</p>
                     </div>
                 </div>
             </div>
@@ -304,23 +646,31 @@
                     <nav class="footer-nav">
                         <ul class="social-links">
                             <li>
-                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
+                                <a href="https://www.instagram.com/taskproper/" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/taskproper" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                <a href="https://www.linkedin.com/in/task-proper/" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
                                 </a>
                             </li>
                         </ul>
@@ -338,7 +688,38 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="js/sidebar-favorites.js"></script>
+    <script>
+        // Sidebar Toggle Functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar && overlay) {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (sidebar) sidebar.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.sidebar-close');
+            const overlay = document.querySelector('.overlay');
+
+            if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+            if (menuClose) menuClose.addEventListener('click', closeSidebar);
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
     <script>
         // Constants for finance page
         const FINANCE_ITEMS_PER_PAGE = 12; // Show more tools per page
@@ -368,15 +749,8 @@
                 });
             }
 
-            // Load health tools immediately if the tools array is available
-            if (window.tools && Array.isArray(window.tools)) {
-                loadFinanceTools();
-            } else {
-                // Load tools with a small delay to ensure script.js is loaded
-                setTimeout(() => {
-                    loadFinanceTools();
-                }, 100);
-            }
+            // Load finance tools
+            loadFinanceTools();
         });
 
         /**
@@ -531,23 +905,12 @@
                 return;
             }
             
-            // Get tools data
-            if (!window.tools || !Array.isArray(window.tools)) {
-                console.error("Tools array not available");
-                
-                // Fallback to direct data if tools not loaded from script.js
-                // This is more robust than calling an undefined getToolsData() function
-                const fallbackTools = [
-                    { name: 'Debt-to-Income Ratio Calculator', url: 'finance/debt-ratio.html', tags: ['finance'] },
-                    { name: 'Expense Tracker', url: 'finance/expense-tracker.html', tags: ['finance'] },
-                    { name: 'Debt Ratio Calculator', url: 'finance/debt-ratio.html', tags: ['finance'] }
-                ];
-                processFinanceTools(fallbackTools, financeGrid, paginationContainer);
-                return;
-            }
-            
-            // Process with the tools from window.tools
-            processFinanceTools(window.tools, financeGrid, paginationContainer);
+            // Use direct tools data
+            const financeTools = [
+                { name: 'Debt-to-Income Ratio Calculator', url: 'finance/debt-ratio.html', tags: ['finance'] },
+                { name: 'Expense Tracker', url: 'finance/expense-tracker.html', tags: ['finance'] }
+            ];
+            processFinanceTools(financeTools, financeGrid, paginationContainer);
         }
         
         /**
@@ -608,7 +971,35 @@
             loadFinanceTools();
             window.scrollTo({ top: document.querySelector('.main-content').offsetTop, behavior: 'smooth' });
         }
+
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
     </script>
-    <script src="/js/icon-replacement.js"></script>
+
+    <script src="js/icon-replacement.js"></script>
 </body>
 </html>
