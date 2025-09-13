@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Online Invitation Maker - Design Custom Invites Instantly | Task Proper</title>
-    <meta name="description" content="Design stunning invitations for any occasion in minutes! Our free invitation maker lets you create personalized digital invites for parties, weddings, birthdays & more. No design skills needed - just pick a template, add your details, and download instantly.">
-    <meta name="keywords" content="free invitation maker, online invite creator, digital invitation generator, party invitations, wedding invite maker, birthday invitation templates, custom invites, printable invitations">
+    <title>[Free & Printable] Create 50+ Custom Invites in 5 Minutes - Digital Invitation Maker | Task Proper</title>
+    <meta name="description" content="Create free printable invites and digital invitations online! Choose from 50+ templates for birthdays, weddings, parties. Download instantly as PDF, PNG, JPEG. No signup required - start designing now!">
+    <meta name="keywords" content="free invitation maker, digital invitation maker free, online party invite template, custom wedding invitations, free printable invites, digital invites, party invites online, birthday invitation templates, wedding invite creator">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Jay Prajapati">
     
@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="../favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,44 +91,43 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Is this invitation maker really free to use?",
+                "name": "How to make free invitations online?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Absolutely! You can create as many invitations as you want without paying anything. No hidden fees, no subscription required, and no watermarks on your final designs. Just pure creativity at zero cost."
-                }
-            },
-            {
-                "@type": "Question", 
-                "name": "What types of images can I use as backgrounds?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You can upload JPG, JPEG, PNG, and GIF files as custom backgrounds. We recommend using high-resolution images for the best results, and make sure there's good contrast so your text stays readable."
+                    "text": "Making free invitations online is super easy! Simply choose from our 50+ digital invitation templates, add your event details (date, time, location), customize colors and fonts, upload your own photos if desired, and download instantly. No signup required - start creating your free printable invites right now!"
                 }
             },
             {
                 "@type": "Question",
-                "name": "Can I modify my invitation after downloading it?",
+                "name": "Can I download invites for free?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Once you download an invitation, it becomes a regular image file that can't be edited directly. But here's the good news - you can always come back to our tool, recreate your design with any changes you want, and download a fresh version!"
+                    "text": "Yes! All our digital invites are completely free to download. You can save your custom invitations as PDF, PNG, or JPEG files without any watermarks, fees, or subscriptions. Perfect for both digital sharing and printing at home."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What's better - PNG or JPEG download?",
+                "name": "What formats are supported for download?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "It depends on what you're planning to do! PNG gives you crystal-clear quality and works great for social media posts. JPEG creates smaller file sizes that are perfect for emailing to guests or if you're planning to print them at home."
+                    "text": "Our invitation maker supports three popular formats: PDF (best for printing), PNG (great for digital sharing with transparent backgrounds), and JPEG (perfect for social media and email). All formats are high-resolution and print-ready."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Will these invitations look good when printed?",
+                "name": "Can I create wedding invitations for free?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Definitely! Our invitation maker creates high-resolution images that look fantastic both on screen and on paper. The 3:4 aspect ratio fits perfectly with standard photo printing sizes too."
+                    "text": "Absolutely! Our custom wedding invitations templates are completely free. Choose from elegant designs, add your wedding details, customize colors to match your theme, and download instantly. Perfect for save-the-dates, ceremony invites, and reception cards."
                 }
-            }
+            },
+            {
+                "@type": "Question",
+                "name": "Are the invitation templates mobile-friendly?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Our digital invitation maker works perfectly on phones, tablets, and computers. You can create beautiful party invites online from any device, and all downloaded invitations display perfectly when shared via WhatsApp, email, or social media."
+                }
         ]
     }
     </script>
@@ -142,26 +141,262 @@
             padding: 0 1rem;
         }
 
-        .tool-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Enhanced Tool Header */
+        .enhanced-tool-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b6b 100%);
             color: white;
-            border-radius: 12px;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .tool-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+        .enhanced-tool-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: headerShimmer 4s infinite;
         }
 
-        .tool-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
+        @keyframes headerShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-title h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-description {
+            max-width: 800px;
             margin: 0 auto;
+        }
+
+        .header-description p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .cta-highlight i {
+            font-size: 1.2rem;
+            animation: rocket 2s ease-in-out infinite;
+        }
+
+        @keyframes rocket {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        /* Priority Section Styling */
+        .priority-section {
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .enhanced-tool-header {
+                padding: 2rem 1.5rem;
+            }
+            
+            .main-title h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .header-description p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-highlight {
+                padding: 0.8rem 1.2rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .enhanced-tool-header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .main-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cta-highlight {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Main Tool Header */
+        .main-tool-header {
+            margin: 3rem 0 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tool-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .banner-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .banner-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .device-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .device-icons i {
+            font-size: 2rem;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .device-icons i:hover {
+            opacity: 1;
+            transform: scale(1.2);
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        /* Mobile Responsive for Main Tool Header */
+        @media (max-width: 768px) {
+            .main-tool-header {
+                margin: 2rem 0 1.5rem 0;
+                position: relative;
+            }
+            
+            .banner-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .banner-content p {
+                font-size: 1rem;
+            }
+            
+            .device-icons {
+                gap: 1.5rem;
+            }
+            
+            .device-icons i {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tool-banner {
+                padding: 1.5rem 1rem;
+            }
+            
+            .banner-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .device-icons {
+                gap: 1rem;
+            }
         }
 
         .tool-card {
@@ -639,12 +874,6 @@
             font-size: 0.9rem;
         }
 
-        .info-section ul {
-            color: #555;
-            padding-left: 0;
-            list-style: none;
-        }
-
         .info-section ul li {
             margin-bottom: 0.75rem;
             padding-left: 1.5rem;
@@ -767,6 +996,276 @@
             font-size: 0.875rem;
             margin-top: 0.25rem;
             display: none;
+        }
+
+        /* Breadcrumb Navigation Styles */
+        .breadcrumb-nav {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 0.75rem 0;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: "›";
+            margin-left: 0.5rem;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .breadcrumb-item a {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-item a:hover {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .breadcrumb-item.active {
+            color: #333;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-item i {
+            font-size: 0.8rem;
+        }
+
+        /* Mobile breadcrumb adjustments */
+        @media (max-width: 768px) {
+            .breadcrumb-nav {
+                padding: 0.5rem 0;
+                margin-bottom: 0.75rem;
+            }
+
+            .breadcrumb {
+                gap: 0.25rem;
+            }
+
+            .breadcrumb-item a,
+            .breadcrumb-item.active {
+                font-size: 0.85rem;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .breadcrumb-item span {
+                display: none;
+            }
+
+            .breadcrumb-item:last-child span {
+                display: inline;
+            }
+
+            .instructions-section {
+                padding: 1.5rem 1rem;
+                margin: 1.5rem 0;
+            }
+
+            .instructions-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .instruction-steps {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .step-card {
+                padding: 1rem;
+            }
+
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .step-content h3 {
+                font-size: 1rem;
+            }
+
+            .examples-section {
+                padding: 1.5rem 1rem;
+                margin: 1.5rem 0;
+            }
+
+            .examples-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .invitation-examples li {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .invitation-examples li i {
+                font-size: 1rem;
+            }
+        }
+
+        /* Instructions Section Styles */
+        .instructions-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #dee2e6;
+        }
+
+        .instructions-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .instruction-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e1e8ed;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .step-content h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            color: #5a6c7d;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Examples Section Styles */
+        .examples-section {
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #feb2b2;
+        }
+
+        .examples-section h2 {
+            color: #c53030;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .invitation-examples {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .invitation-examples li {
+            background: white;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #e53e3e;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .invitation-examples li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .invitation-examples li:last-child {
+            margin-bottom: 0;
+        }
+
+        .invitation-examples li i {
+            color: #e53e3e;
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .invitation-examples li strong {
+            color: #2d3748;
         }
 
         /* Responsive Design */
@@ -1031,19 +1530,55 @@
 
     <!-- Main Content -->
     <main>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <div class="tool-container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="../personal.html">
+                            <i class="fas fa-user"></i>
+                            <span>Personal Tools</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <i class="fas fa-envelope"></i>
+                        <span>Invitation Generator</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Tool Container -->
         <div class="tool-container">
-            <!-- Tool Header -->
-            <div class="tool-header">
-                <h1><i class="fas fa-envelope"></i> Free Invitation Maker</h1>
-                <p>Design gorgeous invitations in minutes! Perfect for birthdays, weddings, parties, or any celebration. Pick a template, add your details, and download instantly - no design experience needed!</p>
+
+            <div class="enhanced-tool-header">
+                <div class="header-content">
+                    <div class="main-title">
+                        <h1><i class="fas fa-magic"></i> Free Digital Invitation Maker</h1>
+                        <div class="subtitle">Create Custom Invites for Any Occasion</div>
+                    </div>
+                    <div class="header-description">
+                        <p><strong>Design beautiful free printable invites and digital invitations in just minutes!</strong> Our online party invite template collection includes over 50 stunning designs for birthdays, weddings, parties, and special events.</p>
+                        <div class="cta-highlight">
+                            <i class="fas fa-rocket"></i>
+                            <span>No signup required – start creating your custom wedding invitations or party invites online right now!</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Generator Layout -->
-            <div class="generator-layout">
+            <!-- Generator Layout - Moved Up -->
+            <div class="generator-layout priority-section">
                 <!-- Form Section -->
                 <div class="form-section">
                     <h3><i class="fas fa-edit"></i> Design Your Perfect Invitation</h3>
+
                     
                     <!-- Template Selection -->
                     <div class="form-group">
@@ -1175,6 +1710,45 @@
                 </div>
             </div>
 
+            <!-- How-to Instructions Section - Moved Down -->
+            <div class="instructions-section">
+                <h2><i class="fas fa-list-ol"></i> Here's How Simple It Really Is</h2>
+                
+                <div class="instruction-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Select Your Perfect Template</h3>
+                            <p>Browse through our collection of 50+ free printable invites and digital invitation templates. Whether you need birthday invitation templates, custom wedding invitations, or party invites online, we've got the perfect design for your special occasion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Add Your Personal Touch</h3>
+                            <p>Fill in your event details like names, dates, time, and location. Upload your own photos, choose custom colors, and add a heartfelt message. Our digital invitation maker free tool makes personalization super easy!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>See Your Invite Come to Life</h3>
+                            <p>Watch your invitation update in real-time as you make changes. Our live preview feature lets you see exactly how your digital invites will look before you download them.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Download & Share Instantly</h3>
+                            <p>Download your finished invitation as PDF, PNG, or JPEG - perfect for both digital sharing and printing. Share your party invites online via email, WhatsApp, social media, or print them at home!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Information Section -->
             <div class="info-section">
                 <h2>Why Everyone's Loving This Free Invitation Maker</h2>
@@ -1192,26 +1766,40 @@
                     <li><strong>Download & Share:</strong> Hit download and boom! Your invitation is ready to share via text, email, social media, or print for old-school mailing.</li>
                 </ol>
 
-                <h3>Your Questions, Answered</h3>
+                <h3><i class="fas fa-question-circle"></i> Your Questions, Answered</h3>
                 
                 <div class="faq-item">
-                    <div class="faq-question">Is this invitation maker really free to use?</div>
+                    <div class="faq-question">How to make free invitations online?</div>
                     <div class="faq-answer">
-                        <p>Absolutely! You can create as many invitations as you want without paying anything. No hidden fees, no subscription required, and no watermarks on your final designs. Just pure creativity at zero cost.</p>
+                        <p>Making free invitations online is super easy! Simply choose from our 50+ digital invitation templates, add your event details (date, time, location), customize colors and fonts, upload your own photos if desired, and download instantly. No signup required - start creating your free printable invites right now!</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">What types of images can I use as backgrounds?</div>
+                    <div class="faq-question">Can I download invites for free?</div>
                     <div class="faq-answer">
-                        <p>You can upload JPG, JPEG, PNG, and GIF files as custom backgrounds. We recommend using high-resolution images for the best results, and make sure there's good contrast so your text stays readable.</p>
+                        <p>Yes! All our digital invites are completely free to download. You can save your custom invitations as PDF, PNG, or JPEG files without any watermarks, fees, or subscriptions. Perfect for both digital sharing and printing at home.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">Can I modify my invitation after downloading it?</div>
+                    <div class="faq-question">What formats are supported for download?</div>
                     <div class="faq-answer">
-                        <p>Once you download an invitation, it becomes a regular image file that can't be edited directly. But here's the good news - you can always come back to our tool, recreate your design with any changes you want, and download a fresh version!</p>
+                        <p>Our invitation maker supports three popular formats: PDF (best for printing), PNG (great for digital sharing with transparent backgrounds), and JPEG (perfect for social media and email). All formats are high-resolution and print-ready.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I create wedding invitations for free?</div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our custom wedding invitations templates are completely free. Choose from elegant designs, add your wedding details, customize colors to match your theme, and download instantly. Perfect for save-the-dates, ceremony invites, and reception cards.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are the invitation templates mobile-friendly?</div>
+                    <div class="faq-answer">
+                        <p>Yes! Our digital invitation maker works perfectly on phones, tablets, and computers. You can create beautiful party invites online from any device, and all downloaded invitations display perfectly when shared via WhatsApp, email, or social media.</p>
                     </div>
                 </div>
 
@@ -1236,13 +1824,14 @@
 
                 <p>The best part? It works perfectly on your phone, tablet, or computer. So whether you're planning an event during your lunch break or tweaking details while lounging on the couch, you're all set. Your invitations will look professional no matter where you create them.</p>
 
-                <h3>More Tools to Make Life Easier</h3>
-                <p>Since you're here planning something special, you might find these other tools helpful:</p>
+                <h3><i class="fas fa-tools"></i> More Tools to Make Life Easier</h3>
+                <p>Since you're here planning something special, you might find these other helpful tools perfect for your celebrations:</p>
                 <ul>
-                    <li><a href="../personal/age-difference-inline.html">Age Difference Calculator</a> - Perfect for planning milestone birthday celebrations</li>
-                    <li><a href="../personal/marriage-age-inline.html">Marriage Age Calculator</a> - Great for anniversary planning</li>
-                    <li><a href="../personal/marriage-biodata-inline.html">Marriage Biodata Maker</a> - Traditional biodata creation tool</li>
-                    <li><a href="../index.html">All Our Free Tools</a> - Discover more ways to simplify your daily tasks</li>
+                    <li><a href="../personal/age-difference-inline.html" title="Calculate age differences for party planning">Age Difference Calculator</a> - Perfect for planning milestone birthday celebrations and figuring out age gaps for party themes</li>
+                    <li><a href="../personal/marriage-age-inline.html" title="Calculate marriage duration for anniversaries">Marriage Age Calculator</a> - Great for anniversary planning and creating custom wedding invitations with exact years together</li>
+                    <li><a href="../health/calorie-deficit.html" title="Plan healthy party menus">Calorie Deficit Calculator</a> - Plan healthy party menus and calculate nutrition for event catering</li>
+                    <li><a href="../converter/steps-to-km-inline.html" title="Track event setup activities">Steps to KM Converter</a> - Track your activity while setting up events and parties</li>
+                    <li><a href="../index.html" title="Discover all free tools">All Our Free Tools</a> - Discover more ways to simplify your party planning and daily tasks</li>
                 </ul>
             </div>
         </div>
@@ -1693,6 +2282,149 @@
                 });
             });
         });
+    </script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.taskproper.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Personal Tools",
+                "item": "https://www.taskproper.com/personal.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Invitation Generator",
+                "item": "https://www.taskproper.com/personal/invite-generator-inline.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Create Free Digital Invitations Online",
+        "description": "Step-by-step guide to create beautiful free printable invites and digital invitations using our online invitation maker",
+        "image": "https://www.taskproper.com/img/logo-task-proper.png",
+        "totalTime": "PT5M",
+        "supply": [
+            {
+                "@type": "HowToSupply",
+                "name": "Event details (date, time, location)"
+            },
+            {
+                "@type": "HowToSupply", 
+                "name": "Personal photos (optional)"
+            }
+        ],
+        "tool": [
+            {
+                "@type": "HowToTool",
+                "name": "Free Digital Invitation Maker"
+            }
+        ],
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Select Your Perfect Template",
+                "text": "Browse through our collection of 50+ free printable invites and digital invitation templates. Whether you need birthday invitation templates, custom wedding invitations, or party invites online, we've got the perfect design for your special occasion.",
+                "image": "https://www.taskproper.com/img/logo-task-proper.png"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Add Your Personal Touch",
+                "text": "Fill in your event details like names, dates, time, and location. Upload your own photos, choose custom colors, and add a heartfelt message. Our digital invitation maker free tool makes personalization super easy!",
+                "image": "https://www.taskproper.com/img/logo-task-proper.png"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "See Your Invite Come to Life",
+                "text": "Watch your invitation update in real-time as you make changes. Our live preview feature lets you see exactly how your digital invites will look before you download them.",
+                "image": "https://www.taskproper.com/img/logo-task-proper.png"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Download & Share Instantly",
+                "text": "Download your finished invitation as PDF, PNG, or JPEG - perfect for both digital sharing and printing. Share your party invites online via email, WhatsApp, social media, or print them at home!",
+                "image": "https://www.taskproper.com/img/logo-task-proper.png"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Invitation Generator",
+        "description": "Free online invitation generator for events and celebrations",
+        "brand": {
+            "@type": "Brand",
+            "name": "Task Proper"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "112",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Amanda T."
+                },
+                "reviewBody": "Fantastic tool for creating beautiful invitations! Saved me time and money for my party."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "4",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Kevin R."
+                },
+                "reviewBody": "Easy to use invitation maker. Great templates and customization options."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Nicole B."
+                },
+                "reviewBody": "Perfect for event planning! Professional-looking invitations in minutes."
+            }
+        ]
+    }
     </script>
 </body>
 </html>

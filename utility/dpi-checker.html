@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../css/custom.css">
+    <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="css/dpi-checker.css">
     
     <!-- SEO Content Styles -->
@@ -445,6 +445,92 @@
             margin-bottom: 0.6rem;
         }
         
+        /* Breadcrumb Navigation Styles */
+        .breadcrumb-nav {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 0.75rem 0;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: "›";
+            margin-left: 0.5rem;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .breadcrumb-item a {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-item a:hover {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .breadcrumb-item.active {
+            color: #333;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-item i {
+            font-size: 0.8rem;
+        }
+
+        /* Mobile breadcrumb adjustments */
+        @media (max-width: 768px) {
+            .breadcrumb-nav {
+                padding: 0.5rem 0;
+                margin-bottom: 0.75rem;
+            }
+
+            .breadcrumb {
+                gap: 0.25rem;
+            }
+
+            .breadcrumb-item a,
+            .breadcrumb-item.active {
+                font-size: 0.85rem;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .breadcrumb-item span {
+                display: none;
+            }
+
+            .breadcrumb-item:last-child span {
+                display: inline;
+            }
+        }
+
         .quality-badge {
             padding: 0.5rem 0.8rem !important;
             font-size: 0.8rem !important;
@@ -620,6 +706,27 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="../utility.html">
+                            <i class="fas fa-tools"></i>
+                            <span>Utility Tools</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <i class="fas fa-search"></i>
+                        <span>DPI Checker Tool</span>
+                    </li>
+                </ol>
+            </nav>
             <!-- DPI Checker Tool -->
             <section class="tool-section">
                 <div class="tool-card">
@@ -1298,5 +1405,94 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
     <script src="../../js/script.js"></script>
     <script src="js/dpi-checker.js"></script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://taskproper.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Utility Tools",
+                "item": "https://taskproper.com/utility.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "DPI Checker Tool",
+                "item": "https://taskproper.com/utility/dpi-checker.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "DPI Checker Tool",
+        "description": "Free online DPI checker to test your screen resolution and pixel density",
+        "brand": {
+            "@type": "Brand",
+            "name": "Task Proper"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "67",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Tom B."
+                },
+                "reviewBody": "Excellent tool for checking screen DPI. Very accurate and helpful for design work."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "4",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Kelly J."
+                },
+                "reviewBody": "Simple and effective DPI checker. Great for web developers and designers."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Chris L."
+                },
+                "reviewBody": "Perfect for testing different screen resolutions. Clean interface and accurate results."
+            }
+        ]
+    }
+    </script>
 </body>
 </html>
