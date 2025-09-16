@@ -8,7 +8,7 @@
     <meta name="description" content="Contact TaskProper for support, feedback, or business inquiries. Get help with our free calculators, converters & tools. We reply within 24-48 hours.">
     <meta name="keywords" content="contact Task Proper, feedback, support, bug report, free tools, online calculators, utility tools">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Task Proper">
+    <meta name="author" content="Jay Prajapati">
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Contact TaskProper - Get Support for Free Online Tools">
@@ -43,12 +43,226 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     
-    <!-- Accessibility Improvements -->
+    <!-- Contact Page Styles -->
     <style>
+      /* Accessibility Improvements */
       :focus {
         outline: 2px dashed #007acc;
         outline-offset: 2px;
       }
+
+      /* Contact Page Sections */
+      .contact-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        margin-bottom: 3rem;
+      }
+
+      .contact-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+
+      .contact-text.no-margin {
+        margin-bottom: 0;
+      }
+
+      .section-header {
+        font-size: 1.8rem;
+        color: #2c3e50;
+        margin-bottom: 2rem;
+        text-align: center;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 1rem;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .contact-card {
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #333333;
+      }
+
+      .contact-card h3 {
+        font-size: 1.2rem;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-link {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-small-text {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .contact-address {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .response-time-box {
+        text-align: center;
+        padding: 1.5rem;
+        background: #e8f4fd;
+        border-radius: 8px;
+        border: 1px solid #bee5eb;
+      }
+
+      .response-time-text {
+        margin: 0;
+        color: #2c3e50;
+        font-weight: 500;
+      }
+
+      .faq-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .faq-item {
+        padding: 1.5rem;
+        border: 1px solid #e1e8ed;
+        border-radius: 8px;
+        background: #fafbfc;
+      }
+
+      .faq-question {
+        font-size: 1.1rem;
+        color: #2c3e50;
+        margin-bottom: 0.75rem;
+      }
+
+      .faq-answer {
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .link-card {
+        display: block;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        text-decoration: none;
+        border-left: 4px solid;
+        transition: transform 0.2s ease;
+      }
+
+      .link-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .link-card.home { border-left-color: #3498db; }
+      .link-card.calculator { border-left-color: #e74c3c; }
+      .link-card.health { border-left-color: #27ae60; }
+      .link-card.study { border-left-color: #f39c12; }
+      .link-card.about { border-left-color: #9b59b6; }
+
+      .link-card h3 {
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .link-card p {
+        color: #666;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .center-text {
+        text-align: center;
+        color: #666;
+        margin-bottom: 2rem;
+      }
+
+      .trust-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        color: white;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .trust-content {
+        margin-bottom: 1.5rem;
+      }
+
+      .trust-text-large {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      .trust-text-medium {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+
+      .trust-text-final {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        color: white;
+        text-decoration: none;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+      }
+
+      .social-link:hover {
+        transform: translateY(-2px);
+      }
+
+      .social-link.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+      .social-link.facebook { background: #4267B2; }
+      .social-link.youtube { background: #FF0000; }
+      .social-link.linkedin { background: #0077B5; }
     </style>
     
     <!-- Schema.org JSON-LD for SEO -->
@@ -70,14 +284,14 @@
                     "contactPoint": [
                         {
                             "@type": "ContactPoint",
-                            "email": "support@taskproper.com",
+                            "email": "starofficial202503@gmail.com",
                             "contactType": "customer service",
                             "availableLanguage": ["English"],
                             "areaServed": "Worldwide"
                         },
                         {
                             "@type": "ContactPoint",
-                            "email": "business@taskproper.com",
+                            "email": "starofficial202503@gmail.com",
                             "contactType": "sales",
                             "availableLanguage": ["English"],
                             "areaServed": "Worldwide"
@@ -831,7 +1045,7 @@
             <div class="navbar-actions">
                 <div class="search-wrapper">
                 <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Search tools..." aria-label="Search tools">
+                    <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools..." aria-label="Search tools">
                     <button class="search-button" aria-label="Search">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zm-160 0c0-44.2-35.8-80-80-80s-80 35.8-80 80s35.8 80 80 80s80-35.8 80-80z"/></svg>
                     </button>
@@ -852,7 +1066,7 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
                 <button class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
@@ -926,112 +1140,110 @@
         </section>
 
         <!-- About Section -->
-        <section class="about-section" style="max-width: 1200px; margin: 0 auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); margin-bottom: 3rem;">
-            <p style="font-size: 1.1rem; line-height: 1.7; color: #2c3e50; margin-bottom: 1rem;">Our team is committed to providing reliable, easy-to-use tools for students, professionals and anyone who needs quick calculations. We value your feedback and use it to continuously improve our platform and add new tools that matter to you.</p>
+        <section class="contact-section">
+            <p class="contact-text">Our team is committed to providing reliable, easy-to-use tools for students, professionals and anyone who needs quick calculations. We value your feedback and use it to continuously improve our platform and add new tools that matter to you.</p>
             
-            <p style="font-size: 1.1rem; line-height: 1.7; color: #2c3e50;">Whether you need technical support for our calculators and converters, want to suggest a new feature, have questions about our planning tools, or are interested in business collaborations, we're here to help. Your input helps us build better tools for everyone.</p>
+            <p class="contact-text no-margin">Whether you need technical support for our calculators and converters, want to suggest a new feature, have questions about our planning tools, or are interested in business collaborations, we're here to help. Your input helps us build better tools for everyone.</p>
         </section>
 
         <!-- Contact Information Block -->
-        <section class="contact-info-block" style="max-width: 1200px; margin: 0 auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); margin-bottom: 3rem;">
-            <h2 style="font-size: 1.8rem; color: #2c3e50; margin-bottom: 2rem; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 1rem;">Get in Touch</h2>
+        <section class="contact-section">
+            <h2 class="section-header">Get in Touch</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #333333;">
-                    <h3 style="font-size: 1.2rem; color: #2c3e50; margin-bottom: 0.5rem;">📧 Email Support</h3>
-                    <p><a href="mailto:starofficial202503@gmail.com" style="color: #3498db; text-decoration: none; font-weight: 500;">starofficial202503@gmail.com</a></p>
-                    <p style="color: #666; font-size: 0.9rem; margin: 0;">For general inquiries, technical support, and feedback</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📧 Email Support</h3>
+                    <p><a href="mailto:starofficial202503@gmail.com" class="contact-link">starofficial202503@gmail.com</a></p>
+                    <p class="contact-small-text">For general inquiries, technical support, and feedback</p>
                 </div>
-                
-                <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #333333;">
-                    <h3 style="font-size: 1.2rem; color: #2c3e50; margin-bottom: 0.5rem;">🏢 Office Address</h3>
-                    <p style="color: #666; font-size: 0.9rem; line-height: 1.5; margin: 0;">Palanpur, Banaskantha<br>Gujarat, India - 385001</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; padding: 1.5rem; background: #e8f4fd; border-radius: 8px; border: 1px solid #bee5eb;">
-                <p style="margin: 0; color: #2c3e50; font-weight: 500;"><strong>⏱️ Response Time:</strong> We usually reply within 24-48 hours. For urgent technical issues, please mention "URGENT" in your subject line.</p>
-            </div>
-        </section>
 
-        <!-- FAQ Section -->
-        <section class="faq-section" style="max-width: 1200px; margin: 0 auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); margin-bottom: 3rem;">
-            <h2 style="font-size: 1.8rem; color: #2c3e50; margin-bottom: 2rem; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 1rem;">Frequently Asked Questions</h2>
+                <div class="contact-card">
+                    <h3>🏢 Office Address</h3>
+                    <p class="contact-address">Palanpur, Banaskantha<br>Gujarat, India - 385001</p>
+                </div>
+            </div>
+
+            <div class="response-time-box">
+                <p class="response-time-text"><strong>⏱️ Response Time:</strong> We usually reply within 24-48 hours. For urgent technical issues, please mention "URGENT" in your subject line.</p>
+            </div>
+        </section>        <!-- FAQ Section -->
+        <section class="contact-section">
+            <h2 class="section-header">Frequently Asked Questions</h2>
             
-            <div style="display: grid; gap: 1.5rem;">
-                <div style="padding: 1.5rem; border: 1px solid #e1e8ed; border-radius: 8px; background: #fafbfc;">
-                    <h3 style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 0.75rem;">❓ How can I contact TaskProper support?</h3>
-                    <p style="color: #666; line-height: 1.6; margin: 0;">You can reach us via email at starofficial202503@gmail.com or use the contact form below. We respond to all inquiries within 24-48 hours.</p>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">❓ How can I contact TaskProper support?</h3>
+                    <p class="faq-answer">You can reach us via email at starofficial202503@gmail.com or use the contact form below. We respond to all inquiries within 24-48 hours.</p>
                 </div>
                 
-                <div style="padding: 1.5rem; border: 1px solid #e1e8ed; border-radius: 8px; background: #fafbfc;">
-                    <h3 style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 0.75rem;">⏰ What is your usual response time?</h3>
-                    <p style="color: #666; line-height: 1.6; margin: 0;">We typically respond within 24-48 hours during business days. For urgent technical issues, please include "URGENT" in your subject line for faster assistance.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">⏰ What is your usual response time?</h3>
+                    <p class="faq-answer">We typically respond within 24-48 hours during business days. For urgent technical issues, please include "URGENT" in your subject line for faster assistance.</p>
                 </div>
                 
-                <div style="padding: 1.5rem; border: 1px solid #e1e8ed; border-radius: 8px; background: #fafbfc;">
-                    <h3 style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 0.75rem;">💼 Do you accept business or advertising inquiries?</h3>
-                    <p style="color: #666; line-height: 1.6; margin: 0;">Yes! For business partnerships, advertising opportunities, or collaboration proposals, please email us at starofficial202503@gmail.com with your detailed inquiry.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">💼 Do you accept business or advertising inquiries?</h3>
+                    <p class="faq-answer">Yes! For business partnerships, advertising opportunities, or collaboration proposals, please email us at starofficial202503@gmail.com with your detailed inquiry.</p>
                 </div>
                 
-                <div style="padding: 1.5rem; border: 1px solid #e1e8ed; border-radius: 8px; background: #fafbfc;">
-                    <h3 style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 0.75rem;">💡 Can I suggest a new tool or feature?</h3>
-                    <p style="color: #666; line-height: 1.6; margin: 0;">Absolutely! We love hearing from our users. Send your tool suggestions, feature requests, or improvement ideas to starofficial202503@gmail.com. Many of our current tools were inspired by user feedback.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">💡 Can I suggest a new tool or feature?</h3>
+                    <p class="faq-answer">Absolutely! We love hearing from our users. Send your tool suggestions, feature requests, or improvement ideas to starofficial202503@gmail.com. Many of our current tools were inspired by user feedback.</p>
                 </div>
                 
-                <div style="padding: 1.5rem; border: 1px solid #e1e8ed; border-radius: 8px; background: #fafbfc;">
-                    <h3 style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 0.75rem;">🔧 Do you provide technical support for your calculators?</h3>
-                    <p style="color: #666; line-height: 1.6; margin: 0;">Yes, we provide full technical support for all our calculators, converters and planning tools. If you encounter any issues or need help using a specific tool, don't hesitate to contact us.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">🔧 Do you provide technical support for your calculators?</h3>
+                    <p class="faq-answer">Yes, we provide full technical support for all our calculators, converters and planning tools. If you encounter any issues or need help using a specific tool, don't hesitate to contact us.</p>
                 </div>
                 
-                <div style="padding: 1.5rem; border: 1px solid #e1e8ed; border-radius: 8px; background: #fafbfc;">
-                    <h3 style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 0.75rem;">🔒 Is my data safe when I contact you?</h3>
-                    <p style="color: #666; line-height: 1.6; margin: 0;">Your privacy is our priority. We follow strict data protection protocols and never share your personal information with third parties. All communications are handled securely and confidentially.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">🔒 Is my data safe when I contact you?</h3>
+                    <p class="faq-answer">Your privacy is our priority. We follow strict data protection protocols and never share your personal information with third parties. All communications are handled securely and confidentially.</p>
                 </div>
             </div>
         </section>
 
         <!-- Internal Links Section -->
-        <section class="helpful-links" style="max-width: 1200px; margin: 0 auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); margin-bottom: 3rem;">
-            <h2 style="font-size: 1.8rem; color: #2c3e50; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 1rem;">Explore TaskProper</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 2rem;">While you're here, check out some of our most popular tools and resources:</p>
+        <section class="contact-section">
+            <h2 class="section-header">Explore TaskProper</h2>
+            <p class="center-text contact-text">While you're here, check out some of our most popular tools and resources:</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                <a href="https://www.taskproper.com/" style="display: block; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; border-left: 4px solid #3498db; transition: transform 0.3s ease;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.1rem;">🏠 Explore our Home Page</h3>
-                    <p style="color: #666; margin: 0; font-size: 0.9rem;">Discover all available tools and calculators</p>
+            <div class="links-grid">
+                <a href="https://www.taskproper.com/" class="link-card home">
+                    <h3>🏠 Explore our Home Page</h3>
+                    <p>Discover all available tools and calculators</p>
                 </a>
                 
-                <a href="https://www.taskproper.com/calculator.html" style="display: block; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; border-left: 4px solid #e74c3c; transition: transform 0.3s ease;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.1rem;">🧮 Calculator Tools</h3>
-                    <p style="color: #666; margin: 0; font-size: 0.9rem;">CGPA, percentage and exam calculators</p>
+                <a href="https://www.taskproper.com/calculator.html" class="link-card calculator">
+                    <h3>🧮 Calculator Tools</h3>
+                    <p>CGPA, percentage and exam calculators</p>
                 </a>
                 
-                <a href="https://www.taskproper.com/health.html" style="display: block; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; border-left: 4px solid #27ae60; transition: transform 0.3s ease;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.1rem;">💪 Health & Fitness Tools</h3>
-                    <p style="color: #666; margin: 0; font-size: 0.9rem;">Calorie, BMI and nutrition calculators</p>
+                <a href="https://www.taskproper.com/health.html" class="link-card health">
+                    <h3>💪 Health & Fitness Tools</h3>
+                    <p>Calorie, BMI and nutrition calculators</p>
                 </a>
                 
-                <a href="https://www.taskproper.com/study.html" style="display: block; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; border-left: 4px solid #f39c12; transition: transform 0.3s ease;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.1rem;">📚 Study Planning Tools</h3>
-                    <p style="color: #666; margin: 0; font-size: 0.9rem;">Study planner and typing speed test</p>
+                <a href="https://www.taskproper.com/study.html" class="link-card study">
+                    <h3>📚 Study Planning Tools</h3>
+                    <p>Study planner and typing speed test</p>
                 </a>
                 
-                <a href="https://www.taskproper.com/about.html" style="display: block; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; border-left: 4px solid #9b59b6; transition: transform 0.3s ease;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.1rem;">ℹ️ About TaskProper</h3>
-                    <p style="color: #666; margin: 0; font-size: 0.9rem;">Learn more about our mission and values</p>
+                <a href="https://www.taskproper.com/about.html" class="link-card about">
+                    <h3>ℹ️ About TaskProper</h3>
+                    <p>Learn more about our mission and values</p>
                 </a>
             </div>
         </section>
 
         <!-- Trust Elements -->
-        <section class="trust-elements" style="max-width: 1200px; margin: 0 auto; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white; text-align: center; margin-bottom: 3rem;">
-            <div style="margin-bottom: 1.5rem;">
-                <p style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 500;">✨ <strong>Your feedback matters to us.</strong> TaskProper is built by users, for users. We take every suggestion seriously and continuously work to improve our tools based on your needs.</p>
+        <section class="trust-section">
+            <div class="trust-content">
+                <p class="trust-text-large">✨ <strong>Your feedback matters to us.</strong> TaskProper is built by users, for users. We take every suggestion seriously and continuously work to improve our tools based on your needs.</p>
                 
-                <p style="font-size: 1.1rem; margin-bottom: 1rem;">🔐 <strong>Privacy & Security:</strong> We respect your privacy and handle all communications with the highest level of security and confidentiality.</p>
+                <p class="trust-text-medium">🔐 <strong>Privacy & Security:</strong> We respect your privacy and handle all communications with the highest level of security and confidentiality.</p>
                 
-                <p style="font-size: 1.2rem; font-weight: 600; margin: 0;">📧 <strong>Ready to get in touch?</strong> Use the form below or email us directly - we're here to help!</p>
+                <p class="trust-text-final">📧 <strong>Ready to get in touch?</strong> Use the form below or email us directly - we're here to help!</p>
             </div>
         </section>
 
@@ -1056,13 +1268,13 @@
                 <form id="contactForm" action="#" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required aria-label="Your full name" placeholder="John Doe">
+                        <input type="text" id="name" name="name" autocomplete="name" required aria-label="Your full name" placeholder="John Doe">
                         <div class="error-text" id="nameError">Please enter your name.</div>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Your Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required aria-label="Your email address" placeholder="you@example.com">
+                        <input type="email" id="email" name="email" autocomplete="email" required aria-label="Your email address" placeholder="you@example.com">
                         <div class="error-text" id="emailError">Please enter a valid email address.</div>
                     </div>
 
@@ -1097,7 +1309,7 @@
                     <span class="icon icon-envelope"></span>
                     <div class="contact-item-content">
                         <h3>Email Support</h3>
-                        <p><a href="mailto:starofficial202503@gmail.com" style="color: #3498db;">starofficial202503@gmail.com</a></p>
+                        <p><a href="mailto:starofficial202503@gmail.com" class="contact-link">starofficial202503@gmail.com</a></p>
                     </div>
                 </div>
 
@@ -1112,23 +1324,23 @@
                 <!-- Social Links -->
                 <div class="social-links">
                     <h3>Follow Us</h3>
-                    <div class="social-icons" style="display: flex; gap: 1rem; justify-content: flex-start; flex-wrap: wrap;">
-                        <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener" aria-label="Follow us on Instagram" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: #333333; color: white; border-radius: 50%; text-decoration: none; transition: all 0.3s ease; font-size: 1.2rem;">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener" aria-label="Follow us on Instagram" class="social-link instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
                                 <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1-27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                             </svg>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener" aria-label="Follow us on Facebook" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: #333333; color: white; border-radius: 50%; text-decoration: none; transition: all 0.3s ease; font-size: 1.2rem;">
+                        <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener" aria-label="Follow us on Facebook" class="social-link facebook">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20" height="20" fill="currentColor">
                                 <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
                             </svg>
                         </a>
-                        <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener" aria-label="Subscribe to our YouTube" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: #333333; color: white; border-radius: 50%; text-decoration: none; transition: all 0.3s ease; font-size: 1.2rem;">
+                        <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener" aria-label="Subscribe to our YouTube" class="social-link youtube">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20" height="20" fill="currentColor">
                                 <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener" aria-label="Connect on LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: #333333; color: white; border-radius: 50%; text-decoration: none; transition: all 0.3s ease; font-size: 1.2rem;">
+                        <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener" aria-label="Connect on LinkedIn" class="social-link linkedin">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
                                 <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
                             </svg>

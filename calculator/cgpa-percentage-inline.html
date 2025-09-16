@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGPA to Percentage Calculator - Free Online Converter for VTU, KTU, CBSE | Task Proper</title>
     <meta name="description" content="Convert CGPA to percentage instantly with our free calculator. Supports VTU, KTU, CBSE & all engineering colleges. Get accurate results in seconds.">
     <meta name="keywords" content="cgpa to percentage calculator, vtu cgpa percentage, ktu cgpa percentage, cbse cgpa percentage, engineering cgpa calculator, 10 point cgpa converter, 4 point cgpa converter, university grade calculator, academic percentage converter">
@@ -27,7 +27,6 @@
     <meta name="distribution" content="global">
     <meta name="rating" content="general">
     <meta name="revisit-after" content="7 days">
-    <meta name="theme-color" content="#333333">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -1876,7 +1875,7 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools..." autocomplete="off">
                         <button class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
@@ -1898,7 +1897,7 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools..." autocomplete="off">
                 <button class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
@@ -2073,12 +2072,12 @@
                 <div class="calculator-container">
                     <div class="input-group">
                         <label for="percentage">Enter Percentage (%):</label>
-                        <input type="number" id="percentage" min="0" max="100" step="0.01" placeholder="e.g., 85.5">
+                        <input type="number" id="percentage" name="percentage" min="0" max="100" step="0.01" placeholder="e.g., 85.5">
                     </div>
                     
                     <div class="input-group">
                         <label for="percentageCgpaScale">Select CGPA Scale:</label>
-                        <select id="percentageCgpaScale">
+                        <select id="percentageCgpaScale" name="percentageCgpaScale">
                             <option value="10">10-Point Scale (Indian Universities)</option>
                             <option value="4">4-Point Scale (US Universities)</option>
                         </select>
@@ -2086,7 +2085,7 @@
                     
                     <div class="input-group">
                         <label for="percentageBoard">Select Formula:</label>
-                        <select id="percentageBoard">
+                        <select id="percentageBoard" name="percentageBoard">
                             <option value="cbse">CBSE/General (÷ 9.5)</option>
                             <option value="vtu">VTU ((% + 7.75) ÷ 10)</option>
                             <option value="ktu">KTU (÷ 10)</option>

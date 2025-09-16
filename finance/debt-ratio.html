@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculate Debt to Income Ratio - Free DTI Calculator | Task Proper</title>
     <meta name="description" content="Calculate debt to income ratio instantly with our free online calculator. Get your DTI percentage for mortgage, car loan applications. 100% free DTI tool.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jay Prajapati">
     <link rel="canonical" href="https://www.taskproper.com/finance/debt-ratio.html" />
     
     <!-- Open Graph Meta Tags -->
@@ -22,9 +24,9 @@
     <meta name="twitter:image" content="https://www.taskproper.com/apple-touch-icon.png">
     
     <!-- Favicons -->
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +38,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/debt-ratio.css">
 
     <!-- Tool Specific Styles -->
     <style>
@@ -955,7 +958,7 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools...">
                         <button class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
@@ -968,8 +971,10 @@
                 <button class="menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                 </a>
             </div>
         </nav>
@@ -977,7 +982,7 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
                 <button class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1008,9 +1013,9 @@
             <section class="sidebar-section">
                 <h3><i class="fas fa-fire"></i> Popular Tools</h3>
                 <ul class="popular-tools">
-                    <li><a href="../tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
-                    <li><a href="../tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
-                    <li><a href="../tools/seperate-tool/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../health/ivf-calculator.html">IVF Due Date Calculator</a></li>
                 </ul>
             </section>
 
@@ -1184,7 +1189,7 @@
                         <div class="info-cards">
                             <div class="info-card">
                                 <div class="info-icon good">
-                                    <span style="color: white; font-weight: bold;">1</span>
+                                    <span class="step-number">1</span>
                                 </div>
                                 <div class="info-content">
                                     <h4>Enter Your Monthly Income</h4>
@@ -1194,7 +1199,7 @@
                             
                             <div class="info-card">
                                 <div class="info-icon fair">
-                                    <span style="color: white; font-weight: bold;">2</span>
+                                    <span class="step-number">2</span>
                                 </div>
                                 <div class="info-content">
                                     <h4>Add Your Monthly Debt Payments</h4>
@@ -1204,7 +1209,7 @@
                             
                             <div class="info-card">
                                 <div class="info-icon excellent">
-                                    <span style="color: white; font-weight: bold;">3</span>
+                                    <span class="step-number">3</span>
                                 </div>
                                 <div class="info-content">
                                     <h4>Get Your DTI Result</h4>
@@ -1225,40 +1230,40 @@
                             See how different income and debt combinations affect your DTI ratio and loan eligibility.
                         </p>
                         
-                        <div style="overflow-x: auto; margin-top: 1.5rem;">
-                            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <div class="data-table-container">
+                            <table class="data-table">
                                 <thead>
-                                    <tr style="background: #f8f9fa; color: #374151;">
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Monthly Income</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Monthly Debt</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">DTI Ratio</th>
-                                        <th style="padding: 1rem; text-align: left; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Verdict</th>
+                                    <tr class="data-table-header">
+                                        <th class="data-table-header-cell">Monthly Income</th>
+                                        <th class="data-table-header-cell">Monthly Debt</th>
+                                        <th class="data-table-header-cell">DTI Ratio</th>
+                                        <th class="data-table-header-cell">Verdict</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$5,000</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$800</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #2e7d32;">16%</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #2e7d32;">Excellent - Great for any loan</td>
+                                        <td class="data-table-cell">$5,000</td>
+                                        <td class="data-table-cell">$800</td>
+                                        <td class="data-table-cell-excellent">16%</td>
+                                        <td class="data-table-text-excellent">Excellent - Great for any loan</td>
                                     </tr>
-                                    <tr style="background: #f8f9fa;">
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$6,000</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,800</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #3b82f6;">30%</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #3b82f6;">Good - Acceptable for most loans</td>
+                                    <tr class="data-table-row-alt">
+                                        <td class="data-table-cell">$6,000</td>
+                                        <td class="data-table-cell">$1,800</td>
+                                        <td class="data-table-cell-good">30%</td>
+                                        <td class="data-table-text-good">Good - Acceptable for most loans</td>
                                     </tr>
                                     <tr>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$4,500</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,700</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #f59e0b;">38%</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #f59e0b;">Fair - May limit loan options</td>
+                                        <td class="data-table-cell">$4,500</td>
+                                        <td class="data-table-cell">$1,700</td>
+                                        <td class="data-table-cell-fair">38%</td>
+                                        <td class="data-table-text-fair">Fair - May limit loan options</td>
                                     </tr>
-                                    <tr style="background: #f8f9fa;">
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$3,500</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb;">$1,600</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #c62828;">46%</td>
-                                        <td style="padding: 1rem; border-bottom: 1px solid #e5e7eb; color: #c62828;">Poor - Debt reduction needed</td>
+                                    <tr class="data-table-row-alt">
+                                        <td class="data-table-cell">$3,500</td>
+                                        <td class="data-table-cell">$1,600</td>
+                                        <td class="data-table-cell-poor">46%</td>
+                                        <td class="data-table-text-poor">Poor - Debt reduction needed</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1273,45 +1278,45 @@
                     <div class="related-section">
                         <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
                         
-                        <div style="margin-top: 1.5rem;">
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What is a good debt to income ratio?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                        <div class="faq-section">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">What is a good debt to income ratio?</h4>
+                                <p class="faq-text">
                                     A good debt to income ratio is generally below 36%. Excellent DTI ratios are under 20%, while ratios above 43% may make it difficult to qualify for loans. 
                                     Most lenders prefer to see DTI ratios between 28-36% for mortgage applications, though some may accept up to 43% with strong credit scores.
                                 </p>
                             </div>
 
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What debt to income ratio for mortgage is acceptable?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">What debt to income ratio for mortgage is acceptable?</h4>
+                                <p class="faq-text">
                                     For conventional mortgages, most lenders prefer a debt to income ratio for mortgage applications of 28% or less for housing expenses, 
                                     and a total DTI (including all debts) of 36% or less. FHA loans may accept higher ratios up to 43%, while some programs allow up to 50% 
                                     with compensating factors like high credit scores or large down payments.
                                 </p>
                             </div>
 
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">How to calculate debt to income ratio manually?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">How to calculate debt to income ratio manually?</h4>
+                                <p class="faq-text">
                                     To calculate your DTI ratio: (1) Add up all monthly debt payments including credit cards, loans, and mortgages, 
                                     (2) Divide by your gross monthly income before taxes, (3) Multiply by 100 for the percentage. 
                                     For example: $1,200 debt ÷ $4,000 income × 100 = 30% DTI ratio.
                                 </p>
                             </div>
 
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">What is debt to income ratio meaning for lenders?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">What is debt to income ratio meaning for lenders?</h4>
+                                <p class="faq-text">
                                     Debt to income ratio meaning for lenders is a measure of your ability to manage monthly payments and repay loans. 
                                     It shows what percentage of your income goes toward debt obligations. Lenders use DTI to assess lending risk - 
                                     lower ratios indicate you have more room in your budget to handle additional debt payments.
                                 </p>
                             </div>
 
-                            <div class="info-card" style="flex-direction: column; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <h4 style="color: #374151; margin-bottom: 0.5rem;">Does debt to income ratio include rent or utilities?</h4>
-                                <p style="margin: 0; color: #6b7280; line-height: 1.6;">
+                            <div class="info-card faq-card">
+                                <h4 class="faq-title">Does debt to income ratio include rent or utilities?</h4>
+                                <p class="faq-text">
                                     Standard debt to income ratio calculations typically don't include rent, utilities, groceries, or other living expenses. 
                                     DTI focuses on debt obligations like credit card payments, loan payments, and existing mortgage payments. 
                                     However, when applying for a mortgage, lenders will separately calculate a housing ratio that includes your proposed mortgage payment.
@@ -1327,7 +1332,7 @@
                 <div class="card-body">
                     <div class="related-section">
                         <h2><i class="fas fa-newspaper"></i> Understanding Your Financial Health with DTI</h2>
-                        <div style="color: #374151; line-height: 1.7; font-size: 1rem;">
+                        <div class="content-text">
                             <p>
                                 Finding the <strong>best debt to income ratio tool</strong> is crucial for anyone looking to understand their financial standing. 
                                 Our <strong>debt to income ratio calculator</strong> serves users across India, US, and globally by providing instant, accurate calculations 
@@ -1388,42 +1393,6 @@
                 </div>
             </div>
 
-            <!-- Related Tools Section -->
-            <div class="card">
-                <div class="card-body">
-                    <div class="related-section">
-                        <h2><i class="fas fa-tools"></i> Related Financial Tools</h2>
-                        <p class="section-description">Explore other helpful tools to manage your finances and improve your financial health.</p>
-                        
-                        <div class="related-tools-grid">
-                            <a href="expense-tracker.html" class="tool-card">
-                                <i class="fas fa-receipt"></i>
-                                <span>Daily Expense Tracker</span>
-                            </a>
-                            <a href="../calculator/loan-calculator.html" class="tool-card">
-                                <i class="fas fa-home"></i>
-                                <span>Loan Calculator</span>
-                            </a>
-                            <a href="../calculator/investment-calculator.html" class="tool-card">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Investment Calculator</span>
-                            </a>
-                            <a href="../calculator/budget-planner.html" class="tool-card">
-                                <i class="fas fa-piggy-bank"></i>
-                                <span>Budget Planner</span>
-                            </a>
-                            <a href="../health/calorie-deficit.html" class="tool-card">
-                                <i class="fas fa-fire"></i>
-                                <span>Calorie Deficit Calculator</span>
-                            </a>
-                            <a href="../planner/goal-planner.html" class="tool-card">
-                                <i class="fas fa-bullseye"></i>
-                                <span>Personal Goal Planner</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -1463,23 +1432,31 @@
                     <nav class="footer-nav">
                         <ul class="social-links">
                             <li>
-                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
                                 </a>
                             </li>
                             <li>
-                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
                                 </a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
                                 </a>
                             </li>
                         </ul>
@@ -1560,7 +1537,7 @@
                 "name": "How to calculate debt to income ratio manually?", 
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "To calculate your DTI ratio: (1) Add up all monthly debt payments including credit cards, loans, and mortgages, (2) Divide by your gross monthly income before taxes, (3) Multiply by 100 for the percentage. For example: $1,200 debt ÷ $4,000 income × 100 = 30% DTI ratio."
+                    "text": "To calculate your DTI ratio: (1) Add up all monthly debt payments including credit cards, loans, and mortgages, (2) Divide by your gross monthly income before taxes, (3) Multiply by 100 for the percentage. For example: $1,200 debt Ã· $4,000 income Ã— 100 = 30% DTI ratio."
                 }
             },
             {
@@ -1680,7 +1657,7 @@
     </script>
 
     <!-- JavaScript -->
-    <script src="../js/script.js"></script>
+    <script src="../js/sidebar-favorites.js"></script>
     <script src="js/debt-ratio.js"></script>
 </body>
 </html>

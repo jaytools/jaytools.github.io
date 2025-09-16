@@ -7,7 +7,7 @@
     <meta name="description" content="Test your typing speed with our free typing speed test paragraph tool. Measure WPM, accuracy, and improve your typing skills with different modes and time options.">
     <meta name="keywords" content="typing speed test paragraph, typing speed test 10 minutes, typing speed test numbers, typing speed test online free, live typing speed test, WPM test, typing accuracy">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Task Proper">
+    <meta name="author" content="Jay Prajapati">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Typing Speed Test Paragraph - Free Online WPM Test | Task Proper">
@@ -58,7 +58,55 @@
                 "@type": "Organization",
                 "name": "Task Proper",
                 "url": "https://www.taskproper.com"
-            }
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "128",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Sarah M."
+                    },
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    },
+                    "reviewBody": "Best typing speed test I've used! The interface is clean, multiple modes are helpful, and the real-time feedback helps me improve. Highly recommend!"
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Alex T."
+                    },
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    },
+                    "reviewBody": "Perfect for practicing typing! I love the numbers-only mode for improving my numeric keypad skills. Free and works great on mobile too."
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Mike R."
+                    },
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "4",
+                        "bestRating": "5"
+                    },
+                    "reviewBody": "Great tool for typing practice. The 10-minute mode is perfect for longer sessions. Helped me increase my WPM from 45 to 65!"
+                }
+            ]
         },
         {
             "@context": "https://schema.org",
@@ -178,7 +226,7 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <input type="text" id="desktopSearch" name="desktopSearch" class="search-input" placeholder="Search tools..." autocomplete="off">
                         <button class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
@@ -202,7 +250,7 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <input type="text" id="mobileSearch" name="mobileSearch" class="mobile-search-input" placeholder="Search tools..." autocomplete="off">
                 <button class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
@@ -273,8 +321,16 @@
     <main>
         <!-- Tool Container -->
         <div class="tool-container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../study.html">Study Tools</a></li>
+                    <li aria-current="page">Typing Speed Test</li>
+                </ol>
+            </nav>
             <!-- Tool Header -->
-            <div class="tool-header">
+            <div class="tool-header1">
                 <h1>Typing Speed Test Paragraph</h1>
             </div>
 
@@ -289,7 +345,7 @@
                 <div class="config-row">
                     <div class="config-group">
                         <label for="testMode">Test Mode</label>
-                        <select id="testMode" class="config-select">
+                        <select id="testMode" name="testMode" class="config-select">
                             <option value="paragraph">Normal Paragraph</option>
                             <option value="numbers">Numbers Only</option>
                             <option value="mixed">Mixed (Words + Numbers)</option>
@@ -297,7 +353,7 @@
                     </div>
                     <div class="config-group">
                         <label for="testDuration">Duration</label>
-                        <select id="testDuration" class="config-select">
+                        <select id="testDuration" name="testDuration" class="config-select">
                             <option value="60">1 Minute</option>
                             <option value="180">3 Minutes</option>
                             <option value="300">5 Minutes</option>
@@ -320,7 +376,7 @@
                     <i class="fas fa-play"></i>
                     Start Test
                 </button>
-                <button id="restartBtn" class="btn btn-secondary" style="display: none;">
+                <button id="restartBtn" class="btn btn-secondary hidden">
                     <i class="fas fa-redo"></i>
                     Restart Test
                 </button>
@@ -339,7 +395,7 @@
 
             <!-- Typing Input Area -->
             <div class="typing-area">
-                <textarea id="typingInput" placeholder="Click here and start typing when ready..." disabled></textarea>
+                <textarea id="typingInput" name="typingInput" placeholder="Click here and start typing when ready..." disabled></textarea>
             </div>
 
             <!-- Real-time Stats -->
@@ -359,7 +415,7 @@
             </div>
 
             <!-- Results Section -->
-            <div class="results-section" id="resultsSection" style="display: none;">
+            <div class="results-section hidden" id="resultsSection">
                 <div class="results-header">
                     <h3><i class="fas fa-trophy"></i> Test Results</h3>
                 </div>

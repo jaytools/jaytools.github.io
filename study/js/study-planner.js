@@ -162,7 +162,7 @@ class StudyPlanner {
         // Show results section
         const resultsSection = document.getElementById('resultsSection');
         if (resultsSection) {
-            resultsSection.style.display = 'block';
+            resultsSection.classList.remove('hidden');
             resultsSection.scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -397,7 +397,7 @@ class StudyPlanner {
         // Hide results
         const resultsSection = document.getElementById('resultsSection');
         if (resultsSection) {
-            resultsSection.style.display = 'none';
+            resultsSection.classList.add('hidden');
         }
 
         this.showNotification('Form reset successfully', 'success');

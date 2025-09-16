@@ -1,4 +1,47 @@
 /* Typing Speed Test Styles */
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 0;
+}
+
+.breadcrumb ol {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '/';
+    margin: 0 0.5rem;
+    color: #9ca3af;
+}
+
+.breadcrumb a {
+    color: #4f46e5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: #4338ca;
+}
+
+.breadcrumb li[aria-current="page"] {
+    color: #1f2937;
+    font-weight: 500;
+}
+
 :root {
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
@@ -30,7 +73,7 @@
 }
 
 /* Tool Header Styling */
-.tool-header {
+.tool-header1 {
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -213,6 +256,7 @@
     font-size: 1.125rem;
     line-height: 1.8;
     color: var(--text-primary);
+    -webkit-user-select: none;
     user-select: none;
     letter-spacing: 0.5px;
     word-wrap: break-word;
@@ -797,7 +841,6 @@
     .speed-levels-table {
         font-size: 0.8rem;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
     }
     
     .speed-levels-table th,
@@ -840,7 +883,7 @@
     }
     
     /* Header Extra Small */
-    .tool-header h1 {
+    .tool-header1 h1 {
         font-size: 1.5rem;
         line-height: 1.1;
     }
@@ -1063,4 +1106,9 @@
         background: var(--background-white);
         color: var(--text-primary);
     }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
 }

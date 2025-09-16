@@ -52,6 +52,39 @@
     margin: 0 auto;
 }
 
+/* Default Light Mode Styles */
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure all main elements have light defaults */
+.card {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #dee2e6;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    color: #333333;
+}
+
+.form-input,
+.form-select {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #ced4da;
+}
+
+.form-section {
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
 /* Enhanced Mobile Optimizations */
 @media (max-width: 576px) {
     .main-container {
@@ -59,8 +92,8 @@
     }
     
     .card-header h1 {
-        font-size: 1.5rem;
-        line-height: 1.3;
+        font-size: 1.4rem;
+        line-height: 1.2;
     }
     
     .features-grid {
@@ -69,7 +102,30 @@
     }
     
     .steps-container .step-item {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+    
+    .steps-container .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .steps-container .step-content {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .steps-container .step-content h3 {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -114,15 +170,18 @@
 /* FC Wrapper */
 .fc-wrapper {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Card Styles */
 .card {
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     border: 1px solid #e0e0e0;
     margin-bottom: 2rem;
+    overflow: hidden;
 }
 
 .card-header {
@@ -152,29 +211,6 @@
     padding: 1.5rem;
 }
 
-/* Tool Dark Mode Toggle */
-.tool-dark-mode-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    background-color: #f0f0f0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.tool-dark-mode-toggle:hover {
-    background-color: #e0e0e0;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-}
 
 /* Form Styles */
 .mobile-optimized-form {
@@ -183,10 +219,11 @@
 
 .form-section {
     background-color: #f9f9f9;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-left: 4px solid #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .section-heading {
@@ -232,11 +269,12 @@
 .form-input {
     width: 100%;
     padding: 0.75rem 0.75rem 0.75rem 2.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
     font-size: 1rem;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.2s ease;
     background-color: white;
+    box-sizing: border-box;
 }
 
 .form-input:focus {
@@ -331,13 +369,13 @@
 /* Calculate Button */
 .btn-calculate {
     width: 100%;
-    background-color: #333;
+    background: linear-gradient(135deg, #333 0%, #555 100%);
     color: white;
     border: none;
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
@@ -345,6 +383,7 @@
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .btn-calculate:hover {
@@ -358,8 +397,9 @@
     margin-top: 2rem;
     padding: 1.5rem;
     background-color: #f8f9fa;
-    border-radius: 8px;
+    border-radius: 12px;
     border-left: 4px solid #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .results-header {
@@ -390,10 +430,10 @@
 
 .results-card {
     background: white;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 1.25rem;
     margin-bottom: 1rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .result-item {
@@ -425,10 +465,10 @@
 
 .results-details {
     background: white;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 1.25rem;
     margin-bottom: 1rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .results-details p {
@@ -470,10 +510,10 @@
 /* Information Sections */
 .info-section {
     background-color: #f9f9f9;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 2rem;
     margin-bottom: 2.5rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border-left: 4px solid #333;
 }
 
@@ -565,24 +605,31 @@
     margin-bottom: 2rem;
     padding: 1.5rem;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     border: 1px solid #e5e5e5;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
 .step-number {
-    width: 40px;
-    height: 40px;
-    background-color: #333;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #333 0%, #555 100%);
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-right: 1.5rem;
     flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .step-content h3 {
@@ -598,57 +645,88 @@
     line-height: 1.6;
 }
 
-/* FAQ Section */
+/* FAQ Section - Complete Redesign */
 .fc-faq .faq-item {
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
     overflow: hidden;
     background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+.fc-faq .faq-item:hover {
+    border-color: #ccc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .faq-question {
-    padding: 1.25rem 1.5rem;
-    background-color: #f8f8f8;
+    padding: 1.5rem 4rem 1.5rem 1.5rem;
+    background-color: #f8f9fa;
     cursor: pointer;
     font-weight: 600;
     color: #222;
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.2s ease;
+    display: block;
+    transition: all 0.2s ease;
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .faq-question:hover {
-    background-color: #f0f0f0;
+    background-color: #e9ecef;
 }
 
 .faq-question::after {
     content: "\f107";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    font-size: 1.2rem;
-    color: #555;
+    font-size: 1.3rem;
+    color: #666;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
     transition: transform 0.3s ease;
 }
 
 .faq-item[open] .faq-question::after {
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
+    color: #333;
 }
 
 .faq-answer {
-    padding: 1.5rem;
-    background: white;
-    border-top: 1px solid #eee;
+    padding: 2rem 1.5rem;
+    background: #fefefe;
+    border-top: 1px solid #e9ecef;
+    font-size: 1rem;
+    line-height: 1.7;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
 }
 
 .faq-answer p {
-    margin: 0 0 1rem;
-    color: #444;
-    line-height: 1.6;
+    margin: 0 0 1.5rem;
+    color: #555;
+    line-height: 1.7;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    max-width: 100%;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
 }
 
 .faq-answer p:last-child {
@@ -656,13 +734,17 @@
 }
 
 .faq-answer ol, .faq-answer ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.6;
 }
 
 .faq-answer li {
-    margin-bottom: 0.5rem;
-    color: #444;
+    margin-bottom: 0.75rem;
+    color: #555;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Related Tools Section */
@@ -724,10 +806,29 @@
     
     .card-header h1 {
         font-size: 1.5rem;
+        line-height: 1.3;
     }
     
     .card-body {
         padding: 1.25rem;
+    }
+    
+    /* Enhanced mobile form layout */
+    .form-input {
+        font-size: 16px; /* Prevent iOS zoom */
+        min-height: 48px;
+        padding: 12px 12px 12px 40px;
+    }
+    
+    .input-icon {
+        left: 14px;
+        font-size: 1rem;
+    }
+    
+    .btn-calculate {
+        min-height: 48px;
+        font-size: 1.05rem;
+        padding: 12px 20px;
     }
     
     .form-section {
@@ -762,13 +863,28 @@
     .step-item {
         padding: 1.25rem;
         margin-bottom: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
     
     .step-number {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-        margin-right: 1rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        flex-shrink: 0;
+    }
+    
+    .step-content {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .step-content h3 {
+        text-align: center;
+        margin-bottom: 1rem;
     }
     
     .fc-related .related-tools-grid {
@@ -780,12 +896,55 @@
     }
     
     .faq-question {
-        padding: 1rem 1.25rem;
-        font-size: 0.95rem;
+        padding: 1.25rem 3.5rem 1.25rem 1.25rem;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .faq-question::after {
+        right: 1.25rem;
+        font-size: 1.2rem;
     }
     
     .faq-answer {
-        padding: 1.25rem;
+        padding: 1.5rem 1.25rem 2rem 1.25rem;
+        font-size: 1rem;
+        line-height: 1.7;
+        background: #fafafa;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: block;
+        overflow: hidden;
+        white-space: normal;
+    }
+    
+    .faq-answer p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        font-size: 1rem;
+        color: #444;
+        word-spacing: 0.05em;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: block;
+        white-space: normal;
+    }
+    
+    .faq-answer ol, .faq-answer ul {
+        margin: 1.5rem 0;
+        padding-left: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .faq-answer li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+        overflow-wrap: break-word;
     }
     
     .card-icon {
@@ -796,25 +955,19 @@
 
 @media (max-width: 576px) {
     .main-container {
-        padding: 0 10px;
+        padding: 0 15px;
     }
     
     .card-header {
-        padding: 0.9rem 1rem;
+        padding: 1rem;
         flex-direction: column;
         align-items: flex-start;
-        gap: 1rem;
+        gap: 0.5rem;
     }
     
     .card-header h1 {
-        font-size: 1.35rem;
-    }
-    
-    .tool-dark-mode-toggle {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-        align-self: flex-end;
+        font-size: 1.4rem;
+        line-height: 1.2;
     }
     
     .card-body {
@@ -827,22 +980,53 @@
     }
     
     .section-heading {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         margin-bottom: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .section-heading i {
+        margin-right: 0;
+        margin-bottom: 0.25rem;
     }
     
     .form-group {
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
     }
     
     .form-input {
         font-size: 16px; /* Prevent iOS zoom */
-        height: 44px;
+        min-height: 50px;
+        padding: 14px 14px 14px 45px;
+        border-radius: 8px;
+    }
+    
+    .input-icon {
+        left: 16px;
+        font-size: 1.1rem;
     }
     
     .btn-calculate {
-        font-size: 1rem;
-        padding: 0.9rem 1.25rem;
+        font-size: 1.05rem;
+        padding: 14px 20px;
+        min-height: 50px;
+        border-radius: 8px;
+    }
+    
+    /* Enhanced suggestions box for mobile */
+    .suggestions-box {
+        max-height: 180px;
+        border-radius: 0 0 8px 8px;
+    }
+    
+    .suggestion-item {
+        padding: 12px 16px;
+        font-size: 16px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
     }
     
     .info-section {
@@ -861,25 +1045,106 @@
     .step-item {
         flex-direction: column;
         text-align: center;
-        padding: 1rem;
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+        border-radius: 12px;
     }
     
     .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
         margin-right: 0;
         margin-bottom: 1rem;
     }
     
     .step-content {
         text-align: left;
+        width: 100%;
+    }
+    
+    .step-content h3 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #222;
+    }
+    
+    .step-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-align: left;
     }
     
     .faq-question {
-        padding: 0.9rem 1.1rem;
-        font-size: 0.9rem;
+        padding: 1.25rem 3rem 1.25rem 1rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .faq-question::after {
+        right: 1rem;
+        font-size: 1.1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .faq-item[open] .faq-question::after {
+        transform: translateY(-50%) rotate(180deg);
     }
     
     .faq-answer {
-        padding: 1.1rem;
+        padding: 1.25rem 1rem 1.5rem 1rem;
+        font-size: 16px; /* Prevent iOS zoom */
+        line-height: 1.7;
+        background: #fafafa;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: block;
+        overflow: hidden;
+        white-space: normal;
+    }
+    
+    .faq-answer p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-size: 16px; /* Prevent iOS zoom */
+        color: #444;
+        text-align: left;
+        word-spacing: 0.1em;
+        letter-spacing: 0.01em;
+        max-width: 100%;
+        width: 100%;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+        box-sizing: border-box;
+        display: block;
+        white-space: normal;
+    }
+    
+    .faq-answer p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .faq-answer ol, .faq-answer ul {
+        margin: 1.5rem 0;
+        padding-left: 1.25rem;
+        line-height: 1.7;
+    }
+    
+    .faq-answer li {
+        margin-bottom: 1rem;
+        line-height: 1.7;
+        font-size: 16px;
+        color: #444;
+        word-spacing: 0.1em;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
     
     .action-buttons {
@@ -889,184 +1154,50 @@
     
     .reset-btn {
         width: 100%;
+        min-height: 48px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+    
+    /* Enhanced results section for mobile */
+    .results-section {
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+    
+    .results-header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+    
+    .results-icon {
+        margin-right: 0;
+        margin-bottom: 0.75rem;
+    }
+    
+    .results-title {
+        font-size: 1.3rem;
+    }
+    
+    .result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+    
+    .result-label {
+        font-size: 0.9rem;
+    }
+    
+    .result-value {
+        font-size: 1.1rem;
+    }
+    
+    .highlight-value {
+        font-size: 1.3rem;
+        font-weight: 700;
     }
 }
 
-/* Dark Mode Support */
-body.dark-mode .card {
-    background-color: #2a2a2a;
-    border-color: #444;
-}
-
-body.dark-mode .card-header {
-    background-color: #333;
-    border-color: #444;
-}
-
-body.dark-mode .card-header h1 {
-    color: #ddd;
-}
-
-body.dark-mode .card-header h1 i {
-    color: #ccc;
-}
-
-body.dark-mode .tool-dark-mode-toggle {
-    background-color: #555;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-body.dark-mode .tool-dark-mode-toggle:hover {
-    background-color: #666;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}
-
-body.dark-mode .form-section {
-    background-color: #252525;
-    border-left-color: #555;
-}
-
-body.dark-mode .section-heading {
-    color: #ddd;
-}
-
-body.dark-mode .section-heading i {
-    color: #ccc;
-}
-
-body.dark-mode .form-label {
-    color: #ccc;
-}
-
-body.dark-mode .form-input {
-    background-color: #333;
-    border-color: #555;
-    color: #ddd;
-}
-
-body.dark-mode .form-input:focus {
-    border-color: #777;
-    box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
-}
-
-body.dark-mode .help-text {
-    color: #aaa;
-}
-
-body.dark-mode .btn-calculate {
-    background-color: #555;
-}
-
-body.dark-mode .btn-calculate:hover {
-    background-color: #666;
-}
-
-body.dark-mode .results-section {
-    background-color: #252525;
-    border-left-color: #555;
-}
-
-body.dark-mode .results-title {
-    color: #ddd;
-}
-
-body.dark-mode .results-card,
-body.dark-mode .results-details {
-    background-color: #333;
-}
-
-body.dark-mode .result-label,
-body.dark-mode .result-value {
-    color: #ddd;
-}
-
-body.dark-mode .info-section {
-    background-color: #252525;
-    border-left-color: #555;
-}
-
-body.dark-mode .info-section h2,
-body.dark-mode .info-section h3 {
-    color: #ddd;
-}
-
-body.dark-mode .info-section p,
-body.dark-mode .info-section li {
-    color: #bbb;
-}
-
-body.dark-mode .feature-item,
-body.dark-mode .step-item,
-body.dark-mode .related-tool-card {
-    background-color: #2a2a2a;
-    border-color: #444;
-}
-
-body.dark-mode .feature-item h3,
-body.dark-mode .step-content h3,
-body.dark-mode .related-tool-card h3 {
-    color: #ddd;
-}
-
-body.dark-mode .feature-item p,
-body.dark-mode .step-content p,
-body.dark-mode .related-tool-card p {
-    color: #aaa;
-}
-
-body.dark-mode .feature-icon,
-body.dark-mode .card-icon {
-    color: #ccc;
-}
-
-body.dark-mode .faq-item {
-    background-color: #2a2a2a;
-    border-color: #444;
-}
-
-body.dark-mode .faq-question {
-    background-color: #333;
-    color: #ddd;
-}
-
-body.dark-mode .faq-answer {
-    background-color: #252525;
-}
-
-body.dark-mode .faq-answer p,
-body.dark-mode .faq-answer li {
-    color: #bbb;
-}
-
-body.dark-mode .reset-btn {
-    background-color: #444;
-    color: #ddd;
-    border-color: #555;
-}
-
-body.dark-mode .reset-btn:hover {
-    background-color: #555;
-}
-
-body.dark-mode .suggestions-box {
-    background-color: #333;
-    border-color: #555;
-}
-
-body.dark-mode .suggestion-item {
-    color: #ddd;
-    border-color: #444;
-}
-
-body.dark-mode .suggestion-item:hover {
-    background-color: #444;
-}
-
-body.dark-mode .clear-btn {
-    color: #aaa;
-}
-
-body.dark-mode .clear-btn:hover {
-    background-color: #444;
-}

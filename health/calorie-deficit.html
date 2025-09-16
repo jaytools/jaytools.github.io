@@ -360,9 +360,9 @@
             background-position: right 0.5rem center;
             background-repeat: no-repeat;
             background-size: 1.5em 1.5em;
-            appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
+            appearance: none;
         }
         
         .form-input:focus {
@@ -1324,22 +1324,22 @@
                                     <span class="input-icon-right">Years</span>
                                 </div>
                                 <div id="age-help" class="help-text">Enter your current age (15-100 years)</div>
-                                <div id="ageError" class="error-message" style="display: none;">Please enter a valid age between 15 and 80 years</div>
+                                <div id="ageError" class="error-message">Please enter a valid age between 15 and 80 years</div>
                             </div>
 
                             <!-- Gender Field -->
                             <div class="input-field">
                                 <label for="gender" class="input-label">Gender</label>
                                 <div class="input-wrapper">
-                                    <select id="gender" name="gender" required class="form-input" aria-describedby="gender-help" style="padding-left: 1rem;">
+                                    <select id="gender" name="gender" required class="form-input select-padded" aria-describedby="gender-help">
                                         <option value="">Select gender</option>
                                         <option value="male">👨 Male</option>
                                         <option value="female">👩 Female</option>
                                     </select>
                                 </div>
                                 <div class="help-text">Select your activity level for accurate calorie calculations</div>
-                                <div id="activityLevelError" class="error-message" style="display: none;">Please select your activity level</div>
-                                <div id="genderError" class="error-message" style="display: none;">Please select your gender</div>
+                                <div id="activityLevelError" class="error-message">Please select your activity level</div>
+                                <div id="genderError" class="error-message">Please select your gender</div>
                             </div>
 
                             <!-- Height Field -->
@@ -1351,7 +1351,7 @@
                                     <span class="input-icon-right">cm</span>
                                 </div>
                                 <div id="height-help" class="help-text">Enter your height in centimeters</div>
-                                <div id="heightError" class="error-message" style="display: none;">Please enter a valid height between 130 and 230 cm</div>
+                                <div id="heightError" class="error-message">Please enter a valid height between 130 and 230 cm</div>
                             </div>
 
                             <!-- Weight Field -->
@@ -1363,7 +1363,7 @@
                                     <span class="input-icon-right">kg</span>
                                 </div>
                                 <div id="weight-help" class="help-text">Enter your current weight in kilograms</div>
-                                <div id="weightError" class="error-message" style="display: none;">Please enter a valid weight between 30 and 200 kg</div>
+                                <div id="weightError" class="error-message">Please enter a valid weight between 30 and 200 kg</div>
                             </div>
                         </div>
                     </div>
@@ -1374,7 +1374,7 @@
                         <div class="form-group">
                             <label for="activityLevel" class="form-label">How active are you during a typical week?</label>
                             <div class="input-wrapper">
-                                <select id="activityLevel" name="activityLevel" required aria-describedby="activity-help activity-error" class="form-input" style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; appearance: none; padding-left: 1rem; padding-right: 3rem;">
+                                <select id="activityLevel" name="activityLevel" required aria-describedby="activity-help activity-error" class="form-input select-dropdown">
                                     <option value="">Select your activity level</option>
                                     <option value="1.2">🛋️ Sedentary (little or no exercise)</option>
                                     <option value="1.375">🚶 Lightly active (light exercise 1-3 days/week)</option>
@@ -1394,7 +1394,7 @@
                         <div class="form-group">
                             <label for="deficitType" class="form-label">Choose your preferred deficit level:</label>
                             <div class="input-wrapper">
-                                <select id="deficitType" name="deficitType" required aria-describedby="deficit-help deficit-error" class="form-input" style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; appearance: none; padding-left: 1rem; padding-right: 3rem;">
+                                <select id="deficitType" name="deficitType" required aria-describedby="deficit-help deficit-error" class="form-input select-dropdown">
                                     <option value="">Select weight loss goal</option>
                                     <option value="mild">🐌 Mild (0.25 kg/week) - Small deficit for gradual, sustainable weight loss</option>
                                     <option value="moderate">⚖️ Moderate (0.5 kg/week) - Balanced approach to weight loss</option>
