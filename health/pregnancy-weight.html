@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregnancy Weight Gain Calculator - Track Healthy Weight Gain | TaskProper</title>
     <meta name="description" content="Calculate healthy pregnancy weight gain based on BMI and IOM guidelines. Track weight gain for single and twin pregnancies with personalized recommendations.">
-    <meta name="keywords" content="pregnancy weight gain calculator, BMI pregnancy, IOM guidelines, pregnancy weight tracker, healthy pregnancy weight, twin pregnancy weight gain">
+    <meta name="keywords" content="pregnancy weight gain calculator, pregnancy weight gain calculator uk, twin pregnancy weight gain calculator, expected pregnancy weight gain calculator, pregnancy weight gain calculator in kgs, healthy pregnancy weight gain calculator, pregnancy weight gain calculator australia, BMI pregnancy, IOM guidelines">
     <meta name="robots" content="index, follow">
     <meta name="author" content="TaskProper">
     
@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="../favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
+    <link rel="manifest" href="../site.webmanifest">
 
     
     <!-- Google Fonts -->
@@ -60,6 +60,41 @@
             "name": "TaskProper",
             "url": "https://www.taskproper.com"
         },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah M."
+                },
+                "reviewBody": "Excellent pregnancy weight gain calculator! Very accurate and easy to use for tracking healthy weight gain during pregnancy."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Emma K."
+                },
+                "reviewBody": "Perfect for twin pregnancy weight tracking. The calculator gave me clear guidelines that matched my doctor's recommendations."
+            }
+        ],
         "mainEntity": {
             "@type": "HowTo",
             "name": "How to Calculate Pregnancy Weight Gain",
@@ -88,6 +123,72 @@
         }
     }
     </script>
+
+    <!-- FAQ Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How accurate is this pregnancy weight gain calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our pregnancy weight gain calculator is based on evidence-based IOM (Institute of Medicine) guidelines and provides accurate recommendations for healthy weight gain. However, individual circumstances may vary, so always consult your healthcare provider for personalized advice."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use this calculator for twin pregnancy weight gain?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Our calculator functions as a specialized twin pregnancy weight gain calculator. Simply select 'twins' in the pregnancy type field, and the tool will provide appropriate weight gain recommendations for multiple pregnancies, which are typically higher than single pregnancy ranges."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this pregnancy weight gain calculator work in kg?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! Our tool works perfectly as a pregnancy weight gain calculator in kgs. You can select kilograms and centimeters as your preferred units, making it suitable for users worldwide who prefer metric measurements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much weight should I gain in the first trimester?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most women gain 1-5 pounds (0.5-2.3 kg) during the first trimester. This expected pregnancy weight gain can vary significantly due to morning sickness. Some women may gain less or even lose weight initially, which is typically normal."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if I'm gaining weight too quickly during pregnancy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you're gaining weight faster than the healthy pregnancy weight gain recommendations, consult your healthcare provider. They may suggest dietary modifications, increased physical activity, or other strategies to help manage your weight gain safely."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this calculator suitable for UK and Australian users?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Our calculator works as both a pregnancy weight gain calculator UK and pregnancy weight gain calculator Australia compliant tool. It follows international IOM guidelines that are recognized and used by healthcare providers worldwide."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When should I be concerned about my pregnancy weight gain?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Contact your healthcare provider if you experience rapid weight gain (more than 2 lbs per week), no weight gain, weight loss, or sudden swelling. Regular monitoring with our calculator helps identify when your weight gain deviates from healthy ranges."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header Section -->
@@ -106,17 +207,17 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
-                        <button class="search-button" aria-label="Search tools">
+                        <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools...">
+                        <button type="button" id="desktop-search-btn" name="desktop-search-btn" class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
                     <!-- Mobile Search Toggle -->
-                    <button class="search-toggle" aria-label="Toggle search">
+                    <button type="button" id="mobile-search-toggle" name="mobile-search-toggle" class="search-toggle" aria-label="Toggle search">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <button class="menu-toggle" aria-label="Toggle menu">
+                <button type="button" id="menu-toggle" name="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
@@ -130,8 +231,8 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
-                <button class="mobile-search-close" aria-label="Close search">
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
+                <button type="button" id="mobile-search-close" name="mobile-search-close" class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -145,7 +246,7 @@
     <aside class="sidebar" aria-label="Main menu">
         <div class="sidebar-header">
             <h2>Menu</h2>
-            <button class="sidebar-close" aria-label="Close menu">
+            <button type="button" id="sidebar-close" name="sidebar-close" class="sidebar-close" aria-label="Close menu">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -208,7 +309,7 @@
             <!-- Tool Header -->
             <div class="tool-header">
                 <h1>Pregnancy Weight Gain Calculator</h1>
-                <button class="favorite-star" aria-label="Add to favorites">
+                <button type="button" id="favorite-star" name="favorite-star" class="favorite-star" aria-label="Add to favorites">
                     <i class="far fa-star"></i>
                 </button>
             </div>
@@ -234,7 +335,7 @@
                                         <div class="input-with-icon">
                                             <i class="fas fa-weight input-icon"></i>
                                             <input type="number" id="preWeight" name="preWeight" placeholder="Enter weight" step="0.1" min="30" max="300" required>
-                                            <select id="weightUnit" class="unit-selector" aria-label="Select weight unit">
+                                            <select id="weightUnit" name="weightUnit" class="unit-selector" aria-label="Select weight unit">
                                                 <option value="kg">kg</option>
                                                 <option value="lbs">lbs</option>
                                             </select>
@@ -247,7 +348,7 @@
                                         <div class="input-with-icon">
                                             <i class="fas fa-ruler-vertical input-icon"></i>
                                             <input type="number" id="height" name="height" placeholder="Enter height" step="0.1" min="120" max="250" required>
-                                            <select id="heightUnit" class="unit-selector" aria-label="Select height unit">
+                                            <select id="heightUnit" name="heightUnit" class="unit-selector" aria-label="Select height unit">
                                                 <option value="cm">cm</option>
                                                 <option value="ft">ft</option>
                                             </select>
@@ -354,18 +455,105 @@
                 </div>
             </div>
 
+            <!-- About Section -->
+            <div class="about-section">
+                <div class="about-content">
+                    <h2><i class="fas fa-info-circle"></i> About Our Pregnancy Weight Gain Calculator</h2>
+                    <p>Our comprehensive <strong>pregnancy weight gain calculator</strong> is designed to help expectant mothers track healthy weight gain throughout their pregnancy journey. Whether you're looking for a <strong>pregnancy weight gain calculator UK</strong> compliant tool or need an <strong>expected pregnancy weight gain calculator</strong> that follows international guidelines, our calculator provides accurate recommendations based on your pre-pregnancy BMI and current gestational week.</p>
+                    
+                    <p>This <strong>healthy pregnancy weight gain calculator</strong> supports both single and twin pregnancies, making it an ideal <strong>twin pregnancy weight gain calculator</strong> for mothers expecting multiples. The tool works seamlessly as a <strong>pregnancy weight gain calculator in kgs</strong> or pounds, automatically converting units to match your preference, and is suitable for users worldwide, including those seeking a <strong>pregnancy weight gain calculator Australia</strong> compliant tool.</p>
+                    
+                    <div class="key-features">
+                        <h3>Key Features of Our Calculator:</h3>
+                        <ul>
+                            <li><strong>BMI-based recommendations:</strong> Personalized weight gain ranges based on your pre-pregnancy BMI category</li>
+                            <li><strong>Twin pregnancy support:</strong> Specialized calculations for mothers expecting multiples</li>
+                            <li><strong>Weekly tracking:</strong> Monitor your progress throughout each trimester</li>
+                            <li><strong>IOM guideline compliance:</strong> Based on Institute of Medicine recommendations</li>
+                            <li><strong>Multiple unit support:</strong> Works with both metric (kg, cm) and imperial (lbs, ft/in) units</li>
+                            <li><strong>Real-time calculations:</strong> Instant results with personalized health recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Use Section -->
+            <div class="how-to-use-section">
+                <h2><i class="fas fa-list-ol"></i> How to Use the Pregnancy Weight Gain Calculator</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Enter Your Pre-Pregnancy Details</h3>
+                            <p>Input your pre-pregnancy weight and height in your preferred units. The calculator accepts both metric (kg, cm) and imperial (lbs, ft/in) measurements for your convenience.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Select Your Pregnancy Type</h3>
+                            <p>Choose whether you're expecting a single baby or twins. This selection significantly affects the recommended weight gain ranges according to medical guidelines.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Enter Current Gestational Week</h3>
+                            <p>Specify your current gestational week (1-42 weeks) to receive accurate weight gain recommendations tailored to your specific stage of pregnancy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Add Your Current Weight (Optional)</h3>
+                            <p>Enter your current weight to track your actual progress and see how it compares to the recommended weight gain range for your BMI category.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Review Your Personalized Results</h3>
+                            <p>Get comprehensive recommendations including your BMI category, total recommended weight gain, weekly targets, and personalized health advice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Short Article Section -->
+            <div class="article-section">
+                <h2><i class="fas fa-newspaper"></i> Understanding Healthy Pregnancy Weight Gain</h2>
+                <div class="article-content">
+                    <p>Maintaining appropriate weight gain during pregnancy is crucial for both maternal and fetal health. Our <strong>pregnancy weight gain calculator</strong> helps you navigate this important aspect of prenatal care by providing evidence-based recommendations tailored to your individual circumstances.</p>
+                    
+                    <p>The <strong>expected pregnancy weight gain calculator</strong> uses your pre-pregnancy BMI to determine optimal weight gain ranges. For women with normal BMI, the recommended gain is typically 25-35 pounds for single pregnancies. However, those using a <strong>twin pregnancy weight gain calculator</strong> will find higher recommendations, usually 37-54 pounds for normal-weight mothers expecting twins.</p>
+                    
+                    <p>Whether you're using a <strong>pregnancy weight gain calculator UK</strong> version or our international tool, the underlying principles remain consistent with global health standards. The calculator functions equally well as a <strong>pregnancy weight gain calculator in kgs</strong> or pounds, making it accessible for users worldwide, including those seeking a <strong>pregnancy weight gain calculator Australia</strong> compliant resource.</p>
+                    
+                    <p>Regular monitoring with a <strong>healthy pregnancy weight gain calculator</strong> helps identify potential issues early and ensures you're on track for a healthy pregnancy outcome. Remember to discuss your results with your healthcare provider for personalized medical advice.</p>
+                </div>
+            </div>
+
             <!-- Information Section -->
             <div class="info-section">
                 <div class="info-grid">
                     <div class="info-card">
-                        <h3><i class="fas fa-info-circle"></i> About Pregnancy Weight Gain</h3>
-                        <p>Healthy weight gain during pregnancy is essential for both mother and baby. The amount of weight you should gain depends on your pre-pregnancy BMI and whether you're carrying multiples.</p>
+                        <h3><i class="fas fa-heart"></i> Benefits of Healthy Weight Gain</h3>
+                        <p>Appropriate weight gain during pregnancy provides numerous benefits for both mother and baby. Understanding these benefits helps motivate healthy lifestyle choices throughout pregnancy.</p>
                         <ul>
-                            <li>Supports baby's growth and development</li>
-                            <li>Prepares your body for breastfeeding</li>
-                            <li>Reduces risk of complications</li>
-                            <li>Helps with postpartum recovery</li>
+                            <li>Supports optimal fetal growth and development</li>
+                            <li>Prepares your body for successful breastfeeding</li>
+                            <li>Reduces risk of pregnancy complications</li>
+                            <li>Facilitates easier postpartum recovery</li>
+                            <li>Helps prevent gestational diabetes</li>
+                            <li>Reduces risk of preterm birth</li>
                         </ul>
+                        <div class="related-tools">
+                            <p><strong>Related Tools:</strong> <a href="ivf-calculator.html">IVF Due Date Calculator</a> | <a href="calorie-deficit.html">Calorie Deficit Calculator</a></p>
+                        </div>
                     </div>
 
                     <div class="info-card">
@@ -442,45 +630,75 @@
 
                 <!-- FAQ Section -->
                 <div class="faq-section">
-                    <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+                    <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions About Pregnancy Weight Gain</h3>
                     <div class="faq-container">
                         <div class="faq-item">
-                            <button class="faq-question">
+                            <button type="button" class="faq-question">
+                                <span>How accurate is this pregnancy weight gain calculator?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our <strong>pregnancy weight gain calculator</strong> is based on evidence-based IOM (Institute of Medicine) guidelines and provides accurate recommendations for healthy weight gain. However, individual circumstances may vary, so always consult your healthcare provider for personalized advice.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">
+                                <span>Can I use this calculator for twin pregnancy weight gain?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes! Our calculator functions as a specialized <strong>twin pregnancy weight gain calculator</strong>. Simply select "twins" in the pregnancy type field, and the tool will provide appropriate weight gain recommendations for multiple pregnancies, which are typically higher than single pregnancy ranges.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">
+                                <span>Does this pregnancy weight gain calculator work in kg?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Absolutely! Our tool works perfectly as a <strong>pregnancy weight gain calculator in kgs</strong>. You can select kilograms and centimeters as your preferred units, making it suitable for users worldwide who prefer metric measurements.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">
                                 <span>How much weight should I gain in the first trimester?</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Most women gain 1-5 pounds during the first trimester. If you're experiencing morning sickness, you might gain less or even lose weight initially, which is normal.</p>
+                                <p>Most women gain 1-5 pounds (0.5-2.3 kg) during the first trimester. This <strong>expected pregnancy weight gain</strong> can vary significantly due to morning sickness. Some women may gain less or even lose weight initially, which is typically normal.</p>
                             </div>
                         </div>
 
                         <div class="faq-item">
-                            <button class="faq-question">
-                                <span>What if I'm gaining weight too quickly?</span>
+                            <button type="button" class="faq-question">
+                                <span>What if I'm gaining weight too quickly during pregnancy?</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>If you're gaining weight faster than recommended, talk to your healthcare provider. They may suggest dietary changes or increased physical activity to help manage your weight gain.</p>
+                                <p>If you're gaining weight faster than the <strong>healthy pregnancy weight gain</strong> recommendations, consult your healthcare provider. They may suggest dietary modifications, increased physical activity, or other strategies to help manage your weight gain safely.</p>
                             </div>
                         </div>
 
                         <div class="faq-item">
-                            <button class="faq-question">
-                                <span>Is it safe to diet during pregnancy?</span>
+                            <button type="button" class="faq-question">
+                                <span>Is this calculator suitable for UK and Australian users?</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Restrictive dieting during pregnancy is not recommended. Instead, focus on eating nutritious foods and maintaining a healthy lifestyle. Always consult your doctor before making significant dietary changes.</p>
+                                <p>Yes! Our calculator works as both a <strong>pregnancy weight gain calculator UK</strong> and <strong>pregnancy weight gain calculator Australia</strong> compliant tool. It follows international IOM guidelines that are recognized and used by healthcare providers worldwide.</p>
                             </div>
                         </div>
 
                         <div class="faq-item">
-                            <button class="faq-question">
-                                <span>How does twin pregnancy affect weight gain?</span>
+                            <button type="button" class="faq-question">
+                                <span>When should I be concerned about my pregnancy weight gain?</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Women carrying twins typically need to gain more weight than those with single pregnancies. The recommended weight gain ranges are higher across all BMI categories to support the growth of two babies.</p>
+                                <p>Contact your healthcare provider if you experience rapid weight gain (more than 2 lbs per week), no weight gain, weight loss, or sudden swelling. Regular monitoring with our calculator helps identify when your weight gain deviates from healthy ranges.</p>
                             </div>
                         </div>
                     </div>

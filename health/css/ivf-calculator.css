@@ -1,0 +1,1077 @@
+/* IVF Calculator Specific Styles */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --bg-card: #ffffff;
+    --bg-light: #f9fafb;
+    --border-color: #e5e7eb;
+    --border-radius: 12px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.2s ease-in-out;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb ol {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-color);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.breadcrumb a i {
+    font-size: 0.75rem;
+}
+
+.breadcrumb-separator {
+    color: var(--text-secondary);
+    margin: 0 0.5rem;
+    font-size: 0.75rem;
+}
+
+.breadcrumb li:last-child span {
+    color: var(--text-primary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Tool Section Styling */
+.tool-section {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.tool-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tool-header h1 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.tool-description {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* How to Use Section */
+.how-to-use-section {
+    margin-bottom: 2rem;
+}
+
+.how-to-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.how-to-card h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.how-to-card h2 i {
+    color: var(--primary-color);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.step-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Article Section */
+.article-section {
+    margin-top: 2rem;
+}
+
+.article-card {
+    background: linear-gradient(135deg, #fefefe 0%, #f8fafc 100%);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.article-card h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-card h2 i {
+    color: var(--primary-color);
+}
+
+.article-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.article-card p:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.article-highlight {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #0ea5e9;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.article-highlight i {
+    color: var(--primary-color);
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+.article-highlight span {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* About Tool Section */
+.about-tool-section {
+    margin-bottom: 2rem;
+}
+
+.about-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    border-left: 4px solid var(--success-color);
+}
+
+.about-card h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.about-card h2 i {
+    color: var(--success-color);
+}
+
+.about-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Related Tools Styling */
+.related-tools {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.related-tools h3 {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.related-tools ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.related-tools li {
+    margin-bottom: 0.75rem;
+}
+
+.related-tools a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.related-tools a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Calculator Container */
+.calculator-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.calculator-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Form Styling */
+.calculator-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-label i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.form-input {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: #ffffff;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-input:hover {
+    border-color: #cbd5e1;
+}
+
+.form-help {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Checkbox Styling */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-primary);
+    padding: 0.5rem 0;
+}
+
+.checkbox-input {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    background: #ffffff;
+}
+
+.checkbox-input:checked + .checkbox-custom {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.checkbox-text {
+    font-weight: 500;
+}
+
+/* Button Styling */
+.calculate-btn, .reset-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn {
+    background: #f3f4f6;
+    color: var(--text-secondary);
+    border: 2px solid var(--border-color);
+    margin-top: 0.5rem;
+}
+
+.reset-btn:hover {
+    background: #e5e7eb;
+    color: var(--text-primary);
+    border-color: #d1d5db;
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 2rem;
+    display: none;
+}
+
+.results-section.show {
+    display: block;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 2px solid #0ea5e9;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+}
+
+.result-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.due-date-display {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.due-date-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.due-date-value {
+    display: block;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.pregnancy-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.info-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.multiple-note {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    text-align: left;
+    display: none;
+}
+
+.multiple-note.show {
+    display: flex;
+}
+
+.multiple-note i {
+    color: var(--warning-color);
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+.multiple-note span {
+    color: #92400e;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Information Section */
+.info-section {
+    padding: 3rem 0;
+    background: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-card h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-card h3 i {
+    color: var(--primary-color);
+}
+
+.info-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-card li {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.info-card li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.info-card li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 3rem 0;
+    background: var(--bg-light);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background: var(--bg-light);
+}
+
+.faq-question i {
+    color: var(--primary-color);
+    transition: transform 0.2s ease;
+}
+
+.faq-question[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    max-height: 200px;
+}
+
+.faq-answer p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tool-header h1 {
+        font-size: 2.25rem;
+    }
+    
+    .calculator-card {
+        padding: 1.5rem;
+    }
+    
+    .how-to-card, .article-card, .about-card {
+        padding: 1.5rem;
+    }
+    
+    .steps-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+    }
+    
+    .breadcrumb {
+        padding: 0.75rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .tool-section {
+        padding: 1.5rem 0;
+    }
+    
+    .tool-header h1 {
+        font-size: 2rem;
+    }
+    
+    .tool-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .calculator-card {
+        padding: 1.25rem;
+        margin: 0 1rem 2rem;
+    }
+    
+    .how-to-card, .article-card {
+        padding: 1.25rem;
+        margin: 0 1rem 2rem;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .step-item {
+        padding: 0.875rem;
+    }
+    
+    .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+    
+    .step-content h3 {
+        font-size: 0.9rem;
+    }
+    
+    .step-content p {
+        font-size: 0.8rem;
+    }
+    
+    .article-card h2 {
+        font-size: 1.25rem;
+    }
+    
+    .article-card p {
+        font-size: 0.9rem;
+    }
+    
+    .article-highlight {
+        padding: 0.875rem;
+    }
+    
+    .article-highlight span {
+        font-size: 0.8rem;
+    }
+    
+    .pregnancy-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .due-date-value {
+        font-size: 1.75rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    .breadcrumb {
+        padding: 0.5rem 0;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8rem;
+    }
+    
+    .breadcrumb-separator {
+        margin: 0 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tool-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .tool-description {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
+    
+    .calculator-card {
+        padding: 1rem;
+        margin: 0 0.5rem 1.5rem;
+    }
+    
+    .how-to-card, .article-card {
+        padding: 1rem;
+        margin: 0 0.5rem 1.5rem;
+    }
+    
+    .how-to-card h2, .article-card h2 {
+        font-size: 1.125rem;
+    }
+    
+    .step-item {
+        padding: 0.75rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+    }
+    
+    .step-content h3 {
+        font-size: 0.85rem;
+    }
+    
+    .step-content p {
+        font-size: 0.75rem;
+    }
+    
+    .article-card p {
+        font-size: 0.85rem;
+    }
+    
+    .article-highlight {
+        padding: 0.75rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .calculate-btn, .reset-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .due-date-value {
+        font-size: 1.5rem;
+    }
+    
+    .result-card {
+        padding: 1.5rem;
+    }
+    
+    .info-card {
+        padding: 1.25rem;
+    }
+    
+    .faq-question {
+        padding: 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.75rem;
+    }
+    
+    .breadcrumb a, .breadcrumb li:last-child span {
+        padding: 0.125rem 0.25rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .tool-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .tool-description {
+        font-size: 0.85rem;
+        padding: 0 0.25rem;
+    }
+    
+    .calculator-card {
+        padding: 0.875rem;
+        margin: 0 0.25rem 1rem;
+    }
+    
+    .how-to-card, .article-card {
+        padding: 0.875rem;
+        margin: 0 0.25rem 1rem;
+    }
+    
+    .how-to-card h2, .article-card h2 {
+        font-size: 1rem;
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+    }
+    
+    .steps-grid {
+        gap: 0.75rem;
+    }
+    
+    .step-item {
+        padding: 0.625rem;
+    }
+    
+    .step-number {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+    
+    .step-content h3 {
+        font-size: 0.8rem;
+    }
+    
+    .step-content p {
+        font-size: 0.7rem;
+    }
+    
+    .article-card p {
+        font-size: 0.8rem;
+    }
+    
+    .article-highlight {
+        padding: 0.625rem;
+    }
+    
+    .article-highlight span {
+        font-size: 0.7rem;
+    }
+    
+    .form-input {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .calculate-btn, .reset-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .due-date-value {
+        font-size: 1.25rem;
+    }
+    
+    .breadcrumb {
+        padding: 0.25rem 0;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7rem;
+        flex-wrap: wrap;
+    }
+    
+    .breadcrumb a, .breadcrumb li:last-child span {
+        padding: 0.1rem 0.2rem;
+        font-size: 0.7rem;
+    }
+    
+    .breadcrumb-separator {
+        margin: 0 0.125rem;
+        font-size: 0.6rem;
+    }
+}
+
+/* Loading and Error States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.error {
+    border-color: var(--danger-color) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.success-message {
+    color: var(--success-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Accessibility Improvements */
+.form-input:focus-visible,
+.calculate-btn:focus-visible,
+.reset-btn:focus-visible,
+.faq-question:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .calculator-form,
+    .faq-section {
+        display: none;
+    }
+    
+    .results-section {
+        display: block !important;
+    }
+    
+    .result-card {
+        border: 2px solid #000;
+        box-shadow: none;
+    }
+}

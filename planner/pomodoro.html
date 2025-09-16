@@ -30,12 +30,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="manifest" href="site.webmanifest">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -137,17 +137,17 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
-                        <button class="search-button" aria-label="Search tools">
+                        <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools...">
+                        <button type="button" id="desktop-search-btn" name="desktop-search-btn" class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
                     <!-- Mobile Search Toggle -->
-                    <button class="search-toggle" aria-label="Toggle search">
+                    <button type="button" id="mobile-search-toggle" name="mobile-search-toggle" class="search-toggle" aria-label="Toggle search">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <button class="menu-toggle" aria-label="Toggle menu">
+                <button type="button" id="menu-toggle" name="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
@@ -161,8 +161,8 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
-                <button class="mobile-search-close" aria-label="Close search">
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
+                <button type="button" id="mobile-search-close" name="mobile-search-close" class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -176,7 +176,7 @@
     <aside class="sidebar" aria-label="Main menu">
         <div class="sidebar-header">
             <h2>Menu</h2>
-            <button class="sidebar-close" aria-label="Close menu">
+            <button type="button" id="sidebar-close" name="sidebar-close" class="sidebar-close" aria-label="Close menu">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -242,8 +242,8 @@
         <div class="container">
             <!-- Tool Header -->
             <div class="tool-header">
-                <h1><i class="fas fa-clock mr-3"></i>Pomodoro Calculator</h1>
-                <p>Boost your productivity with our free Pomodoro Calculator. Set custom work sessions, track breaks, and maximize your focus with the proven Pomodoro technique.</p>
+                <h1><i class="fas fa-clock"></i>Pomodoro Calculator</h1>
+                <p>Boost productivity with custom work sessions and break tracking using the Pomodoro technique.</p>
             </div>
 
             <!-- Pomodoro Calculator Tool -->
@@ -256,36 +256,40 @@
                             <div class="setting-group">
                                 <label for="workDuration">Work Session</label>
                                 <div class="input-group">
-                                    <input type="number" id="workDuration" value="25" min="1" max="60">
+                                    <input type="number" id="workDuration" name="workDuration" value="25" min="1" max="60" aria-describedby="work-help">
                                     <span class="input-suffix">min</span>
                                 </div>
+                                <small id="work-help" class="input-help">Focus time duration (1-60 minutes)</small>
                             </div>
                             
                             <div class="setting-group">
                                 <label for="shortBreak">Short Break</label>
                                 <div class="input-group">
-                                    <input type="number" id="shortBreak" value="5" min="1" max="30">
+                                    <input type="number" id="shortBreak" name="shortBreak" value="5" min="1" max="30" aria-describedby="short-help">
                                     <span class="input-suffix">min</span>
                                 </div>
+                                <small id="short-help" class="input-help">Quick rest between sessions (1-30 minutes)</small>
                             </div>
                             
                             <div class="setting-group">
                                 <label for="longBreak">Long Break</label>
                                 <div class="input-group">
-                                    <input type="number" id="longBreak" value="15" min="5" max="60">
+                                    <input type="number" id="longBreak" name="longBreak" value="15" min="5" max="60" aria-describedby="long-help">
                                     <span class="input-suffix">min</span>
                                 </div>
+                                <small id="long-help" class="input-help">Extended break after all cycles (5-60 minutes)</small>
                             </div>
                             <div class="setting-group">
                                 <label for="cycleCount">Cycles</label>
                                 <div class="input-group">
-                                    <input type="number" id="cycleCount" value="4" min="1" max="10">
+                                    <input type="number" id="cycleCount" name="cycleCount" value="4" min="1" max="10" aria-describedby="cycle-help">
                                     <span class="input-suffix">cycles</span>
                                 </div>
+                                <small id="cycle-help" class="input-help">Number of work sessions (1-10 cycles)</small>
                             </div>
                         </div>
                         
-                        <button class="calculate-btn" onclick="calculateTotal()">
+                        <button type="button" id="calculate-btn" name="calculate-btn" class="calculate-btn">
                             <i class="fas fa-calculator"></i> Calculate Total Time
                         </button>
                     </div>
@@ -303,13 +307,13 @@
                             </div>
                             
                             <div class="timer-controls">
-                                <button class="control-btn start-btn" onclick="startTimer()" title="Start Timer" aria-label="Start Timer">
+                                <button type="button" id="start-btn" class="control-btn start-btn" title="Start Timer (Space)" aria-label="Start Timer">
                                     <i class="fas fa-play"></i>
                                 </button>
-                                <button class="control-btn pause-btn" onclick="pauseTimer()" title="Pause Timer" aria-label="Pause Timer">
+                                <button type="button" id="stop-btn" class="control-btn stop-btn" title="Stop Timer" aria-label="Stop Timer">
                                     <i class="fas fa-pause"></i>
                                 </button>
-                                <button class="control-btn reset-btn" onclick="resetTimer()" title="Reset Timer" aria-label="Reset Timer">
+                                <button type="button" id="reset-btn" class="control-btn reset-btn" title="Reset Timer (R)" aria-label="Reset Timer">
                                     <i class="fas fa-stop"></i>
                                 </button>
                             </div>
@@ -458,20 +462,36 @@
                     <h2>Related Tools</h2>
                     <div class="tools-grid">
                         <a href="goal-planner.html" class="tool-card">
-                            <i class="fas fa-target"></i>
+                            <i class="fas fa-bullseye"></i>
                             <h3>Goal Planner</h3>
-                            <p>Plan and track your long-term goals</p>
                         </a>
                         <a href="../study/study-planner.html" class="tool-card">
                             <i class="fas fa-book"></i>
                             <h3>Study Planner</h3>
-                            <p>Organize your study schedule efficiently</p>
                         </a>
                         <a href="../finance/expense-tracker.html" class="tool-card">
                             <i class="fas fa-chart-pie"></i>
                             <h3>Daily Expense Tracker</h3>
-                            <p>Track your daily expenses and budget</p>
                         </a>
+                    </div>
+                </section>
+
+                <!-- Keyboard Shortcuts Info -->
+                <section class="shortcuts-section">
+                    <h2>Keyboard Shortcuts</h2>
+                    <div class="shortcuts-grid">
+                        <div class="shortcut-item">
+                            <kbd>Space</kbd>
+                            <span>Start/Stop Timer</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>R</kbd>
+                            <span>Reset Timer</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Esc</kbd>
+                            <span>Reset Timer</span>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -516,43 +536,74 @@
         </div>
     </aside>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-columns">
+                <!-- Pages -->
                 <div class="footer-column">
-                    <h3>Popular Tools</h3>
-                    <ul class="footer-nav">
-                        <li><a href="../calculator/cgpa-percentage-inline.html">CGPA Calculator</a></li>
-                        <li><a href="../health/ivf-calculator.html">IVF Calculator</a></li>
-                        <li><a href="../converter/height-converter-inline.html">Height Converter</a></li>
-                        <li><a href="../personal/age-difference-inline.html">Age Calculator</a></li>
-                    </ul>
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                
+
+                <!-- Legal & Info -->
                 <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul class="footer-nav">
-                        <li><a href="../calculator.html">Calculator Tools</a></li>
-                        <li><a href="../health.html">Health Tools</a></li>
-                        <li><a href="../planner.html">Planner Tools</a></li>
-                        <li><a href="../converter.html">Converter Tools</a></li>
-                    </ul>
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                
+
+                <!-- Social -->
                 <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul class="footer-nav">
-                        <li><a href="../about.html">About Us</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
-                        <li><a href="../privacy.html">Privacy Policy</a></li>
-                        <li><a href="../terms.html">Terms of Service</a></li>
-                    </ul>
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Task Proper. All rights reserved. | Free online tools for everyone.</p>
+                <p>&copy; 2025 Task Proper by Task Proper. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IVF Due Date Calculator - FET, Fresh Transfer & Day 6 Embryo | Task Proper</title>
+    <title>IVF Due Date Calculator - FET, Fresh & Day 6 Embryo | Task Proper</title>
     <meta name="description" content="Free IVF due date calculator for frozen transfer (FET), fresh transfer, and day 6 embryo. Calculate your expected delivery date with accurate IVF-specific timing.">
     <meta name="keywords" content="ivf due date calculator, ivf due date calculator frozen transfer, ivf due date calculator fet, best ivf due date calculator, ivf due date calculator day 6 embryo, ivf due date calculator 6 day transfer, fet ivf due date calculator, ivf due date calculator twins">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -34,7 +34,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="../favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -154,17 +154,17 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
-                        <button class="search-button" aria-label="Search tools">
+                        <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools...">
+                        <button type="button" id="desktop-search-btn" name="desktop-search-btn" class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
                     <!-- Mobile Search Toggle -->
-                    <button class="search-toggle" aria-label="Toggle search">
+                    <button type="button" id="mobile-search-toggle" name="mobile-search-toggle" class="search-toggle" aria-label="Toggle search">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <button class="menu-toggle" aria-label="Toggle menu">
+                <button type="button" id="menu-toggle" name="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
@@ -178,8 +178,8 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
-                <button class="mobile-search-close" aria-label="Close search">
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
+                <button type="button" id="mobile-search-close" name="mobile-search-close" class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -193,7 +193,7 @@
     <aside class="sidebar" aria-label="Main menu">
         <div class="sidebar-header">
             <h2>Menu</h2>
-            <button class="sidebar-close" aria-label="Close menu">
+            <button type="button" id="sidebar-close" name="sidebar-close" class="sidebar-close" aria-label="Close menu">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -260,7 +260,7 @@
                         <span class="breadcrumb-separator">/</span>
                     </li>
                     <li>
-                        <span><i class="fas fa-baby"></i> IVF Due Date Calculator</span>
+                        <span>IVF Due Date Calculator</span>
                     </li>
                 </ol>
             </nav>
@@ -270,8 +270,8 @@
         <section class="tool-section">
             <div class="container">
                 <div class="tool-header">
-                    <h1><i class="fas fa-baby"></i> IVF Due Date Calculator</h1>
-                    <p class="tool-description">Calculate your expected delivery date for IVF pregnancies including FET, fresh transfer, and day 6 embryo transfers</p>
+                    <h1>IVF Due Date Calculator</h1>
+                    <p class="tool-description">Get accurate due dates for your IVF pregnancy with our specialized calculator designed for frozen transfer, fresh transfer and day 6 embryo procedures</p>
                 </div>
 
                 <!-- Calculator Tool -->
@@ -359,6 +359,87 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- About This Tool Section -->
+                <div class="about-tool-section">
+                    <div class="about-card">
+                        <h2><i class="fas fa-info-circle"></i> About This IVF Due Date Calculator</h2>
+                        <p>Planning your pregnancy journey after IVF treatment requires precise timing. Our IVF due date calculator provides accurate delivery estimates based on your specific transfer type and date. Whether you've undergone a frozen embryo transfer (FET) or fresh transfer with day 3, day 5, or day 6 embryos, this tool calculates your expected due date using medically-approved formulas. Unlike standard pregnancy calculators that rely on last menstrual periods, our calculator accounts for the exact embryo development stage at transfer, giving you reliable dates for planning appointments, work arrangements, and preparing for your baby's arrival.</p>
+                    </div>
+                </div>
+
+                <!-- How to Use Section -->
+                <div class="how-to-use-section">
+                    <div class="how-to-card">
+                        <h2><i class="fas fa-list-ol"></i> Step-by-Step Guide: Using Your IVF Due Date Calculator</h2>
+                        <div class="steps-grid">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Choose Your Transfer Method</h3>
+                                    <p>Select whether you had a fresh transfer or FET (frozen embryo transfer). Then pick your embryo stage: day 3 cleavage embryo, day 5 blastocyst, or day 6 blastocyst.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Enter Your Transfer Date</h3>
+                                    <p>Input the exact calendar date when your embryo transfer procedure took place. This date is crucial for accurate calculations.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Indicate Multiple Embryos</h3>
+                                    <p>If your doctor transferred more than one embryo, check this box. Multiple embryos increase twin chances and may affect delivery timing.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>View Your Results</h3>
+                                    <p>Click calculate to see your estimated due date, current pregnancy week, days remaining, and important notes about your IVF pregnancy timeline.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h3>Share with Your Doctor</h3>
+                                    <p>Print or save your results to discuss with your fertility specialist or obstetrician during your next appointment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Short Article Section -->
+                <div class="article-section">
+                    <div class="article-card">
+                        <h2><i class="fas fa-heartbeat"></i> Why IVF Due Date Calculators Are More Accurate</h2>
+                        <p>When you're expecting after IVF treatment, knowing your exact due date becomes incredibly important for planning. The best IVF due date calculator takes into account your specific transfer details rather than guessing based on menstrual cycles. This makes a huge difference in accuracy.</p>
+                        
+                        <p>For couples who've had a frozen embryo transfer (FET), the calculation differs slightly from fresh transfers. An IVF due date calculator for FET uses the transfer date plus the embryo's development stage. Day 6 embryo transfers need special consideration since these blastocysts developed one extra day in the lab. Our IVF due date calculator for day 6 embryo transfers accounts for this timing difference.</p>
+                        
+                        <p>Expecting twins from your IVF journey? An IVF due date calculator for twins provides the same initial due date, but remember that multiple pregnancies often deliver earlier. Many fertility patients find our calculator helpful because it's designed specifically for IVF pregnancies, unlike generic pregnancy calculators that weren't built with assisted reproduction in mind.</p>
+                        
+                        <div class="article-highlight">
+                            <i class="fas fa-lightbulb"></i>
+                            <span><strong>Did You Know?</strong> IVF pregnancies have due dates accurate within 1-2 days because we know exactly when conception occurred, unlike natural pregnancies where ovulation timing varies.</span>
+                        </div>
+                        
+                        <div class="related-tools">
+                            <h3>Related Pregnancy Tools</h3>
+                            <ul>
+                                <li><a href="../health/calorie-deficit.html">Pregnancy Calorie Calculator</a> - Track your nutritional needs during pregnancy</li>
+                                <li><a href="../health/body-frame-inline.html">Body Frame Calculator</a> - Understand your body type for healthy pregnancy weight gain</li>
+                                <li><a href="../calculator/cgpa-percentage-inline.html">Academic Planning</a> - For students planning around pregnancy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Information Section -->
@@ -367,36 +448,36 @@
                 <div class="info-grid">
                     <!-- How It Works -->
                     <div class="info-card">
-                        <h3><i class="fas fa-lightbulb"></i> How IVF Due Date Calculation Works</h3>
-                        <p>IVF due dates are calculated differently from natural pregnancies. Instead of using the last menstrual period, we use the embryo transfer date and add the appropriate development time based on embryo age.</p>
+                        <h3><i class="fas fa-lightbulb"></i> How Your IVF Due Date Gets Calculated</h3>
+                        <p>Calculating due dates after IVF treatment works differently than regular pregnancy dating. Instead of guessing ovulation from your last period, we use your actual transfer date and embryo stage for precision timing.</p>
                         <ul>
-                            <li><strong>Day 3 Embryo:</strong> Add 266 days (38 weeks) to transfer date</li>
-                            <li><strong>Day 5 Blastocyst:</strong> Add 264 days (37 weeks 5 days) to transfer date</li>
-                            <li><strong>Day 6 Blastocyst:</strong> Add 263 days (37 weeks 4 days) to transfer date</li>
+                            <li><strong>Day 3 Cleavage Embryos:</strong> Transfer date plus 266 days gives your due date</li>
+                            <li><strong>Day 5 Blastocyst Transfer:</strong> Add 264 days from your transfer date</li>
+                            <li><strong>Day 6 Blastocyst Transfer:</strong> Transfer date plus 263 days for accurate timing</li>
                         </ul>
                     </div>
 
                     <!-- Important Notes -->
                     <div class="info-card">
-                        <h3><i class="fas fa-exclamation-triangle"></i> Important Considerations</h3>
+                        <h3><i class="fas fa-exclamation-triangle"></i> What Makes IVF Dating Special</h3>
                         <ul>
-                            <li>IVF due dates are typically more accurate than natural conception dates</li>
-                            <li>Multiple embryos may result in earlier delivery</li>
-                            <li>FET (Frozen Embryo Transfer) calculations are the same as fresh transfers</li>
-                            <li>Always consult your reproductive endocrinologist for personalized care</li>
-                            <li>Regular monitoring is essential throughout IVF pregnancies</li>
+                            <li>Your IVF due date stays more accurate because we know exactly when fertilization happened</li>
+                            <li>Twins from multiple embryo transfers often arrive 2-3 weeks early</li>
+                            <li>Fresh transfers and frozen embryo transfers use identical calculation methods</li>
+                            <li>Your fertility doctor will track your progress more closely than typical pregnancies</li>
+                            <li>Early ultrasounds confirm your baby's growth matches the calculated timeline</li>
                         </ul>
                     </div>
 
                     <!-- Benefits -->
                     <div class="info-card">
-                        <h3><i class="fas fa-heart"></i> Benefits of Accurate Due Date Calculation</h3>
+                        <h3><i class="fas fa-heart"></i> Why Accurate Dating Matters for IVF Families</h3>
                         <ul>
-                            <li>Better pregnancy planning and preparation</li>
-                            <li>Accurate scheduling of prenatal appointments</li>
-                            <li>Proper timing for genetic testing if needed</li>
-                            <li>Enhanced monitoring for high-risk pregnancies</li>
-                            <li>Peace of mind with precise gestational age tracking</li>
+                            <li>Plan maternity leave and work schedules with confidence</li>
+                            <li>Schedule important scans and tests at the right gestational weeks</li>
+                            <li>Time genetic screenings like NIPT and amniocentesis correctly</li>
+                            <li>Monitor high-risk pregnancies with appropriate frequency</li>
+                            <li>Reduce anxiety by knowing exactly where you are in your pregnancy journey</li>
                         </ul>
                     </div>
                 </div>
@@ -406,55 +487,55 @@
         <!-- FAQ Section -->
         <section class="faq-section">
             <div class="container">
-                <h2 class="section-title">Frequently Asked Questions</h2>
+                <h2 class="section-title">Common Questions About IVF Due Date Calculators</h2>
                 <div class="faq-container">
                     <div class="faq-item">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            <span>How accurate are IVF due date calculations?</span>
+                            <span>Why should I use an IVF due date calculator instead of a regular pregnancy calculator?</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>IVF due date calculations are typically very accurate because the exact embryo transfer date is known. Unlike natural conception where ovulation timing can vary, IVF provides precise developmental timing, making due dates accurate within 1-2 days.</p>
+                            <p>Regular pregnancy calculators guess your ovulation date based on your last period, which can be off by several days. An IVF due date calculator uses your actual transfer date and embryo stage, making it incredibly precise. Since we know exactly when your embryo was transferred and how developed it was, your due date becomes accurate within just 1-2 days rather than the typical week-long range.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            <span>Is there a difference between fresh and frozen embryo transfer due dates?</span>
+                            <span>Does it matter if I had a frozen embryo transfer versus fresh transfer?</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>No, there is no difference in due date calculation between fresh and frozen embryo transfers. The calculation is based on the embryo's developmental stage (day 3, 5, or 6) at the time of transfer, regardless of whether it was fresh or previously frozen.</p>
+                            <p>Not for calculating your due date! Whether you had a fresh transfer or FET (frozen embryo transfer), the calculation works exactly the same way. What matters is the developmental stage of your embryo when it was transferred - day 3, day 5, or day 6. The freezing and thawing process doesn't change how we calculate your pregnancy timeline.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            <span>What if multiple embryos were transferred?</span>
+                            <span>I'm expecting twins from IVF - does this change my due date?</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>With multiple embryo transfers, there's a higher chance of twins or multiples. While the due date calculation remains the same, multiple pregnancies often deliver 2-3 weeks earlier than singleton pregnancies. Your doctor will monitor you more closely.</p>
+                            <p>The initial due date calculation stays the same whether you're having one baby or twins. However, twin pregnancies from IVF typically deliver around 36-37 weeks instead of the full 40 weeks. Your doctor will watch you more closely and may plan for delivery a few weeks before your calculated due date to keep both babies safe.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            <span>When should I start prenatal care after IVF?</span>
+                            <span>When do I switch from my fertility clinic to a regular OB?</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Most IVF patients have their first ultrasound 6-7 weeks after transfer to confirm pregnancy and heartbeat. Regular prenatal care typically begins around 8-10 weeks, transitioning from your fertility clinic to an obstetrician.</p>
+                            <p>Most fertility clinics follow you until around 8-10 weeks of pregnancy, which is about 6-8 weeks after your transfer date. You'll usually have 2-3 ultrasounds with your fertility team to confirm everything looks good before they "graduate" you to regular prenatal care. Your clinic will help coordinate this transition and send all your records to your chosen obstetrician.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            <span>Can the due date change during pregnancy?</span>
+                            <span>Will my doctor change my due date based on ultrasound measurements?</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>IVF due dates rarely change because the transfer date provides an exact reference point. However, early ultrasound measurements may occasionally suggest minor adjustments. Your healthcare provider will determine if any changes are necessary.</p>
+                            <p>Unlike natural pregnancies where due dates often get adjusted based on early ultrasounds, IVF due dates rarely change. Since your transfer date gives us an exact starting point, your calculated due date is already more accurate than ultrasound measurements in early pregnancy. Your doctor might make tiny adjustments if there's a significant difference, but this happens much less often with IVF pregnancies.</p>
                         </div>
                     </div>
                 </div>

@@ -16,12 +16,11 @@
     <meta property="og:url" content="https://www.taskproper.com/health/body-frame-inline.html">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.taskproper.com/tools/body-frame-inline.html">
+    <link rel="canonical" href="https://www.taskproper.com/health/body-frame-inline.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     
@@ -192,9 +191,10 @@
     <style>
         /* Tool Container Styles */
         .tool-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 2rem auto;
             padding: 0 1rem;
+            position: relative;
         }
 
         /* Breadcrumb Navigation Styles */
@@ -228,25 +228,6 @@
             color: #6c757d;
         }
         
-        /* Dark Mode Breadcrumb Styles */
-        body.dark-mode .breadcrumb {
-            background-color: #1e1e1e;
-            border-color: #444;
-            border-left: 4px solid #5aafed;
-        }
-
-        body.dark-mode .breadcrumb a {
-            color: #5aafed;
-        }
-
-        body.dark-mode .breadcrumb a:hover {
-            color: #7bc3ff;
-        }
-
-        body.dark-mode .breadcrumb-separator, 
-        body.dark-mode .breadcrumb span:last-child {
-            color: #e0e0e0;
-        }
 
         /* Mobile styles for breadcrumbs */
         @media (max-width: 768px) {
@@ -261,61 +242,88 @@
         .tool-header {
             text-align: center;
             margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #ffffff;
+            padding: 2.5rem 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             color: #000;
-            border-bottom: 1px solid #eaeaea;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #000 0%, #333 50%, #000 100%);
         }
 
         .tool-header h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
             color: #000;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: -0.5px;
         }
 
         .tool-header p {
-            font-size: 1rem;
-            max-width: 600px;
+            font-size: 1.1rem;
+            max-width: 700px;
             margin: 0 auto;
-            color: #333;
+            color: #555;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         .tool-card {
             background: white;
-            border-radius: 4px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #e1e1e1;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e8e8e8;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             position: relative;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
             color: #000;
-            font-size: 1rem;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 1rem 1.25rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
             font-size: 1rem;
             font-family: inherit;
-            background-color: white;
+            background-color: #fafafa;
             color: #000;
             -webkit-appearance: none;
             appearance: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .form-group input:focus,
@@ -324,7 +332,8 @@
             outline: none;
             border-color: #000;
             background-color: white;
-            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-1px);
         }
         
         @media (max-width: 480px) {
@@ -351,23 +360,44 @@
         }
 
         .calculate-btn {
-            background: #000;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
             color: white;
-            padding: 0.75rem 1rem;
+            padding: 1.25rem 2rem;
             border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 500;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .calculate-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
         }
 
         .calculate-btn:hover {
-            background: #333;
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        
+        .calculate-btn:hover::before {
+            left: 100%;
         }
 
         .calculate-btn:disabled {
@@ -376,22 +406,37 @@
         }
 
         .integrated-results {
-            border-top: 1px solid #eee;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
+            border-top: 3px solid #f0f0f0;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
             text-align: center;
             max-width: 100%;
             box-sizing: border-box;
             display: none;
+            position: relative;
+        }
+        
+        .integrated-results::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #000 0%, #333 100%);
+            border-radius: 2px;
         }
 
         .integrated-results.show {
             display: block;
-            background: white;
-            border-radius: 4px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            border: 1px solid #ddd;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2.5rem;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            animation: slideInUp 0.6s ease-out;
         }
         
         .results-divider {
@@ -488,31 +533,26 @@
             text-align: center;
         }
         
-        /* Dark mode action buttons */
-        body.dark-mode .reset-btn {
-            background: #333;
-        }
-        
-        body.dark-mode .reset-btn:hover {
-            background: #444;
-        }
-        
-        body.dark-mode .share-btn {
-            background: #2d2d2d;
-            color: #e0e0e0;
-            border-color: #444;
-        }
-        
-        body.dark-mode .share-btn:hover {
-            background: #333;
-        }
 
         .info-section {
-            background: #ffffff;
-            border-radius: 4px;
-            padding: 2rem;
-            margin-top: 2rem;
-            border: 1px solid #e1e1e1;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        
+        .info-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #000 0%, #333 100%);
+            border-radius: 0 0 4px 4px;
         }
 
         .info-section-top {
@@ -521,14 +561,31 @@
         
         .info-section h2 {
             color: #000;
-            margin-bottom: 1rem;
-            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
         }
         
         .info-section h3 {
             color: #000;
-            margin: 1.5rem 0 0.75rem;
-            font-weight: 500;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+            font-size: 1.3rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .info-section h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            border-radius: 2px;
         }
         
         .info-section p, .info-section li {
@@ -543,63 +600,85 @@
         
         .unit-toggle {
             display: flex;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         .unit-btn {
             flex: 1;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
             border: none;
-            background: #f5f5f5;
-            color: #333;
+            background: #f8f9fa;
+            color: #555;
             cursor: pointer;
             text-align: center;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
         }
         
         .unit-btn:hover {
-            background: #e9e9e9;
+            background: #e9ecef;
+            transform: translateY(-1px);
         }
         
         .unit-btn.active {
-            background: #000;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
             color: white;
-            font-weight: 500;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         /* Frame size and ideal weight section */
         .frame-size {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
-            margin: 0.5rem 0;
-            font-size: 1.5rem;
-            font-weight: 600;
+            padding: 1.25rem 2rem;
+            margin: 1rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: #000;
-            background-color: #f5f5f5;
-            border-radius: 4px;
-            min-width: 200px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            min-width: 250px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e0e0e0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .ideal-weight {
-            background-color: #f9f9f9;
-            border: 1px solid #e1e1e1;
-            border-radius: 4px;
-            padding: 1.25rem;
-            margin: 1.5rem auto;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem auto;
             max-width: 95%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .ideal-weight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+            border-radius: 12px 12px 0 0;
         }
         
         .ideal-weight h4 {
             display: flex;
             align-items: center;
             color: #000;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.3rem;
         }
         
         .ideal-weight h4 i {
@@ -636,24 +715,6 @@
             background-color: #f9f9f9;
         }
         
-        /* Dark mode table */
-        body.dark-mode .weight-table th, 
-        body.dark-mode .weight-table td {
-            border-color: #444;
-        }
-        
-        body.dark-mode .weight-table th {
-            background-color: #2d2d2d;
-            color: #e0e0e0;
-        }
-        
-        body.dark-mode .weight-table tr:nth-child(even) {
-            background-color: #292929;
-        }
-        
-        body.dark-mode .weight-table tr:nth-child(odd) {
-            background-color: #1e1e1e;
-        }
         
         /* Calculation Progress Styles */
         .calculation-progress {
@@ -671,9 +732,6 @@
             color: #333;
         }
         
-        body.dark-mode .progress-spinner i {
-            color: #e0e0e0;
-        }
         
         .progress-text {
             font-size: 0.95rem;
@@ -681,9 +739,6 @@
             text-align: center;
         }
         
-        body.dark-mode .progress-text {
-            color: #e0e0e0;
-        }
         
         @media (max-width: 480px) {
             .progress-spinner i {
@@ -805,31 +860,53 @@
         
         @media (max-width: 768px) {
             .tool-container {
-                padding: 0 0.5rem;
+                padding: 0 0.75rem;
                 margin: 1rem auto;
             }
 
             .tool-header {
-                padding: 1.25rem 0.75rem;
+                padding: 2rem 1rem;
                 margin-bottom: 1rem;
+                border-radius: 10px 10px 0 0;
             }
 
             .tool-header h1 {
-                font-size: 1.6rem;
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .tool-header p {
+                font-size: 1rem;
             }
 
             .tool-card {
-                padding: 1rem;
-                border-radius: 8px;
+                padding: 1.5rem;
+                border-radius: 0 0 10px 10px;
             }
 
             .form-group {
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
-                gap: 0.5rem;
+                gap: 1rem;
+            }
+            
+            .calculate-btn {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .frame-size {
+                font-size: 1.5rem;
+                padding: 1rem 1.5rem;
+                min-width: 200px;
+            }
+            
+            .ideal-weight {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
             }
             
             .result-section {
@@ -924,1231 +1001,594 @@
             }
         }
 
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .tool-container {
-            background-color: #121212;
-        }
-
-        body.dark-mode .tool-header {
-            background: #1a1a1a;
-            border-color: #333;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .tool-header h1 {
-            color: #ffffff;
-        }
-        
-        body.dark-mode .tool-header p {
-            color: #d0d0d0;
-        }
-
-        body.dark-mode .tool-card {
-            background: #1e1e1e;
-            border-color: #333;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        body.dark-mode .form-group label {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .form-group input,
-        body.dark-mode .form-group select,
-        body.dark-mode .form-group textarea {
-            background-color: #2d2d2d;
-            border-color: #444;
-            color: #e0e0e0;
-            box-shadow: none;
-        }
-
-        body.dark-mode .form-group input:focus,
-        body.dark-mode .form-group select:focus,
-        body.dark-mode .form-group textarea:focus {
-            border-color: #666;
-            background-color: #333;
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-        }
-        
-        body.dark-mode .form-group input::placeholder {
-            color: #999;
-            opacity: 0.8;
-        }
-
-        body.dark-mode .help-text,
-        body.dark-mode .input-suffix {
-            color: #aaa;
-        }
-
-        body.dark-mode .unit-toggle {
-            border-color: #444;
-        }
-
-        body.dark-mode .unit-btn {
-            background: #2d2d2d;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .unit-btn.active {
-            background: #000;
-            color: #e0e0e0;
-        }
-        
-        body.dark-mode .unit-btn:hover {
-            background: #333;
-        }
-
-        body.dark-mode .integrated-results {
-            background: #1e1e1e;
-            border-color: #333;
-        }
-
-        body.dark-mode .integrated-results.show {
-            background: #1e1e1e;
-            border-color: #333;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        body.dark-mode .results-divider span {
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-            font-weight: 700;
-        }
-
-        body.dark-mode .integrated-results.show .results-divider span {
-            color: #e0e0e0;
-            background-color: #1e1e1e;
-        }
-
-        body.dark-mode .result-description {
-            color: #e0e0e0;
-            background-color: rgba(40, 40, 40, 0.6);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        body.dark-mode .frame-size {
-            background-color: #2d2d2d;
-            color: #e0e0e0;
-            border: 1px solid #444;
-        }
-        
-        body.dark-mode .result-description {
-            background-color: rgba(35, 35, 35, 0.7);
-        }
-
-        body.dark-mode .ideal-weight {
-            background: #2d2d2d;
-            border-left-color: #3498db;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        body.dark-mode .ideal-weight h4 {
-            color: #e0e0e0;
-        }
-        
-        body.dark-mode .ideal-weight h4 i {
-            color: #5aafed;
-        }
-
-        body.dark-mode .ideal-weight p {
-            color: #d0d0d0;
-        }
-
-        /* Result insights section */
-        .result-insights {
-            background: #f9f9f9;
-            border: 1px solid #e1e1e1;
-            border-radius: 4px;
-            padding: 1.25rem;
-            margin: 1.5rem auto;
-            max-width: 95%;
-        }
-        
-        .result-insights h4 {
-            display: flex;
-            align-items: center;
-            color: #000;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
-        .result-insights h4 i {
-            margin-right: 0.75rem;
-        }
-        
-        .insights-content {
-            color: #333;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-        
-        /* Dark mode styles for result insights */
-        body.dark-mode .result-insights {
-            background: #1e1e1e;
-            border-color: #333;
-        }
-        
-        body.dark-mode .result-insights h4 {
-            color: #ffffff;
-        }
-        
-        body.dark-mode .result-insights h4 i {
-            color: #5aafed;
-        }
-        
-        body.dark-mode .insights-content {
-            color: #d0d0d0;
-        }
-        
-        /* Measurement guide styles */
-        .measurement-guide {
-            display: flex;
-            align-items: flex-start;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            padding: 1rem;
-            margin-top: 1rem;
-            border: 1px solid #e1e1e1;
-        }
-        
-        .guide-icon {
-            font-size: 1.2rem;
-            color: #000;
-            margin-right: 1rem;
-            padding-top: 0.25rem;
-        }
-        
-        .guide-text p {
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-size: 0.95rem;
-        }
-        
-        .guide-text p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Dark mode measurement guide */
-        body.dark-mode .measurement-guide {
-            background-color: #2d2d2d;
-            border-color: #444;
-        }
-        
-        body.dark-mode .guide-icon {
-            color: #e0e0e0;
-        }
-        
-        body.dark-mode .guide-text p {
-            color: #bbb;
-        }
-
-        /* Dark mode toggle button */
-        .dark-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            border-radius: 4px;
-            background: #000;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-            z-index: 100;
-            transition: all 0.2s ease;
-        }
-
-        .dark-mode-toggle:hover {
-            transform: scale(1.1);
-        }
-
-        body.dark-mode .dark-mode-toggle {
-            background: #2d2d2d;
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-        }
-
-        .dark-mode-toggle i {
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
-
-        /* Toast notification for dark mode */
-        .mode-toast {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            background: #333;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            pointer-events: none;
-        }
-
-        .mode-toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Dark mode error and success styles */
-        body.dark-mode .error {
-            border-color: #e74c3c !important;
-            background-color: rgba(231, 76, 60, 0.15) !important;
-        }
-        
-        body.dark-mode .error-message {
-            color: #ff6b6b;
-        }
-        
-        body.dark-mode .success {
-            border-color: #2ecc71 !important;
-            background-color: rgba(46, 204, 113, 0.15) !important;
-        }
-        
-        body.dark-mode .success-icon {
-            color: #2ecc71;
-        }
-
-        /* FAQ Section Styles */
-        .faq-section {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .faq-section h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #000;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 1rem;
-            border: 1px solid #e1e1e1;
-            border-radius: 6px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-item:hover {
-            border-color: #ccc;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .faq-item summary {
-            padding: 1.2rem;
-            background-color: #f9f9f9;
-            cursor: pointer;
-            font-weight: 600;
-            color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: all 0.2s ease;
-            position: relative;
-            outline: none;
-            font-size: 1rem;
-            line-height: 1.4;
-        }
-
-        .faq-item summary:hover {
-            background-color: #f1f3f5;
-        }
-
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .faq-item summary::after {
-            content: '⌵';
-            font-size: 1.3rem;
-            transition: transform 0.3s ease;
-            color: #666;
-            flex-shrink: 0;
-            margin-left: 1rem;
-        }
-
-        .faq-item[open] summary::after {
-            transform: rotate(180deg);
-            color: #000;
-        }
-        
-        .faq-item[open] summary {
-            background-color: #f1f3f5;
-            border-bottom: 1px solid #e1e1e1;
-        }
-
-        .faq-item .faq-content {
-            padding: 1.2rem;
-            background: white;
-        }
-
-        .faq-content p {
-            margin: 0 0 1rem 0;
-            line-height: 1.6;
-            color: #444;
-        }
-        
-        .faq-content p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .faq-content strong {
-            color: #000;
-            font-weight: 600;
-        }
-
-        /* Mobile FAQ improvements */
-        @media (max-width: 768px) {
-            .faq-section {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-            }
-            
-            .faq-item summary {
-                padding: 1rem;
-                font-size: 0.95rem;
-                line-height: 1.3;
-            }
-            
-            .faq-item summary::after {
-                font-size: 1.2rem;
-                margin-left: 0.5rem;
-            }
-            
-            .faq-item .faq-content {
-                padding: 1rem;
-            }
-            
-            .faq-content p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-                margin-bottom: 0.75rem;
-            }
-        }
-
-        /* Dark Mode for FAQ Section */
-        body.dark-mode .faq-section {
-            background: #1e1e1e;
-            border-color: #333;
-        }
-        
-        body.dark-mode .faq-section h2 {
-            color: #ffffff;
-        }
-        
-        body.dark-mode .faq-item {
-            border-color: #444;
-        }
-        
-        body.dark-mode .faq-item:hover {
-            border-color: #555;
-            box-shadow: 0 2px 8px rgba(255,255,255,0.05);
-        }
-        
-        body.dark-mode .faq-item summary {
-            background-color: #2d2d2d;
-            color: #e0e0e0;
-        }
-        
-        body.dark-mode .faq-item summary:hover,
-        body.dark-mode .faq-item[open] summary {
-            background-color: #333;
-        }
-        
-        body.dark-mode .faq-item summary::after {
-            color: #bbb;
-        }
-        
-        body.dark-mode .faq-item[open] summary::after {
-            color: #e0e0e0;
-        }
-        
-        body.dark-mode .faq-content {
-            background: #1e1e1e;
-        }
-        
-        body.dark-mode .faq-content p {
-            color: #ccc;
-        }
-        
-        body.dark-mode .faq-content strong {
-            color: #e0e0e0;
-        }
-
-        /* Related Tools section styles */
-        .related-tools-section {
-            margin-top: 4rem;
-            padding: 2rem 1.5rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 12px;
-            border: 1px solid #e5e5e5;
-        }
-        
-        .related-tools-section h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #000;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .related-tools-section > p {
-            text-align: center;
-            color: #666;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .related-tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .related-tool-card {
-            display: block;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-            background-color: #fff;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            border: 1px solid #e5e5e5;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .related-tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #000 0%, #333 100%);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .related-tool-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            border-color: #ccc;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .related-tool-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .related-tool-icon {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .related-tool-card h3 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.1rem;
-            color: #000;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-
-        .related-tool-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-        }
-        
-        /* Pro tip box styling */
-        .related-tools-section > div:last-child {
-            margin-top: 2.5rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
-            border-radius: 10px;
-            border: 1px solid #b8e0f0;
-            position: relative;
-        }
-        
-        .related-tools-section > div:last-child h4 {
-            margin-bottom: 1rem;
-            color: #2c5282;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        
-        .related-tools-section > div:last-child p {
-            margin: 0;
-            color: #2d3748;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        .related-tools-section > div:last-child a {
-            color: #2b6cb0;
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s ease;
-        }
-        
-        .related-tools-section > div:last-child a:hover {
-            border-bottom-color: #2b6cb0;
-        }
-
-        /* Mobile optimizations for related tools */
-        @media (max-width: 768px) {
-            .related-tools-section {
-                margin-top: 2.5rem;
-                padding: 1.5rem 1rem;
-                border-radius: 8px;
-            }
-            
-            .related-tools-section h2 {
-                font-size: 1.3rem;
-                margin-bottom: 0.75rem;
-            }
-            
-            .related-tools-section > p {
-                font-size: 0.9rem;
-                margin-bottom: 1.5rem;
-                line-height: 1.4;
-            }
-            
-            .related-tools-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                margin-top: 1rem;
-            }
-            
-            .related-tool-card {
-                padding: 1.2rem;
-                border-radius: 8px;
-            }
-            
-            .related-tool-icon {
-                font-size: 2rem;
-                margin-bottom: 0.8rem;
-            }
-            
-            .related-tool-card h3 {
-                font-size: 1rem;
-                margin-bottom: 0.4rem;
-            }
-            
-            .related-tool-card p {
-                font-size: 0.85rem;
-                line-height: 1.4;
-            }
-            
-            /* Pro tip mobile */
-            .related-tools-section > div:last-child {
-                margin-top: 2rem;
-                padding: 1.2rem;
-                border-radius: 8px;
-            }
-            
-            .related-tools-section > div:last-child h4 {
-                font-size: 1rem;
-                margin-bottom: 0.75rem;
-            }
-            
-            .related-tools-section > div:last-child p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .related-tools-section {
-                margin-top: 2rem;
-                padding: 1rem 0.75rem;
-            }
-            
-            .related-tools-grid {
-                gap: 0.75rem;
-            }
-            
-            .related-tool-card {
-                padding: 1rem;
-            }
-            
-            .related-tool-icon {
-                font-size: 1.8rem;
-                margin-bottom: 0.6rem;
-            }
-            
-            .related-tool-card h3 {
-                font-size: 0.95rem;
-            }
-            
-            .related-tool-card p {
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Dark mode styles for related tools */
-        body.dark-mode .related-tools-section {
-            background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
-            border-color: #444;
-        }
-        
-        body.dark-mode .related-tools-section h2 {
-            color: #e0e0e0;
-        }
-        
-        body.dark-mode .related-tools-section > p {
-            color: #bbb;
-        }
-
-        body.dark-mode .related-tool-card {
-            background-color: #2c2c2c;
-            border-color: #444;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-        }
-
-        body.dark-mode .related-tool-card:hover {
-            border-color: #555;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        
-        body.dark-mode .related-tool-card::before {
-            background: linear-gradient(90deg, #555 0%, #777 100%);
-        }
-
-        body.dark-mode .related-tool-card h3 {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .related-tool-card p {
-            color: #bbb;
-        }
-        
-        /* Dark mode pro tip */
-        body.dark-mode .related-tools-section > div:last-child {
-            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-            border-color: #4a5568;
-        }
-        
-        body.dark-mode .related-tools-section > div:last-child h4 {
-            color: #63b3ed;
-        }
-        
-        body.dark-mode .related-tools-section > div:last-child p {
-            color: #e2e8f0;
-        }
-        
-        body.dark-mode .related-tools-section > div:last-child a {
-            color: #90cdf4;
-        }
-        
-        body.dark-mode .related-tools-section > div:last-child a:hover {
-            border-bottom-color: #90cdf4;
-        }
-        
-        /* Smooth animations and focus improvements */
-        .tool-card {
-            transition: all 0.3s ease;
-        }
-        
-        .tool-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        /* Better focus states for accessibility */
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #000;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
-            transform: translateY(-1px);
-        }
-        
-        body.dark-mode .form-group input:focus,
-        body.dark-mode .form-group select:focus {
-            border-color: #666;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Button hover animations */
-        .calculate-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .calculate-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        
-        .reset-btn, .share-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .reset-btn:hover, .share-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-        
-        /* Results animation */
-        .integrated-results.show {
-            animation: slideInUp 0.5s ease-out;
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Loading state animation */
-        .calculation-progress {
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-        
-        /* Improved mobile touch feedback */
-        @media (hover: none) and (pointer: coarse) {
-            .related-tool-card:hover {
-                transform: none;
-            }
-            
-            .related-tool-card:active {
-                transform: scale(0.98);
-                transition: transform 0.1s ease;
-            }
-            
-            .calculate-btn:hover {
-                transform: none;
-            }
-            
-            .calculate-btn:active {
-                transform: scale(0.98);
-            }
-            
-            .reset-btn:hover, .share-btn:hover {
-                transform: none;
-            }
-            
-            .reset-btn:active, .share-btn:active {
-                transform: scale(0.98);
-            }
-        }
-        
-        /* Improved mobile scrolling experience */
-        @media (max-width: 768px) {
-            html {
-                scroll-behavior: smooth;
-            }
-            
-            body {
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            /* Better spacing between sections on mobile */
-            .info-section + .info-section {
-                margin-top: 1.5rem;
-            }
-            
-            .faq-section {
-                margin-top: 1.5rem;
-            }
-            
-            .related-tools-section {
-                margin-top: 1.5rem;
-            }
-        }
-        
-        /* WebPage Schema for the page will be added in JSON-LD */
-        
-        /* Step-by-step guide styles */
-        .step-by-step-guide {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border: 1px solid #e5e5e5;
-            border-left: 4px solid #000;
-        }
-        
-        .usage-steps {
-            counter-reset: step-counter;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .usage-steps li {
-            counter-increment: step-counter;
-            margin-bottom: 1.25rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 6px;
-            border: 1px solid #e9ecef;
-            position: relative;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .usage-steps li:hover {
-            border-color: #000;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .usage-steps li:last-child {
-            margin-bottom: 0;
-        }
-        
-        .usage-steps li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: -12px;
-            top: 1rem;
-            width: 24px;
-            height: 24px;
-            background: #000;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.8rem;
-            border: 3px solid white;
-        }
-        
-        .usage-steps li strong {
-            color: #000;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
-        }
-        
-        .usage-steps li span {
-            color: #555;
-            line-height: 1.5;
-            font-size: 0.95rem;
-            display: block;
-            padding-left: 1rem;
-        }
-        
-        /* Dark mode styles for step guide */
-        body.dark-mode .step-by-step-guide {
-            background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
-            border-color: #444;
-        }
-        
-        body.dark-mode .usage-steps li {
-            background: #1e1e1e;
-            border-color: #444;
-        }
-        
-        body.dark-mode .usage-steps li:hover {
-            border-color: #666;
-        }
-        
-        body.dark-mode .usage-steps li strong {
-            color: #e0e0e0;
-        }
-        
-        body.dark-mode .usage-steps li span {
-            color: #bbb;
-        }
-        
-        body.dark-mode .usage-steps li::before {
-            background: #333;
-            color: #e0e0e0;
-        }
-        
-        /* Mobile responsiveness for step guide */
-        @media (max-width: 768px) {
-            .step-by-step-guide {
-                padding: 1rem;
-                margin: 1rem 0;
-            }
-            
-            .usage-steps li {
-                padding: 0.75rem;
-                margin-bottom: 1rem;
-                margin-left: 0.75rem;
-            }
-            
-            .usage-steps li::before {
-                left: -10px;
-                top: 0.75rem;
-                width: 20px;
-                height: 20px;
-                font-size: 0.7rem;
-            }
-            
-            .usage-steps li strong {
-                font-size: 1rem;
-                margin-bottom: 0.25rem;
-            }
-            
-            .usage-steps li span {
-                font-size: 0.9rem;
-                padding-left: 0.5rem;
-            }
-        }
-        
         /* Critical Mobile Fixes */
         @media (max-width: 480px) {
             /* Better container spacing */
             .tool-container {
-                padding: 0 0.75rem;
+                padding: 0 1rem;
                 margin: 0.5rem auto;
             }
             
             /* Improved tool header */
             .tool-header {
-                padding: 1rem 0.75rem;
-                margin-bottom: 0.75rem;
-                text-align: left;
+                padding: 1.5rem 1rem;
+                margin-bottom: 1rem;
+                text-align: center;
+                border-radius: 8px 8px 0 0;
             }
             
             .tool-header h1 {
                 font-size: 1.4rem;
-                line-height: 1.3;
-                margin-bottom: 0.5rem;
+                line-height: 1.1;
+                margin-bottom: 0.75rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             
             .tool-header p {
-                font-size: 0.9rem;
-                line-height: 1.4;
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
             
             /* Form improvements */
             .tool-card {
-                padding: 0.75rem;
-                margin-bottom: 1rem;
-                border-radius: 6px;
+                padding: 1.25rem;
+                margin-bottom: 1.5rem;
+                border-radius: 0 0 8px 8px;
             }
             
             .form-group {
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
             
             .form-group label {
-                font-size: 0.9rem;
-                margin-bottom: 0.4rem;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
                 font-weight: 600;
             }
             
             /* Better input styling */
             .form-group input,
             .form-group select {
-                padding: 0.7rem 0.5rem;
+                padding: 0.875rem 1rem;
                 font-size: 16px; /* Prevents zoom on iOS */
-                border-radius: 6px;
-                min-height: 44px; /* Better touch target */
+                border-radius: 8px;
+                min-height: 48px; /* Better touch target */
             }
             
             /* Unit toggle mobile fix */
             .unit-btn {
-                padding: 0.6rem 0.5rem;
-                font-size: 0.85rem;
-                min-height: 40px;
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+                min-height: 44px;
+            }
+            
+            .calculate-btn {
+                padding: 1rem 1.25rem;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+            
+            .frame-size {
+                font-size: 1.4rem;
+                padding: 0.875rem 1.25rem;
+                min-width: 180px;
+                letter-spacing: 0.5px;
+            }
+            
+            .ideal-weight {
+                padding: 1.25rem;
+                margin: 1.25rem auto;
+                border-radius: 10px;
+            }
+            
+            .info-section {
+                padding: 1.5rem;
+                margin-top: 2rem;
+                border-radius: 10px;
+            }
+            
+            .info-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .info-section h3 {
+                font-size: 1.2rem;
             }
             
             /* Calculate button enhancement */
             .calculate-btn {
                 padding: 0.8rem 1rem;
                 font-size: 1rem;
-                min-height: 48px;
-                margin-top: 0.5rem;
-                border-radius: 6px;
-                font-weight: 600;
-            }
-            
-            /* Results section mobile optimization */
-            .integrated-results {
-                margin-top: 1rem;
-                padding: 0.75rem;
-                border-radius: 6px;
-            }
-            
-            .result-header {
-                margin-bottom: 1rem;
-                padding: 0.5rem 0;
-            }
-            
-            .frame-size {
-                font-size: 1.3rem;
-                padding: 0.6rem 1rem;
-                min-width: 140px;
-                margin: 0.5rem 0;
-            }
-            
-            .result-description {
-                font-size: 0.9rem;
-                padding: 0.75rem;
-                margin: 1rem auto;
-                line-height: 1.5;
-                border-radius: 6px;
-            }
-            
-            /* Action buttons mobile layout */
-            .action-buttons {
-                margin-top: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.75rem;
-                align-items: center;
             }
             
             .reset-btn, .share-btn {
-                width: 100%;
-                max-width: 280px;
-                padding: 0.7rem 1rem;
+                padding: 0.75rem 1rem;
                 font-size: 0.9rem;
-                margin: 0;
-                min-height: 44px;
-            }
-            
-            /* Info sections mobile spacing */
-            .info-section {
-                padding: 1rem 0.75rem;
-                margin-top: 1.5rem;
-            }
-            
-            .info-section h2 {
-                font-size: 1.3rem;
-                margin-bottom: 0.75rem;
-                line-height: 1.3;
-            }
-            
-            .info-section h3 {
-                font-size: 1.1rem;
-                margin: 1rem 0 0.5rem;
-                line-height: 1.3;
-            }
-            
-            .info-section p, .info-section li {
-                font-size: 0.9rem;
-                line-height: 1.6;
-                margin-bottom: 0.75rem;
-            }
-            
-            /* Step guide mobile enhancement */
-            .step-by-step-guide {
-                padding: 0.75rem;
-                margin: 0.75rem 0;
-                border-radius: 6px;
-            }
-            
-            .usage-steps li {
-                padding: 0.6rem 0.75rem;
-                margin-bottom: 0.75rem;
-                margin-left: 0.5rem;
-                border-radius: 4px;
-            }
-            
-            .usage-steps li::before {
-                left: -8px;
-                top: 0.6rem;
-                width: 18px;
-                height: 18px;
-                font-size: 0.65rem;
-            }
-            
-            .usage-steps li strong {
-                font-size: 0.95rem;
-                margin-bottom: 0.3rem;
-            }
-            
-            .usage-steps li span {
-                font-size: 0.85rem;
-                padding-left: 0.3rem;
-                line-height: 1.4;
             }
         }
         
         /* Extra small screens (320px and below) */
         @media (max-width: 320px) {
             .tool-container {
-                padding: 0 0.5rem;
+                padding: 0 0.75rem;
+            }
+            
+            .tool-header {
+                padding: 1.25rem 0.75rem;
             }
             
             .tool-header h1 {
                 font-size: 1.2rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             
             .tool-card {
-                padding: 0.5rem;
+                padding: 1rem;
             }
             
             .form-group input,
             .form-group select {
-                padding: 0.6rem 0.4rem;
-                font-size: 15px;
+                padding: 0.75rem 0.875rem;
+                font-size: 16px;
+            }
+            
+            .unit-btn {
+                padding: 0.625rem 0.75rem;
+                font-size: 0.85rem;
+            }
+            
+            .calculate-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.95rem;
             }
             
             .frame-size {
-                font-size: 1.2rem;
-                padding: 0.5rem 0.75rem;
-                min-width: 120px;
+                font-size: 1.3rem;
+                padding: 0.75rem 1rem;
+                min-width: 160px;
+                letter-spacing: 0.3px;
             }
             
             .result-description {
-                font-size: 0.85rem;
-                padding: 0.6rem;
+                font-size: 0.9rem;
+                padding: 0.875rem;
+            }
+            
+            .ideal-weight {
+                padding: 1rem;
             }
             
             .reset-btn, .share-btn {
-                padding: 0.6rem 0.75rem;
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Mobile-friendly titles */
+        .mobile-friendly-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-friendly-main-title {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Mobile responsive table */
+        .weight-table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .weight-table {
+            min-width: 100%;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile styles for unit toggle */
+        @media (max-width: 768px) {
+            .unit-toggle {
+                margin-bottom: 1.5rem;
+            }
+            
+            .unit-btn {
+                padding: 0.75rem 0.75rem;
                 font-size: 0.85rem;
+                white-space: nowrap;
+            }
+            
+            .mobile-friendly-title {
+                font-size: 1.5rem;
+                line-height: 1.2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .mobile-friendly-main-title {
+                font-size: 1.6rem;
+                line-height: 1.2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .weight-table {
+                font-size: 0.8rem;
+            }
+            
+            .weight-table th,
+            .weight-table td {
+                padding: 0.5rem 0.3rem;
+                min-width: 80px;
+            }
+            
+            .faq-section .faq-item summary {
+                font-size: 1rem;
+                padding: 1rem 0.75rem;
+                line-height: 1.3;
+            }
+            
+            .faq-content {
+                padding: 1rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .unit-btn {
+                padding: 0.65rem 0.5rem;
+                font-size: 0.8rem;
+                min-width: auto;
+            }
+            
+            .mobile-friendly-title {
+                font-size: 1.3rem;
+                line-height: 1.1;
+            }
+            
+            .mobile-friendly-main-title {
+                font-size: 1.4rem;
+                line-height: 1.1;
+            }
+            
+            .weight-table {
+                font-size: 0.75rem;
+            }
+            
+            .weight-table th,
+            .weight-table td {
+                padding: 0.4rem 0.2rem;
+                min-width: 70px;
+            }
+            
+            .faq-section .faq-item summary {
+                font-size: 0.9rem;
+                padding: 0.875rem 0.5rem;
+            }
+            
+            .faq-content {
+                padding: 0.875rem 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .mobile-friendly-title {
+                font-size: 1.1rem;
+            }
+            
+            .mobile-friendly-main-title {
+                font-size: 1.2rem;
+            }
+            
+            .weight-table {
+                font-size: 0.7rem;
+            }
+            
+            .weight-table th,
+            .weight-table td {
+                padding: 0.3rem 0.1rem;
+                min-width: 60px;
+            }
+        }
+
+        /* Related Tools Section Styles */
+        .related-tools-section {
+            margin-top: 3rem;
+        }
+        
+        .related-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .related-tool-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .related-tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #007bff;
+        }
+        
+        .related-tool-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .related-tool-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+        
+        .related-tool-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        /* Mobile responsive for related tools */
+        @media (max-width: 768px) {
+            .related-tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .related-tool-card {
+                padding: 1.25rem;
+            }
+            
+            .related-tool-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            .related-tool-card h3 {
+                font-size: 1rem;
+            }
+            
+            .related-tool-card p {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .related-tools-grid {
+                gap: 0.75rem;
+            }
+            
+            .related-tool-card {
+                padding: 1rem;
+            }
+            
+            .related-tool-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Pro Tip Box Styles */
+        .pro-tip-box {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border-radius: 16px;
+            border: 2px solid #2196f3;
+            box-shadow: 0 4px 20px rgba(33, 150, 243, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pro-tip-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2196f3, #9c27b0, #ff9800);
+        }
+
+        .pro-tip-title {
+            margin-bottom: 1rem;
+            color: #1565c0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .pro-tip-title::before {
+            content: '💡';
+            font-size: 1.3rem;
+        }
+
+        .pro-tip-content {
+            margin: 0;
+            color: #424242;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .pro-tip-link {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .pro-tip-link:hover {
+            color: #0d47a1;
+            border-bottom-color: #1976d2;
+            text-decoration: none;
+        }
+        
+        /* Global mobile typography optimization */
+        @media (max-width: 768px) {
+            .info-section p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+            
+            .info-section h3 {
+                font-size: 1.2rem;
+                line-height: 1.3;
+                margin-bottom: 0.75rem;
+            }
+            
+            .info-section li {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 0.5rem;
+            }
+            
+            .usage-steps li {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            
+            .usage-steps strong {
+                font-size: 0.95rem;
+            }
+            
+            .help-text {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .info-section p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 0.875rem;
+            }
+            
+            .info-section h3 {
+                font-size: 1.1rem;
+                line-height: 1.2;
+                margin-bottom: 0.625rem;
+            }
+            
+            .info-section li {
+                font-size: 0.85rem;
+                line-height: 1.4;
+                margin-bottom: 0.4rem;
+            }
+            
+            .usage-steps li {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            
+            .usage-steps strong {
+                font-size: 0.9rem;
+            }
+            
+            .help-text {
+                font-size: 0.8rem;
+                line-height: 1.3;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .info-section p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            
+            .info-section h3 {
+                font-size: 1rem;
+                line-height: 1.1;
+            }
+            
+            .info-section li {
+                font-size: 0.8rem;
+                line-height: 1.3;
+            }
+            
+            .usage-steps li {
+                font-size: 0.8rem;
+                line-height: 1.3;
+            }
+        }
+
+        /* Mobile responsive for pro tip */
+        @media (max-width: 768px) {
+            .pro-tip-box {
+                padding: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            .pro-tip-title {
+                font-size: 1.1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+            
+            .pro-tip-content {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .pro-tip-box {
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+            
+            .pro-tip-title {
+                font-size: 1rem;
+            }
+            
+            .pro-tip-content {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-    </button>
-    
-    <!-- Toast notification for mode changes -->
-    <div class="mode-toast" id="modeToast"></div>
     
     <!-- Header Section -->
     <header class="site-header">
@@ -2179,8 +1619,10 @@
                 <button class="menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a href="https://instagram.com/jaytools" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                 </a>
             </div>
         </nav>
@@ -2230,9 +1672,9 @@
             <section class="sidebar-section">
                 <h3><i class="fas fa-fire"></i> Popular Tools</h3>
                 <ul class="popular-tools">
-                    <li><a href="../tools/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
-                    <li><a href="../tools/seperate-tool/calorie-deficit.html">Calorie Deficit Finder</a></li>
-                    <li><a href="../tools/seperate-tool/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../health/ivf-calculator.html">IVF Due Date Calculator</a></li>
                 </ul>
             </section>
 
@@ -2282,7 +1724,7 @@
                     <div class="form-group unit-toggle-container">
                         <label id="unitsLabel">Measurement Units</label>
                         <div class="unit-toggle" role="group" aria-labelledby="unitsLabel">
-                            <button type="button" id="imperialBtn" class="unit-btn active" aria-pressed="true">Imperial (in, ft)</button>
+                            <button class="unit-btn" id="imperialBtn" aria-pressed="true">Imperial (in, ft)</button>
                             <button type="button" id="metricBtn" class="unit-btn" aria-pressed="false">Metric (cm)</button>
                         </div>
                     </div>
@@ -2494,13 +1936,13 @@
             <!-- Information Section -->
             <!-- About the Calculator Section -->
             <section class="info-section info-section-top">
-                <h2>About the Body Frame Size Calculator</h2>
+                <h2 class="mobile-friendly-title">About the Body Frame Size Calculator</h2>
                 
                 <p>Struggling to understand why standard weight charts never seem to apply to you? Our free <strong>body frame size calculator</strong> is here to help! This tool uses scientifically-proven wrist measurement methods to determine whether you have a small, medium, or large body frame - crucial information that affects everything from your ideal weight to how clothes fit.</p>
                 
                 <p>Your <strong>body frame size</strong> is determined by your bone structure, which is completely genetic and doesn't change with diet or exercise. Think of it as your body's foundation - some people are naturally built with a broader or narrower skeletal structure, and that's perfectly normal. Understanding this fundamental aspect of your physique can revolutionize how you approach fitness, fashion, and health goals.</p>
                 
-                <h3>🎯 How to Use the Body Frame Size Calculator</h3>
+                <h3>How to Use the Body Frame Size Calculator</h3>
                 
                 <div class="step-by-step-guide">
                     <ol class="usage-steps">
@@ -2548,7 +1990,7 @@
 
             <!-- Ideal Weight Table Section -->
             <section class="info-section weight-table-container">
-                <h2>Ideal Weight by Frame Size</h2>
+                <h2 class="mobile-friendly-title">Ideal Weight by Frame Size</h2>
                 <p>This table provides a general guideline for ideal weight ranges based on height and frame size. Remember that these are estimates and individual factors like muscle mass, age and overall health should be considered.</p>
                 
                 <table class="weight-table">
@@ -2605,7 +2047,7 @@
 
             <!-- Informative Article Section -->
             <article class="info-section">
-              <h2>Why Body Frame Size Matters for Your Fitness Goals</h2>
+              <h2 class="mobile-friendly-title">Frame Size and Your Health Journey</h2>
               <p>Your body frame isn't just about how broad your shoulders are - it affects your ideal weight, how clothes fit and even your BMI. For example, two people of the same height may have different healthy weights depending on their frame.</p>
               
               <p>When setting fitness goals or evaluating your health metrics, your skeletal structure should be a key consideration. Traditional BMI charts and generic weight recommendations often fall short because they don't account for different body frames. Someone with a naturally larger frame will have more bone mass and likely weigh more, even at optimal fitness levels.</p>
@@ -2624,12 +2066,12 @@
             </article>
 
             <!-- FAQ Section -->
-            <section class="tool-section faq-section">
-                <h2>Frequently Asked Questions</h2>
+            <section class="info-section faq-section">
+                <h2 class="mobile-friendly-title">Frequently Asked Questions</h2>
                 
                 <div class="faq-container">
                     <details class="faq-item">
-                        <summary>📏 Which measurement determines body frame size?</summary>
+                        <summary>Which measurement determines body frame size?</summary>
                         <div class="faq-content">
                             <p>Wrist measurement is the most reliable and commonly used method to determine body frame size. Your wrist circumference, measured just below the wrist bone, provides an accurate indication of your skeletal frame because it contains minimal muscle or fat tissue.</p>
                             <p>Other methods include elbow breadth measurement (measuring the distance between the two prominent bones on either side of your elbow) and shoulder width assessment. However, the wrist method is preferred for home use due to its simplicity and high accuracy rate of 85-90%.</p>
@@ -2637,7 +2079,7 @@
                     </details>
                     
                     <details class="faq-item">
-                        <summary>🔍 How to determine body frame size step by step?</summary>
+                        <summary>How to determine body frame size step by step?</summary>
                         <div class="faq-content">
                             <p>Follow these simple steps to determine your body frame size:</p>
                             <p><strong>Step 1:</strong> Get a flexible measuring tape or string with a ruler.<br>
@@ -2649,7 +2091,7 @@
                     </details>
                     
                     <details class="faq-item">
-                        <summary>🧮 What is the body frame size formula?</summary>
+                        <summary>What is the body frame size formula?</summary>
                         <div class="faq-content">
                             <p>The body frame size formula varies slightly between methods, but for wrist measurement, you divide your height by your wrist circumference:</p>
                             <p><strong>For Men:</strong><br>
@@ -2665,7 +2107,7 @@
                     </details>
                     
                     <details class="faq-item">
-                        <summary>📐 Can I use body frame size calculator elbow measurement?</summary>
+                        <summary>Can I use body frame size calculator elbow measurement?</summary>
                         <div class="faq-content">
                             <p>Yes! Elbow breadth is another scientifically valid method to determine body frame size. To measure your elbow breadth: extend your arm forward at a 90-degree angle, then measure the distance between the two prominent bones on either side of your elbow.</p>
                             <p>This method is often preferred by healthcare professionals and can be more accurate for people with wrist injuries or conditions that might affect wrist measurements. However, wrist measurement is more commonly used in online calculators because it's easier to measure accurately at home without assistance.</p>
@@ -2673,7 +2115,7 @@
                     </details>
                     
                     <details class="faq-item">
-                        <summary>✅ How accurate is the body frame size calculator wrist method?</summary>
+                        <summary>How accurate is the body frame size calculator wrist method?</summary>
                         <div class="faq-content">
                             <p>The wrist measurement method is approximately 85-90% accurate for determining body frame size in most people. It's highly reliable because the wrist area contains primarily bone structure with minimal muscle or fat tissue that could skew measurements.</p>
                             <p>Factors that might affect accuracy include age (bone density changes), certain medical conditions, previous wrist injuries, or extreme muscle development. For the most comprehensive assessment, healthcare professionals sometimes use multiple measurements including wrist circumference, elbow breadth, and shoulder width together.</p>
@@ -2681,7 +2123,7 @@
                     </details>
                     
                     <details class="faq-item">
-                        <summary>⚖️ Why does body frame size matter for weight and health?</summary>
+                        <summary>Why does body frame size matter for weight and health?</summary>
                         <div class="faq-content">
                             <p>Body frame size significantly impacts your ideal weight range, BMI interpretation, and overall health assessment. People with larger frames naturally have more bone mass and may weigh 10-15 pounds more than those with smaller frames at the same height while still being perfectly healthy.</p>
                             <p>Understanding your frame size helps set realistic fitness goals, choose appropriate clothing sizes, and gives healthcare providers better context for health evaluations. It also explains why standard BMI charts sometimes don't accurately reflect individual health status - they don't account for natural variations in bone structure.</p>
@@ -2692,7 +2134,7 @@
 
             <!-- SEO Article Section -->
             <article class="info-section">
-                <h2>Understanding Body Frame Size: Your Complete Guide to Better Health</h2>
+                <h2 class="mobile-friendly-title">Understanding Body Frame Size: Your Complete Guide to Better Health</h2>
                 
                 <p>When Sarah stepped on the scale after months of dedicated workouts, she felt defeated. Despite eating well and exercising regularly, she weighed more than her fitness apps suggested was "ideal." Sound familiar? Sarah's story changed when she discovered her <strong>body frame size</strong> - and realized she'd been setting unrealistic expectations based on generic charts that didn't account for her naturally larger bone structure.</p>
                 
@@ -2746,50 +2188,50 @@
                 
                 <div class="related-tools-grid">
                     <a href="calorie-deficit.html" class="related-tool-card">
-                        <div class="related-tool-icon">�</div>
+                        <div class="related-tool-icon"><i class="fas fa-fire"></i></div>
                         <h3>Calorie Deficit Calculator</h3>
                         <p>Set personalized weight loss goals based on your frame size and metabolic needs. Perfect complement to frame size assessment.</p>
                     </a>
                     <a href="protein-intake.html" class="related-tool-card">
-                        <div class="related-tool-icon">🥩</div>
+                        <div class="related-tool-icon"><i class="fas fa-drumstick-bite"></i></div>
                         <h3>Protein Intake Calculator</h3>
                         <p>Calculate optimal protein needs for your body frame and fitness goals. Larger frames typically need more protein.</p>
                     </a>
                     <a href="pregnancy-weight.html" class="related-tool-card">
-                        <div class="related-tool-icon">👶</div>
+                        <div class="related-tool-icon"><i class="fas fa-baby"></i></div>
                         <h3>Pregnancy Weight Calculator</h3>
                         <p>Track healthy pregnancy weight gain adjusted for your body frame size. Essential for expecting mothers.</p>
                     </a>
                     <a href="calories-walking.html" class="related-tool-card">
-                        <div class="related-tool-icon">👟</div>
+                        <div class="related-tool-icon"><i class="fas fa-walking"></i></div>
                         <h3>Walking Calories Calculator</h3>
                         <p>Discover how many calories you burn walking. Results vary by body frame and weight.</p>
                     </a>
                     <a href="food-calories.html" class="related-tool-card">
-                        <div class="related-tool-icon">🍔</div>
+                        <div class="related-tool-icon"><i class="fas fa-utensils"></i></div>
                         <h3>Food Calories Database</h3>
                         <p>Look up nutritional information to plan meals that support your frame type and health goals.</p>
                     </a>
                     <a href="../converter/height-converter-inline.html" class="related-tool-card">
-                        <div class="related-tool-icon">📏</div>
+                        <div class="related-tool-icon"><i class="fas fa-ruler"></i></div>
                         <h3>Height Converter</h3>
                         <p>Convert height between units for accurate body frame calculations. Essential for metric/imperial conversions.</p>
                     </a>
                     <a href="../calculator/cgpa-percentage-inline.html" class="related-tool-card">
-                        <div class="related-tool-icon">🎓</div>
+                        <div class="related-tool-icon"><i class="fas fa-graduation-cap"></i></div>
                         <h3>Academic Calculator</h3>
                         <p>Calculate CGPA and percentages for academic planning and health science studies.</p>
                     </a>
                     <a href="../personal/age-difference-inline.html" class="related-tool-card">
-                        <div class="related-tool-icon">�</div>
+                        <div class="related-tool-icon"><i class="fas fa-calendar-alt"></i></div>
                         <h3>Age Calculator</h3>
                         <p>Calculate exact age differences for health assessments and fitness planning by age groups.</p>
                     </a>
                 </div>
                 
-                <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
-                    <h4 style="margin-bottom: 1rem; color: #333;">💡 Pro Tip for Task Proper Users</h4>
-                    <p style="margin: 0; color: #666; line-height: 1.6;">Use multiple health calculators together for comprehensive health planning. Start with body frame size, then use our calorie and protein calculators to create a personalized nutrition plan that works for YOUR unique body structure. Bookmark our <a href="../health.html" style="color: #007bff; text-decoration: none; font-weight: 500;">complete health tools collection</a> for easy access!</p>
+                <div class="pro-tip-box">
+                    <h4 class="pro-tip-title">Pro Tip for Task Proper Users</h4>
+                    <p class="pro-tip-content">Use multiple health calculators together for comprehensive health planning. Start with body frame size, then use our calorie and protein calculators to create a personalized nutrition plan that works for YOUR unique body structure. Bookmark our <a href="../health.html" class="pro-tip-link">complete health tools collection</a> for easy access!</p>
                 </div>
             </section>
         </div>
@@ -2830,23 +2272,31 @@
                     <nav class="footer-nav">
                         <ul class="social-links">
                             <li>
-                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
                                 </a>
                             </li>
                             <li>
-                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
                                 </a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
                                 </a>
                             </li>
                         </ul>
@@ -2864,7 +2314,7 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="../js/script.js"></script>
+    <script src="../js/sidebar-favorites.js"></script>
     <script>
         // Tool Functionality
         const toolForm = document.getElementById('toolForm');
@@ -2962,6 +2412,12 @@
         // Dark Mode Functionality
         function initDarkMode() {
             const darkModeToggle = document.getElementById('darkModeToggle');
+            
+            // Check if dark mode toggle exists before trying to use it
+            if (!darkModeToggle) {
+                console.log('Dark mode toggle not found, skipping dark mode initialization');
+                return;
+            }
             
             // Set default to light mode
             document.body.classList.remove("dark-mode");
@@ -3765,67 +3221,6 @@
                 }
             });
         }
-    </script>
-    <!-- Review Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Body Frame Size Calculator",
-        "description": "Free online body frame size calculator to determine your body frame type",
-        "brand": {
-            "@type": "Brand",
-            "name": "Task Proper"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.6",
-            "reviewCount": "98",
-            "bestRating": "5",
-            "worstRating": "1"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Maya R."
-                },
-                "reviewBody": "Great tool for understanding my body type! Helped me choose the right fitness plan."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "4",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "James K."
-                },
-                "reviewBody": "Accurate body frame calculator. Simple measurements give reliable results."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Sophie L."
-                },
-                "reviewBody": "Perfect for health assessments. Easy to use and very informative results."
-            }
-        ]
-    }
     </script>
 </body>
 </html>

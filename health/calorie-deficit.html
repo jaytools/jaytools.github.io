@@ -29,11 +29,18 @@
     <link rel="canonical" href="https://www.taskproper.com/health/calorie-deficit.html">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-    <link rel="manifest" href="../../site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <!-- Web manifest - only load when served from HTTP/HTTPS -->
+    <script>
+        if (window.location.protocol !== 'file:') {
+            const manifestLink = document.createElement('link');
+            manifestLink.rel = 'manifest';
+            manifestLink.href = '../site.webmanifest';
+            document.head.appendChild(manifestLink);
+        }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +53,344 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="css/calorie-deficit.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind-like utilities -->
+    <style>
+        /* Replace common Tailwind classes with custom CSS */
+        .text-center { text-align: center; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-5xl { font-size: 3rem; line-height: 1; }
+        .font-extrabold { font-weight: 800; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .mr-4 { margin-right: 1rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .text-gray-500 { color: #6b7280; }
+        .text-gray-400 { color: #9ca3af; }
+        .text-gray-700 { color: #374151; }
+        .text-orange-500 { color: #f97316; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-md { border-radius: 0.375rem; }
+        .border-l-4 { border-left-width: 4px; }
+        .border-gray-600 { border-color: #4b5563; }
+        .border-gray-300 { border-color: #d1d5db; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-1 { margin-bottom: 0.25rem; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .gap-x-6 { column-gap: 1.5rem; }
+        .gap-y-4 { row-gap: 1rem; }
+        .block { display: block; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-base { font-size: 1rem; line-height: 1.5rem; }
+        .font-medium { font-weight: 500; }
+        .max-w-3xl { max-width: 48rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .w-full { width: 100%; }
+        .pl-10 { padding-left: 2.5rem; }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .focus\:border-indigo-500:focus { border-color: #6366f1; }
+        .focus\:ring-indigo-500:focus { --tw-ring-color: #6366f1; }
+        
+        /* Responsive utilities */
+        @media (min-width: 768px) {
+            .md\:text-5xl { font-size: 3rem; line-height: 1; }
+            .md\:text-base { font-size: 1rem; line-height: 1.5rem; }
+            .md\:py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+            .md\:mr-4 { margin-right: 1rem; }
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        
+        .sm\:text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        
+        /* Enhanced Input and Form Styling */
+        .form-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .form-section-dark {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            border-color: #475569;
+        }
+        
+        .section-heading {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1f2937;
+        }
+        
+        .form-section-dark .section-heading {
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-section-dark .form-label {
+            color: #e2e8f0;
+        }
+        
+        .select-with-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            z-index: 10;
+            color: #6b7280;
+            font-size: 1rem;
+        }
+        
+        .form-section-dark .input-icon {
+            color: #94a3b8;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            background-color: white;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            appearance: none;
+            transition: all 0.3s ease;
+        }
+        
+        .form-section-dark .form-select {
+            background-color: #475569;
+            border-color: #64748b;
+            color: white;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .help-text {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        
+        .error-message {
+            font-size: 0.75rem;
+            color: #dc2626;
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+        
+        .form-section-dark .help-text {
+            color: #94a3b8;
+        }
+        
+        .error-message {
+            font-size: 0.75rem;
+            color: #dc2626;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .form-section-dark .error-message {
+            color: #fca5a5;
+        }
+        
+        /* Result Cards Styling */
+        .result-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100px;
+        }
+        
+        .result-card.highlight {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            border-color: #2563eb;
+        }
+        
+        .result-card.highlight .result-card-title,
+        .result-card.highlight .result-card-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .result-card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .result-card-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .result-card.highlight .result-card-value {
+            color: white;
+        }
+        
+        .result-card-description {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            line-height: 1.3;
+        }
+        
+        .result-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        /* Enhanced Personal Information Section */
+        .personal-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .input-field {
+            position: relative;
+        }
+        
+        .input-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .input-icon-left {
+            position: absolute;
+            left: 12px;
+            z-index: 10;
+            color: #6b7280;
+            font-size: 1rem;
+        }
+        
+        .input-icon-right {
+            position: absolute;
+            right: 12px;
+            z-index: 10;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 3rem 0.75rem 2.5rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        /* Select dropdown styling */
+        select.form-input {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-input::placeholder {
+            color: #9ca3af;
+        }
+        
+        /* Input styling */
+        input, select {
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+    </style>
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -275,36 +619,35 @@
             }
             
             /* Tool Header Improvements */
-            .text-center.py-8 {
-                padding: 1.5rem 1rem !important;
+            
+            .tool-title {
+                font-size: 1.75rem;
             }
             
-            h1.text-3xl {
-                font-size: 1.75rem !important;
-                line-height: 1.2 !important;
-                margin-bottom: 0.75rem !important;
-            }
-            
-            h1 .fas {
-                margin-right: 0.5rem !important;
-                font-size: 1.5rem !important;
-            }
-            
-            /* Form Section Improvements */
-            .bg-gray-50.p-6 {
-                padding: 1rem !important;
-                margin-bottom: 1rem !important;
-                border-radius: 8px;
-            }
-            
-            .grid.grid-cols-1.md\\:grid-cols-2 {
-                gap: 1rem !important;
+            .tool-description {
+                font-size: 1rem;
             }
             
             .form-section {
                 padding: 1rem;
                 margin-bottom: 1rem;
-                border-radius: 8px;
+            }
+            
+            .section-heading {
+                font-size: 1rem;
+            }
+            
+            .personal-info-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1rem;
+            }
+            
+            .form-label {
+                font-size: 0.875rem;
             }
             
             /* Input and Select Improvements */
@@ -353,6 +696,11 @@
                 border-radius: 12px;
             }
             
+            .result-title {
+                font-size: 1.25rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
             .result-cards {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
@@ -361,24 +709,24 @@
             }
             
             .result-card {
-                padding: 1rem 0.75rem !important;
-                text-align: center;
+                padding: 0.75rem !important;
                 border-radius: 10px !important;
-                min-height: 80px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                min-height: 85px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
             }
             
             .result-card-title {
-                font-size: 0.8rem !important;
+                font-size: 0.7rem !important;
                 margin-bottom: 0.25rem !important;
+                line-height: 1.2 !important;
             }
             
             .result-card-value {
                 font-size: 1.25rem !important;
-                font-weight: bold !important;
                 margin-bottom: 0.25rem !important;
+                font-weight: 700 !important;
             }
             
             .result-card-description {
@@ -438,8 +786,8 @@
             }
             
             .result-card {
-                padding: 0.875rem 0.5rem !important;
-                min-height: 70px;
+                padding: 0.6rem !important;
+                min-height: 75px !important;
             }
             
             .result-card-value {
@@ -840,7 +1188,7 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <input type="text" id="search-input" name="search" class="search-input" placeholder="Search tools...">
                         <button class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
@@ -853,8 +1201,10 @@
                 <button class="menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a href="https://instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
-                    <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                 </a>
             </div>
         </nav>
@@ -862,7 +1212,7 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <input type="text" id="mobile-search-input" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
                 <button class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
@@ -961,105 +1311,98 @@
             <div class="calculator-interface">
                 <form id="toolForm">
                     <!-- Personal Information Section -->
-                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-600 mb-6">
-                        <h3 class="text-lg font-semibold mb-4 flex items-center"><i class="fas fa-user mr-2"></i> Personal Information</h3>
+                    <div class="form-section">
+                        <h3 class="section-heading"><i class="fas fa-user"></i> Personal Information</h3>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                        <div class="personal-info-grid">
                             <!-- Age Field -->
-                            <div>
-                                <label for="age" class="block text-sm font-medium text-gray-700 mb-1">Age</label>
-                                <div class="relative">
-                                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <i class="fas fa-birthday-cake text-gray-400"></i>
-                                    </div>
-                                    <input type="number" id="age" name="age" placeholder="Enter your age" required class="block w-full rounded-md border-gray-300 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" min="15" max="100">
-                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                                        <span class="text-gray-500 sm:text-sm">Years</span>
-                                    </div>
+                            <div class="input-field">
+                                <label for="age" class="input-label">Age</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-birthday-cake input-icon-left"></i>
+                                    <input type="number" id="age" name="age" placeholder="Enter your age" required class="form-input" min="15" max="100" aria-describedby="age-help">
+                                    <span class="input-icon-right">Years</span>
                                 </div>
+                                <div id="age-help" class="help-text">Enter your current age (15-100 years)</div>
+                                <div id="ageError" class="error-message" style="display: none;">Please enter a valid age between 15 and 80 years</div>
                             </div>
 
                             <!-- Gender Field -->
-                            <div>
-                                <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
-                                <div class="relative">
-                                     <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <i class="fas fa-venus-mars text-gray-400"></i>
-                                    </div>
-                                    <select id="gender" name="gender" required class="block w-full rounded-md border-gray-300 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                            <div class="input-field">
+                                <label for="gender" class="input-label">Gender</label>
+                                <div class="input-wrapper">
+                                    <select id="gender" name="gender" required class="form-input" aria-describedby="gender-help" style="padding-left: 1rem;">
                                         <option value="">Select gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                        <option value="male">👨 Male</option>
+                                        <option value="female">👩 Female</option>
                                     </select>
                                 </div>
+                                <div class="help-text">Select your activity level for accurate calorie calculations</div>
+                                <div id="activityLevelError" class="error-message" style="display: none;">Please select your activity level</div>
+                                <div id="genderError" class="error-message" style="display: none;">Please select your gender</div>
                             </div>
 
                             <!-- Height Field -->
-                            <div>
-                                <label for="height" class="block text-sm font-medium text-gray-700 mb-1">Height</label>
-                                <div class="relative">
-                                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <i class="fas fa-ruler-vertical text-gray-400"></i>
-                                    </div>
-                                    <input type="number" id="height" name="height" placeholder="e.g., 175" required class="block w-full rounded-md border-gray-300 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" min="130" max="250">
-                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                                        <span class="text-gray-500 sm:text-sm">cm</span>
-                                    </div>
+                            <div class="input-field">
+                                <label for="height" class="input-label">Height</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-ruler-vertical input-icon-left"></i>
+                                    <input type="number" id="height" name="height" placeholder="e.g., 175" required class="form-input" min="130" max="250" aria-describedby="height-help">
+                                    <span class="input-icon-right">cm</span>
                                 </div>
+                                <div id="height-help" class="help-text">Enter your height in centimeters</div>
+                                <div id="heightError" class="error-message" style="display: none;">Please enter a valid height between 130 and 230 cm</div>
                             </div>
 
                             <!-- Weight Field -->
-                            <div>
-                                <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Weight</label>
-                                <div class="relative">
-                                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <i class="fas fa-weight text-gray-400"></i>
-                                    </div>
-                                    <input type="number" id="weight" name="weight" placeholder="e.g., 70" required class="block w-full rounded-md border-gray-300 pl-10 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" min="30" max="300">
-                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                                        <span class="text-gray-500 sm:text-sm">kg</span>
-                                    </div>
+                            <div class="input-field">
+                                <label for="weight" class="input-label">Current Weight</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-weight input-icon-left"></i>
+                                    <input type="number" id="weight" name="weight" placeholder="e.g., 70" required class="form-input" min="30" max="300" aria-describedby="weight-help">
+                                    <span class="input-icon-right">kg</span>
                                 </div>
+                                <div id="weight-help" class="help-text">Enter your current weight in kilograms</div>
+                                <div id="weightError" class="error-message" style="display: none;">Please enter a valid weight between 30 and 200 kg</div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Activity Level Section -->
-                    <div class="form-section form-section-dark">
+                    <div class="form-section">
                         <h3 class="section-heading"><i class="fas fa-running"></i> Activity Level</h3>
                         <div class="form-group">
-                            <div class="select-with-icon">
-                                <i class="fas fa-heartbeat input-icon"></i>
-                                <select id="activityLevel" name="activityLevel" required aria-label="Activity Level" class="form-select">
+                            <label for="activityLevel" class="form-label">How active are you during a typical week?</label>
+                            <div class="input-wrapper">
+                                <select id="activityLevel" name="activityLevel" required aria-describedby="activity-help activity-error" class="form-input" style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; appearance: none; padding-left: 1rem; padding-right: 3rem;">
                                     <option value="">Select your activity level</option>
-                                    <option value="1.2">Sedentary (little or no exercise)</option>
-                                    <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
-                                    <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
-                                    <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
-                                    <option value="1.9">Extremely active (very hard exercise & physical job)</option>
+                                    <option value="1.2">🛋️ Sedentary (little or no exercise)</option>
+                                    <option value="1.375">🚶 Lightly active (light exercise 1-3 days/week)</option>
+                                    <option value="1.55">🏃 Moderately active (moderate exercise 3-5 days/week)</option>
+                                    <option value="1.725">💪 Very active (hard exercise 6-7 days/week)</option>
+                                    <option value="1.9">🔥 Extremely active (very hard exercise & physical job)</option>
                                 </select>
                             </div>
-                            <div class="error-message" id="activityLevelError">Please select your activity level.</div>
-                            <div class="help-text">Choose the option that best describes your typical activity level.</div>
+                            <div class="error-message" id="activity-error">Please select your activity level.</div>
+                            <div id="activity-help" class="help-text">Choose the option that best describes your typical weekly activity level. This affects your daily calorie needs.</div>
                         </div>
                     </div>
                     
                     <!-- Weight Loss Goal Section -->
-                    <div class="form-section form-section-dark">
+                    <div class="form-section">
                         <h3 class="section-heading"><i class="fas fa-bullseye"></i> Weight Loss Goal</h3>
                         <div class="form-group">
                             <label for="deficitType" class="form-label">Choose your preferred deficit level:</label>
-                            <div class="select-with-icon">
-                                <i class="fas fa-weight input-icon"></i>
-                                <select id="deficitType" name="deficitType" required aria-label="Weight Loss Goal" class="form-select">
+                            <div class="input-wrapper">
+                                <select id="deficitType" name="deficitType" required aria-describedby="deficit-help deficit-error" class="form-input" style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3e%3cpath stroke=\'%236b7280\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; appearance: none; padding-left: 1rem; padding-right: 3rem;">
                                     <option value="">Select weight loss goal</option>
-                                    <option value="mild">Mild (0.25 kg/week) - Small deficit for gradual, sustainable weight loss</option>
-                                    <option value="moderate">Moderate (0.5 kg/week) - Balanced approach to weight loss</option>
-                                    <option value="aggressive">Aggressive (1 kg/week) - Faster results but may be more challenging</option>
+                                    <option value="mild">🐌 Mild (0.25 kg/week) - Small deficit for gradual, sustainable weight loss</option>
+                                    <option value="moderate">⚖️ Moderate (0.5 kg/week) - Balanced approach to weight loss</option>
+                                    <option value="aggressive">🚀 Aggressive (1 kg/week) - Faster results but may be more challenging</option>
                                 </select>
                             </div>
-                            <div class="error-message" id="deficitTypeError">Please select your weight loss goal.</div>
-                            <div class="help-text">Mild deficit is more sustainable, while aggressive deficit may be harder to maintain long term.</div>
+                            <div class="error-message" id="deficit-error">Please select your weight loss goal.</div>
+                            <div id="deficit-help" class="help-text">Mild deficit is more sustainable long-term, while aggressive deficit provides faster results but may be harder to maintain.</div>
                         </div>
                     </div>
 
@@ -1176,7 +1519,7 @@
                         
                         <p>This calorie deficit finder is perfect for anyone who wants to lose weight safely and effectively. Whether you're just starting your fitness journey or trying to break through a weight loss plateau, it helps you understand exactly how much to eat based on your body's unique needs. The tool considers your age, gender, height, weight, and activity level to create a realistic calorie deficit plan that you can actually stick to long-term.</p>
                         
-                        <p>What makes this tool special is that it doesn't just give you a number – it explains your BMR (what your body burns at rest), your total daily energy expenditure, and even breaks down your macronutrients. This way, you understand the science behind your weight loss plan rather than blindly following numbers.</p>
+                        <p>What makes this tool special is that it doesn't just give you a number — it explains your BMR (what your body burns at rest), your total daily energy expenditure, and even breaks down your macronutrients. This way, you understand the science behind your weight loss plan rather than blindly following numbers.</p>
                         
                         <h3>Key Features:</h3>
                         <ul class="info-list">
@@ -1238,7 +1581,7 @@
                     <article class="info-article">
                         <p>Figuring out your ideal calorie deficit shouldn't feel like solving a math puzzle, yet most people get overwhelmed trying to calculate their numbers manually. You've probably asked yourself "what is my calorie deficit supposed to be?" while staring at conflicting information online.</p>
                         
-                        <p>The truth is, there's no one-size-fits-all answer because everyone's metabolism and lifestyle are different. That's exactly why we created this calorie deficit finder – to eliminate the guesswork and give you personalized numbers based on actual science.</p>
+                        <p>The truth is, there's no one-size-fits-all answer because everyone's metabolism and lifestyle are different. That's exactly why we created this calorie deficit finder — to eliminate the guesswork and give you personalized numbers based on actual science.</p>
                         
                         <p>Instead of following generic advice or extreme diets, you get a customized plan that considers your unique body and goals. Whether you want to know how to do a calorie deficit safely or need help planning calorie deficit meals, having the right numbers makes all the difference in your success.</p>
                         
@@ -1345,28 +1688,28 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Conservative</td>
-                                        <td>0.25 kg/week</td>
-                                        <td>250-300 calories</td>
-                                        <td>Beginners, busy lifestyles</td>
+                                        <td data-label="Goal">Conservative</td>
+                                        <td data-label="Weekly Target">0.25 kg/week</td>
+                                        <td data-label="Daily Deficit">250-300 calories</td>
+                                        <td data-label="Best For">Beginners, busy lifestyles</td>
                                     </tr>
                                     <tr>
-                                        <td>Moderate</td>
-                                        <td>0.5 kg/week</td>
-                                        <td>500-550 calories</td>
-                                        <td>Most people, sustainable approach</td>
+                                        <td data-label="Goal">Moderate</td>
+                                        <td data-label="Weekly Target">0.5 kg/week</td>
+                                        <td data-label="Daily Deficit">500-550 calories</td>
+                                        <td data-label="Best For">Most people, sustainable approach</td>
                                     </tr>
                                     <tr>
-                                        <td>Aggressive</td>
-                                        <td>0.75 kg/week</td>
-                                        <td>750-800 calories</td>
-                                        <td>Higher body fat, short-term goals</td>
+                                        <td data-label="Goal">Aggressive</td>
+                                        <td data-label="Weekly Target">0.75 kg/week</td>
+                                        <td data-label="Daily Deficit">750-800 calories</td>
+                                        <td data-label="Best For">Higher body fat, short-term goals</td>
                                     </tr>
                                     <tr>
-                                        <td>Maximum Safe</td>
-                                        <td>1 kg/week</td>
-                                        <td>1000 calories</td>
-                                        <td>Supervised plans only</td>
+                                        <td data-label="Goal">Maximum Safe</td>
+                                        <td data-label="Weekly Target">1 kg/week</td>
+                                        <td data-label="Daily Deficit">1000 calories</td>
+                                        <td data-label="Best For">Supervised plans only</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1378,51 +1721,168 @@
                 
                 <style>
                 .table-responsive {
-                    overflow-x: auto;
                     margin: 1.5rem 0;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
                 }
                 
                 .deficit-table {
                     width: 100%;
                     border-collapse: collapse;
-                    margin: 1rem 0;
                     background: white;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                    border-radius: 8px;
-                    overflow: hidden;
+                    font-family: 'Roboto', sans-serif;
                 }
                 
                 .deficit-table th,
                 .deficit-table td {
-                    padding: 12px 15px;
+                    padding: 16px 20px;
                     text-align: left;
-                    border-bottom: 1px solid #ddd;
+                    border-bottom: 1px solid #e5e7eb;
+                    vertical-align: middle;
                 }
                 
                 .deficit-table th {
-                    background-color: #f8f9fa;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
                     font-weight: 600;
-                    color: #333;
+                    font-size: 0.95rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    position: relative;
+                }
+                
+                .deficit-table tbody tr {
+                    transition: all 0.3s ease;
                 }
                 
                 .deficit-table tbody tr:hover {
-                    background-color: #f5f5f5;
+                    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+                    transform: translateY(-1px);
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                 }
                 
+                .deficit-table tbody tr:nth-child(even) {
+                    background-color: #f9fafb;
+                }
+                
+                .deficit-table tbody tr:nth-child(even):hover {
+                    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+                }
+                
+                .deficit-table td:first-child {
+                    font-weight: 600;
+                    color: #1f2937;
+                }
+                
+                .deficit-table td:nth-child(2) {
+                    color: #059669;
+                    font-weight: 500;
+                }
+                
+                .deficit-table td:nth-child(3) {
+                    color: #dc2626;
+                    font-weight: 500;
+                }
+                
+                /* Mobile-first responsive design */
                 @media (max-width: 768px) {
-                    .deficit-table th,
-                    .deficit-table td {
-                        padding: 8px 10px;
-                        font-size: 14px;
+                    .table-responsive {
+                        margin: 1rem 0;
+                        border-radius: 8px;
                     }
                     
-                    .deficit-table {
+                    /* Hide table headers and restructure as cards */
+                    .deficit-table,
+                    .deficit-table thead,
+                    .deficit-table tbody,
+                    .deficit-table th,
+                    .deficit-table td,
+                    .deficit-table tr {
+                        display: block;
+                    }
+                    
+                    .deficit-table thead tr {
+                        position: absolute;
+                        top: -9999px;
+                        left: -9999px;
+                    }
+                    
+                    .deficit-table tbody tr {
+                        background: white;
+                        border: 1px solid #e5e7eb;
+                        border-radius: 12px;
+                        margin-bottom: 1rem;
+                        padding: 1rem;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .deficit-table tbody tr:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                        background: white;
+                    }
+                    
+                    .deficit-table td {
+                        border: none;
+                        padding: 0.5rem 0;
+                        position: relative;
+                        padding-left: 40%;
+                        text-align: right;
+                        font-size: 0.95rem;
+                    }
+                    
+                    .deficit-table td:before {
+                        content: attr(data-label);
+                        position: absolute;
+                        left: 0;
+                        width: 35%;
+                        padding-right: 10px;
+                        white-space: nowrap;
+                        font-weight: 600;
+                        color: #374151;
+                        text-align: left;
                         font-size: 0.9rem;
                     }
                     
-                    .deficit-table th:first-child,
                     .deficit-table td:first-child {
-                        font-weight: 600;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        color: white;
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        text-align: center;
+                        padding: 0.75rem;
+                        border-radius: 8px;
+                        margin-bottom: 0.75rem;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+                    
+                    .deficit-table td:first-child:before {
+                        display: none;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .deficit-table td {
+                        padding-left: 45%;
+                        font-size: 0.9rem;
+                    }
+                    
+                    .deficit-table td:before {
+                        width: 40%;
+                        font-size: 0.85rem;
+                    }
+                    
+                    .deficit-table tbody tr {
+                        padding: 0.75rem;
+                        margin-bottom: 0.75rem;
+                    }
+                    
+                    .deficit-table td:first-child {
+                        font-size: 1rem;
+                        padding: 0.6rem;
                     }
                 }
                 
@@ -1556,23 +2016,31 @@
                     <nav class="footer-nav">
                         <ul class="social-links">
                             <li>
-                                <a href="https://instagram.com/jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i> Instagram
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
                                 </a>
                             </li>
                             <li>
-                                <a href="https://youtube.com/@jaytools" target="_blank" rel="noopener">
-                                    <i class="fab fa-youtube"></i> YouTube
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
                                 </a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/in/jayprajapati" target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
                                 </a>
                             </li>
                         </ul>
@@ -1591,7 +2059,10 @@
     <div class="overlay"></div>
 
     <!-- JavaScript -->
-    <script src="../js/script.js"></script>
+    <script src="../js/sidebar-favorites.js"></script>
+    <script>
+       
+    </script>
     <script src="js/calorie-deficit.js" defer></script>
 
     <script>
@@ -1756,67 +2227,6 @@
                 }, 3000);
             }
         }
-    </script>
-    <!-- Review Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Calorie Deficit Calculator",
-        "description": "Free online calorie deficit calculator for weight loss",
-        "brand": {
-            "@type": "Brand",
-            "name": "Task Proper"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "156",
-            "bestRating": "5",
-            "worstRating": "1"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Jessica R."
-                },
-                "reviewBody": "Amazing tool! Helped me plan my weight loss journey perfectly. Lost 15 pounds following the recommendations."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Mike D."
-                },
-                "reviewBody": "Accurate calculations and easy to use. Great for tracking daily calorie goals."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "4",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Sarah K."
-                },
-                "reviewBody": "Very helpful for fitness planning. The interface is clean and calculations are spot-on."
-            }
-        ]
-    }
     </script>
 </body>
 </html>
