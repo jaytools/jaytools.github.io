@@ -26,7 +26,7 @@
 </url>
 <url>
   <loc>https://www.taskproper.com/health.html</loc>
-  <lastmod>2025-09-16</lastmod>
+  <lastmod>2025-09-17</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
@@ -36,8 +36,8 @@
 </url>
 <url>
   <loc>https://www.taskproper.com/game.html</loc>
-  <lastmod>2025-09-16</lastmod>
-  <priority>0.85</priority>
+  <lastmod>2025-09-17</lastmod>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.taskproper.com/personal.html</loc>
@@ -113,7 +113,7 @@
 <url>
   <loc>https://www.taskproper.com/health/protein-intake.html</loc>
   <lastmod>2025-09-17</lastmod>
-  <priority>0.70</priority>
+  <priority>0.75</priority>
 </url>
 <url>
   <loc>https://www.taskproper.com/health/pregnancy-weight.html</loc>
@@ -194,8 +194,8 @@
 <!-- Game Tools -->
 <url>
   <loc>https://www.taskproper.com/game/memory-game.html</loc>
-  <lastmod>2025-09-16</lastmod>
-  <priority>0.55</priority>
+  <lastmod>2025-09-17</lastmod>
+  <priority>0.70</priority>
 </url>
 
 <!-- Important Pages -->
