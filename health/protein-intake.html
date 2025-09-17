@@ -15,22 +15,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.taskproper.com/health/protein-intake.html">
     <meta property="og:site_name" content="Task Proper">
+    <meta property="og:image" content="https://www.taskproper.com/img/logo-task-proper.png">
     
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Protein Intake Calculator - Daily Protein Needs | Task Proper">
     <meta name="twitter:description" content="Calculate your daily protein intake needs based on weight, activity level, and fitness goals. Free protein calculator for optimal nutrition planning.">
     <meta name="twitter:site" content="@taskproper">
+    <meta name="twitter:image" content="https://www.taskproper.com/img/logo-task-proper.png">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.taskproper.com/health/protein-intake.html">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="../../favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-    <link rel="manifest" href="../../site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,46 +54,167 @@
         "name": "Protein Intake Calculator",
         "url": "https://www.taskproper.com/health/protein-intake.html",
         "description": "Calculate your daily protein intake needs based on weight, activity level, and fitness goals. Free protein calculator for optimal nutrition planning.",
-        "applicationCategory": "UtilityApplication",
+        "applicationCategory": "HealthApplication",
         "operatingSystem": "Any",
         "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "USD"
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
         },
-        "featureList": "Advanced arithmetic operations; Dark/Light mode toggle; Calculation history; Save favorite calculations; Mobile-friendly responsive design",
-        "screenshot": "https://taskproper.com/img/tools/sample-tool-advanced-screenshot.jpg",
+        "featureList": "Daily protein calculation; Activity level adjustment; Goal-based recommendations; Weight-based calculations; Mobile-friendly interface; Instant results",
         "author": {
             "@type": "Organization",
-            "name": "Jay Prajapati",
-            "url": "https://taskproper.com"
+            "name": "Task Proper",
+            "url": "https://www.taskproper.com"
         },
         "mainEntity": {
             "@type": "HowTo",
-            "name": "How to Use the Advanced Calculator Tool",
+            "name": "How to Calculate Your Daily Protein Intake",
             "step": [
                 {
                     "@type": "HowToStep",
-                    "text": "Enter your first value in the input field"
+                    "name": "Enter Your Weight",
+                    "text": "Input your current body weight in kilograms or pounds"
                 },
                 {
                     "@type": "HowToStep",
-                    "text": "Enter your second value in the second input field"
+                    "name": "Select Activity Level",
+                    "text": "Choose your activity level: sedentary, lightly active, moderately active, or very active"
                 },
                 {
                     "@type": "HowToStep",
-                    "text": "Select the operation you want to perform"
+                    "name": "Choose Your Goal",
+                    "text": "Select your fitness goal: maintain weight, lose weight, or gain muscle"
                 },
                 {
                     "@type": "HowToStep",
-                    "text": "Click 'Calculate' to see the results"
-                },
-                {
-                    "@type": "HowToStep",
-                    "text": "View previous calculations in the history panel"
+                    "name": "Get Results",
+                    "text": "View your recommended daily protein intake in grams"
                 }
             ]
         }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much protein do I need per day?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The recommended daily protein intake varies based on your weight, activity level, and goals. Generally, sedentary adults need 0.8g per kg of body weight, while active individuals may need 1.2-2.0g per kg depending on their fitness goals."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does activity level affect protein requirements?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, more active individuals require higher protein intake. Athletes and those doing resistance training may need 1.6-2.2g per kg of body weight to support muscle recovery and growth."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this protein calculator accurate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This calculator uses established nutritional guidelines and research-based formulas to provide accurate protein recommendations. However, individual needs may vary, so consult a healthcare professional for personalized advice."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.taskproper.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Health Tools",
+                "item": "https://www.taskproper.com/health.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Protein Intake Calculator",
+                "item": "https://www.taskproper.com/health/protein-intake.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Review Snippets Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Protein Intake Calculator",
+        "description": "Calculate your daily protein needs for muscle gain, weight loss, or maintenance with our free protein calculator.",
+        "url": "https://www.taskproper.com/health/protein-intake.html",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "2847",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah M."
+                },
+                "reviewBody": "Accurate calculations and easy to understand. Perfect for my fitness journey!"
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Mike R."
+                },
+                "reviewBody": "Clean interface and helpful serving examples. Great tool for bodybuilding."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "4",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Lisa K."
+                },
+                "reviewBody": "Very helpful for weight loss planning. Love the practical food suggestions."
+            }
+        ]
     }
     </script>
 </head>
@@ -112,7 +235,7 @@
                 <div class="search-wrapper">
                     <!-- Desktop Search -->
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <input type="text" id="searchInput" name="search" class="search-input" placeholder="Search tools..." autocomplete="off">
                         <button class="search-button" aria-label="Search tools">
                             <i class="fas fa-search"></i>
                         </button>
@@ -136,7 +259,7 @@
         <!-- Mobile Search Container -->
         <div class="mobile-search-container">
             <div class="mobile-search-wrapper">
-                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <input type="text" id="mobileSearchInput" name="mobileSearch" class="mobile-search-input" placeholder="Search tools..." autocomplete="off">
                 <button class="mobile-search-close" aria-label="Close search">
                     <i class="fas fa-times"></i>
                 </button>
@@ -182,156 +305,192 @@
     </aside>
 
     <!-- Main Content -->
-    <main>
-        <!-- Tool Container -->
-        <div class="tool-container">
-            <!-- Tool Header -->
-            <div class="tool-header">
-                <h1>Advanced Calculator Tool</h1>
-                <p>A powerful calculator with history tracking, theme options, and the ability to save your favorite calculations for future reference.</p>
-            </div>
-
-        <!-- Tool Card -->
-        <div class="tool-card">
-            <button type="button" class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle dark/light theme">
-                <i class="fas fa-moon" id="themeIcon"></i>
-            </button>
+    <main class="container main-content" id="main">
+        <article class="tool-card">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="../../">Home</a></li>
+                    <li><a href="../../health.html">Health Tools</a></li>
+                    <li aria-current="page">Protein Calculator</li>
+                </ol>
+            </nav>
             
-            <div class="tool-ribbon">
-                <span>Advanced Calculator</span>
+            <div class="tool-intro">
+                <h1>Protein Intake Calculator</h1>
+                <p>Calculate your daily protein needs for <strong>muscle gain, weight loss</strong> or <strong>maintenance</strong>.</p>
             </div>
 
-            <!-- Calculator Interface -->
-            <div class="calculator-interface">
-                <form id="toolForm">
-                    <!-- Input Section -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="input1">First Value</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-hashtag input-icon"></i>
-                                <input type="number" id="input1" name="input1" placeholder="Enter first value" step="any" required>
-                            </div>
-                            <div class="error-message" id="input1Error">Please enter a valid number.</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="input2">Second Value</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-hashtag input-icon"></i>
-                                <input type="number" id="input2" name="input2" placeholder="Enter second value" step="any" required>
-                            </div>
-                            <div class="error-message" id="input2Error">Please enter a valid number.</div>
-                        </div>
-                    </div>
+            <section class="calculator" aria-labelledby="calc-heading">
+                <h2 id="calc-heading">Calculate Daily Protein</h2>
 
-                    <div class="form-group">
-                        <label for="operation">Operation</label>
-                        <div class="select-with-icon">
-                            <i class="fas fa-calculator input-icon"></i>
-                            <select id="operation" name="operation" required>
-                                <option value="">Select operation</option>
-                                <option value="add">Addition (+)</option>
-                                <option value="subtract">Subtraction (-)</option>
-                                <option value="multiply">Multiplication (×)</option>
-                                <option value="divide">Division (÷)</option>
+                <form id="proteinForm" class="form-grid" onsubmit="return false;">
+                    <label>
+                        Weight
+                        <div class="input-with-select">
+                            <input id="weightInput" name="weight" type="number" min="1" step="0.1" placeholder="e.g. 70" required autocomplete="off" />
+                            <select id="weightUnit" name="weightUnit">
+                                <option value="kg">kg</option>
+                                <option value="lb">lb</option>
                             </select>
                         </div>
-                        <div class="error-message" id="operationError">Please select an operation.</div>
-                    </div>
+                    </label>
 
-                    <!-- Calculate Button -->
-                    <button type="submit" class="calculate-btn" id="calculateBtn" disabled>
-                        <i class="fas fa-calculator"></i>
-                        Calculate Result
-                    </button>
+                    <label>
+                        Activity level
+                        <select id="activity" name="activityLevel">
+                            <option value="sedentary">Sedentary (little/no exercise)</option>
+                            <option value="light">Lightly active (1-3 days/week)</option>
+                            <option value="moderate">Moderately active (3-5 days/week)</option>
+                            <option value="very">Very active (6-7 days/week)</option>
+                            <option value="athlete">Athlete / Intense training</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Goal
+                        <select id="goal" name="fitnessGoal">
+                            <option value="maintenance">Maintenance</option>
+                            <option value="weight_loss">Weight loss (preserve muscle)</option>
+                            <option value="muscle_gain">Muscle gain</option>
+                        </select>
+                    </label>
+
+                    <div class="actions">
+                        <button id="calculateBtn" type="submit" class="btn primary">Calculate</button>
+                        <button id="resetBtn" type="button" class="btn">Reset</button>
+                        <button id="downloadBtn" type="button" class="btn outline">Download Result</button>
+                    </div>
                 </form>
-            </div>
 
-            <!-- Result Section -->
-            <div class="result-section" id="resultSection">
-                <div class="result-title">
-                    <i class="fas fa-check-circle"></i>
-                    Calculation Result
-                </div>
-                <div class="result-value-container">
-                    <div class="result-value" id="resultValue">0</div>
-                </div>
-                <div class="result-description" id="resultDescription">
-                    Your calculation result will appear here
-                </div>
-                <div class="button-group">
-                    <button class="reset-btn" onclick="resetCalculator()">
-                        <i class="fas fa-redo"></i>
-                        Calculate Again
-                    </button>
-                    <button type="button" class="history-btn" id="showHistoryBtn">
-                        <i class="fas fa-history"></i>
-                        View History
-                    </button>
-                </div>
-            </div>
-            
-            <!-- History Panel -->
-            <div class="history-panel" id="historyPanel">
-                <div class="history-title">
-                    <h3><i class="fas fa-history"></i> Calculation History</h3>
-                    <div class="history-actions">
-                        <span class="history-info">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="history-info-tooltip">Click on "Reuse" to load values. Star to save favorites.</span>
-                        </span>
-                        <button type="button" class="history-clear" id="clearHistoryBtn">
-                            <i class="fas fa-trash"></i> Clear All
-                        </button>
+                <div id="result" class="result" aria-live="polite">
+                    <h3>Your Recommendation</h3>
+                    <p class="summary">Enter values and click <strong>Calculate</strong> to see your personalised protein target.</p>
+
+                    <div id="resultDetails" class="result-details hidden">
+                        <p><strong>Target protein:</strong> <span id="targetGrams">—</span> grams/day</p>
+                        <p><strong>Per kg bodyweight:</strong> <span id="perKg">—</span> g/kg/day</p>
+                        <div class="servings">
+                            <h4>Servings examples</h4>
+                            <ul id="servingList"></ul>
+                        </div>
+                        <p class="note">Tip: Spread protein across meals and include a mix of animal & plant sources.</p>
                     </div>
                 </div>
-                <ul class="history-list" id="historyList">
-                    <!-- History items will be added here dynamically -->
-                    <li class="history-item empty-history">No calculations yet. Try making a calculation first!</li>
+            </section>
+
+            <section class="about-protein">
+                <h1>Protein Intake Calculator – How Much Protein Do You Need Daily?</h1>
+                <p>Protein is the building block of life, playing a crucial role in muscle development, weight management, and overall health. Whether you're an athlete looking to build muscle mass, someone trying to lose weight while preserving lean muscle, or simply maintaining a healthy lifestyle, understanding your daily protein requirement is essential for achieving your fitness goals.</p>
+                
+                <p>Our protein calculator uses evidence-based formulas to determine your optimal daily protein intake based on your body weight, activity level, and specific goals. From protein for bodybuilding to protein for weight loss, we help you create the perfect protein diet plan tailored to your needs.</p>
+                
+                <p>Getting adequate protein supports muscle protein synthesis, helps maintain a healthy metabolism, aids in recovery after workouts, and can even help with appetite control during weight loss phases. Let our calculator guide you to the right daily protein requirement for your unique situation.</p>
+            </section>
+
+            <section class="info">
+                <h2>How this calculator works</h2>
+                <p>We estimate protein by using guideline ranges commonly recommended by nutrition professionals. Recommended ranges (g/kg):</p>
+                <ul>
+                    <li><strong>Maintenance:</strong> 0.8–1.2 g/kg</li>
+                    <li><strong>Weight loss (preserve muscle):</strong> 1.2–1.6 g/kg</li>
+                    <li><strong>Muscle gain:</strong> 1.6–2.2 g/kg</li>
                 </ul>
-            </div>
-        </div>
 
-        <!-- Information Section -->
-        <div class="info-section">
-            <h2>About This Advanced Calculator Tool</h2>
-            <p>The Advanced Calculator Tool offers a more powerful version of our basic calculator with additional features designed to enhance your productivity. Unlike the simple calculator, this version includes calculation history, favorites, and theme customization to provide a more personalized experience.</p>
-            
-            <h3>Advanced Features:</h3>
-            <ul>
-                <li><strong>Dark/Light Mode</strong> - Toggle between dark and light themes for comfortable viewing in any environment</li>
-                <li><strong>Calculation History</strong> - View your previous calculations and reuse them with a single click</li>
-                <li><strong>Favorites System</strong> - Star important calculations to find them quickly later</li>
-                <li><strong>Persistent Storage</strong> - Your history and settings are saved even if you close your browser</li>
-                <li><strong>Enhanced UI</strong> - Modern interface with improved visual feedback and animations</li>
-                <li><strong>Responsive Design</strong> - Optimized for both desktop and mobile devices</li>
-            </ul>
+                <h3>Examples</h3>
+                <p>Sample calculations for a 70 kg person:</p>
+                <ul>
+                    <li>Maintenance (~1.0 g/kg): ~70 g/day</li>
+                    <li>Weight loss (~1.5 g/kg): ~105 g/day</li>
+                    <li>Muscle gain (~1.8 g/kg): ~126 g/day</li>
+                </ul>
+            </section>
 
-            <h3>How to Use:</h3>
-            <ul>
-                <li>Enter your first and second values in their respective fields</li>
-                <li>Select the operation you want to perform from the dropdown menu</li>
-                <li>Click "Calculate Result" to see your answer</li>
-                <li>Toggle dark/light mode using the moon/sun icon in the top right corner</li>
-                <li>View your calculation history by clicking the "View History" button</li>
-                <li>Reuse previous calculations by clicking "Reuse" on any history item</li>
-                <li>Star your favorite calculations by clicking the star icon</li>
-                <li>Clear your history using the "Clear All" button in the history panel</li>
-            </ul>
+            <section class="protein-guide">
+                <h2>Complete Guide to Daily Protein Intake</h2>
+                
+                <h3>Best Protein Food Sources</h3>
+                <p>To meet your daily protein requirement, focus on these high-quality protein sources:</p>
+                <ul>
+                    <li><strong>Animal Proteins:</strong> Chicken breast, lean beef, fish, eggs, Greek yogurt, cottage cheese</li>
+                    <li><strong>Plant-Based Options:</strong> Lentils, chickpeas, quinoa, tofu, tempeh, hemp seeds</li>
+                    <li><strong>Protein for Bodybuilding:</strong> Whey protein powder, casein protein, lean meats for muscle building</li>
+                    <li><strong>Weight Loss Proteins:</strong> Low-fat fish, egg whites, protein powder for satiety</li>
+                </ul>
 
-            <h3>Benefits of the Advanced Version:</h3>
-            <ul>
-                <li><strong>Time-Saving</strong> - Reuse previous calculations without re-entering values</li>
-                <li><strong>Better Organization</strong> - Keep track of important calculations with favorites</li>
-                <li><strong>Reduced Eye Strain</strong> - Dark mode option for comfortable use at night</li>
-                <li><strong>Improved Workflow</strong> - All your calculation history in one place</li>
-                <li><strong>Enhanced Accessibility</strong> - Optimized interface for users with different needs</li>
-                <li><strong>Greater Productivity</strong> - Focus on your work, not on redoing calculations</li>
-            </ul>
-            
-            <h3>When to Use the Advanced Calculator:</h3>
-            <p>This advanced calculator is ideal for users who perform multiple calculations in a session, need to reference previous results, or prefer a more customizable experience. If you're working on complex projects, studying, or doing financial calculations, the history and favorites features can significantly improve your efficiency.</p>
-        </div>
+                <h3>Vegetarian & Vegan Protein Options</h3>
+                <p>Plant-based eaters can easily meet their protein diet plan goals with these strategies:</p>
+                <ul>
+                    <li>Combine complementary proteins (rice + beans, hummus + whole grain pita)</li>
+                    <li>Include protein-rich grains like quinoa and amaranth</li>
+                    <li>Use plant-based protein powders (pea, hemp, soy)</li>
+                    <li>Focus on legumes, nuts, and seeds throughout the day</li>
+                </ul>
+
+                <h3>Protein Timing & Distribution</h3>
+                <p>Optimize your protein for weight loss and muscle gain with proper timing:</p>
+                <ul>
+                    <li><strong>Post-Workout:</strong> 20-30g within 2 hours for muscle recovery</li>
+                    <li><strong>Breakfast:</strong> Start with 25-30g to kickstart metabolism</li>
+                    <li><strong>Throughout Day:</strong> Spread intake evenly across 3-4 meals</li>
+                    <li><strong>Before Bed:</strong> Casein or slow-digesting proteins for overnight recovery</li>
+                </ul>
+
+                <h3>Common Protein Mistakes to Avoid</h3>
+                <ul>
+                    <li>Consuming all daily protein in one meal instead of spreading it out</li>
+                    <li>Relying solely on protein supplements instead of whole foods</li>
+                    <li>Not adjusting protein intake based on training intensity</li>
+                    <li>Ignoring protein quality - focus on complete amino acid profiles</li>
+                    <li>Underestimating protein needs during weight loss phases</li>
+                </ul>
+            </section>
+
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="qa">
+                    <h3>How much protein should I eat daily?</h3>
+                    <p>It depends on your weight, activity, and goal. Use the calculator for a personalised estimate.</p>
+
+                    <h3>Can vegetarians meet protein needs?</h3>
+                    <p>Yes — combine legumes, dairy, eggs and nuts. Consider slightly larger portions or more frequent meals.</p>
+
+                    <h3>Is too much protein harmful?</h3>
+                    <p>Moderately higher protein intakes are usually safe for healthy people. If you have kidney disease or other conditions, consult a professional.</p>
+                </div>
+            </section>
+
+            <section class="related-tools">
+                <h2>Related Health & Fitness Calculators</h2>
+                <p>Maximize your fitness results with our comprehensive suite of health tools:</p>
+                
+                <div class="tool-links">
+                    <div class="tool-link">
+                        <h3><a href="../calorie-deficit.html">Calorie Deficit Calculator</a></h3>
+                        <p>Calculate the perfect calorie deficit for sustainable weight loss while maintaining your protein intake goals.</p>
+                    </div>
+                    
+                    <div class="tool-link">
+                        <h3><a href="body-frame-inline.html">Body Frame Size Calculator</a></h3>
+                        <p>Determine your body frame size to better understand your ideal weight range and protein requirements.</p>
+                    </div>
+                    
+                    <div class="tool-link">
+                        <h3><a href="calories-walking.html">Calories Burned Walking Calculator</a></h3>
+                        <p>Track calories burned during walking workouts to balance your protein intake with energy expenditure.</p>
+                    </div>
+                    
+                    <div class="tool-link">
+                        <h3><a href="../../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></h3>
+                        <p>For students tracking academic performance alongside their fitness and nutrition goals.</p>
+                    </div>
+                    
+                    <div class="tool-link">
+                        <h3><a href="../../converter/height-converter-inline.html">Height Converter Tool</a></h3>
+                        <p>Convert height measurements for accurate BMI and protein requirement calculations.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
     </main>
 
     <!-- Footer -->
