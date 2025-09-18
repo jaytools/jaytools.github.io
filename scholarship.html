@@ -452,6 +452,18 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px rgba(239, 68, 68, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(239, 68, 68, 0.8); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translate3d(0, 0, 0); }
+            40%, 43% { transform: translate3d(0, -5px, 0); }
+            70% { transform: translate3d(0, -3px, 0); }
+            90% { transform: translate3d(0, -2px, 0); }
+        }
         
         .hero-content {
             position: relative;
@@ -614,6 +626,29 @@
             position: relative;
             line-height: 1.2;
             letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-3);
+        }
+
+        .section-icon {
+            color: var(--primary-600);
+            font-size: 0.85em;
+            opacity: 0.9;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .detail-title {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .detail-icon {
+            color: var(--primary-600);
+            font-size: 0.9em;
+            opacity: 0.8;
         }
         
         .section-title::after {
@@ -821,6 +856,224 @@
         .deadline-timer .deadline-subtext {
             color: #2d3748 !important;
             font-weight: 500 !important;
+        }
+
+        /* Enhanced Date Styling */
+        .deadline-icon {
+            color: var(--red-600);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .urgent-text {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .dates-container {
+            display: grid;
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        .date-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary-400);
+            transition: all var(--transition-base);
+        }
+
+        .date-item:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateX(var(--space-1));
+            box-shadow: var(--shadow-md);
+        }
+
+        .date-item.active-date {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+            border-left-color: var(--green-500);
+        }
+
+        .date-icon {
+            font-size: 1.25rem;
+            color: var(--primary-600);
+            min-width: 24px;
+        }
+
+        .active-date .date-icon {
+            color: var(--green-600);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .date-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-1);
+        }
+
+        .date-label {
+            font-weight: var(--font-weight-semibold);
+            color: var(--gray-700);
+            font-size: 0.9rem;
+        }
+
+        .date-value {
+            font-size: 1.1rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--gray-900);
+        }
+
+        .date-status {
+            font-size: 0.8rem;
+            color: var(--green-600);
+            font-weight: var(--font-weight-medium);
+            background: var(--green-100);
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+            display: inline-block;
+            width: fit-content;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--gray-50), var(--blue-50));
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            color: var(--gray-600);
+            margin-bottom: var(--space-12);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+            margin-bottom: var(--space-16);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-500), var(--secondary-500));
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .quote-icon {
+            color: var(--primary-300);
+            font-size: 2rem;
+            margin-bottom: var(--space-4);
+            opacity: 0.7;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--gray-700);
+            margin-bottom: var(--space-6);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .author-name {
+            font-size: 1.1rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--gray-900);
+            margin-bottom: var(--space-1);
+        }
+
+        .author-details {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: var(--space-1);
+        }
+
+        .author-achievement {
+            font-size: 0.85rem;
+            color: var(--primary-600);
+            font-weight: var(--font-weight-medium);
+        }
+
+        /* Statistics Section */
+        .statistics-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            margin-top: var(--space-8);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--space-4);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary-600);
+            margin-bottom: var(--space-3);
+        }
+
+        .stat-number {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: var(--font-weight-bold);
+            color: var(--gray-900);
+            margin-bottom: var(--space-2);
+            background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            font-weight: var(--font-weight-medium);
         }
         
         /* Google Form Integration */
@@ -1213,6 +1466,132 @@
             .share-btn {
                 width: 100%;
                 justify-content: center;
+            }
+        }
+
+        /* Page Loading Enhancement */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Mobile Experience */
+        @media (max-width: 768px) {
+            /* Touch-Friendly Improvements */
+            .hero-cta,
+            .toc-link,
+            .cta-button {
+                min-height: 48px;
+                padding: var(--space-4) var(--space-6);
+                font-size: 1rem;
+            }
+
+            /* Mobile-Optimized Testimonials */
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+
+            .testimonial-card {
+                padding: var(--space-6);
+                margin-bottom: var(--space-4);
+            }
+
+            .testimonial-author {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--space-3);
+            }
+
+            /* Better Mobile Stats Grid */
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-4);
+            }
+
+            .stat-item {
+                padding: var(--space-3);
+            }
+
+            /* Mobile Date Items */
+            .dates-container {
+                gap: var(--space-3);
+            }
+
+            .date-item {
+                padding: var(--space-3);
+                gap: var(--space-3);
+            }
+
+            .date-content {
+                gap: var(--space-1);
+            }
+
+            .date-label {
+                font-size: 0.8rem;
+            }
+
+            .date-value {
+                font-size: 1rem;
+            }
+
+            /* Mobile Section Icons */
+            .section-title {
+                flex-direction: column;
+                gap: var(--space-2);
+                text-align: center;
+            }
+
+            .section-icon {
+                font-size: 1.2em;
+            }
+
+            /* Mobile Detail Cards */
+            .detail-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-2);
+                text-align: center;
+            }
+
+            .detail-icon {
+                align-self: center;
+                margin-right: 0;
+            }
+
+            /* Improved Mobile Navigation */
+            .breadcrumb-list {
+                padding-left: var(--space-3);
+                padding-right: var(--space-3);
+                font-size: 0.8rem;
+            }
+
+            /* Mobile Hero Optimization */
+            .hero-title {
+                text-align: center;
+                margin-bottom: var(--space-4);
+            }
+
+            .hero-subtitle {
+                text-align: center;
+                margin-bottom: var(--space-6);
             }
         }
         
@@ -1975,7 +2354,10 @@
             <!-- Scholarship Details Section -->
             <section id="details" class="content-section" aria-labelledby="details-heading">
                 <div class="section-container">
-                    <h2 id="details-heading" class="section-title" itemprop="description">Scholarship Details</h2>
+                    <h2 id="details-heading" class="section-title" itemprop="description">
+                        <i class="fas fa-graduation-cap section-icon"></i>
+                        Scholarship Details
+                    </h2>
                     
                     <div class="details-grid">
                     <!-- Eligibility Card -->
@@ -1983,7 +2365,10 @@
                         <div class="detail-icon">
                             <i class="fas fa-user-check"></i>
                         </div>
-                        <h3 class="detail-title">Eligibility Criteria</h3>
+                        <h3 class="detail-title">
+                            <i class="fas fa-user-check detail-icon"></i>
+                            Eligibility Criteria
+                        </h3>
                         <div class="detail-content">
                             <ul class="no-list-style">
                                 <li class="list-item"><i class="fas fa-check check-icon"></i> Currently enrolled undergraduate or graduate student</li>
@@ -2000,7 +2385,10 @@
                         <div class="detail-icon">
                             <i class="fas fa-dollar-sign"></i>
                         </div>
-                        <h3 class="detail-title">Prize Amount</h3>
+                        <h3 class="detail-title">
+                            <i class="fas fa-dollar-sign detail-icon"></i>
+                            Prize Amount
+                        </h3>
                         <div class="detail-content">
                             <div class="amount-display">
                                 <span class="highlight-amount-inr">₹5,000</span>
@@ -2021,7 +2409,10 @@
                         <div class="detail-icon">
                             <i class="fas fa-file-alt"></i>
                         </div>
-                        <h3 class="detail-title">How to Apply</h3>
+                        <h3 class="detail-title">
+                            <i class="fas fa-clipboard-list detail-icon"></i>
+                            How to Apply
+                        </h3>
                         <div class="detail-content">
                             <p>Simple 4-step application process:</p>
                             <ol class="ordered-list">
@@ -2039,17 +2430,42 @@
                         <div class="detail-icon">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
-                        <h3 class="detail-title">Important Dates</h3>
+                        <h3 class="detail-title">
+                            <i class="fas fa-calendar-alt detail-icon"></i>
+                            Important Dates
+                        </h3>
                         <div class="detail-content">
                             <p><strong>Application Deadline:</strong></p>
                             <div class="deadline-timer">
-                                <p class="deadline-text">December 31, 2025</p>
-                                <p class="deadline-subtext">Don't miss out - Apply early!</p>
+                                <p class="deadline-text">
+                                    <i class="fas fa-hourglass-end deadline-icon"></i>
+                                    December 31, 2025
+                                </p>
+                                <p class="deadline-subtext urgent-text">Don't miss out - Apply early!</p>
                             </div>
                             <div class="dates-container">
-                                <p><i class="fas fa-calendar-check icon-calendar-check"></i> <strong>Application Opens:</strong> 18-09-2025</p>
-                                <p><i class="fas fa-bell icon-bell"></i> <strong>Results Announced:</strong> February 15, 2026</p>
-                                <p><i class="fas fa-money-check-alt icon-money"></i> <strong>Award Disbursement:</strong> March 1, 2026</p>
+                                <div class="date-item active-date">
+                                    <i class="fas fa-calendar-check date-icon"></i>
+                                    <div class="date-content">
+                                        <span class="date-label">Application Opens</span>
+                                        <span class="date-value">September 18, 2025</span>
+                                        <span class="date-status">Open Now!</span>
+                                    </div>
+                                </div>
+                                <div class="date-item">
+                                    <i class="fas fa-bell date-icon"></i>
+                                    <div class="date-content">
+                                        <span class="date-label">Results Announced</span>
+                                        <span class="date-value">February 15, 2026</span>
+                                    </div>
+                                </div>
+                                <div class="date-item">
+                                    <i class="fas fa-money-check-alt date-icon"></i>
+                                    <div class="date-content">
+                                        <span class="date-label">Award Disbursement</span>
+                                        <span class="date-value">March 1, 2026</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2060,7 +2476,10 @@
         <!-- Application Process Section -->
         <section id="application" class="content-section application-section-bg">
             <div class="section-container">
-                <h2 class="section-title">Application Process</h2>
+                <h2 class="section-title">
+                    <i class="fas fa-tasks section-icon"></i>
+                    Application Process
+                </h2>
                 
                 <!-- Step-by-step Guide -->
                 <div class="steps-container">
@@ -2120,7 +2539,10 @@
         <!-- Contact Section -->
         <section id="contact" class="content-section">
             <div class="section-container">
-                <h2 class="section-title">Contact Information</h2>
+                <h2 class="section-title">
+                    <i class="fas fa-address-book section-icon"></i>
+                    Contact Information
+                </h2>
                 
                 <div class="contact-grid">
                     <!-- Email Contact -->
@@ -2203,7 +2625,10 @@
         <!-- FAQ Section -->
         <section id="faq" class="content-section faq-section">
             <div class="section-container">
-                <h2 class="section-title">Frequently Asked Questions</h2>
+                <h2 class="section-title">
+                    <i class="fas fa-question-circle section-icon"></i>
+                    Frequently Asked Questions
+                </h2>
                 
                 <div class="faq-container">
                     <div class="faq-item loading">
@@ -2643,6 +3068,59 @@
                 console.warn('Image failed to load:', e.target.src);
             }
         }, true);
+
+        // Enhanced Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Add reveal animation to elements
+        document.querySelectorAll('.content-section, .testimonial-card, .stat-item, .detail-card').forEach(el => {
+            el.classList.add('reveal-on-scroll');
+            observer.observe(el);
+        });
+
+        // Add counter animation for statistics
+        const animateCounter = (element, target) => {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.dataset.suffix || '');
+            }, 20);
+        };
+
+        // Animate statistics when they come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const targetValue = parseInt(statNumber.textContent.replace(/\D/g, ''));
+                    const suffix = statNumber.textContent.replace(/\d/g, '');
+                    statNumber.dataset.suffix = suffix;
+                    animateCounter(statNumber, targetValue);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.stat-item').forEach(stat => {
+            statsObserver.observe(stat);
+        });
     </script>
 
     <!-- Page Performance Monitoring -->
