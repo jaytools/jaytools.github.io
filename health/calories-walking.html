@@ -365,6 +365,7 @@
         
 
         <div class="container main-container">
+            
             <style>
                 /* Hide error messages and help text by default */
                 .error-message,
@@ -451,6 +452,30 @@
                         <p><i class="fas fa-users"></i> Used by 50,000+ fitness enthusiasts daily | <strong>Get precise calorie calculations for your walking workouts!</strong></p>
                     </div>
                 </div>
+                
+                <!-- Fitness Visual -->
+                <div style="text-align: center; margin: 25px auto 30px; max-width: 600px; padding: 0 20px;">
+                    <img src="img/cal-walk.webp" 
+                         alt="Calories burned walking calculator for fitness tracking"
+                         width="200" 
+                         height="160"
+                         loading="eager"
+                         style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(255,152,0,0.3); animation: float 3s ease-in-out infinite; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+                    <div style="margin-top: 15px; padding: 15px; background: #fff3e0; border-radius: 8px; border-left: 4px solid #ff9800;">
+                        <p style="margin: 0; color: #e65100; font-weight: 600; font-size: 15px;">🔥 Track your walking workout calories!</p>
+                    </div>
+                </div>
+                <style>
+                    @keyframes float {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-10px); }
+                    }
+                    @media (max-width: 480px) {
+                        .card img[alt*="Calories"] {
+                            max-width: 180px !important;
+                        }
+                    }
+                </style>
 
             <div class="card-body desktop-card-body">
                 
