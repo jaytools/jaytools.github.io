@@ -36,13 +36,14 @@
         }
     </script>
     
-    <!-- Google Fonts -->
+    <!-- Preload Hero Image for LCP (Priority #1) -->
+    <link rel="preload" as="image" href="img/cal-walk.webp" fetchpriority="high">
+    
+    <!-- Google Fonts - Optimized with display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Preload Hero Image for LCP -->
-    <link rel="preload" as="image" href="img/cal-walk.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- Custom CSS - Load synchronously to prevent CLS -->
     <link rel="stylesheet" href="../css/custom.css">
@@ -458,7 +459,8 @@
                          alt="Calories burned walking calculator for fitness tracking"
                          width="200" 
                          height="160"
-                         loading="eager">
+                         loading="eager"
+                         fetchpriority="high">
                     <div class="walking-cta-box">
                         <p>🔥 Track your walking workout calories!</p>
                     </div>
