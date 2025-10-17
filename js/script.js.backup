@@ -124,13 +124,41 @@ function createToolCard(t) {
   return card;
 }
 
+// Shuffle function for randomizing tools array
+function shuffleArray(array) {
+  var shuffled = array.slice(); // Create a copy
+  for (var i = shuffled.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = shuffled[i];
+    shuffled[i] = shuffled[j];
+    shuffled[j] = temp;
+  }
+  return shuffled;
+}
+
 function renderTools(list) {
   if (!list) list = tools;
   var start = (currentPage - 1) * ITEMS_PER_PAGE;
   var end = start + ITEMS_PER_PAGE;
-  var sorted = list.slice().sort(function(a, b) {
-    return favorites.includes(b.name) - favorites.includes(a.name) || a.name.localeCompare(b.name);
-  });
+  
+  // Separate favorites and non-favorites
+  var favs = list.filter(function(tool) { return favorites.includes(tool.name); });
+  var nonFavs = list.filter(function(tool) { return !favorites.includes(tool.name); });
+  
+  // Randomize non-favorites only on page 1
+  if (currentPage === 1 && currentTag === 'all') {
+    nonFavs = shuffleArray(nonFavs);
+  } else {
+    // Sort alphabetically for other pages/tags
+    nonFavs.sort(function(a, b) { return a.name.localeCompare(b.name); });
+  }
+  
+  // Sort favorites alphabetically
+  favs.sort(function(a, b) { return a.name.localeCompare(b.name); });
+  
+  // Combine: favorites first, then non-favorites
+  var sorted = favs.concat(nonFavs);
+  
   toolsGrid.innerHTML = '';
   for (var i = start; i < end && i < sorted.length; i++) {
     toolsGrid.appendChild(createToolCard(sorted[i]));
