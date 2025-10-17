@@ -1447,6 +1447,20 @@
             padding: 1rem;
         }
     }
+    
+    /* DPI Hero Image Styles */
+    .dpi-hero-container {
+        text-align: center;
+        margin: 20px 0 25px 0;
+    }
+    
+    .dpi-hero-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(52,152,219,0.25);
+        image-rendering: -webkit-optimize-contrast; /* Edge 79+ */
+    }
     </style>
     
 </head>
@@ -1582,13 +1596,12 @@
                         </h1>
                         
                         <!-- Hero Image -->
-                        <div style="text-align: center; margin: 20px 0 25px 0;">
+                        <div class="dpi-hero-container">
                             <img src="img/DPI.webp" 
                                  alt="DPI checker tool for screen resolution testing"
                                  width="200" 
                                  height="150"
-                                 loading="eager"
-                                 style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 5px 20px rgba(52,152,219,0.25); image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+                                 loading="eager">
                         </div>
                         
                         <!-- Subheading -->

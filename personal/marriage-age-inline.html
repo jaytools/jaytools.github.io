@@ -2149,6 +2149,43 @@
         .fade-in-up {
             animation: fadeInUp 0.5s ease forwards;
         }
+        
+        /* Marriage Banner Styles */
+        .marriage-banner {
+            background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 0 0 30px 0;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+        
+        .marriage-banner img {
+            margin: 0 auto 15px;
+            border-radius: 10px;
+            background: white;
+            padding: 12px;
+            display: block;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            image-rendering: -webkit-optimize-contrast;
+        }
+        
+        .marriage-banner h2 {
+            color: white;
+            margin: 15px 0 8px 0;
+            font-size: 26px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+        
+        .marriage-banner p {
+            color: rgba(255,255,255,0.95);
+            font-size: 16px;
+            margin: 0;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -2278,15 +2315,14 @@
             <div class="calculator-container">
                 
                 <!-- Full-width Banner -->
-                <div style="background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%); padding: 30px 20px; text-align: center; border-radius: 12px; margin: 0 0 30px 0; box-shadow: 0 6px 18px rgba(0,0,0,0.12);">
+                <div class="marriage-banner">
                     <img src="img/marriage-cal.webp" 
                          alt="Marriage age calculator for planning wedding timeline"
                          width="200" 
                          height="150"
-                         loading="eager"
-                         style="margin: 0 auto 15px; border-radius: 10px; background: white; padding: 12px; display: block; max-width: 100%; height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.15); image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
-                    <h2 style="color: white; margin: 15px 0 8px 0; font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); font-weight: 700;">Plan Your Wedding Timeline</h2>
-                    <p style="color: rgba(255,255,255,0.95); font-size: 16px; margin: 0; font-weight: 500;">Calculate ideal marriage age based on your birthdate</p>
+                         loading="eager">
+                    <h2>Plan Your Wedding Timeline</h2>
+                    <p>Calculate ideal marriage age based on your birthdate</p>
                 </div>
                 
                 <!-- Tool Header -->

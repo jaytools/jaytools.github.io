@@ -1591,6 +1591,63 @@
                 font-size: 0.9rem;
             }
         }
+        
+        /* Body Frame Hero Section Styles */
+        .body-frame-hero {
+            display: flex;
+            gap: 30px;
+            margin: 0 0 30px 0;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        
+        .body-frame-hero-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .body-frame-hero-text h1 {
+            margin: 0 0 15px 0;
+            font-size: 32px;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .body-frame-hero-text p {
+            color: #555;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
+            font-size: 16px;
+        }
+        
+        .body-frame-hero-image {
+            flex: 1;
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        .body-frame-hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(156,39,176,0.25);
+            position: sticky;
+            top: 20px;
+            image-rendering: -webkit-optimize-contrast; /* Edge 79+ */
+        }
+        
+        @media (max-width: 768px) {
+            .body-frame-hero {
+                flex-direction: column-reverse;
+            }
+            .body-frame-hero-image {
+                margin-bottom: 20px;
+            }
+            .body-frame-hero-image img {
+                position: static !important;
+                max-width: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1719,37 +1776,22 @@
         <div class="tool-container">
             
             <!-- Body Frame Visual with Sidebar Layout -->
-            <div style="display: flex; gap: 30px; margin: 0 0 30px 0; flex-wrap: wrap; align-items: flex-start;">
-                <div style="flex: 2; min-width: 300px;">
-                    <h1 style="margin: 0 0 15px 0; font-size: 32px; color: #333; font-weight: 700;">Body Frame Size Calculator</h1>
-                    <p style="color: #555; line-height: 1.7; margin: 0 0 20px 0; font-size: 16px;">
+            <div class="body-frame-hero">
+                <div class="body-frame-hero-text">
+                    <h1>Body Frame Size Calculator</h1>
+                    <p>
                         Measure your wrist to determine your body frame category (small, medium, or large) 
                         for accurate health metrics and ideal weight calculations.
                     </p>
                 </div>
-                <div style="flex: 1; text-align: center; min-width: 200px;">
+                <div class="body-frame-hero-image">
                     <img src="img/body-frame.webp" 
                          alt="Body frame size calculator measuring wrist circumference"
                          width="180" 
                          height="200"
-                         loading="eager"
-                         style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(156,39,176,0.25); position: sticky; top: 20px; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+                         loading="eager">
                 </div>
             </div>
-            <style>
-                @media (max-width: 768px) {
-                    div[style*="display: flex"] {
-                        flex-direction: column-reverse;
-                    }
-                    div[style*="display: flex"] > div:last-child {
-                        margin-bottom: 20px;
-                    }
-                    div[style*="display: flex"] img {
-                        position: static !important;
-                        max-width: 200px;
-                    }
-                }
-            </style>
             
             <!-- Tool Header -->
             <div class="tool-header">
