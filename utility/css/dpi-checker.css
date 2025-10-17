@@ -1847,3 +1847,327 @@ input:focus {
         transform: translateY(0);
     }
 }
+
+/* ============================================
+   DPI Deep Dive Article Styles
+   Professional, Mobile-First Design
+   ============================================ */
+
+/* Article Section Container */
+.dpi-article-section {
+    background: #f8f9fa;
+    padding: 3rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: var(--radius-lg);
+}
+
+.content-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-200);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Article Typography */
+.content-card h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.content-card h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin: 2rem 0 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    padding-top: 1rem;
+    border-top: 2px solid var(--color-gray-100);
+}
+
+.content-card h3:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.content-card h4 {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin: 1.5rem 0 0.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.content-card p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.content-card strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.content-card em {
+    color: #555;
+    font-style: italic;
+}
+
+/* Lists in Article */
+.content-card ul,
+.content-card ol {
+    line-height: 1.8;
+    margin: 1rem 0 1rem 2rem;
+    color: #555;
+}
+
+.content-card ul li,
+.content-card ol li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.content-card ul li strong {
+    color: #2c3e50;
+}
+
+/* Highlighted List (Yellow Background) */
+.content-card .highlight-list {
+    background: #fff3cd;
+    padding: 1.5rem 1.5rem 1.5rem 3rem;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    margin: 1.5rem 0;
+}
+
+.content-card .highlight-list li {
+    margin-bottom: 0.75rem;
+}
+
+/* Q&A Boxes */
+.qa-box {
+    background: white;
+    padding: 1.5rem;
+    border-left: 4px solid #3498db;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.qa-box p {
+    margin-bottom: 0.75rem;
+}
+
+.qa-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links in Article */
+.content-card a {
+    color: #3498db;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.content-card a:hover {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+/* CTA Button in Article */
+.article-cta-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.article-cta-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.article-cta-btn:active {
+    transform: translateY(0);
+}
+
+.article-cta-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ============================================
+   Mobile Responsive Design
+   ============================================ */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .dpi-article-section {
+        padding: 2rem 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .content-card {
+        padding: 1.5rem;
+        border-radius: var(--radius-md);
+    }
+    
+    .content-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .content-card h3 {
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.75rem;
+    }
+    
+    .content-card h4 {
+        font-size: 1rem;
+        margin: 1.25rem 0 0.5rem;
+    }
+    
+    .content-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .content-card ul,
+    .content-card ol {
+        margin-left: 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    .content-card .highlight-list {
+        padding: 1rem 1rem 1rem 2rem;
+        margin: 1rem 0;
+    }
+    
+    .qa-box {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .article-cta-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .dpi-article-section {
+        padding: 1.5rem 0.75rem;
+        margin: 1rem 0;
+        border-radius: var(--radius-sm);
+    }
+    
+    .content-card {
+        padding: 1.25rem;
+    }
+    
+    .content-card h2 {
+        font-size: 1.3rem;
+        line-height: 1.4;
+    }
+    
+    .content-card h3 {
+        font-size: 1.1rem;
+        margin: 1.25rem 0 0.5rem;
+    }
+    
+    .content-card h4 {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .content-card p {
+        font-size: 0.9rem;
+    }
+    
+    .content-card ul,
+    .content-card ol {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .content-card ul li,
+    .content-card ol li {
+        margin-bottom: 0.75rem;
+    }
+    
+    .content-card .highlight-list {
+        padding: 0.875rem 0.875rem 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .qa-box {
+        padding: 0.875rem;
+        font-size: 0.9rem;
+    }
+    
+    .article-cta-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+    .dpi-article-section {
+        background: #1a1a1a;
+    }
+    
+    .content-card {
+        background: #2d2d2d;
+        border-color: #444;
+    }
+    
+    .content-card h2,
+    .content-card h3,
+    .content-card h4,
+    .content-card strong {
+        color: #e0e0e0;
+    }
+    
+    .content-card p,
+    .content-card li,
+    .content-card em {
+        color: #b0b0b0;
+    }
+    
+    .qa-box {
+        background: #333;
+        border-left-color: #3498db;
+    }
+    
+    .content-card .highlight-list {
+        background: #3d3415;
+        border-left-color: #ffc107;
+    }
+}
