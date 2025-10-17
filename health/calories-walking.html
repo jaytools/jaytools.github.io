@@ -44,17 +44,13 @@
     <!-- Preload Hero Image for LCP -->
     <link rel="preload" as="image" href="img/cal-walk.webp">
     
-    <!-- Font Awesome - Optimized Loading -->
+    <!-- Custom CSS - Load synchronously to prevent CLS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/calories-walking.css">
+    
+    <!-- Font Awesome - Optimized Loading (defer non-critical) -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Custom CSS -->
-    <link rel="preload" href="../css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="css/calories-walking.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="../css/custom.css">
-        <link rel="stylesheet" href="css/calories-walking.css">
-    </noscript>
     
     <!-- HowTo Schema -->
     <script type="application/ld+json">
@@ -474,6 +470,7 @@
                         margin: 25px auto 30px;
                         max-width: 600px;
                         padding: 0 20px;
+                        min-height: 220px; /* Reserve space to prevent CLS */
                     }
                     
                     .walking-hero-container img {
@@ -483,6 +480,9 @@
                         box-shadow: 0 4px 16px rgba(255,152,0,0.3);
                         /* animation: float 3s ease-in-out infinite; */ /* Removed to fix CLS */
                         image-rendering: -webkit-optimize-contrast; /* Edge 79+ */
+                        image-rendering: crisp-edges;
+                        display: block;
+                        margin: 0 auto;
                     }
                     
                     .walking-cta-box {
