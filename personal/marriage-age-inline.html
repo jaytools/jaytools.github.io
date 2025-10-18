@@ -35,20 +35,31 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     
-    <!-- Google Fonts -->
+    <!-- Preload Hero Image for LCP with High Priority -->
+    <link rel="preload" as="image" href="img/marriage-cal.webp" fetchpriority="high">
+    
+    <!-- Custom CSS - Synchronous Loading -->
+    <link rel="stylesheet" href="../css/custom.css">
+    
+    <!-- Google Fonts - Deferred Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Preload Hero Image for LCP -->
-    <link rel="preload" as="image" href="img/marriage-cal.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Font Awesome - Deferred Loading -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/custom.css">
+    <!-- Inline Critical CSS for Fast FCP -->
+    <style>
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:0;padding:0;background:#f8f9fa}
+        .main-content{width:100%;max-width:1200px;margin:0 auto;padding:1rem}
+        .calculator-container{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden;margin:2rem auto;max-width:600px}
+        .marriage-banner{background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);padding:2rem;text-align:center;min-height:200px}
+        .marriage-banner img{width:200px;height:150px;object-fit:contain;margin:0 auto 1rem}
+        .tool-header{background:linear-gradient(135deg,#e74c3c 0%,#c0392b 100%);color:#fff;text-align:center;padding:2rem;min-height:140px}
+    </style>
     
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -2431,6 +2442,7 @@
             border-radius: 12px;
             margin: 0 0 30px 0;
             box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            min-height: 280px;
         }
         
         .marriage-banner img {
@@ -2440,7 +2452,8 @@
             padding: 12px;
             display: block;
             max-width: 100%;
-            height: auto;
+            height: 150px;
+            width: 200px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             image-rendering: -webkit-optimize-contrast;
         }
@@ -2593,7 +2606,8 @@
                          alt="Marriage age calculator for planning wedding timeline"
                          width="200" 
                          height="150"
-                         loading="eager">
+                         loading="eager"
+                         fetchpriority="high">
                     <h2>Plan Your Wedding Timeline</h2>
                     <p>Calculate ideal marriage age based on your birthdate</p>
                 </div>
