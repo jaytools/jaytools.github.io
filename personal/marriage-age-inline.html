@@ -38,8 +38,9 @@
     <!-- Preload Hero Image for LCP with High Priority -->
     <link rel="preload" as="image" href="img/marriage-cal.webp" fetchpriority="high">
     
-    <!-- Custom CSS - Synchronous Loading -->
-    <link rel="stylesheet" href="../css/custom.css">
+    <!-- Custom CSS - Load with media attribute for non-blocking -->
+    <link rel="stylesheet" href="../css/custom.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/custom.css"></noscript>
     
     <!-- Google Fonts - Deferred Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,12 +54,30 @@
     
     <!-- Inline Critical CSS for Fast FCP -->
     <style>
-        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:0;padding:0;background:#f8f9fa}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:0;padding:0;background:#f8f9fa;font-size:16px;line-height:1.6;color:#2c3e50}
+        *{box-sizing:border-box}
         .main-content{width:100%;max-width:1200px;margin:0 auto;padding:1rem}
         .calculator-container{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden;margin:2rem auto;max-width:600px}
-        .marriage-banner{background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);padding:2rem;text-align:center;min-height:200px}
-        .marriage-banner img{width:200px;height:150px;object-fit:contain;margin:0 auto 1rem}
-        .tool-header{background:linear-gradient(135deg,#e74c3c 0%,#c0392b 100%);color:#fff;text-align:center;padding:2rem;min-height:140px}
+        .marriage-banner{background:linear-gradient(120deg,#ffd89b 0%,#19547b 100%);padding:30px 20px;text-align:center;min-height:240px;border-radius:12px;margin:0 0 30px 0}
+        .marriage-banner img{width:160px;height:120px;object-fit:contain;margin:0 auto 15px;border-radius:10px;background:#fff;padding:12px;display:block}
+        .marriage-banner h3{color:#fff;font-size:1.5rem;margin:10px 0;font-weight:700;text-shadow:0 2px 4px rgba(0,0,0,0.3)}
+        .marriage-banner p{color:#f0f0f0;margin:0;font-size:0.95rem;font-weight:500}
+        .tool-header{background:linear-gradient(135deg,#e74c3c 0%,#c0392b 100%);color:#fff;text-align:center;padding:2rem;min-height:140px;border-radius:15px 15px 0 0}
+        .tool-header h1{font-size:2.2rem;font-weight:700;margin-bottom:1rem;line-height:1.2}
+        .tool-header p{font-size:1.1rem;margin:0;opacity:0.95}
+        @media (max-width:768px){
+            .marriage-banner{min-height:200px;padding:20px 15px}
+            .marriage-banner img{width:140px;height:105px}
+            .marriage-banner h3{font-size:1.3rem}
+            .tool-header h1{font-size:1.8rem}
+        }
+        @media (max-width:480px){
+            .marriage-banner{min-height:180px;padding:15px 10px}
+            .marriage-banner img{width:120px;height:90px}
+            .marriage-banner h3{font-size:1.1rem}
+            .marriage-banner p{font-size:0.85rem}
+            .tool-header h1{font-size:1.6rem}
+        }
     </style>
     
     <!-- Schema.org JSON-LD for SEO -->
@@ -2458,11 +2477,11 @@
             image-rendering: -webkit-optimize-contrast;
         }
         
-        .marriage-banner h2 {
+        .marriage-banner h3 {
             color: white;
             margin: 15px 0 8px 0;
             font-size: 26px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.8);
             font-weight: 700;
         }
         
@@ -2604,11 +2623,10 @@
                 <div class="marriage-banner">
                     <img src="img/marriage-cal.webp" 
                          alt="Marriage age calculator for planning wedding timeline"
-                         width="200" 
-                         height="150"
-                         loading="eager"
-                         fetchpriority="high">
-                    <h2>Plan Your Wedding Timeline</h2>
+                         width="160" 
+                         height="120"
+                         loading="eager">
+                    <h3>Plan Your Wedding Timeline</h3>
                     <p>Calculate ideal marriage age based on your birthdate</p>
                 </div>
                 
