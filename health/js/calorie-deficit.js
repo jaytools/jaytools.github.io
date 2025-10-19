@@ -343,16 +343,16 @@ function displayResults(results) {
         DOM.carbsBar.style.width = '45%';
         DOM.fatBar.style.width = '25%';
         
-        // Show result section with animation
+        // Show result section with fade-in (CLS-safe)
         if (DOM.resultSection) {
             console.log('Showing result section');
             // First set display to block
             DOM.resultSection.style.display = 'block';
             // Force a reflow
             void DOM.resultSection.offsetWidth;
-            // Then add the visible class for the animation
+            // Then add the show class for fade-in (no transform/translateY)
             requestAnimationFrame(() => {
-                DOM.resultSection.classList.add('visible');
+                DOM.resultSection.classList.add('show');
             });
             console.log('Result section should now be visible');
         } else {
