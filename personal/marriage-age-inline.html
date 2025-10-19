@@ -36,7 +36,7 @@
     <link rel="manifest" href="../site.webmanifest">
     
     <!-- Preload Hero Image for LCP with High Priority -->
-    <link rel="preload" as="image" href="img/marriage-cal.webp" imagesrcset="img/marriage-cal.webp" imagesizes="160px" fetchpriority="high">
+    <link rel="preload" as="image" href="img/marriage-cal.webp" imagesrcset="img/marriage-cal.webp" imagesizes="160px">
     
     <!-- Custom CSS - Async Loading with Immediate Apply for LCP Optimization -->
     <link rel="stylesheet" href="../css/custom.css" media="print" onload="this.media='all'">
@@ -52,55 +52,90 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
-    <!-- Inline Critical CSS for Instant LCP Rendering -->
+    <!-- Inline Critical CSS for Zero CLS + Instant LCP -->
     <style>
-        /* Base Reset - Zero CLS */
-        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:0;padding:0;background:#f8f9fa;font-size:16px;line-height:1.6;color:#2c3e50}
+        /* Base Reset with Layout Stability */
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:0;padding:0;background:#f8f9fa;font-size:16px;line-height:1.6;color:#2c3e50;min-height:100vh}
         *{box-sizing:border-box}
         
-        /* Critical Layout Components */
-        .site-header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;min-height:70px}
-        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;max-width:1400px;margin:0 auto}
-        .breadcrumb{padding:.8rem 2rem;background:#f8f9fa;border-radius:8px;margin:1.5rem 0;min-height:40px}
-        .main-content{width:100%;max-width:1200px;margin:0 auto;padding:1rem}
-        .calculator-container{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1);overflow:hidden;margin:2rem auto;max-width:600px}
+        /* Critical Layout Components - Fixed Dimensions */
+        .site-header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;min-height:70px;width:100%}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;max-width:1400px;margin:0 auto;min-height:70px}
+        .breadcrumb{padding:.8rem 2rem;background:#f8f9fa;border-radius:8px;margin:1.5rem 0;min-height:50px;display:block}
+        
+        /* Main Content with Explicit Height - Prevents 0.783 CLS */
+        .main-content{width:100%;max-width:1200px;margin:0 auto;padding:1rem;min-height:2000px}
+        .container{width:100%;max-width:1200px;margin:0 auto}
+        .tool-container{min-height:1800px}
+        .calculator-container{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1);overflow:hidden;margin:2rem auto;max-width:600px;min-height:800px}
         
         /* Banner - Fixed Dimensions for CLS Prevention */
-        .marriage-banner{background:linear-gradient(120deg,#ffd89b 0%,#19547b 100%);padding:30px 20px;text-align:center;min-height:240px;border-radius:12px;margin:0 0 30px 0;position:relative}
+        .marriage-banner{background:linear-gradient(120deg,#ffd89b 0%,#19547b 100%);padding:30px 20px;text-align:center;height:240px;border-radius:12px;margin:0 0 30px 0;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center}
         .marriage-banner::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.15);z-index:0}
-        .marriage-banner img{width:160px;height:120px;object-fit:contain;margin:0 auto 15px;border-radius:10px;background:#fff;padding:12px;display:block;position:relative;z-index:1}
+        
+        /* LCP Image - Optimized for Fast Render */
+        .marriage-banner img{width:160px!important;height:120px!important;object-fit:contain;margin:0 auto 15px;border-radius:10px;background:#fff;padding:12px;display:block;position:relative;z-index:1;transform:translateZ(0);will-change:auto}
         .marriage-banner h1{color:#fff;font-size:1.5rem;margin:10px 0;font-weight:700;text-shadow:0 3px 10px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.8);position:relative;z-index:1}
         .marriage-banner p{color:#fff;margin:0;font-size:.95rem;font-weight:600;text-shadow:0 2px 6px rgba(0,0,0,.8);position:relative;z-index:1}
         
-        /* LCP ELEMENT - tool-header with Complete Styling for Instant Render */
+        /* Tool Header - Complete Styling */
         .tool-header{background:linear-gradient(135deg,#e74c3c 0%,#c0392b 100%);color:#fff;text-align:center;padding:2rem;min-height:140px;border-radius:15px 15px 0 0;display:block;visibility:visible;contain:layout style paint}
         .tool-header h2{font-size:2.2rem;font-weight:700;margin:0 0 1rem;line-height:1.2;color:#fff;display:block}
         .tool-header h2 i{margin-right:.5rem}
         .tool-header p{font-size:1.1rem;margin:0;opacity:.95;color:#fff;line-height:1.5}
         
-        /* Mobile Responsive - All Critical Elements */
+        /* WCAG Contrast Compliant Colors for All Elements */
+        .info-card{background:#fff;padding:2rem;border-radius:12px;margin:2rem 0;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+        .info-card h2,.info-card h3,.info-card h4{color:#1a1a1a;font-weight:700;margin:1.5rem 0 1rem}
+        .info-card p,.info-card li{color:#2c3e50;line-height:1.8}
+        .info-card a{color:#0066cc;text-decoration:underline}
+        .legal-age-section{background:#f8f9fa;border-left:4px solid #e74c3c}
+        .no-favorites{color:#666;font-style:italic;padding:1rem;font-size:.95rem}
+        table thead{background:#2c3e50}
+        table th{color:#fff;font-weight:600;padding:.8rem;background:#2c3e50;border:1px solid #34495e}
+        table td{color:#1a1a1a;padding:.8rem;border:1px solid #ddd;background:#fff}
+        .factor-card{background:#f8f9fa;padding:1.5rem;border-radius:8px;border-left:4px solid #3498db}
+        .factor-card h4{color:#1a1a1a;font-weight:700;margin:0 0 .8rem;font-size:1.1rem}
+        .factor-card p{color:#2c3e50;margin:0;line-height:1.6;font-size:.95rem}
+        .column{background:#fff;padding:1.5rem;border-radius:8px;border:1px solid #e0e0e0}
+        .column h4{color:#1a1a1a;font-weight:700;font-size:1.1rem;margin-bottom:1rem}
+        .column li{color:#2c3e50;margin-bottom:.5rem}
+        .related-tool-card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:1.5rem;text-decoration:none;display:block}
+        .related-tool-title{color:#1a1a1a;font-weight:700;font-size:1.1rem;margin-bottom:.5rem}
+        .related-tool-description{color:#4a5568;font-size:.95rem;line-height:1.6;margin:0}
+        .internal-link{color:#0066cc;font-weight:600;text-decoration:underline}
+        .site-footer{background:#2c3e50;color:#fff;padding:3rem 0 1rem;margin-top:4rem;min-height:400px}
+        .site-footer h3{color:#fff;font-weight:600;margin-bottom:1rem}
+        .site-footer a{color:#5dade2;text-decoration:none}
+        .site-footer p{color:#ecf0f1;font-size:.95rem}
+        
+        /* Mobile Responsive with Fixed Dimensions */
         @media (max-width:768px){
-            .navbar{padding:.8rem 1rem}
-            .breadcrumb{padding:.6rem 1rem;margin:1rem 0}
-            .main-content{padding:.8rem}
-            .marriage-banner{min-height:200px;padding:20px 15px}
-            .marriage-banner img{width:140px;height:105px}
+            .navbar{padding:.8rem 1rem;min-height:60px}
+            .breadcrumb{padding:.6rem 1rem;margin:1rem 0;min-height:45px}
+            .main-content{padding:.8rem;min-height:1800px}
+            .calculator-container{min-height:750px}
+            .marriage-banner{height:200px;padding:20px 15px}
+            .marriage-banner img{width:140px!important;height:105px!important}
             .marriage-banner h1{font-size:1.3rem}
             .tool-header{min-height:120px;padding:1.5rem}
             .tool-header h2{font-size:1.8rem;margin-bottom:.8rem}
             .tool-header p{font-size:1rem}
+            .site-footer{min-height:380px;padding:2.5rem 0 1rem}
         }
         @media (max-width:480px){
-            .navbar{padding:.6rem .8rem}
-            .breadcrumb{padding:.5rem .8rem;margin:.8rem 0;font-size:.85rem}
-            .main-content{padding:.5rem}
-            .marriage-banner{min-height:180px;padding:15px 10px}
-            .marriage-banner img{width:120px;height:90px}
+            .navbar{padding:.6rem .8rem;min-height:55px}
+            .breadcrumb{padding:.5rem .8rem;margin:.8rem 0;font-size:.85rem;min-height:40px}
+            .main-content{padding:.5rem;min-height:1600px}
+            .calculator-container{min-height:700px}
+            .marriage-banner{height:180px;padding:15px 10px}
+            .marriage-banner img{width:120px!important;height:90px!important}
             .marriage-banner h1{font-size:1.1rem}
             .marriage-banner p{font-size:.85rem}
             .tool-header{min-height:100px;padding:1.2rem .8rem}
             .tool-header h2{font-size:1.6rem;margin-bottom:.6rem}
             .tool-header p{font-size:.9rem}
+            .site-footer{min-height:360px;padding:2rem 0 1rem}
         }
     </style>
     
@@ -398,7 +433,8 @@
                          alt="Marriage age calculator for planning wedding timeline"
                          width="160" 
                          height="120"
-                         loading="eager">
+                         loading="eager"
+                         decoding="async">
                     <h1>Plan Your Wedding Timeline</h1>
                     <p>Calculate ideal marriage age based on your birthdate</p>
                 </div>
