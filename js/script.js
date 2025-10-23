@@ -1,5 +1,6 @@
 const ITEMS_PER_PAGE = 6;
 const tools = [
+  { name: 'YouTube Thumbnail Downloader', url: 'utility/youtube-thumbnail-downloader.html', tags: ['utility', 'social-media'] },
   { name: 'CGPA to Percentage Calculator', url: 'calculator/cgpa-percentage-inline.html', tags: ['calculator', 'study'] },
   { name: 'Protein Intake Calculator', url: 'health/protein-intake.html', tags: ['health', 'calculator', 'nutrition'] },
   { name: 'IVF Due Date Calculator', url: 'health/ivf-calculator.html', tags: ['health', 'personal'] },
@@ -23,7 +24,8 @@ const tools = [
   { name: 'GPA to Percentage Calculator', url: 'calculator/gpa-percentage-inline.html', tags: ['calculator', 'study'] },
   { name: 'Marriage Biodata', url: 'personal/marriage-biodata-inline.html', tags: ['utility', 'personal'] },
   { name: 'Invite Generator', url: 'personal/invite-generator-inline.html', tags: ['utility', 'personal'] },
-  { name: 'Memory Game', url: 'game/memory-game.html', tags: ['game', 'brain-training', 'entertainment'] }
+  { name: 'Memory Game', url: 'game/memory-game.html', tags: ['game', 'brain-training', 'entertainment'] },
+  { name: 'Random Team Generator', url: 'utility/team-generator-inline.html', tags: ['utility', 'productivity'] }
 ];
 
 let currentPage = 1;

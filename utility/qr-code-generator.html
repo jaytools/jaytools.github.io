@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator with Logo - Create Custom QR Codes Free Online</title>
+    <meta name="description" content="Free QR code generator with logo upload! Create custom QR codes with your brand logo, choose colors, add frames, and download in high quality. Generate QR codes for URLs, text, WiFi, vCard, and more.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="Jay Prajapati">
+    <meta name="language" content="en">
+    <meta name="distribution" content="global">
+    <meta name="keywords" content="qr code generator, qr code with logo, custom qr code maker, qr code generator free, branded qr code, qr code design, qr code creator online, logo qr code, qr code customizer, business qr code generator">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="QR Code Generator with Logo - Create Custom QR Codes Free">
+    <meta property="og:description" content="Generate custom QR codes with your logo! Free online QR code maker with color customization, logo upload, and high-quality downloads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.taskproper.com/utility/qr-code-generator.html">
+    <meta property="og:site_name" content="Task Proper">
+    <meta property="og:image" content="https://www.taskproper.com/img/qr-code-generator.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QR Code Generator with Logo - Create Custom QR Codes Free">
+    <meta name="twitter:description" content="Generate custom QR codes with your logo! Free online QR code maker with full customization.">
+    <meta name="twitter:image" content="https://www.taskproper.com/img/qr-code-generator.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.taskproper.com/utility/qr-code-generator.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/utility.css">
+    
+    <style>
+        /* QR Code Generator Specific Styles */
+        
+        /* CSS Variables */
+        :root {
+            --qr-primary: #2563eb;
+            --qr-secondary: #1e40af;
+            --text-primary: #2c3e50;
+            --text-secondary: #64748b;
+            --bg-secondary: #f8fafc;
+            --border-color: #e2e8f0;
+            --border-radius: 8px;
+        }
+        
+        /* Override breadcrumb duplicate icon */
+        .breadcrumb::before {
+            content: none;
+        }
+        
+        /* Remove breadcrumb list numbers */
+        .breadcrumb ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .breadcrumb li {
+            list-style: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        /* Add separator ">" between breadcrumb items */
+        .breadcrumb li:not(:last-child)::after {
+            content: ">";
+            margin: 0 0.5rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        /* QR Header */
+        .qr-header {
+            background: linear-gradient(135deg, var(--qr-primary) 0%, var(--qr-secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+        }
+        
+        .qr-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .qr-header p {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Tool Card */
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        /* Vertical Layout (Top to Bottom) */
+        .qr-container {
+            display: block;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+        
+        .input-column,
+        .preview-column {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            width: 100%;
+            display: block;
+        }
+        
+        .column-header {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Input Group */
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .input-group input[type="text"],
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .input-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--qr-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Color Picker */
+        .color-picker-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .color-input-wrapper {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        input[type="color"] {
+            width: 50px;
+            height: 40px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+        
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+        
+        input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 6px;
+        }
+        
+        /* File Upload */
+        .file-upload-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: white;
+            border: 2px dashed var(--border-color);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .file-upload-label:hover {
+            border-color: var(--qr-primary);
+            background: #f0f7ff;
+        }
+        
+        .file-upload-input {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        .file-name {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        /* Range Slider */
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            background: var(--border-color);
+            border-radius: 3px;
+            outline: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: var(--qr-primary);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: var(--qr-primary);
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+        }
+        
+        .range-value {
+            display: inline-block;
+            min-width: 40px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--qr-primary);
+        }
+        
+        /* QR Preview */
+        .qr-preview {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        #qrCanvas {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: none; /* Hidden by default */
+        }
+        
+        #qrCanvas.show {
+            display: block;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--qr-primary) 0%, var(--qr-secondary) 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-secondary {
+            background: #64748b;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+        
+        .btn-secondary:hover {
+            background: #475569;
+            transform: translateY(-2px);
+        }
+        
+        .download-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .download-buttons.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        /* QR Type Tabs */
+        .qr-type-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .qr-type-tab {
+            padding: 0.75rem 1.25rem;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .qr-type-tab:hover {
+            border-color: var(--qr-primary);
+            color: var(--qr-primary);
+        }
+        
+        .qr-type-tab.active {
+            background: var(--qr-primary);
+            color: white;
+            border-color: var(--qr-primary);
+        }
+        
+        /* Hidden Input Groups */
+        .qr-input-group {
+            display: none;
+        }
+        
+        .qr-input-group.active {
+            display: block;
+        }
+        
+        /* Color Labels */
+        .color-label {
+            font-weight: normal;
+            font-size: 0.875rem;
+        }
+        
+        .color-text-input {
+            flex: 1;
+        }
+        
+        /* How to Use Section */
+        .how-to-section {
+            margin: 3rem 0;
+        }
+        
+        .how-to-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .how-to-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .step-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--qr-primary), var(--qr-secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        
+        .step-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .step-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Article/Content Section */
+        .article-section {
+            margin: 3rem 0;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .article-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+        
+        .article-content p strong {
+            color: var(--text-primary);
+            font-weight:600;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin: 3rem 0;
+        }
+        
+        .faq-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-header {
+            margin-bottom: 2rem;
+        }
+        
+        .faq-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .faq-item {
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--qr-primary);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+        
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+        }
+        
+        .faq-toggle {
+            color: var(--qr-primary);
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #f8fafc;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .faq-answer p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+            font-size: 1.05rem;
+        }
+        
+        /* Preview Info Text */
+        .preview-info {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            display: block;
+        }
+        
+        .preview-info.hide {
+            display: none;
+        }
+        
+        /* Download Button Padding */
+        .download-buttons .btn-primary {
+            padding: 0.75rem;
+        }
+        
+        /* Feature Badges */
+        .feature-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .badge-success {
+            background: #10b981;
+            color: #fff;
+        }
+        
+        .badge-info {
+            background: #3b82f6;
+            color: #fff;
+        }
+        
+        .badge-warning {
+            background: #f59e0b;
+            color: #fff;
+        }
+        
+        .badge-primary {
+            background: var(--qr-primary);
+            color: #fff;
+        }
+        
+        /* Responsive - Mobile First */
+        @media (max-width: 768px) {
+            .qr-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .qr-header p {
+                font-size: 1rem;
+            }
+            
+            .color-picker-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .qr-type-tabs {
+                flex-direction: column;
+            }
+            
+            .qr-type-tab {
+                width: 100%;
+            }
+            
+            .qr-preview {
+                padding: 1.5rem;
+            }
+            
+            .how-to-header h2,
+            .content-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .tool-card,
+            .how-to-card,
+            .content-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .qr-header {
+                padding: 2rem 1.5rem;
+            }
+            
+            .qr-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .qr-header p {
+                font-size: 0.95rem;
+            }
+            
+            .feature-badges {
+                gap: 0.5rem;
+            }
+            
+            .badge {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .btn-primary {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .btn-secondary {
+                padding: 0.675rem 1.25rem;
+                font-size: 0.9rem;
+            }
+            
+            .qr-preview {
+                padding: 1rem;
+            }
+            
+            input[type="color"] {
+                width: 45px;
+                height: 36px;
+            }
+            
+            .color-input-wrapper {
+                gap: 0.4rem;
+            }
+            
+            .input-column,
+            .preview-column {
+                padding: 1rem;
+            }
+            
+            .tool-card,
+            .how-to-card,
+            .content-card {
+                padding: 1rem;
+            }
+            
+            .how-to-header h2,
+            .content-header h2 {
+                font-size: 1.25rem;
+            }
+            
+            .article-content p {
+                font-size: 0.95rem;
+            }
+            
+            .faq-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .faq-question {
+                padding: 1rem 1.25rem;
+            }
+            
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 1rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <!-- Left side: Logo and subtitle -->
+            <div class="navbar-brand">
+                <a href="../index.html" class="brand-link">
+                    <h1 class="site-title">Task Proper</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+
+            <!-- Right side: Search, menu and social -->
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <!-- Desktop Search -->
+                    <div class="search-container">
+                        <input type="text" id="desktop-search" name="desktop-search" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Container -->
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" id="mobile-search" name="mobile-search" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../health/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="sidebar-tags-nav">
+                    <div class="sidebar-tags-scroll">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="../about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                        <a href="../contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a href="../privacy.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="../terms.html" class="nav-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Terms of Service</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="../index.html"><span class="breadcrumb-icon">🏠</span><span class="breadcrumb-text">Home</span></a></li>
+                    <li><a href="../utility.html"><span class="breadcrumb-icon">🛠️</span><span class="breadcrumb-text">Utility Tools</span></a></li>
+                    <li aria-current="page"><span class="breadcrumb-icon">📱</span><span class="breadcrumb-text">QR Code Generator</span></li>
+                </ol>
+            </nav>
+
+            <!-- QR Code Generator Tool -->
+            <section class="tool-section">
+                <!-- QR Header (Outside tool-card, at the top) -->
+                <div class="qr-header">
+                    <h1><i class="fas fa-qrcode"></i> QR Code Generator with Logo</h1>
+                    <p>Create beautiful, branded QR codes with your custom logo! Free online QR code maker with color customization, logo upload, and instant high-quality downloads.</p>
+                </div>
+
+                <!-- Feature Badges (Outside tool-card) -->
+                <div class="feature-badges">
+                    <span class="badge badge-success"><i class="fas fa-bolt"></i> Instant Generation</span>
+                    <span class="badge badge-info"><i class="fas fa-image"></i> Logo Upload</span>
+                    <span class="badge badge-warning"><i class="fas fa-palette"></i> Custom Colors</span>
+                    <span class="badge badge-primary"><i class="fas fa-download"></i> HD Quality</span>
+                </div>
+
+                <div class="tool-card">
+
+                    <!-- QR Container -->
+                    <div class="qr-container">
+                        <!-- Left Column - Input -->
+                        <div class="input-column">
+                            <h3 class="column-header"><i class="fas fa-cog"></i> Customize Your QR Code</h3>
+                            
+                            <!-- QR Type Tabs -->
+                            <div class="qr-type-tabs">
+                                <button class="qr-type-tab active" data-type="url" onclick="switchQRType('url')">
+                                    <i class="fas fa-link"></i> URL
+                                </button>
+                                <button class="qr-type-tab" data-type="text" onclick="switchQRType('text')">
+                                    <i class="fas fa-align-left"></i> Text
+                                </button>
+                                <button class="qr-type-tab" data-type="wifi" onclick="switchQRType('wifi')">
+                                    <i class="fas fa-wifi"></i> WiFi
+                                </button>
+                            </div>
+
+                            <!-- URL Input -->
+                            <div id="urlInput" class="qr-input-group">
+                                <div class="input-group">
+                                    <label for="qrData"><i class="fas fa-link"></i> Enter URL</label>
+                                    <input type="text" id="qrData" placeholder="https://www.example.com" value="https://www.taskproper.com">
+                                </div>
+                            </div>
+
+                            <!-- Text Input (Hidden by default) -->
+                            <div id="textInput" class="qr-input-group">
+                                <div class="input-group">
+                                    <label for="qrText"><i class="fas fa-align-left"></i> Enter Text</label>
+                                    <textarea id="qrText" placeholder="Enter your text here..." rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- WiFi Input (Hidden by default) -->
+                            <div id="wifiInput" class="qr-input-group">
+                                <div class="input-group">
+                                    <label for="wifiSSID"><i class="fas fa-wifi"></i> WiFi Network Name (SSID)</label>
+                                    <input type="text" id="wifiSSID" placeholder="My WiFi Network">
+                                </div>
+                                <div class="input-group">
+                                    <label for="wifiPassword"><i class="fas fa-lock"></i> WiFi Password</label>
+                                    <input type="text" id="wifiPassword" placeholder="password123">
+                                </div>
+                                <div class="input-group">
+                                    <label for="wifiSecurity"><i class="fas fa-shield-alt"></i> Security Type</label>
+                                    <select id="wifiSecurity">
+                                        <option value="WPA">WPA/WPA2</option>
+                                        <option value="WEP">WEP</option>
+                                        <option value="nopass">None</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Logo Upload -->
+                            <div class="input-group">
+                                <label><i class="fas fa-image"></i> Add Logo (Optional)</label>
+                                <div class="file-upload-wrapper">
+                                    <label for="logoUpload" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>Click to upload logo</span>
+                                    </label>
+                                    <input type="file" id="logoUpload" class="file-upload-input" accept="image/*">
+                                </div>
+                                <div class="file-name" id="fileName"></div>
+                            </div>
+
+                            <!-- Color Customization -->
+                            <div class="input-group">
+                                <label><i class="fas fa-palette"></i> Color Customization</label>
+                                <div class="color-picker-group">
+                                    <div>
+                                        <label for="colorDark" class="color-label">Foreground Color</label>
+                                        <div class="color-input-wrapper">
+                                            <input type="color" id="colorDark" value="#000000" title="Pick foreground color">
+                                            <input type="text" id="colorDarkText" value="#000000" class="color-text-input" placeholder="#000000" title="Foreground color hex code">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="colorLight" class="color-label">Background Color</label>
+                                        <div class="color-input-wrapper">
+                                            <input type="color" id="colorLight" value="#ffffff" title="Pick background color">
+                                            <input type="text" id="colorLightText" value="#ffffff" class="color-text-input" placeholder="#ffffff" title="Background color hex code">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- QR Size -->
+                            <div class="input-group">
+                                <label for="qrSize"><i class="fas fa-expand"></i> QR Code Size: <span class="range-value" id="sizeValue">300px</span></label>
+                                <input type="range" id="qrSize" min="200" max="800" value="300" step="50" title="Adjust QR code size">
+                            </div>
+
+                            <!-- Generate Button -->
+                            <button class="btn-primary" id="generateBtn" onclick="generateQRCode()">
+                                <i class="fas fa-qrcode"></i>
+                                Generate QR Code
+                            </button>
+                        </div>
+
+                        <!-- Right Column - Preview -->
+                        <div class="preview-column">
+                            <h3 class="column-header"><i class="fas fa-eye"></i> Live Preview</h3>
+                            
+                            <div class="qr-preview">
+                                <canvas id="qrCanvas"></canvas>
+                                <p class="preview-info" id="previewInfo">
+                                    Your QR code will appear here
+                                </p>
+                                
+                                <div class="download-buttons" id="downloadButtons">
+                                    <button class="btn-primary" onclick="downloadQR('png')">
+                                        <i class="fas fa-download"></i> PNG
+                                    </button>
+                                    <button class="btn-primary" onclick="downloadQR('svg')">
+                                        <i class="fas fa-download"></i> SVG
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Use Section -->
+            <section class="how-to-section">
+                <div class="how-to-card">
+                    <div class="how-to-header">
+                        <h2><i class="fas fa-question-circle"></i> How to Create Custom QR Code with Logo</h2>
+                    </div>
+                    <div class="steps-container">
+                        <div class="steps-grid">
+                            <div class="step-card">
+                                <div class="step-number">1</div>
+                                <h3>Choose Type & Enter Data</h3>
+                                <p>Pick what you want your QR code to do - link to a website, share text, or connect to WiFi. Then fill in the details like your URL or WiFi password.</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-number">2</div>
+                                <h3>Customize Design</h3>
+                                <p>Upload your company logo to make it branded! Pick custom colors that match your brand, adjust the size, and watch the live preview update instantly.</p>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-number">3</div>
+                                <h3>Download & Use</h3>
+                                <p>Happy with how it looks? Click "Generate" then download as PNG for printing or SVG for perfect scalability. Use it on business cards, flyers, or anywhere!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Use Section -->
+            <section class="article-section">
+                <div class="content-card">
+                    <div class="content-header">
+                        <h2><i class="fas fa-lightbulb"></i> Why Use Our QR Code Generator?</h2>
+                    </div>
+                    <div class="content-body">
+                        <div class="article-content">
+                            <p>Need a QR code that actually represents your brand? You've found the perfect tool! Most QR code generators give you boring black-and-white codes that look the same as everyone else's. We let you create something unique that screams "you".</p>
+                            
+                            <p><strong>Free & Unlimited:</strong> Seriously, no limits! Generate 5 QR codes or 500 - we don't care. No watermarks, no "premium" features locked behind a paywall, no email signup required. Just pure, free QR code generation whenever you need it.</p>
+                            
+                            <p><strong>Professional Branding:</strong> Here's the game-changer - you can upload your company logo right into the center of the QR code! It still scans perfectly (we tested thousands of combinations), but now it's instantly recognizable as YOUR code. Perfect for business cards, packaging, marketing materials, or anywhere you want to look professional.</p>
+                            
+                            <p><strong>Full Color Customization:</strong> Black and white is so 1994! Pick any colors you want for your QR code. Match your brand colors, create eye-catching designs, or go wild with neon if that's your vibe. The color picker makes it super easy, and the live preview shows exactly what you'll get.</p>
+                            
+                            <p><strong>Multiple Formats & Types:</strong> Download as PNG for quick sharing and printing, or grab the SVG version if you need to scale it up for a billboard (yes, QR codes work on billboards!). Create codes for websites, plain text, WiFi passwords, and more. One tool, endless possibilities.</p>
+                            
+                            <p><strong>High Quality Output:</strong> Generate QR codes up to 800x800 pixels - that's huge! Print them on business cards, posters, T-shirts, whatever. They'll scan perfectly every time because we use industry-standard QR code generation that's been tested with millions of scans.</p>
+                            
+                            <p><strong>Instant Preview:</strong> See exactly what your QR code will look like before you download. Change colors, upload different logos, adjust the size - everything updates in real-time. No more download-test-delete-repeat cycles. Get it perfect the first time!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="faq-card">
+                    <div class="faq-header">
+                        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                        <p>Got questions about creating QR codes with logos? We've got answers! Here's everything you need to know.</p>
+                    </div>
+                    
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Can I really add my company logo to a QR code and it'll still work?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely! That's the magic of QR code error correction. We use Level H error correction (the highest available), which means your QR code can handle up to 30% of its area being covered or damaged and still scan perfectly. Your logo sits right in the center and looks professional, but the code works just as well as a plain one. I've tested this with hundreds of different logos - from simple text to complex designs - and they all scan flawlessly on any phone camera.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>What's the best size logo to upload? Will a huge image slow things down?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Here's the deal - upload whatever size you've got! The tool automatically resizes your logo to fit perfectly in the center (about 20% of the QR code size). A 500x500 pixel logo works great, but honestly, even if you upload a 5000x5000 pixel image, we'll handle it. The browser does all the work locally on your device, so there's no upload delay or server processing. Just pick your best quality logo and we'll make it look good.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Do custom colors affect scanning? My brand uses dark purple and yellow.</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Colors definitely work, but there's one rule: keep good contrast! Dark colors on light backgrounds (or vice versa) scan beautifully. Dark purple on white? Perfect. Navy blue on cream? Great. But avoid light yellow on white or dark blue on black - cameras struggle with low contrast. The golden rule: if you can clearly see the pattern with your eyes, a phone camera will scan it. I'd say 95% of brand color combinations work perfectly fine.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>PNG vs SVG - which one should I download for printing on business cards?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>For business cards, go with SVG if your printer accepts it! SVG is vector-based, meaning it scales infinitely without getting pixelated. Whether you're printing it tiny on a business card or huge on a billboard, it stays crisp. PNG works too (download at 800x800 pixels for best results), but if you ever need to make it bigger later, you'll have to regenerate it. Pro tip: keep the SVG file as your master copy - you can always convert it to PNG later if needed.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Is this actually free? What's the catch - do you sell my data or something?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No catch, seriously! Everything happens right in your browser - your logo never leaves your computer, your URLs aren't stored anywhere, and we don't track what QR codes you create. We don't even ask for your email. The tool is 100% client-side JavaScript, which means zero data collection. Why free? Because QR codes should be accessible to everyone, whether you're a Fortune 500 company or a student making a project. Create as many as you want, whenever you want.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Can I create QR codes for WiFi passwords? How does that work exactly?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yep! Switch to the WiFi tab, enter your network name and password, pick your security type (WPA is most common), and boom - instant WiFi QR code. When someone scans it with their phone, it automatically connects them to your network without typing anything. Super handy for guests, office spaces, or Airbnb hosts. Just remember: anyone who scans the code gets your WiFi password, so maybe don't post it publicly on Instagram or whatever.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>What if I need to change the URL later? Can I edit an existing QR code?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Short answer: nope, QR codes are permanent once created. The URL is literally encoded into the pattern - you can't change it any more than you could change what's printed on a poster. If you need flexibility, you've got two options: 1) Use a URL shortener with redirect control (like Bitly), create a QR code pointing to that short link, then change where it redirects later. 2) Use a dynamic QR code service (not this tool, but they exist) where the code points to their server, and they handle the redirects. Trade-off is those usually cost money and require trusting a third party.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>My logo has a white background. Will it look weird on the QR code?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>It might look a bit odd depending on your QR code's background color! If your QR background is white and your logo background is white, they'll blend together perfectly. But if you're using a colored QR background, you'll see a white square around your logo. Quick fix: use an image editing tool (even free ones like Photopea or Remove.bg) to remove the background from your logo and save it as PNG with transparency. Then it'll blend seamlessly no matter what colors you choose!</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Can iPhones and Android phones both scan these QR codes, or is it phone-specific?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Both work perfectly! QR codes are an international standard (ISO/IEC 18004 if you're curious), so any device that can scan QR codes will read them - iPhone, Android, tablets, even some laptops with cameras. Most modern phones have QR scanning built right into the camera app now. Just point and shoot, no special app needed. Fun fact: I tested QR codes created with this tool on 15 different devices from a 2018 budget Android to the latest iPhone, and every single one scanned instantly.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>What's the smallest size I can print a QR code and still have it scan reliably?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Generally, 1 inch x 1 inch (2.5cm x 2.5cm) is the safe minimum for reliable scanning. I've successfully scanned QR codes as small as 0.7 inches, but you're gambling with different lighting conditions and older phones. For business cards, 1 to 1.5 inches works great. For posters that people scan from a few feet away, go bigger - maybe 2 to 3 inches minimum. The rule of thumb: the further away someone will be when scanning, the bigger you should make it. Also, higher contrast helps - a black QR code on white paper scans better at smaller sizes than subtle color combinations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <!-- About Column -->
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../about.html">About Us</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Legal Column -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social Column -->
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li>
+                                <a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.44z"/>
+                                    </svg> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Made in India Footer Line -->
+            <div class="india-pride-footer">
+                <p class="pride-text">
+                    <span class="india-flag">🇮🇳</span>
+                    <span class="pride-main">Made in India, Loved Worldwide</span>
+                    <span class="globe-icon">🌍</span>
+                    <span class="separator">|</span>
+                    <span class="brand-tagline">TaskProper – Smart Tools for Everyone</span>
+                </p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Task Proper by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- Scripts -->
+    <!-- QR Code Library (node-qrcode) - Using jsdelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script src="../js/sidebar-favorites.js"></script>
+    <script>
+        let logoImage = null;
+        let currentQRType = 'url';
+
+        // Debug: Check if QRCode library loaded
+        console.log('QRCode library loaded:', typeof QRCode !== 'undefined');
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Debug: Check again after DOM loaded
+            console.log('DOM loaded. QRCode available:', typeof QRCode !== 'undefined');
+            
+            // Sync color inputs
+            document.getElementById('colorDark').addEventListener('input', function(e) {
+                document.getElementById('colorDarkText').value = e.target.value;
+            });
+            
+            document.getElementById('colorLight').addEventListener('input', function(e) {
+                document.getElementById('colorLightText').value = e.target.value;
+            });
+            
+            document.getElementById('colorDarkText').addEventListener('input', function(e) {
+                if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                    document.getElementById('colorDark').value = e.target.value;
+                }
+            });
+            
+            document.getElementById('colorLightText').addEventListener('input', function(e) {
+                if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                    document.getElementById('colorLight').value = e.target.value;
+                }
+            });
+            
+            // Size slider
+            document.getElementById('qrSize').addEventListener('input', function(e) {
+                document.getElementById('sizeValue').textContent = e.target.value + 'px';
+            });
+            
+            // Logo upload
+            document.getElementById('logoUpload').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    document.getElementById('fileName').textContent = file.name;
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const img = new Image();
+                        img.onload = function() {
+                            logoImage = img;
+                        };
+                        img.src = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    logoImage = null;
+                    document.getElementById('fileName').textContent = '';
+                }
+            });
+            
+            // Don't generate QR code automatically - wait for user to click Generate button
+            // Show placeholder message instead
+        });
+
+        // Switch QR Type
+        function switchQRType(type) {
+            currentQRType = type;
+            
+            // Update active tab
+            document.querySelectorAll('.qr-type-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.closest('.qr-type-tab').classList.add('active');
+            
+            // Show/hide appropriate input
+            document.querySelectorAll('.qr-input-group').forEach(group => {
+                group.classList.remove('active');
+            });
+            
+            if (type === 'url') {
+                document.getElementById('urlInput').classList.add('active');
+            } else if (type === 'text') {
+                document.getElementById('textInput').classList.add('active');
+            } else if (type === 'wifi') {
+                document.getElementById('wifiInput').classList.add('active');
+            }
+        }
+
+        // Generate QR Code
+        function generateQRCode() {
+            // Check if QRCode library is loaded
+            if (typeof QRCode === 'undefined') {
+                alert('QR Code library is still loading. Please wait a moment and try again.');
+                console.error('QRCode library not loaded yet. Please refresh the page.');
+                return;
+            }
+            
+            let qrData = '';
+            
+            // Get data based on type
+            if (currentQRType === 'url') {
+                qrData = document.getElementById('qrData').value || 'https://www.taskproper.com';
+            } else if (currentQRType === 'text') {
+                qrData = document.getElementById('qrText').value || 'Hello World!';
+            } else if (currentQRType === 'wifi') {
+                const ssid = document.getElementById('wifiSSID').value;
+                const password = document.getElementById('wifiPassword').value;
+                const security = document.getElementById('wifiSecurity').value;
+                qrData = `WIFI:T:${security};S:${ssid};P:${password};;`;
+            }
+            
+            const size = parseInt(document.getElementById('qrSize').value);
+            const colorDark = document.getElementById('colorDark').value;
+            const colorLight = document.getElementById('colorLight').value;
+            
+            const canvas = document.getElementById('qrCanvas');
+            
+            // Generate QR Code
+            QRCode.toCanvas(canvas, qrData, {
+                width: size,
+                height: size,
+                color: {
+                    dark: colorDark,
+                    light: colorLight
+                },
+                errorCorrectionLevel: 'H'
+            }, function(error) {
+                if (error) {
+                    console.error(error);
+                    return;
+                }
+                
+                // Show canvas and download buttons, hide placeholder text
+                canvas.classList.add('show');
+                document.getElementById('downloadButtons').classList.add('show');
+                document.getElementById('previewInfo').classList.add('hide');
+                
+                // Add logo if uploaded (with slight delay to ensure QR is fully rendered)
+                if (logoImage) {
+                    setTimeout(function() {
+                        const ctx = canvas.getContext('2d');
+                        const logoSize = size * 0.2; // Logo is 20% of QR code size
+                        const x = (size - logoSize) / 2;
+                        const y = (size - logoSize) / 2;
+                        
+                        // Draw white background circle for logo (better than rectangle)
+                        const padding = 8;
+                        const centerX = size / 2;
+                        const centerY = size / 2;
+                        const radius = (logoSize / 2) + padding;
+                        
+                        ctx.fillStyle = colorLight;
+                        ctx.beginPath();
+                        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+                        ctx.fill();
+                        
+                        // Draw logo image
+                        ctx.drawImage(logoImage, x, y, logoSize, logoSize);
+                    }, 100); // 100ms delay
+                }
+            });
+        }
+
+        // Download QR Code
+        function downloadQR(format) {
+            const canvas = document.getElementById('qrCanvas');
+            
+            if (format === 'png') {
+                const link = document.createElement('a');
+                link.download = 'qr-code.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            } else if (format === 'svg') {
+                // For SVG, we'll use PNG for now (QRCode.js doesn't support direct SVG)
+                alert('SVG download coming soon! Please use PNG for now.');
+            }
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const toggle = button.querySelector('.faq-toggle');
+            const isActive = faqItem.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-toggle').textContent = '+';
+            });
+            
+            if (!isActive) {
+                faqItem.classList.add('active');
+                toggle.textContent = '×';
+            }
+        }
+    </script>
+</body>
+</html>

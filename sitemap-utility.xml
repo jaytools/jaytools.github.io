@@ -16,5 +16,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- YouTube Thumbnail Downloader -->
+  <url>
+    <loc>https://www.taskproper.com/utility/youtube-thumbnail-downloader.html</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
  
 </urlset>

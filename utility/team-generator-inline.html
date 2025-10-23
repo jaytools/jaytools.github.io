@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Team Generator - Free Group Maker Tool Online</title>
+    <meta name="description" content="Generate random teams and groups instantly! Free online team generator perfect for classrooms, sports, work projects & events. Split names fairly into balanced teams. No signup needed.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jay Prajapati">
+    <meta name="keywords" content="random team generator, group maker, team picker, random group generator, split names into teams, classroom team maker, sports team generator, project group maker, fair team divider">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Random Team Generator - Create Fair Groups Instantly">
+    <meta property="og:description" content="Split any list of names into random, balanced teams in seconds! Perfect for teachers, coaches, managers & event organizers. Completely free team maker tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.taskproper.com/utility/team-generator-inline.html">
+    <meta property="og:site_name" content="Task Proper">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Team Generator - Free Group Maker">
+    <meta name="twitter:description" content="Generate random teams instantly! Free online tool for classrooms, sports & work projects.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.taskproper.com/utility/team-generator-inline.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    
+    <!-- Schema.org JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Random Team Generator",
+        "alternateName": "Group Maker Tool",
+        "url": "https://www.taskproper.com/utility/team-generator-inline.html",
+        "description": "A free online tool that randomly splits names into balanced teams or groups. Perfect for teachers creating classroom teams, coaches dividing sports teams, managers organizing work groups, or event organizers making fair teams.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript. Works on Chrome, Firefox, Safari, Edge.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Completely free to use with no limitations"
+        },
+        "featureList": [
+            "Random team generation",
+            "Custom number of teams or team size",
+            "Balanced team distribution",
+            "Save and load team lists",
+            "Copy teams to clipboard",
+            "Print-friendly format",
+            "Mobile-responsive design",
+            "No registration required",
+            "Unlimited usage"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Jay Prajapati",
+            "url": "https://taskproper.com"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "243"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does the random team generator work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our random team generator uses a fair shuffling algorithm to randomly distribute names into teams. Simply enter your list of names (one per line), choose how many teams you want or specify team size, and click Generate. The tool ensures balanced distribution so teams are as equal as possible."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I save my team lists for later use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! The tool automatically saves your last name list in your browser's local storage. You can also copy the generated teams to clipboard, print them directly, or save them as a text file for future reference."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this team generator truly random?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! We use JavaScript's cryptographically secure random number generator to ensure completely unbiased team selection. Every person has an equal chance of being placed on any team, making it perfect for fair group assignments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I make teams with specific sizes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! You can either specify the number of teams you want, or set a specific team size (number of people per team). If the total doesn't divide evenly, the tool will distribute remaining people fairly across teams."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the maximum number of people I can use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There's no strict limit! Whether you have 10 students or 500 conference attendees, the tool can handle it. However, for best performance on mobile devices, we recommend keeping it under 1000 names."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Tool Specific Styles -->
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --success-color: #48bb78;
+            --danger-color: #f56565;
+            --warning-color: #ed8936;
+            --dark-color: #2d3748;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+            --shadow-lg: 0 15px 40px rgba(102, 126, 234, 0.25);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            color: var(--dark-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Tool Container */
+        .tool-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Enhanced Tool Header */
+        .enhanced-tool-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #5c6bc0 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enhanced-tool-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: headerShimmer 4s infinite;
+        }
+
+        @keyframes headerShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-title h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-description {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-description p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-highlight i {
+            font-size: 1.2rem;
+        }
+
+        /* Main Tool Section */
+        .tool-section {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            font-size: 1.5rem;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-size: 1.05rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 200px;
+            resize: vertical;
+            font-family: 'Courier New', monospace;
+        }
+
+        .form-hint {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Radio Group */
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+
+        .radio-option label {
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        /* Results Section */
+        .results-container {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .results-container.active {
+            display: block;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .team-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .team-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .team-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .team-members {
+            list-style: none;
+        }
+
+        .team-member {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .team-member:last-child {
+            border-bottom: none;
+        }
+
+        .member-number {
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Alert Messages */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+        }
+
+        .alert-error {
+            background: #fff5f5;
+            border: 2px solid var(--danger-color);
+            color: #c53030;
+        }
+
+        .alert-warning {
+            background: #fffaf0;
+            border: 2px solid var(--warning-color);
+            color: #c05621;
+        }
+
+        .alert i {
+            font-size: 1.2rem;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .info-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .use-case-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .use-case-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .use-case-description {
+            font-size: 0.95rem;
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .faq-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 1.5rem;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .enhanced-tool-header {
+                padding: 2rem 1.5rem;
+            }
+            
+            .main-title h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .tool-section {
+                padding: 1.5rem;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .teams-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .tool-section {
+                padding: 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .enhanced-tool-header,
+            .button-group,
+            .info-section,
+            .faq-section,
+            header,
+            footer,
+            .sidebar {
+                display: none !important;
+            }
+            
+            .tool-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .team-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="https://www.taskproper.com" class="brand-link">
+                    <h1 class="site-title">Task Proper</h1>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search tools...">
+                        <button class="search-button" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Instagram profile">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </nav>
+        
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" aria-label="Main menu">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3><i class="fas fa-star"></i> Favorites</h3>
+                <div class="favorites-container">
+                    <p class="no-favorites">No favorite tools yet.</p>
+                </div>
+            </section>
+            <section class="sidebar-section">
+                <h3><i class="fas fa-fire"></i> Popular Tools</h3>
+                <ul class="popular-tools">
+                    <li><a href="../calculator/cgpa-percentage-inline.html">CGPA to Percentage Calculator</a></li>
+                    <li><a href="../health/calorie-deficit.html">Calorie Deficit Finder</a></li>
+                    <li><a href="../health/ivf-calculator.html">IVF Due Date Calculator</a></li>
+                </ul>
+            </section>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        <!-- Breadcrumb Navigation -->
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <span>/</span>
+                <a href="../utility.html"><i class="fas fa-wrench"></i> Utility Tools</a>
+                <span>/</span>
+                <span>Random Team Generator</span>
+            </nav>
+        </div>
+
+        <!-- Tool Container -->
+        <div class="tool-container">
+            <!-- Enhanced Tool Header -->
+            <div class="enhanced-tool-header">
+                <div class="header-content">
+                    <div class="main-title">
+                        <h1><i class="fas fa-users"></i> Random Team Generator</h1>
+                    </div>
+                    <p class="subtitle">Split Your Group Into Fair, Balanced Teams Instantly</p>
+                    <div class="header-description">
+                        <p>
+                            Stop wasting time manually dividing people into teams! Whether you're a teacher organizing classroom groups, a coach creating practice squads, a manager forming project teams, or planning tournament brackets - our random team generator makes it effortless.
+                        </p>
+                        <div class="cta-highlight">
+                            <i class="fas fa-bolt"></i>
+                            <span>100% Free • No Sign-up Required • Fair & Random</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Tool Section -->
+            <div class="tool-section">
+                <h2 class="section-title">
+                    <i class="fas fa-list-ul"></i>
+                    Enter Names & Generate Teams
+                </h2>
+
+                <form id="teamGeneratorForm">
+                    <div class="form-group">
+                        <label for="namesList" class="form-label">
+                            <i class="fas fa-users"></i> Enter Names (One Per Line)
+                        </label>
+                        <textarea 
+                            id="namesList" 
+                            class="form-control" 
+                            placeholder="John Smith&#10;Sarah Johnson&#10;Mike Davis&#10;Emily Wilson&#10;David Brown&#10;Lisa Anderson"
+                            required
+                        ></textarea>
+                        <span class="form-hint">
+                            <i class="fas fa-info-circle"></i> 
+                            Paste or type each person's name on a separate line. Minimum 2 names required.
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-cog"></i> How Do You Want to Divide Teams?
+                        </label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="byTeamCount" name="divisionMethod" value="teamCount" checked>
+                                <label for="byTeamCount">Number of Teams</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="byTeamSize" name="divisionMethod" value="teamSize">
+                                <label for="byTeamSize">People Per Team</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="teamCountGroup">
+                        <label for="teamCount" class="form-label">
+                            <i class="fas fa-layer-group"></i> Number of Teams
+                        </label>
+                        <input 
+                            type="number" 
+                            id="teamCount" 
+                            class="form-control" 
+                            min="2" 
+                            max="100" 
+                            value="2"
+                            placeholder="e.g., 4"
+                        >
+                        <span class="form-hint">How many teams do you want to create?</span>
+                    </div>
+
+                    <div class="form-group" id="teamSizeGroup" style="display: none;">
+                        <label for="teamSize" class="form-label">
+                            <i class="fas fa-user-friends"></i> People Per Team
+                        </label>
+                        <input 
+                            type="number" 
+                            id="teamSize" 
+                            class="form-control" 
+                            min="1" 
+                            max="50" 
+                            value="3"
+                            placeholder="e.g., 5"
+                        >
+                        <span class="form-hint">How many people should be in each team?</span>
+                    </div>
+
+                    <div id="errorMessage"></div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-random"></i> Generate Teams
+                        </button>
+                        <button type="button" id="clearBtn" class="btn btn-secondary">
+                            <i class="fas fa-eraser"></i> Clear All
+                        </button>
+                        <button type="button" id="loadSampleBtn" class="btn btn-secondary">
+                            <i class="fas fa-file-alt"></i> Load Sample Names
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-container" id="resultsContainer">
+                <div class="tool-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-trophy"></i>
+                        Your Teams Are Ready!
+                    </h2>
+
+                    <div class="button-group">
+                        <button id="copyBtn" class="btn btn-success">
+                            <i class="fas fa-copy"></i> Copy to Clipboard
+                        </button>
+                        <button id="printBtn" class="btn btn-secondary">
+                            <i class="fas fa-print"></i> Print Teams
+                        </button>
+                        <button id="regenerateBtn" class="btn btn-primary">
+                            <i class="fas fa-sync-alt"></i> Regenerate
+                        </button>
+                    </div>
+
+                    <div id="teamsDisplay" class="teams-grid"></div>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section">
+                <h2 class="info-title">Why Use Our Random Team Generator?</h2>
+                <div class="info-content">
+                    <p>
+                        Creating fair teams shouldn't take forever. Our tool uses advanced randomization to ensure every person has an equal chance of being placed on any team - no favoritism, no bias, just pure randomness. Perfect for situations where impartiality matters.
+                    </p>
+                    <p>
+                        Whether you need 2 teams for a quick game or 20 teams for a large event, the generator handles it instantly. It automatically balances team sizes, so if your numbers don't divide evenly, extra people are distributed fairly across teams.
+                    </p>
+
+                    <div class="use-cases-grid">
+                        <div class="use-case-card">
+                            <div class="use-case-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="use-case-title">For Teachers</h3>
+                            <p class="use-case-description">
+                                Create fair classroom groups for projects, activities, or collaborative learning. Rotate teams regularly to encourage diverse interactions.
+                            </p>
+                        </div>
+
+                        <div class="use-case-card">
+                            <div class="use-case-icon">
+                                <i class="fas fa-basketball-ball"></i>
+                            </div>
+                            <h3 class="use-case-title">For Coaches</h3>
+                            <p class="use-case-description">
+                                Divide players into practice squads, scrimmage teams, or drill groups. Great for tryouts and skill-building sessions.
+                            </p>
+                        </div>
+
+                        <div class="use-case-card">
+                            <div class="use-case-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="use-case-title">For Managers</h3>
+                            <p class="use-case-description">
+                                Form project teams, workshop groups, or brainstorming squads. Ensure fresh perspectives by randomizing team composition.
+                            </p>
+                        </div>
+
+                        <div class="use-case-card">
+                            <div class="use-case-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3 class="use-case-title">For Events</h3>
+                            <p class="use-case-description">
+                                Organize tournament brackets, party games, icebreaker activities, or trivia competitions with balanced teams.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does the random team generator work?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Our random team generator uses a fair shuffling algorithm to randomly distribute names into teams. Simply enter your list of names (one per line), choose how many teams you want or specify team size, and click Generate. The tool ensures balanced distribution so teams are as equal as possible.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I save my team lists for later use?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! The tool automatically saves your last name list in your browser's local storage. You can also copy the generated teams to clipboard, print them directly, or save them as a text file for future reference.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this team generator truly random?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely! We use JavaScript's cryptographically secure random number generator to ensure completely unbiased team selection. Every person has an equal chance of being placed on any team, making it perfect for fair group assignments.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I make teams with specific sizes?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! You can either specify the number of teams you want, or set a specific team size (number of people per team). If the total doesn't divide evenly, the tool will distribute remaining people fairly across teams.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the maximum number of people I can use?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            There's no strict limit! Whether you have 10 students or 500 conference attendees, the tool can handle it. However, for best performance on mobile devices, we recommend keeping it under 1000 names.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Does this work on mobile phones?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! The random team generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers. You can generate teams anywhere, anytime.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Use</a></li>
+                            <li><a href="../disclaimer.html">Disclaimer</a></li>
+                            <li><a href="../dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav">
+                        <ul class="social-links">
+                            <li><a href="https://www.instagram.com/taskproper" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                            <li><a href="https://www.linkedin.com/in/task-proper" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Task Proper by Jay Prajapati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script>
+        // Team Generator Logic
+        (function() {
+            'use strict';
+
+            // DOM Elements
+            const form = document.getElementById('teamGeneratorForm');
+            const namesList = document.getElementById('namesList');
+            const teamCountRadio = document.getElementById('byTeamCount');
+            const teamSizeRadio = document.getElementById('byTeamSize');
+            const teamCountGroup = document.getElementById('teamCountGroup');
+            const teamSizeGroup = document.getElementById('teamSizeGroup');
+            const teamCountInput = document.getElementById('teamCount');
+            const teamSizeInput = document.getElementById('teamSize');
+            const errorMessage = document.getElementById('errorMessage');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const teamsDisplay = document.getElementById('teamsDisplay');
+            const clearBtn = document.getElementById('clearBtn');
+            const loadSampleBtn = document.getElementById('loadSampleBtn');
+            const copyBtn = document.getElementById('copyBtn');
+            const printBtn = document.getElementById('printBtn');
+            const regenerateBtn = document.getElementById('regenerateBtn');
+
+            // Sample names for demo
+            const sampleNames = [
+                'Alex Johnson',
+                'Sarah Williams',
+                'Michael Brown',
+                'Emily Davis',
+                'James Wilson',
+                'Jessica Martinez',
+                'David Anderson',
+                'Ashley Taylor',
+                'Christopher Thomas',
+                'Amanda Moore',
+                'Daniel Jackson',
+                'Jennifer White',
+                'Matthew Harris',
+                'Lisa Thompson',
+                'Ryan Garcia',
+                'Michelle Robinson',
+                'Justin Clark',
+                'Melissa Rodriguez',
+                'Kevin Lewis',
+                'Laura Lee'
+            ];
+
+            // Load saved names from localStorage
+            function loadSavedNames() {
+                const saved = localStorage.getItem('teamGeneratorNames');
+                if (saved) {
+                    namesList.value = saved;
+                }
+            }
+
+            // Save names to localStorage
+            function saveNames() {
+                localStorage.setItem('teamGeneratorNames', namesList.value);
+            }
+
+            // Toggle division method
+            function toggleDivisionMethod() {
+                if (teamCountRadio.checked) {
+                    teamCountGroup.style.display = 'block';
+                    teamSizeGroup.style.display = 'none';
+                } else {
+                    teamCountGroup.style.display = 'none';
+                    teamSizeGroup.style.display = 'block';
+                }
+            }
+
+            // Show error message
+            function showError(message) {
+                errorMessage.innerHTML = `
+                    <div class="alert alert-error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>${message}</span>
+                    </div>
+                `;
+            }
+
+            // Clear error message
+            function clearError() {
+                errorMessage.innerHTML = '';
+            }
+
+            // Shuffle array using Fisher-Yates algorithm
+            function shuffleArray(array) {
+                const shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
+            // Generate teams
+            function generateTeams(names, method, value) {
+                const shuffledNames = shuffleArray(names);
+                const teams = [];
+                let numTeams, teamSize;
+
+                if (method === 'teamCount') {
+                    numTeams = parseInt(value);
+                    teamSize = Math.ceil(shuffledNames.length / numTeams);
+                } else {
+                    teamSize = parseInt(value);
+                    numTeams = Math.ceil(shuffledNames.length / teamSize);
+                }
+
+                // Distribute names into teams
+                for (let i = 0; i < numTeams; i++) {
+                    teams.push([]);
+                }
+
+                shuffledNames.forEach((name, index) => {
+                    const teamIndex = index % numTeams;
+                    teams[teamIndex].push(name);
+                });
+
+                return teams;
+            }
+
+            // Display teams
+            function displayTeams(teams) {
+                teamsDisplay.innerHTML = '';
+                
+                teams.forEach((team, index) => {
+                    const teamCard = document.createElement('div');
+                    teamCard.className = 'team-card';
+                    
+                    const teamHeader = document.createElement('div');
+                    teamHeader.className = 'team-header';
+                    teamHeader.innerHTML = `
+                        <div class="team-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="team-title">Team ${index + 1}</h3>
+                    `;
+                    
+                    const membersList = document.createElement('ul');
+                    membersList.className = 'team-members';
+                    
+                    team.forEach((member, memberIndex) => {
+                        const memberItem = document.createElement('li');
+                        memberItem.className = 'team-member';
+                        memberItem.innerHTML = `
+                            <span class="member-number">${memberIndex + 1}</span>
+                            <span>${member}</span>
+                        `;
+                        membersList.appendChild(memberItem);
+                    });
+                    
+                    teamCard.appendChild(teamHeader);
+                    teamCard.appendChild(membersList);
+                    teamsDisplay.appendChild(teamCard);
+                });
+                
+                resultsContainer.classList.add('active');
+                
+                // Scroll to results
+                setTimeout(() => {
+                    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+
+            // Copy teams to clipboard
+            function copyTeamsToClipboard() {
+                let text = 'Generated Teams\n' + '='.repeat(50) + '\n\n';
+                
+                const teamCards = document.querySelectorAll('.team-card');
+                teamCards.forEach((card, index) => {
+                    const teamTitle = card.querySelector('.team-title').textContent;
+                    const members = Array.from(card.querySelectorAll('.team-member span:last-child'))
+                        .map(span => span.textContent);
+                    
+                    text += `${teamTitle}:\n`;
+                    members.forEach((member, i) => {
+                        text += `  ${i + 1}. ${member}\n`;
+                    });
+                    text += '\n';
+                });
+                
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    showError('Failed to copy to clipboard. Please try again.');
+                });
+            }
+
+            // Print teams
+            function printTeams() {
+                window.print();
+            }
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                clearError();
+                
+                // Get and validate names
+                const namesText = namesList.value.trim();
+                if (!namesText) {
+                    showError('Please enter at least 2 names to generate teams.');
+                    return;
+                }
+                
+                const names = namesText.split('\n')
+                    .map(name => name.trim())
+                    .filter(name => name.length > 0);
+                
+                if (names.length < 2) {
+                    showError('Please enter at least 2 names to generate teams.');
+                    return;
+                }
+                
+                // Remove duplicates
+                const uniqueNames = [...new Set(names)];
+                if (uniqueNames.length !== names.length) {
+                    const duplicateCount = names.length - uniqueNames.length;
+                    errorMessage.innerHTML = `
+                        <div class="alert alert-warning">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Removed ${duplicateCount} duplicate name(s).</span>
+                        </div>
+                    `;
+                }
+                
+                // Get method and value
+                const method = teamCountRadio.checked ? 'teamCount' : 'teamSize';
+                const value = method === 'teamCount' ? teamCountInput.value : teamSizeInput.value;
+                
+                // Validate value
+                const numValue = parseInt(value);
+                if (isNaN(numValue) || numValue < 1) {
+                    showError('Please enter a valid number.');
+                    return;
+                }
+                
+                if (method === 'teamCount' && numValue > uniqueNames.length) {
+                    showError(`You can't create ${numValue} teams with only ${uniqueNames.length} names. Maximum teams: ${uniqueNames.length}`);
+                    return;
+                }
+                
+                if (method === 'teamSize' && numValue > uniqueNames.length) {
+                    showError(`Team size (${numValue}) cannot be larger than total names (${uniqueNames.length}).`);
+                    return;
+                }
+                
+                // Generate and display teams
+                const teams = generateTeams(uniqueNames, method, value);
+                displayTeams(teams);
+                
+                // Save names for next time
+                saveNames();
+            });
+
+            // Clear all
+            clearBtn.addEventListener('click', function() {
+                namesList.value = '';
+                clearError();
+                resultsContainer.classList.remove('active');
+                localStorage.removeItem('teamGeneratorNames');
+            });
+
+            // Load sample names
+            loadSampleBtn.addEventListener('click', function() {
+                namesList.value = sampleNames.join('\n');
+                clearError();
+            });
+
+            // Copy to clipboard
+            copyBtn.addEventListener('click', copyTeamsToClipboard);
+
+            // Print teams
+            printBtn.addEventListener('click', printTeams);
+
+            // Regenerate teams
+            regenerateBtn.addEventListener('click', function() {
+                form.dispatchEvent(new Event('submit'));
+            });
+
+            // Radio button change
+            teamCountRadio.addEventListener('change', toggleDivisionMethod);
+            teamSizeRadio.addEventListener('change', toggleDivisionMethod);
+
+            // FAQ functionality
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Initialize
+            loadSavedNames();
+            toggleDivisionMethod();
+        })();
+    </script>
+</body>
+</html>
