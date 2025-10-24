@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walking Calories Calculator - Track Your Daily Burn</title>
-    <meta name="description" content="Free walking calculator to lose weight free that shows how many calories you burn by distance, weight and pace. Perfect for fitness tracking and weight loss goals."
+    
+    <!-- Security Headers (Client-side) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- Note: frame-ancestors CSP directive must be set via HTTP header, not meta tag -->
+    
+    <title>Walking Calories Calculator – 5KM = 300 Cal, 10KM = 600 Cal Free</title>
+    <meta name="description" content="Calculate calories burned walking instantly! 5KM = 300 cal, 10KM = 600 cal (70kg person). Free calculator with weight, pace & distance. Track your walking calories for weight loss now!">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Jay Prajapati">
     
@@ -51,21 +56,46 @@
     </style>
     
     <!-- Preload Hero Image for LCP (Priority #1) -->
+    <!-- Note: fetchpriority is progressive enhancement - supported by Chrome/Edge, gracefully ignored by Firefox -->
     <link rel="preload" as="image" href="img/cal-walk.webp" fetchpriority="high">
     
     <!-- Google Fonts - Optimized with display=swap (defer to reduce blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" 
+          rel="stylesheet" 
+          media="print" 
+          onload="this.media='all'" 
+          onerror="this.onerror=null;this.remove();">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- Load CSS synchronously to prevent CLS (inline critical CSS above provides fast FCP) -->
     <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="css/calories-walking.css">
     
-    <!-- Font Awesome - Optimized Loading (defer non-critical) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- Font Awesome - Load with error fallback -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer"
+          onerror="this.onerror=null;document.body.classList.add('no-icons');">
+    
+    <!-- Fallback for Font Awesome if CDN fails -->
+    <style>
+        /* Icon fallbacks using Unicode symbols when Font Awesome fails to load */
+        body.no-icons .fa-fire::before { content: '🔥'; font-family: system-ui; }
+        body.no-icons .fa-chart-bar::before { content: '📊'; font-family: system-ui; }
+        body.no-icons .fa-route::before { content: '🛣️'; font-family: system-ui; }
+        body.no-icons .fa-clock::before { content: '⏱️'; font-family: system-ui; }
+        body.no-icons .fa-map-marker-alt::before { content: '📍'; font-family: system-ui; }
+        body.no-icons .fa-redo::before { content: '🔄'; font-family: system-ui; }
+        body.no-icons .fa-share-alt::before { content: '🔗'; font-family: system-ui; }
+        body.no-icons .fa-history::before { content: '📜'; font-family: system-ui; }
+        body.no-icons .fa-calculator::before { content: '🧮'; font-family: system-ui; }
+        body.no-icons .fa-users::before { content: '👥'; font-family: system-ui; }
+        body.no-icons .fa-times::before { content: '✖️'; font-family: system-ui; }
+        body.no-icons .fa-trash-alt::before { content: '🗑️'; font-family: system-ui; }
+    </style>
     
     <!-- HowTo Schema -->
     <script type="application/ld+json">
@@ -126,26 +156,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How many calories does walking 5km burn?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Walking 5 km typically burns between 200-400 calories depending on your weight and pace. Use our calculator above for personalized results."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How many calories do I burn walking 1 hour?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Calories burned while walking for 1 hour vary by weight and speed. Enter your details in our calculator to get exact numbers."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "How many calories do I burn walking 2 hours?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Walking for 2 hours depends on your weight and pace. A 70kg person walking at moderate pace (4.5 km/h) burns approximately 480-520 calories in 2 hours. If you walk faster at 6 km/h, you could burn up to 700 calories. Heavier individuals burn more calories - someone weighing 90kg might burn 650-900 calories during the same walk."
+            "text": "Walking for 2 hours daily varies significantly by body weight and pace. A 70kg person walking at moderate pace (4.5 km/h) burns approximately 480-520 calories in 2 hours. Faster walking at 6 km/h increases the burn to 650-700 calories per session. Heavier individuals (90kg) burn 650-900 calories during the same 2-hour walk."
           }
         },
         {
@@ -153,23 +167,23 @@
           "name": "How many calories do I burn per kilometer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Calorie burn per kilometer typically ranges from 35-70 calories for most people. A 70kg person burns about 42-63 calories per kilometer depending on walking speed. Lighter people (around 60kg) burn about 35-55 calories per km, while heavier individuals (90kg) can burn 50-80 calories per kilometer."
+            "text": "Calorie burn per kilometer typically ranges from 35-70 calories depending on your weight and pace. A 70kg person burns 42-63 calories per kilometer, while lighter people (60kg) burn 35-55 calories per km. For walking 5 km, multiply by 5: expect 175-350 calories total."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I calculate calories accurately?",
+          "name": "How does the calculator work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "To calculate calorie burn accurately, you need three key pieces of information: your body weight, walking duration and walking speed. Our calculator uses the scientifically-proven MET formula: Calories = MET value × weight (kg) × time (hours). Different walking speeds have different MET values - from 2.0 for slow walking to 6.0 for very fast walking."
+            "text": "Our calculator uses the scientifically-proven MET formula: Calories = MET value × weight (kg) × time (hours). Different walking speeds have specific MET values: slow walking (2.0), moderate pace (3.5), brisk walking (4.3), and fast walking (6.0). Simply input your details for instant, personalized results."
           }
         },
         {
           "@type": "Question",
-          "name": "How many calories should I burn daily?",
+          "name": "How many calories should I burn daily for weight loss?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Daily calorie burn varies greatly depending on your routine. If you walk 30 minutes daily at a moderate pace, expect to burn 120-200 calories per day (or 840-1400 calories weekly). For those who walk an hour daily, you're looking at 240-400 calories burned daily."
+            "text": "For weight loss, walking 30 minutes daily at moderate pace burns 120-200 calories per day (840-1400 calories weekly). For faster results, walking 1 hour daily burns 240-400 calories. To lose 1 pound per week, aim for a 3,500 calorie deficit - daily walking of 8,000-10,000 steps burns 300-500 calories."
           }
         },
         {
@@ -177,29 +191,47 @@
           "name": "What about 10,000 steps per day?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Walking 10,000 steps typically burns 300-500 calories for most adults, but it depends on your weight and step length. A 70kg person burns approximately 400 calories walking 10,000 steps. The actual distance is usually 4-5 kilometers, taking about 60-75 minutes of walking."
+            "text": "Walking 10,000 steps daily burns 300-500 calories for most adults, making it an excellent fitness goal. A 70kg person burns approximately 400 calories walking 10,000 steps, which covers 4-5 kilometers in 60-75 minutes. This creates a weekly burn of 2,100-3,500 calories, potentially contributing to 1 pound of weight loss per week when combined with proper nutrition."
           }
         },
         {
           "@type": "Question",
-          "name": "How many calories do you burn walking 10,000 steps?",
+          "name": "Does weight affect calorie burn?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For most people, 10,000 steps burns between 300 to 500 calories. A 60kg person burns about 300-340 calories, a 70kg person burns 340-390 calories, and an 80kg person burns 390-450 calories. Walking speed also matters - a brisk pace (7 km/h) can burn up to 460-530 calories for a 70kg person, while a leisurely pace (3 km/h) burns around 250-290 calories for the same distance."
+            "text": "Yes! Heavier individuals require more energy to move, burning more calories per kilometer walked. A 70kg person walking 5km at 5km/h burns about 266 calories, while a 90kg person would burn around 340 calories for the same walk."
           }
         },
         {
           "@type": "Question",
-          "name": "Does walking speed affect calorie burn?",
+          "name": "Is walking 5km in 45 minutes effective?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, walking speed significantly affects calorie burn. For a 70kg person walking 10,000 steps: a leisurely pace (3 km/h) burns 250-290 calories, normal pace (5 km/h) burns 340-390 calories, and brisk walking (7 km/h) burns 460-530 calories. Faster walking can increase calorie burn by 50-80% compared to slow walking over the same distance."
+            "text": "Walking 5km in 45 minutes equals a pace of 6.7 km/h, which is considered brisk walking and excellent for fitness. At this pace, a 70kg person burns approximately 320-380 calories. This brisk pace elevates heart rate into the fat-burning zone, making it highly effective for weight loss - burning 30-40% more calories than leisurely walking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much should I walk daily for weight loss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For effective weight loss, aim to burn 300-500 calories daily through walking (2,100-3,500 weekly). Walking 8,000-12,000 steps daily typically achieves this target. A 70kg person needs to walk 60-90 minutes daily at moderate pace to burn 300-450 calories."
           }
         }
       ]
     }
     </script>
-
+    
+    <!-- Table Schema for Calories Burned by Steps & Distance -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Table",
+      "about": "Calories burned by walking different distances at various speeds",
+      "description": "Comprehensive table showing calories burned for different step counts and distances (1.5km to 14km) at three walking speeds: slow (3 km/h), normal (5 km/h), and brisk (7 km/h). Based on a 70kg (154lb) person.",
+      "name": "Calories Burned by Steps & Distance Table"
+    }
+    </script>
     <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
     {
@@ -424,67 +456,145 @@
                 }
             </style>
             
-            <!-- Quick Answer Section -->
-            <div class="quick-answer">
-                <h2>Example Calories Burned</h2>
-                <p>A 70 kg person walking at 4.5 km/h for 30 minutes burns approximately 150–180 calories.</p>
-                <p>Use the calculator below to see your personalized results instantly.</p>
-            </div>
-
-            <!-- Calorie Burn Reference Table -->
-            <div class="calorie-table-section">
-                <h3>Calorie Burn by Distance (Metric & Imperial)</h3>
-                <table class="calorie-reference-table" itemscope itemtype="https://schema.org/Table">
-                    <caption itemprop="about">Calories burned walking by distance for different body weights</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Distance</th>
-                            <th scope="col">150 lb (68 kg) person</th>
-                            <th scope="col">200 lb (91 kg) person</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr itemscope itemtype="https://schema.org/TableRow">
-                            <td itemprop="distance">1 km (0.62 miles)</td>
-                            <td itemprop="calories">55-60 calories</td>
-                            <td itemprop="calories">70-80 calories</td>
-                        </tr>
-                        <tr itemscope itemtype="https://schema.org/TableRow">
-                            <td itemprop="distance">3 km (1.9 miles)</td>
-                            <td itemprop="calories">165-180 calories</td>
-                            <td itemprop="calories">210-240 calories</td>
-                        </tr>
-                        <tr itemscope itemtype="https://schema.org/TableRow">
-                            <td itemprop="distance">5 km (3.1 miles)</td>
-                            <td itemprop="calories">275-300 calories</td>
-                            <td itemprop="calories">350-400 calories</td>
-                        </tr>
-                        <tr itemscope itemtype="https://schema.org/TableRow">
-                            <td itemprop="distance">10 km (6.2 miles)</td>
-                            <td itemprop="calories">550-600 calories</td>
-                            <td itemprop="calories">700-800 calories</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="table-cta">
-                    <button type="button" class="btn-table-calculate" onclick="document.getElementById('toolForm').scrollIntoView({behavior: 'smooth'})">
-                        <i class="fas fa-calculator"></i> Get My Exact Calories
-                    </button>
-                    <p class="table-note">💡 <strong>Pro Tip:</strong> Click any table row above to auto-fill the calculator, or use the calculator below for personalized results</p>
+            <!-- Quick Answer Box - Featured Snippet Target -->
+            <div class="quick-answer-box">
+              <h2>
+                <span>🔥</span> Quick Answers: Calories Burned Walking
+              </h2>
+              
+              <div class="quick-stats-grid">
+                <div class="stat-card" onclick="document.getElementById('toolForm').scrollIntoView({behavior: 'smooth'})">
+                  <div class="stat-label">Walking 5 KM</div>
+                  <div class="stat-value">280-300 cal</div>
+                  <div class="stat-note">(70kg person)</div>
                 </div>
+                
+                <div class="stat-card" onclick="document.getElementById('toolForm').scrollIntoView({behavior: 'smooth'})">
+                  <div class="stat-label">Walking 10 KM</div>
+                  <div class="stat-value">560-600 cal</div>
+                  <div class="stat-note">(70kg person)</div>
+                </div>
+                
+                <div class="stat-card" onclick="document.getElementById('toolForm').scrollIntoView({behavior: 'smooth'})">
+                  <div class="stat-label">10,000 Steps</div>
+                  <div class="stat-value">300-500 cal</div>
+                  <div class="stat-note">(average adult)</div>
+                </div>
+                
+                <div class="stat-card" onclick="document.getElementById('toolForm').scrollIntoView({behavior: 'smooth'})">
+                  <div class="stat-label">Walking 1 Hour</div>
+                  <div class="stat-value">240-320 cal</div>
+                  <div class="stat-note">(moderate pace)</div>
+                </div>
+              </div>
+              
+              <p class="quick-answer-note">
+                <em>💡 Results vary by weight, pace, and terrain. Use calculator below for personalized results!</em>
+              </p>
             </div>
+            
+            <style>
+                /* Mobile-friendly Quick Answer Box */
+                @media (max-width: 768px) {
+                    .quick-answer-box {
+                        padding: 15px !important;
+                        margin: 15px auto !important;
+                    }
+                    
+                    .quick-answer-box h2 {
+                        font-size: 1.1rem !important;
+                        gap: 5px !important;
+                    }
+                    
+                    .quick-answer-box h2 span {
+                        font-size: 1.3rem !important;
+                    }
+                    
+                    .quick-stats-grid {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                        gap: 10px !important;
+                        margin: 15px 0 !important;
+                    }
+                    
+                    .stat-card {
+                        padding: 12px 8px !important;
+                    }
+                    
+                    .stat-label {
+                        font-size: 0.75rem !important;
+                        margin-bottom: 3px !important;
+                    }
+                    
+                    .stat-value {
+                        font-size: 1.3rem !important;
+                    }
+                    
+                    .stat-note {
+                        font-size: 0.7rem !important;
+                    }
+                    
+                    .quick-answer-note {
+                        font-size: 12px !important;
+                        padding: 0 5px;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .quick-answer-box {
+                        padding: 12px !important;
+                        margin: 12px 10px !important;
+                    }
+                    
+                    .quick-answer-box h2 {
+                        font-size: 1rem !important;
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                    
+                    .quick-stats-grid {
+                        gap: 8px !important;
+                        margin: 12px 0 !important;
+                    }
+                    
+                    .stat-card {
+                        padding: 10px 5px !important;
+                    }
+                    
+                    .stat-card > div:first-child {
+                        font-size: 0.7rem !important;
+                    }
+                    
+                    .stat-card > div:nth-child(2) {
+                        font-size: 1.2rem !important;
+                    }
+                    
+                    .stat-card > div:last-child {
+                        font-size: 0.65rem !important;
+                    }
+                }
+            </style>
 
             <!-- Calculator Tool Section -->
             <div class="card desktop-optimized-card">
                 <div class="card-header">
-                    <h1><i class="fas fa-fire"></i> <span class="desktop-title">Walking Calories Calculator – Simple & Accurate</span><span class="mobile-title">Walking Calories Calculator</span></h1>
+                    <h1 class="calculator-main-title">
+                        <i class="fas fa-fire"></i> 
+                        <span class="desktop-title">Calories Burned Walking Calculator – Track Walking Calories</span>
+                        <span class="mobile-title">Walking Calories Calculator</span>
+                    </h1>
                     <div class="social-proof">
-                        <p><i class="fas fa-users"></i> Used by 50,000+ fitness enthusiasts daily | <strong>Get precise calorie calculations for your walking workouts!</strong></p>
+                        <p>
+                            <i class="fas fa-users"></i> 
+                            <span class="social-proof-text">Used by 50,000+ fitness enthusiasts daily</span> 
+                            <span class="social-proof-separator">|</span> 
+                            <strong>Get precise calorie calculations for your walking workouts!</strong>
+                        </p>
                     </div>
                 </div>
                 
                 <!-- Fitness Visual -->
                 <div class="walking-hero-container">
+                    <!-- fetchpriority: Progressive enhancement for Chrome/Edge LCP optimization, ignored by Firefox -->
                     <img src="img/cal-walk.webp" 
                          alt="Calories burned walking calculator for fitness tracking"
                          width="200" 
@@ -495,54 +605,7 @@
                         <p>🔥 Track your walking workout calories!</p>
                     </div>
                 </div>
-                <style>
-                    /* Walking Calories Hero Image Styles */
-                    .walking-hero-container {
-                        text-align: center;
-                        margin: 25px auto 30px;
-                        max-width: 600px;
-                        padding: 0 20px;
-                        min-height: 220px; /* Reserve space to prevent CLS */
-                    }
-                    
-                    .walking-hero-container img {
-                        max-width: 100%;
-                        height: auto;
-                        border-radius: 12px;
-                        box-shadow: 0 4px 16px rgba(255,152,0,0.3);
-                        /* animation: float 3s ease-in-out infinite; */ /* Removed to fix CLS */
-                        image-rendering: -webkit-optimize-contrast; /* Edge 79+ */
-                        image-rendering: crisp-edges;
-                        display: block;
-                        margin: 0 auto;
-                    }
-                    
-                    .walking-cta-box {
-                        margin-top: 15px;
-                        padding: 15px;
-                        background: #fff3e0;
-                        border-radius: 8px;
-                        border-left: 4px solid #ff9800;
-                        min-height: 60px; /* Prevent layout shift */
-                    }
-                    
-                    .walking-cta-box p {
-                        margin: 0;
-                        color: #e65100;
-                        font-weight: 600;
-                        font-size: 15px;
-                    }
-                    
-                    @keyframes float {
-                        0%, 100% { transform: translateY(0px); }
-                        50% { transform: translateY(-10px); }
-                    }
-                    @media (max-width: 480px) {
-                        .card img[alt*="Calories"] {
-                            max-width: 180px !important;
-                        }
-                    }
-                </style>
+
 
             <div class="card-body desktop-card-body">
                 
@@ -805,8 +868,8 @@
                 <h2>Steps to Calories: Real-World Comparison by Walking Speed</h2>
                 <p>Ever wonder how your walking speed actually affects calorie burn? Here's a practical breakdown showing exactly how many calories you'll burn at different paces. Perfect if you're tracking steps or distance!</p>
                 
-                <table class="calorie-reference-table" style="margin: 1.5rem 0;">
-                    <caption style="text-align: left; font-weight: 600; margin-bottom: 1rem; color: #2c3e50;">Calories Burned by Steps & Distance (70kg / 154lb person)</caption>
+                <table class="calorie-reference-table calorie-table-spacing">
+                    <caption class="table-caption">Calories Burned by Steps & Distance (70kg / 154lb person)</caption>
                     <thead>
                         <tr>
                             <th scope="col">Steps</th>
@@ -855,9 +918,9 @@
                     </tbody>
                 </table>
                 
-                <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;"><strong>💡 Pro Tip:</strong> Not sure about your distance? Use our <a href="../converter/steps-to-km-inline.html" style="color: #3498db; text-decoration: underline;">Steps to KM Converter</a> to find out exactly how far you've walked!</p>
+                <p class="pro-tip-text"><strong>💡 Pro Tip:</strong> Not sure about your distance? Use our <a href="../converter/steps-to-km-inline.html" class="inline-link">Steps to KM Converter</a> to find out exactly how far you've walked!</p>
                 
-                <p style="margin-top: 1rem;">As you can see, walking faster makes a real difference! A brisk 7 km/h walk burns almost double the calories compared to a slow 3 km/h stroll over the same distance. So if you're short on time but want maximum calorie burn, picking up the pace is your best friend.</p>
+                <p class="content-spacing">As you can see, walking faster makes a real difference! A brisk 7 km/h walk burns almost double the calories compared to a slow 3 km/h stroll over the same distance. So if you're short on time but want maximum calorie burn, picking up the pace is your best friend.</p>
             </div>
 
             <!-- 10,000 Steps Article Section -->
@@ -874,7 +937,7 @@
                 
                 <h3>Breaking Down the Calorie Burn by Weight</h3>
                 <p>Let's get specific. Here's what 10,000 steps burns for different body weights at a normal walking pace (around 5 km/h):</p>
-                <ul style="margin: 1rem 0; line-height: 1.8;">
+                <ul class="info-list">
                     <li><strong>60 kg (132 lbs):</strong> ~300-340 calories</li>
                     <li><strong>70 kg (154 lbs):</strong> ~340-390 calories</li>
                     <li><strong>80 kg (176 lbs):</strong> ~390-450 calories</li>
@@ -886,7 +949,7 @@
                 
                 <h3>Does Walking Speed Really Matter?</h3>
                 <p>Short answer: <em>absolutely</em>. Walking at different speeds changes your calorie burn dramatically. Check this out for a 70 kg person walking 10,000 steps:</p>
-                <ul style="margin: 1rem 0; line-height: 1.8;">
+                <ul class="info-list">
                     <li><strong>Leisurely pace (3 km/h):</strong> ~250-290 calories — this is like window shopping speed</li>
                     <li><strong>Normal pace (5 km/h):</strong> ~340-390 calories — comfortable chatting-with-friends speed</li>
                     <li><strong>Brisk walk (7 km/h):</strong> ~460-530 calories — you're breathing harder but can still talk</li>
@@ -895,7 +958,7 @@
                 <p>So yeah, picking up the pace can boost your calorie burn by 50-80% without adding extra time to your walk. Pretty efficient, right?</p>
                 
                 <h3>What If You Want to Track Distance Instead of Steps?</h3>
-                <p>Some fitness trackers show distance, others show steps. If you're more of a distance person, 10,000 steps usually equals about <strong>7 kilometers</strong>. But everyone's stride is different! That's where our <a href="../converter/steps-to-km-inline.html" style="color: #3498db; text-decoration: underline;">Steps to KM Converter</a> tool comes in handy — it helps you figure out your personal step-to-distance ratio.</p>
+                <p>Some fitness trackers show distance, others show steps. If you're more of a distance person, 10,000 steps usually equals about <strong>7 kilometers</strong>. But everyone's stride is different! That's where our <a href="../converter/steps-to-km-inline.html" class="inline-link">Steps to KM Converter</a> tool comes in handy — it helps you figure out your personal step-to-distance ratio.</p>
                 
                 <h3>Can You Lose Weight Walking 10,000 Steps Daily?</h3>
                 <p>Here's the real talk: if you burn an extra 350-400 calories a day through walking (and don't eat them back), you're looking at a calorie deficit of about 2,450-2,800 per week. Since losing 1 pound requires a deficit of roughly 3,500 calories, you could lose close to <strong>1 pound every 10-12 days</strong> just from walking.</p>
@@ -903,7 +966,7 @@
                 <p>That might not sound like much, but over a few months? That's significant, sustainable weight loss without crazy diets or gym memberships. Plus, walking is way easier on your joints than running!</p>
                 
                 <h3>Tips to Make Your 10,000 Steps Count More</h3>
-                <ul style="margin: 1rem 0; line-height: 1.8;">
+                <ul class="info-list">
                     <li><strong>Walk faster when you can</strong> — even just speeding up for 5-10 minutes boosts your total burn</li>
                     <li><strong>Take the stairs</strong> — stairs burn way more calories than flat walking (we're talking 2-3x more)</li>
                     <li><strong>Add small weights</strong> — holding light dumbbells or wearing a weighted vest increases calorie burn by 5-15%</li>
@@ -916,12 +979,84 @@
                 
                 <p>Want to know <em>exactly</em> how many calories <em>you</em> burn? Just plug your numbers into our calculator at the top of this page. It takes your specific weight, pace, and distance into account for the most accurate results possible.</p>
                 
-                <div class="cta-section" style="margin-top: 2rem;">
+                <div class="cta-section cta-spacing">
                     <button type="button" class="btn-secondary" onclick="document.getElementById('toolForm').scrollIntoView({behavior: 'smooth'})">
                         <i class="fas fa-calculator"></i> Calculate My 10,000 Steps Calorie Burn
                     </button>
                 </div>
             </div>
+            <div class="info-section" id="calories-by-distance">
+    <h2>🔥 Calories Burned Walking 5 KM (by Weight: 60kg, 68kg, 70kg, 80kg, 90kg)</h2>
+    
+    <p>One of the most common questions: <strong>"How many calories burned walking 5 km?"</strong> The answer depends on your body weight and walking pace. Here's the complete breakdown tailored to your exact weight:</p>
+    
+    <h3>Calories Burned Walking 5 KM by Body Weight</h3>
+    
+    <table class="calorie-reference-table" style="margin: 20px auto; max-width: 700px;">
+        <thead>
+            <tr>
+                <th>Body Weight</th>
+                <th>Slow (3 km/h)</th>
+                <th>Moderate (5 km/h)</th>
+                <th>Brisk (7 km/h)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>60 kg person</strong></td>
+                <td>170 calories</td>
+                <td>240 calories</td>
+                <td>330 calories</td>
+            </tr>
+            <tr style="background: #fff8e1;">
+                <td><strong>68 kg person</strong></td>
+                <td>195 calories</td>
+                <td>270 calories</td>
+                <td>375 calories</td>
+            </tr>
+            <tr>
+                <td><strong>70 kg person</strong></td>
+                <td>200 calories</td>
+                <td>280 calories</td>
+                <td>390 calories</td>
+            </tr>
+            <tr>
+                <td><strong>80 kg person</strong></td>
+                <td>230 calories</td>
+                <td>320 calories</td>
+                <td>445 calories</td>
+            </tr>
+            <tr>
+                <td><strong>90 kg person</strong></td>
+                <td>260 calories</td>
+                <td>360 calories</td>
+                <td>500 calories</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p><strong>Example:</strong> If you weigh <strong>68 kg</strong> and walk 5 km at moderate pace (5 km/h), you'll burn approximately <strong>270 calories</strong>. This takes about 60 minutes and equals roughly 6,500 steps.</p>
+    
+    <h3>Calories Burned Walking 10 KM</h3>
+    <p>Walking 10 kilometers burns <strong>500-800 calories</strong> depending on weight and pace:</p>
+    <ul style="line-height: 2;">
+        <li><strong>60 kg person:</strong> 480-660 calories (10 KM walk)</li>
+        <li><strong>68 kg person:</strong> 540-750 calories (10 KM walk)</li>
+        <li><strong>70 kg person:</strong> 560-780 calories (10 KM walk)</li>
+        <li><strong>80 kg person:</strong> 640-890 calories (10 KM walk)</li>
+        <li><strong>90 kg person:</strong> 720-1000 calories (10 KM walk)</li>
+    </ul>
+    
+    <h3>Other Common Walking Distances & Calorie Burn</h3>
+    <ul style="line-height: 2;">
+        <li><strong>3 km walk calories:</strong> 120-180 calories (30-40 minutes, 70kg person)</li>
+        <li><strong>3.2 km walk calories:</strong> 130-190 calories (35-45 minutes, 70kg person)</li>
+        <li><strong>7 km walk calories:</strong> 280-420 calories (70-90 minutes, 70kg person)</li>
+        <li><strong>15 km walk calories:</strong> 600-900 calories (150-180 minutes, 70kg person)</li>
+    </ul>
+    
+    <p>💡 <strong>Pro Tip:</strong> Use our calculator above to get exact calorie burn for YOUR specific weight and walking distance!</p>
+</div>
 
             <!-- Popular Walking Queries Section -->
             <div class="info-section popular-queries-section" id="popular-queries">
@@ -955,6 +1090,69 @@
                     </button>
                 </div>
             </div>
+
+            <div class="info-section" id="calories-per-km">
+    <h2>Calories Burned Walking Per KM: Complete Breakdown</h2>
+    
+    <p>Understanding <strong>calories per kilometer walking</strong> helps you plan your daily exercise. On average, you burn <strong>40-70 calories per kilometer</strong> depending on body weight and pace.</p>
+    
+    <h3>Calories Per KM by Body Weight (Moderate Pace 5 km/h)</h3>
+    
+    <table class="calorie-reference-table" style="margin: 20px auto; max-width: 600px;">
+        <thead>
+            <tr>
+                <th>Body Weight</th>
+                <th>Calories per 1 KM</th>
+                <th>Per 5 KM</th>
+                <th>Per 10 KM</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>50 kg</td>
+                <td>40 cal/km</td>
+                <td>200 cal</td>
+                <td>400 cal</td>
+            </tr>
+            <tr>
+                <td>60 kg</td>
+                <td>48 cal/km</td>
+                <td>240 cal</td>
+                <td>480 cal</td>
+            </tr>
+            <tr style="background: #fff8e1;">
+                <td>68 kg</td>
+                <td>54 cal/km</td>
+                <td>270 cal</td>
+                <td>540 cal</td>
+            </tr>
+            <tr>
+                <td>70 kg</td>
+                <td>56 cal/km</td>
+                <td>280 cal</td>
+                <td>560 cal</td>
+            </tr>
+            <tr>
+                <td>80 kg</td>
+                <td>64 cal/km</td>
+                <td>320 cal</td>
+                <td>640 cal</td>
+            </tr>
+            <tr>
+                <td>90 kg</td>
+                <td>72 cal/km</td>
+                <td>360 cal</td>
+                <td>720 cal</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p><strong>Quick Formula:</strong> Calories per KM = (Your weight in kg) × 0.8 (for moderate pace)</p>
+    
+    <p><strong>Example calculation:</strong> If you weigh 68 kg: 68 × 0.8 = <strong>54 calories per kilometer</strong></p>
+    
+    <p>This means walking 5 km burns approximately <strong>270 calories</strong> for a 68kg person at moderate pace.</p>
+</div>
 
             <!-- Information Sections -->
             <div class="info-section" id="about-tool">
@@ -1156,64 +1354,91 @@
                 <p>Remember that to lose one pound (0.45 kg) of body fat, you need to create a calorie deficit of approximately 3,500 calories. Walking can be an important part of this equation, especially when combined with a healthy diet.</p>
             </div>
             
-            <div class="info-section" id="faq">
+            <div class="info-section" id="faq" itemscope itemtype="https://schema.org/FAQPage">
                 <h2>Frequently Asked Questions</h2>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How many calories do I burn walking 2 hours?</div>
-                    <div class="faq-answer">
-                        <p>Walking for 2 hours daily varies significantly by body weight and pace. A 70kg person walking at moderate pace (4.5 km/h) burns approximately 480-520 calories in 2 hours. Faster walking at 6 km/h increases the burn to 650-700 calories per session. Heavier individuals (90kg) burn 650-900 calories during the same 2-hour walk. For accurate personalized calculations, use our calculator above!</p>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">How many calories do I burn walking 2 hours?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Walking for 2 hours daily varies significantly by body weight and pace. A 70kg person walking at moderate pace (4.5 km/h) burns approximately 480-520 calories in 2 hours. Faster walking at 6 km/h increases the burn to 650-700 calories per session. Heavier individuals (90kg) burn 650-900 calories during the same 2-hour walk. For accurate personalized calculations, use our calculator above!</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How many calories do I burn per kilometer?</div>
-                    <div class="faq-answer">
-                        <p>Calorie burn per kilometer typically ranges from 35-70 calories depending on your weight and pace. A 70kg person burns 42-63 calories per kilometer, while lighter people (60kg) burn 35-55 calories per km. For walking 5 km, multiply by 5: expect 175-350 calories total. Terrain, walking speed, and individual metabolism also affect these calculations.</p>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">How many calories do I burn per kilometer?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Calorie burn per kilometer typically ranges from 35-70 calories depending on your weight and pace. A 70kg person burns 42-63 calories per kilometer, while lighter people (60kg) burn 35-55 calories per km. For walking 5 km, multiply by 5: expect 175-350 calories total. Terrain, walking speed, and individual metabolism also affect these calculations.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How does the calculator work?</div>
-                    <div class="faq-answer">
-                        <p>Our calculator uses the scientifically-proven MET formula: Calories = MET value × weight (kg) × time (hours). Different walking speeds have specific MET values: slow walking (2.0), moderate pace (3.5), brisk walking (4.3), and fast walking (6.0). Simply input your details for instant, personalized results!</p>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">How does the calculator work?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Our calculator uses the scientifically-proven MET formula: Calories = MET value × weight (kg) × time (hours). Different walking speeds have specific MET values: slow walking (2.0), moderate pace (3.5), brisk walking (4.3), and fast walking (6.0). Simply input your details for instant, personalized results!</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How many calories should I burn daily for weight loss?</div>
-                    <div class="faq-answer">
-                        <p>For weight loss, walking 30 minutes daily at moderate pace burns 120-200 calories per day (840-1400 calories weekly). For faster results, walking 1 hour daily burns 240-400 calories. To lose 1 pound per week, aim for a 3,500 calorie deficit - daily walking of 8,000-10,000 steps burns 300-500 calories, contributing significantly to your goals when combined with proper diet.</p>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">How many calories should I burn daily for weight loss?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">For weight loss, walking 30 minutes daily at moderate pace burns 120-200 calories per day (840-1400 calories weekly). For faster results, walking 1 hour daily burns 240-400 calories. To lose 1 pound per week, aim for a 3,500 calorie deficit - daily walking of 8,000-10,000 steps burns 300-500 calories, contributing significantly to your goals when combined with proper diet.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">What about 10,000 steps per day?</div>
-                    <div class="faq-answer">
-                        <p>Walking 10,000 steps daily burns 300-500 calories for most adults, making it an excellent fitness goal. A 70kg person burns approximately 400 calories walking 10,000 steps, which covers 4-5 kilometers in 60-75 minutes. This creates a weekly burn of 2,100-3,500 calories, potentially contributing to 1 pound of weight loss per week when combined with proper nutrition.</p>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">What about 10,000 steps per day?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Walking 10,000 steps daily burns 300-500 calories for most adults, making it an excellent fitness goal. A 70kg person burns approximately 400 calories walking 10,000 steps, which covers 4-5 kilometers in 60-75 minutes. This creates a weekly burn of 2,100-3,500 calories, potentially contributing to 1 pound of weight loss per week when combined with proper nutrition.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Does weight affect calorie burn?</div>
-                    <div class="faq-answer">
-                        <p>Yes! Our calculator uses your body weight as the primary factor since heavier individuals require more energy to move. For every kilogram of body weight, you burn more calories per kilometer walked. For example, a 70kg person walking 5km at 5km/h burns about 266 calories, while a 90kg person would burn around 340 calories for the same walk.</p>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Does weight affect calorie burn?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes! Our calculator uses your body weight as the primary factor since heavier individuals require more energy to move. For every kilogram of body weight, you burn more calories per kilometer walked. For example, a 70kg person walking 5km at 5km/h burns about 266 calories, while a 90kg person would burn around 340 calories for the same walk.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Is walking 5km in 45 minutes effective?</div>
-                    <div class="faq-answer">
-                        <p>Walking 5km in 45 minutes equals a pace of 6.7 km/h, which is considered brisk walking and excellent for fitness. At this pace, a 70kg person burns approximately 320-380 calories. This brisk pace elevates heart rate into the fat-burning zone, making it highly effective for weight loss - burning 30-40% more calories than leisurely walking the same distance.</p>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Is walking 5km in 45 minutes effective?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Walking 5km in 45 minutes equals a pace of 6.7 km/h, which is considered brisk walking and excellent for fitness. At this pace, a 70kg person burns approximately 320-380 calories. This brisk pace elevates heart rate into the fat-burning zone, making it highly effective for weight loss - burning 30-40% more calories than leisurely walking the same distance.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">How much should I walk daily for weight loss?</div>
-                    <div class="faq-answer">
-                        <p>For effective weight loss, aim to burn 300-500 calories daily through walking (2,100-3,500 weekly). Walking 8,000-12,000 steps daily typically achieves this target. A 70kg person needs to walk 60-90 minutes daily at moderate pace to burn 300-450 calories. Start gradually and increase duration as fitness improves.</p>
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">How much should I walk daily for weight loss?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">For effective weight loss, aim to burn 300-500 calories daily through walking (2,100-3,500 weekly). Walking 8,000-12,000 steps daily typically achieves this target. A 70kg person needs to walk 60-90 minutes daily at moderate pace to burn 300-450 calories. Start gradually and increase duration as fitness improves.</p>
                     </div>
                 </div>
+                <div class="faq-item">
+    <div class="faq-question">How many calories burned walking 5 km?</div>
+    <div class="faq-answer">
+        <p>Walking 5 km burns approximately <strong>200-400 calories</strong> depending on your weight and pace. A <strong>68kg person</strong> walking at moderate pace (5 km/h) burns about <strong>270 calories</strong> in 5 km, while a 70kg person burns 280 calories. If you weigh 60kg, expect 240 calories, while an 80kg person burns 320 calories for the same distance. Use our calculator above for exact results based on YOUR weight!</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">Calories burned walking 1 hour - how many?</div>
+    <div class="faq-answer">
+        <p>Walking for <strong>1 hour</strong> burns 200-400 calories for most adults. A 70kg person walking at moderate pace (5 km/h) burns approximately <strong>280 calories per hour</strong>. Brisk walking (6-7 km/h) increases this to 350-390 calories/hour, while slow walking (3 km/h) burns about 200 calories/hour. Walking 1 hour daily creates a weekly burn of 1,400-2,800 calories!</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">How many calories burned walking per km - exact calculation?</div>
+    <div class="faq-answer">
+        <p>You burn <strong>40-70 calories per kilometer</strong> walking, depending on body weight and pace. Quick formula: <strong>Calories per km = Weight (kg) × 0.8</strong> (for moderate pace). For example: a 68kg person burns 54 calories/km, 70kg person burns 56 cal/km, 60kg burns 48 cal/km, 80kg burns 64 cal/km. Faster walking increases this by 20-30%.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">Best walking calculator to lose weight free?</div>
+    <div class="faq-answer">
+        <p>Our <strong>Walking Calories Calculator</strong> is completely free and designed specifically for weight loss tracking. Simply enter your weight, distance/time, and walking pace to see exact calories burned. Track daily progress and calculate how much walking needed to reach your weight loss goals. No registration required - use unlimited times! Perfect for anyone looking for a walking calculator to lose weight free with accurate, personalized results.</p>
+    </div>
+</div>
             </div>
             
             <div class="info-section" id="related-tools">
@@ -1227,6 +1452,14 @@
                         </div>
                         <h3>Calorie Deficit Calculator</h3>
                         <p>Calculate exactly how many calories you need to cut for weight loss goals.</p>
+                    </a>
+                    
+                    <a href="../converter/steps-to-km-inline.html" class="related-tool-card">
+                        <div class="card-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <h3>Steps to KM Converter</h3>
+                        <p>Convert your daily steps to kilometers and track your walking distance accurately.</p>
                     </a>
                     
                     <a href="body-frame-inline.html" class="related-tool-card">
@@ -1244,14 +1477,7 @@
                         <h3>Protein Intake Calculator</h3>
                         <p>Find out how much protein you need for your activity level and goals.</p>
                     </a>
-                    
-                    <a href="ivf-calculator.html" class="related-tool-card">
-                        <div class="card-icon">
-                            <i class="fas fa-baby"></i>
-                        </div>
-                        <h3>Pregnancy Tools</h3>
-                        <p>Specialized calculators for prenatal health and pregnancy planning.</p>
-                    </a>
+
                 </div>
                 <p><em>Pro tip: Use these tools together for a complete health picture. Start with our walking calculator to lose weight free to see calories burned, check your calorie deficit needs and ensure proper protein intake for the best results!</em></p>
             </div>
@@ -1349,6 +1575,44 @@
     <!-- Scripts -->
     <script src="../js/sidebar-favorites.js"></script>
     <script defer src="js/calories-walking.js"></script>
+    
+    <!-- CDN Fallback & Connectivity Check -->
+    <script>
+        // Check if Font Awesome loaded successfully
+        window.addEventListener('load', function() {
+            // Check if Font Awesome icons are rendering
+            const iconTest = document.createElement('i');
+            iconTest.className = 'fas fa-fire';
+            iconTest.style.position = 'absolute';
+            iconTest.style.visibility = 'hidden';
+            document.body.appendChild(iconTest);
+            
+            const computedStyle = window.getComputedStyle(iconTest, ':before');
+            const iconContent = computedStyle.getPropertyValue('content');
+            
+            // If Font Awesome didn't load (content is 'none' or empty), add fallback class
+            if (!iconContent || iconContent === 'none' || iconContent === '""') {
+                document.body.classList.add('no-icons');
+                console.warn('Font Awesome failed to load. Using emoji fallbacks.');
+            }
+            
+            document.body.removeChild(iconTest);
+            
+            // Optional: Check network connectivity
+            if (!navigator.onLine) {
+                console.warn('You appear to be offline. Some external resources may not load.');
+            }
+        });
+        
+        // Listen for online/offline events
+        window.addEventListener('offline', function() {
+            console.warn('Connection lost. Working in offline mode with cached resources.');
+        });
+        
+        window.addEventListener('online', function() {
+            console.log('Connection restored.');
+        });
+    </script>
 
 </body>
 </html>

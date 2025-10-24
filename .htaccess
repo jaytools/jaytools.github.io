@@ -25,21 +25,30 @@ RewriteRule ^(.*)/$  https://www.taskproper.com/$1 [R=301,L]
 # COMPREHENSIVE SECURITY CONFIGURATION
 # ========================================
 
-# Security Headers
-Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-Header always set X-Frame-Options "SAMEORIGIN"
-Header always set X-Content-Type-Options "nosniff"
-Header always set X-XSS-Protection "1; mode=block"
-Header always set Referrer-Policy "strict-origin-when-cross-origin"
-Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()"
-
-# Content Security Policy (CSP)
-Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
-
-# Hide Server Information
-ServerTokens Prod
-Header unset Server
-Header always unset X-Powered-By
+# Modern Security Headers (Updated for Best Practices)
+<IfModule mod_headers.c>
+    # HSTS - Force HTTPS for 2 years
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    
+    # X-Content-Type-Options - Prevent MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Referrer Policy - Protect user privacy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy - Restrict browser features
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()"
+    
+    # Content Security Policy with frame-ancestors (replaces X-Frame-Options)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+    
+    # Remove deprecated/unnecessary headers
+    Header unset X-XSS-Protection
+    Header unset X-Frame-Options
+    Header unset Expires
+    Header unset X-Powered-By
+    Header unset Server
+</IfModule>
 
 # Prevent access to sensitive files
 <FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf|bak|backup|swp|tmp)$">
@@ -75,17 +84,92 @@ Options -Indexes
 # Disable server signature
 ServerSignature Off
 
-# Cache static resources
+# ========================================
+# PERFORMANCE & CACHING CONFIGURATION
+# ========================================
+
+# Modern Cache-Control Headers (replaces mod_expires)
+<IfModule mod_headers.c>
+    # Images - 1 year cache with immutable directive
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico|avif)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # CSS and JavaScript - 1 year cache with immutable directive
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Fonts - 1 year cache with immutable directive & correct MIME type
+    <FilesMatch "\.(woff|woff2|ttf|eot|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # HTML - Short cache for fresh content
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
+    
+    # JSON/Manifest files
+    <FilesMatch "\.(json|webmanifest)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+    
+    # XML files (sitemaps)
+    <FilesMatch "\.xml$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+</IfModule>
+
+# Correct MIME Types for Web Fonts (fixes content-type issues)
+<IfModule mod_mime.c>
+    # Font types - WITHOUT charset (as per spec)
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+    AddType font/ttf .ttf
+    AddType font/otf .otf
+    AddType application/vnd.ms-fontobject .eot
+    
+    # Remove charset from font responses
+    <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+        Header unset Content-Type
+    </FilesMatch>
+    
+    <FilesMatch "\.woff2$">
+        Header set Content-Type "font/woff2"
+    </FilesMatch>
+    
+    <FilesMatch "\.woff$">
+        Header set Content-Type "font/woff"
+    </FilesMatch>
+    
+    <FilesMatch "\.ttf$">
+        Header set Content-Type "font/ttf"
+    </FilesMatch>
+    
+    <FilesMatch "\.otf$">
+        Header set Content-Type "font/otf"
+    </FilesMatch>
+    
+    # Web App Manifest
+    AddType application/manifest+json .webmanifest
+    
+    # Modern image formats
+    AddType image/webp .webp
+    AddType image/avif .avif
+    AddType image/svg+xml .svg
+</IfModule>
+
+# Enable Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/manifest+json image/svg+xml
+</IfModule>
+
+# Enable ETags for cache validation
+FileETag MTime Size
+
+# Legacy mod_expires (backup for older servers) - Can be removed if Cache-Control works
 <IfModule mod_expires.c>
-    ExpiresActive on
-    ExpiresByType text/css "access plus 1 year"
-    ExpiresByType application/javascript "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/jpg "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType font/woff "access plus 1 year"
-    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresActive Off
+    # Disabled in favor of Cache-Control headers above
 </IfModule>
