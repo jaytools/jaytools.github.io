@@ -24,5 +24,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- QR Code Generator -->
+  <url>
+    <loc>https://www.taskproper.com/utility/qr-code-generator.html</loc>
+    <lastmod>2025-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Team Generator -->
+  <url>
+    <loc>https://www.taskproper.com/utility/team-generator-inline.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
  
 </urlset>
