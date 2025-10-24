@@ -11,6 +11,22 @@ RewriteRule ^(.*)$ https://www.taskproper.com/$1 [R=301,L]
 RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
 RewriteRule ^index\.html$ https://www.taskproper.com/ [R=301,L]
 
+# ============================================
+# 404 Error Prevention - Icon & Manifest Redirects
+# ============================================
+
+# Redirect old manifest icon references
+RewriteCond %{REQUEST_URI} ^/web-app-manifest-192x192\.png$ [NC]
+RewriteRule ^web-app-manifest-192x192\.png$ /android-chrome-192x192.png [L,R=301]
+
+RewriteCond %{REQUEST_URI} ^/web-app-manifest-512x512\.png$ [NC]
+RewriteRule ^web-app-manifest-512x512\.png$ /android-chrome-512x512.png [L,R=301]
+
+# Redirect missing favicon variants (fallback)
+RewriteCond %{REQUEST_URI} ^/favicon\.svg$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/favicon.svg !-f
+RewriteRule ^favicon\.svg$ /favicon.ico [L,R=301]
+
 # Fix 404 errors - Redirect old tool URLs to correct locations
 RewriteRule ^tools/body-frame-inline\.html$ /health/body-frame-inline.html [R=301,L]
 RewriteRule ^tools/seperate-tool/ivf-calculator\.html$ /health/ivf-calculator.html [R=301,L]
