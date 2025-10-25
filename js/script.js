@@ -1,5 +1,6 @@
 const ITEMS_PER_PAGE = 6;
 const tools = [
+  { name: 'QR Code Generator', url: 'utility/qr-code-generator.html', tags: ['utility', 'design', 'marketing'] },
   { name: 'YouTube Thumbnail Downloader', url: 'utility/youtube-thumbnail-downloader.html', tags: ['utility', 'social-media'] },
   { name: 'CGPA to Percentage Calculator', url: 'calculator/cgpa-percentage-inline.html', tags: ['calculator', 'study'] },
   { name: 'Protein Intake Calculator', url: 'health/protein-intake.html', tags: ['health', 'calculator', 'nutrition'] },
