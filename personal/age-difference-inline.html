@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Difference Calculator - Couple & Sibling Age Gap by Birthday</title>
-    <meta name="description" content="Free Age Difference Calculator to find the exact age gap in years, months, and days. Calculate age difference for couples, marriage, siblings, and friends instantly online.">
+    <title>Age Difference Calculator - Exact Years, Months & Days</title>
+    <meta name="description" content="Calculate exact age gap between two people in years, months, days. Perfect for couples, siblings, marriage planning. Fast, accurate, free online!">
+    <meta name="keywords" content="age difference calculator, age gap calculator, birthday difference, years months days calculator, couple age gap, relationship age difference, sibling age gap, marriage age calculator, date difference calculator, birthday gap finder">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Jay Prajapati">
     
@@ -39,9 +40,8 @@
     <!-- Preload Hero Image for LCP -->
     <link rel="preload" as="image" href="img/age-cal.webp">
     
-    <!-- Font Awesome - Deferred Loading -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+    <!-- Font Awesome - Local Loading -->
+    <link rel="stylesheet" href="../css/fontawesome-subset.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
@@ -1859,8 +1859,12 @@
         </div>
     </main>
 
+
     <!-- Overlay for sidebar -->
     <div class="overlay"></div>
+
+    <!-- Tools Grid for script.js integration -->
+    <div id="tools-grid" class="tools-grid"></div>
 
     <!-- Template for tool card -->
     <template id="tool-card-template">

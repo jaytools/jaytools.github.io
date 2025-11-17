@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Thumbnail Downloader - Get HD Thumbnails Free (1280x720)</title>
-    <meta name="description" content="Download YouTube thumbnails in HD quality for free! Works with videos, Shorts & live streams. Get all 4 quality options (1280x720 HD to 320x180). Process up to 10 videos at once. No login needed, works on mobile & desktop.">
+    <title>YouTube Thumbnail Downloader - HD, 1080p, 4K (Batch 10x)</title>
+    <meta name="description" content="Download YouTube thumbnails in HD (1280x720), Full HD, 4K quality! Works with videos, Shorts, live streams. Batch process 10 videos. Free, no login!">
+    <meta name="keywords" content="youtube thumbnail downloader, download youtube thumbnail, yt thumbnail grabber, youtube thumbnail hd, thumbnail downloader 1080p, youtube shorts thumbnail, batch thumbnail downloader, youtube thumbnail 4k, thumbnail extractor free">
+
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="Jay Prajapati">
     <meta name="language" content="en">
@@ -1504,8 +1506,8 @@
         .preview-image {
             will-change: opacity;
             -webkit-image-rendering: -webkit-optimize-contrast;
+            -ms-image-rendering: -webkit-optimize-contrast;
             image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
         }
         
         .quality-btn {
@@ -1525,6 +1527,11 @@
         body {
             margin: 0;
             padding: 0;
+        }
+        
+        /* Hidden state */
+        .hidden {
+            display: none;
         }
         
         /* Loading state */
@@ -1732,7 +1739,7 @@ Examples:
                     <div class="error-message" id="errorMessage"></div>
 
                     <!-- Video Info Section -->
-                    <div class="video-info-section" id="videoInfoSection" style="display: none;">
+                    <div class="video-info-section hidden" id="videoInfoSection">
                         <div class="video-info-card">
                             <div class="video-info-header">
                                 <i class="fab fa-youtube"></i>
@@ -1772,14 +1779,14 @@ Examples:
                         <div id="allVideosContainer"></div>
                         
                         <!-- Download All Button -->
-                        <button class="btn-download-all" id="downloadAllBtn" style="display: none;">
+                        <button class="btn-download-all hidden" id="downloadAllBtn">
                             <i class="fas fa-download"></i>
                             Download All Thumbnails
                         </button>
                     </div>
                     
                     <!-- History Section -->
-                    <div class="history-section" id="historySection" style="display: none;">
+                    <div class="history-section hidden" id="historySection">
                         <div class="history-header">
                             <h3><i class="fas fa-history"></i> Recent Downloads</h3>
                             <button class="btn-clear-history" id="clearHistoryBtn">

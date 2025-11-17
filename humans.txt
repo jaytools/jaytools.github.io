@@ -1,51 +1,15 @@
 /* TEAM */
-Developer: Task Proper
-Contact: contact@taskproper.com
-Website: https://www.taskproper.com
-GitHub: https://github.com/taskproper
-Location: India
+Website: TaskProper (https://taskproper.com)
+Developer: Jay Prajapati
 
-/* SITE */
-Site: Task Proper
-Last update: 2023-07-19
-Language: English
-Doctype: HTML5
-Standards: HTML5, CSS3, JavaScript ES6+
-Components: Responsive Design, SEO Optimized, Accessibility Ready
-IDE: Visual Studio Code
-Source Control: Git, GitHub
+/* ABOUT */
+Free online calculators, converters, planners & daily utility tools.
 
-/* TECHNOLOGIES USED */
-- HTML5
-- CSS3 (Flexbox, Grid, Animations)
-- JavaScript (Vanilla)
-- Responsive Design
-- Progressive Web App (PWA)
-- Local Storage
-- Chart.js (Data Visualization)
-- Structured Data (JSON-LD)
+/* TECHNOLOGY */
+HTML, CSS, JavaScript
 
-/* SITE FEATURES */
-- Fully Responsive Design
-- Dark Mode Support
-- Accessibility (A11y)
-- Mobile-First Design
-- Cross-Browser Compatibility
-- Hosted on GitHub Pages
-- Schema.org Markup for SEO
-- Fast Loading Time
+/* VERSION */
+Version: 1.0.0
 
-/* CREDITS & THANKS */
-- Open Source Community (for tools, inspiration)
-- Font Awesome (icons)
-- Google Fonts (typography)
-- Chart.js (charts & graphs)
-- GitHub Pages (free hosting)
-- Schema.org (structured data)
-
-/* TOOLS */
-- Health Calculators
-- Financial Tools
-- Study Planners
-- Personal Utilities
-- Converters
+/* CONTACT */
+starofficial202503@gmail.com

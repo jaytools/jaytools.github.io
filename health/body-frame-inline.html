@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Frame Size Calculator - Free Wrist Measurement Tool for Women</title>
-    <meta name="description" content="Free female body frame size calculator and wrist size calculator for women. Find your ideal body frame size using body frame measurement. Determine if you have small, medium or large frame type instantly.">
+    <title>Body Frame Size Calculator - Find Your Frame Type Instantly</title>
+    <meta name="description" content="Calculate body frame size from wrist measurement. Determine if you're small, medium or large frame. Get ideal weight ranges. Free and accurate!">
+    <meta name="keywords" content="body frame calculator, wrist measurement calculator, frame size calculator, small medium large frame, body type calculator, elbow breadth calculator, skeletal frame size, ideal weight by frame, bone structure calculator, body frame women men">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Jay Prajapati">
     
@@ -38,9 +39,8 @@
     <!-- Preload Hero Image for LCP -->
     <link rel="preload" as="image" href="img/body-frame.webp">
     
-    <!-- Font Awesome - Deferred Loading -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- Font Awesome - Local Loading -->
+    <link rel="stylesheet" href="../css/fontawesome-subset.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
@@ -576,7 +576,7 @@
                              alt="Female Body Frame Size Chart showing small, medium and large body frames comparison" 
                              width="600" 
                              height="400"
-                             loading="lazy"
+                             
                              class="frame-chart-image">
                         <p class="chart-caption">Visual comparison of small, medium, and large body frames for women</p>
                     </div>
@@ -2024,5 +2024,7 @@
             });
         }
     </script>
+    <!-- Tools Grid for script.js integration -->
+    <div id="tools-grid" class="tools-grid"></div>
 </body>
 </html>

@@ -23,7 +23,10 @@ function closeSidebar() {
 }
 
 // Favorites Management
-let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+// Check if favorites is already declared (e.g., by script.js)
+if (typeof favorites === 'undefined') {
+    var favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+}
 
 function updateFavorites() {
     const favoritesList = document.querySelector('.favorites-container');

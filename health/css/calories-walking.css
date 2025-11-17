@@ -7235,7 +7235,6 @@
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(255,152,0,0.3);
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
     display: block;
     margin: 0 auto;
 }

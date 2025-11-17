@@ -8,8 +8,9 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <!-- Note: frame-ancestors CSP directive must be set via HTTP header, not meta tag -->
     
-    <title>Walking Calories Calculator – 5KM = 300 Cal, 10KM = 600 Cal Free</title>
-    <meta name="description" content="Calculate calories burned walking instantly! 5KM = 300 cal, 10KM = 600 cal (70kg person). Free calculator with weight, pace & distance. Track your walking calories for weight loss now!">
+    <title>Calories Burned Walking - 5KM, 10KM Calculator by Weight</title>
+    <meta name="keywords" content="calories burned walking, walking calorie calculator, calories walking 5km, calories 10km walk, walking weight loss calculator, steps to calories, walking distance calories, pace calorie calculator, fitness walking tracker">
+    <meta name="description" content="Calculate calories burned walking by distance and weight. 5KM = ~300 cal, 10KM = ~600 cal (70kg). Accurate results for any pace. Track your walking fitness!">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Jay Prajapati">
     
@@ -56,8 +57,7 @@
     </style>
     
     <!-- Preload Hero Image for LCP (Priority #1) -->
-    <!-- Note: fetchpriority is progressive enhancement - supported by Chrome/Edge, gracefully ignored by Firefox -->
-    <link rel="preload" as="image" href="img/cal-walk.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="img/cal-walk.webp">
     
     <!-- Google Fonts - Optimized with display=swap (defer to reduce blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -594,13 +594,11 @@
                 
                 <!-- Fitness Visual -->
                 <div class="walking-hero-container">
-                    <!-- fetchpriority: Progressive enhancement for Chrome/Edge LCP optimization, ignored by Firefox -->
                     <img src="img/cal-walk.webp" 
                          alt="Calories burned walking calculator for fitness tracking"
                          width="200" 
                          height="160"
-                         loading="eager"
-                         fetchpriority="high">
+                         loading="eager">
                     <div class="walking-cta-box">
                         <p>🔥 Track your walking workout calories!</p>
                     </div>
@@ -992,7 +990,7 @@
     
     <h3>Calories Burned Walking 5 KM by Body Weight</h3>
     
-    <table class="calorie-reference-table" style="margin: 20px auto; max-width: 700px;">
+    <table class="calorie-reference-table table-centered">
         <thead>
             <tr>
                 <th>Body Weight</th>
@@ -1008,7 +1006,7 @@
                 <td>240 calories</td>
                 <td>330 calories</td>
             </tr>
-            <tr style="background: #fff8e1;">
+            <tr class="table-highlight">
                 <td><strong>68 kg person</strong></td>
                 <td>195 calories</td>
                 <td>270 calories</td>
@@ -1039,7 +1037,7 @@
     
     <h3>Calories Burned Walking 10 KM</h3>
     <p>Walking 10 kilometers burns <strong>500-800 calories</strong> depending on weight and pace:</p>
-    <ul style="line-height: 2;">
+    <ul class="spaced-list">
         <li><strong>60 kg person:</strong> 480-660 calories (10 KM walk)</li>
         <li><strong>68 kg person:</strong> 540-750 calories (10 KM walk)</li>
         <li><strong>70 kg person:</strong> 560-780 calories (10 KM walk)</li>
@@ -1048,7 +1046,7 @@
     </ul>
     
     <h3>Other Common Walking Distances & Calorie Burn</h3>
-    <ul style="line-height: 2;">
+    <ul class="spaced-list">
         <li><strong>3 km walk calories:</strong> 120-180 calories (30-40 minutes, 70kg person)</li>
         <li><strong>3.2 km walk calories:</strong> 130-190 calories (35-45 minutes, 70kg person)</li>
         <li><strong>7 km walk calories:</strong> 280-420 calories (70-90 minutes, 70kg person)</li>
@@ -1098,7 +1096,7 @@
     
     <h3>Calories Per KM by Body Weight (Moderate Pace 5 km/h)</h3>
     
-    <table class="calorie-reference-table" style="margin: 20px auto; max-width: 600px;">
+    <table class="calorie-reference-table table-centered table-narrow">
         <thead>
             <tr>
                 <th>Body Weight</th>
@@ -1120,7 +1118,7 @@
                 <td>240 cal</td>
                 <td>480 cal</td>
             </tr>
-            <tr style="background: #fff8e1;">
+            <tr class="table-highlight">
                 <td>68 kg</td>
                 <td>54 cal/km</td>
                 <td>270 cal</td>

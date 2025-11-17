@@ -1086,10 +1086,10 @@
             }
 
             // Sort: favorites first, then alphabetically
-            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            const favoritesList = JSON.parse(localStorage.getItem('favorites') || '[]');
             const sortedTools = [...converterTools].sort((a, b) => {
-                const aFav = favorites.includes(a.name);
-                const bFav = favorites.includes(b.name);
+                const aFav = favoritesList.includes(a.name);
+                const bFav = favoritesList.includes(b.name);
                 if (aFav !== bFav) return bFav - aFav;
                 return a.name.localeCompare(b.name);
             });
@@ -1120,7 +1120,7 @@
                 // Set up the favorite button
                 const favoriteBtn = toolCard.querySelector('.favorite-btn');
                 
-                if (favorites.includes(tool.name)) {
+                if (favoritesList.includes(tool.name)) {
                     favoriteBtn.classList.add('active');
                 }
 
@@ -1129,20 +1129,20 @@
                     e.stopPropagation();
                     
                     // Toggle favorite with animation
-                    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-                    const index = favorites.indexOf(tool.name);
+                    const currentFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+                    const index = currentFavorites.indexOf(tool.name);
 
                     if (index === -1) {
-                        favorites.push(tool.name);
+                        currentFavorites.push(tool.name);
                         favoriteBtn.classList.add('active');
                         // Add animation class
                         favoriteBtn.classList.add('favorite-animation');
                     } else {
-                        favorites.splice(index, 1);
+                        currentFavorites.splice(index, 1);
                         favoriteBtn.classList.remove('active');
                     }
 
-                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                    localStorage.setItem('favorites', JSON.stringify(currentFavorites));
                     
                     // Remove animation class after animation completes
                     setTimeout(() => {
@@ -1218,5 +1218,30 @@
     </script>
     <!-- Load icon replacement script to optimize FontAwesome usage -->
     <script src="js/icon-replacement.js" defer></script>
+    <script>
+      // Global tools array for converter category
+      window.tools = [
+        { 
+          name: 'Height Converter',
+          url: 'converter/height-converter-inline.html',
+          tags: ['converter', 'health']
+        },
+        { 
+          name: 'Steps to KM Converter',
+          url: 'converter/steps-to-km-inline.html',
+          tags: ['converter', 'health']
+        },
+        { 
+          name: 'Calories Burned Walking',
+          url: 'health/calories-walking.html',
+          tags: ['calculator', 'health']
+        },
+        { 
+          name: 'Calorie Deficit Finder',
+          url: 'health/calorie-deficit.html',
+          tags: ['health', 'calculator']
+        }
+      ];
+    </script>
 </body>
 </html>
