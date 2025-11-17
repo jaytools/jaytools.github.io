@@ -2,5 +2,4 @@ User-agent: *
 Allow: /
 
 # Main Sitemaps
-Sitemap: https://www.taskproper.com/sitemap-index.xml
 Sitemap: https://www.taskproper.com/sitemap.xml
