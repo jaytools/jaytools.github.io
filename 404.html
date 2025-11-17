@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - Task Proper</title>
-    <meta name="description" content="The page you're looking for doesn't exist. Explore our 50+ free online calculators and tools.">
+    <meta name="description" content="The page you're looking for doesn't exist. Explore our 20+ free online calculators and tools.">
     <meta name="robots" content="noindex, follow">
     
     <link rel="canonical" href="https://www.taskproper.com/404.html">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/icon-svg.css">
+    <link rel="stylesheet" href="css/favorite-star.css">
     
     <style>
         .error-page {
@@ -128,14 +130,42 @@
 </head>
 <body>
     <header class="site-header">
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Main navigation">
             <div class="navbar-brand">
                 <a href="https://www.taskproper.com" class="brand-link">
                     <h1 class="site-title">Task Proper</h1>
-                    <p class="site-subtitle">Page Not Found</p>
+                    <p class="site-subtitle">Simple and Convenient Web Tools</p>
+                </a>
+            </div>
+            <div class="navbar-actions">
+                <div class="search-wrapper">
+                    <div class="search-container">
+                        <input type="text" id="search-input" name="search" class="search-input" placeholder="Search tools..." aria-label="Search tools">
+                        <button class="search-button" aria-label="Search">
+                            <span class="icon icon-search"></span>
+                        </button>
+                    </div>
+                    <button class="search-toggle" aria-label="Open search">
+                        <span class="icon icon-search"></span>
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="icon icon-bars"></span>
+                </button>
+                <a href="https://www.instagram.com/taskproper" class="social-link" target="_blank" rel="noopener" aria-label="Instagram profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1-27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
                 </a>
             </div>
         </nav>
+        <div class="mobile-search-container">
+            <div class="mobile-search-wrapper">
+                <input type="text" id="mobile-search-input" name="mobile-search" class="mobile-search-input" placeholder="Search tools..." aria-label="Search tools mobile">
+                <button class="mobile-search-close" aria-label="Close search">
+                    <span class="icon icon-times"></span>
+                </button>
+            </div>
+            <div class="search-results" aria-live="polite"></div>
+        </div>
     </header>
 
     <main class="site-main">
@@ -185,12 +215,67 @@
     </main>
 
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 Task Proper. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <nav class="footer-nav" aria-label="Footer pages">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Legal & Info</h3>
+                    <nav class="footer-nav" aria-label="Legal and information">
+                        <ul>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/terms.html">Terms of Use</a></li>
+                            <li><a href="/disclaimer.html">Disclaimer</a></li>
+                            <li><a href="/dmca.html">DMCA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Social</h3>
+                    <nav class="footer-nav" aria-label="Social links">
+                        <ul class="social-links">
+                            <li><a href="https://www.instagram.com/taskproper/" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61579764625406" target="_blank" rel="noopener">Facebook</a></li>
+                            <li><a href="https://www.youtube.com/@taskproper" target="_blank" rel="noopener">YouTube</a></li>
+                            <li><a href="https://www.linkedin.com/in/task-proper/" target="_blank" rel="noopener">LinkedIn</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="india-pride-footer">
+                <p class="pride-text">
+                    <span class="india-flag">🇮🇳</span>
+                    <span class="pride-main">Made in India, Loved Worldwide</span>
+                    <span class="globe-icon">🌍</span>
+                    <span class="separator">|</span>
+                    <span class="brand-tagline">TaskProper – Smart Tools for Everyone</span>
+                </p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Task Proper by Jay Prajapati. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <div class="overlay" aria-hidden="true"></div>
+
     <script src="js/security.js"></script>
+    <script src="js/input-validator.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/favorite-star.js"></script>
+    <script src="js/icon-replacement.js"></script>
     <script>
         // Track 404 errors for analytics
         if (window.gtag) {
