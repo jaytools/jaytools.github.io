@@ -76,6 +76,15 @@ window.addEventListener('resize', updateScrollButtons);
 
 document.addEventListener('DOMContentLoaded', function() {
   updateFavorites();
+  // Pre-fill search from URL parameter (?q=)
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q && searchInput) {
+      searchInput.value = q;
+      handleSearch({ target: searchInput });
+    }
+  } catch (e) {}
   var filtered = currentTag === 'all' ? tools : tools.filter(function(tool) {
     return tool.tags.includes(currentTag);
   });
