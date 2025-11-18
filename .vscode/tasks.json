@@ -18,6 +18,19 @@
 			"isBackground": false,
 			"problemMatcher": [],
 			"group": "build"
+		},
+		{
+			"label": "Batch demote site-title H1s",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"$files = @(\n  'converter/steps-to-km-inline.html','finance/debt-ratio.html','finance/expense-tracker.html','game/memory-game.html','health/ivf-calculator.html','health/calorie-deficit.html','health/food-calories.html','health/calories-walking.html','health/protein-intake.html','planner/pomodoro.html','planner/goal-planner.html','study/typing-speed.html','study/study-planner.html','utility/qr-code-generator.html','utility/team-generator-inline.html','utility/youtube-thumbnail-downloader.html','utility/dpi-checker.html'\n);\nforeach($f in $files){\n  $p = Join-Path $PWD $f; $c = Get-Content $p -Raw; $c2 = $c -replace '<h1 class=\"site-title\">','<div class=\"site-title\">'; if($c2 -ne $c){ Set-Content -Path $p -Value $c2 -NoNewline; Write-Output \"Updated $f\" } else { Write-Output \"No match $f\" }\n}"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
 		}
 	]
 }
