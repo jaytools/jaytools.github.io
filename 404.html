@@ -341,7 +341,7 @@
     <script src="js/icon-replacement.js"></script>
     <script>
         // Track 404 errors for analytics
-        if (window.gtag) {
+        if (window.gtag && localStorage.getItem('tp_consent') === 'granted') {
             gtag('event', 'page_view', {
                 page_title: '404 - Page Not Found',
                 page_location: window.location.href,

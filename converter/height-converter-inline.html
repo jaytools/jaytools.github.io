@@ -2877,7 +2877,7 @@
         
         // Analytics tracking
         function trackConversion(fromUnit, toUnit, value) {
-            if (typeof gtag !== 'undefined') {
+            if (typeof gtag !== 'undefined' && localStorage.getItem('tp_consent') === 'granted') {
                 gtag('event', 'height_conversion', {
                     'from_unit': fromUnit,
                     'to_unit': toUnit,
