@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Audit: build changes",
+			"type": "shell",
+			"command": "git status; git diff --name-only",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Stage and commit H1 fixes",
+			"type": "shell",
+			"command": "git add -A; git commit -m \"SEO: One-H1 rule + brand consistency across key pages (navbar site-title demoted, brand fixes)\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

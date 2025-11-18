@@ -1395,7 +1395,7 @@
             <!-- Left side: Logo and subtitle -->
             <div class="navbar-brand">
                 <a href="../index.html" class="brand-link">
-                    <h1 class="site-title">Task Proper</h1>
+                    <div class="site-title">Task Proper</div>
                     <p class="site-subtitle">Simple and Convenient Web Tools</p>
                 </a>
             </div>
@@ -1626,7 +1626,59 @@
                 </div>
             </div>
 
-            <!-- Information Card -->
+                <!-- Related Tools (placed right under the main tool) -->
+                <div class="related-tools-section">
+                    <!-- Marriage & Relationship Tools -->
+                    <div class="related-tools-category">
+                        <h4>💑 Marriage & Relationship Tools</h4>
+                        <div class="related-tools-grid">
+                            <a href="marriage-age-inline.html" class="related-tool-card">
+                                <div class="related-tool-title">Marriage Age Calculator</div>
+                                <p class="related-tool-description">Find the ideal age for marriage based on legal and personal factors</p>
+                            </a>
+                            <a href="marriage-biodata-inline.html" class="related-tool-card">
+                                <div class="related-tool-title">Marriage Biodata Generator</div>
+                                <p class="related-tool-description">Create professional marriage profiles with essential details</p>
+                            </a>
+                            <a href="invite-generator-inline.html" class="related-tool-card">
+                                <div class="related-tool-title">Invitation Generator</div>
+                                <p class="related-tool-description">Design invitations for weddings, anniversaries, and special occasions</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Health & Family Planning Tools -->
+                    <div class="related-tools-category">
+                        <h4>👶 Health & Family Planning Tools</h4>
+                        <div class="related-tools-grid">
+                            <a href="../health/ivf-calculator.html" class="related-tool-card">
+                                <div class="related-tool-title">IVF Due Date Calculator</div>
+                                <p class="related-tool-description">Calculate pregnancy due date after IVF treatment</p>
+                            </a>
+                            <a href="../health/pregnancy-weight.html" class="related-tool-card">
+                                <div class="related-tool-title">Pregnancy Weight Tracker</div>
+                                <p class="related-tool-description">Monitor healthy weight gain during pregnancy</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Life Planning Tools -->
+                    <div class="related-tools-category">
+                        <h4>📅 Life Planning Tools</h4>
+                        <div class="related-tools-grid">
+                            <a href="../planner/goal-planner.html" class="related-tool-card">
+                                <div class="related-tool-title">Goal Planning Tool</div>
+                                <p class="related-tool-description">Set and track life milestones with structured planning</p>
+                            </a>
+                            <a href="../calculator/cgpa-percentage-inline.html" class="related-tool-card">
+                                <div class="related-tool-title">CGPA to Percentage Calculator</div>
+                                <p class="related-tool-description">Convert academic grades for career and education planning</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Information Card -->
             <div class="card">
                 <div class="card-body">
                     <div class="info-card">
@@ -1863,20 +1915,7 @@
     <!-- Overlay for sidebar -->
     <div class="overlay"></div>
 
-    <!-- Tools Grid for script.js integration -->
-    <div id="tools-grid" class="tools-grid"></div>
-
-    <!-- Template for tool card -->
-    <template id="tool-card-template">
-        <a class="tool-link">
-            <article class="tool-card">
-                <button class="favorite-btn" aria-label="Toggle favorite">
-                    <i class="fas fa-star"></i>
-                </button>
-                <h3 class="tool-title"></h3>
-            </article>
-        </a>
-    </template>
+    
     
     <!-- Footer -->
     <footer class="site-footer">
