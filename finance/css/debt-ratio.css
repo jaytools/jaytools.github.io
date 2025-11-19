@@ -122,3 +122,64 @@
     line-height: 1.7;
     font-size: 1rem;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .data-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .data-table {
+        font-size: 0.875rem;
+    }
+
+    .data-table-header-cell,
+    .data-table-cell,
+    .data-table-cell-excellent,
+    .data-table-cell-good,
+    .data-table-cell-fair,
+    .data-table-cell-poor,
+    .data-table-text-excellent,
+    .data-table-text-good,
+    .data-table-text-fair,
+    .data-table-text-poor {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .faq-card {
+        padding: 1rem;
+    }
+
+    .content-text {
+        font-size: 0.9375rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-table {
+        font-size: 0.8125rem;
+    }
+
+    .data-table-header-cell,
+    .data-table-cell,
+    .data-table-cell-excellent,
+    .data-table-cell-good,
+    .data-table-cell-fair,
+    .data-table-cell-poor,
+    .data-table-text-excellent,
+    .data-table-text-good,
+    .data-table-text-fair,
+    .data-table-text-poor {
+        padding: 0.625rem 0.375rem;
+        font-size: 0.8125rem;
+    }
+
+    .faq-title {
+        font-size: 1rem;
+    }
+
+    .faq-text {
+        font-size: 0.875rem;
+    }
+}
