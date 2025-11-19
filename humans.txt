@@ -1,5 +1,5 @@
 /* TEAM */
-Website: TaskProper (https://taskproper.com)
+Website: Task Proper (https://www.taskproper.com)
 Developer: Jay Prajapati
 
 /* ABOUT */
