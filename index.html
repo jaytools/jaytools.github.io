@@ -46,69 +46,7 @@
     <link rel="stylesheet" href="css/icon-svg.css">
     <link rel="stylesheet" href="css/favorite-star.css">
 
-    <!-- Google AdSense - Production Only -->
-    <script>
-      // Only load AdSense on production domain (not localhost or 127.0.0.1)
-      (function() {
-        'use strict';
-        
-        // Check if we're on production domain
-        var hostname = window.location.hostname;
-        var isProduction = hostname === 'www.taskproper.com' || hostname === 'taskproper.com';
-        var isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '';
-        
-        // Completely suppress ALL console errors from ad-related domains
-        var originalConsoleError = console.error;
-        console.error = function() {
-          var args = Array.prototype.slice.call(arguments);
-          var message = args.join(' ');
-          
-          // Block all ad-related error messages
-          if (message && (
-            message.includes('pagead') ||
-            message.includes('adsbygoogle') ||
-            message.includes('googlesyndication') ||
-            message.includes('doubleclick') ||
-            message.includes('adtrafficquality') ||
-            message.includes('Tracking Prevention')
-          )) {
-            return; // Silently ignore
-          }
-          
-          // Allow other errors through
-          originalConsoleError.apply(console, arguments);
-        };
-        
-        // Suppress window error events from ad domains
-        window.addEventListener('error', function(e) {
-          if (e.filename && (
-            e.filename.includes('pagead') ||
-            e.filename.includes('googlesyndication') ||
-            e.filename.includes('doubleclick') ||
-            e.filename.includes('adtrafficquality')
-          )) {
-            e.stopImmediatePropagation();
-            e.preventDefault();
-            return false;
-          }
-        }, true);
-        
-        // Only proceed if on production
-        if (!isProduction || isLocalhost) {
-          return; // Don't load AdSense in development
-        }
-        
-        // Production: Load AdSense with delay
-        setTimeout(function() {
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224727453515567';
-          script.crossOrigin = 'anonymous';
-          script.onerror = function() { return false; };
-          document.head.appendChild(script);
-        }, 3000);
-      })();
-    </script>
+    
 
     <style>
       :focus{outline:rgba(0,122,204,.5) solid 2px;outline-offset:2px;box-shadow:0 0 0 2px rgba(0,122,204,.2)}
