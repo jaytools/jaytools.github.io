@@ -7,27 +7,35 @@ importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-comp
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', () => self.clients.claim());
 
+let apiBaseUrlCache = null;
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'selfpush_api_base_url' && event.data.url) {
+    apiBaseUrlCache = event.data.url;
+  }
+});
+
 // Get API base URL from localStorage (set by SDK)
-const getApiBaseUrl = () => {
-  // Try to get from clients first (more reliable)
-  return self.clients.matchAll().then((clients) => {
-    if (clients.length > 0) {
-      return new Promise((resolve) => {
-        const handler = (event) => {
-          if (event.data && event.data.type === 'selfpush_api_base_url') {
-            self.removeEventListener('message', handler);
-            resolve(event.data.url);
-          }
-        };
-        self.addEventListener('message', handler);
-        clients[0].postMessage({ type: 'get_api_base_url' });
-        setTimeout(() => {
-          self.removeEventListener('message', handler);
-          resolve(self.location.origin);
-        }, 500);
-      });
-    }
-    return self.location.origin;
+const getApiBaseUrl = async () => {
+  if (apiBaseUrlCache) return apiBaseUrlCache;
+
+  const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+  if (!clients.length) return self.location.origin;
+
+  return new Promise((resolve) => {
+    const channel = new MessageChannel();
+
+    channel.port1.onmessage = (event) => {
+      const url = event.data && event.data.url ? event.data.url : self.location.origin;
+      if (url) apiBaseUrlCache = url;
+      resolve(url || self.location.origin);
+    };
+
+    clients[0].postMessage({ type: 'get_api_base_url' }, [channel.port2]);
+
+    setTimeout(() => {
+      resolve(self.location.origin);
+    }, 800);
   });
 };
 
@@ -42,7 +50,14 @@ getApiBaseUrl().then((apiBaseUrl) => {
     cache: 'no-store',
     credentials: 'omit'
   })
-    .then((res) => res.json())
+    .then(async (res) => {
+      const contentType = res.headers.get('content-type') || '';
+      if (!res.ok || !contentType.includes('application/json')) {
+        const text = await res.text();
+        throw new Error(`Invalid config response (${res.status}). ${text.slice(0, 120)}`);
+      }
+      return res.json();
+    })
     .then((config) => {
     try {
       firebase.initializeApp(config);
