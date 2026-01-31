@@ -7,6 +7,15 @@ importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-comp
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', () => self.clients.claim());
 
+// Ensure required handlers are registered during initial evaluation
+self.addEventListener('push', () => {
+  // Firebase messaging will handle push payloads internally
+});
+
+self.addEventListener('pushsubscriptionchange', (event) => {
+  console.log('[SW] pushsubscriptionchange', event);
+});
+
 let apiBaseUrlCache = null;
 
 self.addEventListener('message', (event) => {
