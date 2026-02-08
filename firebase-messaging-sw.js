@@ -7,23 +7,34 @@ importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-comp
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', () => self.clients.claim());
 
-// Firebase messaging handles push payloads internally.
+const normalizePayload = (payload) => {
+  const notification = payload?.notification || {};
+  const data = payload?.data || {};
+  const title = (notification.title || data.title || '').trim();
+  const body = (notification.body || data.body || '').trim();
+  const icon = notification.icon || payload?.webpush?.notification?.icon || data.icon || undefined;
+  const image = notification.image || payload?.webpush?.notification?.image || data.image || undefined;
+  const link = data.link || payload?.fcmOptions?.link || notification.click_action || null;
+
+  if (!title || !body) return null;
+
+  return {
+    title,
+    options: {
+      body,
+      icon,
+      image,
+      silent: notification.silent || false,
+      data: { ...(data || {}), link },
+    },
+  };
+};
 
 self.addEventListener('pushsubscriptionchange', (event) => {
   console.log('[SW] pushsubscriptionchange', event);
 });
 
 let apiBaseUrlCache = null;
-
-const getApiBaseFromQuery = () => {
-  try {
-    const url = new URL(self.location.href);
-    const apiBase = url.searchParams.get('apiBase');
-    return apiBase || null;
-  } catch (e) {
-    return null;
-  }
-};
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'selfpush_api_base_url' && event.data.url) {
@@ -34,12 +45,6 @@ self.addEventListener('message', (event) => {
 // Get API base URL from localStorage (set by SDK)
 const getApiBaseUrl = async () => {
   if (apiBaseUrlCache) return apiBaseUrlCache;
-
-  const queryBase = getApiBaseFromQuery();
-  if (queryBase) {
-    apiBaseUrlCache = queryBase;
-    return queryBase;
-  }
 
   const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
   if (!clients.length) return self.location.origin;
@@ -87,51 +92,29 @@ getApiBaseUrl().then((apiBaseUrl) => {
 
       messaging.onBackgroundMessage((payload) => {
         console.log('[SW] Background message received:', payload);
-        
-        const notification = payload?.notification || {};
-        if (!notification.title && !notification.body) {
-          console.warn('[SW] Missing notification payload; skipping display');
+
+        const normalized = normalizePayload(payload);
+        if (!normalized) {
+          console.warn('[SW] Missing title/body; skipping display');
           return;
         }
-        const title = notification.title;
-        
-        // Check multiple possible locations for the click URL
-        // Priority: data.link (set by our backend) > fcmOptions.link > notification.click_action
-        const link = payload?.data?.link || 
-                     payload?.fcmOptions?.link || 
-                     payload?.notification?.click_action || 
-                     null;
-        
-        console.log('[SW] Click URL extracted:', link);
-        
-        const options = {
-          body: notification.body || '',
-          icon: notification.icon || payload?.webpush?.notification?.icon || undefined,
-          image: notification.image || payload?.webpush?.notification?.image || undefined,
-          silent: notification.silent || false,
-          data: { 
-            ...(payload?.data || {}), 
-            link: link // Ensure link is in data for click handler
-          },
-        };
-        
-        console.log('[SW] Showing notification with options:', options);
-        
-        // Notify all clients about the new notification for custom UI display
+
+        console.log('[SW] Showing notification with options:', normalized.options);
+
         self.clients.matchAll().then((clients) => {
           clients.forEach((client) => {
             client.postMessage({
               type: 'PUSH_NOTIFICATION',
               payload: {
-                title: title,
-                body: options.body,
-                icon: options.icon,
+                title: normalized.title,
+                body: normalized.options.body,
+                icon: normalized.options.icon,
               }
             });
           });
         });
-        
-        self.registration.showNotification(title, options);
+
+        self.registration.showNotification(normalized.title, normalized.options);
       });
     } catch (e) {
       console.error('[SW] Firebase init error', e);
@@ -140,6 +123,32 @@ getApiBaseUrl().then((apiBaseUrl) => {
   .catch((err) => {
     console.error('[SW] Failed to load Firebase config', err);
   });
+});
+
+self.addEventListener('push', (event) => {
+  let payload = null;
+  try {
+    payload = event.data ? event.data.json() : null;
+  } catch (e) {
+    payload = null;
+  }
+
+  console.log('[SW] Push event received:', payload);
+
+  // If FCM already provides notification payload, let onBackgroundMessage handle it
+  if (payload && payload.notification) {
+    return;
+  }
+
+  const normalized = normalizePayload(payload || {});
+  if (!normalized) {
+    console.warn('[SW] Missing title/body on push; skipping display');
+    return;
+  }
+
+  event.waitUntil(
+    self.registration.showNotification(normalized.title, normalized.options)
+  );
 });
 
 self.addEventListener('notificationclick', (event) => {
@@ -155,11 +164,20 @@ self.addEventListener('notificationclick', (event) => {
   
   // Default to origin if no URL provided
   const targetUrl = clickUrl || self.location.origin;
-  
+
   console.log('[SW] Opening URL:', targetUrl);
-  
-  // Open the URL in a new window/tab
+
   event.waitUntil(
-    self.clients.openWindow(targetUrl)
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      for (const client of clientList) {
+        if (client.url === targetUrl && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      if (self.clients.openWindow) {
+        return self.clients.openWindow(targetUrl);
+      }
+      return undefined;
+    })
   );
 });
