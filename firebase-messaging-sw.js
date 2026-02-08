@@ -1,5 +1,8 @@
-// Firebase Messaging Service Worker
-// Uses native push handling to avoid late-registered event warnings.
+// Firebase Messaging Service Worker (Compat v9)
+// Uses stable compat CDN and fetches config from API server
+
+importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-compat.js');
 
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', () => self.clients.claim());
@@ -29,6 +32,114 @@ const normalizePayload = (payload) => {
 
 self.addEventListener('pushsubscriptionchange', (event) => {
   console.log('[SW] pushsubscriptionchange', event);
+});
+
+let apiBaseUrlCache = null;
+let firebaseReady = false;
+
+const getApiBaseFromQuery = () => {
+  try {
+    const url = new URL(self.location.href);
+    return url.searchParams.get('apiBase');
+  } catch (e) {
+    return null;
+  }
+};
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'selfpush_api_base_url' && event.data.url) {
+    apiBaseUrlCache = event.data.url;
+  }
+});
+
+// Get API base URL from localStorage (set by SDK)
+const getApiBaseUrl = async () => {
+  if (apiBaseUrlCache) return apiBaseUrlCache;
+
+  const queryBase = getApiBaseFromQuery();
+  if (queryBase) {
+    apiBaseUrlCache = queryBase;
+    return queryBase;
+  }
+
+  const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+  if (!clients.length) return self.location.origin;
+
+  return new Promise((resolve) => {
+    const channel = new MessageChannel();
+
+    channel.port1.onmessage = (event) => {
+      const url = event.data && event.data.url ? event.data.url : self.location.origin;
+      if (url) apiBaseUrlCache = url;
+      resolve(url || self.location.origin);
+    };
+
+    clients[0].postMessage({ type: 'get_api_base_url' }, [channel.port2]);
+
+    setTimeout(() => {
+      resolve(self.location.origin);
+    }, 800);
+  });
+};
+
+// Initialize Firebase with API base URL
+getApiBaseUrl().then((apiBaseUrl) => {
+  const configUrl = apiBaseUrl + '/api/firebase-config';
+  
+  fetch(configUrl, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    mode: 'cors',
+    cache: 'no-store',
+    credentials: 'omit'
+  })
+    .then(async (res) => {
+      const contentType = res.headers.get('content-type') || '';
+      if (!res.ok || !contentType.includes('application/json')) {
+        const text = await res.text();
+        throw new Error(`Invalid config response (${res.status}). ${text.slice(0, 120)}`);
+      }
+      return res.json();
+    })
+    .then((config) => {
+    try {
+      firebase.initializeApp(config);
+      const messaging = firebase.messaging();
+      firebaseReady = true;
+
+      messaging.onBackgroundMessage((payload) => {
+        console.log('[SW] Background message received:', payload);
+
+        const normalized = normalizePayload(payload);
+        if (!normalized) {
+          console.warn('[SW] Missing title/body; skipping display');
+          return;
+        }
+
+        console.log('[SW] Showing notification with options:', normalized.options);
+
+        self.clients.matchAll().then((clients) => {
+          clients.forEach((client) => {
+            client.postMessage({
+              type: 'PUSH_NOTIFICATION',
+              payload: {
+                title: normalized.title,
+                body: normalized.options.body,
+                icon: normalized.options.icon,
+              }
+            });
+          });
+        });
+
+        self.registration.showNotification(normalized.title, normalized.options);
+      });
+    } catch (e) {
+      console.error('[SW] Firebase init error', e);
+    }
+  })
+  .catch((err) => {
+    console.error('[SW] Failed to load Firebase config', err);
+  });
 });
 
 self.addEventListener('push', (event) => {
