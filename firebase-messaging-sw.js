@@ -7,10 +7,7 @@ importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-comp
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', () => self.clients.claim());
 
-// Ensure required handlers are registered during initial evaluation
-self.addEventListener('push', () => {
-  // Firebase messaging will handle push payloads internally
-});
+// Firebase messaging handles push payloads internally.
 
 self.addEventListener('pushsubscriptionchange', (event) => {
   console.log('[SW] pushsubscriptionchange', event);
@@ -75,7 +72,12 @@ getApiBaseUrl().then((apiBaseUrl) => {
       messaging.onBackgroundMessage((payload) => {
         console.log('[SW] Background message received:', payload);
         
-        const title = payload?.notification?.title || 'Notification';
+        const notification = payload?.notification || {};
+        if (!notification.title && !notification.body) {
+          console.warn('[SW] Missing notification payload; skipping display');
+          return;
+        }
+        const title = notification.title;
         
         // Check multiple possible locations for the click URL
         // Priority: data.link (set by our backend) > fcmOptions.link > notification.click_action
@@ -87,10 +89,10 @@ getApiBaseUrl().then((apiBaseUrl) => {
         console.log('[SW] Click URL extracted:', link);
         
         const options = {
-          body: payload?.notification?.body || '',
-          icon: payload?.notification?.icon || '/favicon.ico',
-          image: payload?.notification?.image || payload?.webpush?.notification?.image || undefined,
-          silent: payload?.notification?.silent || false,
+          body: notification.body || '',
+          icon: notification.icon || payload?.webpush?.notification?.icon || undefined,
+          image: notification.image || payload?.webpush?.notification?.image || undefined,
+          silent: notification.silent || false,
           data: { 
             ...(payload?.data || {}), 
             link: link // Ensure link is in data for click handler
