@@ -89,6 +89,7 @@ getApiBaseUrl().then((apiBaseUrl) => {
         const options = {
           body: payload?.notification?.body || '',
           icon: payload?.notification?.icon || '/favicon.ico',
+          image: payload?.notification?.image || payload?.webpush?.notification?.image || undefined,
           silent: payload?.notification?.silent || false,
           data: { 
             ...(payload?.data || {}), 
