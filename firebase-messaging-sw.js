@@ -143,29 +143,24 @@ getApiBaseUrl().then((apiBaseUrl) => {
 });
 
 self.addEventListener('push', (event) => {
+  if (!event.data) {
+    console.warn('[SW] Push event missing data; skipping display');
+    return;
+  }
+
   let payload = null;
   try {
-    payload = event.data ? event.data.json() : null;
+    payload = event.data.json();
   } catch (e) {
     payload = null;
   }
 
   console.log('[SW] Push event received:', payload);
 
-  // If Firebase is ready, onBackgroundMessage will handle notifications
-  if (firebaseReady) {
-    return;
-  }
-
-  let normalized = normalizePayload(payload || {});
+  const normalized = normalizePayload(payload || {});
   if (!normalized) {
-    normalized = {
-      title: 'Website Update',
-      options: {
-        body: "There's something new to see. Open the site to check it out.",
-        data: { link: self.location.origin },
-      },
-    };
+    console.warn('[SW] Missing title/body; skipping display');
+    return;
   }
 
   event.waitUntil(
