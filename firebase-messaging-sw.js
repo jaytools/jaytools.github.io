@@ -7,10 +7,7 @@ importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-comp
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', () => self.clients.claim());
 
-// Ensure required handlers are registered during initial evaluation
-self.addEventListener('push', () => {
-  // Firebase messaging will handle push payloads internally
-});
+// Let Firebase messaging handle push payloads internally.
 
 self.addEventListener('pushsubscriptionchange', (event) => {
   console.log('[SW] pushsubscriptionchange', event);
@@ -75,7 +72,7 @@ getApiBaseUrl().then((apiBaseUrl) => {
       messaging.onBackgroundMessage((payload) => {
         console.log('[SW] Background message received:', payload);
         
-        const title = payload?.notification?.title || 'Notification';
+        const title = payload?.notification?.title || 'Website Update';
         
         // Check multiple possible locations for the click URL
         // Priority: data.link (set by our backend) > fcmOptions.link > notification.click_action
@@ -87,7 +84,7 @@ getApiBaseUrl().then((apiBaseUrl) => {
         console.log('[SW] Click URL extracted:', link);
         
         const options = {
-          body: payload?.notification?.body || '',
+          body: payload?.notification?.body || "There's something new to see. Open the site to check it out.",
           icon: payload?.notification?.icon || '/favicon.ico',
           silent: payload?.notification?.silent || false,
           data: { 
